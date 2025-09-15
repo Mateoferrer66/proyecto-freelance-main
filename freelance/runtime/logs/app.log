@@ -1,0 +1,844 @@
+2025-09-15 20:56:26 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2-gii\src\controllers\DefaultController.php(38): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(182): yii\gii\controllers\DefaultController->beforeAction(Object(yii\base\InlineAction))
+#2 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('view', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('gii/default/vie...', Array)
+#4 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#6 {main}
+2025-09-15 20:56:26 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'crud'
+]
+
+$_POST = [
+    '_csrf' => 'NmskVk08PaYuTnuBFnjsGulakDOwbM_8vNNxib-PLA4HI340FQhJkX4qCexYSNhy3jvUQP8ZrqyPjAnL69xPeQ=='
+    'Generator' => [
+        'modelClass' => 'app\\models\\Country'
+        'searchModelClass' => 'app\\models\\CountrySearch'
+        'controllerClass' => 'app\\controllers\\CountryController'
+        'viewPath' => ''
+        'baseControllerClass' => 'yii\\web\\Controller'
+        'indexWidgetType' => 'grid'
+        'enableI18N' => '0'
+        'enablePjax' => '0'
+        'messageCategory' => 'app'
+        'template' => 'default'
+    ]
+    'answers' => [
+        '21c0b9054baa31a14f2dc026fd12395e' => '1'
+        'e41e0d1d64a29de761b1df5dc07597bc' => '1'
+        '9e3f146a0aed50552be45a40c1cf9a99' => '1'
+        'f2f8da70d6d4e93358a1a5e04fe8c34a' => '1'
+        'c72d8e1052b072b38e52f9f13ebab0b4' => '1'
+        '019e9001d243f5f0a5ba868d93bf9d87' => '1'
+        'c173eeb03f7b018c1858f6eb2383d650' => '1'
+        'caa3965ba5b0e978175017bc1a17b867' => '1'
+    ]
+    'generate' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '64276'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '913'
+    'HTTP_CONTENT_LENGTH' => '913'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'REQUEST_TIME_FLOAT' => 1757962586.1958
+    'REQUEST_TIME' => 1757962586
+]
+2025-09-15 22:43:11 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined variable $model in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\views\iva\index.php:19
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\views\iva\index.php(19): yii\base\ErrorHandler->handleError(2, 'Undefined varia...', 'C:\\Users\\jason\\...', 19)
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jason\\...')
+#2 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\jason\\...', Array, Object(app\controllers\IvaController))
+#4 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\IvaController))
+#5 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\controllers\IvaController.php(44): yii\base\Controller->render('index', Array)
+#6 [internal function]: app\controllers\IvaController->actionIndex()
+#7 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#8 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#9 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#10 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('iva', Array)
+#11 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2025-09-15 22:43:11 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'iaodbrdalhi6f2jjf8ndu4iq5s'
+    '_csrf' => '78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51689'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=iaodbrdalhi6f2jjf8ndu4iq5s; _csrf=78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1757968991.8656
+    'REQUEST_TIME' => 1757968991
+]
+2025-09-15 22:46:49 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined variable $model in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\views\iva\index.php:29
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\views\iva\index.php(29): yii\base\ErrorHandler->handleError(2, 'Undefined varia...', 'C:\\Users\\jason\\...', 29)
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jason\\...')
+#2 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\jason\\...', Array, Object(app\controllers\IvaController))
+#4 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\IvaController))
+#5 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\controllers\IvaController.php(44): yii\base\Controller->render('index', Array)
+#6 [internal function]: app\controllers\IvaController->actionIndex()
+#7 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#8 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#9 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#10 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('iva', Array)
+#11 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#13 {main}
+2025-09-15 22:46:49 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'iaodbrdalhi6f2jjf8ndu4iq5s'
+    '_csrf' => '78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51815'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=iaodbrdalhi6f2jjf8ndu4iq5s; _csrf=78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1757969209.8103
+    'REQUEST_TIME' => 1757969209
+]
+2025-09-15 22:48:52 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Setting unknown property: yii\grid\DataColumn::0 in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php:166
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(566): yii\base\BaseObject->__set('0', 'iva_id')
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php(110): yii\BaseYii::configure(Object(yii\grid\DataColumn), Array)
+#2 [internal function]: yii\base\BaseObject->__construct(Array)
+#3 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(425): ReflectionClass->newInstanceArgs(Array)
+#4 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('yii\\grid\\DataCo...', Array, Array)
+#5 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('yii\\grid\\DataCo...', Array, Array)
+#6 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(549): yii\BaseYii::createObject(Array)
+#7 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(288): yii\grid\GridView->initColumns()
+#8 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php(112): yii\grid\GridView->init()
+#9 [internal function]: yii\base\BaseObject->__construct(Array)
+#10 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(425): ReflectionClass->newInstanceArgs(Array)
+#11 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('yii\\grid\\GridVi...', Array, Array)
+#12 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('yii\\grid\\GridVi...', Array, Array)
+#13 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Widget.php(146): yii\BaseYii::createObject(Array)
+#14 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\views\iva\index.php(24): yii\base\Widget::widget(Array)
+#15 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jason\\...')
+#16 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\jason\\...', Array)
+#17 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\jason\\...', Array, Object(app\controllers\IvaController))
+#18 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\IvaController))
+#19 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\controllers\IvaController.php(44): yii\base\Controller->render('index', Array)
+#20 [internal function]: app\controllers\IvaController->actionIndex()
+#21 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#22 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#23 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#24 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('iva', Array)
+#25 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#27 {main}
+2025-09-15 22:48:52 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'iaodbrdalhi6f2jjf8ndu4iq5s'
+    '_csrf' => '78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51879'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=iaodbrdalhi6f2jjf8ndu4iq5s; _csrf=78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1757969332.2408
+    'REQUEST_TIME' => 1757969332
+]
+2025-09-15 22:48:53 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Setting unknown property: yii\grid\DataColumn::0 in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php:166
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(566): yii\base\BaseObject->__set('0', 'iva_id')
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php(110): yii\BaseYii::configure(Object(yii\grid\DataColumn), Array)
+#2 [internal function]: yii\base\BaseObject->__construct(Array)
+#3 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(425): ReflectionClass->newInstanceArgs(Array)
+#4 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('yii\\grid\\DataCo...', Array, Array)
+#5 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('yii\\grid\\DataCo...', Array, Array)
+#6 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(549): yii\BaseYii::createObject(Array)
+#7 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(288): yii\grid\GridView->initColumns()
+#8 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php(112): yii\grid\GridView->init()
+#9 [internal function]: yii\base\BaseObject->__construct(Array)
+#10 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(425): ReflectionClass->newInstanceArgs(Array)
+#11 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('yii\\grid\\GridVi...', Array, Array)
+#12 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('yii\\grid\\GridVi...', Array, Array)
+#13 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Widget.php(146): yii\BaseYii::createObject(Array)
+#14 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\views\iva\index.php(24): yii\base\Widget::widget(Array)
+#15 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jason\\...')
+#16 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\jason\\...', Array)
+#17 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\jason\\...', Array, Object(app\controllers\IvaController))
+#18 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\IvaController))
+#19 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\controllers\IvaController.php(44): yii\base\Controller->render('index', Array)
+#20 [internal function]: app\controllers\IvaController->actionIndex()
+#21 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#22 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#23 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#24 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('iva', Array)
+#25 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#27 {main}
+2025-09-15 22:48:53 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'iaodbrdalhi6f2jjf8ndu4iq5s'
+    '_csrf' => '78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51883'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=iaodbrdalhi6f2jjf8ndu4iq5s; _csrf=78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1757969333.2542
+    'REQUEST_TIME' => 1757969333
+]
+2025-09-15 22:48:54 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Setting unknown property: yii\grid\DataColumn::0 in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php:166
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(566): yii\base\BaseObject->__set('0', 'iva_id')
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php(110): yii\BaseYii::configure(Object(yii\grid\DataColumn), Array)
+#2 [internal function]: yii\base\BaseObject->__construct(Array)
+#3 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(425): ReflectionClass->newInstanceArgs(Array)
+#4 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('yii\\grid\\DataCo...', Array, Array)
+#5 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('yii\\grid\\DataCo...', Array, Array)
+#6 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(549): yii\BaseYii::createObject(Array)
+#7 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(288): yii\grid\GridView->initColumns()
+#8 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php(112): yii\grid\GridView->init()
+#9 [internal function]: yii\base\BaseObject->__construct(Array)
+#10 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(425): ReflectionClass->newInstanceArgs(Array)
+#11 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('yii\\grid\\GridVi...', Array, Array)
+#12 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('yii\\grid\\GridVi...', Array, Array)
+#13 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Widget.php(146): yii\BaseYii::createObject(Array)
+#14 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\views\iva\index.php(24): yii\base\Widget::widget(Array)
+#15 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jason\\...')
+#16 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\jason\\...', Array)
+#17 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\jason\\...', Array, Object(app\controllers\IvaController))
+#18 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\IvaController))
+#19 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\controllers\IvaController.php(44): yii\base\Controller->render('index', Array)
+#20 [internal function]: app\controllers\IvaController->actionIndex()
+#21 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#22 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#23 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#24 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('iva', Array)
+#25 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#27 {main}
+2025-09-15 22:48:54 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'iaodbrdalhi6f2jjf8ndu4iq5s'
+    '_csrf' => '78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51887'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=iaodbrdalhi6f2jjf8ndu4iq5s; _csrf=78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1757969334.0688
+    'REQUEST_TIME' => 1757969334
+]
+2025-09-15 22:48:54 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Setting unknown property: yii\grid\DataColumn::0 in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php:166
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(566): yii\base\BaseObject->__set('0', 'iva_id')
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php(110): yii\BaseYii::configure(Object(yii\grid\DataColumn), Array)
+#2 [internal function]: yii\base\BaseObject->__construct(Array)
+#3 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(425): ReflectionClass->newInstanceArgs(Array)
+#4 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('yii\\grid\\DataCo...', Array, Array)
+#5 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('yii\\grid\\DataCo...', Array, Array)
+#6 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(549): yii\BaseYii::createObject(Array)
+#7 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(288): yii\grid\GridView->initColumns()
+#8 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php(112): yii\grid\GridView->init()
+#9 [internal function]: yii\base\BaseObject->__construct(Array)
+#10 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(425): ReflectionClass->newInstanceArgs(Array)
+#11 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('yii\\grid\\GridVi...', Array, Array)
+#12 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('yii\\grid\\GridVi...', Array, Array)
+#13 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Widget.php(146): yii\BaseYii::createObject(Array)
+#14 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\views\iva\index.php(24): yii\base\Widget::widget(Array)
+#15 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jason\\...')
+#16 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\jason\\...', Array)
+#17 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\jason\\...', Array, Object(app\controllers\IvaController))
+#18 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\IvaController))
+#19 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\controllers\IvaController.php(44): yii\base\Controller->render('index', Array)
+#20 [internal function]: app\controllers\IvaController->actionIndex()
+#21 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#22 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#23 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#24 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('iva', Array)
+#25 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#27 {main}
+2025-09-15 22:48:54 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'iaodbrdalhi6f2jjf8ndu4iq5s'
+    '_csrf' => '78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51892'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=iaodbrdalhi6f2jjf8ndu4iq5s; _csrf=78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1757969334.6823
+    'REQUEST_TIME' => 1757969334
+]
+2025-09-15 22:51:35 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][error][yii\di\NotInstantiableException] ReflectionException: Class "SerialColumn" does not exist in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php:513
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(513): ReflectionClass->__construct('SerialColumn')
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(391): yii\di\Container->getDependencies('SerialColumn')
+#2 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('SerialColumn', Array, Array)
+#3 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('SerialColumn', Array, Array)
+#4 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(549): yii\BaseYii::createObject(Array)
+#5 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(288): yii\grid\GridView->initColumns()
+#6 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php(112): yii\grid\GridView->init()
+#7 [internal function]: yii\base\BaseObject->__construct(Array)
+#8 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(425): ReflectionClass->newInstanceArgs(Array)
+#9 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('yii\\grid\\GridVi...', Array, Array)
+#10 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('yii\\grid\\GridVi...', Array, Array)
+#11 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Widget.php(146): yii\BaseYii::createObject(Array)
+#12 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\views\iva\index.php(25): yii\base\Widget::widget(Array)
+#13 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jason\\...')
+#14 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\jason\\...', Array)
+#15 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\jason\\...', Array, Object(app\controllers\IvaController))
+#16 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\IvaController))
+#17 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\controllers\IvaController.php(44): yii\base\Controller->render('index', Array)
+#18 [internal function]: app\controllers\IvaController->actionIndex()
+#19 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#20 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#21 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#22 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('iva', Array)
+#23 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#25 {main}
+
+Next yii\di\NotInstantiableException: Failed to instantiate component or class "SerialColumn". in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php:515
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(391): yii\di\Container->getDependencies('SerialColumn')
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('SerialColumn', Array, Array)
+#2 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('SerialColumn', Array, Array)
+#3 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(549): yii\BaseYii::createObject(Array)
+#4 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\grid\GridView.php(288): yii\grid\GridView->initColumns()
+#5 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\BaseObject.php(112): yii\grid\GridView->init()
+#6 [internal function]: yii\base\BaseObject->__construct(Array)
+#7 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(425): ReflectionClass->newInstanceArgs(Array)
+#8 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\di\Container.php(176): yii\di\Container->build('yii\\grid\\GridVi...', Array, Array)
+#9 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\BaseYii.php(374): yii\di\Container->get('yii\\grid\\GridVi...', Array, Array)
+#10 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Widget.php(146): yii\BaseYii::createObject(Array)
+#11 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\views\iva\index.php(25): yii\base\Widget::widget(Array)
+#12 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jason\\...')
+#13 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\jason\\...', Array)
+#14 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\jason\\...', Array, Object(app\controllers\IvaController))
+#15 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\IvaController))
+#16 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\controllers\IvaController.php(44): yii\base\Controller->render('index', Array)
+#17 [internal function]: app\controllers\IvaController->actionIndex()
+#18 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#19 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#20 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#21 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('iva', Array)
+#22 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#24 {main}
+2025-09-15 22:51:35 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'iaodbrdalhi6f2jjf8ndu4iq5s'
+    '_csrf' => '78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51994'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=iaodbrdalhi6f2jjf8ndu4iq5s; _csrf=78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1757969495.4
+    'REQUEST_TIME' => 1757969495
+]
+2025-09-15 22:56:59 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: iva/create in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php:155
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('iva/create', Array)
+#2 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2025-09-15 22:56:59 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][info][application] $_GET = [
+    'r' => 'iva/create'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'iaodbrdalhi6f2jjf8ndu4iq5s'
+    '_csrf' => '78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52250'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva%2Fcreate'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva%2Fcreate'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=iva%2Findex&sort=-iva_porcentaje'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=iaodbrdalhi6f2jjf8ndu4iq5s; _csrf=78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1757969819.8923
+    'REQUEST_TIME' => 1757969819
+]
+2025-09-15 22:57:02 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: iva/create in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Controller.php:155
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('iva/create', Array)
+#2 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2025-09-15 22:57:02 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][info][application] $_GET = [
+    'r' => 'iva/create'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'iaodbrdalhi6f2jjf8ndu4iq5s'
+    '_csrf' => '78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52260'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva%2Fcreate'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva%2Fcreate'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=iva%2Findex&sort=-iva_porcentaje'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=iaodbrdalhi6f2jjf8ndu4iq5s; _csrf=78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1757969822.8611
+    'REQUEST_TIME' => 1757969822
+]
+2025-09-15 23:36:37 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "country/index". in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('country/index', Array)
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\jason\ProyectosPython\Yii\proyecto-freelance\freelance\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2025-09-15 23:36:37 [::1][-][iaodbrdalhi6f2jjf8ndu4iq5s][info][application] $_GET = [
+    'r' => 'country/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'iaodbrdalhi6f2jjf8ndu4iq5s'
+    '_csrf' => '78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52819'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=country/index'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\proyecto-freelance\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=country/index'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=iaodbrdalhi6f2jjf8ndu4iq5s; _csrf=78b287913dad45f1a2d337a130339d9557dcdc130227d49140bd961a19de40e4a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fZ9U_UqeLzHByh0e8MEzeGMLA-CjxBEn%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1757972197.0931
+    'REQUEST_TIME' => 1757972197
+]

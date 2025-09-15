@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
+        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
@@ -41,8 +41,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => '#_cuenta',
             ],
             [
+                'attribute' => 'ban_numcuenta',
+                'label' => 'Acciones',
+            ],
+            [
                 'class' => ActionColumn::className(),
-                'header' => 'Acciones', //
                 'urlCreator' => function ($action, Banco $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'ban_id' => $model->ban_id]);
                  }

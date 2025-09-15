@@ -842,3 +842,65 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1757972197.0931
     'REQUEST_TIME' => 1757972197
 ]
+2025-09-16 00:26:56 [::1][-][iu263ba3o37pe7nmmq5udr9q32][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "Banco". in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('Banco', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2025-09-16 00:26:55 [::1][-][iu263ba3o37pe7nmmq5udr9q32][info][application] $_GET = [
+    'r' => 'Banco'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'iu263ba3o37pe7nmmq5udr9q32'
+    '_csrf' => '71922fd53f66f262b3c9c724f941e8ad977beaabc5a6aaeaa3d201bc5f988222a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"8RyIO1NgEseAaVLAPqjGOK4IwGPOzg7K\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59106'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=Banco'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=Banco'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Brave\";v=\"140\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=iu263ba3o37pe7nmmq5udr9q32; _csrf=71922fd53f66f262b3c9c724f941e8ad977beaabc5a6aaeaa3d201bc5f988222a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%228RyIO1NgEseAaVLAPqjGOK4IwGPOzg7K%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1757975215.8469
+    'REQUEST_TIME' => 1757975215
+]

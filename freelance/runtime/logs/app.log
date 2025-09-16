@@ -1542,3 +1542,92 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1758036074.0483
     'REQUEST_TIME' => 1758036074
 ]
+2025-09-16 19:06:05 [::1][-][vgpqgq6bbtu005gkapjpqigqcd][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-gii\src\controllers\DefaultController.php(38): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(182): yii\gii\controllers\DefaultController->beforeAction(Object(yii\base\InlineAction))
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('view', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('gii/default/vie...', Array)
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#6 {main}
+2025-09-16 19:06:05 [::1][-][vgpqgq6bbtu005gkapjpqigqcd][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'model'
+]
+
+$_POST = [
+    '_csrf' => 'seDTLq4Cbjdz6Q61Z2ev13rkKtH4eAHFuLlq191i8w_Xuup78VcfUj-TRvceD5-yQqlvq50_TIn5lCm9pSC2YQ=='
+    'Generator' => [
+        'db' => 'db'
+        'useTablePrefix' => '0'
+        'useSchemaName' => '1'
+        'tableName' => 'cliente'
+        'standardizeCapitals' => '0'
+        'singularize' => '0'
+        'modelClass' => 'Cliente'
+        'ns' => 'app\\models'
+        'baseClass' => 'yii\\db\\ActiveRecord'
+        'generateRelations' => 'all'
+        'generateJunctionRelationMode' => 'table'
+        'generateRelationsFromCurrentSchema' => '1'
+        'generateRelationNameFromDestinationTable' => '0'
+        'useClassConstant' => '1'
+        'generateLabelsFromComments' => '0'
+        'generateQuery' => '0'
+        'queryNs' => 'app\\models'
+        'queryBaseClass' => 'yii\\db\\ActiveQuery'
+        'enableI18N' => '0'
+        'messageCategory' => 'app'
+        'template' => 'default'
+    ]
+    'generate' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '63706'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=model'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=model'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1012'
+    'HTTP_CONTENT_LENGTH' => '1012'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=gii%2Fdefault%2Fview&id=model'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'REQUEST_TIME_FLOAT' => 1758042365.1544
+    'REQUEST_TIME' => 1758042365
+]

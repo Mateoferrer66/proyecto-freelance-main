@@ -31,6 +31,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 </head>
 
 <body class="d-flex flex-column h-100">
+    
     <?php $this->beginBody() ?>
 
     <header id="header">

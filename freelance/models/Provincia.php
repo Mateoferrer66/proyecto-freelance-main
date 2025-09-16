@@ -92,7 +92,7 @@ class Provincia extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getPai()
+    public function getPais()
     {
         return $this->hasOne(Pais::class, ['pai_id' => 'pai_id']);
     }

@@ -11,8 +11,7 @@ use yii\grid\GridView;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Concepto Facturacion';
-$this->params['breadcrumbs'][] = $this->title;
-?>
+$this->params['breadcrumbs']=[];?>
 <div class="concepto-facturacion-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>

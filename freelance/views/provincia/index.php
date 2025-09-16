@@ -12,7 +12,7 @@ use yii\grid\GridView;
 
 $this->title = 'Utilidades Provincia';
 $this->registerCss(".table thead a { text-decoration: none !important; }");
-$this->params['breadcrumbs'] = [];
+$this->params['breadcrumbs']=[];
 ?>
 
 <div class="provincia-index">

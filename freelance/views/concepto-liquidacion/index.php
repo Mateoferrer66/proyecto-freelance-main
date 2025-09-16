@@ -11,7 +11,7 @@ use yii\grid\GridView;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Concepto Liquidacion';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs']=[];
 ?>
 <div class="concepto-liquidacion-index">
 

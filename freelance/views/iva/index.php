@@ -13,8 +13,7 @@ use yii\grid\GridView;
 
 $this->title = 'Utilidades Iva';
 $this->registerCss(".table thead a { text-decoration: none !important; }");
-$this->params['breadcrumbs'] = [];
-?>
+$this->params['breadcrumbs']=[];?>
 <div class="iva-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>

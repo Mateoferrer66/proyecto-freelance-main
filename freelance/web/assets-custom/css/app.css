@@ -27,7 +27,7 @@ File: app.css
 */
 
 
-body {
+html, body {
 
 	font-size: 14px;
 
@@ -35,10 +35,17 @@ body {
 
 	font-family: Roboto, sans-serif;
 
-	overflow-x: hidden
+	overflow-x: hidden;
+	height: 100%;
+    margin: 0;
 
 }
 
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+}
 a {
 
 	text-decoration: none
@@ -125,7 +132,7 @@ a {
 
 	color: #ffffff;
 
-	font-family: font-family: 'Oswald', sans-serif;
+	font-family: 'Oswald', sans-serif;
 
 }
 
@@ -2393,7 +2400,7 @@ a {
 
 .email-star {
 
-	color: ##ffffff;
+	color: #ffffff;
 
 }
 
@@ -4330,7 +4337,7 @@ select.form-control {
     display: none;
 }
 .orangeMenu {
-    background-color: background: rgb(252,216,24);
+    background-color: rgb(252,216,24);
     background: linear-gradient(90deg, rgba(252,216,24,1) 0%, rgba(237,110,34,1) 100%);
     padding: 30px 20px 0;
     border-radius: 20px;

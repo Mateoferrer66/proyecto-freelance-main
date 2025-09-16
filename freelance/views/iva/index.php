@@ -11,7 +11,7 @@ use yii\grid\GridView;
 /** @var app\models\IvaSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Iva';
+$this->title = 'Utilidades Iva';
 $this->registerCss(".table thead a { text-decoration: none !important; }");
 $this->params['breadcrumbs'] = [];
 ?>

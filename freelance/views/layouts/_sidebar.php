@@ -9,6 +9,7 @@
     <ul class="metismenu" id="menu">
         <li><a href="/"><div class="parent-icon"><i class="bx bx-home"></i></div><div class="menu-title">Inicio</div></a></li>
         <li class="menu-label">Módulos de administración</li>
+        
 
         <li><a href="/socios"><div class="parent-icon"><i class='bx bx-street-view'></i></div><div class="menu-title">Socios</div></a></li>
         <li><a href="/clientes"><div class="parent-icon"><i class='bx bx-user-voice'></i></div><div class="menu-title">Clientes</div></a></li>

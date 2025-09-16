@@ -1,23 +1,24 @@
 <?php
 
-use app\models\Banco;
+use app\models\ConceptoFacturacion;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /** @var yii\web\View $this */
-/** @var app\models\BancoSearch $searchModel */
+/** @var app\models\ConceptoFacturacionSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Bancos';
+$this->title = 'Concepto Facturacion';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="banco-index">
+<div class="concepto-facturacion-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
+
     <p>
-        <?= Html::a('Create Banco', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Concepto Facturacion', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -28,27 +29,21 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'ban_id',
+                'attribute' => 'cof_codigo',
                 'label' => 'Codigo',
             ],
             [
-                'attribute' => 'ban_nombre',
-                'label' => 'Banco',
-            ],
-            [
-                'attribute' => 'ban_numcuenta',
-                'label' => '#_cuenta',
-            ],
-            [
-                'attribute' => 'ban_numcuenta',
-                'label' => 'Acciones',
+                'attribute' => 'cof_nombre',
+                'label' => 'Nombre',
             ],
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Banco $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'ban_id' => $model->ban_id]);
-                 }
+                'header' => 'Acciones', // Agregar el encabezado "Acciones"
+                'urlCreator' => function ($action, ConceptoFacturacion $model, $key, $index, $column) {
+                        return Url::toRoute([$action, 'cof_id' => $model->cof_id]);
+                    }
             ],
         ],
     ]); ?>
+
 </div>

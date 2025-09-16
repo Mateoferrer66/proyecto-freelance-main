@@ -1,23 +1,24 @@
 <?php
 
-use app\models\Banco;
+use app\models\TipoDocIdentidad;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /** @var yii\web\View $this */
-/** @var app\models\BancoSearch $searchModel */
+/** @var app\models\TipoDocIdentidadSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Bancos';
+$this->title = 'Tipo Doc Identidad';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="banco-index">
+<div class="tipo-doc-identidad-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
+
     <p>
-        <?= Html::a('Create Banco', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Tipo Doc Identidad', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -27,28 +28,24 @@ $this->params['breadcrumbs'][] = $this->title;
         //'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            [
-                'attribute' => 'ban_id',
+      [
+                'attribute' => 'tdo_id',
                 'label' => 'Codigo',
             ],
             [
-                'attribute' => 'ban_nombre',
-                'label' => 'Banco',
-            ],
-            [
-                'attribute' => 'ban_numcuenta',
-                'label' => '#_cuenta',
-            ],
-            [
-                'attribute' => 'ban_numcuenta',
-                'label' => 'Acciones',
+                'attribute' => 'tdo_nombre',
+                'label' => 'Nombre',
             ],
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Banco $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'ban_id' => $model->ban_id]);
+                                'header' => 'Acciones', // Agregar el encabezado "Acciones"
+
+                'urlCreator' => function ($action, TipoDocIdentidad $model, $key, $index, $column) {
+                    return Url::toRoute([$action, 'tdo_id' => $model->tdo_id]);
                  }
             ],
         ],
     ]); ?>
+
+
 </div>

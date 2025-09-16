@@ -11,7 +11,7 @@ use yii\grid\GridView;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Tipo Doc Identidad';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs']=[];
 ?>
 <div class="tipo-doc-identidad-index">
 

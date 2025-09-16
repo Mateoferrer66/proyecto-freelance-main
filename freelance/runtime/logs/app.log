@@ -1094,3 +1094,2034 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1757980424.3957
     'REQUEST_TIME' => 1757980424
 ]
+2025-09-16 19:30:34 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 19:30:34 [::1][-][-][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '64068'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758043834.1729
+    'REQUEST_TIME' => 1758043834
+]
+2025-09-16 19:34:25 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 19:34:25 [::1][-][-][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '64241'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758044065.0696
+    'REQUEST_TIME' => 1758044065
+]
+2025-09-16 19:38:19 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 19:38:19 [::1][-][-][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '64404'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758044299.2401
+    'REQUEST_TIME' => 1758044299
+]
+2025-09-16 19:39:08 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 19:39:08 [::1][-][-][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '64484'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758044348.5884
+    'REQUEST_TIME' => 1758044348
+]
+2025-09-16 19:57:58 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 19:57:58 [::1][-][-][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '65075'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758045478.038
+    'REQUEST_TIME' => 1758045478
+]
+2025-09-16 20:17:15 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 20:17:15 [::1][-][-][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '49321'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758046635.5481
+    'REQUEST_TIME' => 1758046635
+]
+2025-09-16 20:19:12 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 20:19:12 [::1][-][-][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '49445'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758046752.8411
+    'REQUEST_TIME' => 1758046752
+]
+2025-09-16 20:29:14 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 20:29:14 [::1][-][-][info][application] $_GET = [
+    'r' => 'gii'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '49800'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=gii'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=gii'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758047354.5413
+    'REQUEST_TIME' => 1758047354
+]
+2025-09-16 20:31:19 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 20:31:19 [::1][-][-][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '49874'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758047479.6941
+    'REQUEST_TIME' => 1758047479
+]
+2025-09-16 20:31:42 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 20:31:41 [::1][-][-][info][application] $_GET = [
+    'r' => 'banco'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '49933'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=banco'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=banco'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758047501.9897
+    'REQUEST_TIME' => 1758047501
+]
+2025-09-16 20:31:45 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 20:31:45 [::1][-][-][info][application] $_GET = [
+    'r' => 'banco'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '49945'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=banco'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=banco'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758047505.3357
+    'REQUEST_TIME' => 1758047505
+]
+2025-09-16 20:31:48 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 20:31:48 [::1][-][-][info][application] $_GET = [
+    'r' => 'iva'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '49990'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=iva'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=iva'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758047508.2227
+    'REQUEST_TIME' => 1758047508
+]
+2025-09-16 21:39:43 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:39:42 [::1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'crud'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51889'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=gii'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758051582.9068
+    'REQUEST_TIME' => 1758051582
+]
+2025-09-16 21:41:33 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:41:33 [::1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'crud'
+]
+
+$_POST = [
+    '_csrf' => 'FgoaZHCp0G5uJOvznTX23TLAG31ckoy1i4gxGEbxICVfS2gsPfGnCT91xp_tR5CXa6RhFgbT1trCv2h1AJxMdw=='
+    'Generator' => [
+        'modelClass' => 'app\\models\\Categoria'
+        'searchModelClass' => 'app\\models\\CategoriaSearch'
+        'controllerClass' => 'app\\controllers\\CategoriaController'
+        'viewPath' => ''
+        'baseControllerClass' => 'yii\\web\\Controller'
+        'indexWidgetType' => 'grid'
+        'enableI18N' => '0'
+        'enablePjax' => '0'
+        'messageCategory' => 'app'
+        'template' => 'default'
+    ]
+    'preview' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51901'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '534'
+    'HTTP_CONTENT_LENGTH' => '534'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758051693.4299
+    'REQUEST_TIME' => 1758051693
+]
+2025-09-16 21:41:42 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:41:42 [::1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'crud'
+]
+
+$_POST = [
+    '_csrf' => 'BLItZmRd7f0C5FwNWYmq_HpFkVDowKQNlgH2qBLPBDJN818uKQWamlO1cWEp-8y2IyHrO7KB_mLfNq_FVKJoYA=='
+    'Generator' => [
+        'modelClass' => 'app\\models\\Categoria'
+        'searchModelClass' => 'app\\models\\CategoriaSearch'
+        'controllerClass' => 'app\\controllers\\CategoriaController'
+        'viewPath' => ''
+        'baseControllerClass' => 'yii\\web\\Controller'
+        'indexWidgetType' => 'grid'
+        'enableI18N' => '0'
+        'enablePjax' => '0'
+        'messageCategory' => 'app'
+        'template' => 'default'
+    ]
+    'answers' => [
+        '5359fa9956904bd0356bb95eb6b84cbd' => '1'
+        '351285997919d9fdcae48e7e9b1320f6' => '1'
+        'a5fa403329b8657596cb293ad2fa75ff' => '1'
+        'f6665e99e06c14db39eb62df40cdbcf0' => '1'
+        '0ca49964250a3c0e07cb6d23ae96c516' => '1'
+        '350e8aaec4b5885eaf018d926294dc57' => '1'
+        '0175f9df72660eb084a39fc09a70f286' => '1'
+        '9d42368cec0d3b01d77be171c5d0095d' => '1'
+    ]
+    'generate' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51914'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '919'
+    'HTTP_CONTENT_LENGTH' => '919'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758051702.4739
+    'REQUEST_TIME' => 1758051702
+]
+2025-09-16 21:45:10 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:45:10 [::1][-][-][info][application] $_GET = [
+    'r' => 'categoria'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51941'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=categoria'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=categoria'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758051910.1241
+    'REQUEST_TIME' => 1758051910
+]
+2025-09-16 21:45:52 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:45:52 [::1][-][-][info][application] $_GET = [
+    'r' => 'categoria'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51981'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=categoria'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=categoria'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758051952.1218
+    'REQUEST_TIME' => 1758051952
+]
+2025-09-16 21:48:14 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:48:14 [::1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'crud'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52069'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758052094.2059
+    'REQUEST_TIME' => 1758052094
+]
+2025-09-16 21:48:51 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:48:51 [::1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'crud'
+]
+
+$_POST = [
+    '_csrf' => '2pvRRIrrNyAmLJX4mEyxcuORDc9v7YAImdb5htFIrY6T2qMMx7NAR3d9uJToPtc4uvV3pDWs2mfQ4aDrlyXB3A=='
+    'Generator' => [
+        'modelClass' => 'app\\models\\Provincia'
+        'searchModelClass' => 'app\\models\\ProvinciaSearch'
+        'controllerClass' => 'app\\controllers\\ProvinciaController'
+        'viewPath' => ''
+        'baseControllerClass' => 'yii\\web\\Controller'
+        'indexWidgetType' => 'grid'
+        'enableI18N' => '0'
+        'enablePjax' => '0'
+        'messageCategory' => 'app'
+        'template' => 'default'
+    ]
+    'preview' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52079'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '534'
+    'HTTP_CONTENT_LENGTH' => '534'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758052131.5852
+    'REQUEST_TIME' => 1758052131
+]
+2025-09-16 21:48:55 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:48:55 [::1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'crud'
+]
+
+$_POST = [
+    '_csrf' => 'bDnMZyW0sN7BVrRj6SVY72SVwxrVy-yJNeteKjgCuZsleL4vaOzHuZAHmQ-ZVz6lPfG5cY-KtuZ83AdHfm_VyQ=='
+    'Generator' => [
+        'modelClass' => 'app\\models\\Provincia'
+        'searchModelClass' => 'app\\models\\ProvinciaSearch'
+        'controllerClass' => 'app\\controllers\\ProvinciaController'
+        'viewPath' => ''
+        'baseControllerClass' => 'yii\\web\\Controller'
+        'indexWidgetType' => 'grid'
+        'enableI18N' => '0'
+        'enablePjax' => '0'
+        'messageCategory' => 'app'
+        'template' => 'default'
+    ]
+    'answers' => [
+        '07b5e6ab902e95cb2e6d9f49506678bc' => '1'
+        'c5d5dfa5f705edd5e8f9e12929ffe236' => '1'
+        '0647f5cefe2c5e58b42419ec1eb03c6f' => '1'
+        '373d455358f3729a3d862c2ad8d4cdc3' => '1'
+        '8a914960a01f0ec201d8aaf77d0a87ac' => '1'
+        '8ebee2c13235bef09b3f55f10e9307ba' => '1'
+        '0b51569ae2cd5d058b977ff3a945beb6' => '1'
+        'b128de8850755796f160c24a0c22db72' => '1'
+    ]
+    'generate' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52090'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '919'
+    'HTTP_CONTENT_LENGTH' => '919'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758052135.2418
+    'REQUEST_TIME' => 1758052135
+]
+2025-09-16 21:50:23 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:50:23 [::1][-][-][info][application] $_GET = [
+    'r' => 'provincia'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52108'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=provincia'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=provincia'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758052223.0948
+    'REQUEST_TIME' => 1758052223
+]
+2025-09-16 21:50:30 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:50:30 [::1][-][-][info][application] $_GET = [
+    'r' => 'provincia/index'
+    'page' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52143'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=provincia%2Findex&page=3'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=provincia%2Findex&page=3'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=provincia'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758052230.7972
+    'REQUEST_TIME' => 1758052230
+]
+2025-09-16 21:50:40 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:50:40 [::1][-][-][info][application] $_GET = [
+    'r' => 'provincia/index'
+    'page' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52178'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=provincia%2Findex&page=3'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=provincia%2Findex&page=3'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=provincia%2Findex&page=3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758052240.2872
+    'REQUEST_TIME' => 1758052240
+]
+2025-09-16 21:50:53 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:50:53 [::1][-][-][info][application] $_GET = [
+    'r' => 'provincia/index'
+    'page' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52213'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=provincia%2Findex&page=1'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=provincia%2Findex&page=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=provincia%2Findex&page=3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758052253.6766
+    'REQUEST_TIME' => 1758052253
+]
+2025-09-16 21:55:58 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:55:58 [::1][-][-][info][application] $_GET = [
+    'r' => 'provincia/index'
+    'page' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52269'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=provincia%2Findex&page=1'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=provincia%2Findex&page=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=provincia%2Findex&page=3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758052558.2713
+    'REQUEST_TIME' => 1758052558
+]
+2025-09-16 21:59:02 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 45562 bytes' 
+
+in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\jason\\...', 152)
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\jason\\...', Array)
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-09-16 21:59:02 [::1][-][-][info][application] $_GET = [
+    'r' => 'provincia/index'
+    'page' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52314'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=provincia%2Findex&page=1'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=provincia%2Findex&page=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=provincia%2Findex&page=3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758052742.3168
+    'REQUEST_TIME' => 1758052742
+]
+2025-09-16 22:02:51 [::1][-][vgpqgq6bbtu005gkapjpqigqcd][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Provincia::pais in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('pais')
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\views\provincia\index.php(55): yii\db\BaseActiveRecord->__get('pais')
+#2 [internal function]: yii\base\View->{closure}(Object(app\models\Provincia), 1, 0, Object(yii\grid\DataColumn))
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\DataColumn.php(252): call_user_func(Object(Closure), Object(app\models\Provincia), 1, 0, Object(yii\grid\DataColumn))
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\DataColumn.php(266): yii\grid\DataColumn->getDataCellValue(Object(app\models\Provincia), 1, 0)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\Column.php(111): yii\grid\DataColumn->renderDataCellContent(Object(app\models\Provincia), 1, 0)
+#6 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(525): yii\grid\Column->renderDataCell(Object(app\models\Provincia), 1, 0)
+#7 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(494): yii\grid\GridView->renderTableRow(Object(app\models\Provincia), 1, 0)
+#8 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(358): yii\grid\GridView->renderTableBody()
+#9 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\BaseListView.php(160): yii\grid\GridView->renderItems()
+#10 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(326): yii\widgets\BaseListView->renderSection('{items}')
+#11 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\BaseListView.php(134): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(301): yii\widgets\BaseListView->run()
+#15 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Widget.php(149): yii\grid\GridView->run()
+#16 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\views\provincia\index.php(31): yii\base\Widget::widget(Array)
+#17 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jason\\...')
+#18 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\jason\\...', Array)
+#19 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\jason\\...', Array, Object(app\controllers\ProvinciaController))
+#20 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\ProvinciaController))
+#21 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\controllers\ProvinciaController.php(46): yii\base\Controller->render('index', Array)
+#22 [internal function]: app\controllers\ProvinciaController->actionIndex()
+#23 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#24 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#25 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#26 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('provincia/index', Array)
+#27 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#29 {main}
+2025-09-16 22:02:51 [::1][-][vgpqgq6bbtu005gkapjpqigqcd][info][application] $_GET = [
+    'r' => 'provincia/index'
+    'page' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52369'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=provincia%2Findex&page=1'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=provincia%2Findex&page=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=provincia%2Findex&page=3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758052971.3831
+    'REQUEST_TIME' => 1758052971
+]
+2025-09-16 22:03:15 [::1][-][vgpqgq6bbtu005gkapjpqigqcd][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Provincia::pais in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('pais')
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\views\provincia\index.php(55): yii\db\BaseActiveRecord->__get('pais')
+#2 [internal function]: yii\base\View->{closure}(Object(app\models\Provincia), 1, 0, Object(yii\grid\DataColumn))
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\DataColumn.php(252): call_user_func(Object(Closure), Object(app\models\Provincia), 1, 0, Object(yii\grid\DataColumn))
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\DataColumn.php(266): yii\grid\DataColumn->getDataCellValue(Object(app\models\Provincia), 1, 0)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\Column.php(111): yii\grid\DataColumn->renderDataCellContent(Object(app\models\Provincia), 1, 0)
+#6 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(525): yii\grid\Column->renderDataCell(Object(app\models\Provincia), 1, 0)
+#7 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(494): yii\grid\GridView->renderTableRow(Object(app\models\Provincia), 1, 0)
+#8 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(358): yii\grid\GridView->renderTableBody()
+#9 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\BaseListView.php(160): yii\grid\GridView->renderItems()
+#10 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(326): yii\widgets\BaseListView->renderSection('{items}')
+#11 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\BaseListView.php(134): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(301): yii\widgets\BaseListView->run()
+#15 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Widget.php(149): yii\grid\GridView->run()
+#16 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\views\provincia\index.php(31): yii\base\Widget::widget(Array)
+#17 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jason\\...')
+#18 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\jason\\...', Array)
+#19 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\jason\\...', Array, Object(app\controllers\ProvinciaController))
+#20 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\ProvinciaController))
+#21 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\controllers\ProvinciaController.php(46): yii\base\Controller->render('index', Array)
+#22 [internal function]: app\controllers\ProvinciaController->actionIndex()
+#23 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#24 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#25 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#26 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('provincia/index', Array)
+#27 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#29 {main}
+2025-09-16 22:03:15 [::1][-][vgpqgq6bbtu005gkapjpqigqcd][info][application] $_GET = [
+    'r' => 'provincia/index'
+    'page' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52375'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=provincia%2Findex&page=1'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=provincia%2Findex&page=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=provincia%2Findex&page=3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758052995.2045
+    'REQUEST_TIME' => 1758052995
+]
+2025-09-16 22:04:30 [::1][-][vgpqgq6bbtu005gkapjpqigqcd][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Provincia::pais in C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('pais')
+#1 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\views\provincia\index.php(51): yii\db\BaseActiveRecord->__get('pais')
+#2 [internal function]: yii\base\View->{closure}(Object(app\models\Provincia), 1, 0, Object(yii\grid\DataColumn))
+#3 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\DataColumn.php(252): call_user_func(Object(Closure), Object(app\models\Provincia), 1, 0, Object(yii\grid\DataColumn))
+#4 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\DataColumn.php(266): yii\grid\DataColumn->getDataCellValue(Object(app\models\Provincia), 1, 0)
+#5 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\Column.php(111): yii\grid\DataColumn->renderDataCellContent(Object(app\models\Provincia), 1, 0)
+#6 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(525): yii\grid\Column->renderDataCell(Object(app\models\Provincia), 1, 0)
+#7 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(494): yii\grid\GridView->renderTableRow(Object(app\models\Provincia), 1, 0)
+#8 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(358): yii\grid\GridView->renderTableBody()
+#9 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\BaseListView.php(160): yii\grid\GridView->renderItems()
+#10 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(326): yii\widgets\BaseListView->renderSection('{items}')
+#11 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection('{items}')
+#12 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#13 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\BaseListView.php(134): preg_replace_callback('/{\\w+}/', Object(Closure), '{summary}\n{item...')
+#14 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\grid\GridView.php(301): yii\widgets\BaseListView->run()
+#15 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Widget.php(149): yii\grid\GridView->run()
+#16 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\views\provincia\index.php(31): yii\base\Widget::widget(Array)
+#17 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jason\\...')
+#18 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\jason\\...', Array)
+#19 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\jason\\...', Array, Object(app\controllers\ProvinciaController))
+#20 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\ProvinciaController))
+#21 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\controllers\ProvinciaController.php(46): yii\base\Controller->render('index', Array)
+#22 [internal function]: app\controllers\ProvinciaController->actionIndex()
+#23 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#24 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#25 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#26 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('provincia/index', Array)
+#27 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 C:\Users\jason\ProyectosPython\Yii\Proyecto-freelance\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#29 {main}
+2025-09-16 22:04:30 [::1][-][vgpqgq6bbtu005gkapjpqigqcd][info][application] $_GET = [
+    'r' => 'provincia/index'
+    'page' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vgpqgq6bbtu005gkapjpqigqcd'
+    '_csrf' => '119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52385'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=provincia%2Findex&page=1'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jason\\ProyectosPython\\Yii\\Proyecto-freelance\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=provincia%2Findex&page=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Opera GX\";v=\"121\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_DNT' => '1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=provincia%2Findex&page=3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,es-ES;q=0.9,en;q=0.8,en-US;q=0.7,en-GB-oxendict;q=0.6,en-GB;q=0.5,fr;q=0.4'
+    'HTTP_COOKIE' => 'PHPSESSID=vgpqgq6bbtu005gkapjpqigqcd; _csrf=119945bf1389aa224d69533f9c100f96d43d2293fc5d14c1383f2f56a12b885fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IArHMXwgQQ-lprfJYdzkZAZoI7YmFmlR%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758053070.4931
+    'REQUEST_TIME' => 1758053070
+]

@@ -54,7 +54,7 @@ use yii\helpers\Html;
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                         <div class="user-box d-flex align-items-center">
-                            <img src="/assets-custom/images/user.png" class="user-img" alt="user avatar">
+                            <img src="/assets-custom/images/icons/user.png" class="user-img" alt="user avatar">
                             <div class="user-info ps-3">
                                 <p class="user-name mb-0">Super Administrador</p>
                                 <p class="designattion mb-0">Panel freelance</p>

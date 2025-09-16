@@ -12,12 +12,12 @@ use yii\grid\GridView;
 
 $this->title = 'Categorías Profesionales';
 $this->registerCss(".table thead a { text-decoration: none !important; }");
-$this->params['breadcrumbs'] = [];
+$this->params['breadcrumbs']=[];
 ?>
 
 <div class="categoria-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 

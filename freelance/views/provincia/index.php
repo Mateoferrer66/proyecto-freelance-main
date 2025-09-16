@@ -17,7 +17,7 @@ $this->params['breadcrumbs'] = [];
 
 <div class="provincia-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 

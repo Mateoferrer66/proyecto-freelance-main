@@ -16,6 +16,9 @@ PanelAsset::register($this);
 
 $this->registerJsFile('@web/js/custom.js', ['depends' => [\yii\web\JqueryAsset::class]]);
 $this->registerCssFile('@web/css/metisMenu.min.css');
+$this->registerJsFile('@web/js/metisMenu.min.js', ['depends' => [\yii\web\JqueryAsset::class]]);
+$this->registerJs("$('#menu').metisMenu(); // Inicializa el menú desplegable");
+$this->registerCssFile('@web/css/custom.css'); // Incluye el archivo CSS con los estilos del menú
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['charset' => Yii::$app->charset], 'charset');
 $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no']);

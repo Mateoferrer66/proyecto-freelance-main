@@ -11,11 +11,15 @@ use yii\grid\GridView;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Empresas';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'] = [];
+$this->registerCss(".table thead a { text-decoration: none !important; }");
+
 ?>
 <div class="empresa-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+
+        <?= $this->render('@app/views/layouts/_orangemenu') ?>
+
 
     <p>
         <?= Html::a('Create Empresa', ['create'], ['class' => 'btn btn-success']) ?>
@@ -25,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        //'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 

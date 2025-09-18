@@ -1,11 +1,10 @@
 <div class="minimenu">
     <div class="card">
-        <a href="index.php?r=utilidades" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'utilidades') ? 'active' : '' ?>">
-            <p class="mb-0">Empresa <i class="font-24 bx bx-store-alt"></i></p>
+<a href="index.php?r=empresa%2Fcreate" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'empresa/create') ? 'active' : '' ?>">            <p class="mb-0">Empresa <i class="font-24 bx bx-store-alt"></i></p>
         </a>
     </div>
     <div class="card">
-        <a href="index.php?r=utilidades-consecutivos" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'utilidades-consecutivos') ? 'active' : '' ?>">
+        <a href="index.php?r=consecutivo" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'consecutivo') ? 'active' : '' ?>">
             <div class="d-flex align-items-center justify-content-center">
                 <div>
                     <p class="mb-0">Consecutivos <i class="font-24 bx bx-right-indent"></i></p>
@@ -29,13 +28,9 @@
         </a>
     </div>
     <div class="card">
-        <a href="index.php?r=banco" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'banco') ? 'active' : '' ?>">
-            <div class="d-flex align-items-center justify-content-center">
-                <div>
-                    <p class="mb-0">Banco <i class="font-24 bx bx-building-house"></i></p>
-                </div>
-            </div>
-        </a>
+       <a href="index.php?r=banco" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'banco') ? 'active' : '' ?>">
+    <p class="mb-0">Banco <i class="font-24 bx bx-building-house <?= (isset($_GET['r']) && $_GET['r'] === 'banco') ? 'text-orange' : '' ?>"></i></p>
+</a>
     </div>
     <div class="card">
         <a href="index.php?r=forma-de-pago" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'forma-de-pago') ? 'active' : '' ?>">

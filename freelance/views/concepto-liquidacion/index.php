@@ -141,7 +141,7 @@ $this->params['breadcrumbs'] = []; ?>
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'col_codigo',
+                'attribute' => 'col_id',
                 'label' => 'Codigo',
             ],
             [

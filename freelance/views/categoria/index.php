@@ -10,20 +10,14 @@ use yii\grid\GridView;
 /** @var app\models\CategoriaSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Categorías Profesionales';
-$this->registerCss(".table thead a { text-decoration: none !important; }");
+$this->title = 'Gestión de Categorías';
 $this->params['breadcrumbs'] = [];
 ?>
-
 <div class="categoria-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); 
-    ?>
-
-    
-<style>
+    <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #1e1e2f;
@@ -33,7 +27,7 @@ $this->params['breadcrumbs'] = [];
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 50px auto;
             padding: 20px;
             background-color: #2a2a3b;
@@ -41,39 +35,41 @@ $this->params['breadcrumbs'] = [];
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        h1 {
-            text-align: center;
-            font-size: 24px;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
             text-transform: uppercase;
             color: #ffa500;
         }
 
-        .form-group {
+        .search-bar {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            gap: 10px;
         }
 
-        .form-group label {
-            flex: 1;
-            font-size: 16px;
-            margin-right: 10px;
-        }
-
-        .form-group input {
-            flex: 2;
+        .search-bar input {
             padding: 10px;
             border: 1px solid #444;
             border-radius: 5px;
             background-color: #333;
             color: #fff;
+            width: 300px;
         }
 
-        .form-group button {
-            flex: 1;
-            padding: 10px;
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
             background-color: #ffa500;
@@ -83,44 +79,53 @@ $this->params['breadcrumbs'] = [];
             text-transform: uppercase;
         }
 
-        .form-group button:hover {
+        .buttons button:hover {
             background-color: #ff8c00;
         }
     </style>
 
-    <div class="mb-3">
-        <?= Html::a('<i class="bx bx-plus-medical"></i> Crear Categoría', ['categoria/create'], [
-            'class' => 'btn btn-success px-4 radius-30',
-            'title' => 'Agregar nueva categoría',
-        ]) ?>
-    </div>
-
-    
-        </div>
-            <div class="col d-flex justify-content-between align-items-start">
-            <h6 class="mb-0 text-uppercase">Categorias Profesionales<dl>2</dl></h6>
+    <div class="container">
+        <div class="header">
+            <h1>Gestión de Categorías</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar categoría...">
+            </div>
         </div>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'summary' => false,
-        'columns' => [
-            [
-                'attribute' => 'cat_id',
-                'label' => 'Código',
-            ],
-            [
-                'attribute' => 'cat_nombre',
-                'label' => 'Categoria',
-            ],
-         [
-                'class' => ActionColumn::className(),
-                'header' => 'Acciones', // Agregar el encabezado "Acciones"
-                'urlCreator' => function ($action, Categoria $model, $key, $index, $column) {
+        <div class="buttons">
+            <button>Excel</button>
+            <button>PDF</button>
+            <button>Print</button>
+        </div>
+
+        <div class="mb-3" style="margin-top:20px;">
+            <?= Html::a('<i class="bx bx-plus-medical"></i> Crear Categoría', ['create'], [
+                'class' => 'btn btn-success px-4 radius-30',
+                'title' => 'Agregar nueva categoría',
+            ]) ?>
+        </div>
+
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            //'filterModel' => $searchModel,
+            'summary' => false,
+            'columns' => [
+                [
+                    'attribute' => 'cat_id',
+                    'label' => 'Código',
+                ],
+                [
+                    'attribute' => 'cat_nombre',
+                    'label' => 'Nombre',
+                ],
+                [
+                    'class' => ActionColumn::class,
+                    'header' => 'Acciones',
+                    'urlCreator' => function ($action, Categoria $model, $key, $index, $column) {
                         return Url::toRoute([$action, 'cat_id' => $model->cat_id]);
                     }
+                ],
             ],
-        ],
-    ]); ?>
-
+        ]); ?>
+    </div>
 </div>

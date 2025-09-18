@@ -11,7 +11,7 @@ use yii\grid\GridView;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Concepto Facturacion';
-$this->params['breadcrumbs']=[];?>
+$this->params['breadcrumbs'] = []; ?>
 <div class="concepto-facturacion-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
@@ -20,7 +20,14 @@ $this->params['breadcrumbs']=[];?>
         <?= Html::a('Create Concepto Facturacion', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); 
+    ?>
+
+
+        </div>
+            <div class="col d-flex justify-content-between align-items-start">
+            <h6 class="mb-0 text-uppercase">Concepto Facturacion <dl>2</dl></h6>
+        </div>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -36,11 +43,11 @@ $this->params['breadcrumbs']=[];?>
                 'label' => 'Nombre',
             ],
             [
-                'class' => ActionColumn::className(),
+                'class' => ActionColumn::class, // Reemplazar className() con ::class
                 'header' => 'Acciones', // Agregar el encabezado "Acciones"
                 'urlCreator' => function ($action, ConceptoFacturacion $model, $key, $index, $column) {
-                        return Url::toRoute([$action, 'cof_id' => $model->cof_id]);
-                    }
+                    return Url::toRoute([$action, 'cof_id' => $model->cof_id]);
+                }
             ],
         ],
     ]); ?>

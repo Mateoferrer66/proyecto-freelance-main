@@ -12,14 +12,20 @@ use yii\grid\GridView;
 
 $this->title = 'Utilidades Provincia';
 $this->registerCss(".table thead a { text-decoration: none !important; }");
-$this->params['breadcrumbs']=[];
+$this->params['breadcrumbs'] = [];
 ?>
 
 <div class="provincia-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); 
+    ?>
+    
+        </div>
+            <div class="col d-flex justify-content-between align-items-start">
+            <h6 class="mb-0 text-uppercase">Paises y Provincias <dl>2</dl></h6>
+        </div>
 
     <div class="mb-3">
         <?= Html::a('<i class="bx bx-plus-medical"></i> Crear Provincia', ['provincia/create'], [
@@ -41,54 +47,26 @@ $this->params['breadcrumbs']=[];
         ],
         'columns' => [
             [
-                'attribute' => 'prv_id',
+                'attribute' => 'pai_id',
                 'label' => 'Código',
             ],
             [
-                'attribute' => 'pai_id',
+                'attribute' => 'pai_nombre',
                 'label' => 'País',
-            ],
-            [
-                'attribute' => 'pai_id',
-                'label' => 'Nombre País',
                 'value' => function ($model) {
-                    return $model->pais ? $model->pais->pai_nombre : '(sin país)';
+                    return $model->pais ? $model->pais->pai_nombre : null; // Asegúrate de que la relación esté cargada
                 },
             ],
             [
                 'attribute' => 'prv_nombre',
-                'label' => 'Nombre',
+                'label' => 'Provincia',
             ],
             [
-                'attribute' => 'prv_eliminada',
-                'label' => '¿Eliminada?',
-                'value' => function ($model) {
-                    return $model->prv_eliminada ? 'Sí' : 'No';
-                },
-            ],
-            [
-                'class' => ActionColumn::class,
-                'header' => 'Acciones',
-                'template' => '{update} {delete}',
-                'urlCreator' => function ($action, $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'prv_id' => $model->prv_id]);
-                },
-                'buttons' => [
-                    'update' => function ($url, $model, $key) {
-                        return Html::a('<i class="bx bx-pencil"></i>', $url, [
-                            'title' => 'Editar',
-                            'class' => 'btn btn-sm btn-outline-primary me-1',
-                        ]);
-                    },
-                    'delete' => function ($url, $model, $key) {
-                        return Html::a('<i class="bx bx-trash"></i>', $url, [
-                            'title' => 'Eliminar',
-                            'class' => 'btn btn-sm btn-outline-danger',
-                            'data-confirm' => '¿Estás seguro de que deseas eliminar esta provincia?',
-                            'data-method' => 'post',
-                        ]);
-                    },
-                ],
+                'class' => ActionColumn::className(),
+                'header' => 'Acciones', // Agregar el encabezado "Acciones"
+                'urlCreator' => function ($action, Provincia $model, $key, $index, $column) {
+                        return Url::toRoute([$action, 'pai_id' => $model->pai_id]);
+                    }
             ],
         ],
     ]); ?>

@@ -1,4 +1,12 @@
 <!-- views/layouts/_sidebar.php -->
+ 
+ <?php
+ 
+$this->registerJsFile('@web/js/metisMenu.min.js', ['depends' => [\yii\web\JqueryAsset::class]]);
+$this->registerJs("
+    $('#menu').metisMenu();
+");
+?>
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div><img src="/assets-custom/images/ico.svg" class="logo-icon" alt="logo icon"></div>

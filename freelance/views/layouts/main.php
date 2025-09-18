@@ -14,6 +14,8 @@ use yii\bootstrap5\NavBar;
 
 PanelAsset::register($this);
 
+$this->registerJsFile('@web/js/custom.js', ['depends' => [\yii\web\JqueryAsset::class]]);
+$this->registerCssFile('@web/css/metisMenu.min.css');
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['charset' => Yii::$app->charset], 'charset');
 $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no']);
@@ -42,6 +44,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         <?= $this->render('_sidebar') ?>
 
         <main id="main" class="flex-shrink-0" role="main">
+            
             <div class="page-content flex-grow-1">
                 <?php if (!empty($this->params['breadcrumbs'])): ?>
                     <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]) ?>

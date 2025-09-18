@@ -12,14 +12,15 @@ use yii\grid\GridView;
 
 $this->title = 'Categorías Profesionales';
 $this->registerCss(".table thead a { text-decoration: none !important; }");
-$this->params['breadcrumbs']=[];
+$this->params['breadcrumbs'] = [];
 ?>
 
 <div class="categoria-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); 
+    ?>
 
     <div class="mb-3">
         <?= Html::a('<i class="bx bx-plus-medical"></i> Crear Categoría', ['categoria/create'], [
@@ -28,40 +29,30 @@ $this->params['breadcrumbs']=[];
         ]) ?>
     </div>
 
+    
+        </div>
+            <div class="col d-flex justify-content-between align-items-start">
+            <h6 class="mb-0 text-uppercase">Categorias Profesionales<dl>2</dl></h6>
+        </div>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'summary' => false,
         'columns' => [
             [
                 'attribute' => 'cat_id',
-                'label' => 'ID',
+                'label' => 'Código',
             ],
             [
                 'attribute' => 'cat_nombre',
-                'label' => 'Nombre',
+                'label' => 'Categoria',
             ],
-            [
-                'attribute' => 'cat_eliminada',
-                'label' => '¿Eliminada?',
-                'value' => function ($model) {
-                    return $model->cat_eliminada ? 'Sí' : 'No';
-                },
-            ],
-            [
-                'class' => ActionColumn::class,
-                'header' => 'Acciones',
-                'template' => '{update}',
-                'urlCreator' => function ($action, $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'cat_id' => $model->cat_id]);
-                },
-                'buttons' => [
-                    'update' => function ($url, $model, $key) {
-                        return Html::a('<i class="bx bx-pencil"></i>', $url, [
-                            'title' => 'Editar',
-                            'class' => 'btn btn-sm btn-outline-primary',
-                        ]);
-                    },
-                ],
+         [
+                'class' => ActionColumn::className(),
+                'header' => 'Acciones', // Agregar el encabezado "Acciones"
+                'urlCreator' => function ($action, Categoria $model, $key, $index, $column) {
+                        return Url::toRoute([$action, 'cat_id' => $model->cat_id]);
+                    }
             ],
         ],
     ]); ?>

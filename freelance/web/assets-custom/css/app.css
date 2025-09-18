@@ -4039,6 +4039,8 @@ thead {
     color: #ffffff;
     background-color: rgb(0 0 0 / 19%);
     border-color: #f6891f;
+	margin-left: 100rem;
+
 }
 .btn-info:hover {
     color: #fff;
@@ -4498,7 +4500,7 @@ select.form-control {
 
 .minimenu {
     overflow-x: auto;
-    max-width: 100%;
+    width: 103%;
     overflow-y: hidden;
     white-space: nowrap;
     display: flex;

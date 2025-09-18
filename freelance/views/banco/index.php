@@ -22,6 +22,12 @@ $this->params['breadcrumbs']=[];
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+    
+        </div>
+            <div class="col d-flex justify-content-between align-items-start">
+            <h6 class="mb-0 text-uppercase">Bancos <dl>2</dl></h6>
+        </div>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,

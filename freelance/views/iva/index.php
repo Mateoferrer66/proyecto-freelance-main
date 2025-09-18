@@ -22,14 +22,17 @@ $this->params['breadcrumbs']=[];?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); 
     ?>
 
-
-
-    <div class="mb-3">
-        <?= Html::a('<i class="bx bx-plus-medical"></i> Crear IVA', ['iva/create'], [
-            'class' => 'btn btn-success px-4 radius-30',
-            'title' => 'Agregar nuevo concepto de IVA',
+<div class="mb-3">
+    <?= Html::a('<i class="bx bx-plus-medical"></i> Crear IVA', ['iva/create'], [
+        'class' => 'btn btn-success px-4 radius-30',
+        'title' => 'Agregar nuevo concepto de IVA',
         ]) ?>
     </div>
+    
+        </div>
+            <div class="col d-flex justify-content-between align-items-start">
+            <h6 class="mb-0 text-uppercase">IVA <dl>2</dl></h6>
+        </div>
 
     <?= GridView::widget([
     'dataProvider' => $dataProvider,

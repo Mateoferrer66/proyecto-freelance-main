@@ -7,6 +7,9 @@ use app\models\IvaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+use app\components\ExcelExportHelper;
+use app\components\PdfExportHelper;
 
 /**
  * IvaController implements the CRUD actions for Iva model.
@@ -131,4 +134,39 @@ class IvaController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+     public function actionExportExcel()
+    {
+        $ivas = Iva::find()->all();
+
+        $headers = ['Porcentaje', 'Concepto'];
+        $data = [];
+
+        foreach ($ivas as $iva) {
+            $data[] = [
+                $iva->iva_porcentaje,
+                $iva->iva_concepto,
+            ];
+        }
+
+        return ExcelExportHelper::export('Listado_IVA', $headers, $data);
+    }
+
+    public function actionExportPdf()
+{
+    $ivas = Iva::find()->all();
+    $headers = ['Porcentaje', 'Concepto'];
+    $rows = [];
+
+    foreach ($ivas as $iva) {
+        $rows[] = [$iva->iva_porcentaje, $iva->iva_concepto];
+    }
+
+    $html = $this->renderPartial('@app/views/export/_tabla_pdf', [
+        'titulo' => 'Listado de IVA',
+        'headers' => $headers,
+        'rows' => $rows,
+    ]);
+
+    return PdfExportHelper::export('Listado_IVA', $html);
+}
 }

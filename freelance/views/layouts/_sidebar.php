@@ -1,11 +1,15 @@
-<!-- views/layouts/_sidebar.php -->
- 
- <?php
- 
+<?php
+
 $this->registerJsFile('@web/js/metisMenu.min.js', ['depends' => [\yii\web\JqueryAsset::class]]);
 $this->registerJs("
-    $('#menu').metisMenu();
+    $(document).ready(function() {
+        $('#menu').metisMenu();
+    });
 ");
+
+// Obtener la URL actual
+$currentUrl = Yii::$app->request->url;
+
 ?>
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
@@ -17,17 +21,16 @@ $this->registerJs("
     <ul class="metismenu" id="menu">
         <li><a href="/"><div class="parent-icon"><i class="bx bx-home"></i></div><div class="menu-title">Inicio</div></a></li>
         <li class="menu-label">Módulos de administración</li>
-        
 
         <li><a href="/socios"><div class="parent-icon"><i class='bx bx-street-view'></i></div><div class="menu-title">Socios</div></a></li>
         <li><a href="/clientes"><div class="parent-icon"><i class='bx bx-user-voice'></i></div><div class="menu-title">Clientes</div></a></li>
 
-        <li>
-            <a class="has-arrow" href="javascript:;" aria-expanded="false">
+        <li class="<?= strpos($currentUrl, '/facturacion') !== false || strpos($currentUrl, '/presupuestos') !== false ? 'mm-active' : '' ?>">
+            <a class="has-arrow" href="javascript:;" aria-expanded="<?= strpos($currentUrl, '/facturacion') !== false || strpos($currentUrl, '/presupuestos') !== false ? 'true' : 'false' ?>">
                 <div class="parent-icon"><i class="bx bx-dollar-circle"></i></div>
                 <div class="menu-title">Facturación</div>
             </a>
-            <ul class="mm-collapse">
+            <ul class="mm-collapse" style="<?= strpos($currentUrl, '/facturacion') !== false || strpos($currentUrl, '/presupuestos') !== false ? 'display: block;' : '' ?>">
                 <li><a href="/facturacion"><i class="bx bx-right-arrow-alt"></i>Facturas</a></li>
                 <li><a href="/presupuestos"><i class="bx bx-right-arrow-alt"></i>Presupuestos</a></li>
             </ul>
@@ -36,12 +39,12 @@ $this->registerJs("
         <li><a href="/seguridad"><div class="parent-icon"><i class='bx bx-error-alt'></i></div><div class="menu-title">Seguridad social</div></a></li>
         <li><a href="/liquidaciones"><div class="parent-icon"><i class='bx bx-calculator'></i></div><div class="menu-title">Liquidaciones</div></a></li>
 
-        <li>
-            <a class="has-arrow" href="javascript:;" aria-expanded="false">
+        <li class="<?= strpos($currentUrl, '/exportaciones') !== false ? 'mm-active' : '' ?>">
+            <a class="has-arrow" href="javascript:;" aria-expanded="<?= strpos($currentUrl, '/exportaciones') !== false ? 'true' : 'false' ?>">
                 <div class="parent-icon"><i class="bx bx-export"></i></div>
                 <div class="menu-title">Exportaciones</div>
             </a>
-            <ul class="mm-collapse">
+            <ul class="mm-collapse" style="<?= strpos($currentUrl, '/exportaciones') !== false ? 'display: block;' : '' ?>">
                 <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Socios</a></li>
                 <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Clientes</a></li>
                 <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Facturas</a></li>
@@ -53,12 +56,12 @@ $this->registerJs("
 
         <li><a href="/usuarios"><div class="parent-icon"><i class='bx bx-group'></i></div><div class="menu-title">Usuarios</div></a></li>
 
-        <li>
-            <a class="has-arrow" href="javascript:;" aria-expanded="false">
+        <li class="<?= strpos($currentUrl, '/utilidades') !== false ? 'mm-active' : '' ?>">
+            <a class="has-arrow" href="javascript:;" aria-expanded="<?= strpos($currentUrl, '/utilidades') !== false ? 'true' : 'false' ?>">
                 <div class="parent-icon"><i class='bx bx-diamond'></i></div>
                 <div class="menu-title">Utilidades</div>
             </a>
-            <ul class="mm-collapse">
+            <ul class="mm-collapse" style="<?= strpos($currentUrl, '/utilidades') !== false ? 'display: block;' : '' ?>">
                 <li><a href="/utilidades"><i class="bx bx-right-arrow-alt"></i>Empresa</a></li>
                 <li><a href="/utilidades-consecutivos"><i class="bx bx-right-arrow-alt"></i>Consecutivos</a></li>
                 <li><a href="/utilidades-iva"><i class="bx bx-right-arrow-alt"></i>IVA</a></li>

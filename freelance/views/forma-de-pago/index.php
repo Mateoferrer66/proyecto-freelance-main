@@ -11,6 +11,7 @@ use yii\grid\GridView;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Forma De Pagos';
+$this->registerCss(".table thead a { text-decoration: none !important; }");
 $this->params['breadcrumbs']=[];
 ?>
 <div class="forma-de-pago-index">

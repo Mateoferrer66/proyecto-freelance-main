@@ -169,4 +169,21 @@ class IvaController extends Controller
 
     return PdfExportHelper::export('Listado_IVA', $html);
 }
+public function actionPrint()
+{
+    $ivas = \app\models\Iva::find()->all();
+
+    $headers = ['Porcentaje', 'Concepto'];
+    $rows = [];
+
+    foreach ($ivas as $iva) {
+        $rows[] = [$iva->iva_porcentaje, $iva->iva_concepto];
+    }
+
+    return $this->renderPartial('@app/views/export/print_table', [
+        'titulo' => 'Listado de IVA',
+        'headers' => $headers,
+        'rows' => $rows,
+    ]);
+}
 }

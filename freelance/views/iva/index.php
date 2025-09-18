@@ -29,6 +29,11 @@ $this->params['breadcrumbs'] = []; ?>
             'target' => '_blank'
         ]) ?>
     </p>
+
+    <p>
+        <?= Html::a('Imprimir', ['iva/print'], ['target' => '_blank']) ?>
+    </p>
+
     <style>
         body {
             font-family: Arial, sans-serif;

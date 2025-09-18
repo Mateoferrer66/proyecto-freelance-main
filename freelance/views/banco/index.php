@@ -174,7 +174,7 @@ $this->params['breadcrumbs'] = []; ?>
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'ban_codigo',
+                'attribute' => 'ban_id',
                 'label' => 'Codigo',
             ],
             [

@@ -18,10 +18,6 @@ $this->params['breadcrumbs'] = [];
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
-    <p>
-        <?= Html::a('Create Consecutivo', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
 <style>
         body {
             font-family: Arial, sans-serif;

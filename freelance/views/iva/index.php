@@ -110,22 +110,13 @@ $this->params['breadcrumbs']=[];?>
             'attribute' => 'iva_concepto',
             'label' => 'IVA Concepto',
         ],
-        [
-            'class' => ActionColumn::class,
-            'header' => 'Acciones', // 👈 Aquí defines el nombre de la columna
-            'template' => '{update}',
-            'urlCreator' => function ($action, $model, $key, $index, $column) {
-                return Url::toRoute([$action, 'iva_id' => $model->iva_id]);
-            },
-            'buttons' => [
-                'update' => function ($url, $model, $key) {
-                    return Html::a('<i class="bx bx-pencil"></i>', $url, [
-                        'title' => 'Editar',
-                        'class' => 'btn btn-sm btn-outline-primary',
-                    ]);
-                },
+            [
+                'class' => ActionColumn::className(),
+                'header' => 'Acciones', // Agregar el encabezado "Acciones"
+                'urlCreator' => function ($action, Iva $model, $key, $index, $column) {
+                        return Url::toRoute([$action, 'iva_id' => $model->iva_id]);
+                    }
             ],
-        ],
     ],
 ]); ?>
 

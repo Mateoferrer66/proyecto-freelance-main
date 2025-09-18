@@ -29,7 +29,7 @@
     </div>
     <div class="card">
        <a href="index.php?r=banco" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'banco') ? 'active' : '' ?>">
-    <p class="mb-0">Banco <i class="font-24 bx bx-building-house <?= (isset($_GET['r']) && $_GET['r'] === 'banco') ? 'text-orange' : '' ?>"></i></p>
+    <p class="mb-0">Banco <i class="font-24 bx bx-building-house <?= (isset($_GET['r']) && $_GET['r'] === 'banco') ? : '' ?>"></i></p>
 </a>
     </div>
     <div class="card">

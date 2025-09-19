@@ -7,7 +7,8 @@ use app\models\TipoDocIdentidadSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use app\components\ExcelExportHelper;
+use app\components\PdfExportHelper;
 /**
  * TipoDocIdentidadController implements the CRUD actions for TipoDocIdentidad model.
  */
@@ -130,5 +131,68 @@ class TipoDocIdentidadController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    
+    public function actionExportExcel()
+    {
+        $tipos = TipoDocIdentidad::find()->all();
+
+        $headers = ['Código', 'Nombre', 'Eliminado'];
+        $data = [];
+
+        foreach ($tipos as $tipo) {
+            $data[] = [
+                $tipo->tdo_id,
+                $tipo->tdo_nombre,
+                $tipo->tdo_eliminado ? 'Sí' : 'No',
+            ];
+        }
+
+        return ExcelExportHelper::export('Listado_Tipos_Doc_Identidad', $headers, $data);
+    }
+
+    public function actionExportPdf()
+    {
+        $tipos = TipoDocIdentidad::find()->all();
+        $headers = ['Código', 'Nombre', 'Eliminado'];
+        $rows = [];
+
+        foreach ($tipos as $tipo) {
+            $rows[] = [
+                $tipo->tdo_id,
+                $tipo->tdo_nombre,
+                $tipo->tdo_eliminado ? 'Sí' : 'No',
+            ];
+        }
+
+        $html = $this->renderPartial('@app/views/export/_tabla_pdf', [
+            'titulo' => 'Listado de Tipos de Documento de Identidad',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
+
+        return PdfExportHelper::export('Listado_Tipos_Doc_Identidad', $html);
+    }
+
+    public function actionPrint()
+    {
+        $tipos = TipoDocIdentidad::find()->all();
+
+        $headers = ['Código', 'Nombre', 'Eliminado'];
+        $rows = [];
+
+        foreach ($tipos as $tipo) {
+            $rows[] = [
+                $tipo->tdo_id,
+                $tipo->tdo_nombre,
+                $tipo->tdo_eliminado ? 'Sí' : 'No',
+            ];
+        }
+
+        return $this->renderPartial('@app/views/export/print_table', [
+            'titulo' => 'Listado de Tipos de Documento de Identidad',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
     }
 }

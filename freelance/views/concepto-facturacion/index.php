@@ -5,6 +5,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
 /** @var app\models\ConceptoFacturacionSearch $searchModel */
@@ -16,22 +17,6 @@ $this->params['breadcrumbs'] = []; ?>
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
-
-    <p>
-        <?= Html::a('Exportar Excel', ['iva/export-excel'], [
-            'target' => '_blank'
-        ]) ?>
-    </p>
-
-    <p>
-        <?= Html::a('Exportar PDF', ['iva/export-pdf'], [
-            'target' => '_blank'
-        ]) ?>
-    </p>
-
-    <p>
-        <?= Html::a('Imprimir', ['iva/print'], ['target' => '_blank']) ?>
-    </p>
 
     <style>
         body {
@@ -117,42 +102,59 @@ $this->params['breadcrumbs'] = []; ?>
     <div class="container">
         <div class="header">
             <h1>Gestión de Conceptos de Facturación</h1>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar concepto...">
-            </div>
+            <?php $form = ActiveForm::begin([
+                'action' => ['index'],
+                'method' => 'get',
+                'options' => ['class' => 'search-bar'],
+            ]); ?>
+
+            <?= $form->field($searchModel, 'cof_nombre', ['template' => '{input}'])
+                ->textInput(['placeholder' => 'Buscar concepto de facturación...']) ?>
+
+            <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
+
+            <?php ActiveForm::end(); ?>
         </div>
 
         <div class="buttons">
-            <button>Excel</button>
-            <button>PDF</button>
-            <button>Print</button>
+            <?= Html::a('Excel', ['concepto-facturacion/export-excel'], [
+                'class' => '',
+                'target' => '_blank',
+                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
+            ]) ?>
+            <?= Html::a('PDF', ['concepto-facturacion/export-pdf'], [
+                'class' => '',
+                'target' => '_blank',
+                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
+            ]) ?>
+            <?= Html::a('Print', ['concepto-facturacion/print'], [
+                'class' => '',
+                'target' => '_blank',
+                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
+            ]) ?>
         </div>
-   
 
-
-
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            [
-                'attribute' => 'cof_codigo',
-                'label' => 'Codigo',
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            //'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+                [
+                    'attribute' => 'cof_codigo',
+                    'label' => 'Codigo',
+                ],
+                [
+                    'attribute' => 'cof_nombre',
+                    'label' => 'Nombre',
+                ],
+                [
+                    'class' => ActionColumn::class,
+                    'header' => 'Acciones',
+                    'urlCreator' => function ($action, ConceptoFacturacion $model, $key, $index, $column) {
+                        return Url::toRoute([$action, 'cof_id' => $model->cof_id]);
+                    }
+                ],
             ],
-            [
-                'attribute' => 'cof_nombre',
-                'label' => 'Nombre',
-            ],
-            [
-                'class' => ActionColumn::class,
-                'header' => 'Acciones',
-                'urlCreator' => function ($action, ConceptoFacturacion $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'cof_id' => $model->cof_id]);
-                }
-            ],
-        ],
-    ]); ?>
- </div>
+        ]); ?>
+    </div>
 </div>

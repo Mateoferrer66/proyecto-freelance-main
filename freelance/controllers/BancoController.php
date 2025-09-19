@@ -7,6 +7,8 @@ use app\models\BancoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\ExcelExportHelper;
+use app\components\PdfExportHelper;
 
 /**
  * BancoController implements the CRUD actions for Banco model.
@@ -130,5 +132,71 @@ class BancoController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    
+    public function actionExportExcel()
+    {
+        $bancos = Banco::find()->all();
+
+        $headers = ['Código', 'Nombre', 'Número de Cuenta', 'Eliminado'];
+        $data = [];
+
+        foreach ($bancos as $banco) {
+            $data[] = [
+                $banco->ban_id,
+                $banco->ban_nombre,
+                $banco->ban_numcuenta,
+                $banco->ban_eliminado ? 'Sí' : 'No',
+            ];
+        }
+
+        return ExcelExportHelper::export('Listado_Bancos', $headers, $data);
+    }
+
+    public function actionExportPdf()
+    {
+        $bancos = Banco::find()->all();
+        $headers = ['Código', 'Nombre', 'Número de Cuenta', 'Eliminado'];
+        $rows = [];
+
+        foreach ($bancos as $banco) {
+            $rows[] = [
+                $banco->ban_id,
+                $banco->ban_nombre,
+                $banco->ban_numcuenta,
+                $banco->ban_eliminado ? 'Sí' : 'No',
+            ];
+        }
+
+        $html = $this->renderPartial('@app/views/export/_tabla_pdf', [
+            'titulo' => 'Listado de Bancos',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
+
+        return PdfExportHelper::export('Listado_Bancos', $html);
+    }
+
+    public function actionPrint()
+    {
+        $bancos = Banco::find()->all();
+
+        $headers = ['Código', 'Nombre', 'Número de Cuenta', 'Eliminado'];
+        $rows = [];
+
+        foreach ($bancos as $banco) {
+            $rows[] = [
+                $banco->ban_id,
+                $banco->ban_nombre,
+                $banco->ban_numcuenta,
+                $banco->ban_eliminado ? 'Sí' : 'No',
+            ];
+        }
+
+        return $this->renderPartial('@app/views/export/print_table', [
+            'titulo' => 'Listado de Bancos',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
     }
 }

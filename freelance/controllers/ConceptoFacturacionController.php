@@ -7,7 +7,8 @@ use app\models\ConceptoFacturacionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use app\components\ExcelExportHelper;
+use app\components\PdfExportHelper;
 /**
  * ConceptoFacturacionController implements the CRUD actions for ConceptoFacturacion model.
  */
@@ -130,5 +131,71 @@ class ConceptoFacturacionController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionExportExcel()
+    {
+        $conceptos = ConceptoFacturacion::find()->with('iva')->all();
+
+        $headers = ['Código', 'Nombre', 'Clasificación', 'IVA'];
+        $data = [];
+
+        foreach ($conceptos as $concepto) {
+            $data[] = [
+                $concepto->cof_codigo,
+                $concepto->cof_nombre,
+                $concepto->displayCofClasificacion(),
+                $concepto->iva ? $concepto->iva->iva_concepto : 'Sin IVA',
+            ];
+        }
+
+        return ExcelExportHelper::export('Listado_Conceptos_Facturacion', $headers, $data);
+    }
+
+    public function actionExportPdf()
+    {
+        $conceptos = ConceptoFacturacion::find()->with('iva')->all();
+        $headers = ['Código', 'Nombre', 'Clasificación', 'IVA'];
+        $rows = [];
+
+        foreach ($conceptos as $concepto) {
+            $rows[] = [
+                $concepto->cof_codigo,
+                $concepto->cof_nombre,
+                $concepto->displayCofClasificacion(),
+                $concepto->iva ? $concepto->iva->iva_concepto : 'Sin IVA',
+            ];
+        }
+
+        $html = $this->renderPartial('@app/views/export/_tabla_pdf', [
+            'titulo' => 'Listado de Conceptos de Facturación',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
+
+        return PdfExportHelper::export('Listado_Conceptos_Facturacion', $html);
+    }
+
+    public function actionPrint()
+    {
+        $conceptos = ConceptoFacturacion::find()->with('iva')->all();
+
+        $headers = ['Código', 'Nombre', 'Clasificación', 'IVA'];
+        $rows = [];
+
+        foreach ($conceptos as $concepto) {
+            $rows[] = [
+                $concepto->cof_codigo,
+                $concepto->cof_nombre,
+                $concepto->displayCofClasificacion(),
+                $concepto->iva ? $concepto->iva->iva_concepto : 'Sin IVA',
+            ];
+        }
+
+        return $this->renderPartial('@app/views/export/print_table', [
+            'titulo' => 'Listado de Conceptos de Facturación',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
     }
 }

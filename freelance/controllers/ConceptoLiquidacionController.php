@@ -7,7 +7,8 @@ use app\models\ConceptoLiquidacionSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use app\components\ExcelExportHelper;
+use app\components\PdfExportHelper;
 /**
  * ConceptoLiquidacionController implements the CRUD actions for ConceptoLiquidacion model.
  */
@@ -130,5 +131,105 @@ class ConceptoLiquidacionController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    
+    public function actionExportExcel()
+    {
+        $conceptos = ConceptoLiquidacion::find()->all();
+
+        $headers = [
+            'ID',
+            'Nombre',
+            'Clasificación',
+            'Tipo',
+            'Porcentaje',
+            'Valor',
+            'Eliminado'
+        ];
+        $data = [];
+
+        foreach ($conceptos as $concepto) {
+            $data[] = [
+                $concepto->col_id,
+                $concepto->col_nombre,
+                $concepto->displayColClasificacion(),
+                $concepto->displayColTipo(),
+                $concepto->col_porcentaje,
+                $concepto->col_valor,
+                $concepto->col_eliminado ? 'Sí' : 'No',
+            ];
+        }
+
+        return ExcelExportHelper::export('Listado_Conceptos_Liquidacion', $headers, $data);
+    }
+
+    public function actionExportPdf()
+    {
+        $conceptos = ConceptoLiquidacion::find()->all();
+
+        $headers = [
+            'ID',
+            'Nombre',
+            'Clasificación',
+            'Tipo',
+            'Porcentaje',
+            'Valor',
+            'Eliminado'
+        ];
+        $rows = [];
+
+        foreach ($conceptos as $concepto) {
+            $rows[] = [
+                $concepto->col_id,
+                $concepto->col_nombre,
+                $concepto->displayColClasificacion(),
+                $concepto->displayColTipo(),
+                $concepto->col_porcentaje,
+                $concepto->col_valor,
+                $concepto->col_eliminado ? 'Sí' : 'No',
+            ];
+        }
+
+        $html = $this->renderPartial('@app/views/export/_tabla_pdf', [
+            'titulo' => 'Listado de Conceptos de Liquidación',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
+
+        return PdfExportHelper::export('Listado_Conceptos_Liquidacion', $html);
+    }
+
+    public function actionPrint()
+    {
+        $conceptos = ConceptoLiquidacion::find()->all();
+
+        $headers = [
+            'ID',
+            'Nombre',
+            'Clasificación',
+            'Tipo',
+            'Porcentaje',
+            'Valor',
+            'Eliminado'
+        ];
+        $rows = [];
+
+        foreach ($conceptos as $concepto) {
+            $rows[] = [
+                $concepto->col_id,
+                $concepto->col_nombre,
+                $concepto->displayColClasificacion(),
+                $concepto->displayColTipo(),
+                $concepto->col_porcentaje,
+                $concepto->col_valor,
+                $concepto->col_eliminado ? 'Sí' : 'No',
+            ];
+        }
+
+        return $this->renderPartial('@app/views/export/print_table', [
+            'titulo' => 'Listado de Conceptos de Liquidación',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
     }
 }

@@ -5,6 +5,8 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use yii\widgets\ActiveForm;
+
 
 /** @var yii\web\View $this */
 /** @var app\models\BancoSearch $searchModel */
@@ -15,24 +17,6 @@ $this->params['breadcrumbs'] = []; ?>
 <div class="banco-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
-
-    
-    <p>
-        <?= Html::a('Exportar Excel', ['iva/export-excel'], [
-            'target' => '_blank'
-        ]) ?>
-    </p>
-
-    <p>
-        <?= Html::a('Exportar PDF', ['iva/export-pdf'], [
-            'target' => '_blank'
-        ]) ?>
-    </p>
-
-    <p>
-        <?= Html::a('Imprimir', ['iva/print'], ['target' => '_blank']) ?>
-    </p>
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -100,56 +84,73 @@ $this->params['breadcrumbs'] = []; ?>
         }
     </style>
 
-      <div class="mb-3" style="margin-top:20px;">
+    <div class="mb-3" style="margin-top:20px;">
         <?= Html::a('<i class="bx bx-plus-medical"></i> Crear Banco', ['create'], [
             'class' => 'btn btn-success px-4 radius-30',
             'title' => 'Agregar nuevo Banco',
         ]) ?>
     </div>
-<div class="col d-flex justify-content-between align-items-start">
-    <h6 class="mb-0 text-uppercase">
-        Bancos <span class="badge bg-warning text-dark"><?= $dataProvider->getTotalCount() ?></span>
-    </h6>
-</div>
+    <div class="col d-flex justify-content-between align-items-start">
+        <h6 class="mb-0 text-uppercase">
+            Bancos <span class="badge bg-warning text-dark"><?= $dataProvider->getTotalCount() ?></span>
+        </h6>
+    </div>
 
     <div class="container">
         <div class="header">
             <h1>Gestión de Bancos</h1>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar banco...">
-            </div>
+          <?php $form = ActiveForm::begin([
+                'action' => ['index'],
+                'method' => 'get',
+                'options' => ['class' => 'search-bar'],
+            ]); ?>
+
+            <?= $form->field($searchModel, 'ban_nombre', ['template' => '{input}'])
+                ->textInput(['placeholder' => 'Buscar banco...']) ?>
+
+            <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
+
+            <?php ActiveForm::end(); ?>
         </div>
+
 
         <div class="buttons">
-            <button>Excel</button>
-            <button>PDF</button>
-            <button>Print</button>
+            <?= Html::a('Excel', ['banco/export-excel'], [
+                'target' => '_blank',
+                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
+            ]) ?>
+            <?= Html::a('PDF', ['banco/export-pdf'], [
+                'target' => '_blank',
+                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
+            ]) ?>
+            <?= Html::a('Print', ['banco/print'], [
+                'target' => '_blank',
+                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
+            ]) ?>
         </div>
 
 
-
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            [
-                'attribute' => 'ban_id',
-                'label' => 'Codigo',
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            //'filterModel' => $searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+                [
+                    'attribute' => 'ban_id',
+                    'label' => 'Codigo',
+                ],
+                [
+                    'attribute' => 'ban_nombre',
+                    'label' => 'Nombre',
+                ],
+                [
+                    'class' => ActionColumn::class,
+                    'header' => 'Acciones',
+                    'urlCreator' => function ($action, Banco $model, $key, $index, $column) {
+                        return Url::toRoute([$action, 'ban_id' => $model->ban_id]);
+                    }
+                ],
             ],
-            [
-                'attribute' => 'ban_nombre',
-                'label' => 'Nombre',
-            ],
-            [
-                'class' => ActionColumn::class,
-                'header' => 'Acciones',
-                'urlCreator' => function ($action, Banco $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'ban_id' => $model->ban_id]);
-                }
-            ],
-        ],
-    ]); ?>
+        ]); ?>
     </div>
 </div>

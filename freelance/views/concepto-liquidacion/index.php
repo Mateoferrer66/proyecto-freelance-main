@@ -5,6 +5,8 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use yii\widgets\ActiveForm;
+
 
 /** @var yii\web\View $this */
 /** @var app\models\ConceptoLiquidacionSearch $searchModel */
@@ -16,22 +18,6 @@ $this->params['breadcrumbs'] = []; ?>
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
-
-    <p>
-        <?= Html::a('Exportar Excel', ['iva/export-excel'], [
-            'target' => '_blank'
-        ]) ?>
-    </p>
-
-    <p>
-        <?= Html::a('Exportar PDF', ['iva/export-pdf'], [
-            'target' => '_blank'
-        ]) ?>
-    </p>
-
-    <p>
-        <?= Html::a('Imprimir', ['iva/print'], ['target' => '_blank']) ?>
-    </p>
 
     <style>
         body {
@@ -116,17 +102,34 @@ $this->params['breadcrumbs'] = []; ?>
     <div class="container">
         <div class="header">
             <h1>Gestión de Conceptos de Liquidación</h1>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar concepto...">
-            </div>
+           <?php $form = ActiveForm::begin([
+                'action' => ['index'],
+                'method' => 'get',
+                'options' => ['class' => 'search-bar'],
+            ]); ?>
+
+            <?= $form->field($searchModel, 'col_nombre', ['template' => '{input}'])
+                ->textInput(['placeholder' => 'Buscar concepto de liquidación...']) ?>
+
+            <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
+
+            <?php ActiveForm::end(); ?>
         </div>
 
         <div class="buttons">
-            <button>Excel</button>
-            <button>PDF</button>
-            <button>Print</button>
+            <?= Html::a('Excel', ['concepto-liquidacion/export-excel'], [
+                'target' => '_blank',
+                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
+            ]) ?>
+            <?= Html::a('PDF', ['concepto-liquidacion/export-pdf'], [
+                'target' => '_blank',
+                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
+            ]) ?>
+            <?= Html::a('Print', ['concepto-liquidacion/print'], [
+                'target' => '_blank',
+                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
+            ]) ?>
         </div>
-
 
 
         <?= GridView::widget([

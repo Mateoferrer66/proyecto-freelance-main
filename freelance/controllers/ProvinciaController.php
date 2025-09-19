@@ -7,6 +7,8 @@ use app\models\ProvinciaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\ExcelExportHelper;
+use app\components\PdfExportHelper;
 
 /**
  * ProvinciaController implements the CRUD actions for Provincia model.
@@ -132,5 +134,71 @@ class ProvinciaController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    
+    public function actionExportExcel()
+    {
+        $provincias = Provincia::find()->with('pais')->all();
+
+        $headers = ['Código', 'País', 'Nombre', 'Eliminada'];
+        $data = [];
+
+        foreach ($provincias as $provincia) {
+            $data[] = [
+                $provincia->prv_id,
+                $provincia->pais ? $provincia->pais->pai_nombre : 'Sin país',
+                $provincia->prv_nombre,
+                $provincia->prv_eliminada ? 'Sí' : 'No',
+            ];
+        }
+
+        return ExcelExportHelper::export('Listado_Provincias', $headers, $data);
+    }
+
+    public function actionExportPdf()
+    {
+        $provincias = Provincia::find()->with('pais')->all();
+        $headers = ['Código', 'País', 'Nombre', 'Eliminada'];
+        $rows = [];
+
+        foreach ($provincias as $provincia) {
+            $rows[] = [
+                $provincia->prv_id,
+                $provincia->pais ? $provincia->pais->pai_nombre : 'Sin país',
+                $provincia->prv_nombre,
+                $provincia->prv_eliminada ? 'Sí' : 'No',
+            ];
+        }
+
+        $html = $this->renderPartial('@app/views/export/_tabla_pdf', [
+            'titulo' => 'Listado de Provincias',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
+
+        return PdfExportHelper::export('Listado_Provincias', $html);
+    }
+
+    public function actionPrint()
+    {
+        $provincias = Provincia::find()->with('pais')->all();
+
+        $headers = ['Código', 'País', 'Nombre', 'Eliminada'];
+        $rows = [];
+
+        foreach ($provincias as $provincia) {
+            $rows[] = [
+                $provincia->prv_id,
+                $provincia->pais ? $provincia->pais->pai_nombre : 'Sin país',
+                $provincia->prv_nombre,
+                $provincia->prv_eliminada ? 'Sí' : 'No',
+            ];
+        }
+
+        return $this->renderPartial('@app/views/export/print_table', [
+            'titulo' => 'Listado de Provincias',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
     }
 }

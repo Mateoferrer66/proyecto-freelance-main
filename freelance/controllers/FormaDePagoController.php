@@ -7,6 +7,8 @@ use app\models\FormaDePagoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\ExcelExportHelper;
+use app\components\PdfExportHelper;
 
 /**
  * FormaDePagoController implements the CRUD actions for FormaDePago model.
@@ -130,5 +132,68 @@ class FormaDePagoController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    
+    public function actionExportExcel()
+    {
+        $formas = FormaDePago::find()->all();
+
+        $headers = ['ID', 'Nombre', 'Eliminada'];
+        $data = [];
+
+        foreach ($formas as $forma) {
+            $data[] = [
+                $forma->fdp_id,
+                $forma->fdp_nombre,
+                $forma->fdp_eliminada ? 'Sí' : 'No',
+            ];
+        }
+
+        return ExcelExportHelper::export('Listado_Formas_De_Pago', $headers, $data);
+    }
+
+    public function actionExportPdf()
+    {
+        $formas = FormaDePago::find()->all();
+        $headers = ['ID', 'Nombre', 'Eliminada'];
+        $rows = [];
+
+        foreach ($formas as $forma) {
+            $rows[] = [
+                $forma->fdp_id,
+                $forma->fdp_nombre,
+                $forma->fdp_eliminada ? 'Sí' : 'No',
+            ];
+        }
+
+        $html = $this->renderPartial('@app/views/export/_tabla_pdf', [
+            'titulo' => 'Listado de Formas de Pago',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
+
+        return PdfExportHelper::export('Listado_Formas_De_Pago', $html);
+    }
+
+    public function actionPrint()
+    {
+        $formas = FormaDePago::find()->all();
+
+        $headers = ['ID', 'Nombre', 'Eliminada'];
+        $rows = [];
+
+        foreach ($formas as $forma) {
+            $rows[] = [
+                $forma->fdp_id,
+                $forma->fdp_nombre,
+                $forma->fdp_eliminada ? 'Sí' : 'No',
+            ];
+        }
+
+        return $this->renderPartial('@app/views/export/print_table', [
+            'titulo' => 'Listado de Formas de Pago',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
     }
 }

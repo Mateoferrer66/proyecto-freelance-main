@@ -7,6 +7,8 @@ use app\models\CategoriaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\ExcelExportHelper;
+use app\components\PdfExportHelper;
 
 /**
  * CategoriaController implements the CRUD actions for Categoria model.
@@ -130,5 +132,68 @@ class CategoriaController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    
+    public function actionExportExcel()
+    {
+        $categorias = Categoria::find()->all();
+
+        $headers = ['Código', 'Nombre', 'Eliminada'];
+        $data = [];
+
+        foreach ($categorias as $categoria) {
+            $data[] = [
+                $categoria->cat_id,
+                $categoria->cat_nombre,
+                $categoria->cat_eliminada ? 'Sí' : 'No',
+            ];
+        }
+
+        return ExcelExportHelper::export('Listado_Categorias', $headers, $data);
+    }
+
+    public function actionExportPdf()
+    {
+        $categorias = Categoria::find()->all();
+        $headers = ['Código', 'Nombre', 'Eliminada'];
+        $rows = [];
+
+        foreach ($categorias as $categoria) {
+            $rows[] = [
+                $categoria->cat_id,
+                $categoria->cat_nombre,
+                $categoria->cat_eliminada ? 'Sí' : 'No',
+            ];
+        }
+
+        $html = $this->renderPartial('@app/views/export/_tabla_pdf', [
+            'titulo' => 'Listado de Categorías',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
+
+        return PdfExportHelper::export('Listado_Categorias', $html);
+    }
+
+    public function actionPrint()
+    {
+        $categorias = Categoria::find()->all();
+
+        $headers = ['Código', 'Nombre', 'Eliminada'];
+        $rows = [];
+
+        foreach ($categorias as $categoria) {
+            $rows[] = [
+                $categoria->cat_id,
+                $categoria->cat_nombre,
+                $categoria->cat_eliminada ? 'Sí' : 'No',
+            ];
+        }
+
+        return $this->renderPartial('@app/views/export/print_table', [
+            'titulo' => 'Listado de Categorías',
+            'headers' => $headers,
+            'rows' => $rows,
+        ]);
     }
 }

@@ -17,6 +17,22 @@ $this->params['breadcrumbs'] = [];
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
+    <p>
+        <?= Html::a('Exportar Excel', ['iva/export-excel'], [
+            'target' => '_blank'
+        ]) ?>
+    </p>
+
+    <p>
+        <?= Html::a('Exportar PDF', ['iva/export-pdf'], [
+            'target' => '_blank'
+        ]) ?>
+    </p>
+
+    <p>
+        <?= Html::a('Imprimir', ['iva/print'], ['target' => '_blank']) ?>
+    </p>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -84,6 +100,19 @@ $this->params['breadcrumbs'] = [];
         }
     </style>
 
+      <div class="mb-3" style="margin-top:20px;">
+            <?= Html::a('<i class="bx bx-plus-medical"></i> Crear Pais y Provincia', ['create'], [
+                'class' => 'btn btn-success px-4 radius-30',
+                'title' => 'Agregar nueva provincia',
+            ]) ?>
+        </div>
+
+      <div class="col d-flex justify-content-between align-items-start">
+    <h6 class="mb-0 text-uppercase">
+        Paises y Provincias <span class="badge bg-warning text-dark"><?= $dataProvider->getTotalCount() ?></span>
+    </h6>
+</div>
+
     <div class="container">
         <div class="header">
             <h1>Gestión de Provincias</h1>
@@ -98,12 +127,6 @@ $this->params['breadcrumbs'] = [];
             <button>Print</button>
         </div>
 
-        <div class="mb-3" style="margin-top:20px;">
-            <?= Html::a('<i class="bx bx-plus-medical"></i> Crear Provincia', ['create'], [
-                'class' => 'btn btn-success px-4 radius-30',
-                'title' => 'Agregar nueva provincia',
-            ]) ?>
-        </div>
 
         <?= GridView::widget([
         'dataProvider' => $dataProvider,

@@ -16,6 +16,24 @@ $this->params['breadcrumbs'] = []; ?>
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
+
+    <p>
+        <?= Html::a('Exportar Excel', ['iva/export-excel'], [
+            'target' => '_blank'
+        ]) ?>
+    </p>
+
+    <p>
+        <?= Html::a('Exportar PDF', ['iva/export-pdf'], [
+            'target' => '_blank'
+        ]) ?>
+    </p>
+
+    <p>
+        <?= Html::a('Imprimir', ['iva/print'], ['target' => '_blank']) ?>
+    </p>
+
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -113,49 +131,59 @@ $this->params['breadcrumbs'] = []; ?>
             background-color: #2a2a3b;
         }
     </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Gestión de Conceptos de Liquidación</h1>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar concepto...">
+    <div class="mb-3" style="margin-top:20px;">
+        <?= Html::a('<i class="bx bx-plus-medical"></i> Crear Concepto Liquidación', ['create'], [
+            'class' => 'btn btn-success px-4 radius-30',
+            'title' => 'Agregar nueva Liquidación',
+        ]) ?>
+    </div>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Gestión de Conceptos de Liquidación</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar concepto...">
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button>Excel</button>
+                <button>PDF</button>
+                <button>Print</button>
             </div>
         </div>
+    </body>
+</div>
+<div class="col d-flex justify-content-between align-items-start">
+    <h6 class="mb-0 text-uppercase">
+        Concepto de Facturación <span class="badge bg-warning text-dark"><?= $dataProvider->getTotalCount() ?></span>
+    </h6>
+</div>
 
-        <div class="buttons">
-            <button>Excel</button>
-            <button>PDF</button>
-            <button>Print</button>
-        </div>
-    </div>
-</body>
-        </div>
-            <div class="col d-flex justify-content-between align-items-start">
-            <h6 class="mb-0 text-uppercase">Conceptos Liquidación <dl>2</dl></h6>
-        </div>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            [
-                'attribute' => 'col_id',
-                'label' => 'Codigo',
-            ],
-            [
-                'attribute' => 'col_nombre',
-                'label' => 'Nombre',
-            ],
-            [
-                'class' => ActionColumn::class,
-                'header' => 'Acciones',
-                'urlCreator' => function ($action, ConceptoLiquidacion $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'col_id' => $model->col_id]);
-                }
-            ],
+<?= GridView::widget([
+    'dataProvider' => $dataProvider,
+    //'filterModel' => $searchModel,
+    'columns' => [
+        ['class' => 'yii\grid\SerialColumn'],
+        [
+            'attribute' => 'col_id',
+            'label' => 'Codigo',
         ],
-    ]); ?>
+        [
+            'attribute' => 'col_nombre',
+            'label' => 'Nombre',
+        ],
+        [
+            'class' => ActionColumn::class,
+            'header' => 'Acciones',
+            'urlCreator' => function ($action, ConceptoLiquidacion $model, $key, $index, $column) {
+                return Url::toRoute([$action, 'col_id' => $model->col_id]);
+            }
+        ],
+    ],
+]); ?>
 
 </div>

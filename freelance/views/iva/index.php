@@ -161,10 +161,15 @@ $this->params['breadcrumbs'] = []; ?>
     </div>
 
 </div>
+
+
 <div class="col d-flex justify-content-between align-items-start">
-    <h6 class="mb-0 text-uppercase">IVA <dl>2</dl>
+    <h6 class="mb-0 text-uppercase">
+        IVA <span class="badge bg-warning text-dark"><?= $dataProvider->getTotalCount() ?></span>
     </h6>
 </div>
+
+
 
 <?= GridView::widget([
     'dataProvider' => $dataProvider,

@@ -17,6 +17,22 @@ $this->params['breadcrumbs'] = []; ?>
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
+    <p>
+        <?= Html::a('Exportar Excel', ['iva/export-excel'], [
+            'target' => '_blank'
+        ]) ?>
+    </p>
+
+    <p>
+        <?= Html::a('Exportar PDF', ['iva/export-pdf'], [
+            'target' => '_blank'
+        ]) ?>
+    </p>
+
+    <p>
+        <?= Html::a('Imprimir', ['iva/print'], ['target' => '_blank']) ?>
+    </p>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -144,10 +160,13 @@ $this->params['breadcrumbs'] = []; ?>
     </div>
 
 </div>
+
 <div class="col d-flex justify-content-between align-items-start">
-    <h6 class="mb-0 text-uppercase">Formas de Pago <dl>2</dl>
+    <h6 class="mb-0 text-uppercase">
+        Forma de pago <span class="badge bg-warning text-dark"><?= $dataProvider->getTotalCount() ?></span>
     </h6>
 </div>
+
 
 <?= GridView::widget([
     'dataProvider' => $dataProvider,

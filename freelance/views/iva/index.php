@@ -77,7 +77,7 @@ $this->params['breadcrumbs'] = []; ?>
             border-radius: 5px;
             background-color: #333;
             color: #fff;
-            width: 200px;
+            width: 300px;
         }
 
         .buttons {
@@ -99,59 +99,8 @@ $this->params['breadcrumbs'] = []; ?>
         .buttons button:hover {
             background-color: #ff8c00;
         }
-
-        .table-container {
-            margin-top: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #333;
-            color: #fff;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        table thead {
-            background-color: #444;
-        }
-
-        table thead th {
-            padding: 10px;
-            text-align: left;
-        }
-
-        table tbody td {
-            padding: 10px;
-            border-bottom: 1px solid #444;
-        }
-
-        table tbody tr:hover {
-            background-color: #2a2a3b;
-        }
     </style>
-    </head>
 
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>Gestión de IVA</h1>
-                <div class="search-bar">
-                    <input type="text" placeholder="Buscar...">
-                </div>
-            </div>
-
-            <div class="buttons">
-                <button>Excel</button>
-                <button>PDF</button>
-                <button>Print</button>
-            </div>
-
-        </div>
-    </body>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); 
-    ?>
 
     <div class="mb-3">
         <?= Html::a('<i class="bx bx-plus-medical"></i> Crear IVA', ['iva/create'], [
@@ -170,30 +119,45 @@ $this->params['breadcrumbs'] = []; ?>
 </div>
 
 
+<div class="container">
+    <div class="header">
+        <h1>Gestión de IVA</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+        </div>
+    </div>
 
-<?= GridView::widget([
-    'dataProvider' => $dataProvider,
-    'summary' => false,
-    'columns' => [
-        [
-            'attribute' => 'iva_porcentaje',
-            'label' => 'IVA Porcentaje',
-        ],
-        [
-            'attribute' => 'iva_concepto',
-            'label' => 'IVA Concepto',
-        ],
-        [
-            'class' => ActionColumn::className(),
-            'header' => 'Acciones', // Agregar el encabezado "Acciones"
-            'urlCreator' => function ($action, Iva $model, $key, $index, $column) {
-                return Url::toRoute([$action, 'iva_id' => $model->iva_id]);
-            }
-        ],
-    ],
-]); ?>
+    <div class="buttons">
+        <button>Excel</button>
+        <button>PDF</button>
+        <button>Print</button>
+    </div>
 
 
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'summary' => false,
+        'columns' => [
+            [
+                'attribute' => 'iva_porcentaje',
+                'label' => 'IVA Porcentaje',
+            ],
+            [
+                'attribute' => 'iva_concepto',
+                'label' => 'IVA Concepto',
+            ],
+            [
+                'class' => ActionColumn::className(),
+                'header' => 'Acciones', // Agregar el encabezado "Acciones"
+                'urlCreator' => function ($action, Iva $model, $key, $index, $column) {
+                    return Url::toRoute([$action, 'iva_id' => $model->iva_id]);
+                }
+            ],
+        ],
+    ]); ?>
+
+
+</div>
 
 
 </div>

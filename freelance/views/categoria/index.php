@@ -107,6 +107,13 @@ $this->params['breadcrumbs'] = [];
             'title' => 'Agregar nueva categoría',
         ]) ?>
     </div>
+
+    <div class="col d-flex justify-content-between align-items-start">
+    <h6 class="mb-0 text-uppercase">
+        Categorias <span class="badge bg-warning text-dark"><?= $dataProvider->getTotalCount() ?></span>
+    </h6>
+</div>
+
     <div class="container">
         <div class="header">
             <h1>Gestión de Categorías</h1>

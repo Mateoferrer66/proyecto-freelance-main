@@ -1,6 +1,5 @@
 <?php
 
-
 use app\models\FormaDePago;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -12,7 +11,8 @@ use yii\grid\GridView;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Gestión de Formas de Pago';
-$this->params['breadcrumbs'] = []; ?>
+$this->params['breadcrumbs'] = [];
+?>
 <div class="forma-de-pago-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
@@ -98,59 +98,7 @@ $this->params['breadcrumbs'] = []; ?>
         .buttons button:hover {
             background-color: #ff8c00;
         }
-
-        .table-container {
-            margin-top: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #333;
-            color: #fff;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        table thead {
-            background-color: #444;
-        }
-
-        table thead th {
-            padding: 10px;
-            text-align: left;
-        }
-
-        table tbody td {
-            padding: 10px;
-            border-bottom: 1px solid #444;
-        }
-
-        table tbody tr:hover {
-            background-color: #2a2a3b;
-        }
     </style>
-    </head>
-
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>Gestión de Formas de Pago</h1>
-                <div class="search-bar">
-                    <input type="text" placeholder="Buscar forma de pago...">
-                </div>
-            </div>
-
-            <div class="buttons">
-                <button>Excel</button>
-                <button>PDF</button>
-                <button>Print</button>
-            </div>
-
-        </div>
-    </body>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); 
-    ?>
 
     <div class="mb-3">
         <?= Html::a('<i class="bx bx-plus-medical"></i> Crear Forma de Pago', ['forma-de-pago/create'], [
@@ -159,35 +107,52 @@ $this->params['breadcrumbs'] = []; ?>
         ]) ?>
     </div>
 
-</div>
+    <div class="col d-flex justify-content-between align-items-start">
+        <h6 class="mb-0 text-uppercase">
+            Forma de pago <span class="badge bg-warning text-dark"><?= $dataProvider->getTotalCount() ?></span>
+        </h6>
+    </div>
 
-<div class="col d-flex justify-content-between align-items-start">
-    <h6 class="mb-0 text-uppercase">
-        Forma de pago <span class="badge bg-warning text-dark"><?= $dataProvider->getTotalCount() ?></span>
-    </h6>
-</div>
+    <div class="container">
+        <div class="header">
+            <h1>Gestión de Formas de Pago</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar forma de pago...">
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button>Excel</button>
+            <button>PDF</button>
+            <button>Print</button>
+        </div>
 
 
-<?= GridView::widget([
-    'dataProvider' => $dataProvider,
-    'summary' => false,
-    'columns' => [
-        [
-            'attribute' => 'fdp_id',
-            'label' => 'Código',
-        ],
-        [
-            'attribute' => 'fdp_nombre',
-            'label' => 'Nombre',
-        ],
-        [
-            'class' => ActionColumn::className(),
-            'header' => 'Acciones',
-            'urlCreator' => function ($action, FormaDePago $model, $key, $index, $column) {
-                return Url::toRoute([$action, 'fdp_id' => $model->fdp_id]);
-            }
-        ],
-    ],
-]); ?>
+
+
+
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'summary' => false,
+            'columns' => [
+                [
+                    'attribute' => 'fdp_id',
+                    'label' => 'Código',
+                ],
+                [
+                    'attribute' => 'fdp_nombre',
+                    'label' => 'Nombre',
+                ],
+                [
+                    'class' => ActionColumn::className(),
+                    'header' => 'Acciones',
+                    'urlCreator' => function ($action, FormaDePago $model, $key, $index, $column) {
+                        return Url::toRoute([$action, 'fdp_id' => $model->fdp_id]);
+                    }
+                ],
+            ],
+        ]); ?>
+
+    </div>
 
 </div>

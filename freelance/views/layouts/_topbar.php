@@ -9,7 +9,7 @@ use yii\helpers\Html;
         <!-- Título dinámico del módulo -->
         <div class="page-breadcrumb d-flex align-items-center px-3 py-2">
             <div class="breadcrumb-title pe-3">
-                <?= Html::encode($this->title ?? 'Panel') ?>
+                <?= Html::encode($this->title ?? 'Utilidades') ?>
             </div>
             <i class="bx bx-dollar-circle me-2"></i>
         </div>

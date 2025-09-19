@@ -56,8 +56,8 @@ use yii\helpers\Html;
                         <div class="user-box d-flex align-items-center">
                             <img src="/assets-custom/images/icons/user.png" class="user-img" alt="user avatar">
                             <div class="user-info ps-3">
-                                <p class="user-name mb-0">Super Administrador</p>
-                                <p class="designattion mb-0">Panel freelance</p>
+                                <p class="user-name mb-0">Nombre del Usuario</p>
+                                <p class="designattion mb-0">Super Administrador</p>
                             </div>
                         </div>
                     </a>

@@ -11,8 +11,8 @@ use yii\helpers\Html;
             <div class="breadcrumb-title pe-3">
                 <?= Html::encode($this->title ?? 'Utilidades') ?>
             </div>
-            <i class="bx bx-dollar-circle me-2"></i>
         </div>
+        <i class="bx bx-diamond"></i>
         <!-- Menú superior derecho -->
         <div class="top-menu ms-auto">
             <ul class="navbar-nav align-items-center">

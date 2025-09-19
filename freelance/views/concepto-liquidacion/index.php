@@ -136,7 +136,7 @@ $this->params['breadcrumbs'] = []; ?>
             'dataProvider' => $dataProvider,
             //'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
+             
                 [
                     'attribute' => 'col_id',
                     'label' => 'Codigo',

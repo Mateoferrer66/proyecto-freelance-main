@@ -7,6 +7,7 @@ use app\models\ConsecutivoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * ConsecutivoController implements the CRUD actions for Consecutivo model.
@@ -134,5 +135,29 @@ class ConsecutivoController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    /**
+     * Sets a new consecutivo.
+     * @return array
+     */
+    public function actionSetConsecutivo()
+    {
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+        $serie = \Yii::$app->request->post('serie');
+        $consecutivo = \Yii::$app->request->post('consecutivo');
+
+        if (!$serie || !$consecutivo) {
+            return ['success' => false, 'message' => 'Datos incompletos'];
+        }
+
+        $model = new Consecutivo();
+        $model->con_serie = $serie;
+        $model->con_consecutivo = $consecutivo;
+
+        if ($model->save()) {
+            return ['success' => true];
+        } else {
+            return ['success' => false, 'message' => $model->getFirstError('con_consecutivo')];
+        }
     }
 }

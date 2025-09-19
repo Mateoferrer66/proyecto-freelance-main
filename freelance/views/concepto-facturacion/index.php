@@ -138,7 +138,6 @@ $this->params['breadcrumbs'] = []; ?>
             'dataProvider' => $dataProvider,
             //'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
                 [
                     'attribute' => 'cof_codigo',
                     'label' => 'Codigo',

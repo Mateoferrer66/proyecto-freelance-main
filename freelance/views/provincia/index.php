@@ -5,7 +5,6 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
-use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
 /** @var app\models\ProvinciaSearch $searchModel */
@@ -17,6 +16,22 @@ $this->params['breadcrumbs'] = [];
 <div class="provincia-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
+
+    <p>
+        <?= Html::a('Exportar Excel', ['iva/export-excel'], [
+            'target' => '_blank'
+        ]) ?>
+    </p>
+
+    <p>
+        <?= Html::a('Exportar PDF', ['iva/export-pdf'], [
+            'target' => '_blank'
+        ]) ?>
+    </p>
+
+    <p>
+        <?= Html::a('Imprimir', ['iva/print'], ['target' => '_blank']) ?>
+    </p>
 
     <style>
         body {
@@ -101,35 +116,17 @@ $this->params['breadcrumbs'] = [];
     <div class="container">
         <div class="header">
             <h1>Gestión de Provincias</h1>
-            <?php $form = ActiveForm::begin([
-                'action' => ['index'],
-                'method' => 'get',
-                'options' => ['class' => 'search-bar'],
-            ]); ?>
-
-            <?= $form->field($searchModel, 'prv_nombre', ['template' => '{input}'])
-                ->textInput(['placeholder' => 'Buscar provincia...']) ?>
-
-            <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
-
-            <?php ActiveForm::end(); ?>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar provincia...">
+            </div>
         </div>
-
 
         <div class="buttons">
-            <?= Html::a('Excel', ['provincia/export-excel'], [
-                'target' => '_blank',
-                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
-            ]) ?>
-            <?= Html::a('PDF', ['provincia/export-pdf'], [
-                'target' => '_blank',
-                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
-            ]) ?>
-            <?= Html::a('Print', ['provincia/print'], [
-                'target' => '_blank',
-                'style' => 'padding:10px 20px;border:none;border-radius:5px;background-color:#ffa500;color:#fff;cursor:pointer;font-size:16px;text-transform:uppercase;text-decoration:none;'
-            ]) ?>
+            <button>Excel</button>
+            <button>PDF</button>
+            <button>Print</button>
         </div>
+
 
         <?= GridView::widget([
             'dataProvider' => $dataProvider,

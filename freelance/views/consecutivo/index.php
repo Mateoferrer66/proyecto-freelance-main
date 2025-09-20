@@ -135,32 +135,32 @@ JS
         <div class="consecutivo-form-group">
             <label for="facturas">Consecutivo de Facturas</label>
             <input type="text" id="facturas" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Agregar</button>
+            <button data-url="<?= $url ?>">Guardar</button>
         </div>
         <div class="consecutivo-form-group">
             <label for="liquidacion">Consecutivo de Liquidación</label>
             <input type="text" id="liquidacion" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Agregar</button>
+            <button data-url="<?= $url ?>">Guardar</button>
         </div>
         <div class="consecutivo-form-group">
             <label for="clientes">Consecutivo de Clientes</label>
             <input type="text" id="clientes" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Agregar</button>
+            <button data-url="<?= $url ?>">Guardar</button>
         </div>
         <div class="consecutivo-form-group">
             <label for="socios">Consecutivo de Socios</label>
             <input type="text" id="socios" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Agregar</button>
+            <button data-url="<?= $url ?>">Guardar</button>
         </div>
         <div class="consecutivo-form-group">
             <label for="presupuestos">Consecutivo de Presupuestos</label>
             <input type="text" id="presupuestos" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Agregar</button>
+            <button data-url="<?= $url ?>">Guardar</button>
         </div>
         <div class="consecutivo-form-group">
             <label for="liquidaciones">Consecutivo de Liquidaciones Provisionales</label>
             <input type="text" id="liquidaciones" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Agregar</button>
+            <button data-url="<?= $url ?>">Guardar</button>
         </div>
     </div>
 

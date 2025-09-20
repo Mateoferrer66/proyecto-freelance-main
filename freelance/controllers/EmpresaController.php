@@ -3,7 +3,9 @@
 namespace app\controllers;
 
 use app\models\Empresa;
+use app\models\Configuracion;
 use app\models\EmpresaSearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -67,18 +69,30 @@ class EmpresaController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Empresa();
+        $empresa = new Empresa();
+        $configuracion = new Configuracion();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'emp_id' => $model->emp_id]);
+            $empresa->load($this->request->post());
+            $configuracion->load($this->request->post());
+
+            $valid = $empresa->validate();
+            $valid = $configuracion->validate() && $valid;
+
+            if ($valid) {
+                $empresa->save(false);
+                $configuracion->save(false);
+                Yii::$app->session->setFlash('success', 'Datos guardados correctamente.');
+                return $this->redirect(['view', 'emp_id' => $empresa->emp_id]);
             }
         } else {
-            $model->loadDefaultValues();
+            $empresa->loadDefaultValues();
+            $configuracion->loadDefaultValues();
         }
 
         return $this->render('create', [
-            'model' => $model,
+            'empresa' => $empresa,
+            'configuracion' => $configuracion,
         ]);
     }
 
@@ -91,14 +105,29 @@ class EmpresaController extends Controller
      */
     public function actionUpdate($emp_id)
     {
-        $model = $this->findModel($emp_id);
+        $empresa = $this->findModel($emp_id);
+        $configuracion = Configuracion::find()->one();
+        
+        if(!$configuracion){
+            $configuracion = new Configuracion();
+        }
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'emp_id' => $model->emp_id]);
+        if ($this->request->isPost && $empresa->load($this->request->post()) && $configuracion->load($this->request->post())) {
+            
+            $valid = $empresa->validate();
+            $valid = $configuracion->validate() && $valid;
+
+            if($valid){
+                $empresa->save(false);
+                $configuracion->save(false);
+                Yii::$app->session->setFlash('success', 'Datos guardados correctamente.');
+                return $this->redirect(['view', 'emp_id' => $empresa->emp_id]);
+            }
         }
 
         return $this->render('update', [
-            'model' => $model,
+            'empresa' => $empresa,
+            'configuracion' => $configuracion,
         ]);
     }
 

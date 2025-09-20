@@ -1,125 +1,145 @@
 <?php
 
-use app\models\Empresa;
 use yii\helpers\Html;
-use yii\helpers\Url;
-use yii\grid\ActionColumn;
-use yii\grid\GridView;
+use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\TipoDocIdentidad;
 
 /** @var yii\web\View $this */
-/** @var app\models\EmpresaSearch $searchModel */
-/** @var yii\data\ActiveDataProvider $dataProvider */
+/** @var app\models\Empresa $empresa */
+/** @var app\models\Configuracion $configuracion */
+/** @var yii\widgets\ActiveForm $form */
 
-$this->title = 'Empresas';
+$this->title = 'Datos de la Empresa';
 $this->params['breadcrumbs'] = [];
-$this->registerCss(".table thead a { text-decoration: none !important; }");
 
 ?>
-<div class="empresa-index">
 
-
-        <?= $this->render('@app/views/layouts/_orangemenu') ?>
+<?= $this->render('@app/views/layouts/_orangemenu') ?>
 
 <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e2f;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
+    .empresa-form-container {
+        background-color: #2a2a3b;
+        padding: 20px;
+        border-radius: 10px;
+        color: #fff;
+    }
+    .form-section-title {
+        color: #ffa500;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #444;
+        padding-bottom: 5px;
+    }
+    .form-group label {
+        color: #ccc;
+    }
+    .form-control {
+        background-color: #333;
+        border: 1px solid #444;
+        color: #fff;
+    }
+    .form-control:focus {
+        background-color: #333;
+        border-color: #ffa500;
+        color: #fff;
+    }
+    .btn-primary {
+        background-color: #ffa500;
+        border-color: #ffa500;
+    }
+    .btn-primary:hover {
+        background-color: #ff8c00;
+        border-color: #ff8c00;
+    }
+</style>
 
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #2a2a3b;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+<div class="empresa-form-container">
 
-        h1 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            color: #ffa500;
-        }
+    <?php if (Yii::$app->session->hasFlash('success')): ?>
+        <div class="alert alert-success">
+            <?= Yii::$app->session->getFlash('success') ?>
+        </div>
+    <?php endif; ?>
 
-        .form-group {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+    <?php $form = ActiveForm::begin(); ?>
 
-        .form-group label {
-            flex: 1;
-            font-size: 16px;
-            margin-right: 10px;
-        }
+    <h2 class="form-section-title">DATOS DE LA EMPRESA</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'emp_razon_social')->textInput(['maxlength' => true])->label('Nombre/Razón Social') ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'tdo_id')->dropDownList(
+                ArrayHelper::map(TipoDocIdentidad::find()->all(), 'tdo_id', 'tdo_nombre'),
+                ['prompt' => 'Seleccione']
+            )->label('Tipo Documento *') ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'emp_numdocide')->textInput(['maxlength' => true])->label('Número identificación Fiscal') ?>
+        </div>
+    </div>
 
-        .form-group input {
-            flex: 2;
-            padding: 10px;
-            border: 1px solid #444;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-        }
+    <h2 class="form-section-title">DATOS DE CONTACTO</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'emp_telefono')->textInput(['maxlength' => true])->label('Teléfono*') ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'emp_fax')->textInput(['maxlength' => true])->label('Fax') ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'emp_direccion')->textInput(['maxlength' => true])->label('Dirección*') ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'emp_poblacion')->textInput(['maxlength' => true])->label('Población') ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'emp_codpostal')->textInput(['maxlength' => true])->label('Código postal') ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'emp_email')->textInput(['maxlength' => true])->label('E-mail *') ?>
+        </div>
+    </div>
 
-        .form-group button {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #ffa500;
-            color: #fff;
-            cursor: pointer;
-            font-size: 16px;
-            text-transform: uppercase;
-        }
+    <h2 class="form-section-title">DATOS SEGURIDAD SOCIAL</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'emp_regimen_segs')->textInput(['maxlength' => true])->label('Régimen (seguridad social)*') ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'emp_ccc_segs')->textInput(['maxlength' => true])->label('CCC (seguridad social)*') ?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($empresa, 'emp_tipo_segs')->textInput(['maxlength' => true])->label('Tipo de empresa (seguridad social)*') ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($configuracion, 'con_base_cotizacion_ss')->textInput()->label('Base cotización (€)*') ?>
+        </div>
+        <div class="col-md-6">
+            <?= $form->field($empresa, 'emp_razons_segs')->textInput(['maxlength' => true])->label('Razón Social (seguridad social)*') ?>
+        </div>
+    </div>
 
-        .form-group button:hover {
-            background-color: #ff8c00;
-        }
-    </style>
+    <h2 class="form-section-title">OTROS</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($configuracion, 'con_retencion_imp_soc')->textInput()->label('Retención a cuenta impto/sdades (%)') ?>
+        </div>
+        <div class="col-md-6">
+            <?= $form->field($empresa, 'emp_participaciones')->textInput()->label('Participaciones') ?>
+        </div>
+    </div>
 
-    <p>
-        <?= Html::a('Create Empresa', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <div class="form-group">
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-primary']) ?>
+    </div>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'emp_id',
-            'emp_razon_social',
-            'tdo_id',
-            'emp_numdocide',
-            'emp_direccion',
-            //'emp_codpostal',
-            //'emp_poblacion',
-            //'emp_telefono',
-            //'emp_fax',
-            //'emp_email:email',
-            //'emp_regimen_segs',
-            //'emp_ccc_segs',
-            //'emp_tipo_segs',
-            //'emp_razons_segs',
-            //'emp_participaciones',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Empresa $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'emp_id' => $model->emp_id]);
-                 }
-            ],
-        ],
-    ]); ?>
-
+    <?php ActiveForm::end(); ?>
 
 </div>

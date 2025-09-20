@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
+use Yii;
 
 /**
  * ConsecutivoController implements the CRUD actions for Consecutivo model.
@@ -140,24 +141,35 @@ class ConsecutivoController extends Controller
      * Sets a new consecutivo.
      * @return array
      */
-    public function actionSetConsecutivo()
+  public function actionSetConsecutivo()
     {
-        \Yii::$app->response->format = Response::FORMAT_JSON;
-        $serie = \Yii::$app->request->post('serie');
-        $consecutivo = \Yii::$app->request->post('consecutivo');
+        Yii::$app->response->format = Response::FORMAT_JSON;
 
-        if (!$serie || !$consecutivo) {
-            return ['success' => false, 'message' => 'Datos incompletos'];
+        $serie = Yii::$app->request->post('serie');
+        $valor = Yii::$app->request->post('consecutivo');
+
+        if (!$serie || !$valor) {
+            return ['success' => false, 'message' => 'La serie y el consecutivo son requeridos.'];
         }
 
-        $model = new Consecutivo();
-        $model->con_serie = $serie;
-        $model->con_consecutivo = $consecutivo;
+        // Buscar el consecutivo por serie
+        $model = Consecutivo::findOne(['con_serie' => $serie]);
+
+        if ($model) {
+            // Si existe, actualiza el valor
+            $model->con_consecutivo = $valor;
+        } else {
+            // Si no existe, crea uno nuevo
+            $model = new Consecutivo([
+                'con_serie' => $serie,
+                'con_consecutivo' => $valor,
+            ]);
+        }
 
         if ($model->save()) {
             return ['success' => true];
-        } else {
-            return ['success' => false, 'message' => $model->getFirstError('con_consecutivo')];
         }
+
+        return ['success' => false, 'message' => 'Error al guardar el consecutivo.', 'errors' => $model->getErrors()];
     }
 }

@@ -2551,3 +2551,65 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1758254340.1586
     'REQUEST_TIME' => 1758254340
 ]
+2025-09-20 17:51:37 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][error][ParseError] ParseError: syntax error, unexpected double-quoted string "", expecting "function" or "const" in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\EmpresaController.php:39
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\controllers...')
+#1 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(664): class_exists('app\\controllers...')
+#2 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(623): yii\base\Module->createControllerByID('empresa')
+#3 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(549): yii\base\Module->createController('create')
+#4 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('empresa/create', Array)
+#5 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#7 {main}
+2025-09-20 17:51:37 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][info][application] $_GET = [
+    'r' => 'empresa/create'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vspljqvlp0t0nq1vtcv0d6jem3'
+    '_csrf' => '8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '55831'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=empresa%2Fcreate'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=empresa%2Fcreate'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Brave\";v=\"140\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=provincia'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=vspljqvlp0t0nq1vtcv0d6jem3; _csrf=8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758383497.6412
+    'REQUEST_TIME' => 1758383497
+]

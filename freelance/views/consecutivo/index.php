@@ -163,24 +163,4 @@ JS
             <button data-url="<?= $url ?>">Guardar</button>
         </div>
     </div>
-
-    <div class="consecutivo-container" style="margin-top: 40px;">
-        <h1>Listado de Consecutivos</h1>
-
-        <?= GridView::widget([
-            'dataProvider' => $dataProvider,
-            'filterModel' => $searchModel,
-            'columns' => [
-                'con_serie',
-                'con_consecutivo',
-                [
-                    'class' => ActionColumn::className(),
-                    'urlCreator' => function ($action, Consecutivo $model, $key, $index, $column) {
-                        return Url::toRoute([$action, 'con_serie' => $model->con_serie, 'con_consecutivo' => $model->con_consecutivo]);
-                    }
-                ],
-            ],
-        ]); ?>
-    </div>
-
 </div>

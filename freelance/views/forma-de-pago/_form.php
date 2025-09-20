@@ -16,8 +16,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'fdp_eliminada')->textInput() ?>
 
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    <div class="form-group d-flex justify-content-end">
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -57,6 +57,12 @@ class FormaDePagoController extends Controller
      */
     public function actionView($fdp_id)
     {
+        $model = $this->findModel($fdp_id);
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('view', ['model' => $model]);
+        }
+
         return $this->render('view', [
             'model' => $this->findModel($fdp_id),
         ]);
@@ -72,11 +78,25 @@ class FormaDePagoController extends Controller
         $model = new FormaDePago();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'fdp_id' => $model->fdp_id]);
+            if ($model->load($this->request->post())) {
+                if ($this->request->isAjax) {
+                    \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                    if ($model->save()) {
+                        return ['success' => true, 'message' => 'FormaDePago creado correctamente.'];
+                    } else {
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+                }
+                if ($model->save()) {
+                    return $this->redirect(['index']);
+                }
             }
         } else {
             $model->loadDefaultValues();
+        }
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('create', ['model' => $model]);
         }
 
         return $this->render('create', [
@@ -95,8 +115,22 @@ class FormaDePagoController extends Controller
     {
         $model = $this->findModel($fdp_id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'fdp_id' => $model->fdp_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if ($this->request->isAjax) {
+                \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                if ($model->save()) {
+                    return ['success' => true, 'message' => 'FormaDePago actualizado correctamente.'];
+                } else {
+                    return ['success' => false, 'errors' => $model->getErrors()];
+                }
+            }
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
+        }
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('update', ['model' => $model]);
         }
 
         return $this->render('update', [

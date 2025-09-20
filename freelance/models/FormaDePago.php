@@ -46,9 +46,9 @@ class FormaDePago extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'fdp_id' => 'Fdp ID',
-            'fdp_nombre' => 'Fdp Nombre',
-            'fdp_eliminada' => 'Fdp Eliminada',
+            'fdp_id' => 'Código',
+            'fdp_nombre' => 'Nombre',
+            'fdp_eliminada' => 'Eliminada',
         ];
     }
 

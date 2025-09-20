@@ -57,9 +57,13 @@ class BancoController extends Controller
      */
     public function actionView($ban_id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($ban_id),
-        ]);
+        $model = $this->findModel($ban_id);
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('view', ['model' => $model]);
+        }
+
+        return $this->render('view', ['model' => $model]);
     }
 
     /**
@@ -95,13 +99,22 @@ class BancoController extends Controller
     {
         $model = $this->findModel($ban_id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'ban_id' => $model->ban_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if ($this->request->isAjax) {
+                \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                if ($model->save()) {
+                    return ['success' => true, 'message' => 'Banco actualizado correctamente.'];
+                } else {
+                    return ['success' => false, 'errors' => $model->getErrors()];
+                }
+            }
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
         }
 
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+        $renderMethod = $this->request->get('view') === 'modal' ? 'renderAjax' : 'render';
+        return $this->$renderMethod('update', ['model' => $model]);
     }
 
     /**

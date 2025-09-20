@@ -2613,3 +2613,326 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1758383497.6412
     'REQUEST_TIME' => 1758383497
 ]
+2025-09-20 18:45:31 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: The requested page does not exist. in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\ConsecutivoController.php:138
+Stack trace:
+#0 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\ConsecutivoController.php(119): app\controllers\ConsecutivoController->findModel('C', '444444')
+#1 [internal function]: app\controllers\ConsecutivoController->actionDelete('C', '444444')
+#2 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#3 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#4 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('delete', Array)
+#5 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('consecutivo/del...', Array)
+#6 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#8 {main}
+2025-09-20 18:45:31 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][info][application] $_GET = [
+    'r' => 'consecutivo/delete'
+    'con_serie' => 'C'
+    'con_consecutivo' => '444444'
+]
+
+$_POST = [
+    '_csrf' => '3SL1OrA6ttA10XcXZHIaQTat3tQAu9Kx9xJdWmKmzFeueL1egH_H4VaDAnMdNigHdJiT4mn_u_fEVTQSOP6Jbg=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vspljqvlp0t0nq1vtcv0d6jem3'
+    '_csrf' => '8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57088'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=consecutivo%2Fdelete&con_serie=C&con_consecutivo=444444'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=consecutivo%2Fdelete&con_serie=C&con_consecutivo=444444'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '98'
+    'HTTP_CONTENT_LENGTH' => '98'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Brave\";v=\"140\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=consecutivo'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=vspljqvlp0t0nq1vtcv0d6jem3; _csrf=8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758386731.6935
+    'REQUEST_TIME' => 1758386731
+]
+2025-09-20 19:37:57 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][error][ParseError] ParseError: syntax error, unexpected token "*", expecting "function" or "const" in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\BancoController.php:69
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\controllers...')
+#1 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(664): class_exists('app\\controllers...')
+#2 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(623): yii\base\Module->createControllerByID('banco')
+#3 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(549): yii\base\Module->createController('update')
+#4 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('banco/update', Array)
+#5 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#7 {main}
+2025-09-20 19:37:57 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][info][application] $_GET = [
+    'r' => 'banco/update'
+    'ban_id' => '1'
+    'view' => 'modal'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vspljqvlp0t0nq1vtcv0d6jem3'
+    '_csrf' => '8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58332'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=banco%2Fupdate&ban_id=1&view=modal'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=banco%2Fupdate&ban_id=1&view=modal'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_X_CSRF_TOKEN' => 'mKk6XQkdNoeQXO7Zh14qUHXGVSEg93-aEFBJzYl8xjXr83I5OVhHtvMOm73-GhgWN_MYF0mzFtwjFyCF0ySDDA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Brave\";v=\"140\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=banco'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=vspljqvlp0t0nq1vtcv0d6jem3; _csrf=8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758389877.1227
+    'REQUEST_TIME' => 1758389877
+]
+2025-09-20 19:38:08 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][error][ParseError] ParseError: syntax error, unexpected token "*", expecting "function" or "const" in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\BancoController.php:69
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\controllers...')
+#1 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(664): class_exists('app\\controllers...')
+#2 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(623): yii\base\Module->createControllerByID('banco')
+#3 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(549): yii\base\Module->createController('view')
+#4 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('banco/view', Array)
+#5 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#7 {main}
+2025-09-20 19:38:08 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][info][application] $_GET = [
+    'r' => 'banco/view'
+    'ban_id' => '1'
+    'view' => 'modal'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vspljqvlp0t0nq1vtcv0d6jem3'
+    '_csrf' => '8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58334'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=banco%2Fview&ban_id=1&view=modal'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=banco%2Fview&ban_id=1&view=modal'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_X_CSRF_TOKEN' => 'mKk6XQkdNoeQXO7Zh14qUHXGVSEg93-aEFBJzYl8xjXr83I5OVhHtvMOm73-GhgWN_MYF0mzFtwjFyCF0ySDDA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Brave\";v=\"140\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=banco'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=vspljqvlp0t0nq1vtcv0d6jem3; _csrf=8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758389888.1536
+    'REQUEST_TIME' => 1758389888
+]
+2025-09-20 19:39:40 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][error][ParseError] ParseError: syntax error, unexpected token "*", expecting "function" or "const" in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\BancoController.php:69
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\controllers...')
+#1 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(664): class_exists('app\\controllers...')
+#2 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(623): yii\base\Module->createControllerByID('banco')
+#3 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(549): yii\base\Module->createController('update')
+#4 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('banco/update', Array)
+#5 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#7 {main}
+2025-09-20 19:39:40 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][info][application] $_GET = [
+    'r' => 'banco/update'
+    'ban_id' => '1'
+    'view' => 'modal'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vspljqvlp0t0nq1vtcv0d6jem3'
+    '_csrf' => '8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58392'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=banco%2Fupdate&ban_id=1&view=modal'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=banco%2Fupdate&ban_id=1&view=modal'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_X_CSRF_TOKEN' => 'mKk6XQkdNoeQXO7Zh14qUHXGVSEg93-aEFBJzYl8xjXr83I5OVhHtvMOm73-GhgWN_MYF0mzFtwjFyCF0ySDDA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Brave\";v=\"140\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=banco'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=vspljqvlp0t0nq1vtcv0d6jem3; _csrf=8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758389980.4548
+    'REQUEST_TIME' => 1758389980
+]
+2025-09-20 19:41:16 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][error][ParseError] ParseError: syntax error, unexpected token "*", expecting "function" or "const" in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\BancoController.php:69
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\controllers...')
+#1 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(664): class_exists('app\\controllers...')
+#2 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(623): yii\base\Module->createControllerByID('banco')
+#3 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(549): yii\base\Module->createController('')
+#4 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('banco', Array)
+#5 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#7 {main}
+2025-09-20 19:41:16 [::1][-][vspljqvlp0t0nq1vtcv0d6jem3][info][application] $_GET = [
+    'r' => 'banco'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vspljqvlp0t0nq1vtcv0d6jem3'
+    '_csrf' => '8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58415'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=banco'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=banco'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Brave\";v=\"140\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=empresa%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=vspljqvlp0t0nq1vtcv0d6jem3; _csrf=8d591a078010f941af76a5f2c3472c91053407b1ad47be58b9e91b1a7ce74f01a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22sZHd0Eq1cRudyD2FB5M6iDiF3GiHZXE9%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758390076.682
+    'REQUEST_TIME' => 1758390076
+]

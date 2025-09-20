@@ -18,8 +18,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'ban_eliminado')->textInput() ?>
 
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    <div class="form-group d-flex justify-content-end">
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

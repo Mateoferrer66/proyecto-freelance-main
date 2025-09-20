@@ -17,43 +17,72 @@ $this->params['breadcrumbs'] = [];
 
 <?= $this->render('@app/views/layouts/_orangemenu') ?>
 
-<style>
-    .empresa-form-container {
-        background-color: #2a2a3b;
-        padding: 20px;
-        border-radius: 10px;
-        color: #fff;
-    }
-    .form-section-title {
-        color: #ffa500;
-        font-size: 18px;
-        margin-top: 20px;
-        margin-bottom: 15px;
-        border-bottom: 1px solid #444;
-        padding-bottom: 5px;
-    }
-    .form-group label {
-        color: #ccc;
-    }
-    .form-control {
-        background-color: #333;
-        border: 1px solid #444;
-        color: #fff;
-    }
-    .form-control:focus {
-        background-color: #333;
-        border-color: #ffa500;
-        color: #fff;
-    }
-    .btn-primary {
-        background-color: #ffa500;
-        border-color: #ffa500;
-    }
-    .btn-primary:hover {
-        background-color: #ff8c00;
-        border-color: #ff8c00;
-    }
-</style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #2a2a3b;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #ffa500;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            width: 300px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffa500;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        .buttons button:hover {
+            background-color: #ff8c00;
+        }
+    </style>
 
 <div class="empresa-form-container">
 

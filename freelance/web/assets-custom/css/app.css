@@ -4500,7 +4500,7 @@ select.form-control {
 
 .minimenu {
     overflow-x: auto;
-    width: 103%;
+    width: 120rem;
     overflow-y: hidden;
     white-space: nowrap;
     display: flex;

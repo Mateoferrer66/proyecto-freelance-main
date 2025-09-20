@@ -1,7 +1,3 @@
-const canUseDOM = !!(
-  typeof window !== "undefined" &&
-  window.document &&
-  window.document.createElement
-);
+import canUseDOM from "../canUseDOM";
 
 export default canUseDOM ? window : {};

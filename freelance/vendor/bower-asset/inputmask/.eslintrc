@@ -1,61 +1,44 @@
 {
-  "root": true,
   "env": {
     "browser": true,
     "commonjs": true,
     "node": true
   },
-  "extends": [
-    "eslint:recommended",
-    "standard",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:prettier/recommended"
-  ],
-  "parser": "@babel/eslint-parser",
+  "extends": "eslint:recommended",
   "parserOptions": {
-    "requireConfigFile": false,
-    "ecmaVersion": "latest",
+    "ecmaVersion": 2015,
     "sourceType": "module"
   },
   "rules": {
-    "react/prop-types": "off",
-    "space-before-function-paren": [
-      "error",
+    "indent": [
+      "off",
+      "tab",
       {
-        "anonymous": "always",
-        "named": "never",
-        "asyncArrow": "always"
+        "SwitchCase": 1
       }
+    ],
+    "linebreak-style": [
+      "off"
+    ],
+    "quotes": [
+      "error",
+      "double"
     ],
     "semi": [
       "error",
-      "always",
-      {
-        "omitLastInOneLineBlock": true
-      }
+      "always"
     ],
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off",
-    "comma-dangle": "off",
-    "import/order": [
+    "no-unused-vars": [
       "error",
       {
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
+        "vars": "all",
+        "args": "none"
       }
     ],
-    "import/named": "error",
-    "prettier/prettier": ["error", { "singleQuote": false }],
-    "one-var": ["error", "consecutive"],
-    "no-use-before-define": "off",
-    "no-unmodified-loop-condition": "off",
-    "eqeqeq": "warn",
-    "prefer-const": "warn",
-    "no-proto": "warn"
+    "no-cond-assign": [
+      "error",
+      "except-parens"
+    ]
   },
   "globals": {
     "Inputmask": true,

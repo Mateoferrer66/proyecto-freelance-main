@@ -8,6 +8,6 @@
 import jQuery from "jquery";
 
 if (jQuery === undefined) {
-  throw new Error("jQuery not loaded!");
+	throw "jQuery not loaded!";
 }
 export default jQuery;

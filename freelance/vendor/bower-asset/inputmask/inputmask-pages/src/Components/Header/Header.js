@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/inputmask.svg";
 import constants from "../../Shared/constants.module.scss";
 import RouteNames from "../../Shared/RouteNames";
 import { useViewPort } from "../ViewPort/ViewPort";
@@ -34,9 +33,7 @@ export const Header = () => {
       {width > constants.ScreenThreshold && (
         <>
           <h1>
-            <Link to={RouteNames.Home}>
-              <img src={logo} alt="Inputmask" width={120} />
-            </Link>
+            <Link to={RouteNames.Home}>Inputmask</Link>
           </h1>
           <nav className={styles.navContainer}>
             <ul>

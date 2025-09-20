@@ -1,12 +1,5 @@
 <?php
 
-$this->registerJsFile('@web/js/metisMenu.min.js', ['depends' => [\yii\web\JqueryAsset::class]]);
-$this->registerJs("
-    $(document).ready(function() {
-        $('#menu').metisMenu();
-    });
-");
-
 // Obtener la URL actual
 $currentUrl = Yii::$app->request->url;
 

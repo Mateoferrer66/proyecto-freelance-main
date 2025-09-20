@@ -5,6 +5,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
 /** @var app\models\ProvinciaSearch $searchModel */
@@ -16,22 +17,6 @@ $this->params['breadcrumbs'] = [];
 <div class="provincia-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
-
-    <p>
-        <?= Html::a('Exportar Excel', ['iva/export-excel'], [
-            'target' => '_blank'
-        ]) ?>
-    </p>
-
-    <p>
-        <?= Html::a('Exportar PDF', ['iva/export-pdf'], [
-            'target' => '_blank'
-        ]) ?>
-    </p>
-
-    <p>
-        <?= Html::a('Imprimir', ['iva/print'], ['target' => '_blank']) ?>
-    </p>
 
     <style>
         body {
@@ -116,9 +101,18 @@ $this->params['breadcrumbs'] = [];
     <div class="container">
         <div class="header">
             <h1>Gestión de Provincias</h1>
-            <div class="search-bar">
-                <input type="text" placeholder="Buscar provincia...">
-            </div>
+          <?php $form = ActiveForm::begin([
+                'action' => ['index'],
+                'method' => 'get',
+                'options' => ['class' => 'search-bar'],
+            ]); ?>
+
+            <?= $form->field($searchModel, 'prv_nombre', ['template' => '{input}'])
+                ->textInput(['placeholder' => 'Buscar provincia...']) ?>
+
+            <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
+
+            <?php ActiveForm::end(); ?>
         </div>
 
         <div class="buttons">
@@ -141,7 +135,7 @@ $this->params['breadcrumbs'] = [];
             ],
             'columns' => [
                 [
-                    'attribute' => 'pai_id',
+                    'attribute' => 'prv_id',
                     'label' => 'Código',
                 ],
                 [
@@ -159,7 +153,7 @@ $this->params['breadcrumbs'] = [];
                     'class' => ActionColumn::className(),
                     'header' => 'Acciones', // Agregar el encabezado "Acciones"
                     'urlCreator' => function ($action, Provincia $model, $key, $index, $column) {
-                        return Url::toRoute([$action, 'pai_id' => $model->pai_id]);
+                        return Url::toRoute([$action, 'prv_id' => $model->prv_id, 'prv_nombre_id' => $model->pai_id]);
                     }
                 ],
             ],

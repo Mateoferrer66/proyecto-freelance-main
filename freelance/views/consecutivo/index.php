@@ -56,111 +56,99 @@ JS
 <div class="consecutivo-index">
 
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
+<div class="page-content">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e2f;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
 
-        .consecutivo-container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #2a2a3b;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .consecutivo-container h1 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            color: #ffa500;
-        }
-
-        .consecutivo-form-group {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .consecutivo-form-group label {
-            flex: 1;
-            font-size: 16px;
-            margin-right: 10px;
-        }
-
-        .consecutivo-form-group input {
-            flex: 2;
-            padding: 10px;
-            border: 1px solid #444;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-        }
-
-        .consecutivo-form-group button {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #ffa500;
-            color: #fff;
-            cursor: pointer;
-            font-size: 16px;
-            text-transform: uppercase;
-        }
-
-        .consecutivo-form-group button:hover {
-            background-color: #ff8c00;
-        }
-    </style>
-
-    <div class="mb-3" style="margin-top:20px;">
-        <?= Html::a('<i class="bx bx-plus-medical"></i> Crear Consecutivo', ['create'], [
-            'class' => 'btn btn-success px-4 radius-30',
-            'title' => 'Agregar nuevo consecutivo',
-        ]) ?>
-    </div>
-
-    <div class="consecutivo-container">
-        <h1>Consecutivos</h1>
-        <?php $url = Url::to(['consecutivo/set-consecutivo']); ?>
-        <div class="consecutivo-form-group">
-            <label for="facturas">Consecutivo de Facturas</label>
-            <input type="text" id="facturas" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Guardar</button>
-        </div>
-        <div class="consecutivo-form-group">
-            <label for="liquidacion">Consecutivo de Liquidación</label>
-            <input type="text" id="liquidacion" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Guardar</button>
-        </div>
-        <div class="consecutivo-form-group">
-            <label for="clientes">Consecutivo de Clientes</label>
-            <input type="text" id="clientes" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Guardar</button>
-        </div>
-        <div class="consecutivo-form-group">
-            <label for="socios">Consecutivo de Socios</label>
-            <input type="text" id="socios" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Guardar</button>
-        </div>
-        <div class="consecutivo-form-group">
-            <label for="presupuestos">Consecutivo de Presupuestos</label>
-            <input type="text" id="presupuestos" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Guardar</button>
-        </div>
-        <div class="consecutivo-form-group">
-            <label for="liquidaciones">Consecutivo de Liquidaciones Provisionales</label>
-            <input type="text" id="liquidaciones" placeholder="Ingrese consecutivo">
-            <button data-url="<?= $url ?>">Guardar</button>
+    <h6 class="mb-0 text-uppercase">CONSECUTIVOS</h6>
+    <hr />
+    <div class="row">
+        <div class="col-xl-12 mx-auto">
+            <div class="card border-top border-0 border-4 border-white">
+                <div class="card-body p-5">
+                    <div id="respuestaForm">
+                        <?php $url = Url::to(['consecutivo/set-consecutivo']); ?>
+                        <div class="row mb-3">
+                            <div class="col-md-5">
+                                <label for="facturas">Consecutivo de Facturas</label>
+                                <input type="text" id="facturas" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                            </div>
+                            <div class="col-md-4">
+                                <label></label>
+                                <button data-url="<?= $url ?>" class="btn btn-light">
+                                    <i class="bx bx-plus"></i> Guardar
+                                </button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-5">
+                                <label for="liquidacion">Consecutivo de Liquidación</label>
+                                <input type="text" id="liquidacion" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                            </div>
+                            <div class="col-md-4">
+                                <label></label>
+                                <button data-url="<?= $url ?>" class="btn btn-light">
+                                    <i class="bx bx-plus"></i> Guardar  
+                                </button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-5">
+                                <label for="clientes">Consecutivo de Clientes</label>
+                                <input type="text" id="clientes" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                            </div>
+                            <div class="col-md-4">
+                                <label></label>
+                                <button data-url="<?= $url ?>" class="btn btn-light">
+                                    <i class="bx bx-plus"></i> Guardar  
+                                </button>
+                            </div>
+                            <hr>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-5">
+                                <label for="socios">Consecutivo de Socios</label>
+                                <input type="text" id="socios" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                            </div>
+                            <div class="col-md-4">
+                                <label></label>
+                                <button data-url="<?= $url ?>" class="btn btn-light">
+                                    <i class="bx bx-plus"></i> Guardar
+                                </button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-5">
+                                <label for="presupuestos">Consecutivo de Presupuestos</label>
+                                <input type="text" id="presupuestos" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                            </div>
+                            <div class="col-md-4">
+                                <label></label>
+                                <button data-url="<?= $url ?>" class="btn btn-light">
+                                   <i class="bx bx-plus"></i> Guardar
+                                </button>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-5">
+                                <label for="liquidaciones">Consecutivo de Liquidaciones Provisionales</label>
+                                <input type="text" id="liquidaciones" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                            </div>
+                            <div class="col-md-4">
+                                <label></label>
+                                <button data-url="<?= $url ?>" class="btn btn-light">
+                                   <i class="bx bx-plus"></i> Guardar
+                                </button>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

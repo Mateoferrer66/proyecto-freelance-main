@@ -9,6 +9,7 @@ use yii\widgets\Pjax;
 use yii\bootstrap5\Modal;
 use yii\widgets\ActiveForm;
 
+
 /** @var yii\web\View $this */
 /** @var app\models\ConceptoLiquidacionSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
@@ -16,77 +17,18 @@ use yii\widgets\ActiveForm;
 $this->title = 'Gestión de Conceptos de Liquidación';
 $this->params['breadcrumbs'] = [];
 $this->registerCss(".table thead a { text-decoration: none !important; }");
+$this->registerJs(<<<JS
+let timeout;
+$('#concepto-liquidacion-search-input').on('input', function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+        $.pjax.submit($('#auto-search-form'), '#conceptos-liquidacion-pjax');
+    }, 500);
+});
+JS);
+
 
 ?>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #1e1e2f;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 50px auto;
-        padding: 20px;
-        background-color: #2a2a3b;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .header h1 {
-        font-size: 24px;
-        text-transform: uppercase;
-        color: #ffa500;
-    }
-
-    .search-bar {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .search-bar input {
-        padding: 10px;
-        border: 1px solid #444;
-        border-radius: 5px;
-        background-color: #333;
-        color: #fff;
-        width: 300px;
-    }
-
-    .buttons {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px;
-    }
-
-    .buttons a {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: #ffa500;
-        color: #fff;
-        cursor: pointer;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-
-    .buttons a:hover {
-        background-color: #ff8c00;
-    }
-</style>
 
 <?php
 Modal::begin([
@@ -101,11 +43,12 @@ Modal::end();
 $this->registerJs(<<<'JS'
 let actionModalInstance = new bootstrap.Modal(document.getElementById('action-modal'));
 
+// Handler para abrir el modal
 $(document).on('click', '[data-bs-toggle="modal"]', function(e) {
     e.preventDefault();
     const modalTitle = $('#action-modal .modal-title');
     const modalContent = $('#modal-content');
-    const url = $(this).attr('href');
+    const url = $(this).attr('href') || $(this).data('url'); // Soporte para data-url en el botón de crear
     const title = $(this).attr('title');
 
     modalTitle.text(title);
@@ -121,6 +64,7 @@ $(document).on('click', '[data-bs-toggle="modal"]', function(e) {
         });
 });
 
+// Limpiar modal al cerrar
 document.getElementById('action-modal').addEventListener('hidden.bs.modal', function () {
     const modalContent = $('#modal-content');
     if (modalContent.find('form').length > 0) {
@@ -130,6 +74,7 @@ document.getElementById('action-modal').addEventListener('hidden.bs.modal', func
     $('#action-modal .modal-title').text('');
 });
 
+// Handler para submit de formularios en el modal con beforeSubmit de Yii2
 $(document).on('beforeSubmit', '#modal-content form', function(e) {
     e.preventDefault();
     var form = $(this);
@@ -144,112 +89,137 @@ $(document).on('beforeSubmit', '#modal-content form', function(e) {
         success: function(response) {
             if (response.success) {
                 actionModalInstance.hide();
-                $.pjax.reload({container: '#concepto-liquidacion-pjax', async: false});
+                $.pjax.reload({container: '#conceptos-liquidacion-pjax', async: false}); // async: false para esperar a que pjax termine
             } else {
+                // Muestra los errores de validación en el formulario
                 form.yiiActiveForm('updateMessages', response.errors, true);
             }
         },
         error: function() {
-            alert('Ocurrió un error al procesar la solicitud.');
+            alert('Ocurrió un error al procesar la solicitud. Por favor, inténtelo de nuevo.');
         },
         complete: function() {
             submitButton.prop('disabled', false).html(form.find('button[type="submit"]').text().includes('Crear') ? 'Crear' : 'Actualizar');
         }
     });
 
-    return false;
+    return false; // Previene el envío tradicional
 });
 JS);
 ?>
-
-<div class="concepto-liquidacion-index">
-
-    <?= $this->render('@app/views/layouts/_orangemenu') ?>
-
-    <div class="mb-3" style="margin-top: 20px;">
-        <?= Html::a('<i class="bx bx-plus-medical"></i> Crear Concepto', ['create', 'view' => 'modal'], [
-            'class' => 'btn btn-success px-4 radius-30',
-            'title' => 'Agregar Nuevo Concepto de Liquidación',
-            'data-bs-toggle' => 'modal',
-            'data-bs-target' => '#action-modal',
-        ]) ?>
-    </div>
-
-    <?php Pjax::begin(['id' => 'concepto-liquidacion-pjax']); ?>
+<?= $this->render('@app/views/layouts/_orangemenu') ?>
+<div class="page-content">
 
     <div class="col d-flex justify-content-between align-items-start">
-        <h6 class="mb-0 text-uppercase">
-            Conceptos de Liquidación <span class="badge bg-warning text-dark"><?= $dataProvider->getTotalCount() ?></span>
+        <h6 class="mb-0 text-uppercase">Conceptos de Liquidación <dl><?= $dataProvider->getTotalCount() ?></dl>
         </h6>
-    </div>
-
-    <div class="container">
-        <div class="header">
-            <h1>Gestión de Conceptos</h1>
-            <?php $form = ActiveForm::begin([
-                'action' => ['index'],
-                'method' => 'get',
-                'options' => ['class' => 'search-bar', 'data-pjax' => 1],
-            ]); ?>
-
-            <?= $form->field($searchModel, 'col_nombre', ['template' => '{input}'])
-                ->textInput(['placeholder' => 'Buscar por nombre...']) ?>
-
-            <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
-
-            <?php ActiveForm::end(); ?>
+        <div>
+            <?= Html::a('<i class="bx bx-plus mr-1"></i> Crear Concepto de Liquidación', ['create', 'view' => 'modal'], [
+                'class' => 'btn btn-success radius-30',
+                'title' => 'Crear Concepto de Liquidación',
+                'data-bs-toggle' => 'modal',
+                'data-bs-target' => '#action-modal',
+            ]) ?>
         </div>
-
-        <div class="buttons">
-            <?= Html::a('Excel', ['concepto-liquidacion/export-excel'], ['target' => '_blank', 'data-pjax' => 0]) ?>
-            <?= Html::a('PDF', ['concepto-liquidacion/export-pdf'], ['target' => '_blank', 'data-pjax' => 0]) ?>
-            <?= Html::a('Print', ['concepto-liquidacion/print'], ['target' => '_blank', 'data-pjax' => 0]) ?>
-        </div>
-
-        <?= GridView::widget([
-            'dataProvider' => $dataProvider,
-            'summary' => false,
-            'tableOptions' => ['class' => 'table table-striped table-bordered'],
-            'columns' => [
-                [
-                    'attribute' => 'col_id',
-                    'label' => 'Código',
-                ],
-                [
-                    'attribute' => 'col_nombre',
-                    'label' => 'Nombre',
-                ],
-                [
-                    'class' => ActionColumn::class,
-                    'header' => 'Acciones',
-                    'template' => '{view} {update} {delete}',
-                    'buttons' => [
-                        'view' => fn($url, $model) => Html::a('<i class="bx bx-show"></i>', $url, [
-                            'title' => 'Ver Concepto: ' . $model->col_nombre,
-                            'class' => 'btn btn-info btn-sm',
-                            'data-bs-toggle' => 'modal',
-                            'data-bs-target' => '#action-modal'
-                        ]),
-                        'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
-                            'title' => 'Editar Concepto: ' . $model->col_nombre,
-                            'class' => 'btn btn-primary btn-sm',
-                            'data-bs-toggle' => 'modal',
-                            'data-bs-target' => '#action-modal'
-                        ]),
-                        'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
-                            'title' => 'Eliminar Concepto',
-                            'class' => 'btn btn-danger btn-sm',
-                            'data-confirm' => '¿Está seguro de que desea eliminar el concepto: "' . $model->col_nombre . '"?',
-                            'data-method' => 'post',
-                            'data-pjax' => '1',
-                        ]),
-                    ],
-                    'urlCreator' => fn($action, ConceptoLiquidacion $model, $key, $index, $column) => 
-                        Url::toRoute([$action, 'id' => $model->col_id, 'view' => ($action === 'delete' ? null : 'modal')]),
-                ],
-            ],
-        ]); ?>
     </div>
+    <hr />
+    <div class="row">
+        <?php Pjax::begin(['id' => 'conceptos-liquidacion-pjax']); ?>
+        <div class="col-xl-12 mx-auto">
+            <div class="dataTables_wrapper dt-bootstrap5 no-footer">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="dt-buttons btn-group">
+                            <?= Html::a('Excel', ['concepto-liquidacion/export-excel'], [
+                                'target' => '_blank',
+                                'class' => 'btn btn-light buttons-excel buttons-html5',
+                                'data-pjax' => 0,
+                            ]) ?>
+                            <?= Html::a('PDF', ['concepto-liquidacion/export-pdf'], [
+                                'target' => '_blank',
+                                'class' => 'btn btn-light buttons-excel buttons-html5',
+                                'data-pjax' => 0,
+                            ]) ?>
+                            <?= Html::a('Print', ['concepto-liquidacion/print'], [
+                                'target' => '_blank',
+                                'class' => 'btn btn-light buttons-excel buttons-html5',
+                                'data-pjax' => 0,
+                            ]) ?>
+                        </div>
+                    </div>
 
+                    <div class="col-sm-12 col-md-6">
+                        <div class="dataTables_filter">
+                            <?php $form = ActiveForm::begin([
+                                'action' => ['index'],
+                                'method' => 'get',
+                                'options' => [
+                                    'class' => 'search-bar mb-3',
+                                    'data-pjax' => 1,
+                                    'id' => 'auto-search-form'
+                                ],
+                            ]); ?>
+
+                            <?= $form->field($searchModel, 'col_nombre', ['template' => '{input}'])
+                                ->textInput([
+                                    'placeholder' => 'Buscar por nombre de concepto de liquidación...',
+                                    'class' => 'form-control form-control-sm',
+                                    'id' => 'concepto-liquidacion-search-input',
+                                    'autocomplete' => 'off'
+                                ]) ?>
+                            <?php ActiveForm::end(); ?>
+                        </div>
+                    </div>
+
+
+
+                    <?= GridView::widget([
+                        'dataProvider' => $dataProvider,
+                        'summary' => false,
+                        'tableOptions' => ['class' => 'table table-striped table-bordered'],
+                        'columns' => [
+                                                    [
+                                'attribute' => 'col_id',
+                                'label' => 'Código',
+                            ],
+                            [
+                                'attribute' => 'col_nombre',
+                                'label' => 'Nombre ',
+                            ],
+                           
+                            [
+                                'class' => ActionColumn::class,
+                                'header' => 'Acciones',
+                                'template' => '{view} {update} {delete}',
+                                'buttons' => [
+                                    'view' => fn($url, $model) => Html::a('<i class="bx bx-show"></i>', $url, [
+                                        'title' => 'Ver Concepto de Liquidación: ' . $model->col_nombre,
+                                        'class' => 'btn btn-light',
+                                        'data-bs-toggle' => 'modal',
+                                        'data-bs-target' => '#action-modal'
+                                    ]),
+                                    'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
+                                        'title' => 'Editar Concepto de Liquidación: ' . $model->col_nombre,
+                                        'class' => 'btn btn-light',
+                                        'data-bs-toggle' => 'modal',
+                                        'data-bs-target' => '#action-modal'
+                                    ]),
+                                    'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
+                                        'title' => 'Eliminar Concepto de Liquidación',
+                                        'class' => 'btn btn-light',
+                                        'data-confirm' => '¿Está seguro de que desea eliminar el concepto de liquidación: "' . $model->col_nombre . '"?',
+                                        'data-method' => 'post',
+                                        'data-pjax' => '1',
+                                    ]),
+                                ],
+                                'urlCreator' => fn($action, ConceptoLiquidacion $model, $key, $index, $column) =>
+                                Url::toRoute([$action, 'col_id' => $model->col_id, 'view' => ($action === 'delete' ? null : 'modal')]),
+                            ],
+                        ],
+                    ]); ?>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php Pjax::end(); ?>
 </div>

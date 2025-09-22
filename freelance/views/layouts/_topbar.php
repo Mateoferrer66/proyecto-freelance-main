@@ -30,7 +30,7 @@ foreach ($iconMap as $path => $iconClass) {
 }
 ?>
 
-<header class="topbar">
+<div class="topbar d-flex align-items-center">
     <nav class="navbar navbar-expand">
 
         <!-- Título dinámico del módulo -->
@@ -146,4 +146,4 @@ foreach ($iconMap as $path => $iconClass) {
             </ul>
         </div>
     </nav>
-</header>
+</div>

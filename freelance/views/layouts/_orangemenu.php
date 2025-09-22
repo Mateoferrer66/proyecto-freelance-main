@@ -1,6 +1,7 @@
 <div class="minimenu">
     <div class="card">
-<a href="index.php?r=empresa%2Fcreate" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'empresa/create') ? 'active' : '' ?>">            <p class="mb-0">Empresa <i class="font-24 bx bx-store-alt"></i></p>
+        <a href="index.php?r=empresa%2Fcreate" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'empresa/create') ? 'active' : '' ?>">
+            <p class="mb-0">Empresa <i class="font-24 bx bx-store-alt"></i></p>
         </a>
     </div>
     <div class="card">
@@ -28,9 +29,9 @@
         </a>
     </div>
     <div class="card">
-       <a href="index.php?r=banco" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'banco') ? 'active' : '' ?>">
-    <p class="mb-0">Banco <i class="font-24 bx bx-building-house <?= (isset($_GET['r']) && $_GET['r'] === 'banco') ? : '' ?>"></i></p>
-</a>
+        <a href="index.php?r=banco" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'banco') ? 'active' : '' ?>">
+            <p class="mb-0">Banco <i class="font-24 bx bx-building-house <?= (isset($_GET['r']) && $_GET['r'] === 'banco') ? 'active' : '' ?>"></i></p>
+        </a>
     </div>
     <div class="card">
         <a href="index.php?r=forma-de-pago" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'forma-de-pago') ? 'active' : '' ?>">
@@ -52,5 +53,4 @@
             <p class="mb-0">País y provincia <i class="font-24 bx bx-flag"></i></p>
         </a>
     </div>
-	
 </div>

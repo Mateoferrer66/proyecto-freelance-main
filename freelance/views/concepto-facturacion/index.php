@@ -211,13 +211,23 @@ JS);
             'summary' => false,
             'tableOptions' => ['class' => 'table table-striped table-bordered'],
             'columns' => [
-                'cof_codigo',
-                'cof_nombre',
+                [
+                    'attribute' => 'cof_codigo',
+                    'label' => 'Código',
+                ],
+                [
+                    'attribute' => 'cof_nombre',
+                    'label' => 'Nombre',
+                ],
                 [
                     'attribute' => 'iva_id',
+                    'label' => 'IVA',
                     'value' => fn($model) => $model->iva ? $model->iva->iva_concepto : 'N/A',
                 ],
-                'cof_clasificacion',
+                [
+                    'attribute' => 'cof_clasificacion',
+                    'label' => 'Clasificación',
+                ],
                 [
                     'class' => ActionColumn::class,
                     'header' => 'Acciones',

@@ -41,7 +41,7 @@ class ConceptoFacturacionSearch extends ConceptoFacturacion
      */
     public function search($params, $formName = null)
     {
-        $query = ConceptoFacturacion::find();
+        $query = ConceptoFacturacion::find()->with('iva');
 
         // add conditions that should always apply here
 

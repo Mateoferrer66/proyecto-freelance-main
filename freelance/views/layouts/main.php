@@ -14,6 +14,7 @@ use yii\bootstrap5\NavBar;
 PanelAsset::register($this);
 
 $this->registerJs("$('#menu').metisMenu(); // Inicializa el menú desplegable");
+$this->registerJs("var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle')); var dropdownList = dropdownElementList.map(function (dropdownToggleEl) { return new bootstrap.Dropdown(dropdownToggleEl) });");
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['charset' => Yii::$app->charset], 'charset');
 $this->registerMetaTag(['name' => 'viewport', 'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no']);
@@ -23,37 +24,43 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>" class="h-100">
+<html lang="<?= Yii::$app->language ?>">
 
 <head>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
 </head>
 
 <body class="bg-theme bg-theme3">
-    
-    <?php $this->beginBody() ?>
+    <div class="wrapper">
 
-    <header id="header">
-        <?= $this->render('_topbar') ?>
-    </header>
-    <div class="wrapper d-flex">
-        
+        <?php $this->beginBody() ?>
         <?= $this->render('_sidebar') ?>
+        <header id="topbar">
+            <?= $this->render('_topbar') ?>
+        </header>
+        <div class="page-wrapper">
 
-        <main id="main" class="flex-shrink-0" role="main">
-            
-            <div class="page-content flex-grow-1">
+
+
+            <main id="main" class="flex-shrink-0" role="main">
+
+
                 <?php if (!empty($this->params['breadcrumbs'])): ?>
                     <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]) ?>
                 <?php endif ?>
                 <?= Alert::widget() ?>
                 <?= $content ?>
-            </div>
-        </main>
-    </div>
 
-    <?php $this->endBody() ?>
+            </main>
+        </div>
+
+        <?php $this->endBody() ?>
+
+    </div>
 </body>
 
 </html>

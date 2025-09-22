@@ -211,8 +211,14 @@ JS);
             'summary' => false,
             'tableOptions' => ['class' => 'table table-striped table-bordered'],
             'columns' => [
-                'col_codigo',
-                'col_nombre',
+                [
+                    'attribute' => 'col_id',
+                    'label' => 'Código',
+                ],
+                [
+                    'attribute' => 'col_nombre',
+                    'label' => 'Nombre',
+                ],
                 [
                     'class' => ActionColumn::class,
                     'header' => 'Acciones',

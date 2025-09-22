@@ -222,11 +222,15 @@ JS);
                
                 [
                     'attribute' => 'ban_id',
-                    'label' => 'Codigo',
+                    'label' => 'Código',
                 ],
                 [
                     'attribute' => 'ban_nombre',
-                    'label' => 'Nombre',
+                    'label' => 'Banco',
+                ],
+                [
+                    'attribute' => 'ban_numcuenta',
+                    'label' => 'Número de cuenta',
                 ],
                 [
                     'class' => ActionColumn::className(),

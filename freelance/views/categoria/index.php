@@ -215,8 +215,14 @@ JS);
             'tableOptions' => ['class' => 'table table-dark table-striped table-hover'],
             'headerRowOptions' => ['class' => 'text-warning'],
             'columns' => [
-                'cat_codigo',
-                'cat_nombre',
+                [
+                    'attribute' => 'cat_id',
+                    'label' => 'Código',
+                ],
+                [
+                    'attribute' => 'cat_nombre',
+                    'label' => 'Categoria',
+                ],
                 [
                     'class' => ActionColumn::class,
                     'header' => 'Acciones',

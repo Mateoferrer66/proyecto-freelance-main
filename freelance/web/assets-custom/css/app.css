@@ -25,7 +25,9 @@ File: app.css
   - Forms
   - Responsive
 */
-
+main{
+	width: 100%;
+}
 
 html, body {
 
@@ -186,7 +188,9 @@ a {
 
 	height: 100%;
 
-	margin-top: auto;
+	width: 100%;
+
+	margin-top: 0;
 
 	margin-bottom: 0px;
 
@@ -196,8 +200,7 @@ a {
 
 .page-content {
 
-	padding-top: 4.3rem;
-	padding-right: 5rem;
+	padding: 1.5rem;
 
 }
 
@@ -4499,8 +4502,9 @@ select.form-control {
 }
 
 .minimenu {
+	padding-top: 4.3rem;
     overflow-x: auto;
-    width: 120rem;
+    max-width: 100%;
     overflow-y: hidden;
     white-space: nowrap;
     display: flex;

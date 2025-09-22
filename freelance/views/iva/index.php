@@ -224,9 +224,15 @@ JS);
             'summary' => false,
             'tableOptions' => ['class' => 'table table-striped table-bordered'],
             'columns' => [
-                'iva_id',
-                'iva_porcentaje',
-                'iva_concepto',
+                [
+                    'attribute' => 'iva_porcentaje',
+                    'label' => 'IVA Porcentaje',
+                ],
+             
+                [
+                    'attribute' => 'iva_concepto',
+                    'label' => 'IVA Concepto',
+                ],
                 [
                     'class' => ActionColumn::class,
                     'header' => 'Acciones',

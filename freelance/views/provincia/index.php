@@ -215,8 +215,18 @@ JS);
             'tableOptions' => ['class' => 'table table-dark table-striped table-hover'],
             'headerRowOptions' => ['class' => 'text-warning'],
             'columns' => [
-                'pro_codigo',
-                'prv_nombre',
+                [
+                    'attribute' => 'prv_id',
+                    'label' => 'Código',
+                ],
+                [
+                    'attribute' => 'pai_id',
+                    'label' => 'Pais',
+                ],
+                 [
+                    'attribute' => 'prv_nombre',
+                    'label' => 'Provincia',
+                ],
                 [
                     'class' => ActionColumn::class,
                     'header' => 'Acciones',

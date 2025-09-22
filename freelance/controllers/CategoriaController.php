@@ -57,9 +57,13 @@ class CategoriaController extends Controller
      */
     public function actionView($cat_id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($cat_id),
-        ]);
+        $model = $this->findModel($cat_id);
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('view', ['model' => $model]);
+        }
+
+        return $this->render('view', ['model' => $model]);
     }
 
     /**
@@ -71,17 +75,25 @@ class CategoriaController extends Controller
     {
         $model = new Categoria();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'cat_id' => $model->cat_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if ($this->request->isAjax) {
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                return $model->save()
+                    ? ['success' => true, 'message' => 'Categoría creada correctamente.']
+                    : ['success' => false, 'errors' => $model->getErrors()];
             }
-        } else {
-            $model->loadDefaultValues();
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        $model->loadDefaultValues();
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('create', ['model' => $model]);
+        }
+
+        return $this->render('create', ['model' => $model]);
     }
 
     /**
@@ -95,13 +107,23 @@ class CategoriaController extends Controller
     {
         $model = $this->findModel($cat_id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'cat_id' => $model->cat_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if ($this->request->isAjax) {
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                return $model->save()
+                    ? ['success' => true, 'message' => 'Categoría actualizada correctamente.']
+                    : ['success' => false, 'errors' => $model->getErrors()];
+            }
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
         }
 
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('update', ['model' => $model]);
+        }
+
+        return $this->render('update', ['model' => $model]);
     }
 
     /**

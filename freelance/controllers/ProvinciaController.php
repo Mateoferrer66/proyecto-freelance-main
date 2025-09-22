@@ -51,17 +51,26 @@ class ProvinciaController extends Controller
         ]);
     }
 
+    
+
+    
+
     /**
-     * Displays a single Provincia model.
+     * Updates an existing Provincia model.
+     * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $prv_id Prv ID
-     * @return string
+     * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($prv_id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($prv_id),
-        ]);
+        $model = $this->findModel($prv_id);
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('view', ['model' => $model]);
+        }
+
+        return $this->render('view', ['model' => $model]);
     }
 
     /**
@@ -73,17 +82,25 @@ class ProvinciaController extends Controller
     {
         $model = new Provincia();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'prv_id' => $model->prv_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if ($this->request->isAjax) {
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                return $model->save()
+                    ? ['success' => true, 'message' => 'Provincia creada correctamente.']
+                    : ['success' => false, 'errors' => $model->getErrors()];
             }
-        } else {
-            $model->loadDefaultValues();
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        $model->loadDefaultValues();
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('create', ['model' => $model]);
+        }
+
+        return $this->render('create', ['model' => $model]);
     }
 
     /**
@@ -97,13 +114,23 @@ class ProvinciaController extends Controller
     {
         $model = $this->findModel($prv_id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'prv_id' => $model->prv_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if ($this->request->isAjax) {
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                return $model->save()
+                    ? ['success' => true, 'message' => 'Provincia actualizada correctamente.']
+                    : ['success' => false, 'errors' => $model->getErrors()];
+            }
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
         }
 
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('update', ['model' => $model]);
+        }
+
+        return $this->render('update', ['model' => $model]);
     }
 
     /**

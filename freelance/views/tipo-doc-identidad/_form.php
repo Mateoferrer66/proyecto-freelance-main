@@ -1,25 +1,20 @@
 <?php
-
-use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\Html;
 
 /** @var yii\web\View $this */
 /** @var app\models\TipoDocIdentidad $model */
 /** @var yii\widgets\ActiveForm $form */
+
+$form = ActiveForm::begin([
+    'id' => 'tipo-doc-form',
+    'enableAjaxValidation' => false,
+]);
+
+echo $form->field($model, 'tdo_codigo')->textInput(['maxlength' => true]);
+echo $form->field($model, 'tdo_nombre')->textInput(['maxlength' => true]);
+
+echo Html::submitButton('Guardar', ['class' => 'btn btn-primary float-end']);
+
+ActiveForm::end();
 ?>
-
-<div class="tipo-doc-identidad-form">
-
-    <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'tdo_nombre')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'tdo_eliminado')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-    </div>
-
-    <?php ActiveForm::end(); ?>
-
-</div>

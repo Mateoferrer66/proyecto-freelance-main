@@ -46,11 +46,12 @@ class ConceptoLiquidacion extends \yii\db\ActiveRecord
             [['col_clasificacion'], 'default', 'value' => 'estandar'],
             [['col_tipo'], 'default', 'value' => 'porcentaje'],
             [['col_eliminado'], 'default', 'value' => 0],
-            [['col_nombre'], 'required'],
+            [['col_nombre', 'col_codigo'], 'required'],
             [['col_clasificacion', 'col_tipo'], 'string'],
             [['col_porcentaje', 'col_valor'], 'number'],
             [['col_eliminado'], 'integer'],
             [['col_nombre'], 'string', 'max' => 255],
+            [['col_codigo'], 'string', 'max' => 10],
             ['col_clasificacion', 'in', 'range' => array_keys(self::optsColClasificacion())],
             ['col_tipo', 'in', 'range' => array_keys(self::optsColTipo())],
         ];
@@ -62,13 +63,14 @@ class ConceptoLiquidacion extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'col_id' => 'Col ID',
-            'col_nombre' => 'Col Nombre',
-            'col_clasificacion' => 'Col Clasificacion',
-            'col_tipo' => 'Col Tipo',
-            'col_porcentaje' => 'Col Porcentaje',
-            'col_valor' => 'Col Valor',
-            'col_eliminado' => 'Col Eliminado',
+            'col_id' => 'ID',
+            'col_codigo' => 'Código',
+            'col_nombre' => 'Nombre del Concepto',
+            'col_clasificacion' => 'Clasificación',
+            'col_tipo' => 'Tipo',
+            'col_porcentaje' => 'Porcentaje',
+            'col_valor' => 'Valor',
+            'col_eliminado' => 'Eliminado',
         ];
     }
 
@@ -90,8 +92,8 @@ class ConceptoLiquidacion extends \yii\db\ActiveRecord
     public static function optsColClasificacion()
     {
         return [
-            self::COL_CLASIFICACION_ESTANDAR => 'estandar',
-            self::COL_CLASIFICACION_OPCIONAL => 'opcional',
+            self::COL_CLASIFICACION_ESTANDAR => 'Estandar',
+            self::COL_CLASIFICACION_OPCIONAL => 'Opcional',
         ];
     }
 
@@ -102,8 +104,8 @@ class ConceptoLiquidacion extends \yii\db\ActiveRecord
     public static function optsColTipo()
     {
         return [
-            self::COL_TIPO_PORCENTAJE => 'porcentaje',
-            self::COL_TIPO_VALOR => 'valor',
+            self::COL_TIPO_PORCENTAJE => 'Porcentaje',
+            self::COL_TIPO_VALOR => 'Valor',
         ];
     }
 

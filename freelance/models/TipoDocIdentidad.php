@@ -48,9 +48,9 @@ class TipoDocIdentidad extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'tdo_id' => 'Tdo ID',
-            'tdo_nombre' => 'Tdo Nombre',
-            'tdo_eliminado' => 'Tdo Eliminado',
+            'tdo_id' => 'ID',
+            'tdo_codigo' => 'Código',
+            'tdo_nombre' => 'Nombre del Documento',
         ];
     }
 

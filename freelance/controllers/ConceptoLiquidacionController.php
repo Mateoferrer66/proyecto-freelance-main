@@ -9,6 +9,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\components\ExcelExportHelper;
 use app\components\PdfExportHelper;
+use Yii;
+
 /**
  * ConceptoLiquidacionController implements the CRUD actions for ConceptoLiquidacion model.
  */
@@ -48,85 +50,75 @@ class ConceptoLiquidacionController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single ConceptoLiquidacion model.
-     * @param int $col_id Col ID
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($col_id)
+    public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($col_id),
-        ]);
+        $model = $this->findModel($id);
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('view', ['model' => $model]);
+        }
+
+        return $this->render('view', ['model' => $model]);
     }
 
-    /**
-     * Creates a new ConceptoLiquidacion model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
     public function actionCreate()
     {
         $model = new ConceptoLiquidacion();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'col_id' => $model->col_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                return $model->save()
+                    ? ['success' => true, 'message' => 'Concepto creado correctamente.']
+                    : ['success' => false, 'errors' => $model->getErrors()];
             }
-        } else {
-            $model->loadDefaultValues();
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
+        $model->loadDefaultValues();
 
-    /**
-     * Updates an existing ConceptoLiquidacion model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $col_id Col ID
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($col_id)
-    {
-        $model = $this->findModel($col_id);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'col_id' => $model->col_id]);
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('create', ['model' => $model]);
         }
 
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+        return $this->render('create', ['model' => $model]);
     }
 
-    /**
-     * Deletes an existing ConceptoLiquidacion model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $col_id Col ID
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($col_id)
+    public function actionUpdate($id)
     {
-        $this->findModel($col_id)->delete();
+        $model = $this->findModel($id);
+
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                return $model->save()
+                    ? ['success' => true, 'message' => 'Concepto actualizado correctamente.']
+                    : ['success' => false, 'errors' => $model->getErrors()];
+            }
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
+        }
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('update', ['model' => $model]);
+        }
+
+        return $this->render('update', ['model' => $model]);
+    }
+
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the ConceptoLiquidacion model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $col_id Col ID
-     * @return ConceptoLiquidacion the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($col_id)
+    protected function findModel($id)
     {
-        if (($model = ConceptoLiquidacion::findOne(['col_id' => $col_id])) !== null) {
+        if (($model = ConceptoLiquidacion::findOne(['col_id' => $id])) !== null) {
             return $model;
         }
 
@@ -137,26 +129,17 @@ class ConceptoLiquidacionController extends Controller
     {
         $conceptos = ConceptoLiquidacion::find()->all();
 
-        $headers = [
-            'ID',
-            'Nombre',
-            'Clasificación',
-            'Tipo',
-            'Porcentaje',
-            'Valor',
-            'Eliminado'
-        ];
+        $headers = ['Código', 'Nombre', 'Clasificación', 'Tipo', 'Porcentaje', 'Valor'];
         $data = [];
 
         foreach ($conceptos as $concepto) {
             $data[] = [
-                $concepto->col_id,
+                $concepto->col_codigo,
                 $concepto->col_nombre,
                 $concepto->displayColClasificacion(),
                 $concepto->displayColTipo(),
                 $concepto->col_porcentaje,
                 $concepto->col_valor,
-                $concepto->col_eliminado ? 'Sí' : 'No',
             ];
         }
 
@@ -167,26 +150,17 @@ class ConceptoLiquidacionController extends Controller
     {
         $conceptos = ConceptoLiquidacion::find()->all();
 
-        $headers = [
-            'ID',
-            'Nombre',
-            'Clasificación',
-            'Tipo',
-            'Porcentaje',
-            'Valor',
-            'Eliminado'
-        ];
+        $headers = ['Código', 'Nombre', 'Clasificación', 'Tipo', 'Porcentaje', 'Valor'];
         $rows = [];
 
         foreach ($conceptos as $concepto) {
             $rows[] = [
-                $concepto->col_id,
+                $concepto->col_codigo,
                 $concepto->col_nombre,
                 $concepto->displayColClasificacion(),
                 $concepto->displayColTipo(),
                 $concepto->col_porcentaje,
                 $concepto->col_valor,
-                $concepto->col_eliminado ? 'Sí' : 'No',
             ];
         }
 
@@ -203,26 +177,17 @@ class ConceptoLiquidacionController extends Controller
     {
         $conceptos = ConceptoLiquidacion::find()->all();
 
-        $headers = [
-            'ID',
-            'Nombre',
-            'Clasificación',
-            'Tipo',
-            'Porcentaje',
-            'Valor',
-            'Eliminado'
-        ];
+        $headers = ['Código', 'Nombre', 'Clasificación', 'Tipo', 'Porcentaje', 'Valor'];
         $rows = [];
 
         foreach ($conceptos as $concepto) {
             $rows[] = [
-                $concepto->col_id,
+                $concepto->col_codigo,
                 $concepto->col_nombre,
                 $concepto->displayColClasificacion(),
                 $concepto->displayColTipo(),
                 $concepto->col_porcentaje,
                 $concepto->col_valor,
-                $concepto->col_eliminado ? 'Sí' : 'No',
             ];
         }
 

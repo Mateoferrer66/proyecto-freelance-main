@@ -44,9 +44,9 @@ class Iva extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'iva_id' => 'Iva ID',
-            'iva_concepto' => 'Iva Concepto',
-            'iva_porcentaje' => 'Iva Porcentaje',
+            'iva_id' => 'Código',
+            'iva_porcentaje' => 'Porcentaje',
+            'iva_concepto' => 'Concepto',
         ];
     }
 

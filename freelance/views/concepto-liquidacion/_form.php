@@ -10,22 +10,27 @@ use yii\widgets\ActiveForm;
 
 <div class="concepto-liquidacion-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+        'id' => 'concepto-liquidacion-form',
+        'enableAjaxValidation' => true,
+        'enableClientValidation' => false,
+    ]); ?>
+
+    <?= $form->field($model, 'col_codigo')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'col_nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'col_clasificacion')->dropDownList([ 'estandar' => 'Estandar', 'opcional' => 'Opcional', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'col_clasificacion')->dropDownList($model::optsColClasificacion(), ['prompt' => 'Seleccione Clasificación']) ?>
 
-    <?= $form->field($model, 'col_tipo')->dropDownList([ 'porcentaje' => 'Porcentaje', 'valor' => 'Valor', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'col_tipo')->dropDownList($model::optsColTipo(), ['prompt' => 'Seleccione Tipo']) ?>
 
     <?= $form->field($model, 'col_porcentaje')->textInput() ?>
 
     <?= $form->field($model, 'col_valor')->textInput() ?>
 
-    <?= $form->field($model, 'col_eliminado')->textInput() ?>
-
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => 'btn btn-primary float-end'])
+        ?>
     </div>
 
     <?php ActiveForm::end(); ?>

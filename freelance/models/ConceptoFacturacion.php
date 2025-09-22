@@ -60,12 +60,12 @@ class ConceptoFacturacion extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'cof_id' => 'Cof ID',
-            'iva_id' => 'Iva ID',
-            'cof_codigo' => 'Cof Codigo',
-            'cof_nombre' => 'Cof Nombre',
-            'cof_clasificacion' => 'Cof Clasificacion',
-            'cof_eliminado' => 'Cof Eliminado',
+            'cof_id' => 'ID',
+            'cof_codigo' => 'Código',
+            'cof_nombre' => 'Nombre del Concepto',
+            'iva_id' => 'IVA',
+            'cof_clasificacion' => 'Clasificación',
+            'cof_eliminado' => 'Eliminado',
         ];
     }
 

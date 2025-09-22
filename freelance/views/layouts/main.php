@@ -30,7 +30,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     <?php $this->head() ?>
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="bg-theme bg-theme3">
     
     <?php $this->beginBody() ?>
 

@@ -11,6 +11,8 @@ use app\models\Provincia;
  */
 class ProvinciaSearch extends Provincia
 {
+    public $pro_codigo;
+
     /**
      * {@inheritdoc}
      */
@@ -18,7 +20,7 @@ class ProvinciaSearch extends Provincia
     {
         return [
             [['prv_id', 'pai_id', 'prv_eliminada'], 'integer'],
-            [['prv_nombre'], 'safe'],
+            [['prv_nombre', 'pro_codigo'], 'safe'],
         ];
     }
 
@@ -64,7 +66,8 @@ class ProvinciaSearch extends Provincia
             'prv_eliminada' => $this->prv_eliminada,
         ]);
 
-        $query->andFilterWhere(['like', 'prv_nombre', $this->prv_nombre]);
+        $query->andFilterWhere(['like', 'prv_nombre', $this->prv_nombre])
+              ->andFilterWhere(['like', 'pro_codigo', $this->pro_codigo]);
 
         return $dataProvider;
     }

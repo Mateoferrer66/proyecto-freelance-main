@@ -1,27 +1,21 @@
 <?php
-
-use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\Html;
 
 /** @var yii\web\View $this */
 /** @var app\models\Provincia $model */
 /** @var yii\widgets\ActiveForm $form */
+
+$form = ActiveForm::begin([
+    'id' => 'provincia-form',
+    'enableAjaxValidation' => true, // Habilitar validación AJAX
+    'enableClientValidation' => false, // Deshabilitar validación del lado del cliente para depender de la respuesta del servidor
+]);
+
+echo $form->field($model, 'pro_codigo')->textInput(['maxlength' => true]);
+echo $form->field($model, 'pro_nombre')->textInput(['maxlength' => true]);
+
+echo Html::submitButton('Guardar', ['class' => 'btn btn-primary float-end']);
+
+ActiveForm::end();
 ?>
-
-<div class="provincia-form">
-
-    <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'pai_id')->textInput() ?>
-
-    <?= $form->field($model, 'prv_nombre')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'prv_eliminada')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-    </div>
-
-    <?php ActiveForm::end(); ?>
-
-</div>

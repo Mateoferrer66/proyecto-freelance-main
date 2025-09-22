@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use app\components\ExcelExportHelper;
 use app\components\PdfExportHelper;
+use Yii;
 
 /**
  * IvaController implements the CRUD actions for Iva model.
@@ -52,15 +53,19 @@ class IvaController extends Controller
 
     /**
      * Displays a single Iva model.
-     * @param int $iva_id Iva ID
+     * @param int $id Iva ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($iva_id)
+    public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($iva_id),
-        ]);
+        $model = $this->findModel($id);
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('view', ['model' => $model]);
+        }
+
+        return $this->render('view', ['model' => $model]);
     }
 
     /**
@@ -73,67 +78,93 @@ class IvaController extends Controller
         $model = new Iva();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'iva_id' => $model->iva_id]);
+            if ($model->load($this->request->post())) {
+                if (Yii::$app->request->isAjax) {
+                    Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                    if ($model->save()) {
+                        return ['success' => true, 'message' => 'IVA creado correctamente.'];
+                    } else {
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+                }
+                if ($model->save()) {
+                    return $this->redirect(['index']);
+                }
             }
         } else {
             $model->loadDefaultValues();
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('create', ['model' => $model]);
+        }
+
+        return $this->render('create', ['model' => $model]);
     }
+
 
     /**
      * Updates an existing Iva model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $iva_id Iva ID
+     * @param int $id Iva ID
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($iva_id)
+    public function actionUpdate($id)
     {
-        $model = $this->findModel($iva_id);
+        $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'iva_id' => $model->iva_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                if ($model->save()) {
+                    return ['success' => true, 'message' => 'IVA actualizado correctamente.'];
+                } else {
+                    return ['success' => false, 'errors' => $model->getErrors()];
+                }
+            }
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
         }
 
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('update', ['model' => $model]);
+        }
+
+        return $this->render('update', ['model' => $model]);
     }
 
     /**
      * Deletes an existing Iva model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $iva_id Iva ID
+     * @param int $id Iva ID
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    // public function actionDelete($iva_id)
-    // {
-    //     $this->findModel($iva_id)->delete();
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
 
-    //     return $this->redirect(['index']);
-    // }
+        return $this->redirect(['index']);
+    }
 
     /**
      * Finds the Iva model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $iva_id Iva ID
+     * @param int $id Iva ID
      * @return Iva the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($iva_id)
+    protected function findModel($id)
     {
-        if (($model = Iva::findOne(['iva_id' => $iva_id])) !== null) {
+        if (($model = Iva::findOne(['iva_id' => $id])) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
      public function actionExportExcel()
     {
         $ivas = Iva::find()->all();

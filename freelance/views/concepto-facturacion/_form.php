@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\Iva;
+use yii\helpers\ArrayHelper;
 
 /** @var yii\web\View $this */
 /** @var app\models\ConceptoFacturacion $model */
@@ -10,20 +12,29 @@ use yii\widgets\ActiveForm;
 
 <div class="concepto-facturacion-form">
 
-    <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'iva_id')->textInput() ?>
+    <?php $form = ActiveForm::begin([
+        'id' => 'concepto-form',
+        'enableAjaxValidation' => true,
+        'enableClientValidation' => false,
+    ]); ?>
 
     <?= $form->field($model, 'cof_codigo')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'cof_nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'cof_clasificacion')->dropDownList([ 'estandar' => 'Estandar', 'opcional' => 'Opcional', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'iva_id')->dropDownList(
+        ArrayHelper::map(Iva::find()->all(), 'iva_id', 'iva_concepto'),
+        ['prompt' => 'Seleccione IVA']
+    ) ?>
 
-    <?= $form->field($model, 'cof_eliminado')->textInput() ?>
+    <?= $form->field($model, 'cof_clasificacion')->dropDownList(
+        $model::optsCofClasificacion(),
+        ['prompt' => 'Seleccione Clasificación']
+    ) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => 'btn btn-primary float-end'])
+        ?>
     </div>
 
     <?php ActiveForm::end(); ?>

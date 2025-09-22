@@ -9,6 +9,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\components\ExcelExportHelper;
 use app\components\PdfExportHelper;
+use Yii;
+
 /**
  * ConceptoFacturacionController implements the CRUD actions for ConceptoFacturacion model.
  */
@@ -48,85 +50,75 @@ class ConceptoFacturacionController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single ConceptoFacturacion model.
-     * @param int $cof_id Cof ID
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($cof_id)
+    public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($cof_id),
-        ]);
+        $model = $this->findModel($id);
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('view', ['model' => $model]);
+        }
+
+        return $this->render('view', ['model' => $model]);
     }
 
-    /**
-     * Creates a new ConceptoFacturacion model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
     public function actionCreate()
     {
         $model = new ConceptoFacturacion();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'cof_id' => $model->cof_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                return $model->save()
+                    ? ['success' => true, 'message' => 'Concepto creado correctamente.']
+                    : ['success' => false, 'errors' => $model->getErrors()];
             }
-        } else {
-            $model->loadDefaultValues();
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
+        $model->loadDefaultValues();
 
-    /**
-     * Updates an existing ConceptoFacturacion model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $cof_id Cof ID
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($cof_id)
-    {
-        $model = $this->findModel($cof_id);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'cof_id' => $model->cof_id]);
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('create', ['model' => $model]);
         }
 
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+        return $this->render('create', ['model' => $model]);
     }
 
-    /**
-     * Deletes an existing ConceptoFacturacion model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $cof_id Cof ID
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($cof_id)
+    public function actionUpdate($id)
     {
-        $this->findModel($cof_id)->delete();
+        $model = $this->findModel($id);
+
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                return $model->save()
+                    ? ['success' => true, 'message' => 'Concepto actualizado correctamente.']
+                    : ['success' => false, 'errors' => $model->getErrors()];
+            }
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
+        }
+
+        if ($this->request->get('view') === 'modal') {
+            return $this->renderAjax('update', ['model' => $model]);
+        }
+
+        return $this->render('update', ['model' => $model]);
+    }
+
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the ConceptoFacturacion model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $cof_id Cof ID
-     * @return ConceptoFacturacion the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($cof_id)
+    protected function findModel($id)
     {
-        if (($model = ConceptoFacturacion::findOne(['cof_id' => $cof_id])) !== null) {
+        if (($model = ConceptoFacturacion::findOne(['cof_id' => $id])) !== null) {
             return $model;
         }
 

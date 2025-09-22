@@ -11,6 +11,8 @@ use app\models\Categoria;
  */
 class CategoriaSearch extends Categoria
 {
+    public $cat_codigo;
+
     /**
      * {@inheritdoc}
      */
@@ -18,7 +20,7 @@ class CategoriaSearch extends Categoria
     {
         return [
             [['cat_id', 'cat_eliminada'], 'integer'],
-            [['cat_nombre'], 'safe'],
+            [['cat_nombre', 'cat_codigo'], 'safe'],
         ];
     }
 
@@ -63,7 +65,8 @@ class CategoriaSearch extends Categoria
             'cat_eliminada' => $this->cat_eliminada,
         ]);
 
-        $query->andFilterWhere(['like', 'cat_nombre', $this->cat_nombre]);
+        $query->andFilterWhere(['like', 'cat_nombre', $this->cat_nombre])
+              ->andFilterWhere(['like', 'cat_codigo', $this->cat_codigo]);
 
         return $dataProvider;
     }

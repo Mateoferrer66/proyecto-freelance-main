@@ -17,6 +17,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'cat_id') ?>
 
+    <?= $form->field($model, 'cat_codigo') ?>
+
     <?= $form->field($model, 'cat_nombre') ?>
 
     <?= $form->field($model, 'cat_eliminada') ?>

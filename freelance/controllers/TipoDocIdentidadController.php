@@ -54,11 +54,15 @@ class TipoDocIdentidadController extends Controller
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($tdo_id)
+    public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($tdo_id),
-        ]);
+        $model = $this->findModel($id);
+
+        if (Yii::$app->request->get('view') === 'modal') {
+            return $this->renderAjax('view', ['model' => $model]);
+        }
+
+        return $this->render('view', ['model' => $model]);
     }
 
     /**
@@ -71,36 +75,60 @@ class TipoDocIdentidadController extends Controller
         $model = new TipoDocIdentidad();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'tdo_id' => $model->tdo_id]);
+            if ($model->load($this->request->post())) {
+                if (Yii::$app->request->isAjax) {
+                    Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                    if ($model->save()) {
+                        return ['success' => true, 'message' => 'Tipo de documento creado correctamente.'];
+                    } else {
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+                }
+                if ($model->save()) {
+                    return $this->redirect(['index']);
+                }
             }
         } else {
             $model->loadDefaultValues();
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        if (Yii::$app->request->get('view') === 'modal') {
+            return $this->renderAjax('create', ['model' => $model]);
+        }
+
+        return $this->render('create', ['model' => $model]);
     }
 
     /**
      * Updates an existing TipoDocIdentidad model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $tdo_id Tdo ID
+     * @param int $id Tdo ID
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($tdo_id)
+    public function actionUpdate($id)
     {
-        $model = $this->findModel($tdo_id);
+        $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'tdo_id' => $model->tdo_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            if (Yii::$app->request->isAjax) {
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                if ($model->save()) {
+                    return ['success' => true, 'message' => 'Tipo de documento actualizado correctamente.'];
+                } else {
+                    return ['success' => false, 'errors' => $model->getErrors()];
+                }
+            }
+            if ($model->save()) {
+                return $this->redirect(['index']);
+            }
         }
 
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+        if (Yii::$app->request->get('view') === 'modal') {
+            return $this->renderAjax('update', ['model' => $model]);
+        }
+
+        return $this->render('update', ['model' => $model]);
     }
 
     /**
@@ -110,9 +138,9 @@ class TipoDocIdentidadController extends Controller
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($tdo_id)
+    public function actionDelete($id)
     {
-        $this->findModel($tdo_id)->delete();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
@@ -120,13 +148,13 @@ class TipoDocIdentidadController extends Controller
     /**
      * Finds the TipoDocIdentidad model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $tdo_id Tdo ID
+     * @param int $id Tdo ID
      * @return TipoDocIdentidad the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($tdo_id)
+    protected function findModel($id)
     {
-        if (($model = TipoDocIdentidad::findOne(['tdo_id' => $tdo_id])) !== null) {
+        if (($model = TipoDocIdentidad::findOne(['tdo_id' => $id])) !== null) {
             return $model;
         }
 

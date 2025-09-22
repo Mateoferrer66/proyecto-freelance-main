@@ -32,9 +32,9 @@ class Categoria extends \yii\db\ActiveRecord
     {
         return [
             [['cat_eliminada'], 'default', 'value' => 0],
-            [['cat_nombre'], 'required'],
+            [['cat_nombre', 'cat_codigo'], 'required'],
             [['cat_eliminada'], 'integer'],
-            [['cat_nombre'], 'string', 'max' => 255],
+            [['cat_nombre', 'cat_codigo'], 'string', 'max' => 255],
         ];
     }
 
@@ -44,9 +44,10 @@ class Categoria extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'cat_id' => 'Cat ID',
-            'cat_nombre' => 'Cat Nombre',
-            'cat_eliminada' => 'Cat Eliminada',
+            'cat_id' => 'ID',
+            'cat_codigo' => 'Código',
+            'cat_nombre' => 'Nombre de la Categoría',
+            'cat_eliminada' => 'Eliminada',
         ];
     }
 

@@ -191,8 +191,7 @@ JS);
                 'options' => ['class' => 'search-bar', 'data-pjax' => 1],
             ]); ?>
 
-            <?= $form->field($searchModel, 'cat_codigo', ['template' => '{input}'])
-                ->textInput(['placeholder' => 'Buscar código...']) ?>
+
             <?= $form->field($searchModel, 'cat_nombre', ['template' => '{input}'])
                 ->textInput(['placeholder' => 'Buscar nombre...']) ?>
 

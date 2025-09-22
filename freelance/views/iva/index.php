@@ -14,79 +14,20 @@ use yii\widgets\ActiveForm;
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Gestión de IVA';
-$this->params['breadcrumbs'] = []; 
+$this->params['breadcrumbs'] = [];
 $this->registerCss(".table thead a { text-decoration: none !important; }");
+$this->registerJs(<<<JS
+let timeout;
+$('#iva-search-input').on('input', function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+        $.pjax.submit($('#auto-search-form'), '#iva-pjax');
+    }, 500);
+});
+JS);
+
 
 ?>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #1e1e2f;
-        color: #fff;
-        margin: 0;
-        padding: 0;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 50px auto;
-        padding: 20px;
-        background-color: #2a2a3b;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-
-    .header h1 {
-        font-size: 24px;
-        text-transform: uppercase;
-        color: #ffa500;
-    }
-
-    .search-bar {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .search-bar input {
-        padding: 10px;
-        border: 1px solid #444;
-        border-radius: 5px;
-        background-color: #333;
-        color: #fff;
-        width: 300px;
-    }
-
-    .buttons {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px; /* Added margin for spacing */
-    }
-
-    .buttons a {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: #ffa500;
-        color: #fff;
-        cursor: pointer;
-        font-size: 16px;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-
-    .buttons a:hover {
-        background-color: #ff8c00;
-    }
-</style>
 
 <?php
 Modal::begin([
@@ -165,105 +106,119 @@ $(document).on('beforeSubmit', '#modal-content form', function(e) {
 });
 JS);
 ?>
-
-<div class="iva-index">
-
-    <?= $this->render('@app/views/layouts/_orangemenu') ?>
-
-    <div class="mb-3" style="margin-top: 20px;">
-        <?= Html::a('<i class="bx bx-plus-medical"></i> Crear IVA', ['create', 'view' => 'modal'], [
-            'class' => 'btn btn-success px-4 radius-30',
-            'title' => 'Agregar nuevo concepto de IVA',
-            'data-bs-toggle' => 'modal',
-            'data-bs-target' => '#action-modal',
-        ]) ?>
-    </div>
-
-    <?php Pjax::begin(['id' => 'iva-pjax']); ?>
+<?= $this->render('@app/views/layouts/_orangemenu') ?>
+<div class="page-content">
 
     <div class="col d-flex justify-content-between align-items-start">
-        <h6 class="mb-0 text-uppercase">
-            IVA <span class="badge bg-warning text-dark"><?= $dataProvider->getTotalCount() ?></span>
+        <h6 class="mb-0 text-uppercase">IVA <dl><?= $dataProvider->getTotalCount() ?></dl>
         </h6>
-    </div>
-
-    <div class="container">
-        <div class="header">
-            <h1>Gestión de IVA</h1>
-            <?php $form = ActiveForm::begin([
-                'action' => ['index'],
-                'method' => 'get',
-                'options' => ['class' => 'search-bar', 'data-pjax' => 1],
-            ]); ?>
-
-            <?= $form->field($searchModel, 'iva_porcentaje', ['template' => '{input}'])
-                ->textInput(['placeholder' => 'Buscar por porcentaje...']) ?>
-
-            <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
-
-            <?php ActiveForm::end(); ?>
-        </div>
-
-        <div class="buttons">
-            <?= Html::a('Excel', ['iva/export-excel'], [
-                'target' => '_blank',
-                'data-pjax' => 0,
-            ]) ?>
-            <?= Html::a('PDF', ['iva/export-pdf'], [
-                'target' => '_blank',
-                'data-pjax' => 0,
-            ]) ?>
-            <?= Html::a('Print', ['iva/print'], [
-                'target' => '_blank',
-                'data-pjax' => 0,
+        <div>
+            <?= Html::a('<i class="bx bx-plus mr-1"></i> Crear IVA', ['create', 'view' => 'modal'], [
+                'class' => 'btn btn-success radius-30',
+                'title' => 'Crear IVA',
+                'data-bs-toggle' => 'modal',
+                'data-bs-target' => '#action-modal',
             ]) ?>
         </div>
-
-        <?= GridView::widget([
-            'dataProvider' => $dataProvider,
-            'summary' => false,
-            'tableOptions' => ['class' => 'table table-striped table-bordered'],
-            'columns' => [
-                [
-                    'attribute' => 'iva_porcentaje',
-                    'label' => 'IVA Porcentaje',
-                ],
-             
-                [
-                    'attribute' => 'iva_concepto',
-                    'label' => 'IVA Concepto',
-                ],
-                [
-                    'class' => ActionColumn::class,
-                    'header' => 'Acciones',
-                    'template' => '{view} {update} {delete}',
-                    'buttons' => [
-                        'view' => fn($url, $model) => Html::a('<i class="bx bx-show"></i>', $url, [
-                            'title' => 'Ver IVA: ' . $model->iva_concepto,
-                            'class' => 'btn btn-info btn-sm',
-                            'data-bs-toggle' => 'modal',
-                            'data-bs-target' => '#action-modal'
-                        ]),
-                        'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
-                            'title' => 'Editar IVA: ' . $model->iva_concepto,
-                            'class' => 'btn btn-primary btn-sm',
-                            'data-bs-toggle' => 'modal',
-                            'data-bs-target' => '#action-modal'
-                        ]),
-                        'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
-                            'title' => 'Eliminar IVA',
-                            'class' => 'btn btn-danger btn-sm',
-                            'data-confirm' => '¿Está seguro de que desea eliminar el IVA: "' . $model->iva_concepto . '"?',
-                            'data-method' => 'post',
-                            'data-pjax' => '1',
-                        ]),
-                    ],
-                    'urlCreator' => fn($action, Iva $model, $key, $index, $column) => 
-                        Url::toRoute([$action, 'id' => $model->iva_id, 'view' => ($action === 'delete' ? null : 'modal')]),
-                ],
-            ],
-        ]); ?>
     </div>
+    <hr />
+    <div class="row">
+        <?php Pjax::begin(['id' => 'iva-pjax']); ?>
+        <div class="col-xl-12 mx-auto">
+            <div class="dataTables_wrapper dt-bootstrap5 no-footer">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="dt-buttons btn-group">
+                            <?= Html::a('Excel', ['iva/export-excel'], [
+                                'target' => '_blank',
+                                'class' => 'btn btn-light buttons-excel buttons-html5',
+                                'data-pjax' => 0,
+                            ]) ?>
+                            <?= Html::a('PDF', ['iva/export-pdf'], [
+                                'target' => '_blank',
+                                'class' => 'btn btn-light buttons-excel buttons-html5',
+                                'data-pjax' => 0,
+                            ]) ?>
+                            <?= Html::a('Print', ['iva/print'], [
+                                'target' => '_blank',
+                                'class' => 'btn btn-light buttons-excel buttons-html5',
+                                'data-pjax' => 0,
+                            ]) ?>
+                        </div>
+                    </div>
 
+                    <div class="col-sm-12 col-md-6">
+                        <div class="dataTables_filter">
+                            <?php $form = ActiveForm::begin([
+                                'action' => ['index'],
+                                'method' => 'get',
+                                'options' => [
+                                    'class' => 'search-bar mb-3',
+                                    'data-pjax' => 1,
+                                    'id' => 'auto-search-form'
+                                ],
+                            ]); ?>
+
+                            <?= $form->field($searchModel, 'iva_porcentaje', ['template' => '{input}'])
+                                ->textInput([
+                                    'placeholder' => 'Buscar por porcentaje...',
+                                    'class' => 'form-control form-control-sm',
+                                    'id' => 'iva-search-input',
+                                    'autocomplete' => 'off'
+                                ]) ?>
+                            <?php ActiveForm::end(); ?>
+                        </div>
+                    </div>
+
+
+
+                    <?= GridView::widget([
+                        'dataProvider' => $dataProvider,
+                        'summary' => false,
+                        'tableOptions' => ['class' => 'table table-striped table-bordered'],
+                        'columns' => [
+                            [
+                                'attribute' => 'iva_porcentaje',
+                                'label' => 'IVA Porcentaje',
+                            ],
+
+                            [
+                                'attribute' => 'iva_concepto',
+                                'label' => 'IVA Concepto',
+                            ],
+                            [
+                                'class' => ActionColumn::class,
+                                'header' => 'Acciones',
+                                'template' => '{view} {update} {delete}',
+                                'buttons' => [
+                                    'view' => fn($url, $model) => Html::a('<i class="bx bx-show"></i>', $url, [
+                                        'title' => 'Ver IVA: ' . $model->iva_concepto,
+                                        'class' => 'btn btn-light',
+                                        'data-bs-toggle' => 'modal',
+                                        'data-bs-target' => '#action-modal'
+                                    ]),
+                                    'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
+                                        'title' => 'Editar IVA: ' . $model->iva_concepto,
+                                        'class' => 'btn btn-light',
+                                        'data-bs-toggle' => 'modal',
+                                        'data-bs-target' => '#action-modal'
+                                    ]),
+                                    'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
+                                        'title' => 'Eliminar IVA',
+                                        'class' => 'btn btn-light',
+                                        'data-confirm' => '¿Está seguro de que desea eliminar el IVA: "' . $model->iva_concepto . '"?',
+                                        'data-method' => 'post',
+                                        'data-pjax' => '1',
+                                    ]),
+                                ],
+                                'urlCreator' => fn($action, Iva $model, $key, $index, $column) =>
+                                Url::toRoute([$action, 'id' => $model->iva_id, 'view' => ($action === 'delete' ? null : 'modal')]),
+                            ],
+                        ],
+                    ]); ?>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php Pjax::end(); ?>
 </div>

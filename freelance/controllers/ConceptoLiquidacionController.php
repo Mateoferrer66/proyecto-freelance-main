@@ -91,22 +91,21 @@ class ConceptoLiquidacionController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post())) {
-            if (Yii::$app->request->isAjax) {
-                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-                return $model->save()
-                    ? ['success' => true, 'message' => 'Concepto actualizado correctamente.']
-                    : ['success' => false, 'errors' => $model->getErrors()];
+            if ($this->request->isAjax) {
+                \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                if ($model->save()) {
+                    return ['success' => true, 'message' => 'Concepto actualizado correctamente.'];
+                } else {
+                    return ['success' => false, 'errors' => $model->getErrors()];
+                }
             }
             if ($model->save()) {
                 return $this->redirect(['index']);
             }
         }
 
-        if ($this->request->get('view') === 'modal') {
-            return $this->renderAjax('update', ['model' => $model]);
-        }
-
-        return $this->render('update', ['model' => $model]);
+        $renderMethod = $this->request->get('view') === 'modal' ? 'renderAjax' : 'render';
+        return $this->$renderMethod('update', ['model' => $model]);
     }
 
     public function actionDelete($id)

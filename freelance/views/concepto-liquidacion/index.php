@@ -208,7 +208,7 @@ JS);
                                     ]),
                                 ],
                                 'urlCreator' => fn($action, ConceptoLiquidacion $model, $key, $index, $column) =>
-                                Url::toRoute([$action, 'col_id' => $model->col_id, 'view' => ($action === 'delete' ? null : 'modal')]),
+                                Url::toRoute([$action, 'id' => $model->col_id, 'view' => ($action === 'delete' ? null : 'modal')]),
                             ],
                         ],
                     ]); ?>

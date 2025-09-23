@@ -37,9 +37,9 @@ class Provincia extends \yii\db\ActiveRecord
     {
         return [
             [['prv_eliminada'], 'default', 'value' => 0],
-            [['pai_id', 'prv_nombre', 'pro_codigo'], 'required'],
+            [['pai_id', 'prv_nombre'], 'required'],
             [['pai_id', 'prv_eliminada'], 'integer'],
-            [['prv_nombre', 'pro_codigo'], 'string', 'max' => 255],
+            [['prv_nombre'], 'string', 'max' => 255],
             [['pai_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::class, 'targetAttribute' => ['pai_id' => 'pai_id']],
         ];
     }
@@ -50,11 +50,10 @@ class Provincia extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'prv_id' => 'ID',
-            'pro_codigo' => 'Código',
-            'prv_nombre' => 'Nombre de la Provincia',
-            'pai_id' => 'País',
-            'prv_eliminada' => 'Eliminada',
+            'prv_id' => 'Prv ID',
+            'pai_id' => 'Pai ID',
+            'prv_nombre' => 'Prv Nombre',
+            'prv_eliminada' => 'Prv Eliminada',
         ];
     }
 

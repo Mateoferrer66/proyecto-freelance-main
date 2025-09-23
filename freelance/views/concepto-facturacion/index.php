@@ -108,7 +108,7 @@ JS);
 ?>
 <?= $this->render('@app/views/layouts/_orangemenu') ?>
 <div class="page-content">
-
+<?php Pjax::begin(['id' => 'concepto-facturacion-pjax']); ?>
     <div class="col d-flex justify-content-between align-items-start">
         <h6 class="mb-0 text-uppercase">Conceptos de Facturación <dl><?= $dataProvider->getTotalCount() ?></dl>
         </h6>
@@ -123,7 +123,7 @@ JS);
     </div>
     <hr />
     <div class="row">
-        <?php Pjax::begin(['id' => 'concepto-facturacion-pjax']); ?>
+        
         <div class="col-xl-12 mx-auto">
             <div class="dataTables_wrapper dt-bootstrap5 no-footer">
                 <div class="row">
@@ -191,15 +191,22 @@ JS);
                                 'template' => '{update}',
                                 'buttons' => [
                                     'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
-                                        'title' => 'Editar Concepto: ' . $model->cof_nombre,
+                                        'title' => 'Editar Concepto facturacion: ' . $model->cof_nombre,
                                         'class' => 'btn btn-light',
                                         'data-bs-toggle' => 'modal',
                                         'data-bs-target' => '#action-modal'
                                     ]),
                                 ],
-                                 ],
+                                'urlCreator' => function ($action, $model, $key, $index) {
+                                    if ($action === 'update') {
+                                        return Url::to(['update', 'id' => $model->cof_id, 'view' => 'modal']);
+                                    }
+                                    return null;
+                                }   
+                             ],
                         ],
                     ]); ?>
+                    
                 </div>
             </div>
         </div>

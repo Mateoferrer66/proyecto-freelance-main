@@ -9,6 +9,8 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\components\ExcelExportHelper;
 use app\components\PdfExportHelper;
+use yii\web\Response;
+use Yii;
 /**
  * TipoDocIdentidadController implements the CRUD actions for TipoDocIdentidad model.
  */
@@ -108,13 +110,13 @@ class TipoDocIdentidadController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+       $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post())) {
-            if (Yii::$app->request->isAjax) {
-                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            if ($this->request->isAjax) {
+                \Yii::$app->response->format = Response::FORMAT_JSON;
                 if ($model->save()) {
-                    return ['success' => true, 'message' => 'Tipo de documento actualizado correctamente.'];
+                    return ['success' => true, 'message' => 'Actualizado correctamente.'];
                 } else {
                     return ['success' => false, 'errors' => $model->getErrors()];
                 }
@@ -124,11 +126,8 @@ class TipoDocIdentidadController extends Controller
             }
         }
 
-        if (Yii::$app->request->get('view') === 'modal') {
-            return $this->renderAjax('update', ['model' => $model]);
-        }
-
-        return $this->render('update', ['model' => $model]);
+        $renderMethod = $this->request->get('view') === 'modal' ? 'renderAjax' : 'render';
+        return $this->$renderMethod('update', ['model' => $model]);
     }
 
     /**

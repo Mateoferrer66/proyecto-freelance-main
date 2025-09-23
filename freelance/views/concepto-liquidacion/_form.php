@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\Iva;
+use yii\helpers\ArrayHelper;
 
 /** @var yii\web\View $this */
 /** @var app\models\ConceptoLiquidacion $model */
@@ -10,13 +12,7 @@ use yii\widgets\ActiveForm;
 
 <div class="concepto-liquidacion-form">
 
-    <?php $form = ActiveForm::begin([
-        'id' => 'concepto-liquidacion-form',
-        'enableAjaxValidation' => true,
-        'enableClientValidation' => false,
-    ]); ?>
-
-    <?= $form->field($model, 'col_codigo')->textInput(['maxlength' => true]) ?>
+    <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'col_nombre')->textInput(['maxlength' => true]) ?>
 
@@ -28,9 +24,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'col_valor')->textInput() ?>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => 'btn btn-primary float-end'])
-        ?>
+    <?= $form->field($model, 'col_eliminado')->textInput() ?>
+
+    <div class="form-group d-flex justify-content-end">
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

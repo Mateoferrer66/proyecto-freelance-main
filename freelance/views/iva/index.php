@@ -189,26 +189,13 @@ JS);
                             [
                                 'class' => ActionColumn::class,
                                 'header' => 'Acciones',
-                                'template' => '{view} {update} {delete}',
+                                'template' => '{update}',
                                 'buttons' => [
-                                    'view' => fn($url, $model) => Html::a('<i class="bx bx-show"></i>', $url, [
-                                        'title' => 'Ver IVA: ' . $model->iva_concepto,
-                                        'class' => 'btn btn-light',
-                                        'data-bs-toggle' => 'modal',
-                                        'data-bs-target' => '#action-modal'
-                                    ]),
                                     'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
                                         'title' => 'Editar IVA: ' . $model->iva_concepto,
                                         'class' => 'btn btn-light',
                                         'data-bs-toggle' => 'modal',
                                         'data-bs-target' => '#action-modal'
-                                    ]),
-                                    'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
-                                        'title' => 'Eliminar IVA',
-                                        'class' => 'btn btn-light',
-                                        'data-confirm' => '¿Está seguro de que desea eliminar el IVA: "' . $model->iva_concepto . '"?',
-                                        'data-method' => 'post',
-                                        'data-pjax' => '1',
                                     ]),
                                 ],
                                 'urlCreator' => fn($action, Iva $model, $key, $index, $column) =>

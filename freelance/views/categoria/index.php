@@ -188,14 +188,9 @@ JS);
                             [
                                 'class' => ActionColumn::class,
                                 'header' => 'Acciones',
-                                'template' => '{view} {update} {delete}',
+                                'template' => ' {update} {delete}',
                                 'buttons' => [
-                                    'view' => fn($url, $model) => Html::a('<i class="bx bx-show"></i>', $url, [
-                                        'title' => 'Ver Categoría: ' . $model->cat_nombre,
-                                        'class' => 'btn btn-light',
-                                        'data-bs-toggle' => 'modal',
-                                        'data-bs-target' => '#action-modal'
-                                    ]),
+                                   
                                     'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
                                         'title' => 'Editar Categoría: ' . $model->cat_nombre,
                                         'class' => 'btn btn-light',

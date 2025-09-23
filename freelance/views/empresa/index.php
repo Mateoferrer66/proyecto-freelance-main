@@ -166,7 +166,7 @@ $this->params['breadcrumbs'] = [];
     </div>
 
     <div class="form-group">
-        <?= Html::submitButton('Guardar', ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success px-5 radius-30']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

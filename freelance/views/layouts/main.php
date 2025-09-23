@@ -10,6 +10,7 @@ use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
+use yii\bootstrap5\Modal;
 
 PanelAsset::register($this);
 
@@ -57,10 +58,21 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
             </main>
         </div>
+        <?php
 
+        Modal::begin([
+            'id' => 'action-modal',
+            'title' => '<h4 class="modal-title"></h4>',
+            'size' => 'modal-lg',
+            'footer' => '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>',
+        ]);
+        echo "<div id='modal-content'></div>";
+        Modal::end();
+        ?>
         <?php $this->endBody() ?>
 
     </div>
+
 </body>
 
 </html>

@@ -103,8 +103,8 @@ $this->params['breadcrumbs'] = [];
                             <?= $form->field($empresa, 'emp_participaciones')->textInput()->label('Participaciones') ?>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <?= Html::submitButton('Guardar', ['class' => 'btn btn-primary']) ?>
+                    <div class="col-md-12">
+                        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success px-5 radius-30']) ?>
                     </div>
                 </div>
             </div>
@@ -113,4 +113,3 @@ $this->params['breadcrumbs'] = [];
 </div>
 
 <?php ActiveForm::end(); ?>
-

@@ -188,26 +188,13 @@ JS);
                             [
                                 'class' => ActionColumn::class,
                                 'header' => 'Acciones',
-                                'template' => '{view} {update} {delete}',
+                                'template' => '{update}',
                                 'buttons' => [
-                                    'view' => fn($url, $model) => Html::a('<i class="bx bx-show"></i>', $url, [
-                                        'title' => 'Ver Concepto: ' . $model->cof_nombre,
-                                        'class' => 'btn btn-light',
-                                        'data-bs-toggle' => 'modal',
-                                        'data-bs-target' => '#action-modal'
-                                    ]),
                                     'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
                                         'title' => 'Editar Concepto: ' . $model->cof_nombre,
                                         'class' => 'btn btn-light',
                                         'data-bs-toggle' => 'modal',
                                         'data-bs-target' => '#action-modal'
-                                    ]),
-                                    'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
-                                        'title' => 'Eliminar Concepto',
-                                        'class' => 'btn btn-light',
-                                        'data-confirm' => '¿Está seguro de que desea eliminar el concepto: "' . $model->cof_nombre . '"?',
-                                        'data-method' => 'post',
-                                        'data-pjax' => '1',
                                     ]),
                                 ],
                                 'urlCreator' => fn($action, ConceptoFacturacion $model, $key, $index, $column) =>

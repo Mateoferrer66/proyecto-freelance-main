@@ -34,7 +34,7 @@ use yii\helpers\ArrayHelper;
 
     <div class="form-group">
           <?= Html::submitButton('Guardar', ['class' => 'btn btn-success radius-30']) ?>
-        ?>
+
     </div>
 
     <?php ActiveForm::end(); ?>

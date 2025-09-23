@@ -33,9 +33,9 @@ JS);
 <?php
 Modal::begin([
     'id' => 'action-modal',
-    'title' => '<h4 class="modal-title"></h4>',
+    'title' => '',
     'size' => 'modal-lg',
-    'footer' => '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>',
+    'footer' => '',
 ]);
 echo "<div id='modal-content'><div class='text-center'><div class='spinner-border' role='status'></div></div></div>";
 Modal::end();

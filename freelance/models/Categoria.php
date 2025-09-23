@@ -44,9 +44,9 @@ class Categoria extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'cat_id' => 'Cat ID',
-            'cat_nombre' => 'Cat Nombre',
-            'cat_eliminada' => 'Cat Eliminada',
+            'cat_id' => 'ID',
+            'cat_nombre' => 'Nombre',
+            'cat_eliminada' => 'Eliminada',
         ];
     }
 

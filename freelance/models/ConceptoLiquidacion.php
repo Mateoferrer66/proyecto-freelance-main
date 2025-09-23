@@ -62,13 +62,13 @@ class ConceptoLiquidacion extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'col_id' => 'Col ID',
-            'col_nombre' => 'Col Nombre',
-            'col_clasificacion' => 'Col Clasificacion',
-            'col_tipo' => 'Col Tipo',
-            'col_porcentaje' => 'Col Porcentaje',
-            'col_valor' => 'Col Valor',
-            'col_eliminado' => 'Col Eliminado',
+            'col_id' => 'ID',
+            'col_nombre' => 'Nombre',
+            'col_clasificacion' => 'Clasificacion',
+            'col_tipo' => 'Tipo',
+            'col_porcentaje' => 'Porcentaje',
+            'col_valor' => 'Valor',
+            'col_eliminado' => 'Eliminado',
         ];
     }
 

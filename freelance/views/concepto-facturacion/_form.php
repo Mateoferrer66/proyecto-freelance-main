@@ -33,7 +33,7 @@ use yii\helpers\ArrayHelper;
     ) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => 'btn btn-primary float-end'])
+          <?= Html::submitButton('Guardar', ['class' => 'btn btn-success radius-30']) ?>
         ?>
     </div>
 

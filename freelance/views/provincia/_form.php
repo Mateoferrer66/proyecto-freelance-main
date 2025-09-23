@@ -22,7 +22,7 @@ use yii\helpers\ArrayHelper;
     ) ?>
 
     <div class="form-group d-flex justify-content-end">
-        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
+         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success radius-30']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

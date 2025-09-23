@@ -16,7 +16,7 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'col_nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'col_clasificacion')->dropDownList($model::optsColClasificacion(), ['prompt' => 'Seleccione Clasificación']) ?>
+    <?= $form->field($model, attribute: 'col_clasificacion')->dropDownList($model::optsColClasificacion(), ['prompt' => 'Seleccione Clasificación']) ?>
 
     <?= $form->field($model, 'col_tipo')->dropDownList($model::optsColTipo(), ['prompt' => 'Seleccione Tipo']) ?>
 
@@ -24,10 +24,8 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'col_valor')->textInput() ?>
 
-    <?= $form->field($model, 'col_eliminado')->textInput() ?>
-
     <div class="form-group d-flex justify-content-end">
-        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
+       <?= Html::submitButton('Guardar', ['class' => 'btn btn-success radius-30']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

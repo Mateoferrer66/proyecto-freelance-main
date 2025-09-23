@@ -49,10 +49,10 @@ class Banco extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'ban_id' => 'Ban ID',
-            'ban_nombre' => 'Ban Nombre',
-            'ban_numcuenta' => 'Ban Numcuenta',
-            'ban_eliminado' => 'Ban Eliminado',
+            'ban_id' => 'ID',
+            'ban_nombre' => 'Nombre',
+            'ban_numcuenta' => 'Numcuenta',
+            'ban_eliminado' => 'Eliminado',
         ];
     }
 

@@ -64,21 +64,21 @@ class Empresa extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'emp_id' => 'Emp ID',
-            'emp_razon_social' => 'Emp Razon Social',
-            'tdo_id' => 'Tdo ID',
-            'emp_numdocide' => 'Emp Numdocide',
-            'emp_direccion' => 'Emp Direccion',
-            'emp_codpostal' => 'Emp Codpostal',
-            'emp_poblacion' => 'Emp Poblacion',
-            'emp_telefono' => 'Emp Telefono',
-            'emp_fax' => 'Emp Fax',
-            'emp_email' => 'Emp Email',
-            'emp_regimen_segs' => 'Emp Regimen Segs',
-            'emp_ccc_segs' => 'Emp Ccc Segs',
-            'emp_tipo_segs' => 'Emp Tipo Segs',
-            'emp_razons_segs' => 'Emp Razons Segs',
-            'emp_participaciones' => 'Emp Participaciones',
+            'emp_id' => 'ID',
+            'emp_razon_social' => 'Nombre/Razon Social',
+            'tdo_id' => 'Tipo Documento',
+            'emp_numdocide' => 'Número identificación Fiscal',
+            'emp_direccion' => 'Direccion',
+            'emp_codpostal' => 'Codigo postal',
+            'emp_poblacion' => 'Poblacion',
+            'emp_telefono' => 'Telefono',
+            'emp_fax' => 'Fax',
+            'emp_email' => 'Email',
+            'emp_regimen_segs' => 'Regimen Seguridad Social',
+            'emp_ccc_segs' => 'CCC Seguridad Social',
+            'emp_tipo_segs' => 'Tipo de Empresa Seguridad Social',
+            'emp_razons_segs' => 'Razon Social Seguridad Social',
+            'emp_participaciones' => 'Participaciones',
         ];
     }
 
@@ -91,5 +91,4 @@ class Empresa extends \yii\db\ActiveRecord
     {
         return $this->hasOne(TipoDocIdentidad::class, ['tdo_id' => 'tdo_id']);
     }
-
 }

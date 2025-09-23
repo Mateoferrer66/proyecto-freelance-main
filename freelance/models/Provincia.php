@@ -50,10 +50,10 @@ class Provincia extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'prv_id' => 'Prv ID',
-            'pai_id' => 'Pai ID',
-            'prv_nombre' => 'Prv Nombre',
-            'prv_eliminada' => 'Prv Eliminada',
+            'prv_id' => 'ID',
+            'pai_id' => 'Pais',
+            'prv_nombre' => 'Nombre',
+            'prv_eliminada' => 'Eliminada',
         ];
     }
 

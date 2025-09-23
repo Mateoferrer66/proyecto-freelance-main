@@ -12,12 +12,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'con_serie')->dropDownList([ 'F' => 'F', 'L' => 'L', 'S' => 'S', 'C' => 'C', 'P' => 'P', 'PL' => 'PL', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'con_serie')->dropDownList(['F' => 'F', 'L' => 'L', 'S' => 'S', 'C' => 'C', 'P' => 'P', 'PL' => 'PL',], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'con_consecutivo')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success radius-30']) ?>
+
     </div>
 
     <?php ActiveForm::end(); ?>

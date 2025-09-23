@@ -16,8 +16,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'ban_numcuenta')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'ban_eliminado')->textInput() ?>
-
     <div class="form-group d-flex justify-content-end">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>

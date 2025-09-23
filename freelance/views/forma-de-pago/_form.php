@@ -14,11 +14,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'fdp_nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'fdp_eliminada')->textInput() ?>
 
     <div class="form-group d-flex justify-content-end">
-        <?= Html::submitButton('Guardar', ['class' => 'btn btn-primary']) ?>
-    </div>
+       <?= Html::submitButton('Guardar', ['class' => 'btn btn-success radius-30']) ?>
+        </div>
 
     <?php ActiveForm::end(); ?>
 

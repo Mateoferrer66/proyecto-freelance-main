@@ -197,9 +197,7 @@ JS);
                                         'data-bs-target' => '#action-modal'
                                     ]),
                                 ],
-                                'urlCreator' => fn($action, ConceptoFacturacion $model, $key, $index, $column) =>
-                                Url::toRoute([$action, 'cof_id' => $model->cof_id, 'view' => ($action === 'delete' ? null : 'modal')]),
-                            ],
+                                 ],
                         ],
                     ]); ?>
                 </div>

@@ -9,6 +9,11 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\components\ExcelExportHelper;
 use app\components\PdfExportHelper;
+use Yii;
+use yii\web\Response;
+use yii\helpers\Html;
+use yii\filters\AccessControl;
+
 
 /**
  * BancoController implements the CRUD actions for Banco model.
@@ -77,8 +82,8 @@ class BancoController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
-                if (\Yii::$app->request->isAjax) {
-                    \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                if (Yii::$app->request->isAjax) {
+                    Yii::$app->response->format = Response::FORMAT_JSON;
                     if ($model->save()) {
                         return ['success' => true, 'message' => 'Banco creado correctamente.'];
                     } else {
@@ -117,7 +122,7 @@ class BancoController extends Controller
 
         if ($this->request->isPost && $model->load($this->request->post())) {
             if ($this->request->isAjax) {
-                \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                Yii::$app->response->format = Response::FORMAT_JSON;
                 if ($model->save()) {
                     return ['success' => true, 'message' => 'Banco actualizado correctamente.'];
                 } else {

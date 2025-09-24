@@ -9,7 +9,11 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\components\ExcelExportHelper;
 use app\components\PdfExportHelper;
-
+use app\models\Consecutivo;
+use app\models\Provincia;
+use yii\web\Response;
+use yii\helpers\Html;
+use Yii;
 /**
  * ClienteController implements the CRUD actions for Cliente model.
  */
@@ -88,29 +92,54 @@ class ClienteController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
-    public function actionCreate()
+public function actionCreate()
     {
         $model = new Cliente();
+        $transaction = Yii::$app->db->beginTransaction();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'cli_id' => $model->cli_id]);
+        try {
+            if ($this->request->isPost) {
+                if ($model->load($this->request->post()) && $model->save()) {
+                    
+                    $valorActual = $model->cli_numero;
+                    Consecutivo::deleteAll(['con_serie' => 'C']);
+                    $nuevoConsecutivo = new Consecutivo(['con_serie' => 'C', 'con_consecutivo' => $valorActual]);
+                    
+                    if (!$nuevoConsecutivo->save()) {
+                        throw new \Exception('Error al actualizar el consecutivo.');
+                    }
+
+                    $transaction->commit();
+
+                    if (Yii::$app->request->isAjax) {
+                        Yii::$app->response->format = Response::FORMAT_JSON;
+                        return ['success' => true, 'message' => 'Cliente creado correctamente.'];
+                    }
+                    Yii::$app->session->setFlash('success', 'Cliente creado correctamente.');
+                    return $this->redirect(['index']);
+                } else {
+                     // Si el modelo no se guarda, hacemos rollback y mostramos errores
+                    $transaction->rollBack();
+                    Yii::error('Errores al guardar Cliente: ' . json_encode($model->getErrors())); // Añadir esta línea
+                    if (Yii::$app->request->isAjax) {
+                        Yii::$app->response->format = Response::FORMAT_JSON;
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+                }
+            } else {
+                $consecutivo = Consecutivo::find()->where(['con_serie' => 'C'])->one();
+                $model->cli_numero = $consecutivo ? $consecutivo->con_consecutivo + 1 : 1;
             }
-        } else {
-            $model->loadDefaultValues();
+        } catch (\Exception $e) {
+            $transaction->rollBack();
+            Yii::$app->session->setFlash('error', $e->getMessage());
         }
 
-        if ($this->request->get('view') === 'modal') {
-            return $this->renderAjax('create', [
-                'model' => $model,
-            ]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+        $renderMethod = $this->request->isAjax ? 'renderAjax' : 'render';
+        return $this->$renderMethod('create', [
+            'model' => $model,
+        ]);
     }
-
     /**
      * Updates an existing Cliente model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -124,7 +153,7 @@ class ClienteController extends Controller
 
         if ($this->request->isPost && $model->load($this->request->post())) {
             if ($this->request->isAjax) {
-                \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                Yii::$app->response->format = Response::FORMAT_JSON;
                 if ($model->save()) {
                     return ['success' => true, 'message' => 'Cliente actualizado correctamente.'];
                 } else {
@@ -156,8 +185,8 @@ class ClienteController extends Controller
 
     public function actionBatchDelete()
     {
-        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        $ids = \Yii::$app->request->post('ids');
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $ids = Yii::$app->request->post('ids');
         if (empty($ids)) {
             return ['success' => false, 'message' => 'No se han seleccionado clientes.'];
         }
@@ -248,5 +277,19 @@ class ClienteController extends Controller
             'headers' => $headers,
             'rows' => $rows,
         ]);
+    }
+    public function actionProvinciasPorPais($id)
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $provincias = Provincia::find()
+            ->where(['pai_id' => $id])
+            ->orderBy('prv_nombre')
+            ->all();
+
+        $data = [];
+        foreach ($provincias as $provincia) {
+            $data[] = ['id' => $provincia->prv_id, 'name' => $provincia->prv_nombre];
+        }
+        return $data;
     }
 }

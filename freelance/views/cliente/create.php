@@ -17,7 +17,11 @@ $this->params['breadcrumbs'][] = ['label' => 'Clientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 // JavaScript para la lógica de campos dinámicos y el datepicker
-$js = <<<'JS'
+use yii\helpers\Url; // Agregado
+
+$provinciasPorPaisUrl = Url::to(['cliente/provincias-por-pais']);
+
+$js = <<<JS
 $(function(){
     // --- Lógica para mostrar/ocultar campos ---
     function toggleFields() {
@@ -47,6 +51,41 @@ $(function(){
         lang: 'es',
         weekStart: 1
     });
+
+    // --- Lógica para cargar provincias dinámicamente ---
+    $('#cliente-pai_id').on('change', function() {
+        var paiId = $(this).val();
+        var provinciaDropdown = $('#cliente-prv_id');
+        provinciaDropdown.empty().append('<option value="">Cargando...</option>'); // Limpiar y mostrar "Cargando..."
+
+        if (paiId) {
+            var url = "{$provinciasPorPaisUrl}"; // Usar la variable PHP interpolada
+            console.log('AJAX URL:', url); // Ahora esto debería mostrar la URL correcta
+            $.ajax({
+                url: url,
+                type: 'GET',
+                data: {id: paiId},
+                dataType: 'json',
+                success: function(data) {
+                    provinciaDropdown.empty().append('<option value="">Seleccione</option>');
+                    $.each(data, function(key, provincia) {
+                        provinciaDropdown.append($('<option></option>').attr('value', provincia.id).text(provincia.name));
+                    });
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error('AJAX Error:', textStatus, errorThrown, jqXHR);
+                    provinciaDropdown.empty().append('<option value="">Error al cargar provincias</option>');
+                }
+            });
+        } else {
+            provinciaDropdown.empty().append('<option value="">Seleccione</option>');
+        }
+    });
+
+    // Disparar el evento change al cargar la página si ya hay un país seleccionado
+    if ($('#cliente-pai_id').val()) {
+        $('#cliente-pai_id').trigger('change');
+    }
 });
 JS;
 
@@ -73,7 +112,7 @@ $this->registerJs($js);
                         <div class="col-md-4">
                             <?= $form->field($model, 'cli_numero', [
                                 'template' => "<label>Número Cliente*</label>\n{input}\n{hint}\n{error}",
-                                'inputOptions' => ['class' => 'form-control mb-3', 'placeholder' => 'xxxxxx', 'required' => true]
+                                'inputOptions' => ['class' => 'form-control mb-3', 'placeholder' => 'xxxxxx', 'required' => true, 'readonly' => true]
                             ])->textInput() ?>
                         </div>
                     </div>
@@ -154,19 +193,19 @@ $this->registerJs($js);
                             ])->textInput() ?>
                         </div>
                         <div class="col-md-4">
-                            <?= $form->field($model, 'prv_id', [
-                                'template' => "<label>Provincia *</label>\n{input}\n{hint}\n{error}"
-                            ])->dropDownList(
-                                ArrayHelper::map(Provincia::find()->all(), 'prv_id', 'prv_nombre'),
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
-                            ) ?>
-                        </div>
-                        <div class="col-md-4">
                             <?= $form->field($model, 'pai_id', [
                                 'template' => "<label>País *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
                                 ArrayHelper::map(Pais::find()->all(), 'pai_id', 'pai_nombre'),
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
+                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true, 'id' => 'cliente-pai_id']
+                            ) ?>
+                        </div>
+                        <div class="col-md-4">
+                            <?= $form->field($model, 'prv_id', [
+                                'template' => "<label>Provincia *</label>\n{input}\n{hint}\n{error}"
+                            ])->dropDownList(
+                                [], // Se inicializa vacío, se llenará con AJAX
+                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true, 'id' => 'cliente-prv_id']
                             ) ?>
                         </div>
                         <div class="col-md-4">

@@ -68,6 +68,9 @@ class Cliente extends \yii\db\ActiveRecord
             [['cli_persona_contacto', 'cli_docinipais', 'cli_feccaddoc', 'cli_tel1', 'cli_tel2', 'cli_direccion', 'prv_id', 'cli_poblacion', 'cli_codpostal', 'cli_email', 'cli_cuenta_contable', 'iva_id', 'cli_observaciones'], 'default', 'value' => null],
             [['cli_estado'], 'default', 'value' => 'Activo'],
             [['cli_eliminado'], 'default', 'value' => 0],
+            [['fdp_id'], 'default', 'value' => 1], // Forma de pago: Efectivo (ID 1)
+            [['soc_id'], 'default', 'value' => 1], // Socio: ID 1
+            [['cli_exportado'], 'default', 'value' => 0], // Exportado: 0
             [['cli_numero', 'cli_nombre', 'tdo_id', 'cli_numdocide', 'pai_id', 'fdp_id', 'soc_id'], 'required'],
             [['cli_numero', 'tdo_id', 'pai_id', 'prv_id', 'iva_id', 'fdp_id', 'soc_id', 'cli_exportado', 'cli_eliminado'], 'integer'],
             [['cli_feccaddoc'], 'safe'],

@@ -239,7 +239,7 @@ JS);
                                     'label' => 'Nombre/Razón Social',
                                     'format' => 'raw',
                                     'contentOptions' => function ($model, $key, $index, $column) {
-                                        $class = $model->cli_estado === \app\models\Cliente::CLI_ESTADO_ACTIVO ? 'greenGdt' : 'redGdt';
+                                        $class = $model->cli_estado === Cliente::CLI_ESTADO_ACTIVO ? 'greenGdt' : 'redGdt';
                                         return ['class' => $class];
                                     },
                                     'value' => function ($model) {
@@ -251,7 +251,7 @@ JS);
                                     'label' => 'Estado',
                                     'format' => 'raw',
                                     'value' => function ($model) {
-                                        if ($model->cli_estado === \app\models\Cliente::CLI_ESTADO_ACTIVO) {
+                                        if ($model->cli_estado === Cliente::CLI_ESTADO_ACTIVO) {
                                             return '<i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i>' . $model->cli_estado;
                                         } else {
                                             return '<i class="bx bx-radio-circle-marked align-middle font-18 me-1 text-danger"></i>' . $model->cli_estado;
@@ -283,7 +283,7 @@ JS);
                                             'data-pjax' => '1',
                                         ]),
                                         'toggle' => function ($url, $model, $key) {
-                                            if ($model->cli_estado === \app\models\Cliente::CLI_ESTADO_ACTIVO) {
+                                            if ($model->cli_estado === Cliente::CLI_ESTADO_ACTIVO) {
                                                 return Html::a('<i class="bx bx-power-off"></i>', ['toggle-status', 'cli_id' => $model->cli_id], [
                                                     'title' => 'Desactivar Cliente',
                                                     'class' => 'btn btn-light',

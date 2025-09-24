@@ -12,11 +12,7 @@ use yii\helpers\ArrayHelper;
 
 <div class="concepto-facturacion-form">
 
-    <?php $form = ActiveForm::begin([
-        'id' => 'concepto-form',
-        'enableAjaxValidation' => true,
-        'enableClientValidation' => false,
-    ]); ?>
+    <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'cof_codigo')->textInput(['maxlength' => true]) ?>
 
@@ -33,7 +29,7 @@ use yii\helpers\ArrayHelper;
     ) ?>
 
     <div class="form-group">
-          <?= Html::submitButton('Guardar', ['class' => 'btn btn-success radius-30']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success radius-30']) ?>
 
     </div>
 

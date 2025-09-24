@@ -15,6 +15,43 @@ use app\models\Cliente;
 $this->title = 'CREAR CLIENTE';
 $this->params['breadcrumbs'][] = ['label' => 'Clientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+
+// JavaScript para la lógica de campos dinámicos y el datepicker
+$js = <<<'JS'
+$(function(){
+    // --- Lógica para mostrar/ocultar campos ---
+    function toggleFields() {
+        var tipoDoc = $('#cliente-tdo_id').val();
+        var campoDocIniPais = $('.field-cliente-cli_docinipais');
+        var campoFecCadDoc = $('.field-cliente-cli_feccaddoc');
+
+        campoDocIniPais.hide();
+        campoFecCadDoc.hide();
+
+        if (tipoDoc == '3' || tipoDoc == '4') { // CIF y CIF Intracomunitario
+            campoDocIniPais.show();
+        }
+        
+        if (tipoDoc == '6') { // NIE
+            campoFecCadDoc.show();
+        }
+    }
+
+    toggleFields(); // Ejecutar al cargar
+    $('#cliente-tdo_id').on('change', toggleFields); // Ejecutar al cambiar
+
+    // --- Inicialización del Datepicker ---
+    $('#cliente-cli_feccaddoc').bootstrapMaterialDatePicker({
+        format: 'YYYY-MM-DD',
+        time: false, // No mostrar selector de hora
+        lang: 'es',
+        weekStart: 1
+    });
+});
+JS;
+
+$this->registerJs($js);
+
 ?>
 
 <div class="page-content" style="margin-top: 3.4rem;">
@@ -57,8 +94,14 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="col-md-4">
                              <?= $form->field($model, 'cli_docinipais', [
-                                'template' => "<label>Iniciales país</label>\n{input}\n{hint}\n{error}"
+                                'template' => "<label>Iniciales país</label>\n{input}\n{hint}\n{error}",
                             ])->textInput(['maxlength' => true, 'class' => 'form-control mb-3']) ?>
+                        </div>
+                        <div class="col-md-4">
+                            <?= $form->field($model, 'cli_feccaddoc', [
+                                'template' => "<label>Fecha Caducidad Del Documento De Identidad</label>\n{input}\n{hint}\n{error}",
+                            ])->textInput(['class' => 'form-control mb-3', 'placeholder' => 'YYYY-MM-DD']) // Quitado type=date 
+                            ?>
                         </div>
                         <div class="col-md-4">
                             <?= $form->field($model, 'cli_numdocide', [

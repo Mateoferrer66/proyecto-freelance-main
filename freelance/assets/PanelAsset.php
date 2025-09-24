@@ -11,6 +11,7 @@ class PanelAsset extends AssetBundle
 
     public $css = [
         // 'css/bootstrap.min.css', // Eliminado para usar la versión de Yii2
+        'https://fonts.googleapis.com/icon?family=Material+Icons',
         'css/bootstrap-extended.css',
         'css/app.css',
         'css/icons.css',

@@ -152,24 +152,26 @@ class ConsecutivoController extends Controller
             return ['success' => false, 'message' => 'La serie y el consecutivo son requeridos.'];
         }
 
-        // Buscar el consecutivo por serie
-        $model = Consecutivo::findOne(['con_serie' => $serie]);
+        $transaction = Yii::$app->db->beginTransaction();
 
-        if ($model) {
-            // Si existe, actualiza el valor
-            $model->con_consecutivo = $valor;
-        } else {
-            // Si no existe, crea uno nuevo
+        try {
+            Consecutivo::deleteAll(['con_serie' => $serie]);
+
             $model = new Consecutivo([
                 'con_serie' => $serie,
                 'con_consecutivo' => $valor,
             ]);
-        }
 
-        if ($model->save()) {
-            return ['success' => true];
+            if ($model->save()) {
+                $transaction->commit();
+                return ['success' => true];
+            } else {
+                $transaction->rollBack();
+                return ['success' => false, 'message' => 'Error al guardar el consecutivo.', 'errors' => $model->getErrors()];
+            }
+        } catch (\Exception $e) {
+            $transaction->rollBack();
+            return ['success' => false, 'message' => 'Ocurrió una excepción: ' . $e->getMessage()];
         }
-
-        return ['success' => false, 'message' => 'Error al guardar el consecutivo.', 'errors' => $model->getErrors()];
     }
 }

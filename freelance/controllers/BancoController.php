@@ -76,8 +76,18 @@ class BancoController extends Controller
         $model = new Banco();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'ban_id' => $model->ban_id]);
+            if ($model->load($this->request->post())) {
+                if (\Yii::$app->request->isAjax) {
+                    \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+                    if ($model->save()) {
+                        return ['success' => true, 'message' => 'Banco creado correctamente.'];
+                    } else {
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+                }
+                if ($model->save()) {
+                    return $this->redirect(['index']);
+                }
             }
         } else {
             $model->loadDefaultValues();

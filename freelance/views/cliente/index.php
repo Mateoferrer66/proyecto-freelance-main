@@ -146,11 +146,9 @@ JS);
         <h6 class="mb-0 text-uppercase">Clientes <dl><?= $dataProvider->getTotalCount() ?></dl>
         </h6>
         <div>
-            <?= Html::a('<i class="bx bx-plus mr-1"></i> Crear Cliente', ['create', 'view' => 'modal'], [
+            <?= Html::a('<i class="bx bx-plus mr-1"></i> Crear Cliente', ['create'], [
                 'class' => 'btn btn-success radius-30',
                 'title' => 'Crear Cliente',
-                'data-bs-toggle' => 'modal',
-                'data-bs-target' => '#action-modal',
             ]) ?>
         </div>
     </div>

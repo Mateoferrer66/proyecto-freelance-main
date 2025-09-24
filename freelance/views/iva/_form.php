@@ -10,12 +10,8 @@ use yii\widgets\ActiveForm;
 
 <div class="iva-form">
 
-    <?php $form = ActiveForm::begin([
-        'id' => 'iva-form',
-        'enableAjaxValidation' => true, // Habilitar validación AJAX
-        'enableClientValidation' => false, // Deshabilitar validación del lado del cliente para depender de la respuesta del servidor
-    ]); ?>
-
+    <?php $form = ActiveForm::begin(); ?>
+    
     <?= $form->field($model, 'iva_porcentaje')->textInput() ?>
 
     <?= $form->field($model, 'iva_concepto')->textInput(['maxlength' => true]) ?>

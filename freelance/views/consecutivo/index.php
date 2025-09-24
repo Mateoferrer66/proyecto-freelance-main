@@ -28,7 +28,7 @@ $(function() {
 
     for (const [id, serie] of Object.entries(series)) {
         const inputElement = $(`#${id}`);
-        const buttonElement = inputElement.next('button'); // Select the next sibling button
+        const buttonElement = inputElement.closest('.row').find('button');
 
         if (inputElement.length && buttonElement.length) { // Ensure both input and button exist
             buttonElement.on('click', function() {

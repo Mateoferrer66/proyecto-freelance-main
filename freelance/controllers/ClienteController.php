@@ -27,10 +27,26 @@ class ClienteController extends Controller
                     'class' => VerbFilter::className(),
                     'actions' => [
                         'delete' => ['POST'],
+                        'toggle-status' => ['POST'],
                     ],
                 ],
             ]
         );
+    }
+
+    public function actionToggleStatus($cli_id)
+    {
+        $model = $this->findModel($cli_id);
+
+        if ($model->cli_estado === Cliente::CLI_ESTADO_ACTIVO) {
+            $model->cli_estado = Cliente::CLI_ESTADO_INACTIVO;
+        } else {
+            $model->cli_estado = Cliente::CLI_ESTADO_ACTIVO;
+        }
+
+        $model->save(['cli_estado']);
+
+        return $this->redirect(['index']);
     }
 
     /**

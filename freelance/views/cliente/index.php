@@ -215,8 +215,27 @@ JS);
                                 [
                                     'class' => ActionColumn::class,
                                     'header' => 'Acciones',
-                                    'template' => '{view} {update} {delete}',
+                                    'template' => '{view} {update} {delete} {toggle}',
                                     'buttons' => [
+                                        'toggle' => function ($url, $model, $key) {
+                                            if ($model->cli_estado === \app\models\Cliente::CLI_ESTADO_ACTIVO) {
+                                                return Html::a('<i class="bx bx-block"></i>', ['toggle-status', 'cli_id' => $model->cli_id], [
+                                                    'title' => 'Desactivar Cliente',
+                                                    'class' => 'btn btn-light',
+                                                    'data-confirm' => '¿Está seguro de que desea desactivar a ' . $model->cli_nombre . '?',
+                                                    'data-method' => 'post',
+                                                    'data-pjax' => '1',
+                                                ]);
+                                            } else {
+                                                return Html::a('<i class="bx bx-power-off"></i>', ['toggle-status', 'cli_id' => $model->cli_id], [
+                                                    'title' => 'Activar Cliente',
+                                                    'class' => 'btn btn-light',
+                                                    'data-confirm' => '¿Está seguro de que desea activar a ' . $model->cli_nombre . '?',
+                                                    'data-method' => 'post',
+                                                    'data-pjax' => '1',
+                                                ]);
+                                            }
+                                        },
                                         'view' => fn($url, $model) => Html::a('<i class="bx bx-id-card"></i>', $url, [
                                             'title' => 'Ver Cliente: ' . $model->cli_nombre,
                                             'class' => 'btn btn-light',
@@ -236,6 +255,7 @@ JS);
                                             'data-method' => 'post',
                                             'data-pjax' => '1',
                                         ]),
+                                        
                                     ],
                                     'urlCreator' => fn($action, Cliente $model, $key, $index, $column) =>
                                     Url::toRoute([$action, 'cli_id' => $model->cli_id, 'view' => ($action === 'delete' ? null : 'modal')]),

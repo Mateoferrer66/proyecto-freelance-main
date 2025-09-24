@@ -24,7 +24,7 @@ $currentUrl = Yii::$app->request->url;
                 <div class="parent-icon"><i class='bx bx-street-view'></i></div>
                 <div class="menu-title">Socios</div>
             </a></li>
-        <li><a href="/clientes">
+        <li><a href="http://localhost:8080/index.php?r=cliente">
                 <div class="parent-icon"><i class='bx bx-user-voice'></i></div>
                 <div class="menu-title">Clientes</div>
             </a></li>
@@ -74,17 +74,17 @@ $currentUrl = Yii::$app->request->url;
                 <div class="parent-icon"><i class='bx bx-diamond'></i></div>
                 <div class="menu-title">Utilidades</div>
             </a>
-            <ul class="mm-collapse" style="<?= strpos($currentUrl, '/utilidades') !== false ? 'display: block;' : '' ?>">
-                <li><a href="/utilidades"><i class="bx bx-right-arrow-alt"></i>Empresa</a></li>
-                <li><a href="/utilidades-consecutivos"><i class="bx bx-right-arrow-alt"></i>Consecutivos</a></li>
-                <li><a href="/utilidades-iva"><i class="bx bx-right-arrow-alt"></i>IVA</a></li>
-                <li><a href="/utilidades-facturacion"><i class="bx bx-right-arrow-alt"></i>Conceptos facturación</a></li>
-                <li><a href="/utilidades-liquidacion"><i class="bx bx-right-arrow-alt"></i>Conceptos liquidación</a></li>
-                <li><a href="/utilidades-banco"><i class="bx bx-right-arrow-alt"></i>Banco</a></li>
-                <li><a href="/utilidades-pagos"><i class="bx bx-right-arrow-alt"></i>Formas de pago</a></li>
-                <li><a href="/utilidades-id"><i class="bx bx-right-arrow-alt"></i>Tipos ID</a></li>
-                <li><a href="/utilidades-categorias"><i class="bx bx-right-arrow-alt"></i>Categorías profesionales</a></li>
-                <li><a href="/utilidades-locacion"><i class="bx bx-right-arrow-alt"></i>País y provincia</a></li>
+            <ul class="mm-collapse" style="<?= strpos($currentUrl, 'http://localhost:8080/index.php?r=empresa%2Fcreate') !== false ? 'display: block;' : '' ?>">
+                <li><a href="http://localhost:8080/index.php?r=empresa%2Fcreate"><i class="bx bx-right-arrow-alt"></i>Empresa</a></li>
+                <li><a href="http://localhost:8080/index.php?r=consecutivo"><i class="bx bx-right-arrow-alt"></i>Consecutivos</a></li>
+                <li><a href="http://localhost:8080/index.php?r=iva"><i class="bx bx-right-arrow-alt"></i>IVA</a></li>
+                <li><a href="http://localhost:8080/index.php?r=concepto-facturacion"><i class="bx bx-right-arrow-alt"></i>Conceptos facturación</a></li>
+                <li><a href="http://localhost:8080/index.php?r=concepto-liquidacion"><i class="bx bx-right-arrow-alt"></i>Conceptos liquidación</a></li>
+                <li><a href="http://localhost:8080/index.php?r=banco"><i class="bx bx-right-arrow-alt"></i>Banco</a></li>
+                <li><a href="http://localhost:8080/index.php?r=forma-de-pago"><i class="bx bx-right-arrow-alt"></i>Formas de pago</a></li>
+                <li><a href="http://localhost:8080/index.php?r=tipo-doc-identidad"><i class="bx bx-right-arrow-alt"></i>Tipos ID</a></li>
+                <li><a href="http://localhost:8080/index.php?r=categoria"><i class="bx bx-right-arrow-alt"></i>Categorías profesionales</a></li>
+                <li><a href="http://localhost:8080/index.php?r=provincia"><i class="bx bx-right-arrow-alt"></i>País y provincia</a></li>
             </ul>
         </li>
 

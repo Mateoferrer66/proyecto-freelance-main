@@ -8688,3 +8688,196 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1758639369.6794
     'REQUEST_TIME' => 1758639369
 ]
+2025-09-24 16:24:11 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct('mysql:host=loca...', 'root', Object(SensitiveParameterValue), NULL)
+#1 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo(true)
+#5 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare(true)
+#6 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#8 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema('cliente')
+#10 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('cliente', 'schema', false)
+#11 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\ActiveRecord.php(445): yii\db\Schema->getTableSchema('cliente')
+#12 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\ActiveRecord.php(469): yii\db\ActiveRecord::getTableSchema()
+#13 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-gii\src\generators\crud\Generator.php(175): yii\db\ActiveRecord::primaryKey()
+#14 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\validators\InlineValidator.php(77): yii\gii\generators\crud\Generator->validateModelClass('modelClass', NULL, Object(yii\validators\InlineValidator), 'app\\models\\Clie...')
+#15 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\validators\Validator.php(260): yii\validators\InlineValidator->validateAttribute(Object(yii\gii\generators\crud\Generator), 'modelClass')
+#16 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Model.php(389): yii\validators\Validator->validateAttributes(Object(yii\gii\generators\crud\Generator), Array)
+#17 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-gii\src\controllers\DefaultController.php(59): yii\base\Model->validate()
+#18 [internal function]: yii\gii\controllers\DefaultController->actionView('crud')
+#19 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#20 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#21 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('view', Array)
+#22 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('gii/default/vie...', Array)
+#23 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#24 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#25 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo(true)
+#3 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare(true)
+#4 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#6 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema('cliente')
+#8 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('cliente', 'schema', false)
+#9 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\ActiveRecord.php(445): yii\db\Schema->getTableSchema('cliente')
+#10 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\ActiveRecord.php(469): yii\db\ActiveRecord::getTableSchema()
+#11 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-gii\src\generators\crud\Generator.php(175): yii\db\ActiveRecord::primaryKey()
+#12 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\validators\InlineValidator.php(77): yii\gii\generators\crud\Generator->validateModelClass('modelClass', NULL, Object(yii\validators\InlineValidator), 'app\\models\\Clie...')
+#13 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\validators\Validator.php(260): yii\validators\InlineValidator->validateAttribute(Object(yii\gii\generators\crud\Generator), 'modelClass')
+#14 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Model.php(389): yii\validators\Validator->validateAttributes(Object(yii\gii\generators\crud\Generator), Array)
+#15 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-gii\src\controllers\DefaultController.php(59): yii\base\Model->validate()
+#16 [internal function]: yii\gii\controllers\DefaultController->actionView('crud')
+#17 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#18 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#19 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('view', Array)
+#20 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('gii/default/vie...', Array)
+#21 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#23 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+)
+
+2025-09-24 16:24:06 [::1][-][-][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'crud'
+]
+
+$_POST = [
+    '_csrf' => 'l9DFFy8hag9Mk-vFLF9wbM4ukmW_peckLVv7l4NioWfCovRAYhkcSxurtIhmHDtboVT9EOadkRJuFa_BwBiUMg=='
+    'Generator' => [
+        'modelClass' => 'app\\models\\Cliente'
+        'searchModelClass' => 'app\\models\\ClienteSearch'
+        'controllerClass' => 'app\\controllers\\ClienteController'
+        'viewPath' => ''
+        'baseControllerClass' => 'yii\\web\\Controller'
+        'indexWidgetType' => 'grid'
+        'enableI18N' => '0'
+        'enablePjax' => '0'
+        'messageCategory' => 'app'
+        'template' => 'default'
+    ]
+    'preview' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => 'd70d1abae1f6a228667de5fe9f37327846da30590834b5611cf851fb844a31dea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ur1WM8vDW8_MJCK7ozouY8v6CNTVCz5U\";}'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '49722'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '528'
+    'HTTP_CONTENT_LENGTH' => '528'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Brave\";v=\"140\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=gii%2Fdefault%2Fview&id=crud'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => '_csrf=d70d1abae1f6a228667de5fe9f37327846da30590834b5611cf851fb844a31dea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ur1WM8vDW8_MJCK7ozouY8v6CNTVCz5U%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1758723846.8488
+    'REQUEST_TIME' => 1758723846
+]
+2025-09-24 17:32:41 [::1][-][9ppdr2tefoq3ogqoq4en00r1bi][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "utilidades". in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('utilidades', Array)
+#1 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2025-09-24 17:32:41 [::1][-][9ppdr2tefoq3ogqoq4en00r1bi][info][application] $_GET = [
+    'r' => 'utilidades'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => 'd70d1abae1f6a228667de5fe9f37327846da30590834b5611cf851fb844a31dea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ur1WM8vDW8_MJCK7ozouY8v6CNTVCz5U\";}'
+    'PHPSESSID' => '9ppdr2tefoq3ogqoq4en00r1bi'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '50729'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=utilidades'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=utilidades'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Brave\";v=\"140\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => '_csrf=d70d1abae1f6a228667de5fe9f37327846da30590834b5611cf851fb844a31dea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ur1WM8vDW8_MJCK7ozouY8v6CNTVCz5U%22%3B%7D; PHPSESSID=9ppdr2tefoq3ogqoq4en00r1bi'
+    'REQUEST_TIME_FLOAT' => 1758727961.2635
+    'REQUEST_TIME' => 1758727961
+]

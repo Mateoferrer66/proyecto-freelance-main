@@ -28,6 +28,7 @@ class ClienteController extends Controller
                     'actions' => [
                         'delete' => ['POST'],
                         'toggle-status' => ['POST'],
+                        'batch-delete' => ['POST'],
                     ],
                 ],
             ]
@@ -151,6 +152,23 @@ class ClienteController extends Controller
         $this->findModel($cli_id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionBatchDelete()
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $ids = \Yii::$app->request->post('ids');
+        if (empty($ids)) {
+            return ['success' => false, 'message' => 'No se han seleccionado clientes.'];
+        }
+
+        try {
+            $count = Cliente::deleteAll(['in', 'cli_id', $ids]);
+            return ['success' => true, 'message' => $count . ' cliente(s) eliminado(s) correctamente.'];
+        } catch (\yii\db\Exception $e) {
+            // Log the error if needed
+            return ['success' => false, 'message' => 'Ocurrió un error al eliminar los clientes.'];
+        }
     }
 
     /**

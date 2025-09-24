@@ -17,6 +17,8 @@ use yii\grid\CheckboxColumn;
 $this->title = 'Gestión de Clientes';
 $this->params['breadcrumbs'] = [];
 $this->registerCss(".table thead a { text-decoration: none !important; }");
+
+// JS for search
 $this->registerJs(<<<JS
 let timeout;
 $('#cliente-search-input').on('input', function() {
@@ -27,6 +29,36 @@ $('#cliente-search-input').on('input', function() {
 });
 JS);
 
+// JS for batch delete
+$this->registerJs(<<<JS
+$('#batch-delete-button').on('click', function() {
+    var keys = $('#clientes-grid-view').yiiGridView('getSelectedRows');
+    if (keys.length === 0) {
+        alert('Debe seleccionar al menos un cliente para eliminar.');
+        return;
+    }
+
+    if (confirm('¿Está seguro de que desea eliminar los ' + keys.length + ' clientes seleccionados?')) {
+        $.ajax({
+            url: 'index.php?r=cliente/batch-delete',
+            type: 'post',
+            data: { ids: keys },
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    alert(response.message);
+                    $.pjax.reload({container: '#clientes-pjax'});
+                } else {
+                    alert('Error: ' + response.message);
+                }
+            },
+            error: function() {
+                alert('Ocurrió un error al procesar la solicitud.');
+            }
+        });
+    }
+});
+JS);
 
 ?>
 
@@ -40,6 +72,7 @@ Modal::begin([
 echo "<div id='modal-content'><div class='text-center'><div class='spinner-border' role='status'></div></div></div>";
 Modal::end();
 
+// JS for modal
 $this->registerJs(<<<'JS'
 let actionModalInstance = new bootstrap.Modal(document.getElementById('action-modal'));
 
@@ -122,28 +155,42 @@ JS);
         </div>
     </div>
     <hr />
+
+
+
     <div class="card">
         <div class="card-body">
             <?php Pjax::begin(['id' => 'clientes-pjax']); ?>
             <div class="col-xl-12 mx-auto">
                 <div class="dataTables_wrapper dt-bootstrap5 no-footer">
                     <div class="row">
+                        <div class="d-flex justify-content-end align-items-center mb-3">
+                            <?= Html::button('<i class="bx bx-trash"></i> ELIMINAR', [
+                                'class' => 'btn text-orange radius-30',
+                                'id' => 'batch-delete-button'
+                            ]) ?>
+                            <?= Html::a('<i class="bx bxs-file-pdf"></i> LISTADO DE CLIENTES', ['export-pdf'], [
+                                'class' => 'btn text-orange radius-30',
+                                'target' => '_blank',
+                                'data-pjax' => '0',
+                            ]) ?>
+                        </div>
                         <div class="col-sm-12 col-md-6">
                             <div class="dt-buttons btn-group">
                                 <?= Html::a('Excel', ['cliente/export-excel'], [
                                     'target' => '_blank',
                                     'class' => 'btn btn-light buttons-excel buttons-html5',
-                                    'data-pjax' => 0,
+                                    'data-pjax' => '0',
                                 ]) ?>
                                 <?= Html::a('PDF', ['cliente/export-pdf'], [
                                     'target' => '_blank',
                                     'class' => 'btn btn-light buttons-excel buttons-html5',
-                                    'data-pjax' => 0,
+                                    'data-pjax' => '0',
                                 ]) ?>
                                 <?= Html::a('Print', ['cliente/print'], [
                                     'target' => '_blank',
                                     'class' => 'btn btn-light buttons-excel buttons-html5',
-                                    'data-pjax' => 0,
+                                    'data-pjax' => '0',
                                 ]) ?>
                             </div>
                         </div>
@@ -174,6 +221,7 @@ JS);
 
 
                         <?= GridView::widget([
+                            'id' => 'clientes-grid-view',
                             'dataProvider' => $dataProvider,
                             'summary' => false,
                             'tableOptions' => ['class' => 'tableData table mb-0 dataTable no-footer'],
@@ -196,7 +244,7 @@ JS);
                                         $class = $model->cli_estado === \app\models\Cliente::CLI_ESTADO_ACTIVO ? 'greenGdt' : 'redGdt';
                                         return ['class' => $class];
                                     },
-                                    'value' => function($model) {
+                                    'value' => function ($model) {
                                         return '<font class="text-white">' . $model->cli_nombre . '</font>';
                                     }
                                 ],
@@ -217,25 +265,6 @@ JS);
                                     'header' => 'Acciones',
                                     'template' => '{view} {update} {delete} {toggle}',
                                     'buttons' => [
-                                        'toggle' => function ($url, $model, $key) {
-                                            if ($model->cli_estado === \app\models\Cliente::CLI_ESTADO_ACTIVO) {
-                                                return Html::a('<i class="bx bx-block"></i>', ['toggle-status', 'cli_id' => $model->cli_id], [
-                                                    'title' => 'Desactivar Cliente',
-                                                    'class' => 'btn btn-light',
-                                                    'data-confirm' => '¿Está seguro de que desea desactivar a ' . $model->cli_nombre . '?',
-                                                    'data-method' => 'post',
-                                                    'data-pjax' => '1',
-                                                ]);
-                                            } else {
-                                                return Html::a('<i class="bx bx-power-off"></i>', ['toggle-status', 'cli_id' => $model->cli_id], [
-                                                    'title' => 'Activar Cliente',
-                                                    'class' => 'btn btn-light',
-                                                    'data-confirm' => '¿Está seguro de que desea activar a ' . $model->cli_nombre . '?',
-                                                    'data-method' => 'post',
-                                                    'data-pjax' => '1',
-                                                ]);
-                                            }
-                                        },
                                         'view' => fn($url, $model) => Html::a('<i class="bx bx-id-card"></i>', $url, [
                                             'title' => 'Ver Cliente: ' . $model->cli_nombre,
                                             'class' => 'btn btn-light',
@@ -255,10 +284,28 @@ JS);
                                             'data-method' => 'post',
                                             'data-pjax' => '1',
                                         ]),
-                                        
+                                        'toggle' => function ($url, $model, $key) {
+                                            if ($model->cli_estado === \app\models\Cliente::CLI_ESTADO_ACTIVO) {
+                                                return Html::a('<i class="bx bx-power-off"></i>', ['toggle-status', 'cli_id' => $model->cli_id], [
+                                                    'title' => 'Desactivar Cliente',
+                                                    'class' => 'btn btn-light',
+                                                    'data-confirm' => '¿Está seguro de que desea desactivar a ' . $model->cli_nombre . '?',
+                                                    'data-method' => 'post',
+                                                    'data-pjax' => '1',
+                                                ]);
+                                            } else {
+                                                return Html::a('<i class="bx bx-check"></i>', ['toggle-status', 'cli_id' => $model->cli_id], [
+                                                    'title' => 'Activar Cliente',
+                                                    'class' => 'btn btn-light',
+                                                    'data-confirm' => '¿Está seguro de que desea activar a ' . $model->cli_nombre . '?',
+                                                    'data-method' => 'post',
+                                                    'data-pjax' => '1',
+                                                ]);
+                                            }
+                                        },
                                     ],
                                     'urlCreator' => fn($action, Cliente $model, $key, $index, $column) =>
-                                    Url::toRoute([$action, 'cli_id' => $model->cli_id, 'view' => ($action === 'delete' ? null : 'modal')]),
+                                    Url::toRoute([$action, 'cli_id' => $model->cli_id, 'view' => ($action === 'delete' || $action === 'toggle' ? null : 'modal')]),
                                 ],
                             ],
                         ]); ?>

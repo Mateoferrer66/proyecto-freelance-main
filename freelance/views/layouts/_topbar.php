@@ -18,7 +18,9 @@ $iconMap = [
     'r=tipo-doc-identidad' => 'bx-id-card',
     'r=categoria' => 'bx-grid-alt',
     'r=provincia' => 'bx-flag',
-    'r=utilidades' => 'bx-diamond', // Este es el principal de utilidades
+    'r=utilidades' => 'bx-diamond',
+    'r=usuario' => 'bx bx-user-voice',
+    'r=cliente%2Fcreate' => 'bx-user-plus', // Este es el principal de utilidades
 ];
 
 $currentIcon = 'bx-task'; // Icono por defecto

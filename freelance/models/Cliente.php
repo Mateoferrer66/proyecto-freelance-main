@@ -90,34 +90,33 @@ class Cliente extends \yii\db\ActiveRecord
 
     /**
      * {@inheritdoc}
-     */
-    public function attributeLabels()
+     */public function attributeLabels()
     {
         return [
-            'cli_id' => 'Cli ID',
-            'cli_numero' => 'Cli Numero',
-            'cli_nombre' => 'Cli Nombre',
-            'cli_persona_contacto' => 'Cli Persona Contacto',
-            'tdo_id' => 'Tdo ID',
-            'cli_docinipais' => 'Cli Docinipais',
-            'cli_numdocide' => 'Cli Numdocide',
-            'cli_feccaddoc' => 'Cli Feccaddoc',
-            'cli_tel1' => 'Cli Tel1',
-            'cli_tel2' => 'Cli Tel2',
-            'cli_direccion' => 'Cli Direccion',
-            'pai_id' => 'Pai ID',
-            'prv_id' => 'Prv ID',
-            'cli_poblacion' => 'Cli Poblacion',
-            'cli_codpostal' => 'Cli Codpostal',
-            'cli_email' => 'Cli Email',
-            'cli_cuenta_contable' => 'Cli Cuenta Contable',
-            'iva_id' => 'Iva ID',
-            'fdp_id' => 'Fdp ID',
-            'soc_id' => 'Soc ID',
-            'cli_observaciones' => 'Cli Observaciones',
-            'cli_estado' => 'Cli Estado',
-            'cli_exportado' => 'Cli Exportado',
-            'cli_eliminado' => 'Cli Eliminado',
+            'cli_id' => 'ID',
+            'cli_numero' => 'Numero Cliente',
+            'cli_nombre' => 'Nombre/Razón Social',
+            'cli_persona_contacto' => 'Persona De Contacto',
+            'tdo_id' => 'Tipo Documento Identidad',
+            'cli_docinipais' => 'Cliente documento iniciales país',
+            'cli_numdocide' => 'Número de Documento De Identidad',
+            'cli_feccaddoc' => 'Fecha Caducidad Del Documento De Identidad',
+            'cli_tel1' => 'Telefono 1',
+            'cli_tel2' => 'Telefono 2',
+            'cli_direccion' => 'Direccion',
+            'pai_id' => 'Pais',
+            'prv_id' => 'Provincia',
+            'cli_poblacion' => 'Poblacion',
+            'cli_codpostal' => 'Codigo Postal',
+            'cli_email' => 'Email',
+            'cli_cuenta_contable' => 'Cuenta Contable',
+            'iva_id' => 'Iva',
+            'fdp_id' => 'Forma De Pago',
+            'soc_id' => 'Socio',
+            'cli_observaciones' => 'Observaciones',
+            'cli_estado' => 'Estado',
+            'cli_exportado' => 'Exportado',
+            'cli_eliminado' => 'Eliminado',
         ];
     }
 

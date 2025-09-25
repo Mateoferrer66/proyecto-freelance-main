@@ -7,6 +7,8 @@ use app\models\TipoDocIdentidad;
 use app\models\Pais;
 use app\models\Provincia;
 use app\models\Cliente;
+use app\models\Socio;
+use app\models\FormaDePago;
 
 /** @var yii\web\View $this */
 /** @var app\models\Cliente $model */
@@ -219,6 +221,51 @@ $this->registerJs($js);
                                 'template' => "<label>E-mail *</label>\n{input}\n{hint}\n{error}",
                                 'inputOptions' => ['class' => 'form-control mb-3', 'type' => 'email']
                             ])->textInput() ?>
+                        </div>
+                    </div>
+
+                    <div class="card-title d-flex align-items-center mt-3">
+                        <h5 class="mb-0 text-white">DATOS DE FACTURACIÓN</h5>
+                    </div>
+                    <hr>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <?= $form->field($model, 'soc_id', [
+                                'template' => "<label>Socio *</label>\n{input}\n{hint}\n{error}"
+                            ])->dropDownList(
+                                ArrayHelper::map(app\models\Socio::find()->all(), 'soc_id', function($model) { return $model->soc_nombre . ' ' . $model->soc_apellido1; }),
+                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
+                            ) ?>
+                        </div>
+                        <div class="col-md-4">
+                            <?= $form->field($model, 'fdp_id', [
+                                'template' => "<label>Forma de Pago *</label>\n{input}\n{hint}\n{error}"
+                            ])->dropDownList(
+                                ArrayHelper::map(app\models\FormaDePago::find()->all(), 'fdp_id', 'fdp_nombre'),
+                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
+                            ) ?>
+                        </div>
+                        <div class="col-md-4">
+                            <?= $form->field($model, 'cli_estado', [
+                                'template' => "<label>Estado *</label>\n{input}\n{hint}\n{error}"
+                            ])->dropDownList(
+                                app\models\Cliente::optsCliEstado(),
+                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
+                            ) ?>
+                        </div>
+                    </div>
+
+                    <div class="card-title d-flex align-items-center mt-3">
+                        <h5 class="mb-0 text-white">OBSERVACIONES</h5>
+                    </div>
+                    <hr>
+
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <?= $form->field($model, 'cli_observaciones', [
+                                'template' => "<label>Observaciones</label>\n{input}\n{hint}\n{error}",
+                            ])->textarea(['rows' => 6, 'class' => 'form-control']) ?>
                         </div>
                     </div>
 

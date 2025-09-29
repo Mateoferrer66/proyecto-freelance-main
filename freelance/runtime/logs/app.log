@@ -8881,3 +8881,81 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1758727961.2635
     'REQUEST_TIME' => 1758727961
 ]
+2025-09-29 16:58:54 [::1][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct('mysql:host=loca...', 'root', Object(SensitiveParameterValue), NULL)
+#1 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(793): yii\db\Connection->open()
+#3 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\ClienteController.php(98): yii\db\Connection->beginTransaction()
+#4 [internal function]: app\controllers\ClienteController->actionCreate()
+#5 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#6 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#7 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#8 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('cliente/create', Array)
+#9 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#11 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(793): yii\db\Connection->open()
+#1 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\ClienteController.php(98): yii\db\Connection->beginTransaction()
+#2 [internal function]: app\controllers\ClienteController->actionCreate()
+#3 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#4 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#5 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#6 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('cliente/create', Array)
+#7 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(12): yii\base\Application->run()
+#9 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+)
+
+2025-09-29 16:58:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'cliente/create'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60194'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=cliente%2Fcreate'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=cliente%2Fcreate'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Brave\";v=\"140\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=cliente%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'REQUEST_TIME_FLOAT' => 1759157927.688
+    'REQUEST_TIME' => 1759157927
+]

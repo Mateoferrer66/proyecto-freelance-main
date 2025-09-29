@@ -7,7 +7,7 @@ use app\models\TipoDocIdentidad;
 use app\models\Pais;
 use app\models\Provincia;
 use app\models\Cliente;
-use app\models\Socio;
+
 use app\models\FormaDePago;
 
 /** @var yii\web\View $this */
@@ -230,14 +230,6 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="row mb-3">
-                        <div class="col-md-4">
-                            <?= $form->field($model, 'soc_id', [
-                                'template' => "<label>Socio *</label>\n{input}\n{hint}\n{error}"
-                            ])->dropDownList(
-                                ArrayHelper::map(app\models\Socio::find()->all(), 'soc_id', function($model) { return $model->soc_nombre . ' ' . $model->soc_apellido1; }),
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
-                            ) ?>
-                        </div>
                         <div class="col-md-4">
                             <?= $form->field($model, 'fdp_id', [
                                 'template' => "<label>Forma de Pago *</label>\n{input}\n{hint}\n{error}"

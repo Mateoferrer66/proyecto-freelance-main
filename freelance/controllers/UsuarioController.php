@@ -170,7 +170,10 @@ class UsuarioController extends Controller
      */
     public function actionDelete($usu_id)
     {
-        $this->findModel($usu_id)->delete();
+        $model = $this->findModel($usu_id);
+        $model->usu_eliminado = 1;
+        $model->usu_fecbloqueo = date('Y-m-d H:i:s');
+        $model->save();
 
         return $this->redirect(['index']);
     }

@@ -43,6 +43,8 @@ class UsuarioSearch extends Usuario
     {
         $query = Usuario::find();
 
+        $query->andWhere(['usu_eliminado' => 0]);
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([

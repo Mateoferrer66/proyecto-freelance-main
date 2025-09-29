@@ -47,9 +47,10 @@ class Usuario extends \yii\db\ActiveRecord
             [['usu_apellido', 'usu_fecbloqueo'], 'default', 'value' => null],
             [['usu_estado'], 'default', 'value' => 'Activo'],
             [['usu_eliminado'], 'default', 'value' => 0],
-            [['usu_nombre', 'usu_email', 'usu_login', 'usu_password'], 'required'],
-            [['usu_estado'], 'string'],
+            [['usu_nombre', 'usu_email', 'usu_password'], 'required'],
+            [['usu_estado', 'usu_login'], 'string'],
             [['usu_fecbloqueo'], 'safe'],
+            [['usu_eliminado'], 'default', 'value' => 0],
             [['usu_eliminado'], 'integer'],
             [['usu_nombre', 'usu_apellido', 'usu_email', 'usu_login', 'usu_password'], 'string', 'max' => 255],
             ['usu_estado', 'in', 'range' => array_keys(self::optsUsuEstado())],
@@ -62,15 +63,15 @@ class Usuario extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'usu_id' => 'Usu ID',
-            'usu_nombre' => 'Usu Nombre',
-            'usu_apellido' => 'Usu Apellido',
-            'usu_email' => 'Usu Email',
-            'usu_login' => 'Usu Login',
-            'usu_password' => 'Usu Password',
-            'usu_estado' => 'Usu Estado',
-            'usu_fecbloqueo' => 'Usu Fecbloqueo',
-            'usu_eliminado' => 'Usu Eliminado',
+            'usu_id' => 'ID',
+            'usu_nombre' => 'Nombre *',
+            'usu_apellido' => 'Apellido *',
+            'usu_email' => 'Email *',
+            'usu_login' => 'Login *',
+            'usu_password' => 'Password *',
+            'usu_estado' => 'Estado',
+            'usu_fecbloqueo' => 'Fecbloqueo',
+            'usu_eliminado' => 'Eliminado',
         ];
     }
 
@@ -149,5 +150,16 @@ class Usuario extends \yii\db\ActiveRecord
     public function setUsuEstadoToInactivo()
     {
         $this->usu_estado = self::USU_ESTADO_INACTIVO;
+    }
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if ($this->isNewRecord || $this->isAttributeChanged('usu_password')) {
+                $this->usu_password = Yii::$app->getSecurity()->generatePasswordHash($this->usu_password);
+            }
+            return true;
+        }
+        return false;
     }
 }

@@ -64,7 +64,7 @@ $currentUrl = Yii::$app->request->url;
             </ul>
         </li>
 
-        <li><a href="/usuarios">
+        <li><a href="http://localhost:8080/index.php?r=usuario">
                 <div class="parent-icon"><i class='bx bx-group'></i></div>
                 <div class="menu-title">Usuarios</div>
             </a></li>

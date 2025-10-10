@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\web\IdentityInterface;
 
 /**
  * This is the model class for table "usuario".
@@ -21,7 +22,7 @@ use Yii;
  * @property Liquidacion[] $liquidacions
  * @property SocAltaBaja[] $socAltaBajas
  */
-class Usuario extends \yii\db\ActiveRecord
+class Usuario extends \yii\db\ActiveRecord implements IdentityInterface
 {
 
     /**
@@ -161,5 +162,57 @@ class Usuario extends \yii\db\ActiveRecord
             return true;
         }
         return false;
+    }
+
+    /* Implementación de IdentityInterface */
+
+    public static function findIdentity($id)
+    {
+        return static::findOne(['usu_id' => $id, 'usu_estado' => self::USU_ESTADO_ACTIVO, 'usu_eliminado' => 0]);
+    }
+
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        // No se implementa en este caso
+        return null;
+    }
+
+    public function getId()
+    {
+        return $this->getPrimaryKey();
+    }
+
+    public function getAuthKey()
+    {
+        // No se usa authKey en este ejemplo
+        return null;
+    }
+
+    public function validateAuthKey($authKey)
+    {
+        // No se usa authKey en este ejemplo
+        return false;
+    }
+
+    /**
+     * Finds user by username
+     *
+     * @param string $username
+     * @return static|null
+     */
+    public static function findByUsername($username)
+    {
+        return static::findOne(['usu_login' => $username, 'usu_estado' => self::USU_ESTADO_ACTIVO, 'usu_eliminado' => 0]);
+    }
+
+    /**
+     * Validates password
+     *
+     * @param string $password password to validate
+     * @return bool if password provided is valid for current user
+     */
+    public function validatePassword($password)
+    {
+        return Yii::$app->getSecurity()->validatePassword($password, $this->usu_password);
     }
 }

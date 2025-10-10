@@ -8,7 +8,7 @@ $currentUrl = Yii::$app->request->url;
     <div class="sidebar-header">
         <div><img src="/assets-custom/images/ico.svg" class="logo-icon" alt="logo icon"></div>
         <div>
-            <h4 class="logo-text"><img src="/assets-custom/images/logo.svg"></h4>
+            <h4 class="logo-text"><a href="<?= \Yii::$app->urlManager->createUrl(['/usuario']) ?>"><img src="/assets-custom/images/logo.svg"></a></h4>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-menu'></i></div>
     </div>
@@ -87,11 +87,13 @@ $currentUrl = Yii::$app->request->url;
                 <li><a href="http://localhost:8080/index.php?r=provincia"><i class="bx bx-right-arrow-alt"></i>País y provincia</a></li>
             </ul>
         </li>
-
-        <li><a href="/logout">
-                <div class="parent-icon"><i class="bx bx-log-out-circle"></i></div>
-                <div class="menu-title">Cerrar Sesión</div>
-            </a></li>
+        <li>
+            <?= \yii\helpers\Html::a(
+                '<div class="parent-icon"><i class="bx bx-log-out-circle"></i></div><div class="menu-title">Cerrar Sesión</div>',
+                ['/site/logout'],
+                ['data-method' => 'post']
+            ) ?>
+        </li>
     </ul>
     <footer class="page-footer">
         <p class="mb-0">Copyright © 2022. Derechos reservados.</p>

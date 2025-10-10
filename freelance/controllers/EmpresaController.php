@@ -13,7 +13,7 @@ use yii\filters\VerbFilter;
 /**
  * EmpresaController implements the CRUD actions for Empresa model.
  */
-class EmpresaController extends Controller
+class EmpresaController extends BaseController
 {
     /**
      * @inheritDoc

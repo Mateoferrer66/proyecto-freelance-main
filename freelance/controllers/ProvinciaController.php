@@ -14,7 +14,7 @@ use Yii;
 /**
  * ProvinciaController implements the CRUD actions for Provincia model.
  */
-class ProvinciaController extends Controller
+class ProvinciaController extends BaseController
 {
     /**
      * @inheritDoc

@@ -14,7 +14,7 @@ use Yii;
 /**
  * ConceptoFacturacionController implements the CRUD actions for ConceptoFacturacion model.
  */
-class ConceptoFacturacionController extends Controller
+class ConceptoFacturacionController extends BaseController
 {
     /**
      * @inheritDoc

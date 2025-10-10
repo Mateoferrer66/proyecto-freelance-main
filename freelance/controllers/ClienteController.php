@@ -17,7 +17,7 @@ use Yii;
 /**
  * ClienteController implements the CRUD actions for Cliente model.
  */
-class ClienteController extends Controller
+class ClienteController extends BaseController
 {
     /**
      * @inheritDoc

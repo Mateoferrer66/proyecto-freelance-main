@@ -14,7 +14,7 @@ use Yii;
 /**
  * TipoDocIdentidadController implements the CRUD actions for TipoDocIdentidad model.
  */
-class TipoDocIdentidadController extends Controller
+class TipoDocIdentidadController extends BaseController
 {
     /**
      * @inheritDoc

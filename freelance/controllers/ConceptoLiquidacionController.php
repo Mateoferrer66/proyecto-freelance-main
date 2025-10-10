@@ -14,7 +14,7 @@ use Yii;
 /**
  * ConceptoLiquidacionController implements the CRUD actions for ConceptoLiquidacion model.
  */
-class ConceptoLiquidacionController extends Controller
+class ConceptoLiquidacionController extends BaseController
 {
     /**
      * @inheritDoc

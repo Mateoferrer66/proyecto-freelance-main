@@ -10,7 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     /**
      * {@inheritdoc}
@@ -20,12 +20,17 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['logout'],
                 'rules' => [
+                    // permitir acceso público a estas acciones
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['login', 'error', 'captcha', 'contact', 'about'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['?'], // para usuarios invitados
+                    ],
+                    // permitir a los usuarios autenticados acceder a todo lo demás
+                    [
+                        'allow' => true,
+                        'roles' => ['@'], // para usuarios autenticados
                     ],
                 ],
             ],

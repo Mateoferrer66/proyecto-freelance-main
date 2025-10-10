@@ -13,7 +13,7 @@ use app\components\PdfExportHelper;
 /**
  * FormaDePagoController implements the CRUD actions for FormaDePago model.
  */
-class FormaDePagoController extends Controller
+class FormaDePagoController extends BaseController
 {
     /**
      * @inheritDoc

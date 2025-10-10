@@ -13,7 +13,7 @@ use Yii;
 /**
  * ConsecutivoController implements the CRUD actions for Consecutivo model.
  */
-class ConsecutivoController extends Controller
+class ConsecutivoController extends BaseController
 {
     /**
      * @inheritDoc

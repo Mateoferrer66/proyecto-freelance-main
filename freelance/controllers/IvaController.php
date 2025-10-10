@@ -15,7 +15,7 @@ use Yii;
 /**
  * IvaController implements the CRUD actions for Iva model.
  */
-class IvaController extends Controller
+class IvaController extends BaseController
 {
     /**
      * @inheritDoc

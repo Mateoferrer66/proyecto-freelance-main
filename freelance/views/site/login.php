@@ -7,6 +7,8 @@
 use yii\bootstrap5\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\captcha\Captcha;
+use yii\web\View;
 
 $this->title = 'Ingreso';
 
@@ -70,6 +72,16 @@ $(document).ready(function () {
                     ]
                 ])->passwordInput()->label('Contraseña') ?>
             </div>
+
+            <?php if ($model->isCaptchaRequired()): ?>
+                <div class="col-12">
+                    <?= $form->field($model, 'verifyCode', [
+                        'inputOptions' => ['placeholder' => 'Código de Verificación', 'class' => 'form-control']
+                    ])->widget(\yii\captcha\Captcha::class, [
+                        'template' => '<div class="row"><div class="col-lg-5">{image}</div><div class="col-lg-7">{input}</div></div>'
+                    ])->label(false) ?>
+                </div>
+            <?php endif; ?>
 
             <div class="col-md-6">
                 <?= $form->field($model, 'rememberMe')->checkbox([

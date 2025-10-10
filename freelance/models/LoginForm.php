@@ -16,8 +16,10 @@ class LoginForm extends Model
     public $usu_login;
     public $usu_password;
     public $rememberMe = true;
+    public $verifyCode;
 
     private $_user = false;
+    private const FAILED_LOGIN_ATTEMPTS = 'failed-login-attempts';
 
 
     /**
@@ -32,6 +34,10 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['usu_password', 'validatePassword'],
+            // verifyCode needs to be entered correctly
+            ['verifyCode', 'captcha', 'when' => function ($model) {
+                return $model->isCaptchaRequired();
+            }],
         ];
     }
 
@@ -44,6 +50,7 @@ class LoginForm extends Model
             'usu_login' => 'Usuario',
             'usu_password' => 'Contraseña',
             'rememberMe' => 'Recordarme',
+            'verifyCode' => 'Código de Verificación',
         ];
     }
 
@@ -60,6 +67,8 @@ class LoginForm extends Model
             $user = $this->getUser();
 
             if (!$user || !$user->validatePassword($this->usu_password)) {
+                // Increment failed login attempts
+                Yii::$app->session->set(self::FAILED_LOGIN_ATTEMPTS, Yii::$app->session->get(self::FAILED_LOGIN_ATTEMPTS, 0) + 1);
                 $this->addError($attribute, 'Usuario o contraseña incorrectos.');
             }
         }
@@ -72,6 +81,8 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
+            // On successful login, reset the counter
+            Yii::$app->session->remove(self::FAILED_LOGIN_ATTEMPTS);
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
         }
         return false;
@@ -89,5 +100,15 @@ class LoginForm extends Model
         }
 
         return $this->_user;
+    }
+
+    /**
+     * Checks if captcha is required after 3 failed login attempts.
+     *
+     * @return bool
+     */
+    public function isCaptchaRequired()
+    {
+        return Yii::$app->session->get(self::FAILED_LOGIN_ATTEMPTS, 0) >= 3;
     }
 }

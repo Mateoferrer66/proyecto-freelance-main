@@ -1,0 +1,178 @@
+---- 2025-10-11T17:33:44+02:00 ----
+QUERY_STRING: r=usuario
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario',
+  ),
+)
+---- 2025-10-11T17:33:45+02:00 ----
+QUERY_STRING: r=site%2Flogin
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/login',
+  ),
+)
+---- 2025-10-11T17:33:45+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68ea78d991f4a
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68ea78d991f4a',
+  ),
+)
+---- 2025-10-11T17:33:51+02:00 ----
+QUERY_STRING: r=site%2Frequest-password-reset
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/request-password-reset',
+  ),
+)
+---- 2025-10-11T17:33:51+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68ea78df38e86
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68ea78df38e86',
+  ),
+)
+---- 2025-10-11T17:34:04+02:00 ----
+QUERY_STRING: r=site%2Frequest-password-reset
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/request-password-reset',
+  ),
+)
+---- 2025-10-11T17:34:04+02:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-10-11T17:34:05+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68ea78ed08363
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68ea78ed08363',
+  ),
+)
+---- 2025-10-11T17:35:30+02:00 ----
+QUERY_STRING: r=site%2Freset-password&token=MTh8MTc2MDIwMDQ0NHwxM2RkZGIyZmFjMGUxZmU0NDk1YTgwNjAzM2FkNTJkOTc2Mzc0YTQ2ZmIzMzA5MDc3ZDNmZGIyNjQxNzMwOWM3
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/reset-password',
+    'token' => 'MTh8MTc2MDIwMDQ0NHwxM2RkZGIyZmFjMGUxZmU0NDk1YTgwNjAzM2FkNTJkOTc2Mzc0YTQ2ZmIzMzA5MDc3ZDNmZGIyNjQxNzMwOWM3',
+  ),
+)
+---- 2025-10-11T17:35:32+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68ea794305b39
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68ea794305b39',
+  ),
+)
+---- 2025-10-11T17:35:50+02:00 ----
+QUERY_STRING: r=site%2Freset-password&token=MTh8MTc2MDIwMDQ0NHwxM2RkZGIyZmFjMGUxZmU0NDk1YTgwNjAzM2FkNTJkOTc2Mzc0YTQ2ZmIzMzA5MDc3ZDNmZGIyNjQxNzMwOWM3
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/reset-password',
+    'token' => 'MTh8MTc2MDIwMDQ0NHwxM2RkZGIyZmFjMGUxZmU0NDk1YTgwNjAzM2FkNTJkOTc2Mzc0YTQ2ZmIzMzA5MDc3ZDNmZGIyNjQxNzMwOWM3',
+  ),
+)
+---- 2025-10-11T17:35:52+02:00 ----
+QUERY_STRING: r=site%2Flogin
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/login',
+  ),
+)
+---- 2025-10-11T17:35:53+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68ea79587e44c
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68ea79587e44c',
+  ),
+)
+---- 2025-10-11T17:36:06+02:00 ----
+QUERY_STRING: r=site%2Flogin
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/login',
+  ),
+)
+---- 2025-10-11T17:36:09+02:00 ----
+QUERY_STRING: r=usuario%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario/index',
+  ),
+)
+---- 2025-10-11T17:36:10+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68ea79696c75b
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68ea79696c75b',
+  ),
+)
+---- 2025-10-11T17:36:16+02:00 ----
+QUERY_STRING: r=site%2Flogout
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/logout',
+  ),
+)
+---- 2025-10-11T17:36:16+02:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-10-11T17:36:17+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68ea797073c9e
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68ea797073c9e',
+  ),
+)

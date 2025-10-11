@@ -91,7 +91,7 @@ $(document).ready(function () {
             </div>
 
             <div class="col-md-6 text-end">
-                <a href="#">Olvidó su contraseña ?</a>
+                 <?= Html::a('Olvidó su contraseña ?', ['site/request-password-reset']) ?>
             </div>
 
             <div class="col-12">

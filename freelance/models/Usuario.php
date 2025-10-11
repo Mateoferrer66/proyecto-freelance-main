@@ -48,13 +48,22 @@ class Usuario extends \yii\db\ActiveRecord implements IdentityInterface
             [['usu_apellido', 'usu_fecbloqueo'], 'default', 'value' => null],
             [['usu_estado'], 'default', 'value' => 'Activo'],
             [['usu_eliminado'], 'default', 'value' => 0],
-            [['usu_nombre', 'usu_email', 'usu_password'], 'required'],
+            // Nombre y email siempre requeridos
+            [['usu_nombre', 'usu_email'], 'required'],
+            // En creación se requiere contraseña; en edición sólo si se provee
+            [['usu_password'], 'required', 'on' => ['create']],
             [['usu_estado', 'usu_login'], 'string'],
             [['usu_fecbloqueo'], 'safe'],
             [['usu_eliminado'], 'default', 'value' => 0],
             [['usu_eliminado'], 'integer'],
             [['usu_nombre', 'usu_apellido', 'usu_email', 'usu_login', 'usu_password'], 'string', 'max' => 255],
             ['usu_estado', 'in', 'range' => array_keys(self::optsUsuEstado())],
+            // Validación de formato de contraseña sólo si se provee (skipOnEmpty true)
+            ['usu_password', 'string', 'min' => 8, 'skipOnEmpty' => true],
+            ['usu_password', 'match', 'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/',
+                'message' => 'La contraseña debe tener al menos 8 caracteres e incluir una mayúscula, una minúscula, un número y un carácter especial.',
+                'skipOnEmpty' => true,
+            ],
         ];
     }
 

@@ -24,7 +24,12 @@ class ResetPasswordForm extends Model
     {
         return [
             ['password', 'required'],
-            ['password', 'string', 'min' => 6],
+            // mínimo 8 caracteres
+            ['password', 'string', 'min' => 8],
+            // al menos una mayúscula, una minúscula, un número y un carácter especial
+            ['password', 'match', 'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/',
+                'message' => 'La contraseña debe tener al menos 8 caracteres e incluir una mayúscula, una minúscula, un número y un carácter especial.'
+            ],
         ];
     }
 

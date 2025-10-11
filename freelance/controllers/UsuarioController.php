@@ -93,6 +93,8 @@ class UsuarioController extends BaseController
     public function actionCreate()
     {
         $model = new Usuario();
+        // Usar escenario 'create' para forzar la validación de contraseña en creación
+        $model->scenario = 'create';
 
         if ($this->request->isPost) {
             $postData = $this->request->post();

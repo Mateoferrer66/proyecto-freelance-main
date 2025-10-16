@@ -95,7 +95,7 @@ class ClienteController extends BaseController
 
         // Asegurar un valor por defecto para soc_id si no se envía
         if ($model->soc_id === null) {
-            $model->soc_id = 40;
+            $model->soc_id = 1;
         }
 
         if ($this->request->isPost) {

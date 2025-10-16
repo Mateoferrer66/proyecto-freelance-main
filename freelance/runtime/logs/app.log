@@ -257,3 +257,175 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1760196824.9026
     'REQUEST_TIME' => 1760196824
 ]
+2025-10-17 00:13:59 [::1][18][-][error][application] Errores de integridad referencial al crear Cliente: {"soc_id":["El socio seleccionado no existe."]}
+    in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\ClienteController.php:118
+2025-10-17 00:13:59 [::1][18][-][info][application] $_GET = [
+    'r' => 'cliente/create'
+]
+
+$_POST = [
+    '_csrf' => '-tFGXa0kw7_uMCvplBA0fgrv8BWL3L6duJ4jx8gUUJuXqXIylEGa1J5KeLnze0JOXp6DQsekybDb9xaMkEsy-g=='
+    'Cliente' => [
+        'cli_numero' => '27636'
+        'tdo_id' => '2'
+        'cli_docinipais' => ''
+        'cli_feccaddoc' => ''
+        'cli_numdocide' => '123123123123'
+        'cli_nombre' => 'cliebnte'
+        'cli_persona_contacto' => 'Carlos Ruiz'
+        'cli_tel1' => '21'
+        'cli_tel2' => ''
+        'cli_direccion' => '23'
+        'cli_poblacion' => '23'
+        'pai_id' => '73'
+        'prv_id' => '10'
+        'cli_codpostal' => 'werwer'
+        'cli_email' => 'clienteC@mail.com'
+        'fdp_id' => '1'
+        'cli_estado' => 'Activo'
+        'cli_observaciones' => '33'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'p3k6m8b77rdpi4sd8g61772rot'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => 'a13a572fd5cddf256c3cdbf7b3d534e18969c1bb55da7a305be61df3138e7cfea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"mx4o9eYkpzSPgkv0TqsWLxw-ci5KX_ba\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'rlgesdu'
+    '__captcha/site/captchacount' => 1
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '50268'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=cliente%2Fcreate'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=cliente%2Fcreate'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '2226'
+    'HTTP_CONTENT_LENGTH' => '2226'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Brave\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryGKlW4yaqWnuByh7q'
+    'HTTP_CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryGKlW4yaqWnuByh7q'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=cliente%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=p3k6m8b77rdpi4sd8g61772rot; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=a13a572fd5cddf256c3cdbf7b3d534e18969c1bb55da7a305be61df3138e7cfea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22mx4o9eYkpzSPgkv0TqsWLxw-ci5KX_ba%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1760652839.1949
+    'REQUEST_TIME' => 1760652839
+]
+2025-10-17 00:21:28 [::1][18][-][error][application] Intento de crear cliente con consecutivo ya usado: 27637
+    in C:\Users\mateo\Desktop\2025\Pruebas tecnicas Y TRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\ClienteController.php:132
+2025-10-17 00:21:28 [::1][18][-][info][application] $_GET = [
+    'r' => 'cliente/create'
+]
+
+$_POST = [
+    '_csrf' => 'LdNAcN0zmpsmSJ9s0gpeGmQ3E_5vt6jKfD5CrHDxPNJAq3Qf5FbD8FYyzDy1YSgqMEZgqSPP3-cfV3fnKK5esw=='
+    'Cliente' => [
+        'cli_numero' => '27637'
+        'tdo_id' => '2'
+        'cli_docinipais' => ''
+        'cli_feccaddoc' => ''
+        'cli_numdocide' => 'q'
+        'cli_nombre' => 'q'
+        'cli_persona_contacto' => 'q'
+        'cli_tel1' => 'q'
+        'cli_tel2' => 'q'
+        'cli_direccion' => 'q'
+        'cli_poblacion' => 'q'
+        'pai_id' => '73'
+        'prv_id' => '2'
+        'cli_codpostal' => '23'
+        'cli_email' => 'clienteD@mail.com'
+        'fdp_id' => '2'
+        'cli_estado' => 'Activo'
+        'cli_observaciones' => 'qw'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'p3k6m8b77rdpi4sd8g61772rot'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => 'a13a572fd5cddf256c3cdbf7b3d534e18969c1bb55da7a305be61df3138e7cfea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"mx4o9eYkpzSPgkv0TqsWLxw-ci5KX_ba\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'rlgesdu'
+    '__captcha/site/captchacount' => 1
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '50661'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=cliente%2Fcreate'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Desktop\\2025\\Pruebas tecnicas Y TRABAJOS\\FREELANCE\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=cliente%2Fcreate'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '2191'
+    'HTTP_CONTENT_LENGTH' => '2191'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Brave\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryxfnP3QLLuqRZ1Gnx'
+    'HTTP_CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryxfnP3QLLuqRZ1Gnx'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=cliente%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=p3k6m8b77rdpi4sd8g61772rot; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=a13a572fd5cddf256c3cdbf7b3d534e18969c1bb55da7a305be61df3138e7cfea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22mx4o9eYkpzSPgkv0TqsWLxw-ci5KX_ba%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1760653288.546
+    'REQUEST_TIME' => 1760653288
+]

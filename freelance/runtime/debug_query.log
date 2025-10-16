@@ -1253,3 +1253,329 @@ array (
     'tag' => '68f1410ea5009',
   ),
 )
+---- 2025-10-17T00:13:14+02:00 ----
+QUERY_STRING: r=cliente%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/create',
+  ),
+)
+---- 2025-10-17T00:13:15+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68f16dfb2c652
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68f16dfb2c652',
+  ),
+)
+---- 2025-10-17T00:13:32+02:00 ----
+QUERY_STRING: r=cliente%2Fprovincias-por-pais&id=15
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/provincias-por-pais',
+    'id' => '15',
+  ),
+)
+---- 2025-10-17T00:13:49+02:00 ----
+QUERY_STRING: r=cliente%2Fprovincias-por-pais&id=73
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/provincias-por-pais',
+    'id' => '73',
+  ),
+)
+---- 2025-10-17T00:13:59+02:00 ----
+QUERY_STRING: r=cliente%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/create',
+  ),
+)
+---- 2025-10-17T00:13:59+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68f16e2747589
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68f16e2747589',
+  ),
+)
+---- 2025-10-17T00:13:59+02:00 ----
+QUERY_STRING: r=cliente%2Fprovincias-por-pais&id=73
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/provincias-por-pais',
+    'id' => '73',
+  ),
+)
+---- 2025-10-17T00:15:53+02:00 ----
+QUERY_STRING: r=cliente%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/create',
+  ),
+)
+---- 2025-10-17T00:15:53+02:00 ----
+QUERY_STRING: r=cliente%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/index',
+  ),
+)
+---- 2025-10-17T00:15:54+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68f16e99c369b
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68f16e99c369b',
+  ),
+)
+---- 2025-10-17T00:16:01+02:00 ----
+QUERY_STRING: r=cliente%2Fview&cli_id=15&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/view',
+    'cli_id' => '15',
+    'view' => 'modal',
+  ),
+)
+---- 2025-10-17T00:16:04+02:00 ----
+QUERY_STRING: r=cliente%2Fupdate&cli_id=15&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/update',
+    'cli_id' => '15',
+    'view' => 'modal',
+  ),
+)
+---- 2025-10-17T00:17:03+02:00 ----
+QUERY_STRING: r=cliente%2Fdelete&cli_id=15
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/delete',
+    'cli_id' => '15',
+  ),
+)
+---- 2025-10-17T00:17:03+02:00 ----
+QUERY_STRING: r=cliente%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/index',
+  ),
+)
+---- 2025-10-17T00:17:03+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68f16edfbfaf0
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68f16edfbfaf0',
+  ),
+)
+---- 2025-10-17T00:19:39+02:00 ----
+QUERY_STRING: r=cliente%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/create',
+  ),
+)
+---- 2025-10-17T00:19:40+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68f16f7bda91f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68f16f7bda91f',
+  ),
+)
+---- 2025-10-17T00:20:03+02:00 ----
+QUERY_STRING: r=cliente%2Fprovincias-por-pais&id=43
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/provincias-por-pais',
+    'id' => '43',
+  ),
+)
+---- 2025-10-17T00:20:17+02:00 ----
+QUERY_STRING: r=cliente%2Fprovincias-por-pais&id=70
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/provincias-por-pais',
+    'id' => '70',
+  ),
+)
+---- 2025-10-17T00:20:22+02:00 ----
+QUERY_STRING: r=cliente%2Fprovincias-por-pais&id=73
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/provincias-por-pais',
+    'id' => '73',
+  ),
+)
+---- 2025-10-17T00:20:34+02:00 ----
+QUERY_STRING: r=cliente%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/create',
+  ),
+)
+---- 2025-10-17T00:20:34+02:00 ----
+QUERY_STRING: r=cliente%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/index',
+  ),
+)
+---- 2025-10-17T00:20:34+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68f16fb284b01
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68f16fb284b01',
+  ),
+)
+---- 2025-10-17T00:20:43+02:00 ----
+QUERY_STRING: r=cliente%2Fupdate&cli_id=16&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/update',
+    'cli_id' => '16',
+    'view' => 'modal',
+  ),
+)
+---- 2025-10-17T00:20:50+02:00 ----
+QUERY_STRING: r=cliente%2Fupdate&cli_id=16&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/update',
+    'cli_id' => '16',
+    'view' => 'modal',
+  ),
+)
+---- 2025-10-17T00:20:52+02:00 ----
+QUERY_STRING: r=cliente%2Fupdate&cli_id=16&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/update',
+    'cli_id' => '16',
+    'view' => 'modal',
+  ),
+)
+---- 2025-10-17T00:20:53+02:00 ----
+QUERY_STRING: r=cliente%2Fupdate&cli_id=16&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/update',
+    'cli_id' => '16',
+    'view' => 'modal',
+  ),
+)
+---- 2025-10-17T00:21:01+02:00 ----
+QUERY_STRING: r=cliente%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/create',
+  ),
+)
+---- 2025-10-17T00:21:02+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68f16fcdb4ead
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68f16fcdb4ead',
+  ),
+)
+---- 2025-10-17T00:21:18+02:00 ----
+QUERY_STRING: r=cliente%2Fprovincias-por-pais&id=73
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/provincias-por-pais',
+    'id' => '73',
+  ),
+)
+---- 2025-10-17T00:21:28+02:00 ----
+QUERY_STRING: r=cliente%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/create',
+  ),
+)
+---- 2025-10-17T00:21:28+02:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=68f16fe89dd9b
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '68f16fe89dd9b',
+  ),
+)
+---- 2025-10-17T00:21:29+02:00 ----
+QUERY_STRING: r=cliente%2Fprovincias-por-pais&id=73
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/provincias-por-pais',
+    'id' => '73',
+  ),
+)

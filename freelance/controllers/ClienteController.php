@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Cliente;
 use app\models\ClienteSearch;
+use app\models\CliAltaBaja;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -11,17 +12,16 @@ use app\components\ExcelExportHelper;
 use app\components\PdfExportHelper;
 use app\models\Consecutivo;
 use app\models\Provincia;
+use app\models\TipoDocIdentidad;
+use app\models\Pais;
+use app\models\FormaDePago;
+use app\models\Socio;
 use yii\web\Response;
 use yii\helpers\Html;
 use Yii;
-/**
- * ClienteController implements the CRUD actions for Cliente model.
- */
+
 class ClienteController extends BaseController
 {
-    /**
-     * @inheritDoc
-     */
     public function behaviors()
     {
         return array_merge(
@@ -43,22 +43,28 @@ class ClienteController extends BaseController
     {
         $model = $this->findModel($cli_id);
 
+        $alta_baja = new CliAltaBaja();
+        $alta_baja->cli_id = $cli_id;
+        $alta_baja->usu_id = Yii::$app->user->id;
+        $alta_baja->cab_fecha = date('Y-m-d H:i:s');
+
         if ($model->cli_estado === Cliente::CLI_ESTADO_ACTIVO) {
             $model->cli_estado = Cliente::CLI_ESTADO_INACTIVO;
+            $alta_baja->cab_accion = CliAltaBaja::CAB_ACCION_INACTIVO;
+            $alta_baja->cab_observaciones = 'Cliente inactivado';
         } else {
             $model->cli_estado = Cliente::CLI_ESTADO_ACTIVO;
+            $alta_baja->cab_accion = CliAltaBaja::CAB_ACCION_ACTIVO;
+            $alta_baja->cab_observaciones = 'Cliente activado';
         }
 
-        $model->save(['cli_estado']);
+        if ($model->save(['cli_estado'])) {
+            $alta_baja->save();
+        }
 
         return $this->redirect(['index']);
     }
 
-    /**
-     * Lists all Cliente models.
-     *
-     * @return string
-     */
     public function actionIndex()
     {
         $searchModel = new ClienteSearch();
@@ -70,12 +76,6 @@ class ClienteController extends BaseController
         ]);
     }
 
-    /**
-     * Displays a single Cliente model.
-     * @param int $cli_id Cli ID
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionView($cli_id)
     {
         $model = $this->findModel($cli_id);
@@ -84,29 +84,118 @@ class ClienteController extends BaseController
             return $this->renderAjax('view', ['model' => $model]);
         }
 
-        return $this->render('view', ['model' => $model]);
+        return $this->render('view', [
+            'model' => $model,
+        ]);
     }
 
-    /**
-     * Creates a new Cliente model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
-public function actionCreate()
+    public function actionCreate()
     {
         $model = new Cliente();
-        $transaction = Yii::$app->db->beginTransaction();
 
-        try {
-            if ($this->request->isPost) {
-                if ($model->load($this->request->post()) && $model->save()) {
-                    
-                    $valorActual = $model->cli_numero;
-                    Consecutivo::deleteAll(['con_serie' => 'C']);
-                    $nuevoConsecutivo = new Consecutivo(['con_serie' => 'C', 'con_consecutivo' => $valorActual]);
-                    
-                    if (!$nuevoConsecutivo->save()) {
-                        throw new \Exception('Error al actualizar el consecutivo.');
+        // Asegurar un valor por defecto para soc_id si no se envía
+        if ($model->soc_id === null) {
+            $model->soc_id = 40;
+        }
+
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post())) {
+                // Comprobaciones referenciales
+                if (!TipoDocIdentidad::findOne($model->tdo_id)) {
+                    $model->addError('tdo_id', 'El tipo de documento seleccionado no existe.');
+                }
+                if (!Pais::findOne($model->pai_id)) {
+                    $model->addError('pai_id', 'El país seleccionado no existe.');
+                }
+                if (!FormaDePago::findOne($model->fdp_id)) {
+                    $model->addError('fdp_id', 'La forma de pago seleccionada no existe.');
+                }
+                if (!Socio::findOne($model->soc_id)) {
+                    $model->addError('soc_id', 'El socio seleccionado no existe.');
+                }
+
+                if ($model->hasErrors()) {
+                    Yii::error('Errores de integridad referencial al crear Cliente: ' . json_encode($model->getErrors()));
+                    if (Yii::$app->request->isAjax) {
+                        Yii::$app->response->format = Response::FORMAT_JSON;
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+                    $renderMethod = $this->request->isAjax ? 'renderAjax' : 'render';
+                    Yii::$app->session->setFlash('error', 'No se pudo crear el cliente: ' . implode(' | ', $model->getFirstErrors()));
+                    return $this->$renderMethod('create', ['model' => $model]);
+                }
+
+                // Comprobar unicidad del número de cliente
+                $exists = Cliente::find()->where(['cli_numero' => $model->cli_numero])->andWhere(['cli_eliminado' => 0])->exists();
+                if ($exists) {
+                    $model->addError('cli_numero', 'El consecutivo seleccionado ya está en uso por otro cliente.');
+                    Yii::error('Intento de crear cliente con consecutivo ya usado: ' . $model->cli_numero);
+                    if (Yii::$app->request->isAjax) {
+                        Yii::$app->response->format = Response::FORMAT_JSON;
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+                    $renderMethod = $this->request->isAjax ? 'renderAjax' : 'render';
+                    return $this->$renderMethod('create', ['model' => $model]);
+                }
+
+                $transaction = Yii::$app->db->beginTransaction();
+                try {
+                    if (!$model->save()) {
+                        $transaction->rollBack();
+                        Yii::error('Errores al guardar Cliente: ' . json_encode($model->getErrors()));
+                        $firstErrors = $model->getFirstErrors();
+                        $userMessage = !empty($firstErrors) ? implode(' | ', $firstErrors) : 'Errores de validación al crear cliente.';
+                        if (Yii::$app->request->isAjax) {
+                            Yii::$app->response->format = Response::FORMAT_JSON;
+                            return ['success' => false, 'errors' => $model->getErrors()];
+                        }
+                        Yii::$app->session->setFlash('error', 'No se pudo crear el cliente: ' . $userMessage);
+                        $renderMethod = $this->request->isAjax ? 'renderAjax' : 'render';
+                        return $this->$renderMethod('create', ['model' => $model]);
+                    }
+
+                    $alta_baja = new CliAltaBaja();
+                    $alta_baja->cli_id = $model->cli_id;
+                    $alta_baja->usu_id = Yii::$app->user->id;
+                    $alta_baja->cab_accion = CliAltaBaja::CAB_ACCION_ALTA;
+                    $alta_baja->cab_fecha = date('Y-m-d H:i:s');
+                    $alta_baja->cab_observaciones = 'Cliente creado';
+                    if (!$alta_baja->save()) {
+                        throw new \Exception('Error al guardar en el historial.');
+                    }
+
+                    // SELECT ... FOR UPDATE y UPDATE crudo del consecutivo
+                    try {
+                        $tbl = Consecutivo::tableName();
+                        $sql = "SELECT con_consecutivo FROM {$tbl} WHERE con_serie = :serie FOR UPDATE";
+                        $row = Yii::$app->db->createCommand($sql, [':serie' => Consecutivo::CON_SERIE_C])->queryOne();
+
+                        if ($row === false || $row === null) {
+                            throw new \yii\db\Exception('No se encontró el registro de consecutivo para clientes (Serie C).');
+                        }
+
+                        $used = (int)$model->cli_numero;
+                        $current = (int)$row['con_consecutivo'];
+
+                        if ($used >= $current) {
+                            $new = $used + 1;
+                            $sqlUpdate = "UPDATE {$tbl} SET con_consecutivo = :new WHERE con_serie = :serie AND con_consecutivo = :expected";
+                            $affected = Yii::$app->db->createCommand($sqlUpdate, [
+                                ':new' => $new,
+                                ':serie' => Consecutivo::CON_SERIE_C,
+                                ':expected' => $current
+                            ])->execute();
+
+                            if ($affected <= 0) {
+                                throw new \yii\db\Exception('Error de concurrencia o dato inesperado al actualizar el consecutivo de clientes.');
+                            }
+                            Yii::info('Consecutivo (serie C) actualizado a ' . $new . ' tras crear cliente con número ' . $used);
+                        } else {
+                            Yii::info('Consecutivo (serie C) se mantiene en ' . $current . ' (cliente creado con número ' . $used . ' que es menor)');
+                        }
+                    } catch (\Throwable $e) {
+                        // Re-lanza la excepción para que la transacción principal haga rollback
+                        throw $e;
                     }
 
                     $transaction->commit();
@@ -117,36 +206,29 @@ public function actionCreate()
                     }
                     Yii::$app->session->setFlash('success', 'Cliente creado correctamente.');
                     return $this->redirect(['index']);
-                } else {
-                     // Si el modelo no se guarda, hacemos rollback y mostramos errores
+                } catch (\Throwable $e) {
                     $transaction->rollBack();
-                    Yii::error('Errores al guardar Cliente: ' . json_encode($model->getErrors())); // Añadir esta línea
-                    if (Yii::$app->request->isAjax) {
-                        Yii::$app->response->format = Response::FORMAT_JSON;
-                        return ['success' => false, 'errors' => $model->getErrors()];
-                    }
+                    Yii::error('Error al crear cliente: ' . $e->getMessage());
+                    Yii::$app->session->setFlash('error', $e->getMessage());
                 }
-            } else {
-                $consecutivo = Consecutivo::find()->where(['con_serie' => 'C'])->one();
-                $model->cli_numero = $consecutivo ? $consecutivo->con_consecutivo + 1 : 1;
             }
-        } catch (\Exception $e) {
-            $transaction->rollBack();
-            Yii::$app->session->setFlash('error', $e->getMessage());
+        } else {
+            $model->loadDefaultValues();
+            try {
+                $con = Consecutivo::findOne(['con_serie' => Consecutivo::CON_SERIE_C]);
+                if ($con !== null) {
+                    $model->cli_numero = $con->con_consecutivo + 1;
+                }
+            } catch (\Throwable $e) {
+                Yii::error('No se pudo obtener consecutivo por defecto: ' . $e->getMessage());
+            }
         }
 
         $renderMethod = $this->request->isAjax ? 'renderAjax' : 'render';
-        return $this->$renderMethod('create', [
-            'model' => $model,
-        ]);
+        return $this->$renderMethod('create', ['model' => $model]);
     }
-    /**
-     * Updates an existing Cliente model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $cli_id Cli ID
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+
+
     public function actionUpdate($cli_id)
     {
         $model = $this->findModel($cli_id);
@@ -169,16 +251,33 @@ public function actionCreate()
         return $this->$renderMethod('update', ['model' => $model]);
     }
 
-    /**
-     * Deletes an existing Cliente model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $cli_id Cli ID
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionDelete($cli_id)
     {
-        $this->findModel($cli_id)->delete();
+        $model = $this->findModel($cli_id);
+        $model->cli_eliminado = 1;
+        
+        $transaction = Yii::$app->db->beginTransaction();
+        try {
+            if ($model->save(false)) {
+                $alta_baja = new CliAltaBaja();
+                $alta_baja->cli_id = $cli_id;
+                $alta_baja->usu_id = Yii::$app->user->id;
+                $alta_baja->cab_accion = CliAltaBaja::CAB_ACCION_BAJA;
+                $alta_baja->cab_fecha = date('Y-m-d H:i:s');
+                $alta_baja->cab_observaciones = 'Cliente eliminado';
+                if (!$alta_baja->save()) {
+                    throw new \Exception('Error al guardar en el historial.');
+                }
+                $transaction->commit();
+                Yii::$app->session->setFlash('success', 'Cliente eliminado correctamente.');
+            } else {
+                $transaction->rollBack();
+                Yii::$app->session->setFlash('error', 'No se pudo eliminar al cliente.');
+            }
+        } catch (\Exception $e) {
+            $transaction->rollBack();
+            Yii::$app->session->setFlash('error', $e->getMessage());
+        }
 
         return $this->redirect(['index']);
     }
@@ -191,22 +290,32 @@ public function actionCreate()
             return ['success' => false, 'message' => 'No se han seleccionado clientes.'];
         }
 
+        $transaction = Yii::$app->db->beginTransaction();
         try {
-            $count = Cliente::deleteAll(['in', 'cli_id', $ids]);
+            $count = Cliente::updateAll(['cli_eliminado' => 1], ['in', 'cli_id', $ids]);
+
+            $alta_baja_records = [];
+            foreach ($ids as $id) {
+                $alta_baja_records[] = [
+                    $id,
+                    Yii::$app->user->id,
+                    CliAltaBaja::CAB_ACCION_BAJA,
+                    date('Y-m-d H:i:s'),
+                    'Cliente eliminado en lote'
+                ];
+            }
+            Yii::$app->db->createCommand()->batchInsert(CliAltaBaja::tableName(), ['cli_id', 'usu_id', 'cab_accion', 'cab_fecha', 'cab_observaciones'], $alta_baja_records)->execute();
+            
+            $transaction->commit();
+
             return ['success' => true, 'message' => $count . ' cliente(s) eliminado(s) correctamente.'];
         } catch (\yii\db\Exception $e) {
+            $transaction->rollBack();
             // Log the error if needed
             return ['success' => false, 'message' => 'Ocurrió un error al eliminar los clientes.'];
         }
     }
 
-    /**
-     * Finds the Cliente model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $cli_id Cli ID
-     * @return Cliente the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     protected function findModel($cli_id)
     {
         if (($model = Cliente::findOne(['cli_id' => $cli_id])) !== null) {

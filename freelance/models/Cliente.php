@@ -72,6 +72,7 @@ class Cliente extends \yii\db\ActiveRecord
             [['soc_id'], 'default', 'value' => 1], // Socio: ID 1
             [['cli_exportado'], 'default', 'value' => 0], // Exportado: 0
             [['cli_numero', 'cli_nombre', 'tdo_id', 'cli_numdocide', 'pai_id', 'fdp_id', 'soc_id'], 'required'],
+            [['cli_numero'], 'unique', 'message' => 'Este número de cliente ya ha sido asignado.'],
             [['cli_numero', 'tdo_id', 'pai_id', 'prv_id', 'iva_id', 'fdp_id', 'soc_id', 'cli_exportado', 'cli_eliminado'], 'integer'],
             [['cli_feccaddoc'], 'safe'],
             [['cli_observaciones', 'cli_estado'], 'string'],

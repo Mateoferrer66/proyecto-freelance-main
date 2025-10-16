@@ -110,11 +110,13 @@ $this->registerJs($js);
                         ]
                     ]); ?>
 
+                    <?= $form->errorSummary($model, ['class' => 'alert alert-danger']) ?>
+
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <?= $form->field($model, 'cli_numero', [
                                 'template' => "<label>Número Cliente*</label>\n{input}\n{hint}\n{error}",
-                                'inputOptions' => ['class' => 'form-control mb-3', 'placeholder' => 'xxxxxx', 'required' => true, 'readonly' => true]
+                                'inputOptions' => ['class' => 'form-control mb-3', 'placeholder' => 'xxxxxx', 'required' => true]
                             ])->textInput() ?>
                         </div>
                     </div>

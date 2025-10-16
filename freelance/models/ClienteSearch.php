@@ -41,7 +41,7 @@ class ClienteSearch extends Cliente
      */
     public function search($params, $formName = null)
     {
-        $query = Cliente::find();
+        $query = Cliente::find()->where(['cli_eliminado' => 0]);
 
         // add conditions that should always apply here
 

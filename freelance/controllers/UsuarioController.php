@@ -42,12 +42,16 @@ class UsuarioController extends BaseController
         $model = $this->findModel($usu_id);
 
         if ($model->usu_estado === Usuario::USU_ESTADO_ACTIVO) {
+            // Pasar a inactivo y registrar fecha
             $model->usu_estado = Usuario::USU_ESTADO_INACTIVO;
+            $model->usu_fecbloqueo = date('Y-m-d H:i:s');
         } else {
+            // Reactivar: limpiar fecha de bloqueo
             $model->usu_estado = Usuario::USU_ESTADO_ACTIVO;
+            $model->usu_fecbloqueo = null;
         }
 
-        $model->save(['usu_estado']);
+        $model->save(false, ['usu_estado', 'usu_fecbloqueo']);
 
         return $this->redirect(['index']);
     }
@@ -173,9 +177,11 @@ class UsuarioController extends BaseController
     public function actionDelete($usu_id)
     {
         $model = $this->findModel($usu_id);
+        // Borrado lógico: marcar como eliminado y dejar inactivo
         $model->usu_eliminado = 1;
+        $model->usu_estado = Usuario::USU_ESTADO_INACTIVO;
         $model->usu_fecbloqueo = date('Y-m-d H:i:s');
-        $model->save();
+        $model->save(false, ['usu_eliminado', 'usu_estado', 'usu_fecbloqueo']);
 
         return $this->redirect(['index']);
     }
@@ -189,7 +195,19 @@ class UsuarioController extends BaseController
         }
 
         try {
-            $count = Usuario::deleteAll(['in', 'usu_id', $ids]);
+            $count = 0;
+            foreach ($ids as $id) {
+                $model = $this->findModel($id);
+                if ($model) {
+                    // Borrado lógico
+                    $model->usu_eliminado = 1;
+                    $model->usu_estado = Usuario::USU_ESTADO_INACTIVO;
+                    $model->usu_fecbloqueo = date('Y-m-d H:i:s');
+                    if ($model->save(false, ['usu_eliminado', 'usu_estado', 'usu_fecbloqueo'])) {
+                        $count++;
+                    }
+                }
+            }
             return ['success' => true, 'message' => $count . ' usuario(s) eliminado(s) correctamente.'];
         } catch (\yii\db\Exception $e) {
             // Log the error if needed
@@ -206,7 +224,7 @@ class UsuarioController extends BaseController
      */
     protected function findModel($usu_id)
     {
-        if (($model = Usuario::findOne(['usu_id' => $usu_id])) !== null) {
+        if (($model = Usuario::findOne(['usu_id' => $usu_id, 'usu_eliminado' => 0])) !== null) {
             return $model;
         }
 
@@ -215,7 +233,7 @@ class UsuarioController extends BaseController
 
     public function actionExportExcel()
     {
-        $usuarios = Usuario::find()->all();
+        $usuarios = Usuario::find()->where(['usu_eliminado' => 0])->all();
 
         $headers = ['Login', 'Nombre', 'Estado'];
         $data = [];
@@ -233,7 +251,7 @@ class UsuarioController extends BaseController
 
     public function actionExportPdf()
     {
-        $usuarios = Usuario::find()->all();
+        $usuarios = Usuario::find()->where(['usu_eliminado' => 0])->all();
         $headers = ['Login', 'Nombre', 'Estado'];
         $rows = [];
 
@@ -256,7 +274,7 @@ class UsuarioController extends BaseController
 
     public function actionPrint()
     {
-        $usuarios = Usuario::find()->all();
+        $usuarios = Usuario::find()->where(['usu_eliminado' => 0])->all();
 
         $headers = ['Login', 'Nombre', 'Estado'];
         $rows = [];

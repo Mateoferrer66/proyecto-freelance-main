@@ -13116,3 +13116,5411 @@ array (
     'tag' => '690ab62683aa3',
   ),
 )
+---- 2025-11-05T03:30:46+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T03:30:47+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ab6d79cde1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ab6d79cde1',
+  ),
+)
+---- 2025-11-05T03:30:50+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T03:30:50+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ab6daad3d9
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ab6daad3d9',
+  ),
+)
+---- 2025-11-05T03:30:53+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T03:30:53+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ab6dd538f9
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ab6dd538f9',
+  ),
+)
+---- 2025-11-05T03:30:56+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-11-05T03:30:56+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ab6e01eca4
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ab6e01eca4',
+  ),
+)
+---- 2025-11-05T03:31:11+01:00 ----
+QUERY_STRING: r=factura%2Flistado-clientes&term=cc&type=name
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/listado-clientes',
+    'term' => 'cc',
+    'type' => 'name',
+  ),
+)
+---- 2025-11-05T03:32:23+01:00 ----
+QUERY_STRING: r=factura%2Flistado-clientes&term=cx&type=name
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/listado-clientes',
+    'term' => 'cx',
+    'type' => 'name',
+  ),
+)
+---- 2025-11-05T03:33:24+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-11-05T03:33:24+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ab77480984
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ab77480984',
+  ),
+)
+---- 2025-11-05T03:33:58+01:00 ----
+QUERY_STRING: r=factura%2Flistado-clientes&term=1%20&type=doc
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/listado-clientes',
+    'term' => '1 ',
+    'type' => 'doc',
+  ),
+)
+---- 2025-11-05T03:39:24+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T03:39:24+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ab8dc87cf5
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ab8dc87cf5',
+  ),
+)
+---- 2025-11-05T03:39:55+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T03:39:56+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ab8fbbea72
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ab8fbbea72',
+  ),
+)
+---- 2025-11-05T03:40:13+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-11-05T03:40:14+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ab90da7702
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ab90da7702',
+  ),
+)
+---- 2025-11-05T03:40:32+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T03:40:32+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ab9207eba4
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ab9207eba4',
+  ),
+)
+---- 2025-11-05T03:40:42+01:00 ----
+QUERY_STRING: r=presupuesto%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto/create',
+  ),
+)
+---- 2025-11-05T03:40:43+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ab92ae3124
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ab92ae3124',
+  ),
+)
+---- 2025-11-05T05:45:37+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T05:45:38+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ad671d8f1a
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ad671d8f1a',
+  ),
+)
+---- 2025-11-05T05:45:41+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-11-05T05:45:42+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ad675be33a
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ad675be33a',
+  ),
+)
+---- 2025-11-05T05:45:51+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T05:45:52+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ad67fe1337
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ad67fe1337',
+  ),
+)
+---- 2025-11-05T05:45:54+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-11-05T05:45:54+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ad6825f59e
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ad6825f59e',
+  ),
+)
+---- 2025-11-05T05:45:57+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T05:45:57+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ad6855c159
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ad6855c159',
+  ),
+)
+---- 2025-11-05T06:02:34+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T06:02:34+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ada6a186fd
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ada6a186fd',
+  ),
+)
+---- 2025-11-05T06:02:36+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T06:02:36+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ada6c67826
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ada6c67826',
+  ),
+)
+---- 2025-11-05T06:04:25+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T06:04:25+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690adad98a074
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690adad98a074',
+  ),
+)
+---- 2025-11-05T06:04:28+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T06:04:28+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690adadcad280
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690adadcad280',
+  ),
+)
+---- 2025-11-05T06:05:36+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T06:05:36+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690adb209d7c8
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690adb209d7c8',
+  ),
+)
+---- 2025-11-05T06:05:38+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T06:05:38+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690adb22af56f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690adb22af56f',
+  ),
+)
+---- 2025-11-05T06:08:54+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T06:08:54+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690adbe63c2c7
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690adbe63c2c7',
+  ),
+)
+---- 2025-11-05T06:08:57+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-11-05T06:08:57+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690adbe953720
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690adbe953720',
+  ),
+)
+---- 2025-11-05T06:09:01+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T06:09:01+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690adbed6911c
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690adbed6911c',
+  ),
+)
+---- 2025-11-05T06:19:25+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T06:19:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:31+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:31+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:31+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:41+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:41+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:41+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:41+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:41+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:41+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:42+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:42+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:49+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:50+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:50+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:50+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:50+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:50+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:50+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:50+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:50+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:50+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:50+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:51+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:51+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:51+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:51+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:51+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:51+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:51+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:51+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:19:51+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:09+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:17+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:17+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:17+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:17+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:17+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:17+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:17+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:17+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:17+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:19+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:22+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:23+01:00 ----
+QUERY_STRING: tag=690ade9670275
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690ade9670275',
+  ),
+)
+---- 2025-11-05T06:20:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:32+01:00 ----
+QUERY_STRING: tag=690ade9ee60d7
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690ade9ee60d7',
+  ),
+)
+---- 2025-11-05T06:20:34+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T06:20:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:43+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:53+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:53+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:53+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:53+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:53+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:53+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:54+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:54+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:54+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:54+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:54+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:54+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:54+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:54+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:54+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:54+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:55+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:55+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:55+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:20:55+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:20+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:20+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:22+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:22+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:22+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:22+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:22+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:22+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:22+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:22+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:23+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:24+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:24+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:24+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:24+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:24+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:24+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:24+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:24+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:24+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:24+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:25+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:25+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:25+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:25+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:25+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:26+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:26+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:26+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:26+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:28+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:28+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:28+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:28+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:28+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:28+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:28+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:28+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:28+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:35+01:00 ----
+QUERY_STRING: tag=690adedf90c7f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adedf90c7f',
+  ),
+)
+---- 2025-11-05T06:21:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:41+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:41+01:00 ----
+QUERY_STRING: tag=690adee5b354b
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adee5b354b',
+  ),
+)
+---- 2025-11-05T06:21:45+01:00 ----
+QUERY_STRING: r=consecutivo
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'consecutivo',
+  ),
+)
+---- 2025-11-05T06:21:45+01:00 ----
+QUERY_STRING: r=consecutivo
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'consecutivo',
+  ),
+)
+---- 2025-11-05T06:21:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:49+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:21:49+01:00 ----
+QUERY_STRING: tag=690adeed11c1a
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adeed11c1a',
+  ),
+)
+---- 2025-11-05T06:22:04+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:04+01:00 ----
+QUERY_STRING: tag=690adefc17ec4
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adefc17ec4',
+  ),
+)
+---- 2025-11-05T06:22:06+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-11-05T06:22:06+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:06+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:06+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:06+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:07+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:09+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:09+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:09+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:09+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:09+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:10+01:00 ----
+QUERY_STRING: tag=690adf021064c
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adf021064c',
+  ),
+)
+---- 2025-11-05T06:22:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:21+01:00 ----
+QUERY_STRING: tag=690adf0d67f47
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adf0d67f47',
+  ),
+)
+---- 2025-11-05T06:22:29+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:30+01:00 ----
+QUERY_STRING: tag=690adf164e3a0
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adf164e3a0',
+  ),
+)
+---- 2025-11-05T06:22:34+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T06:22:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:39+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:22:39+01:00 ----
+QUERY_STRING: tag=690adf1f39c1f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adf1f39c1f',
+  ),
+)
+---- 2025-11-05T06:23:13+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:13+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:13+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:14+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:15+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:18+01:00 ----
+QUERY_STRING: tag=690adf4623c18
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adf4623c18',
+  ),
+)
+---- 2025-11-05T06:23:23+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:24+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:24+01:00 ----
+QUERY_STRING: tag=690adf4c80efb
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adf4c80efb',
+  ),
+)
+---- 2025-11-05T06:23:33+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-11-05T06:23:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:38+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:40+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:40+01:00 ----
+QUERY_STRING: tag=690adf5c85873
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adf5c85873',
+  ),
+)
+---- 2025-11-05T06:23:44+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T06:23:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:46+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:49+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:49+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:49+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:49+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:49+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:49+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:49+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:23:49+01:00 ----
+QUERY_STRING: tag=690adf65abc92
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'tag' => '690adf65abc92',
+  ),
+)
+---- 2025-11-05T06:24:32+01:00 ----
+QUERY_STRING: usu_id=18&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'usu_id' => '18',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-05T06:24:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:24:37+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:26:09+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:26:09+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690adff1870ed
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690adff1870ed',
+  ),
+)
+---- 2025-11-05T06:28:56+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-05T06:28:57+01:00 ----
+QUERY_STRING: r=usuario%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario/index',
+  ),
+)
+---- 2025-11-05T06:28:57+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae0993dc57
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae0993dc57',
+  ),
+)
+---- 2025-11-05T06:29:00+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-11-05T06:29:01+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae09cd8103
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae09cd8103',
+  ),
+)
+---- 2025-11-05T06:29:06+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T06:29:06+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae0a22e5e0
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae0a22e5e0',
+  ),
+)
+---- 2025-11-05T06:29:08+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-11-05T06:29:09+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae0a4f18d8
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae0a4f18d8',
+  ),
+)
+---- 2025-11-05T06:29:13+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T06:29:13+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae0a9144da
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae0a9144da',
+  ),
+)
+---- 2025-11-05T06:29:26+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T06:29:26+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae0b63c599
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae0b63c599',
+  ),
+)
+---- 2025-11-05T06:36:08+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T06:36:08+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae2484d5c1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae2484d5c1',
+  ),
+)
+---- 2025-11-05T06:36:12+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-05T06:36:12+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae24c2b99f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae24c2b99f',
+  ),
+)
+---- 2025-11-05T06:36:14+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T06:36:14+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae24e67643
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae24e67643',
+  ),
+)
+---- 2025-11-05T06:36:18+01:00 ----
+QUERY_STRING: r=presupuesto%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto/create',
+  ),
+)
+---- 2025-11-05T06:36:19+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae252e562c
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae252e562c',
+  ),
+)
+---- 2025-11-05T06:38:00+01:00 ----
+QUERY_STRING: r=presupuesto%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto/create',
+  ),
+)
+---- 2025-11-05T06:38:00+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae2b84f677
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae2b84f677',
+  ),
+)
+---- 2025-11-05T06:39:32+01:00 ----
+QUERY_STRING: r=presupuesto%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto/create',
+  ),
+)
+---- 2025-11-05T06:39:32+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae314a609f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae314a609f',
+  ),
+)
+---- 2025-11-05T06:40:43+01:00 ----
+QUERY_STRING: r=presupuesto%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto/create',
+  ),
+)
+---- 2025-11-05T06:40:43+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae35bb9873
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae35bb9873',
+  ),
+)
+---- 2025-11-05T06:41:05+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-05T06:41:05+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae371a0879
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae371a0879',
+  ),
+)
+---- 2025-11-05T06:41:08+01:00 ----
+QUERY_STRING: r=presupuesto%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto/create',
+  ),
+)
+---- 2025-11-05T06:41:08+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=690ae374718f0
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '690ae374718f0',
+  ),
+)

@@ -3091,3 +3091,799 @@ $_SERVER = [
     'REQUEST_TIME' => 1762306891
     'QUERY_STRING' => 'token=f062eb2467c5cc87e1856b3e2011ce65'
 ]
+2025-11-05 05:45:51 [::1][18][4lb8k95gv9l8q79ie4skd5a2u2][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\PresupuestoSearch::cli_nif in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('cli_nif')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(2296): yii\db\BaseActiveRecord->__get('cli_nif')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1388): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\PresupuestoSearch), 'cli_nif')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1444): yii\helpers\BaseHtml::activeInput('text', Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\ActiveField.php(409): yii\helpers\BaseHtml::activeTextInput(Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php(189): yii\widgets\ActiveField->textInput(Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#11 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#13 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#14 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#15 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#16 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#18 {main}
+2025-11-05 05:45:51 [::1][18][4lb8k95gv9l8q79ie4skd5a2u2][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'pmaUser-1' => 'kRHNXX8c7Et+Xw6iQP4NO6h8dzUGAl+sU6Qz1NZMKsVf+uwhhbgu1MEeauY='
+    'PHPSESSID' => '4lb8k95gv9l8q79ie4skd5a2u2'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '2312baa40bfb1f4e1aed759de2be15407df66e92aeb2e716b21780d31dd1d7dea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"euIWlU2j2M0Yu5FofOm-Xl5mbIdC7s63\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57720'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; pmaUser-1=kRHNXX8c7Et%2BXw6iQP4NO6h8dzUGAl%2BsU6Qz1NZMKsVf%2Buwhhbgu1MEeauY%3D; PHPSESSID=4lb8k95gv9l8q79ie4skd5a2u2; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=2312baa40bfb1f4e1aed759de2be15407df66e92aeb2e716b21780d31dd1d7dea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22euIWlU2j2M0Yu5FofOm-Xl5mbIdC7s63%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762317951.8178
+    'REQUEST_TIME' => 1762317951
+]
+2025-11-05 06:02:34 [::1][18][4lb8k95gv9l8q79ie4skd5a2u2][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\PresupuestoSearch::cli_nif in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('cli_nif')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(2296): yii\db\BaseActiveRecord->__get('cli_nif')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1388): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\PresupuestoSearch), 'cli_nif')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1444): yii\helpers\BaseHtml::activeInput('text', Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\ActiveField.php(409): yii\helpers\BaseHtml::activeTextInput(Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php(189): yii\widgets\ActiveField->textInput(Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#11 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#13 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#14 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#15 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#16 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#18 {main}
+2025-11-05 06:02:34 [::1][18][4lb8k95gv9l8q79ie4skd5a2u2][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'pmaUser-1' => 'kRHNXX8c7Et+Xw6iQP4NO6h8dzUGAl+sU6Qz1NZMKsVf+uwhhbgu1MEeauY='
+    'PHPSESSID' => '4lb8k95gv9l8q79ie4skd5a2u2'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '2312baa40bfb1f4e1aed759de2be15407df66e92aeb2e716b21780d31dd1d7dea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"euIWlU2j2M0Yu5FofOm-Xl5mbIdC7s63\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58401'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; pmaUser-1=kRHNXX8c7Et%2BXw6iQP4NO6h8dzUGAl%2BsU6Qz1NZMKsVf%2Buwhhbgu1MEeauY%3D; PHPSESSID=4lb8k95gv9l8q79ie4skd5a2u2; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=2312baa40bfb1f4e1aed759de2be15407df66e92aeb2e716b21780d31dd1d7dea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22euIWlU2j2M0Yu5FofOm-Xl5mbIdC7s63%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762318953.978
+    'REQUEST_TIME' => 1762318953
+]
+2025-11-05 06:04:25 [::1][18][4lb8k95gv9l8q79ie4skd5a2u2][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\PresupuestoSearch::cli_nif in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('cli_nif')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(2296): yii\db\BaseActiveRecord->__get('cli_nif')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1388): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\PresupuestoSearch), 'cli_nif')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1444): yii\helpers\BaseHtml::activeInput('text', Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\ActiveField.php(409): yii\helpers\BaseHtml::activeTextInput(Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php(189): yii\widgets\ActiveField->textInput(Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#11 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#13 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#14 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#15 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#16 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#18 {main}
+2025-11-05 06:04:25 [::1][18][4lb8k95gv9l8q79ie4skd5a2u2][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'pmaUser-1' => 'kRHNXX8c7Et+Xw6iQP4NO6h8dzUGAl+sU6Qz1NZMKsVf+uwhhbgu1MEeauY='
+    'PHPSESSID' => '4lb8k95gv9l8q79ie4skd5a2u2'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '2312baa40bfb1f4e1aed759de2be15407df66e92aeb2e716b21780d31dd1d7dea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"euIWlU2j2M0Yu5FofOm-Xl5mbIdC7s63\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58491'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; pmaUser-1=kRHNXX8c7Et%2BXw6iQP4NO6h8dzUGAl%2BsU6Qz1NZMKsVf%2Buwhhbgu1MEeauY%3D; PHPSESSID=4lb8k95gv9l8q79ie4skd5a2u2; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=2312baa40bfb1f4e1aed759de2be15407df66e92aeb2e716b21780d31dd1d7dea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22euIWlU2j2M0Yu5FofOm-Xl5mbIdC7s63%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762319065.4751
+    'REQUEST_TIME' => 1762319065
+]
+2025-11-05 06:05:36 [::1][18][4lb8k95gv9l8q79ie4skd5a2u2][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\PresupuestoSearch::cli_nif in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('cli_nif')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(2296): yii\db\BaseActiveRecord->__get('cli_nif')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1388): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\PresupuestoSearch), 'cli_nif')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1444): yii\helpers\BaseHtml::activeInput('text', Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\ActiveField.php(409): yii\helpers\BaseHtml::activeTextInput(Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php(189): yii\widgets\ActiveField->textInput(Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#11 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#13 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#14 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#15 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#16 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#18 {main}
+2025-11-05 06:05:36 [::1][18][4lb8k95gv9l8q79ie4skd5a2u2][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'pmaUser-1' => 'kRHNXX8c7Et+Xw6iQP4NO6h8dzUGAl+sU6Qz1NZMKsVf+uwhhbgu1MEeauY='
+    'PHPSESSID' => '4lb8k95gv9l8q79ie4skd5a2u2'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '2312baa40bfb1f4e1aed759de2be15407df66e92aeb2e716b21780d31dd1d7dea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"euIWlU2j2M0Yu5FofOm-Xl5mbIdC7s63\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58538'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; pmaUser-1=kRHNXX8c7Et%2BXw6iQP4NO6h8dzUGAl%2BsU6Qz1NZMKsVf%2Buwhhbgu1MEeauY%3D; PHPSESSID=4lb8k95gv9l8q79ie4skd5a2u2; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=2312baa40bfb1f4e1aed759de2be15407df66e92aeb2e716b21780d31dd1d7dea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22euIWlU2j2M0Yu5FofOm-Xl5mbIdC7s63%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762319136.5242
+    'REQUEST_TIME' => 1762319136
+]
+2025-11-05 06:09:01 [::1][18][4lb8k95gv9l8q79ie4skd5a2u2][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\PresupuestoSearch::cli_nif in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('cli_nif')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(2296): yii\db\BaseActiveRecord->__get('cli_nif')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1388): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\PresupuestoSearch), 'cli_nif')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1444): yii\helpers\BaseHtml::activeInput('text', Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\ActiveField.php(409): yii\helpers\BaseHtml::activeTextInput(Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php(189): yii\widgets\ActiveField->textInput(Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#11 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#13 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#14 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#15 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#16 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#18 {main}
+2025-11-05 06:09:01 [::1][18][4lb8k95gv9l8q79ie4skd5a2u2][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'pmaUser-1' => 'kRHNXX8c7Et+Xw6iQP4NO6h8dzUGAl+sU6Qz1NZMKsVf+uwhhbgu1MEeauY='
+    'PHPSESSID' => '4lb8k95gv9l8q79ie4skd5a2u2'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '2312baa40bfb1f4e1aed759de2be15407df66e92aeb2e716b21780d31dd1d7dea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"euIWlU2j2M0Yu5FofOm-Xl5mbIdC7s63\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58862'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; pmaUser-1=kRHNXX8c7Et%2BXw6iQP4NO6h8dzUGAl%2BsU6Qz1NZMKsVf%2Buwhhbgu1MEeauY%3D; PHPSESSID=4lb8k95gv9l8q79ie4skd5a2u2; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=2312baa40bfb1f4e1aed759de2be15407df66e92aeb2e716b21780d31dd1d7dea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22euIWlU2j2M0Yu5FofOm-Xl5mbIdC7s63%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762319341.3484
+    'REQUEST_TIME' => 1762319341
+]
+2025-11-05 06:26:09 [::1][-][-][warning][yii\web\User::getIdentityAndDurationFromCookie] Invalid cookie auth key attempted for user '18' from ::1: 
+2025-11-05 06:26:09 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61037'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => '_identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762320369.4238
+    'REQUEST_TIME' => 1762320369
+]
+2025-11-05 06:29:13 [::1][18][qp4njlcm5c8q9smuv9kpfn5pig][error][ParseError] ParseError: Unmatched '}' in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\models\Presupuesto.php:260
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\models\PresupuestoSearch.php(12): yii\BaseYii::autoload('app\\models\\Pres...')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\BaseYii.php(296): include('C:\\Users\\mateo\\...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(48): yii\BaseYii::autoload('app\\models\\Pres...')
+#3 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#10 {main}
+2025-11-05 06:29:13 [::1][18][qp4njlcm5c8q9smuv9kpfn5pig][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'qp4njlcm5c8q9smuv9kpfn5pig'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '9f71ee4302de910430a9ee38bd81dd2788e09431c91355c1c2559f8a5398934da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ho4OfjDnUOQPbMOnOyS79WILQaFKMWIM\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61754'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=qp4njlcm5c8q9smuv9kpfn5pig; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=9f71ee4302de910430a9ee38bd81dd2788e09431c91355c1c2559f8a5398934da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ho4OfjDnUOQPbMOnOyS79WILQaFKMWIM%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762320553.0005
+    'REQUEST_TIME' => 1762320553
+]
+2025-11-05 06:29:26 [::1][18][qp4njlcm5c8q9smuv9kpfn5pig][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\PresupuestoSearch::cli_nif in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('cli_nif')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(2296): yii\db\BaseActiveRecord->__get('cli_nif')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1388): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\PresupuestoSearch), 'cli_nif')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1444): yii\helpers\BaseHtml::activeInput('text', Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\ActiveField.php(409): yii\helpers\BaseHtml::activeTextInput(Object(app\models\PresupuestoSearch), 'cli_nif', Array)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php(189): yii\widgets\ActiveField->textInput(Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#11 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#13 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#14 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#15 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#16 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#18 {main}
+2025-11-05 06:29:26 [::1][18][qp4njlcm5c8q9smuv9kpfn5pig][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'qp4njlcm5c8q9smuv9kpfn5pig'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '9f71ee4302de910430a9ee38bd81dd2788e09431c91355c1c2559f8a5398934da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ho4OfjDnUOQPbMOnOyS79WILQaFKMWIM\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61771'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=qp4njlcm5c8q9smuv9kpfn5pig; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=9f71ee4302de910430a9ee38bd81dd2788e09431c91355c1c2559f8a5398934da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ho4OfjDnUOQPbMOnOyS79WILQaFKMWIM%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762320566.1727
+    'REQUEST_TIME' => 1762320566
+]
+2025-11-05 06:36:18 [::1][18][qp4njlcm5c8q9smuv9kpfn5pig][error][Error] Error: Undefined constant app\models\Presupuesto::PRE_MONEY_EUROS in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\create.php:406
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('create', Array, Object(app\controllers\PresupuestoController))
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(208): yii\base\Controller->render('create', Array)
+#5 [internal function]: app\controllers\PresupuestoController->actionCreate()
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto/cre...', Array)
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#12 {main}
+2025-11-05 06:36:18 [::1][18][qp4njlcm5c8q9smuv9kpfn5pig][info][application] $_GET = [
+    'r' => 'presupuesto/create'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'qp4njlcm5c8q9smuv9kpfn5pig'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '9f71ee4302de910430a9ee38bd81dd2788e09431c91355c1c2559f8a5398934da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ho4OfjDnUOQPbMOnOyS79WILQaFKMWIM\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '62310'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto%2Fcreate'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto%2Fcreate'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=presupuesto'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=qp4njlcm5c8q9smuv9kpfn5pig; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=9f71ee4302de910430a9ee38bd81dd2788e09431c91355c1c2559f8a5398934da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ho4OfjDnUOQPbMOnOyS79WILQaFKMWIM%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762320978.8487
+    'REQUEST_TIME' => 1762320978
+]
+2025-11-05 06:38:00 [::1][18][qp4njlcm5c8q9smuv9kpfn5pig][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Presupuesto::pre_money in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('pre_money')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(2296): yii\db\BaseActiveRecord->__get('pre_money')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1862): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\Presupuesto), 'pre_money')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1703): yii\helpers\BaseHtml::activeListInput('dropDownList', Object(app\models\Presupuesto), 'pre_money', Array, Array)
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\ActiveField.php(656): yii\helpers\BaseHtml::activeDropDownList(Object(app\models\Presupuesto), 'pre_money', Array, Array)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\create.php(404): yii\widgets\ActiveField->dropDownList(Array, Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('create', Array, Object(app\controllers\PresupuestoController))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(208): yii\base\Controller->render('create', Array)
+#11 [internal function]: app\controllers\PresupuestoController->actionCreate()
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#13 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#14 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#15 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto/cre...', Array)
+#16 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#18 {main}
+2025-11-05 06:38:00 [::1][18][qp4njlcm5c8q9smuv9kpfn5pig][info][application] $_GET = [
+    'r' => 'presupuesto/create'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'qp4njlcm5c8q9smuv9kpfn5pig'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '9f71ee4302de910430a9ee38bd81dd2788e09431c91355c1c2559f8a5398934da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ho4OfjDnUOQPbMOnOyS79WILQaFKMWIM\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '62424'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto%2Fcreate'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto%2Fcreate'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=presupuesto'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=qp4njlcm5c8q9smuv9kpfn5pig; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=9f71ee4302de910430a9ee38bd81dd2788e09431c91355c1c2559f8a5398934da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ho4OfjDnUOQPbMOnOyS79WILQaFKMWIM%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762321080.2362
+    'REQUEST_TIME' => 1762321080
+]
+2025-11-05 06:39:32 [::1][18][qp4njlcm5c8q9smuv9kpfn5pig][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Presupuesto::pre_money in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('pre_money')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(2296): yii\db\BaseActiveRecord->__get('pre_money')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1862): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\Presupuesto), 'pre_money')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\helpers\BaseHtml.php(1703): yii\helpers\BaseHtml::activeListInput('dropDownList', Object(app\models\Presupuesto), 'pre_money', Array, Array)
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\widgets\ActiveField.php(656): yii\helpers\BaseHtml::activeDropDownList(Object(app\models\Presupuesto), 'pre_money', Array, Array)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\create.php(404): yii\widgets\ActiveField->dropDownList(Array, Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('create', Array, Object(app\controllers\PresupuestoController))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(208): yii\base\Controller->render('create', Array)
+#11 [internal function]: app\controllers\PresupuestoController->actionCreate()
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#13 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#14 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#15 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto/cre...', Array)
+#16 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#18 {main}
+2025-11-05 06:39:32 [::1][18][qp4njlcm5c8q9smuv9kpfn5pig][info][application] $_GET = [
+    'r' => 'presupuesto/create'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'qp4njlcm5c8q9smuv9kpfn5pig'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '9f71ee4302de910430a9ee38bd81dd2788e09431c91355c1c2559f8a5398934da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ho4OfjDnUOQPbMOnOyS79WILQaFKMWIM\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '62536'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto%2Fcreate'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto%2Fcreate'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=presupuesto'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=qp4njlcm5c8q9smuv9kpfn5pig; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=9f71ee4302de910430a9ee38bd81dd2788e09431c91355c1c2559f8a5398934da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ho4OfjDnUOQPbMOnOyS79WILQaFKMWIM%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762321172.5739
+    'REQUEST_TIME' => 1762321172
+]

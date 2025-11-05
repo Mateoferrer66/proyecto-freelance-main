@@ -12,13 +12,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'pre_numero')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'pre_numero')->textInput() ?>
 
     <?= $form->field($model, 'pre_logo')->dropDownList([ 'socio' => 'Socio', 'empresa' => 'Empresa', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'pre_fecha')->textInput() ?>
 
     <?= $form->field($model, 'pre_language')->dropDownList([ 'en' => 'En', 'es' => 'Es', ], ['prompt' => '']) ?>
+
+    <?= $form->field($model, 'pre_money')->dropDownList([ 'Euros' => 'Euros', '£' => '£', 'US$' => 'US$', ], ['prompt' => '']) ?>
 
     <?= $form->field($model, 'cli_id')->textInput() ?>
 

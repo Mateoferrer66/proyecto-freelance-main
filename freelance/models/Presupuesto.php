@@ -32,6 +32,7 @@ use Yii;
  */
 class Presupuesto extends \yii\db\ActiveRecord
 {
+    public $pre_money;
 
     /**
      * ENUM field values
@@ -40,6 +41,8 @@ class Presupuesto extends \yii\db\ActiveRecord
     const PRE_LOGO_EMPRESA = 'empresa';
     const PRE_LANGUAGE_EN = 'en';
     const PRE_LANGUAGE_ES = 'es';
+    const PRE_MONEY_EUROS = 'euros';
+    const PRE_MONEY_BS = 'bs';
 
     /**
      * {@inheritdoc}
@@ -66,6 +69,7 @@ class Presupuesto extends \yii\db\ActiveRecord
             [['pre_numero'], 'string', 'max' => 45],
             ['pre_logo', 'in', 'range' => array_keys(self::optsPreLogo())],
             ['pre_language', 'in', 'range' => array_keys(self::optsPreLanguage())],
+            ['pre_money', 'in', 'range' => array_keys(self::optsPreMoney())],
             [['cli_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cliente::class, 'targetAttribute' => ['cli_id' => 'cli_id']],
             [['fdp_id'], 'exist', 'skipOnError' => true, 'targetClass' => FormaDePago::class, 'targetAttribute' => ['fdp_id' => 'fdp_id']],
             [['soc_id'], 'exist', 'skipOnError' => true, 'targetClass' => Socio::class, 'targetAttribute' => ['soc_id' => 'soc_id']],
@@ -256,5 +260,51 @@ class Presupuesto extends \yii\db\ActiveRecord
     public function setPreLanguageToEs()
     {
         $this->pre_language = self::PRE_LANGUAGE_ES;
+    }
+
+    /**
+     * column pre_money ENUM value labels
+     * @return string[]
+     */
+    public static function optsPreMoney()
+    {
+        return [
+            self::PRE_MONEY_EUROS => 'euros',
+            self::PRE_MONEY_BS => 'bs',
+        ];
+    }
+
+    /**
+     * @return string
+     */
+    public function displayPreMoney()
+    {
+        return self::optsPreMoney()[$this->pre_money];
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPreMoneyEuros()
+    {
+        return $this->pre_money === self::PRE_MONEY_EUROS;
+    }
+
+    public function setPreMoneyToEuros()
+    {
+        $this->pre_money = self::PRE_MONEY_EUROS;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPreMoneyBs()
+    {
+        return $this->pre_money === self::PRE_MONEY_BS;
+    }
+
+    public function setPreMoneyToBs()
+    {
+        $this->pre_money = self::PRE_MONEY_BS;
     }
 }

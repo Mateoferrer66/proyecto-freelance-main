@@ -35,8 +35,8 @@ $currentUrl = Yii::$app->request->url;
                 <div class="menu-title">Facturación</div>
             </a>
             <ul class="mm-collapse" style="<?= strpos($currentUrl, '/facturacion') !== false || strpos($currentUrl, '/presupuestos') !== false ? 'display: block;' : '' ?>">
-                <li><a href="/facturacion"><i class="bx bx-right-arrow-alt"></i>Facturas</a></li>
-                <li><a href="/presupuestos"><i class="bx bx-right-arrow-alt"></i>Presupuestos</a></li>
+                <li><a href="http://localhost:8080/index.php?r=factura"><i class="bx bx-right-arrow-alt"></i>Facturas</a></li>
+                <li><a href="http://localhost:8080/index.php?r=presupuesto"><i class="bx bx-right-arrow-alt"></i>Presupuestos</a></li>
             </ul>
         </li>
 

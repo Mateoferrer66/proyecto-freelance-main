@@ -44,6 +44,12 @@ $config = [
             ],
         ],
         'db' => $db,
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            'currencyCode' => 'EUR',
+            'decimalSeparator' => ',',
+            'thousandSeparator' => '.',
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,

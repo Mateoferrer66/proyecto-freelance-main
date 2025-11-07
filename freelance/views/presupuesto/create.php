@@ -293,30 +293,23 @@ $this->registerJs($js);
 
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="search-by-name" class="form-label">Buscar por Nombre</label>
-                            <input type="text" id="search-by-name" class="form-control mb-3">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="search-by-doc" class="form-label">Buscar por N.º Documento</label>
+                            <label for="search-by-doc" class="form-label">NIF</label>
                             <input type="text" id="search-by-doc" class="form-control mb-3">
+                        </div>
+                         <div class="col-md-6">
+                            <label for="search-by-name" class="form-label">Nombre / Razón Social</label>
+                            <input type="text" id="search-by-name" class="form-control mb-3">
                         </div>
                     </div>
 
                     <div id="datos-cliente" class="row mb-3">
+          
                         <div class="col-md-4 mb-3">
-                            <label>NIF</label>
-                            <input type="text" id="cliente-nif" class="form-control" disabled>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <label>Nombre/Razón Social</label>
-                            <input type="text" id="cliente-razon_social" class="form-control" disabled>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <label>Nombre</label>
+                            <label>Nombre*</label>
                             <input type="text" id="cliente-nombre" class="form-control" disabled>
                         </div>
                          <div class="col-md-4 mb-3">
-                            <label>Tipo Documento</label>
+                            <label>Tipo Documento*</label>
                             <input type="text" id="cliente-tipo_doc" class="form-control" disabled>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -332,7 +325,7 @@ $this->registerJs($js);
                             <input type="text" id="cliente-cp" class="form-control" disabled>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>Provincia</label>
+                            <label>Provincia*</label>
                             <input type="text" id="cliente-provincia" class="form-control" disabled>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -404,7 +397,7 @@ $this->registerJs($js);
                             ])->dropDownList(
                                 [
                                     Presupuesto::PRE_MONEY_EUROS => 'Euro (€)',
-                                    Presupuesto::PRE_MONEY_BS => 'Bolívares (Bs)'
+                                    Presupuesto::PRE_MONEY_BS => 'Dolares ($)'
                                 ],
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'value' => Presupuesto::PRE_MONEY_EUROS]
                             ) ?>

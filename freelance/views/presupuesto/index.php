@@ -1,5 +1,5 @@
 <?php
-
+use app\models\Factura;
 use app\models\Presupuesto;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -9,6 +9,7 @@ use yii\widgets\Pjax;
 use yii\bootstrap5\Modal;
 use yii\widgets\ActiveForm;
 use yii\grid\CheckboxColumn;
+
 
 
 /** @var yii\web\View $this */
@@ -262,23 +263,24 @@ JS);
                                 ],
                                 [
                                     'attribute' => 'pre_numero',
-                                    'label' => 'Número',
+                                    'label' => '# Factura',
+                                ],
+                                 [
+                                    'attribute' => 'cli_id',
+                                    'label' => 'Nombre / Razón Social',
+                                    'value' => 'cli.cli_nombre',
+                                ],
+                                    [
+                                    'attribute' => 'pre_total',
+                                    'label' => 'Importe',
+                                    'format' => 'currency',
                                 ],
                                 [
                                     'attribute' => 'pre_fecha',
                                     'label' => 'Fecha',
                                     'format' => ['date', 'php:d-m-Y'],
                                 ],
-                                [
-                                    'attribute' => 'cli_id',
-                                    'label' => 'Cliente',
-                                    'value' => 'cli.cli_nombre',
-                                ],
-                                [
-                                    'attribute' => 'pre_total',
-                                    'label' => 'Total',
-                                    'format' => 'currency',
-                                ],
+                                                             
                                 [
                                     'class' => ActionColumn::class,
                                     'header' => 'Acciones',

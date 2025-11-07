@@ -291,31 +291,24 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="row mb-3">
-                        <div class="col-md-6">
-                            <label for="search-by-name" class="form-label">Buscar por Nombre</label>
-                            <input type="text" id="search-by-name" class="form-control mb-3">
+                         <div class="col-md-6">
+                            <label for="search-by-doc" class="form-label">NIF</label>
+                            <input type="text" id="search-by-doc" class="form-control mb-3">
                         </div>
                         <div class="col-md-6">
-                            <label for="search-by-doc" class="form-label">Buscar por N.º Documento</label>
-                            <input type="text" id="search-by-doc" class="form-control mb-3">
+                            <label for="search-by-name" class="form-label">Nombre / Razón social</label>
+                            <input type="text" id="search-by-name" class="form-control mb-3">
                         </div>
                     </div>
 
                     <div id="datos-cliente" class="row mb-3">
+                       
                         <div class="col-md-4 mb-3">
-                            <label>NIF</label>
-                            <input type="text" id="cliente-nif" class="form-control" disabled>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <label>Nombre/Razón Social</label>
-                            <input type="text" id="cliente-razon_social" class="form-control" disabled>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <label>Nombre</label>
+                            <label>Nombre*</label>
                             <input type="text" id="cliente-nombre" class="form-control" disabled>
                         </div>
                          <div class="col-md-4 mb-3">
-                            <label>Tipo Documento</label>
+                            <label>Tipo Documento*</label>
                             <input type="text" id="cliente-tipo_doc" class="form-control" disabled>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -331,7 +324,7 @@ $this->registerJs($js);
                             <input type="text" id="cliente-cp" class="form-control" disabled>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label>Provincia</label>
+                            <label>Provincia*</label>
                             <input type="text" id="cliente-provincia" class="form-control" disabled>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -382,7 +375,7 @@ $this->registerJs($js);
                         </div>
                         <div class="col-md-4 mb-3">
                             <?php $bancos = isset($bancos) ? $bancos : []; $selectedBanco = isset($selectedBanco) ? $selectedBanco : null; ?>
-                            <label>Cuenta destino</label>
+                            <label>Cuentas para transferencia</label>
                             <?= Html::dropDownList('CuentasFactura[ban_id]', $selectedBanco, $bancos, ['prompt' => 'Seleccione cuenta', 'class' => 'form-control mb-3']) ?>
                         </div>
                         <div class="col-md-4 mb-3">

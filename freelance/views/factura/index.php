@@ -267,34 +267,41 @@ JS);
                                 ],
                                 [
                                     'attribute' => 'fac_numero',
-                                    'label' => 'Número',
+                                    'label' => '# Factura',
                                 ],
-                                [
-                                    'attribute' => 'fac_fecha',
-                                    'label' => 'Fecha',
-                                    'format' => ['date', 'php:d-m-Y'],
-                                ],
+                             
                                 [
                                     'attribute' => 'cli_id',
-                                    'label' => 'Cliente',
+                                    'label' => 'Nombre / Razón Social',
                                     'value' => 'cli.cli_nombre',
                                 ],
                                 [
                                     'attribute' => 'fac_total',
-                                    'label' => 'Total',
+                                    'label' => 'Importe',
                                     'format' => 'currency',
                                 ],
+                                   [
+                                    'attribute' => 'fac_fecha',
+                                    'label' => 'Fecha',
+                                    'format' => ['date', 'php:d-m-Y'],
+                                ],
+                               
+                                [
+                                    'attribute' => 'fac_situacion',
+                                    'label' => 'Situación',
+                                    'format' => 'raw',
+                                    'value' => function ($model) {
+                                        if ($model->fac_situacion === Factura::FAC_ESTADO_LIQUIDADA) {
+                                            return '<i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i>' . $model->fac_situacion;
+                                        } else {
+                                            return '<i class="bx bx-radio-circle-marked align-middle font-18 me-1 text-danger"></i>' . $model->fac_situacion;
+                                        }
+                                    },
+                                ],
+
                                 [
                                     'attribute' => 'fac_estado',
                                     'label' => 'Estado',
-                                    'format' => 'raw',
-                                    'value' => function ($model) {
-                                        if ($model->fac_estado === Factura::FAC_ESTADO_LIQUIDADA) {
-                                            return '<i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i>' . $model->fac_estado;
-                                        } else {
-                                            return '<i class="bx bx-radio-circle-marked align-middle font-18 me-1 text-danger"></i>' . $model->fac_estado;
-                                        }
-                                    },
                                 ],
                                 [
                                     'class' => ActionColumn::class,

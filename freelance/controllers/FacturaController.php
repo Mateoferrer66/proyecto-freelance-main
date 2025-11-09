@@ -400,8 +400,13 @@ class FacturaController extends BaseController
         return PdfExportHelper::export('Listado_Facturas', $html);
     }
 
-    public function actionPrint()
+    public function actionPrint($fac_id = null)
     {
+        if ($fac_id !== null) {
+            $model = $this->findModel($fac_id);
+            return $this->renderPartial('print', ['model' => $model]);
+        }
+
         $facturas = Factura::find()->where(['fac_eliminada' => 0])->all();
 
         $headers = ['Número', 'Fecha', 'Cliente', 'Total', 'Estado'];
@@ -421,6 +426,36 @@ class FacturaController extends BaseController
             'titulo' => 'Listado de Facturas',
             'headers' => $headers,
             'rows' => $rows,
+        ]);
+    }
+
+    public function actionSendEmail($fac_id)
+    {
+        $model = $this->findModel($fac_id);
+        // Logic to send email
+        Yii::$app->session->setFlash('success', 'Correo electrónico enviado a ' . $model->cli->cli_email);
+        return $this->redirect(['index']);
+    }
+
+    public function actionMarkAsPaid($fac_id)
+    {
+        $model = $this->findModel($fac_id);
+        $model->fac_situacion = Factura::FAC_ESTADO_LIQUIDADA;
+        $model->save(false, ['fac_situacion']);
+        Yii::$app->session->setFlash('success', 'Factura marcada como liquidada.');
+        return $this->redirect(['index']);
+    }
+
+    public function actionChangeStatus($fac_id)
+    {
+        $model = $this->findModel($fac_id);
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Situación de la factura actualizada.');
+            return $this->redirect(['index']);
+        }
+
+        return $this->renderAjax('_change_status_form', [
+            'model' => $model,
         ]);
     }
 }

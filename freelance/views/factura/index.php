@@ -306,7 +306,7 @@ JS);
                                 [
                                     'class' => ActionColumn::class,
                                     'header' => 'Acciones',
-                                    'template' => '{view} {update} {delete}',
+                                    'template' => '{view} {update} {print} {send-email} {mark-as-paid} {change-status} {delete}',
                                     'buttons' => [
                                         'view' => fn($url, $model) => Html::a('<i class="bx bx-id-card"></i>', $url, [
                                             'title' => 'Ver Factura: ' . $model->fac_numero,
@@ -319,6 +319,31 @@ JS);
                                             'class' => 'btn btn-light',
                                             'data-bs-toggle' => 'modal',
                                             'data-bs-target' => '#action-modal'
+                                        ]),
+                                        'print' => fn($url, $model) => Html::a('<i class="bx bx-printer"></i>', ['factura/print', 'fac_id' => $model->fac_id], [
+                                            'title' => 'Imprimir Factura',
+                                            'class' => 'btn btn-light',
+                                            'target' => '_blank',
+                                            'data-pjax' => '0',
+                                        ]),
+                                        'send-email' => fn($url, $model) => Html::a('<i class="bx bx-envelope"></i>', ['factura/send-email', 'fac_id' => $model->fac_id], [
+                                            'title' => 'Enviar por Correo',
+                                            'class' => 'btn btn-light',
+                                            'data-bs-toggle' => 'modal',
+                                            'data-bs-target' => '#action-modal',
+                                        ]),
+                                        'mark-as-paid' => fn($url, $model) => Html::a('<i class="bx bx-check-square"></i>', ['factura/mark-as-paid', 'fac_id' => $model->fac_id], [
+                                            'title' => 'Marcar como Liquidada',
+                                            'class' => 'btn btn-light',
+                                            'data-confirm' => '¿Está seguro de que desea marcar esta factura como liquidada?',
+                                            'data-method' => 'post',
+                                            'data-pjax' => '1',
+                                        ]),
+                                        'change-status' => fn($url, $model) => Html::a('<i class="bx bx-toggle-left"></i>', ['factura/change-status', 'fac_id' => $model->fac_id], [
+                                            'title' => 'Cambiar Situación',
+                                            'class' => 'btn btn-light',
+                                            'data-bs-toggle' => 'modal',
+                                            'data-bs-target' => '#action-modal',
                                         ]),
                                         'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
                                             'title' => 'Eliminar Factura',

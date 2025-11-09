@@ -284,7 +284,7 @@ JS);
                                 [
                                     'class' => ActionColumn::class,
                                     'header' => 'Acciones',
-                                    'template' => '{view} {update} {delete}',
+                                    'template' => '{view} {update} {print} {send-email} {delete}',
                                     'buttons' => [
                                         'view' => fn($url, $model) => Html::a('<i class="bx bx-id-card"></i>', $url, [
                                             'title' => 'Ver Presupuesto: ' . $model->pre_numero,
@@ -297,6 +297,18 @@ JS);
                                             'class' => 'btn btn-light',
                                             'data-bs-toggle' => 'modal',
                                             'data-bs-target' => '#action-modal'
+                                        ]),
+                                        'print' => fn($url, $model) => Html::a('<i class="bx bx-printer"></i>', ['presupuesto/print', 'pre_id' => $model->pre_id], [
+                                            'title' => 'Imprimir Presupuesto',
+                                            'class' => 'btn btn-light',
+                                            'target' => '_blank',
+                                            'data-pjax' => '0',
+                                        ]),
+                                        'send-email' => fn($url, $model) => Html::a('<i class="bx bx-envelope"></i>', ['presupuesto/send-email', 'pre_id' => $model->pre_id], [
+                                            'title' => 'Enviar por Correo',
+                                            'class' => 'btn btn-light',
+                                            'data-bs-toggle' => 'modal',
+                                            'data-bs-target' => '#action-modal',
                                         ]),
                                         'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
                                             'title' => 'Eliminar Presupuesto',

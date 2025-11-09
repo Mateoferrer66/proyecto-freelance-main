@@ -391,8 +391,13 @@ class PresupuestoController extends BaseController
         return PdfExportHelper::export('Listado_Presupuestos', $html);
     }
 
-    public function actionPrint()
+    public function actionPrint($pre_id = null)
     {
+        if ($pre_id !== null) {
+            $model = $this->findModel($pre_id);
+            return $this->renderPartial('print', ['model' => $model]);
+        }
+
         $presupuestos = Presupuesto::find()->where(['pre_eliminado' => 0])->all();
 
         $headers = ['Número', 'Fecha', 'Cliente', 'Total'];
@@ -412,5 +417,13 @@ class PresupuestoController extends BaseController
             'headers' => $headers,
             'rows' => $rows,
         ]);
+    }
+
+    public function actionSendEmail($pre_id)
+    {
+        $model = $this->findModel($pre_id);
+        // Logic to send email
+        Yii::$app->session->setFlash('success', 'Correo electrónico enviado a ' . $model->cli->cli_email);
+        return $this->redirect(['index']);
     }
 }

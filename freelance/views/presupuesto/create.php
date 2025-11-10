@@ -177,7 +177,7 @@ $(function(){
             '<td><input type="number" step="0.01" name="DetallePresupuesto['+idx+'][dtp_cantidad]" class="form-control row-cantidad" value="'+(data.cantidad||1)+'"></td>'+ 
             '<td><input type="number" step="0.01" name="DetallePresupuesto['+idx+'][dtp_precio]" class="form-control row-precio" value="'+(data.precio||0)+'"></td>'+ 
             '<td class="row-importe text-end">0.00</td>'+ 
-            '<td><button type="button" class="btn btn-sm btn-danger btn-remove">Eliminar</button></td>'+ 
+            '<td><button type="button" class="btn btn-sm btn-outline-danger btn-remove">Eliminar</button></td>'+ 
             '</tr>'
         );
 
@@ -242,6 +242,8 @@ $(function(){
     // Inicializar con una fila vacía
     addConceptRow();
 
+    // Recalcular totales cuando cambian los gastos suplidos
+    $('#presupuesto-pre_gastos_suplidos').on('input', recalculateTotals);
 });
 JS;
 
@@ -430,7 +432,7 @@ $this->registerJs($js);
                                     </tbody>
                                 </table>
                             </div>
-                            <button type="button" id="btn-add-concept" class="btn btn-primary btn-sm">Añadir concepto</button>
+                            <button type="button" id="btn-add-concept" class="btn btn-outline-primary btn-sm radius-30">Añadir concepto</button>
                         </div>
                     </div>
 

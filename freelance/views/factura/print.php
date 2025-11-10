@@ -23,7 +23,7 @@ $this->title = 'Factura: ' . $model->fac_numero;
             <address>
                 <strong><?= Html::encode($model->soc->soc_nombre) ?></strong><br>
                 <?= Html::encode($model->soc->soc_direccion) ?><br>
-                Teléfono: <?= Html::encode($model->soc->soc_telefono) ?><br>
+                Teléfono: <?= Html::encode($model->soc->soc_telmovil) ?><br>
                 Email: <?= Html::encode($model->soc->soc_email) ?>
             </address>
         </div>
@@ -32,7 +32,7 @@ $this->title = 'Factura: ' . $model->fac_numero;
             <address>
                 <strong><?= Html::encode($model->cli->cli_nombre) ?></strong><br>
                 <?= Html::encode($model->cli->cli_direccion) ?><br>
-                Teléfono: <?= Html::encode($model->cli->cli_telefono) ?><br>
+                Teléfono: <?= Html::encode($model->cli->cli_tel1) ?><br>
                 Email: <?= Html::encode($model->cli->cli_email) ?>
             </address>
         </div>
@@ -84,7 +84,7 @@ $this->title = 'Factura: ' . $model->fac_numero;
                         <td><?= Yii::$app->formatter->asCurrency($model->fac_subtotal) ?></td>
                     </tr>
                     <tr>
-                        <th>IVA (<?= $model->fac_iva_porcentaje ?>%)</th>
+                        <th>IVA:</th>
                         <td><?= Yii::$app->formatter->asCurrency($model->fac_iva) ?></td>
                     </tr>
                     <tr>

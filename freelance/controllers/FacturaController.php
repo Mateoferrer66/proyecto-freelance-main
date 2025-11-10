@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Mpdf\Mpdf;
 use app\models\Factura;
 use app\models\DetalleFactura;
 use app\models\CuentasFactura;
@@ -432,9 +433,53 @@ class FacturaController extends BaseController
     public function actionSendEmail($fac_id)
     {
         $model = $this->findModel($fac_id);
-        // Logic to send email
-        Yii::$app->session->setFlash('success', 'Correo electrónico enviado a ' . $model->cli->cli_email);
-        return $this->redirect(['index']);
+        return $this->renderAjax('_send_email_form', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionDoSendEmail($fac_id)
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        try {
+            $model = $this->findModel($fac_id);
+
+            if (empty($model->cli->cli_email)) {
+                return ['success' => false, 'errors' => ['email' => 'El cliente no tiene un correo electrónico configurado.']];
+            }
+
+            // Generate PDF content
+            $html = $this->renderPartial('print', ['model' => $model]);
+            
+            $mpdf = new Mpdf([
+                'format' => 'A4',
+                'orientation' => 'P',
+                'margin_top' => 10,
+                'margin_bottom' => 10,
+            ]);
+            $mpdf->SetTitle('Factura ' . $model->fac_numero);
+            $mpdf->WriteHTML($html);
+            $pdfContent = $mpdf->Output(null, \Mpdf\Output\Destination::STRING_RETURN);
+
+            // Send email
+            $mail = Yii::$app->mailer->compose()
+                ->setFrom(['noreply@freelance.com' => 'Freelance App']) // Replace with a valid sender
+                ->setTo($model->cli->cli_email)
+                ->setSubject('Factura: ' . $model->fac_numero)
+                ->setTextBody('Estimado cliente, adjuntamos su factura ' . $model->fac_numero . '.')
+                ->attachContent($pdfContent, ['fileName' => 'Factura_' . $model->fac_numero . '.pdf', 'contentType' => 'application/pdf']);
+            
+            if ($mail->send()) {
+                Yii::$app->session->setFlash('success', 'Correo electrónico enviado a ' . $model->cli->cli_email . '.');
+                return ['success' => true];
+            } else {
+                Yii::error("Error sending email for invoice " . $model->fac_id);
+                return ['success' => false, 'errors' => ['email' => 'Hubo un error al enviar el correo.']];
+            }
+        } catch (\Exception $e) {
+            Yii::error($e->getMessage());
+            return ['success' => false, 'errors' => ['exception' => 'Ocurrió una excepción: ' . $e->getMessage()]];
+        }
     }
 
     public function actionMarkAsPaid($fac_id)

@@ -5252,3 +5252,228 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1762696829.3242
     'REQUEST_TIME' => 1762696829
 ]
+2025-11-10 12:44:17 [::1][18][qcpdodus5es0jkhefsv4i5d9dn][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Socio::soc_telefono in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('soc_telefono')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\factura\print.php(26): yii\db\BaseActiveRecord->__get('soc_telefono')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\FacturaController))
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(444): yii\base\View->render('print', Array, Object(app\controllers\FacturaController))
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\FacturaController.php(407): yii\base\Controller->renderPartial('print', Array)
+#7 [internal function]: app\controllers\FacturaController->actionPrint('1')
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('print', Array)
+#11 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('factura/print', Array)
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#14 {main}
+2025-11-10 12:44:17 [::1][18][qcpdodus5es0jkhefsv4i5d9dn][info][application] $_GET = [
+    'r' => 'factura/print'
+    'fac_id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'pmaUser-1' => 'u/BgsouCNbBk5WiGtzR9EaFKxVsGWtFnFJS8y1VrP6OTwuyg5hGpdGNbja8='
+    'PHPSESSID' => 'qcpdodus5es0jkhefsv4i5d9dn'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '09bc518451c70377b56ec7810c499f0e0862480cf780868ac09f69ad020004caa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0uQFKnr_ic7YjWl2s-UKG4d9-SSYA88n\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8080/index.php?r=banco'
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52928'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura%2Fprint&fac_id=1'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura%2Fprint&fac_id=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; pmaUser-1=u%2FBgsouCNbBk5WiGtzR9EaFKxVsGWtFnFJS8y1VrP6OTwuyg5hGpdGNbja8%3D; PHPSESSID=qcpdodus5es0jkhefsv4i5d9dn; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=09bc518451c70377b56ec7810c499f0e0862480cf780868ac09f69ad020004caa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220uQFKnr_ic7YjWl2s-UKG4d9-SSYA88n%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762775057.6501
+    'REQUEST_TIME' => 1762775057
+]
+2025-11-10 16:44:55 [::1][18][qcpdodus5es0jkhefsv4i5d9dn][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Socio::soc_telefono in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('soc_telefono')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\factura\print.php(26): yii\db\BaseActiveRecord->__get('soc_telefono')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\FacturaController))
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(444): yii\base\View->render('print', Array, Object(app\controllers\FacturaController))
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\FacturaController.php(408): yii\base\Controller->renderPartial('print', Array)
+#7 [internal function]: app\controllers\FacturaController->actionPrint('1')
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('print', Array)
+#11 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('factura/print', Array)
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#14 {main}
+2025-11-10 16:44:55 [::1][18][qcpdodus5es0jkhefsv4i5d9dn][info][application] $_GET = [
+    'r' => 'factura/print'
+    'fac_id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'pmaUser-1' => 'u/BgsouCNbBk5WiGtzR9EaFKxVsGWtFnFJS8y1VrP6OTwuyg5hGpdGNbja8='
+    'PHPSESSID' => 'qcpdodus5es0jkhefsv4i5d9dn'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '09bc518451c70377b56ec7810c499f0e0862480cf780868ac09f69ad020004caa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0uQFKnr_ic7YjWl2s-UKG4d9-SSYA88n\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8080/index.php?r=banco'
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57868'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura%2Fprint&fac_id=1'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura%2Fprint&fac_id=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; pmaUser-1=u%2FBgsouCNbBk5WiGtzR9EaFKxVsGWtFnFJS8y1VrP6OTwuyg5hGpdGNbja8%3D; PHPSESSID=qcpdodus5es0jkhefsv4i5d9dn; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=09bc518451c70377b56ec7810c499f0e0862480cf780868ac09f69ad020004caa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220uQFKnr_ic7YjWl2s-UKG4d9-SSYA88n%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762789495.092
+    'REQUEST_TIME' => 1762789495
+]
+2025-11-10 16:45:40 [::1][18][qcpdodus5es0jkhefsv4i5d9dn][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Socio::soc_telefono in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('soc_telefono')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\factura\print.php(26): yii\db\BaseActiveRecord->__get('soc_telefono')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\FacturaController))
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(444): yii\base\View->render('print', Array, Object(app\controllers\FacturaController))
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\FacturaController.php(408): yii\base\Controller->renderPartial('print', Array)
+#7 [internal function]: app\controllers\FacturaController->actionPrint('1')
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('print', Array)
+#11 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('factura/print', Array)
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#14 {main}
+2025-11-10 16:45:40 [::1][18][qcpdodus5es0jkhefsv4i5d9dn][info][application] $_GET = [
+    'r' => 'factura/print'
+    'fac_id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'pmaUser-1' => 'u/BgsouCNbBk5WiGtzR9EaFKxVsGWtFnFJS8y1VrP6OTwuyg5hGpdGNbja8='
+    'PHPSESSID' => 'qcpdodus5es0jkhefsv4i5d9dn'
+    '_identity' => 'bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a:2:{i:0;s:9:\"_identity\";i:1;s:17:\"[18,null,2592000]\";}'
+    '_csrf' => '09bc518451c70377b56ec7810c499f0e0862480cf780868ac09f69ad020004caa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"0uQFKnr_ic7YjWl2s-UKG4d9-SSYA88n\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost:8080/index.php?r=banco'
+    '__id' => 18
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57931'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura%2Fprint&fac_id=1'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura%2Fprint&fac_id=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; pmaUser-1=u%2FBgsouCNbBk5WiGtzR9EaFKxVsGWtFnFJS8y1VrP6OTwuyg5hGpdGNbja8%3D; PHPSESSID=qcpdodus5es0jkhefsv4i5d9dn; _identity=bab3983f57c85a45b77f822fabe0a4f8a572bc4cdad4f2fa5cbc630ebe006372a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A17%3A%22%5B18%2Cnull%2C2592000%5D%22%3B%7D; _csrf=09bc518451c70377b56ec7810c499f0e0862480cf780868ac09f69ad020004caa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%220uQFKnr_ic7YjWl2s-UKG4d9-SSYA88n%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762789540.3881
+    'REQUEST_TIME' => 1762789540
+]

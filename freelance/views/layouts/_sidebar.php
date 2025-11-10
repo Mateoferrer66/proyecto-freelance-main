@@ -96,7 +96,7 @@ $currentUrl = Yii::$app->request->url;
         </li>
     </ul>
     <footer class="page-footer">
-        <p class="mb-0">Copyright © 2022. Derechos reservados.</p>
+        <p class="mb-0">Copyright © 2025. Derechos reservados.</p>
     </footer>
     <!-- <footer class="page-footer d-none"></footer> -->
 </div>

@@ -485,8 +485,8 @@ class FacturaController extends BaseController
     public function actionMarkAsPaid($fac_id)
     {
         $model = $this->findModel($fac_id);
-        $model->fac_situacion = Factura::FAC_ESTADO_LIQUIDADA;
-        $model->save(false, ['fac_situacion']);
+        $model->fac_estado = Factura::FAC_ESTADO_LIQUIDADA;
+        $model->save(false, ['fac_estado']);
         Yii::$app->session->setFlash('success', 'Factura marcada como liquidada.');
         return $this->redirect(['index']);
     }

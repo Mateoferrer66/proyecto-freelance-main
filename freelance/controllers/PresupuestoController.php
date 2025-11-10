@@ -422,8 +422,35 @@ class PresupuestoController extends BaseController
     public function actionSendEmail($pre_id)
     {
         $model = $this->findModel($pre_id);
-        // Logic to send email
-        Yii::$app->session->setFlash('success', 'Correo electrónico enviado a ' . $model->cli->cli_email);
-        return $this->redirect(['index']);
+        
+        if ($this->request->isPost) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            $emailTo = Yii::$app->request->post('email_to');
+            $subject = Yii::$app->request->post('email_subject');
+            $body = Yii::$app->request->post('email_body');
+
+            // Simulate sending email
+            try {
+                // Here you would implement the actual email sending logic
+                // For example, using Yii's mailer component:
+                /*
+                Yii::$app->mailer->compose()
+                    ->setTo($emailTo)
+                    ->setFrom(['your-email@example.com' => 'Your Name'])
+                    ->setSubject($subject)
+                    ->setTextBody($body)
+                    ->send();
+                */
+                
+                // For now, we just simulate success
+                return ['success' => true, 'message' => 'Correo electrónico enviado a ' . $emailTo];
+            } catch (\Exception $e) {
+                return ['success' => false, 'message' => 'Error al enviar el correo: ' . $e->getMessage()];
+            }
+        }
+
+        return $this->renderAjax('_send_email_form', [
+            'model' => $model,
+        ]);
     }
 }

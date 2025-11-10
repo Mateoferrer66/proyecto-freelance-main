@@ -176,7 +176,7 @@ $(function(){
             '<td><input type="number" step="0.01" name="DetalleFactura['+idx+'][dtf_cantidad]" class="form-control row-cantidad" value="'+(data.cantidad||1)+'"></td>'+
             '<td><input type="number" step="0.01" name="DetalleFactura['+idx+'][dtf_precio]" class="form-control row-precio" value="'+(data.precio||0)+'"></td>'+
             '<td class="row-importe text-end">0.00</td>'+
-            '<td><button type="button" class="btn btn-sm btn-outline-danger btn-remove">Eliminar</button></td>'+
+            '<td><button type="button" class="btn text-orange radius-30 btn-remove">Eliminar</button></td>'+
             '</tr>'
         );
 
@@ -434,7 +434,7 @@ $this->registerJs($js);
                                     </tbody>
                                 </table>
                             </div>
-                            <button type="button" id="btn-add-concept" class="btn btn-outline-primary btn-sm radius-30">Añadir concepto</button>
+                            <button type="button" id="btn-add-concept" class="btn text-orange radius-30">Añadir concepto</button>
                         </div>
                     </div>
 
@@ -479,9 +479,10 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="col-md-12">
-                        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success px-5 radius-30'])
-                        ?>
-                    </div>
+
+                                            <?= Html::submitButton('Guardar', ['class' => 'btn btn-success px-5 radius-30']) ?>
+
+                                        </div>
 
                     <?php ActiveForm::end(); ?>
                 </div>

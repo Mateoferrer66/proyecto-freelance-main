@@ -276,54 +276,53 @@ JS);
                                     'format' => 'currency',
                                 ],
                                 [
-                                    'attribute' => 'pre_fecha',
-                                    'label' => 'Fecha',
-                                    'format' => ['date', 'php:d-m-Y'],
-                                ],
-                                                             
-                                [
-                                    'class' => ActionColumn::class,
-                                    'header' => 'Acciones',
-                                    'template' => '{view} {update} {print} {send-email} {delete}',
-                                    'buttons' => [
-                                        'view' => fn($url, $model) => Html::a('<i class="bx bx-id-card"></i>', $url, [
-                                            'title' => 'Ver Presupuesto: ' . $model->pre_numero,
-                                            'class' => 'btn btn-light',
-                                            'data-bs-toggle' => 'modal',
-                                            'data-bs-target' => '#action-modal'
-                                        ]),
-                                        'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
-                                            'title' => 'Editar Presupuesto: ' . $model->pre_numero,
-                                            'class' => 'btn btn-light',
-                                            'data-bs-toggle' => 'modal',
-                                            'data-bs-target' => '#action-modal'
-                                        ]),
-                                        'print' => fn($url, $model) => Html::a('<i class="bx bx-printer"></i>', ['presupuesto/print', 'pre_id' => $model->pre_id], [
-                                            'title' => 'Imprimir Presupuesto',
-                                            'class' => 'btn btn-light',
-                                            'target' => '_blank',
-                                            'data-pjax' => '0',
-                                        ]),
-                                        'send-email' => fn($url, $model) => Html::a('<i class="bx bx-envelope"></i>', ['presupuesto/send-email', 'pre_id' => $model->pre_id], [
-                                            'title' => 'Enviar por Correo',
-                                            'class' => 'btn btn-light',
-                                            'data-bs-toggle' => 'modal',
-                                            'data-bs-target' => '#action-modal',
-                                        ]),
-                                        'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
-                                            'title' => 'Eliminar Presupuesto',
-                                            'class' => 'btn btn-light',
-                                            'data-confirm' => '¿Está seguro de que desea eliminar el presupuesto: "' . $model->pre_numero . '"?',
-                                            'data-method' => 'post',
-                                            'data-pjax' => '1',
-                                        ]),
-                                    ],
-                                    'urlCreator' => fn($action, Presupuesto $model, $key, $index, $column) =>
-                                    Url::toRoute([$action, 'pre_id' => $model->pre_id, 'view' => ($action === 'delete' ? null : 'modal')]),
-                                ],
-                            ],
-                        ]); ?>
-                    </div>
+                                                                    'attribute' => 'pre_fecha',
+                                                                        'label' => 'Fecha',
+                                                                        'format' => ['date', 'php:d-m-Y'],
+                                                                    ],
+                                                                                                 
+                                                                    [
+                                                                        'class' => ActionColumn::class,
+                                                                        'header' => 'Acciones',
+                                                                        'template' => '{view} {update} {print} {send-email} {delete}',
+                                                                        'buttons' => [
+                                                                            'view' => fn($url, $model) => Html::a('<i class="bx bx-id-card"></i>', $url, [
+                                                                                'title' => 'Ver Presupuesto: ' . $model->pre_numero,
+                                                                                'class' => 'btn btn-light',
+                                                                                'data-bs-toggle' => 'modal',
+                                                                                'data-bs-target' => '#action-modal'
+                                                                            ]),
+                                                                            'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
+                                                                                'title' => 'Editar Presupuesto: ' . $model->pre_numero,
+                                                                                'class' => 'btn btn-light',
+                                                                                'data-bs-toggle' => 'modal',
+                                                                                'data-bs-target' => '#action-modal'
+                                                                            ]),
+                                                                            'print' => fn($url, $model) => Html::a('<i class="bx bx-printer"></i>', ['presupuesto/print', 'pre_id' => $model->pre_id], [
+                                                                                'title' => 'Imprimir Presupuesto',
+                                                                                'class' => 'btn btn-light',
+                                                                                'target' => '_blank',
+                                                                                'data-pjax' => '0',
+                                                                            ]),
+                                                                            'send-email' => fn($url, $model) => Html::a('<i class="bx bx-envelope"></i>', ['presupuesto/send-email', 'pre_id' => $model->pre_id], [
+                                                                                'title' => 'Enviar por Correo',
+                                                                                'class' => 'btn btn-light',
+                                                                                'data-bs-toggle' => 'modal',
+                                                                                'data-bs-target' => '#action-modal',
+                                                                            ]),
+                                                                            'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
+                                                                                'title' => 'Eliminar Presupuesto',
+                                                                                'class' => 'btn btn-light',
+                                                                                'data-confirm' => '¿Está seguro de que desea eliminar el presupuesto: "' . $model->pre_numero . '"?',
+                                                                                'data-method' => 'post',
+                                                                                'data-pjax' => '1',
+                                                                            ]),
+                                                                        ],
+                                                                        'urlCreator' => fn($action, Presupuesto $model, $key, $index, $column) =>
+                                                                        Url::toRoute([$action, 'pre_id' => $model->pre_id, 'view' => ($action === 'delete' ? null : 'modal')]),
+                                                                    ],
+                                                                ],
+                                                            ]); ?>                    </div>
                 </div>
             </div>
         </div>

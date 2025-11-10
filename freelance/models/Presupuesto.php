@@ -21,6 +21,9 @@ use Yii;
  * @property float $pre_total Valor total del presupuesto
  * @property string|null $pre_observaciones Observaciones
  * @property int $pre_eliminado Campo que indica si el presupuesto se encuentra eliminado
+ * @property string $pre_estado Estado del presupuesto
+ * @property string $pre_situacion Situación del presupuesto
+ * @property string|null $pre_fecha_situacion Fecha en que se pone situacion al presupuesto
  *
  * @property Banco[] $bans
  * @property Cliente $cli
@@ -43,6 +46,12 @@ class Presupuesto extends \yii\db\ActiveRecord
     const PRE_LANGUAGE_ES = 'es';
     const PRE_MONEY_EUROS = 'euros';
     const PRE_MONEY_BS = 'bs';
+    const PRE_ESTADO_PENDIENTE = 'Pendiente';
+    const PRE_ESTADO_APROBADO = 'Aprobado';
+    const PRE_ESTADO_RECHAZADO = 'Rechazado';
+    const PRE_SITUACION_NO_RECLAMADA = 'No Reclamada';
+    const PRE_SITUACION_RECLAMADA_AL_CLIENTE = 'Reclamada al Cliente';
+
 
     /**
      * {@inheritdoc}
@@ -58,18 +67,22 @@ class Presupuesto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['pre_observaciones'], 'default', 'value' => null],
+            [['pre_observaciones', 'pre_fecha_situacion'], 'default', 'value' => null],
             [['pre_language'], 'default', 'value' => 'es'],
             [['pre_eliminado'], 'default', 'value' => 0],
+            [['pre_estado'], 'default', 'value' => 'Pendiente'],
+            [['pre_situacion'], 'default', 'value' => 'No Reclamada'],
             [['pre_numero', 'pre_logo', 'pre_fecha', 'cli_id', 'soc_id', 'fdp_id'], 'required'],
-            [['pre_logo', 'pre_language', 'pre_observaciones'], 'string'],
-            [['pre_fecha'], 'safe'],
+            [['pre_logo', 'pre_language', 'pre_observaciones', 'pre_estado', 'pre_situacion'], 'string'],
+            [['pre_fecha', 'pre_fecha_situacion'], 'safe'],
             [['cli_id', 'soc_id', 'fdp_id', 'pre_eliminado'], 'integer'],
             [['pre_subtotal', 'pre_iva', 'pre_gastos_suplidos', 'pre_total'], 'number'],
             [['pre_numero'], 'string', 'max' => 45],
             ['pre_logo', 'in', 'range' => array_keys(self::optsPreLogo())],
             ['pre_language', 'in', 'range' => array_keys(self::optsPreLanguage())],
             ['pre_money', 'in', 'range' => array_keys(self::optsPreMoney())],
+            ['pre_estado', 'in', 'range' => array_keys(self::optsPreEstado())],
+            ['pre_situacion', 'in', 'range' => array_keys(self::optsPreSituacion())],
             [['cli_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cliente::class, 'targetAttribute' => ['cli_id' => 'cli_id']],
             [['fdp_id'], 'exist', 'skipOnError' => true, 'targetClass' => FormaDePago::class, 'targetAttribute' => ['fdp_id' => 'fdp_id']],
             [['soc_id'], 'exist', 'skipOnError' => true, 'targetClass' => Socio::class, 'targetAttribute' => ['soc_id' => 'soc_id']],
@@ -96,6 +109,9 @@ class Presupuesto extends \yii\db\ActiveRecord
             'pre_total' => 'Pre Total',
             'pre_observaciones' => 'Pre Observaciones',
             'pre_eliminado' => 'Pre Eliminado',
+            'pre_estado' => 'Estado',
+            'pre_situacion' => 'Situación',
+            'pre_fecha_situacion' => 'Fecha Situación',
         ];
     }
 
@@ -306,5 +322,30 @@ class Presupuesto extends \yii\db\ActiveRecord
     public function setPreMoneyToBs()
     {
         $this->pre_money = self::PRE_MONEY_BS;
+    }
+
+    /**
+     * column pre_estado ENUM value labels
+     * @return string[]
+     */
+    public static function optsPreEstado()
+    {
+        return [
+            self::PRE_ESTADO_PENDIENTE => 'Pendiente',
+            self::PRE_ESTADO_APROBADO => 'Aprobado',
+            self::PRE_ESTADO_RECHAZADO => 'Rechazado',
+        ];
+    }
+
+    /**
+     * column pre_situacion ENUM value labels
+     * @return string[]
+     */
+    public static function optsPreSituacion()
+    {
+        return [
+            self::PRE_SITUACION_NO_RECLAMADA => 'No Reclamada',
+            self::PRE_SITUACION_RECLAMADA_AL_CLIENTE => 'Reclamada al Cliente',
+        ];
     }
 }

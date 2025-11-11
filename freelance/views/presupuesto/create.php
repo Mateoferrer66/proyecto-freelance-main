@@ -408,7 +408,15 @@ $this->registerJs($js);
                             <?= $form->field($model, 'pre_estado', [
                                 'template' => "<label>Estado *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
-                                Presupuesto::optsPreEstado(),
+                                $estados,
+                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
+                            ) ?>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <?= $form->field($model, 'pre_situacion', [
+                                'template' => "<label>Situación *</label>\n{input}\n{hint}\n{error}"
+                            ])->dropDownList(
+                                $situaciones,
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
                             ) ?>
                         </div>

@@ -37,8 +37,10 @@ class Presupuesto extends \yii\db\ActiveRecord
 {
     public $pre_money;
     public $pre_fecha_situacion;
-    public $pre_estado;
     public $pre_situacion;
+    public $pre_estado;
+
+    
 
     /**
      * ENUM field values
@@ -56,10 +58,16 @@ class Presupuesto extends \yii\db\ActiveRecord
     const PRE_SITUACION_RECLAMADA_AL_CLIENTE = 'Reclamada al Cliente';
 
 
+    public function init()
+    {
+        parent::init();
+        if ($this->isNewRecord) {
+            $this->pre_estado = self::PRE_ESTADO_PENDIENTE;
+        }
+    }
+
     /**
      * {@inheritdoc}
-     */
-    public static function tableName()
     {
         return 'presupuesto';
     }
@@ -70,7 +78,7 @@ class Presupuesto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['pre_observaciones', 'pre_fecha_situacion'], 'default', 'value' => null],
+            [['pre_observaciones'], 'default', 'value' => null],
             [['pre_language'], 'default', 'value' => 'es'],
             [['pre_eliminado'], 'default', 'value' => 0],
             [['pre_estado'], 'default', 'value' => 'Pendiente'],
@@ -99,20 +107,20 @@ class Presupuesto extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'pre_id' => 'Pre ID',
-            'pre_numero' => 'Pre Numero',
-            'pre_logo' => 'Pre Logo',
-            'pre_fecha' => 'Pre Fecha',
-            'pre_language' => 'Pre Language',
-            'cli_id' => 'Cli ID',
-            'soc_id' => 'Soc ID',
-            'fdp_id' => 'Fdp ID',
-            'pre_subtotal' => 'Pre Subtotal',
-            'pre_iva' => 'Pre Iva',
-            'pre_gastos_suplidos' => 'Pre Gastos Suplidos',
-            'pre_total' => 'Pre Total',
-            'pre_observaciones' => 'Pre Observaciones',
-            'pre_eliminado' => 'Pre Eliminado',
+            'pre_id' => 'ID',
+            'pre_numero' => 'Número Presupuesto',
+            'pre_logo' => 'Logo',
+            'pre_fecha' => 'Fecha',
+            'pre_language' => 'Idioma',
+            'cli_id' => 'Cliente',
+            'soc_id' => 'Socio',
+            'fdp_id' => 'Forma de Pago',
+            'pre_subtotal' => 'Subtotal',
+            'pre_iva' => 'IVA',
+            'pre_gastos_suplidos' => 'Gastos Suplidos',
+            'pre_total' => 'Total',
+            'pre_observaciones' => 'Observaciones',
+            'pre_eliminado' => 'Eliminado',
             'pre_estado' => 'Estado',
             'pre_situacion' => 'Situación',
             'pre_fecha_situacion' => 'Fecha de Situación',

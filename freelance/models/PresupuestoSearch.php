@@ -9,8 +9,25 @@ use app\models\Presupuesto;
 /**
  * PresupuestoSearch represents the model behind the search form of `app\models\Presupuesto`.
  */
-class PresupuestoSearch extends Presupuesto
+class PresupuestoSearch extends Model
 {
+    public $pre_id;
+    public $pre_numero;
+    public $pre_logo;
+    public $pre_fecha;
+    public $pre_language;
+    public $cli_id;
+    public $soc_id;
+    public $fdp_id;
+    public $pre_subtotal;
+    public $pre_iva;
+    public $pre_gastos_suplidos;
+    public $pre_total;
+    public $pre_observaciones;
+    public $pre_eliminado;
+    public $pre_estado;
+    public $pre_situacion;
+    public $pre_fecha_situacion;
     public $cli_nif;
     public $cli_nombre;
     public $soc_codigo;

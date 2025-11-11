@@ -24,6 +24,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'pre_fecha_situacion')->textInput() ?>
 
+    <?= $form->field($model, 'pre_estado')->dropDownList($estados, ['prompt' => 'Seleccione']) ?>
+
+    <?= $form->field($model, 'pre_situacion')->dropDownList($situaciones, ['prompt' => 'Seleccione']) ?>
+
     <?= $form->field($model, 'cli_id')->textInput() ?>
 
     <?= $form->field($model, 'soc_id')->textInput() ?>

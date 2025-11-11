@@ -276,24 +276,24 @@ JS);
                                     'label' => 'Importe',
                                     'format' => 'currency',
                                 ],
-                                [
-                                    'attribute' => 'pre_estado',
-                                    'label' => 'Estado',
-                                ],
+                                // [
+                                //     'attribute' => 'pre_estado',
+                                //     'label' => 'Estado',
+                                // ],
                                 [
                                     'attribute' => 'pre_fecha',
                                     'label' => 'Fecha',
                                     'format' => ['date', 'php:d-m-Y'],
                                 ],
-                                [
-                                    'attribute' => 'pre_situacion',
-                                    'label' => 'Situación',
-                                    'format' => 'raw',
-                                    'value' => function ($model) {
-                                        $date = $model->pre_fecha_situacion ? Yii::$app->formatter->asDate($model->pre_fecha_situacion, 'php:d-m-Y') : '';
-                                        return $model->pre_situacion . '<br>' . $date;
-                                    },
-                                ],
+                                // [
+                                //     'attribute' => 'pre_situacion',
+                                //     'label' => 'Situación',
+                                //     'format' => 'raw',
+                                //     'value' => function ($model) {
+                                //         $date = $model->pre_fecha_situacion ? Yii::$app->formatter->asDate($model->pre_fecha_situacion, 'php:d-m-Y') : '';
+                                //         return $model->pre_situacion . '<br>' . $date;
+                                //     },
+                                // ],
                                                                                                  
                                                                     [
                                                                         'class' => ActionColumn::class,

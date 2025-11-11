@@ -240,6 +240,8 @@ class PresupuestoController extends BaseController
             'formasDePago' => \yii\helpers\ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
             'bancos' => $bancosMap,
             'selectedBanco' => null,
+            'estados' => Presupuesto::optsPreEstado(),
+            'situaciones' => Presupuesto::optsPreSituacion(),
         ]);
     }
 
@@ -300,23 +302,172 @@ class PresupuestoController extends BaseController
     public function actionUpdate($pre_id)
     {
         $model = $this->findModel($pre_id);
+        $detalleModels = $model->detallePresupuestos;
+        $cuentasPresupuesto = $model->cuentasPresupuestos;
+        $selectedBanco = null;
+        if (!empty($cuentasPresupuesto)) {
+            $selectedBanco = $cuentasPresupuesto[0]->ban_id;
+        }
 
-        if ($this->request->isPost && $model->load($this->request->post())) {
-            if ($this->request->isAjax) {
-                Yii::$app->response->format = Response::FORMAT_JSON;
-                if ($model->save()) {
-                    return ['success' => true, 'message' => 'Presupuesto actualizado correctamente.'];
-                } else {
-                    return ['success' => false, 'errors' => $model->getErrors()];
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->validate()) {
+                // Primero construimos los modelos de detalle y los validamos sin persistir
+                $detallesData = Yii::$app->request->post('DetallePresupuesto', []);
+                $detalleModels = [];
+                $detalleRowErrors = [];
+                foreach ($detallesData as $idx => $d) {
+                    $cantidad = isset($d['dtp_cantidad']) ? floatval($d['dtp_cantidad']) : 0.0;
+                    $precio = isset($d['dtp_precio']) ? floatval($d['dtp_precio']) : 0.0;
+
+                    // Si la línea está vacía (cantidad y precio 0), ignorarla
+                    if ($cantidad == 0 && $precio == 0) {
+                        continue;
+                    }
+
+                    $det = new DetallePresupuesto();
+                    // No asignamos pre_id aún (se asignará al guardar la presupuesto)
+                    $det->cof_id = isset($d['cof_id']) && $d['cof_id'] !== '' ? $d['cof_id'] : null;
+                    $det->dtp_descripcion = isset($d['dtp_descripcion']) ? $d['dtp_descripcion'] : '';
+                    $det->dtp_cantidad = $cantidad;
+                    $det->dtp_precio = $precio;
+                    $det->dtp_iva = isset($d['dtp_iva']) ? floatval($d['dtp_iva']) : 0.0;
+                    $det->dtp_subtotal = $cantidad * $precio;
+
+                    // Validar sólo los atributos del detalle que provienen del formulario
+                    // (no validamos pre_id aquí porque la presupuesto aún no está guardada)
+                    if (!$det->validate(['cof_id', 'dtp_descripcion', 'dtp_cantidad', 'dtp_precio', 'dtp_iva'])) {
+                        // Guardar errores por fila (por cada atributo)
+                        $detalleRowErrors[$idx] = $det->getErrors();
+                    }
+                    $detalleModels[] = $det;
                 }
-            }
-            if ($model->save()) {
-                return $this->redirect(['index']);
+                if (!empty($detalleRowErrors)) {
+                    // Añadir errores agrupados al modelo principal para mostrarlos en errorSummary
+                    foreach ($detalleRowErrors as $idx => $errs) {
+                        $model->addError('detalles', 'Fila ' . ($idx+1) . ': ' . implode('; ', array_map(function($a){ return is_array($a) ? implode('|', $a) : $a; }, $errs)));
+                    }
+
+                    if (Yii::$app->request->isAjax) {
+                        Yii::$app->response->format = Response::FORMAT_JSON;
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+
+                    // Renderizar formulario con errores (no guardar) y devolver los datos de detalle y errores por fila
+                    $socios = \app\models\Socio::find()->all();
+                    $formasDePago = \app\models\FormaDePago::find()->all();
+                    // Lista de bancos para seleccionar cuenta de pago
+                    $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
+                    $bancosMap = \yii\helpers\ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
+                    $selectedBanco = isset($detallesData['cuenta_ban_id']) ? $detallesData['cuenta_ban_id'] : (Yii::$app->request->post('CuentasPresupuesto', [])['ban_id'] ?? null);
+                    
+                    return $this->render('update', [
+                        'model' => $model,
+                        'clientes' => [],
+                        'socios' => \yii\helpers\ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
+                        'formasDePago' => \yii\helpers\ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
+                        'detallesData' => $detallesData,
+                        'detalleRowErrors' => $detalleRowErrors,
+                        'bancos' => $bancosMap,
+                        'selectedBanco' => $selectedBanco,
+                        'estados' => Presupuesto::optsPreEstado(),
+                        'situaciones' => Presupuesto::optsPreSituacion(),
+                    ]);
+                }
+
+                // Si todo es válido, calcular totales y guardar presupuesto y detalles en transacción
+                $subtotal = 0.0;
+                $ivaTotal = 0.0;
+                foreach ($detalleModels as $det) {
+                    $subtotal += $det->dtp_subtotal;
+                    $ivaTotal += $det->dtp_subtotal * ($det->dtp_iva / 100.0);
+                }
+
+                $gastos = isset($model->pre_gastos_suplidos) ? floatval($model->pre_gastos_suplidos) : 0.0;
+                $model->pre_subtotal = $subtotal;
+                $model->pre_iva = $ivaTotal;
+                $model->pre_total = $subtotal + $ivaTotal + $gastos;
+
+                $transaction = Yii::$app->db->beginTransaction();
+                try {
+                    if (!$model->save()) {
+                        throw new \Exception('No se pudo guardar el presupuesto: ' . json_encode($model->getErrors()));
+                    }
+
+                    // Eliminar detalles existentes y guardar los nuevos
+                    DetallePresupuesto::deleteAll(['pre_id' => $model->pre_id]);
+                    foreach ($detalleModels as $det) {
+                        $det->pre_id = $model->pre_id;
+                        if (!$det->save(false)) {
+                            throw new \Exception('Error al guardar detalle: ' . json_encode($det->getErrors()));
+                        }
+                    }
+
+                    // Eliminar cuenta existente y guardar la nueva (si se envió)
+                    CuentasPresupuesto::deleteAll(['pre_id' => $model->pre_id]);
+                    $postedCuenta = Yii::$app->request->post('CuentasPresupuesto', []);
+                    $banId = isset($postedCuenta['ban_id']) && $postedCuenta['ban_id'] !== '' ? $postedCuenta['ban_id'] : null;
+                    if ($banId) {
+                        $cf = new CuentasPresupuesto();
+                        $cf->ban_id = $banId;
+                        $cf->pre_id = $model->pre_id;
+                        if (!$cf->save()) {
+                            throw new \Exception('No se pudo guardar la cuenta de presupuesto: ' . json_encode($cf->getErrors()));
+                        }
+                    }
+
+                    $transaction->commit();
+
+                    if (Yii::$app->request->isAjax) {
+                        Yii::$app->response->format = Response::FORMAT_JSON;
+                        return ['success' => true, 'message' => 'Presupuesto actualizado correctamente.'];
+                    }
+
+                    Yii::$app->session->setFlash('success', 'Presupuesto actualizado.');
+                    return $this->redirect(['index']);
+                } catch (\Throwable $e) {
+                    $transaction->rollBack();
+                    Yii::error($e->getMessage());
+                    if (Yii::$app->request->isAjax) {
+                        Yii::$app->response->format = Response::FORMAT_JSON;
+                        $model->addError('pre_numero', 'Error al actualizar: ' . $e->getMessage());
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+                    Yii::$app->session->setFlash('error', 'Error al actualizar el presupuesto: ' . $e->getMessage());
+                    return $this->redirect(['index']);
+                }
             }
         }
 
+        $socios = \app\models\Socio::find()->all();
+        $formasDePago = \app\models\FormaDePago::find()->all();
+        $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
+        $bancosMap = \yii\helpers\ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
+
+        $detallesData = [];
+        foreach ($detalleModels as $det) {
+            $detallesData[] = [
+                'cof_id' => $det->cof_id,
+                'dtp_descripcion' => $det->dtp_descripcion,
+                'dtp_cantidad' => $det->dtp_cantidad,
+                'dtp_precio' => $det->dtp_precio,
+                'dtp_iva' => $det->dtp_iva,
+                'dtp_subtotal' => $det->dtp_subtotal,
+            ];
+        }
+
         $renderMethod = $this->request->get('view') === 'modal' ? 'renderAjax' : 'render';
-        return $this->$renderMethod('update', ['model' => $model]);
+        return $this->$renderMethod('update', [
+            'model' => $model,
+            'clientes' => [], // Se cargan por AJAX
+            'socios' => \yii\helpers\ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
+            'formasDePago' => \yii\helpers\ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
+            'bancos' => $bancosMap,
+            'selectedBanco' => $selectedBanco,
+            'detallesData' => $detallesData,
+            'detalleRowErrors' => [],
+            'estados' => Presupuesto::optsPreEstado(),
+            'situaciones' => Presupuesto::optsPreSituacion(),
+        ]);
     }
 
     /**

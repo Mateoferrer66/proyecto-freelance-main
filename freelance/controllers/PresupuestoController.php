@@ -453,4 +453,22 @@ class PresupuestoController extends BaseController
             'model' => $model,
         ]);
     }
+
+    public function actionChangeStatus($pre_id)
+    {
+        $model = $this->findModel($pre_id);
+
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            if ($model->save()) {
+                return ['success' => true, 'message' => 'Situación del presupuesto actualizada.'];
+            } else {
+                return ['success' => false, 'errors' => $model->getErrors()];
+            }
+        }
+
+        return $this->renderAjax('_change_status_form', [
+            'model' => $model,
+        ]);
+    }
 }

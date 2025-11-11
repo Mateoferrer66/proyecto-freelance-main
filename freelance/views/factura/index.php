@@ -291,11 +291,14 @@ JS);
                                     'label' => 'Situación',
                                     'format' => 'raw',
                                     'value' => function ($model) {
+                                        $icon = '';
                                         if ($model->fac_situacion === Factura::FAC_ESTADO_LIQUIDADA) {
-                                            return '<i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i>' . $model->fac_situacion;
+                                            $icon = '<i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i>';
                                         } else {
-                                            return '<i class="bx bx-radio-circle-marked align-middle font-18 me-1 text-danger"></i>' . $model->fac_situacion;
+                                            $icon = '<i class="bx bx-radio-circle-marked align-middle font-18 me-1 text-danger"></i>';
                                         }
+                                        $date = $model->fac_fecha_situacion ? Yii::$app->formatter->asDate($model->fac_fecha_situacion, 'php:d-m-Y') : '';
+                                        return $icon . $model->fac_situacion . '<br>' . $date;
                                     },
                                 ],
 

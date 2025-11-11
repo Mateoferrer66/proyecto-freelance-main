@@ -276,15 +276,24 @@ JS);
                                     'format' => 'currency',
                                 ],
                                 [
-                                                                    'attribute' => 'pre_fecha',
-                                                                        'label' => 'Fecha',
-                                                                        'format' => ['date', 'php:d-m-Y'],
-                                                                    ],
+                                    'attribute' => 'pre_fecha',
+                                    'label' => 'Fecha',
+                                    'format' => ['date', 'php:d-m-Y'],
+                                ],
+                                [
+                                    'attribute' => 'pre_situacion',
+                                    'label' => 'Situación',
+                                    'format' => 'raw',
+                                    'value' => function ($model) {
+                                        $date = $model->pre_fecha_situacion ? Yii::$app->formatter->asDate($model->pre_fecha_situacion, 'php:d-m-Y') : '';
+                                        return $model->pre_situacion . '<br>' . $date;
+                                    },
+                                ],
                                                                                                  
                                                                     [
                                                                         'class' => ActionColumn::class,
                                                                         'header' => 'Acciones',
-                                                                        'template' => '{view} {update} {print} {send-email} {delete}',
+                                                                        'template' => '{view} {update} {print} {send-email} {change-status} {delete}',
                                                                         'buttons' => [
                                                                             'view' => fn($url, $model) => Html::a('<i class="bx bx-id-card"></i>', $url, [
                                                                                 'title' => 'Ver Presupuesto: ' . $model->pre_numero,
@@ -306,6 +315,12 @@ JS);
                                                                             ]),
                                                                             'send-email' => fn($url, $model) => Html::a('<i class="bx bx-envelope"></i>', ['presupuesto/send-email', 'pre_id' => $model->pre_id], [
                                                                                 'title' => 'Enviar por Correo',
+                                                                                'class' => 'btn btn-light',
+                                                                                'data-bs-toggle' => 'modal',
+                                                                                'data-bs-target' => '#action-modal',
+                                                                            ]),
+                                                                            'change-status' => fn($url, $model) => Html::a('<i class="bx bx-toggle-left"></i>', ['presupuesto/change-status', 'pre_id' => $model->pre_id], [
+                                                                                'title' => 'Cambiar Situación',
                                                                                 'class' => 'btn btn-light',
                                                                                 'data-bs-toggle' => 'modal',
                                                                                 'data-bs-target' => '#action-modal',

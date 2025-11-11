@@ -1,0 +1,54 @@
+/* Responsive adjustments for tables */
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure images don't overflow their containers */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* General container adjustments for smaller screens */
+@media (max-width: 768px) {
+    .page-content {
+        padding: 15px;
+    }
+
+    .col, .col-md-6, .col-xl-12 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .dt-buttons.btn-group {
+        margin-bottom: 10px;
+    }
+
+    .dataTables_filter {
+        margin-bottom: 10px;
+    }
+}
+
+/* Adjustments for very small screens */
+@media (max-width: 576px) {
+    .col.d-flex.justify-content-between.align-items-start {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    .col.d-flex.justify-content-between.align-items-start > div {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .col.d-flex.justify-content-between.align-items-start > div .btn {
+        width: 100%;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+}

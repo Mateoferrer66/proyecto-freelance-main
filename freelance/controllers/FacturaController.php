@@ -494,9 +494,14 @@ class FacturaController extends BaseController
     public function actionChangeStatus($fac_id)
     {
         $model = $this->findModel($fac_id);
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', 'Situación de la factura actualizada.');
-            return $this->redirect(['index']);
+
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            if ($model->save()) {
+                return ['success' => true, 'message' => 'Situación de la factura actualizada.'];
+            } else {
+                return ['success' => false, 'errors' => $model->getErrors()];
+            }
         }
 
         return $this->renderAjax('_change_status_form', [

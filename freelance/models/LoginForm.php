@@ -109,6 +109,6 @@ class LoginForm extends Model
      */
     public function isCaptchaRequired()
     {
-        return Yii::$app->session->get(self::FAILED_LOGIN_ATTEMPTS, 0) >= 3;
+        return true;
     }
 }

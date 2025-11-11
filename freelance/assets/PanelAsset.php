@@ -24,6 +24,7 @@ class PanelAsset extends AssetBundle
         'plugins/perfect-scrollbar/css/perfect-scrollbar.css',
         'plugins/metismenu/css/metisMenu.min.css',
         'plugins/datatable/css/dataTables.bootstrap5.min.css',
+        'css/responsive.css',
     ];
 
     public $js = [

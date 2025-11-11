@@ -71,7 +71,7 @@ class Cliente extends \yii\db\ActiveRecord
             [['fdp_id'], 'default', 'value' => 1], // Forma de pago: Efectivo (ID 1)
             [['soc_id'], 'default', 'value' => 1], // Socio: ID 1
             [['cli_exportado'], 'default', 'value' => 0], // Exportado: 0
-            [['cli_numero', 'cli_nombre', 'tdo_id', 'cli_numdocide', 'pai_id', 'fdp_id', 'soc_id'], 'required'],
+            [['cli_numero', 'cli_nombre', 'tdo_id', 'cli_numdocide', 'pai_id', 'fdp_id'], 'required'],
             [['cli_numero'], 'unique', 'message' => 'Este número de cliente ya ha sido asignado.'],
             [['cli_numero', 'tdo_id', 'pai_id', 'prv_id', 'iva_id', 'fdp_id', 'soc_id', 'cli_exportado', 'cli_eliminado'], 'integer'],
             [['cli_feccaddoc'], 'safe'],
@@ -87,7 +87,7 @@ class Cliente extends \yii\db\ActiveRecord
             [['fdp_id'], 'exist', 'skipOnError' => true, 'targetClass' => FormaDePago::class, 'targetAttribute' => ['fdp_id' => 'fdp_id']],
             [['pai_id'], 'exist', 'skipOnError' => true, 'targetClass' => Pais::class, 'targetAttribute' => ['pai_id' => 'pai_id']],
             [['prv_id'], 'exist', 'skipOnError' => true, 'targetClass' => Provincia::class, 'targetAttribute' => ['prv_id' => 'prv_id']],
-            [['soc_id'], 'exist', 'skipOnError' => true, 'targetClass' => Socio::class, 'targetAttribute' => ['soc_id' => 'soc_id']],
+
             [['tdo_id'], 'exist', 'skipOnError' => true, 'targetClass' => TipoDocIdentidad::class, 'targetAttribute' => ['tdo_id' => 'tdo_id']],
         ];
     }

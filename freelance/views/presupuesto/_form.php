@@ -22,6 +22,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'pre_money')->dropDownList([ 'Euros' => 'Euros', '£' => '£', 'US$' => 'US$', ], ['prompt' => '']) ?>
 
+    <?= $form->field($model, 'pre_fecha_situacion')->textInput() ?>
+
     <?= $form->field($model, 'cli_id')->textInput() ?>
 
     <?= $form->field($model, 'soc_id')->textInput() ?>

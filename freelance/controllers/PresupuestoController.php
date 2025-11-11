@@ -81,7 +81,7 @@ class PresupuestoController extends BaseController
         $model = new Presupuesto();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post())) {
+            if ($model->load($this->request->post()) && $model->validate()) {
 
                 // Primero construimos los modelos de detalle y los validamos sin persistir
                 $detallesData = Yii::$app->request->post('DetallePresupuesto', []);
@@ -118,6 +118,12 @@ class PresupuestoController extends BaseController
                     foreach ($detalleRowErrors as $idx => $errs) {
                         $model->addError('detalles', 'Fila ' . ($idx+1) . ': ' . implode('; ', array_map(function($a){ return is_array($a) ? implode('|', $a) : $a; }, $errs)));
                     }
+
+                    if (Yii::$app->request->isAjax) {
+                        Yii::$app->response->format = Response::FORMAT_JSON;
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+
                     // Renderizar formulario con errores (no guardar) y devolver los datos de detalle y errores por fila
                     $socios = \app\models\Socio::find()->all();
                     $formasDePago = \app\models\FormaDePago::find()->all();
@@ -125,8 +131,8 @@ class PresupuestoController extends BaseController
                     $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
                     $bancosMap = \yii\helpers\ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
                     $selectedBanco = isset($detallesData['cuenta_ban_id']) ? $detallesData['cuenta_ban_id'] : (Yii::$app->request->post('CuentasPresupuesto', [])['ban_id'] ?? null);
-                    $renderMethod = $this->request->isAjax ? 'renderAjax' : 'render';
-                    return $this->$renderMethod('create', [
+                    
+                    return $this->render('create', [
                         'model' => $model,
                         'clientes' => [],
                         'socios' => \yii\helpers\ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
@@ -138,22 +144,30 @@ class PresupuestoController extends BaseController
                     ]);
                 }
 
-                // Si todo es válido, guardar presupuesto y detalles en transacción
+                // Si todo es válido, calcular totales y guardar presupuesto y detalles en transacción
+                $subtotal = 0.0;
+                $ivaTotal = 0.0;
+                foreach ($detalleModels as $det) {
+                    $subtotal += $det->dtp_subtotal;
+                    $ivaTotal += $det->dtp_subtotal * ($det->dtp_iva / 100.0);
+                }
+
+                $gastos = isset($model->pre_gastos_suplidos) ? floatval($model->pre_gastos_suplidos) : 0.0;
+                $model->pre_subtotal = $subtotal;
+                $model->pre_iva = $ivaTotal;
+                $model->pre_total = $subtotal + $ivaTotal + $gastos;
+
                 $transaction = Yii::$app->db->beginTransaction();
                 try {
                     if (!$model->save()) {
                         throw new \Exception('No se pudo guardar el presupuesto: ' . json_encode($model->getErrors()));
                     }
 
-                    $subtotal = 0.0;
-                    $ivaTotal = 0.0;
                     foreach ($detalleModels as $det) {
                         $det->pre_id = $model->pre_id;
                         if (!$det->save(false)) {
                             throw new \Exception('Error al guardar detalle: ' . json_encode($det->getErrors()));
                         }
-                        $subtotal += $det->dtp_subtotal;
-                        $ivaTotal += $det->dtp_subtotal * ($det->dtp_iva / 100.0);
                     }
 
                     // Guardar cuenta seleccionada para la transferencia (si se envió)
@@ -167,13 +181,6 @@ class PresupuestoController extends BaseController
                             throw new \Exception('No se pudo guardar la cuenta de presupuesto: ' . json_encode($cf->getErrors()));
                         }
                     }
-
-                    // Recalcular totales y guardar en la presupuesto
-                    $gastos = isset($model->pre_gastos_suplidos) ? floatval($model->pre_gastos_suplidos) : 0.0;
-                    $model->pre_subtotal = $subtotal;
-                    $model->pre_iva = $ivaTotal;
-                    $model->pre_total = $subtotal + $ivaTotal + $gastos;
-                    $model->save(false, ['pre_subtotal', 'pre_iva', 'pre_total']);
 
                     $transaction->commit();
 
@@ -189,12 +196,33 @@ class PresupuestoController extends BaseController
                     Yii::error($e->getMessage());
                     if (Yii::$app->request->isAjax) {
                         Yii::$app->response->format = Response::FORMAT_JSON;
-                        return ['success' => false, 'errors' => $e->getMessage()];
+                        $model->addError('pre_numero', 'Error al guardar: ' . $e->getMessage());
+                        return ['success' => false, 'errors' => $model->getErrors()];
                     }
+                    Yii::$app->session->setFlash('error', 'Error al crear el presupuesto: ' . $e->getMessage());
+                    return $this->redirect(['index']);
                 }
             }
         } else {
             $model->loadDefaultValues();
+            // Pre-rellenar el modelo con valores por defecto para que se pueda guardar
+            $primerCliente = \app\models\Cliente::find()->where(['cli_eliminado' => 0])->one();
+            $primerSocio = \app\models\Socio::find()->one();
+            $primeraFormaDePago = \app\models\FormaDePago::find()->one();
+
+            if ($primerCliente) {
+                $model->cli_id = $primerCliente->cli_id;
+            }
+            if ($primerSocio) {
+                $model->soc_id = $primerSocio->soc_id;
+            }
+            if ($primeraFormaDePago) {
+                $model->fdp_id = $primeraFormaDePago->fdp_id;
+            }
+
+            $model->pre_numero = 'PRE-' . date('Ymd-His');
+            $model->pre_fecha = date('Y-m-d');
+            $model->pre_logo = Presupuesto::PRE_LOGO_EMPRESA;
         }
 
         $socios = \app\models\Socio::find()->all();

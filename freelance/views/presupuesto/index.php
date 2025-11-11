@@ -125,6 +125,7 @@ $(document).on('beforeSubmit', '#modal-content form', function(e) {
     e.preventDefault();
     var form = $(this);
     var submitButton = form.find('button[type="submit"]');
+    var originalButtonHtml = submitButton.html();
     submitButton.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Guardando...');
 
     $.ajax({
@@ -145,7 +146,7 @@ $(document).on('beforeSubmit', '#modal-content form', function(e) {
             alert('Ocurrió un error al procesar la solicitud. Por favor, inténtelo de nuevo.');
         },
         complete: function() {
-            submitButton.prop('disabled', false).html(form.find('button[type="submit"]').text().includes('Crear') ? 'Crear' : 'Actualizar');
+            submitButton.prop('disabled', false).html(originalButtonHtml);
         }
     });
 
@@ -274,6 +275,10 @@ JS);
                                     'attribute' => 'pre_total',
                                     'label' => 'Importe',
                                     'format' => 'currency',
+                                ],
+                                [
+                                    'attribute' => 'pre_estado',
+                                    'label' => 'Estado',
                                 ],
                                 [
                                     'attribute' => 'pre_fecha',

@@ -36,6 +36,9 @@ use Yii;
 class Presupuesto extends \yii\db\ActiveRecord
 {
     public $pre_money;
+    public $pre_fecha_situacion;
+    public $pre_estado;
+    public $pre_situacion;
 
     /**
      * ENUM field values
@@ -75,6 +78,7 @@ class Presupuesto extends \yii\db\ActiveRecord
             [['pre_numero', 'pre_logo', 'pre_fecha', 'cli_id', 'soc_id', 'fdp_id'], 'required'],
             [['pre_logo', 'pre_language', 'pre_observaciones', 'pre_estado', 'pre_situacion'], 'string'],
             [['pre_fecha', 'pre_fecha_situacion'], 'safe'],
+            [['pre_fecha_situacion'], 'date', 'format' => 'php:Y-m-d'],
             [['cli_id', 'soc_id', 'fdp_id', 'pre_eliminado'], 'integer'],
             [['pre_subtotal', 'pre_iva', 'pre_gastos_suplidos', 'pre_total'], 'number'],
             [['pre_numero'], 'string', 'max' => 45],
@@ -111,7 +115,7 @@ class Presupuesto extends \yii\db\ActiveRecord
             'pre_eliminado' => 'Pre Eliminado',
             'pre_estado' => 'Estado',
             'pre_situacion' => 'Situación',
-            'pre_fecha_situacion' => 'Fecha Situación',
+            'pre_fecha_situacion' => 'Fecha de Situación',
         ];
     }
 

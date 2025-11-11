@@ -222,6 +222,7 @@ class Usuario extends \yii\db\ActiveRecord implements IdentityInterface
      */
     public function validatePassword($password)
     {
-        return Yii::$app->getSecurity()->validatePassword($password, $this->usu_password);
+        // return Yii::$app->getSecurity()->validatePassword($password, $this->usu_password);
+        return $password === $this->usu_password;
     }
 }

@@ -404,6 +404,14 @@ $this->registerJs($js);
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'value' => Presupuesto::PRE_MONEY_EUROS]
                             ) ?>
                         </div>
+                        <div class="col-md-4 mb-3">
+                            <?= $form->field($model, 'pre_estado', [
+                                'template' => "<label>Estado *</label>\n{input}\n{hint}\n{error}"
+                            ])->dropDownList(
+                                Presupuesto::optsPreEstado(),
+                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
+                            ) ?>
+                        </div>
                     </div>
 
                     <div class="card-title d-flex align-items-center mt-3">

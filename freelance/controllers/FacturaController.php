@@ -19,6 +19,15 @@ use Mpdf\Output\Destination;
 use yii\db\Exception;
 use yii\db\Transaction;
 use yii\db\Expression;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\grid\ActionColumn;
+use yii\grid\CheckboxColumn;
+use yii\grid\GridView;
+use yii\widgets\Pjax;
+use yii\bootstrap5\Modal;
+use yii\widgets\ActiveForm;
 
 
 /**
@@ -136,14 +145,14 @@ class FacturaController extends BaseController
                     $formasDePago = \app\models\FormaDePago::find()->all();
                     // Lista de bancos para seleccionar cuenta de pago
                     $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
-                    $bancosMap = \yii\helpers\ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
+                    $bancosMap = ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
                     $selectedBanco = isset($detallesData['cuenta_ban_id']) ? $detallesData['cuenta_ban_id'] : (Yii::$app->request->post('CuentasFactura', [])['ban_id'] ?? null);
                     $renderMethod = $this->request->isAjax ? 'renderAjax' : 'render';
                     return $this->$renderMethod('create', [
                         'model' => $model,
                         'clientes' => [],
-                        'socios' => \yii\helpers\ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
-                        'formasDePago' => \yii\helpers\ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
+                        'socios' => ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
+                        'formasDePago' => ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
                         'detallesData' => $detallesData,
                         'detalleRowErrors' => $detalleRowErrors,
                         'bancos' => $bancosMap,
@@ -217,14 +226,14 @@ class FacturaController extends BaseController
 
     // Bancos disponibles para seleccionar cuenta de transferencia
     $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
-    $bancosMap = \yii\helpers\ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
+    $bancosMap = ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
 
         $renderMethod = $this->request->isAjax ? 'renderAjax' : 'render';
         return $this->$renderMethod('create', [
             'model' => $model,
             'clientes' => [], // Se cargan por AJAX
-            'socios' => \yii\helpers\ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
-            'formasDePago' => \yii\helpers\ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
+            'socios' => ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
+            'formasDePago' => ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
             'bancos' => $bancosMap,
             'selectedBanco' => null,
         ]);
@@ -342,14 +351,14 @@ class FacturaController extends BaseController
                     $formasDePago = \app\models\FormaDePago::find()->all();
                     // Lista de bancos para seleccionar cuenta de pago
                     $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
-                    $bancosMap = \yii\helpers\ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
+                    $bancosMap = ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
                     $selectedBanco = isset($detallesData['cuenta_ban_id']) ? $detallesData['cuenta_ban_id'] : (Yii::$app->request->post('CuentasFactura', [])['ban_id'] ?? null);
                     
                     return $this->render('update', [
                         'model' => $model,
                         'clientes' => [],
-                        'socios' => \yii\helpers\ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
-                        'formasDePago' => \yii\helpers\ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
+                        'socios' => ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
+                        'formasDePago' => ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
                         'detallesData' => $detallesData,
                         'detalleRowErrors' => $detalleRowErrors,
                         'bancos' => $bancosMap,
@@ -424,7 +433,7 @@ class FacturaController extends BaseController
         $socios = \app\models\Socio::find()->all();
         $formasDePago = \app\models\FormaDePago::find()->all();
         $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
-        $bancosMap = \yii\helpers\ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
+        $bancosMap = ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
 
         $detallesData = [];
         foreach ($detalleModels as $det) {
@@ -442,8 +451,8 @@ class FacturaController extends BaseController
         return $this->$renderMethod('update', [
             'model' => $model,
             'clientes' => [], // Se cargan por AJAX
-            'socios' => \yii\helpers\ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
-            'formasDePago' => \yii\helpers\ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
+            'socios' => ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
+            'formasDePago' => ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
             'bancos' => $bancosMap,
             'selectedBanco' => $selectedBanco,
             'detallesData' => $detallesData,
@@ -694,6 +703,7 @@ class FacturaController extends BaseController
 
         return $this->renderAjax('_change_status_form', [
             'model' => $model,
+            'fac_id' => $fac_id,
         ]);
     }
 }

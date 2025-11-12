@@ -38150,3 +38150,167 @@ array (
     'tag' => '6913d1045b987',
   ),
 )
+---- 2025-11-12T01:22:50+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-12T01:22:50+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6913d35ab8436
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6913d35ab8436',
+  ),
+)
+---- 2025-11-12T01:22:52+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-12T01:22:53+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6913d35ccd735
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6913d35ccd735',
+  ),
+)
+---- 2025-11-12T01:27:02+01:00 ----
+QUERY_STRING: r=banco
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'banco',
+  ),
+)
+---- 2025-11-12T01:27:02+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6913d4562b661
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6913d4562b661',
+  ),
+)
+---- 2025-11-12T01:27:04+01:00 ----
+QUERY_STRING: r=banco%2Fcreate&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'banco/create',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-12T01:28:44+01:00 ----
+QUERY_STRING: r=banco
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'banco',
+  ),
+)
+---- 2025-11-12T01:28:44+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6913d4bc72597
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6913d4bc72597',
+  ),
+)
+---- 2025-11-12T01:28:48+01:00 ----
+QUERY_STRING: r=banco%2Fcreate&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'banco/create',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-12T01:28:52+01:00 ----
+QUERY_STRING: r=banco%2Fcreate&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'banco/create',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-12T01:32:42+01:00 ----
+QUERY_STRING: r=banco
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'banco',
+  ),
+)
+---- 2025-11-12T01:32:42+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6913d5aa19771
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6913d5aa19771',
+  ),
+)
+---- 2025-11-12T01:32:47+01:00 ----
+QUERY_STRING: r=banco%2Fcreate&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'banco/create',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-12T01:34:49+01:00 ----
+QUERY_STRING: r=banco
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'banco',
+  ),
+)
+---- 2025-11-12T01:34:49+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6913d629921b4
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6913d629921b4',
+  ),
+)
+---- 2025-11-12T01:34:52+01:00 ----
+QUERY_STRING: r=banco%2Fcreate&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'banco/create',
+    'view' => 'modal',
+  ),
+)

@@ -14,6 +14,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'ban_nombre')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'ban_titular_tarjeta')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'ban_numcuenta')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group d-flex justify-content-end">

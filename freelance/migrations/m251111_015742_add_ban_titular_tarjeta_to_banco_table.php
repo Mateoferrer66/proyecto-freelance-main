@@ -9,7 +9,7 @@ class m251111_015742_add_ban_titular_tarjeta_to_banco_table extends Migration
      */
     public function safeUp()
     {
-
+        $this->addColumn('{{%banco}}', 'ban_titular_tarjeta', $this->string(255)->notNull()->defaultValue(''));
     }
 
     /**
@@ -17,9 +17,7 @@ class m251111_015742_add_ban_titular_tarjeta_to_banco_table extends Migration
      */
     public function safeDown()
     {
-        echo "m251111_015742_add_ban_titular_tarjeta_to_banco_table cannot be reverted.\n";
-
-        return false;
+        $this->dropColumn('{{%banco}}', 'ban_titular_tarjeta');
     }
 
     /*

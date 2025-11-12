@@ -18821,3 +18821,123 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1762907567.2513
     'REQUEST_TIME' => 1762907567
 ]
+2025-11-12 10:07:14 [::1][-][-][error][yii\symfonymailer\Mailer::sendMessage] Failed to authenticate on SMTP server with username "freelancedevelop25@gmail.com" using the following authenticators: "LOGIN", "PLAIN", "XOAUTH2". Authenticator "LOGIN" returned "Expected response code "235" but got code "535", with message "535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-559957fb342sm9535433e0c.11 - gsmtp".". Authenticator "PLAIN" returned "Expected response code "235" but got code "535", with message "535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 71dfb90a1353d-559957fb342sm9535433e0c.11 - gsmtp".". Authenticator "XOAUTH2" returned "Expected response code "235" but got code "334", with message "334 eyJzdGF0dXMiOiI0MDAiLCJzY2hlbWVzIjoiQmVhcmVyIiwic2NvcGUiOiJodHRwczovL21haWwuZ29vZ2xlLmNvbS8ifQ==".".
+    in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\models\PasswordResetRequestForm.php:49
+    in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\SiteController.php:134
+2025-11-12 10:07:11 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/request-password-reset'
+]
+
+$_POST = [
+    '_csrf' => 'i8O9w0pxOuifrJkYTUFhtEea6R6NiALmJdvgVJnbmHu-rcn3AyJTi_ie92h0cyXYIK6KXMjQYN96rtka_qj1Kg=='
+    'PasswordResetRequestForm' => [
+        'email' => 'mateoferrer66@gmail.com'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => 'e2164859a4c5733f96458d67e1cb88e560661c4e1b1fb976ab491a7e8980068ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"5nt4ISicg2np92Dlg4cBEXb9_u9NgsmQ\";}'
+    'PHPSESSID' => 'lmo1fsrik2nfp9l752sdlnl6ul'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'cowgiz'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '49471'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Frequest-password-reset'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Frequest-password-reset'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '160'
+    'HTTP_CONTENT_LENGTH' => '160'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=site%2Frequest-password-reset'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => '_csrf=e2164859a4c5733f96458d67e1cb88e560661c4e1b1fb976ab491a7e8980068ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%225nt4ISicg2np92Dlg4cBEXb9_u9NgsmQ%22%3B%7D; PHPSESSID=lmo1fsrik2nfp9l752sdlnl6ul'
+    'REQUEST_TIME_FLOAT' => 1762938431.2055
+    'REQUEST_TIME' => 1762938431
+]
+2025-11-12 21:09:13 [::1][-][-][warning][yii\web\User::getIdentityAndDurationFromCookie] Invalid cookie auth key attempted for user '2' from ::1: 
+2025-11-12 21:09:09 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'pmaUser-1' => 'u/BgsouCNbBk5WiGtzR9EaFKxVsGWtFnFJS8y1VrP6OTwuyg5hGpdGNbja8='
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'yaxave'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '56783'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; pmaUser-1=u%2FBgsouCNbBk5WiGtzR9EaFKxVsGWtFnFJS8y1VrP6OTwuyg5hGpdGNbja8%3D; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762978148.5359
+    'REQUEST_TIME' => 1762978148
+]

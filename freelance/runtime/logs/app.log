@@ -17113,3 +17113,1465 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1762900745.9484
     'REQUEST_TIME' => 1762900745
 ]
+2025-11-11 23:51:11 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][yii\base\ErrorException:64] yii\base\ErrorException: Cannot redeclare app\controllers\FacturaController::actionDoSendEmail() in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\FacturaController.php:489
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2025-11-11 23:51:11 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'factura'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '51940'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=presupuesto'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762901471.5742
+    'REQUEST_TIME' => 1762901471
+]
+2025-11-12 00:02:56 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "socios". in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('socios', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Página no encontrada. in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#2 {main}
+2025-11-12 00:02:56 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'socios'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52490'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=socios'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=socios'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=presupuesto'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762902176.3706
+    'REQUEST_TIME' => 1762902176
+]
+2025-11-12 00:02:59 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][ParseError] ParseError: syntax error, unexpected fully qualified name "\FormaDePago" in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\FacturaController.php:450
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\controllers...')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(664): class_exists('app\\controllers...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(623): yii\base\Module->createControllerByID('factura')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(549): yii\base\Module->createController('')
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('factura', Array)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#7 {main}
+2025-11-12 00:02:59 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'factura'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52529'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=socios'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762902179.2132
+    'REQUEST_TIME' => 1762902179
+]
+2025-11-12 00:04:04 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "socios". in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('socios', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Página no encontrada. in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#2 {main}
+2025-11-12 00:04:04 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'socios'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52582'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=socios'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=socios'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=presupuesto'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762902244.2333
+    'REQUEST_TIME' => 1762902244
+]
+2025-11-12 00:04:11 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][ParseError] ParseError: syntax error, unexpected fully qualified name "\FormaDePago" in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\FacturaController.php:450
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('app\\controllers...')
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(664): class_exists('app\\controllers...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(623): yii\base\Module->createControllerByID('factura')
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(549): yii\base\Module->createController('')
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('factura', Array)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#7 {main}
+2025-11-12 00:04:10 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'factura'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52630'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=presupuesto'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762902250.7644
+    'REQUEST_TIME' => 1762902250
+]
+2025-11-12 00:08:48 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined variable $socios in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\factura\update.php:25
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\factura\update.php(25): yii\base\ErrorHandler->handleError(2, 'Undefined varia...', 'C:\\Users\\mateo\\...', 25)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\View.php(254): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\FacturaController))
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Controller.php(54): yii\web\View->renderAjax('update', Array, Object(app\controllers\FacturaController))
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\FacturaController.php(306): yii\web\Controller->renderAjax('update', Array)
+#6 [internal function]: app\controllers\FacturaController->actionUpdate('1')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('update', Array)
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('factura/update', Array)
+#11 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#13 {main}
+2025-11-12 00:08:48 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'factura/update'
+    'fac_id' => '1'
+    'view' => 'modal'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52855'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura%2Fupdate&fac_id=1&view=modal'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura%2Fupdate&fac_id=1&view=modal'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_X_CSRF_TOKEN' => 'yRVzXf3BEUodu-BfXZmsPg61EkaZbm31yjTE0paEYuD-XD4ViPlaKVzI1jAu995YaPFHcuMrLM2HQryw3PIohQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762902528.0351
+    'REQUEST_TIME' => 1762902528
+]
+2025-11-12 00:08:58 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined variable $socios in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\factura\update.php:25
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\factura\update.php(25): yii\base\ErrorHandler->handleError(2, 'Undefined varia...', 'C:\\Users\\mateo\\...', 25)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\View.php(254): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\FacturaController))
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Controller.php(54): yii\web\View->renderAjax('update', Array, Object(app\controllers\FacturaController))
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\FacturaController.php(306): yii\web\Controller->renderAjax('update', Array)
+#6 [internal function]: app\controllers\FacturaController->actionUpdate('1')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('update', Array)
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('factura/update', Array)
+#11 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#13 {main}
+2025-11-12 00:08:58 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'factura/update'
+    'fac_id' => '1'
+    'view' => 'modal'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52872'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura%2Fupdate&fac_id=1&view=modal'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura%2Fupdate&fac_id=1&view=modal'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_X_CSRF_TOKEN' => 'yRVzXf3BEUodu-BfXZmsPg61EkaZbm31yjTE0paEYuD-XD4ViPlaKVzI1jAu995YaPFHcuMrLM2HQryw3PIohQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762902538.0792
+    'REQUEST_TIME' => 1762902538
+]
+2025-11-12 00:09:09 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined variable $socios in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\factura\update.php:25
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\factura\update.php(25): yii\base\ErrorHandler->handleError(2, 'Undefined varia...', 'C:\\Users\\mateo\\...', 25)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\View.php(254): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\FacturaController))
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Controller.php(54): yii\web\View->renderAjax('update', Array, Object(app\controllers\FacturaController))
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\FacturaController.php(306): yii\web\Controller->renderAjax('update', Array)
+#6 [internal function]: app\controllers\FacturaController->actionUpdate('1')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('update', Array)
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('factura/update', Array)
+#11 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#13 {main}
+2025-11-12 00:09:09 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'factura/update'
+    'fac_id' => '1'
+    'view' => 'modal'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '52889'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura%2Fupdate&fac_id=1&view=modal'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura%2Fupdate&fac_id=1&view=modal'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_X_CSRF_TOKEN' => 'yRVzXf3BEUodu-BfXZmsPg61EkaZbm31yjTE0paEYuD-XD4ViPlaKVzI1jAu995YaPFHcuMrLM2HQryw3PIohQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762902549.5514
+    'REQUEST_TIME' => 1762902549
+]
+2025-11-12 00:10:44 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined variable $socios in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\factura\update.php:25
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\factura\update.php(25): yii\base\ErrorHandler->handleError(2, 'Undefined varia...', 'C:\\Users\\mateo\\...', 25)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\View.php(254): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\FacturaController))
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Controller.php(54): yii\web\View->renderAjax('update', Array, Object(app\controllers\FacturaController))
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\FacturaController.php(306): yii\web\Controller->renderAjax('update', Array)
+#6 [internal function]: app\controllers\FacturaController->actionUpdate('1')
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('update', Array)
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('factura/update', Array)
+#11 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#13 {main}
+2025-11-12 00:10:44 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'factura/update'
+    'fac_id' => '1'
+    'view' => 'modal'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '53053'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura%2Fupdate&fac_id=1&view=modal'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura%2Fupdate&fac_id=1&view=modal'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_X_CSRF_TOKEN' => 'dCJlyLZFWu--ua5_lyxNZmiSX3BTyXyzfw-kLj1VoyNDayiAw30RjP_KmBDkQj8ADtYKRCmMPYsyedxMdyPpRg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762902644.1449
+    'REQUEST_TIME' => 1762902644
+]
+2025-11-12 00:23:50 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "liquidaciones". in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('liquidaciones', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Página no encontrada. in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#2 {main}
+2025-11-12 00:23:50 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'liquidaciones'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '53825'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=liquidaciones'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=liquidaciones'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762903430.8255
+    'REQUEST_TIME' => 1762903430
+]
+2025-11-12 00:25:52 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "seguridad". in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('seguridad', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Página no encontrada. in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#2 {main}
+2025-11-12 00:25:52 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'seguridad'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '54192'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=seguridad'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=seguridad'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura%2Fcreate'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762903552.7229
+    'REQUEST_TIME' => 1762903552
+]
+2025-11-12 00:37:42 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][ParseError] ParseError: Unclosed '[' on line 253 does not match ')' in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php:352
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#11 {main}
+2025-11-12 00:37:42 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '55163'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762904262.7813
+    'REQUEST_TIME' => 1762904262
+]
+2025-11-12 00:39:30 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][ParseError] ParseError: Unclosed '[' on line 253 does not match ')' in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php:352
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#11 {main}
+2025-11-12 00:39:30 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '55268'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762904370.5033
+    'REQUEST_TIME' => 1762904370
+]
+2025-11-12 00:39:34 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][ParseError] ParseError: Unclosed '[' on line 253 does not match ')' in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php:352
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#11 {main}
+2025-11-12 00:39:34 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '55281'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762904374.4235
+    'REQUEST_TIME' => 1762904374
+]
+2025-11-12 00:40:35 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][ParseError] ParseError: Unclosed '[' on line 253 does not match ')' in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php:352
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#11 {main}
+2025-11-12 00:40:35 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '55344'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762904435.3606
+    'REQUEST_TIME' => 1762904435
+]
+2025-11-12 00:42:04 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][ParseError] ParseError: Unclosed '[' on line 253 does not match ')' in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php:352
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#11 {main}
+2025-11-12 00:42:04 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '55410'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762904524.1537
+    'REQUEST_TIME' => 1762904524
+]
+2025-11-12 00:42:05 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][ParseError] ParseError: Unclosed '[' on line 253 does not match ')' in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php:352
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#11 {main}
+2025-11-12 00:42:05 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '55416'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762904525.5256
+    'REQUEST_TIME' => 1762904525
+]
+2025-11-12 00:42:08 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][ParseError] ParseError: Unclosed '[' on line 253 does not match ')' in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php:352
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#11 {main}
+2025-11-12 00:42:08 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '55428'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762904528.3176
+    'REQUEST_TIME' => 1762904528
+]
+2025-11-12 00:56:43 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "seguridad". in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('seguridad', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Página no encontrada. in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#2 {main}
+2025-11-12 00:56:43 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'seguridad'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '56317'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=seguridad'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=seguridad'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762905403.8782
+    'REQUEST_TIME' => 1762905403
+]
+2025-11-12 00:56:47 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][ParseError] ParseError: Unclosed '[' on line 253 does not match ')' in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php:352
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#11 {main}
+2025-11-12 00:56:47 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '56362'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762905407.4306
+    'REQUEST_TIME' => 1762905407
+]
+2025-11-12 01:00:25 [::1][2][thg16kstdpmd1vaqs6u294n0t6][error][ParseError] ParseError: Unclosed '[' on line 253 does not match ')' in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\views\presupuesto\index.php:352
+Stack trace:
+#0 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PresupuestoController))
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(app\controllers\PresupuestoController))
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PresupuestoController.php(51): yii\base\Controller->render('index', Array)
+#4 [internal function]: app\controllers\PresupuestoController->actionIndex()
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#6 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#7 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('', Array)
+#8 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('presupuesto', Array)
+#9 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+#11 {main}
+2025-11-12 01:00:25 [::1][2][thg16kstdpmd1vaqs6u294n0t6][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'thg16kstdpmd1vaqs6u294n0t6'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => 'c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"7IMHu8KcAs6osnrffDU4zEA8MvxbJvJe\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'ptsrsut'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '56592'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.5'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'PHPSESSID=thg16kstdpmd1vaqs6u294n0t6; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=c532a46170da44e7c1a7286d7714b1a92b7beda112bcedd455c8abb915d1345da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%227IMHu8KcAs6osnrffDU4zEA8MvxbJvJe%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1762905625.1622
+    'REQUEST_TIME' => 1762905625
+]

@@ -309,55 +309,74 @@ JS);
                                 [
                                     'class' => ActionColumn::class,
                                     'header' => 'Acciones',
-                                    'template' => '{view} {update} {print} {send-email} {mark-as-paid} {change-status} {delete}',
+                                    'template' => '<div class="d-flex flex-column align-items-center gap-2">{group1}{group2}{group3}</div>',
                                     'buttons' => [
-                                        'view' => fn($url, $model) => Html::a('<i class="bx bx-id-card"></i>', $url, [
-                                            'title' => 'Ver Factura: ' . $model->fac_numero,
-                                            'class' => 'btn btn-light',
-                                            'data-bs-toggle' => 'modal',
-                                            'data-bs-target' => '#action-modal'
-                                        ]),
-                                        'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
-                                            'title' => 'Editar Factura: ' . $model->fac_numero,
-                                            'class' => 'btn btn-light',
-                                            'data-bs-toggle' => 'modal',
-                                            'data-bs-target' => '#action-modal'
-                                        ]),
-                                        'print' => fn($url, $model) => Html::a('<i class="bx bx-printer"></i>', ['factura/print', 'fac_id' => $model->fac_id], [
-                                            'title' => 'Imprimir Factura',
-                                            'class' => 'btn btn-light',
-                                            'target' => '_blank',
-                                            'data-pjax' => '0',
-                                        ]),
-                                        'send-email' => fn($url, $model) => Html::a('<i class="bx bx-envelope"></i>', ['factura/send-email', 'fac_id' => $model->fac_id], [
-                                            'title' => 'Enviar por Correo',
-                                            'class' => 'btn btn-light',
-                                            'data-bs-toggle' => 'modal',
-                                            'data-bs-target' => '#action-modal',
-                                        ]),
-                                        'mark-as-paid' => fn($url, $model) => Html::a('<i class="bx bx-check-square"></i>', ['factura/mark-as-paid', 'fac_id' => $model->fac_id], [
-                                            'title' => 'Marcar como Liquidada',
-                                            'class' => 'btn btn-light',
-                                            'data-confirm' => '¿Está seguro de que desea marcar esta factura como liquidada?',
-                                            'data-method' => 'post',
-                                            'data-pjax' => '1',
-                                        ]),
-                                        'change-status' => fn($url, $model) => Html::a('<i class="bx bx-toggle-left"></i>', ['factura/change-status', 'fac_id' => $model->fac_id], [
-                                            'title' => 'Cambiar Situación',
-                                            'class' => 'btn btn-light',
-                                            'data-bs-toggle' => 'modal',
-                                            'data-bs-target' => '#action-modal',
-                                        ]),
-                                        'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
-                                            'title' => 'Eliminar Factura',
-                                            'class' => 'btn btn-light',
-                                            'data-confirm' => '¿Está seguro de que desea eliminar la factura: "' . $model->fac_numero . '"?',
-                                            'data-method' => 'post',
-                                            'data-pjax' => '1',
-                                        ]),
+                                        'group1' => function ($url, $model, $key) {
+                                            $buttons = [];
+                                            $buttons[] = Html::a('<i class="bx bx-id-card"></i>', Url::toRoute(['view', 'fac_id' => $model->fac_id, 'view' => 'modal']), [
+                                                'title' => 'Ver Factura: ' . $model->fac_numero,
+                                                'class' => 'btn btn-light',
+                                                'data-bs-toggle' => 'modal',
+                                                'data-bs-target' => '#action-modal'
+                                            ]);
+                                            $buttons[] = Html::a('<i class="bx bx-edit"></i>', Url::toRoute(['update', 'fac_id' => $model->fac_id, 'view' => 'modal']), [
+                                                'title' => 'Editar Factura: ' . $model->fac_numero,
+                                                'class' => 'btn btn-light',
+                                                'data-bs-toggle' => 'modal',
+                                                'data-bs-target' => '#action-modal'
+                                            ]);
+                                            $buttons[] = Html::a('<i class="bx bx-printer"></i>', Url::toRoute(['print', 'fac_id' => $model->fac_id]), [
+                                                'title' => 'Imprimir Factura',
+                                                'class' => 'btn btn-light',
+                                                'target' => '_blank',
+                                                'data-pjax' => '0',
+                                            ]);
+                                            return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
+                                        },
+                                        'group2' => function ($url, $model, $key) {
+                                            $buttons = [];
+                                            $buttons[] = Html::a('<i class="bx bx-envelope"></i>', Url::toRoute(['send-email', 'fac_id' => $model->fac_id]), [
+                                                'title' => 'Enviar por Correo',
+                                                'class' => 'btn btn-light',
+                                                'data-bs-toggle' => 'modal',
+                                                'data-bs-target' => '#action-modal',
+                                            ]);
+                                            $buttons[] = Html::a('<i class="bx bx-check-square"></i>', Url::toRoute(['mark-as-paid', 'fac_id' => $model->fac_id]), [
+                                                'title' => 'Marcar como Liquidada',
+                                                'class' => 'btn btn-light',
+                                                'data-confirm' => '¿Está seguro de que desea marcar esta factura como liquidada?',
+                                                'data-method' => 'post',
+                                                'data-pjax' => '1',
+                                            ]);
+                                            $buttons[] = Html::a('<i class="bx bx-toggle-left"></i>', Url::toRoute(['change-status', 'fac_id' => $model->fac_id]), [
+                                                'title' => 'Cambiar Situación',
+                                                'class' => 'btn btn-light',
+                                                'data-bs-toggle' => 'modal',
+                                                'data-bs-target' => '#action-modal',
+                                            ]);
+                                            return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
+                                        },
+                                        'group3' => function ($url, $model, $key) {
+                                            $buttons = [];
+                                            $buttons[] = Html::a('<i class="bx bx-power-off"></i>', Url::toRoute(['deactivate', 'fac_id' => $model->fac_id]), [
+                                                'title' => 'Desactivar Factura',
+                                                'class' => 'btn btn-light',
+                                                'data-confirm' => '¿Está seguro de que desea desactivar la factura: "' . $model->fac_numero . '"?',
+                                                'data-method' => 'post',
+                                                'data-pjax' => '1',
+                                            ]);
+                                            $buttons[] = Html::a('<i class="bx bx-trash"></i>', Url::toRoute(['delete', 'fac_id' => $model->fac_id]), [
+                                                'title' => 'Eliminar Factura',
+                                                'class' => 'btn btn-light',
+                                                'data-confirm' => '¿Está seguro de que desea eliminar la factura: "' . $model->fac_numero . '"?',
+                                                'data-method' => 'post',
+                                                'data-pjax' => '1',
+                                            ]);
+                                            return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
+                                        },
                                     ],
                                     'urlCreator' => fn($action, Factura $model, $key, $index, $column) =>
-                                    Url::toRoute([$action, 'fac_id' => $model->fac_id, 'view' => ($action === 'delete' ? null : 'modal')]),
+                                    Url::toRoute([$action, 'fac_id' => $model->fac_id]),
                                 ],
                             ],
                         ]); ?>

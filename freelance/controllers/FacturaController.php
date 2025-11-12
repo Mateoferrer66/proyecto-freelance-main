@@ -14,12 +14,19 @@ use yii\web\Response;
 use Yii;
 use app\components\ExcelExportHelper;
 use app\components\PdfExportHelper;
+use app\controllers\BaseController;
+use Mpdf\Output\Destination;
+use yii\db\Exception;
+use yii\db\Transaction;
+use yii\db\Expression;
+
 
 /**
  * FacturaController implements the CRUD actions for Factura model.
  */
 class FacturaController extends BaseController
 {
+    
     /**
      * @inheritDoc
      */
@@ -58,7 +65,7 @@ class FacturaController extends BaseController
     /**
      * Displays a single Factura model.
      * @param int $fac_id Factura ID
-     * @return string
+     * @return string|Response
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionView($fac_id)
@@ -237,7 +244,7 @@ class FacturaController extends BaseController
                 $query->select(['value' => 'cli_id', 'label' => 'cli_nombre']);
             } elseif ($type === 'doc') {
                 $query->andWhere(['like', 'cli_numdocide', $term]);
-                $query->select(['value' => 'cli_id', 'label' => new \yii\db\Expression("CONCAT(cli_numdocide, ' - ', cli_nombre)")]);
+                $query->select(['value' => 'cli_id', 'label' => new Expression("CONCAT(cli_numdocide, ' - ', cli_nombre)")]);
             }
 
             $command = $query->createCommand();
@@ -280,23 +287,168 @@ class FacturaController extends BaseController
     public function actionUpdate($fac_id)
     {
         $model = $this->findModel($fac_id);
+        $detalleModels = $model->detalleFacturas;
+        $cuentasFactura = $model->cuentasFacturas;
+        $selectedBanco = null;
+        if (!empty($cuentasFactura)) {
+            $selectedBanco = $cuentasFactura[0]->ban_id;
+        }
 
-        if ($this->request->isPost && $model->load($this->request->post())) {
-            if ($this->request->isAjax) {
-                Yii::$app->response->format = Response::FORMAT_JSON;
-                if ($model->save()) {
-                    return ['success' => true, 'message' => 'Factura actualizada correctamente.'];
-                } else {
-                    return ['success' => false, 'errors' => $model->getErrors()];
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->validate()) {
+                // Primero construimos los modelos de detalle y los validamos sin persistir
+                $detallesData = Yii::$app->request->post('DetalleFactura', []);
+                $detalleModels = [];
+                $detalleRowErrors = [];
+                foreach ($detallesData as $idx => $d) {
+                    $cantidad = isset($d['dtf_cantidad']) ? floatval($d['dtf_cantidad']) : 0.0;
+                    $precio = isset($d['dtf_precio']) ? floatval($d['dtf_precio']) : 0.0;
+
+                    // Si la línea está vacía (cantidad y precio 0), ignorarla
+                    if ($cantidad == 0 && $precio == 0) {
+                        continue;
+                    }
+
+                    $det = new DetalleFactura();
+                    // No asignamos fac_id aún (se asignará al guardar la factura)
+                    $det->cof_id = isset($d['cof_id']) && $d['cof_id'] !== '' ? $d['cof_id'] : null;
+                    $det->dtf_descripcion = isset($d['dtf_descripcion']) ? $d['dtf_descripcion'] : '';
+                    $det->dtf_cantidad = $cantidad;
+                    $det->dtf_precio = $precio;
+                    $det->dtf_iva = isset($d['dtf_iva']) ? floatval($d['dtf_iva']) : 0.0;
+                    $det->dtf_subtotal = $cantidad * $precio;
+
+                    // Validar sólo los atributos del detalle que provienen del formulario
+                    // (no validamos fac_id aquí porque la factura aún no está guardada)
+                    if (!$det->validate(['cof_id', 'dtf_descripcion', 'dtf_cantidad', 'dtf_precio', 'dtf_iva'])) {
+                        // Guardar errores por fila (por cada atributo)
+                        $detalleRowErrors[$idx] = $det->getErrors();
+                    }
+                    $detalleModels[] = $det;
                 }
-            }
-            if ($model->save()) {
-                return $this->redirect(['index']);
+                if (!empty($detalleRowErrors)) {
+                    // Añadir errores agrupados al modelo principal para mostrarlos en errorSummary
+                    foreach ($detalleRowErrors as $idx => $errs) {
+                        $model->addError('detalles', 'Fila ' . ($idx+1) . ': ' . implode('; ', array_map(function($a){ return is_array($a) ? implode('|', $a) : $a; }, $errs)));
+                    }
+
+                    if (Yii::$app->request->isAjax) {
+                        Yii::$app->response->format = Response::FORMAT_JSON;
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+
+                    // Renderizar formulario con errores (no guardar) y devolver los datos de detalle y errores por fila
+                    $socios = \app\models\Socio::find()->all();
+                    $formasDePago = \app\models\FormaDePago::find()->all();
+                    // Lista de bancos para seleccionar cuenta de pago
+                    $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
+                    $bancosMap = \yii\helpers\ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
+                    $selectedBanco = isset($detallesData['cuenta_ban_id']) ? $detallesData['cuenta_ban_id'] : (Yii::$app->request->post('CuentasFactura', [])['ban_id'] ?? null);
+                    
+                    return $this->render('update', [
+                        'model' => $model,
+                        'clientes' => [],
+                        'socios' => \yii\helpers\ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
+                        'formasDePago' => \yii\helpers\ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
+                        'detallesData' => $detallesData,
+                        'detalleRowErrors' => $detalleRowErrors,
+                        'bancos' => $bancosMap,
+                        'selectedBanco' => $selectedBanco,
+                    ]);
+                }
+
+                // Si todo es válido, calcular totales y guardar factura y detalles en transacción
+                $subtotal = 0.0;
+                $ivaTotal = 0.0;
+                foreach ($detalleModels as $det) {
+                    $subtotal += $det->dtf_subtotal;
+                    $ivaTotal += $det->dtf_subtotal * ($det->dtf_iva / 100.0);
+                }
+
+                $gastos = isset($model->fac_gastos_suplidos) ? floatval($model->fac_gastos_suplidos) : 0.0;
+                $model->fac_subtotal = $subtotal;
+                $model->fac_iva = $ivaTotal;
+                $model->fac_total = $subtotal + $ivaTotal + $gastos;
+
+                $transaction = Yii::$app->db->beginTransaction();
+                try {
+                    if (!$model->save()) {
+                        throw new \Exception('No se pudo guardar la factura: ' . json_encode($model->getErrors()));
+                    }
+
+                    // Eliminar detalles existentes y guardar los nuevos
+                    DetalleFactura::deleteAll(['fac_id' => $model->fac_id]);
+                    foreach ($detalleModels as $det) {
+                        $det->fac_id = $model->fac_id;
+                        if (!$det->save(false)) {
+                            throw new \Exception('Error al guardar detalle: ' . json_encode($det->getErrors()));
+                        }
+                    }
+
+                    // Eliminar cuenta existente y guardar la nueva (si se envió)
+                    CuentasFactura::deleteAll(['fac_id' => $model->fac_id]);
+                    $postedCuenta = Yii::$app->request->post('CuentasFactura', []);
+                    $banId = isset($postedCuenta['ban_id']) && $postedCuenta['ban_id'] !== '' ? $postedCuenta['ban_id'] : null;
+                    if ($banId) {
+                        $cf = new CuentasFactura();
+                        $cf->ban_id = $banId;
+                        $cf->fac_id = $model->fac_id;
+                        if (!$cf->save()) {
+                            throw new \Exception('No se pudo guardar la cuenta de factura: ' . json_encode($cf->getErrors()));
+                        }
+                    }
+
+                    $transaction->commit();
+
+                    if (Yii::$app->request->isAjax) {
+                        Yii::$app->response->format = Response::FORMAT_JSON;
+                        return ['success' => true, 'message' => 'Factura actualizada correctamente.'];
+                    }
+
+                    Yii::$app->session->setFlash('success', 'Factura actualizada.');
+                    return $this->redirect(['index']);
+                } catch (\Throwable $e) {
+                    $transaction->rollBack();
+                    Yii::error($e->getMessage());
+                    if (Yii::$app->request->isAjax) {
+                        Yii::$app->response->format = Response::FORMAT_JSON;
+                        $model->addError('fac_numero', 'Error al actualizar: ' . $e->getMessage());
+                        return ['success' => false, 'errors' => $model->getErrors()];
+                    }
+                    Yii::$app->session->setFlash('error', 'Error al actualizar la factura: ' . $e->getMessage());
+                    return $this->redirect(['index']);
+                }
             }
         }
 
+        $socios = \app\models\Socio::find()->all();
+        $formasDePago = \app\models\FormaDePago::find()->all();
+        $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
+        $bancosMap = \yii\helpers\ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
+
+        $detallesData = [];
+        foreach ($detalleModels as $det) {
+            $detallesData[] = [
+                'cof_id' => $det->cof_id,
+                'dtf_descripcion' => $det->dtf_descripcion,
+                'dtf_cantidad' => $det->dtf_cantidad,
+                'dtf_precio' => $det->dtf_precio,
+                'dtf_iva' => $det->dtf_iva,
+                'dtf_subtotal' => $det->dtf_subtotal,
+            ];
+        }
+
         $renderMethod = $this->request->get('view') === 'modal' ? 'renderAjax' : 'render';
-        return $this->$renderMethod('update', ['model' => $model]);
+        return $this->$renderMethod('update', [
+            'model' => $model,
+            'clientes' => [], // Se cargan por AJAX
+            'socios' => \yii\helpers\ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
+            'formasDePago' => \yii\helpers\ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
+            'bancos' => $bancosMap,
+            'selectedBanco' => $selectedBanco,
+            'detallesData' => $detallesData,
+            'detalleRowErrors' => [],
+        ]);
     }
 
     /**
@@ -335,7 +487,7 @@ class FacturaController extends BaseController
                 }
             }
             return ['success' => true, 'message' => $count . ' factura(s) eliminada(s) correctamente.'];
-        } catch (\yii\db\Exception $e) {
+        } catch (Exception $e) {
             return ['success' => false, 'message' => 'Ocurrió un error al eliminar las facturas.'];
         }
     }
@@ -408,20 +560,8 @@ class FacturaController extends BaseController
             return $this->renderPartial('print', ['model' => $model]);
         }
 
-        $facturas = Factura::find()->where(['fac_eliminada' => 0])->all();
-
         $headers = ['Número', 'Fecha', 'Cliente', 'Total', 'Estado'];
-        $rows = [];
-
-        foreach ($facturas as $factura) {
-            $rows[] = [
-                $factura->fac_numero,
-                Yii::$app->formatter->asDate($factura->fac_fecha, 'php:d-m-Y'),
-                $factura->cli->cli_nombre,
-                Yii::$app->formatter->asCurrency($factura->fac_total),
-                $factura->fac_estado,
-            ];
-        }
+        $rows = $this->_getInvoiceListData();
 
         return $this->renderPartial('@app/views/export/print_table', [
             'titulo' => 'Listado de Facturas',
@@ -438,9 +578,57 @@ class FacturaController extends BaseController
         ]);
     }
 
+    public function actionDoSendEmail1($fac_id)
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        try {
+            $model = $this->findModel($fac_id);
+
+            $emailTo = Yii::$app->request->post('email_to');
+            $emailSubject = Yii::$app->request->post('email_subject');
+            $emailBody = Yii::$app->request->post('email_body');
+
+            if (empty($emailTo)) {
+                return ['success' => false, 'errors' => ['email_to' => 'El destinatario del correo no puede estar vacío.']];
+            }
+
+            // Generate PDF content
+            $html = $this->renderPartial('print', ['model' => $model]);
+            
+            $mpdf = new Mpdf([
+                'format' => 'A4',
+                'orientation' => 'P',
+                'margin_top' => 10,
+                'margin_bottom' => 10,
+            ]);
+            $mpdf->SetTitle('Factura ' . $model->fac_numero);
+            $mpdf->WriteHTML($html);
+            $pdfContent = $mpdf->Output(null, Destination::STRING_RETURN);
+
+            // Send email
+            $mail = Yii::$app->mailer->compose()
+                ->setFrom([Yii::$app->params['senderEmail'] => Yii::$app->params['senderName']]) // Use params for sender
+                ->setTo($emailTo)
+                ->setSubject($emailSubject)
+                ->setTextBody($emailBody)
+                ->attachContent($pdfContent, ['fileName' => 'Factura_' . $model->fac_numero . '.pdf', 'contentType' => 'application/pdf']);
+            
+            if ($mail->send()) {
+                Yii::$app->session->setFlash('success', 'Correo electrónico enviado a ' . $emailTo . '.');
+                return ['success' => true];
+            } else {
+                Yii::error("Error sending email for invoice " . $model->fac_id);
+                return ['success' => false, 'errors' => ['email' => 'Hubo un error al enviar el correo.']];
+            }
+        } catch (\Exception $e) {
+            Yii::error($e->getMessage());
+            return ['success' => false, 'errors' => ['exception' => 'Ocurrió una excepción: ' . $e->getMessage()]];
+        }
+    }
+
     public function actionDoSendEmail($fac_id)
     {
-        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        Yii::$app->response->format = Response::FORMAT_JSON;
         try {
             $model = $this->findModel($fac_id);
 
@@ -459,7 +647,7 @@ class FacturaController extends BaseController
             ]);
             $mpdf->SetTitle('Factura ' . $model->fac_numero);
             $mpdf->WriteHTML($html);
-            $pdfContent = $mpdf->Output(null, \Mpdf\Output\Destination::STRING_RETURN);
+            $pdfContent = $mpdf->Output(null, Destination::STRING_RETURN);
 
             // Send email
             $mail = Yii::$app->mailer->compose()
@@ -493,7 +681,7 @@ class FacturaController extends BaseController
 
     public function actionChangeStatus($fac_id)
     {
-        $model = $this->findModel($fac_id);
+        $model = $this->findModel($fac_id); // $fac_id is already defined as a parameter
 
         if ($this->request->isPost && $model->load($this->request->post())) {
             Yii::$app->response->format = Response::FORMAT_JSON;

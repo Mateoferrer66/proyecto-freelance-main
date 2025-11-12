@@ -124,6 +124,26 @@ PanelAsset::register($this);
                                 'method' => 'post',
                             ],
                         ]) ?>
+                        <?= Html::button('Enviar por Correo', [
+                            'class' => 'btn btn-primary px-5 radius-30',
+                            'data-bs-toggle' => 'modal',
+                            'data-bs-target' => '#sendEmailModal'
+                        ]) ?>
+                    </div>
+
+                    <!-- Modal para enviar correo -->
+                    <div class="modal fade" id="sendEmailModal" tabindex="-1" aria-labelledby="sendEmailModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="sendEmailModalLabel">Enviar Factura por Correo</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <?= $this->render('_send_email_form', ['model' => $model]) ?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

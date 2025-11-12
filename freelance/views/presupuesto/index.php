@@ -1,4 +1,5 @@
 <?php
+
 use app\models\Factura;
 use app\models\Presupuesto;
 use yii\helpers\Html;
@@ -250,99 +251,107 @@ JS);
 
 
 
-                        <?= GridView::widget([
-                            'id' => 'presupuestos-grid-view',
-                            'dataProvider' => $dataProvider,
-                            'summary' => false,
-                            'tableOptions' => ['class' => 'tableData table mb-0 dataTable no-footer'],
-                            'columns' => [
-                                [
-                                    'class' => 'yii\grid\CheckboxColumn',
-                                    'checkboxOptions' => [
-                                        'class' => 'form-check-input'
-                                    ],
+                    <?= GridView::widget([
+                        'id' => 'presupuestos-grid-view',
+                        'dataProvider' => $dataProvider,
+                        'summary' => false,
+                        'tableOptions' => ['class' => 'tableData table mb-0 dataTable no-footer'],
+                        'columns' => [
+                            [
+                                'class' => 'yii\grid\CheckboxColumn',
+                                'checkboxOptions' => [
+                                    'class' => 'form-check-input'
                                 ],
-                                [
-                                    'attribute' => 'pre_numero',
-                                    'label' => '# Factura',
+                            ],
+                            [
+                                'attribute' => 'pre_numero',
+                                'label' => '# Factura',
+                            ],
+                            [
+                                'attribute' => 'cli_id',
+                                'label' => 'Nombre / Razón Social',
+                                'value' => 'cli.cli_nombre',
+                            ],
+                            [
+                                'attribute' => 'pre_total',
+                                'label' => 'Importe',
+                                'format' => 'currency',
+                            ],
+                            // [
+                            //     'attribute' => 'pre_estado',
+                            //     'label' => 'Estado',
+                            // ],
+                            [
+                                'attribute' => 'pre_fecha',
+                                'label' => 'Fecha',
+                                'format' => ['date', 'php:d-m-Y'],
+                            ],
+                            // [
+                            //     'attribute' => 'pre_situacion',
+                            //     'label' => 'Situación',
+                            //     'format' => 'raw',
+                            //     'value' => function ($model) {
+                            //         $date = $model->pre_fecha_situacion ? Yii::$app->formatter->asDate($model->pre_fecha_situacion, 'php:d-m-Y') : '';
+                            //         return $model->pre_situacion . '<br>' . $date;
+                            //     },
+                            // ],
+
+                            [
+                                'class' => ActionColumn::class,
+                                'header' => 'Acciones',
+                                'template' => '<div class="d-flex flex-column align-items-center gap-2">{group1}{group2}</div>',
+                                'buttons' => [
+                                    'group1' => function ($url, $model, $key) {
+                                        $buttons = [];
+                                        $buttons[] = Html::a('<i class="bx bx-id-card"></i>', Url::toRoute(['view', 'pre_id' => $model->pre_id, 'view' => 'modal']), [
+                                            'title' => 'Ver Presupuesto: ' . $model->pre_numero,
+                                            'class' => 'btn btn-light',
+                                            'data-bs-toggle' => 'modal',
+                                            'data-bs-target' => '#action-modal'
+                                        ]);
+                                        $buttons[] = Html::a('<i class="bx bx-edit"></i>', Url::toRoute(['update', 'pre_id' => $model->pre_id, 'view' => 'modal']), [
+                                            'title' => 'Editar Presupuesto: ' . $model->pre_numero,
+                                            'class' => 'btn btn-light',
+                                            'data-bs-toggle' => 'modal',
+                                            'data-bs-target' => '#action-modal'
+                                        ]);
+                                        $buttons[] = Html::a('<i class="bx bx-printer"></i>', Url::toRoute(['print', 'pre_id' => $model->pre_id]), [
+                                            'title' => 'Imprimir Presupuesto',
+                                            'class' => 'btn btn-light',
+                                            'target' => '_blank',
+                                            'data-pjax' => '0',
+                                        ]);
+                                        return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
+                                    },
+                                    'group2' => function ($url, $model, $key) {
+                                        $buttons = [];
+                                        $buttons[] = Html::a('<i class="bx bx-envelope"></i>', Url::toRoute(['send-email', 'pre_id' => $model->pre_id]), [
+                                            'title' => 'Enviar por Correo',
+                                            'class' => 'btn btn-light',
+                                            'data-bs-toggle' => 'modal',
+                                            'data-bs-target' => '#action-modal',
+                                        ]);
+                                        $buttons[] = Html::a('<i class="bx bx-toggle-left"></i>', Url::toRoute(['change-status', 'pre_id' => $model->pre_id]), [
+                                            'title' => 'Cambiar Situación',
+                                            'class' => 'btn btn-light',
+                                            'data-bs-toggle' => 'modal',
+                                            'data-bs-target' => '#action-modal',
+                                        ]);
+                                        $buttons[] = Html::a('<i class="bx bx-trash"></i>', Url::toRoute(['delete', 'pre_id' => $model->pre_id]), [
+                                            'title' => 'Eliminar Presupuesto',
+                                            'class' => 'btn btn-light',
+                                            'data-confirm' => '¿Está seguro de que desea eliminar el presupuesto: "' . $model->pre_numero . '"?',
+                                            'data-method' => 'post',
+                                            'data-pjax' => '1',
+                                        ]);
+                                        return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
+                                    },
                                 ],
-                                 [
-                                    'attribute' => 'cli_id',
-                                    'label' => 'Nombre / Razón Social',
-                                    'value' => 'cli.cli_nombre',
-                                ],
-                                    [
-                                    'attribute' => 'pre_total',
-                                    'label' => 'Importe',
-                                    'format' => 'currency',
-                                ],
-                                // [
-                                //     'attribute' => 'pre_estado',
-                                //     'label' => 'Estado',
-                                // ],
-                                [
-                                    'attribute' => 'pre_fecha',
-                                    'label' => 'Fecha',
-                                    'format' => ['date', 'php:d-m-Y'],
-                                ],
-                                // [
-                                //     'attribute' => 'pre_situacion',
-                                //     'label' => 'Situación',
-                                //     'format' => 'raw',
-                                //     'value' => function ($model) {
-                                //         $date = $model->pre_fecha_situacion ? Yii::$app->formatter->asDate($model->pre_fecha_situacion, 'php:d-m-Y') : '';
-                                //         return $model->pre_situacion . '<br>' . $date;
-                                //     },
-                                // ],
-                                                                                                 
-                                                                    [
-                                                                        'class' => ActionColumn::class,
-                                                                        'header' => 'Acciones',
-                                                                        'template' => '{view} {update} {print} {send-email} {change-status} {delete}',
-                                                                        'buttons' => [
-                                                                            'view' => fn($url, $model) => Html::a('<i class="bx bx-id-card"></i>', $url, [
-                                                                                'title' => 'Ver Presupuesto: ' . $model->pre_numero,
-                                                                                'class' => 'btn btn-light',
-                                                                                'data-bs-toggle' => 'modal',
-                                                                                'data-bs-target' => '#action-modal'
-                                                                            ]),
-                                                                            'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
-                                                                                'title' => 'Editar Presupuesto: ' . $model->pre_numero,
-                                                                                'class' => 'btn btn-light',
-                                                                                'data-bs-toggle' => 'modal',
-                                                                                'data-bs-target' => '#action-modal'
-                                                                            ]),
-                                                                            'print' => fn($url, $model) => Html::a('<i class="bx bx-printer"></i>', ['presupuesto/print', 'pre_id' => $model->pre_id], [
-                                                                                'title' => 'Imprimir Presupuesto',
-                                                                                'class' => 'btn btn-light',
-                                                                                'target' => '_blank',
-                                                                                'data-pjax' => '0',
-                                                                            ]),
-                                                                            'send-email' => fn($url, $model) => Html::a('<i class="bx bx-envelope"></i>', ['presupuesto/send-email', 'pre_id' => $model->pre_id], [
-                                                                                'title' => 'Enviar por Correo',
-                                                                                'class' => 'btn btn-light',
-                                                                                'data-bs-toggle' => 'modal',
-                                                                                'data-bs-target' => '#action-modal',
-                                                                            ]),
-                                                                            'change-status' => fn($url, $model) => Html::a('<i class="bx bx-toggle-left"></i>', ['presupuesto/change-status', 'pre_id' => $model->pre_id], [
-                                                                                'title' => 'Cambiar Situación',
-                                                                                'class' => 'btn btn-light',
-                                                                                'data-bs-toggle' => 'modal',
-                                                                                'data-bs-target' => '#action-modal',
-                                                                            ]),
-                                                                            'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
-                                                                                'title' => 'Eliminar Presupuesto',
-                                                                                'class' => 'btn btn-light',
-                                                                                'data-confirm' => '¿Está seguro de que desea eliminar el presupuesto: "' . $model->pre_numero . '"?',
-                                                                                'data-method' => 'post',
-                                                                                'data-pjax' => '1',
-                                                                            ]),
-                                                                        ],
-                                                                        'urlCreator' => fn($action, Presupuesto $model, $key, $index, $column) =>
-                                                                        Url::toRoute([$action, 'pre_id' => $model->pre_id, 'view' => ($action === 'delete' ? null : 'modal')]),
-                                                                    ],
-                                                                ],
-                                                            ]); ?>                    </div>
+                                'urlCreator' => fn($action, Presupuesto $model, $key, $index, $column) =>
+                                Url::toRoute([$action, 'pre_id' => $model->pre_id, 'view' => ($action === 'delete' ? null : 'modal')])
+                            ],
+                        ],
+                    ]); ?>
                 </div>
             </div>
         </div>

@@ -8,9 +8,14 @@ use yii\helpers\Url;
 
 /** @var yii\web\View $this */
 /** @var app\models\Factura $model */
-/** @var yii\widgets\ActiveForm $form */
 /** @var array $socios */
 /** @var array $formasDePago */
+/** @var array $bancos */
+/** @var int|null $selectedBanco */
+/** @var array $detallesData */
+/** @var array $detalleRowErrors */
+/** @var array $estados */
+/** @var array $situaciones */
 
 $this->title = 'CREAR FACTURA';
 $this->params['breadcrumbs'][] = ['label' => 'Facturas', 'url' => ['index']];
@@ -22,14 +27,14 @@ $this->registerJsFile("https://code.jquery.com/ui/1.13.2/jquery-ui.js", ['depend
 
 // Select2 para selects buscables en los conceptos
 $this->registerCssFile("https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css", ['depends' => [\yii\web\JqueryAsset::class]]);
- $this->registerJsFile("https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js", ['depends' => [\yii\web\JqueryAsset::class]]);
+$this->registerJsFile("https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js", ['depends' => [\yii\web\JqueryAsset::class]]);
 
 // CSS para corregir el color del texto en Select2
-$this->registerCss("
-    .select2-container .select2-selection--single .select2-selection__rendered, .select2-results__option {
+$this->registerCss(
+    ".select2-container .select2-selection--single .select2-selection__rendered, .select2-results__option {
         color: #444;
-    }
-");
+    }"
+);
 
 // URLs para AJAX
 $urlListado = Url::to(['factura/listado-clientes']);
@@ -44,6 +49,8 @@ $conceptosJs = json_encode(array_map(function($c){
         'iva' => $c->iva ? floatval($c->iva->iva_porcentaje) : 0,
     ];
 }, $conceptos));
+
+$detallesDataJs = json_encode($detallesData ?? []);
 
 // Convertir heredoc en nowdoc
 $js = <<<'JS'
@@ -165,18 +172,18 @@ $(function(){
         data = data || {};
         var idx = rowIndex++;
         var $tr = $(
-            '<tr data-idx="'+idx+'">'+
-            '<td>'+
-                '<select name="DetalleFactura['+idx+'][cof_id]" class="form-control row-concepto">'+
-                    '<option value="">-</option>'+
-                '</select>'+
-            '</td>'+
-            '<td><input type="text" name="DetalleFactura['+idx+'][dtf_descripcion]" class="form-control row-descripcion" value="'+(data.descripcion||'')+'"></td>'+
-            '<td><input type="number" step="0.01" name="DetalleFactura['+idx+'][dtf_iva]" class="form-control row-iva" value="'+(data.iva||0)+'"></td>'+
-            '<td><input type="number" step="0.01" name="DetalleFactura['+idx+'][dtf_cantidad]" class="form-control row-cantidad" value="'+(data.cantidad||1)+'"></td>'+
-            '<td><input type="number" step="0.01" name="DetalleFactura['+idx+'][dtf_precio]" class="form-control row-precio" value="'+(data.precio||0)+'"></td>'+
-            '<td class="row-importe text-end">0.00</td>'+
-            '<td><button type="button" class="btn text-orange radius-30 btn-remove">Eliminar</button></td>'+
+            '<tr data-idx="'+idx+'">'+ 
+            '<td>'+ 
+                '<select name="DetalleFactura['+idx+'][cof_id]" class="form-control row-concepto">'+ 
+                    '<option value="">-</option>'+ 
+                '</select>'+ 
+            '</td>'+ 
+            '<td><input type="text" name="DetalleFactura['+idx+'][dtf_descripcion]" class="form-control row-descripcion" value="'+(data.dtf_descripcion||'')+'"></td>'+ 
+            '<td><input type="number" step="0.01" name="DetalleFactura['+idx+'][dtf_iva]" class="form-control row-iva" value="'+(data.dtf_iva||0)+'"></td>'+ 
+            '<td><input type="number" step="0.01" name="DetalleFactura['+idx+'][dtf_cantidad]" class="form-control row-cantidad" value="'+(data.dtf_cantidad||1)+'"></td>'+ 
+            '<td><input type="number" step="0.01" name="DetalleFactura['+idx+'][dtf_precio]" class="form-control row-precio" value="'+(data.dtf_precio||0)+'"></td>'+ 
+            '<td class="row-importe text-end">0.00</td>'+ 
+            '<td><button type="button" class="btn text-orange radius-30 btn-remove">Eliminar</button></td>'+ 
             '</tr>'
         );
 
@@ -238,8 +245,22 @@ $(function(){
         addConceptRow();
     });
 
-    // Inicializar con una fila vacía
-    addConceptRow();
+    // Pre-fill client data if model has cli_id
+    if ($('#factura-cli_id').val()) {
+        $('#factura-cli_id').trigger('change');
+    }
+
+    // Pre-fill concept rows if detallesData is available
+    var detallesData = __DETALLES_DATA_JS__;
+    if (detallesData.length > 0) {
+        $('#concepts-table tbody').empty(); // Clear the initial empty row
+        $.each(detallesData, function(index, detail) {
+            addConceptRow(detail);
+        });
+    } else {
+        // Initialize with one empty row if no details
+        addConceptRow();
+    }
 
     // Recalcular totales cuando cambian los gastos suplidos
     $('#factura-fac_gastos_suplidos').on('input', recalculateTotals);
@@ -249,6 +270,7 @@ JS;
 $js = str_replace('__URL_LISTADO__', $urlListado, $js);
 $js = str_replace('__URL_DATOS__', $urlDatos, $js);
 $js = str_replace('__CONCEPTOS_JS__', $conceptosJs, $js);
+$js = str_replace('__DETALLES_DATA_JS__', $detallesDataJs, $js);
 $this->registerJs($js);
 
 ?>
@@ -341,7 +363,7 @@ $this->registerJs($js);
                             <?= $form->field($model, 'fdp_id', [
                                 'template' => "<label>Forma de Pago *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
-                                $formasDePago,
+                                ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
                             ) ?>
                         </div>
@@ -349,7 +371,7 @@ $this->registerJs($js);
                             <?= $form->field($model, 'soc_id', [
                                 'template' => "<label>Socio *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
-                                $socios,
+                                ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
                             ) ?>
                         </div>
@@ -363,9 +385,9 @@ $this->registerJs($js);
                                 ],
                                 [
                                     'class' => 'mt-2',
-                                    'item' => function($index, $label, $name, $checked, $value) {
-                                        $checked = $value === Factura::FAC_LOGO_EMPRESA ? 'checked' : '';
-                                        return "
+                                    'item' => function($index, $label, $name, $checked, $value) use ($model) {
+                                        $checked = ($model->fac_logo === $value) ? 'checked' : '';
+                                        return " 
                                             <div class='form-check mb-2'>
                                                 <input class='form-check-input' type='radio' name='{$name}' value='{$value}' {$checked} required>
                                                 <label class='form-check-label'>{$label}</label>
@@ -378,7 +400,8 @@ $this->registerJs($js);
                         <div class="col-md-4 mb-3">
                             <?php $bancos = isset($bancos) ? $bancos : []; $selectedBanco = isset($selectedBanco) ? $selectedBanco : null; ?>
                             <label>Cuentas para transferencia</label>
-                            <?= Html::dropDownList('CuentasFactura[ban_id]', $selectedBanco, $bancos, ['prompt' => 'Seleccione cuenta', 'class' => 'form-control mb-3']) ?>
+                            <?= Html::dropDownList('CuentasFactura[ban_id]', $selectedBanco, $bancos, ['prompt' => 'Seleccione cuenta', 'class' => 'form-control mb-3'])
+                            ?>
                         </div>
                         <div class="col-md-4 mb-3">
                             <?= $form->field($model, 'fac_language', [
@@ -388,7 +411,7 @@ $this->registerJs($js);
                                     Factura::FAC_LANGUAGE_ES => 'Español',
                                     Factura::FAC_LANGUAGE_EN => 'English'
                                 ],
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'value' => Factura::FAC_LANGUAGE_ES]
+                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
                             ) ?>
                         </div>
                         <div class="col-md-4 mb-3">
@@ -399,14 +422,14 @@ $this->registerJs($js);
                                     Factura::FAC_MONEY_EUROS => 'Euro (€)',
                                     Factura::FAC_MONEY_US => 'Dólar (US$)'
                                 ],
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'value' => Factura::FAC_MONEY_EUROS]
+                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
                             ) ?>
                         </div>
                     </div>
 
-                    <?php // Estado (campo oculto) y otros campos que no se muestran ?>
+                    <?php // No se muestran 'fac_estado' ni 'fac_situacion' en la creación (se asignan por defecto en el controlador) ?>
                     <?= $form->field($model, 'fac_estado')->hiddenInput(['value' => Factura::FAC_ESTADO_SIN_PAGAR])->label(false) ?>
-
+                    <?= $form->field($model, 'fac_situacion')->hiddenInput(['value' => Factura::FAC_SITUACION_NO_RECLAMADA])->label(false) ?>
 
                     <div class="card-title d-flex align-items-center mt-3">
                         <h5 class="mb-0 text-white">AÑADIR CONCEPTOS</h5>
@@ -445,11 +468,11 @@ $this->registerJs($js);
 
                     <div class="row mb-3">
                         <div class="col-md-3">
-                            <?= $form->field($model, 'fac_subtotal')->textInput(['type' => 'number', 'step' => '0.01'])
+                            <?= $form->field($model, 'fac_subtotal')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])
                             ?>
                         </div>
                         <div class="col-md-3">
-                            <?= $form->field($model, 'fac_iva')->textInput(['type' => 'number', 'step' => '0.01'])
+                            <?= $form->field($model, 'fac_iva')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])
                             ?>
                         </div>
                         <div class="col-md-3">
@@ -457,7 +480,7 @@ $this->registerJs($js);
                             ?>
                         </div>
                         <div class="col-md-3">
-                            <?= $form->field($model, 'fac_total')->textInput(['type' => 'number', 'step' => '0.01'])
+                            <?= $form->field($model, 'fac_total')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])
                             ?>
                         </div>
                     </div>
@@ -480,7 +503,8 @@ $this->registerJs($js);
 
                     <div class="col-md-12">
 
-                                            <?= Html::submitButton('Guardar', ['class' => 'btn btn-success px-5 radius-30']) ?>
+                                            <?= Html::submitButton('Guardar', ['class' => 'btn btn-success px-5 radius-30'])
+                                            ?>
 
                                         </div>
 

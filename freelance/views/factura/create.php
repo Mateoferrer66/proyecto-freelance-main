@@ -363,7 +363,7 @@ $this->registerJs($js);
                             <?= $form->field($model, 'fdp_id', [
                                 'template' => "<label>Forma de Pago *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
-                                ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
+                                $formasDePago,
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
                             ) ?>
                         </div>
@@ -371,7 +371,7 @@ $this->registerJs($js);
                             <?= $form->field($model, 'soc_id', [
                                 'template' => "<label>Socio *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
-                                ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
+                                $socios,
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
                             ) ?>
                         </div>

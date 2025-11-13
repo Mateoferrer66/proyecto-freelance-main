@@ -37,7 +37,7 @@ $config = [
                 'scheme' => 'smtps',
                 'host' => 'smtp.gmail.com', // Replace with your SMTP host
                 'username' => 'freelancedevelop25@gmail.com', // Replace with your SMTP username
-                'password' => 'Fr33l1nc3', // Replace with your SMTP password
+                'password' => 'tmxi phob hmsu bdek',
                 'port' => 465, // Replace with your SMTP port (e.g., 587 for TLS, 465 for SSL)
                 'encryption' => 'ssl', // Use 'tls' or 'ssl'
             ],

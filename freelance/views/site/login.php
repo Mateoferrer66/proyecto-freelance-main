@@ -49,9 +49,11 @@ $(document).ready(function () {
                     'template' => "{label}\n{input}\n{error}",
                     'labelOptions' => ['class' => 'form-label visually-hidden'], // Hide labels as placeholders are used
                     'inputOptions' => ['class' => 'form-control'],
-                    'errorOptions' => ['class' => 'invalid-feedback'],
+                    'errorOptions' => ['class' => 'invalid-feedback d-block'],
                 ],
             ]); ?>
+
+            <?= $form->errorSummary($model, ['class' => 'alert alert-danger']) ?>
 
             <div class="col-12">
                 <?= $form->field($model, 'usu_login', [

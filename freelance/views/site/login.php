@@ -79,7 +79,7 @@ $(document).ready(function () {
                 <div class="col-12">
                     <?= $form->field($model, 'verifyCode', [
                         'inputOptions' => ['placeholder' => 'Código de Verificación', 'class' => 'form-control']
-                    ])->widget(\yii\captcha\Captcha::class, [
+                    ])->widget(Captcha::class, [
                         'template' => '<div class="row"><div class="col-lg-5">{image}</div><div class="col-lg-7">{input}</div></div>'
                     ])->label(false) ?>
                 </div>

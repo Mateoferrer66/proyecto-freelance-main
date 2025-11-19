@@ -153,6 +153,55 @@ $(document).on('beforeSubmit', '#modal-content form', function(e) {
 
     return false; // Previene el envío tradicional
 });
+
+// Event delegation for toggle approval button (works for index and modal)
+$(document).on('click', '.toggle-approval-btn', function(e) {
+    e.preventDefault();
+    var btn = $(this);
+    var url = btn.data('url');
+    var icon = btn.find('i');
+    
+    // Disable button to prevent multiple clicks
+    btn.prop('disabled', true);
+    
+    $.ajax({
+        url: url,
+        type: 'post',
+        dataType: 'json',
+        success: function(response) {
+            if (response.success) {
+                // Update icon and title based on new state
+                if (response.nuevo_estado == 1) {
+                    icon.removeClass('bx-check-shield').addClass('bx-shield-quarter'); 
+                    btn.attr('title', 'Desaprobar');
+                    // Reload pjax to update the grid if we are in index
+                    if ($('#presupuestos-pjax').length > 0) {
+                        $.pjax.reload({container: '#presupuestos-pjax', async: false});
+                    }
+                    // If inside modal, maybe show a success message or update button style
+                    if (btn.closest('.modal').length > 0) {
+                         btn.removeClass('btn-light').addClass('btn-success'); // Visual feedback
+                         setTimeout(function() { btn.removeClass('btn-success').addClass('btn-light'); }, 1000);
+                    }
+                } else {
+                    icon.removeClass('bx-shield-quarter').addClass('bx-check-shield');
+                    btn.attr('title', 'Aprobar');
+                    if ($('#presupuestos-pjax').length > 0) {
+                        $.pjax.reload({container: '#presupuestos-pjax', async: false});
+                    }
+                }
+            } else {
+                alert('Error: ' + response.message);
+            }
+        },
+        error: function() {
+            alert('Ocurrió un error al procesar la solicitud.');
+        },
+        complete: function() {
+            btn.prop('disabled', false);
+        }
+    });
+});
 JS);
 ?>
 <div class="page-content" style="margin-top: 3.4rem;">
@@ -286,6 +335,16 @@ JS);
                                 'label' => 'Fecha',
                                 'format' => ['date', 'php:d-m-Y'],
                             ],
+                            [
+                                'attribute' => 'pre_aprobado',
+                                'label' => 'Aprobado',
+                                'format' => 'raw',
+                                'value' => function ($model) {
+                                    return $model->pre_aprobado 
+                                        ? '<span class="badge bg-success">Aprobado</span>' 
+                                        : '<span class="badge bg-warning text-dark">No Aprobado</span>';
+                                },
+                            ],
                             // [
                             //     'attribute' => 'pre_situacion',
                             //     'label' => 'Situación',
@@ -336,6 +395,12 @@ JS);
                                             'class' => 'btn btn-light',
                                             'data-bs-toggle' => 'modal',
                                             'data-bs-target' => '#action-modal',
+                                        ]);
+                                        $buttons[] = Html::button('<i class="bx bx-check-shield"></i>', [
+                                            'class' => 'btn btn-light toggle-approval-btn',
+                                            'title' => $model->pre_aprobado ? 'Desaprobar' : 'Aprobar',
+                                            'data-url' => Url::to(['toggle-aprobacion', 'pre_id' => $model->pre_id]),
+                                            'onclick' => 'toggleApproval(this)',
                                         ]);
                                         $buttons[] = Html::a('<i class="bx bx-trash"></i>', Url::toRoute(['delete', 'pre_id' => $model->pre_id]), [
                                             'title' => 'Eliminar Presupuesto',

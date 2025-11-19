@@ -650,4 +650,16 @@ class PresupuestoController extends BaseController
             'model' => $model,
         ]);
     }
+
+    public function actionToggleAprobacion($pre_id)
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $model = $this->findModel($pre_id);
+        $model->pre_aprobado = $model->pre_aprobado ? 0 : 1;
+        if ($model->save(false, ['pre_aprobado'])) {
+            return ['success' => true, 'message' => 'Estado de aprobación actualizado.', 'nuevo_estado' => $model->pre_aprobado];
+        } else {
+            return ['success' => false, 'message' => 'Error al actualizar el estado.'];
+        }
+    }
 }

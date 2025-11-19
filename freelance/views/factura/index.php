@@ -149,6 +149,55 @@ $(document).on('beforeSubmit', '#modal-content form', function(e) {
 
     return false; // Previene el envío tradicional
 });
+
+// Event delegation for toggle approval button (works for index and modal)
+$(document).on('click', '.toggle-approval-btn', function(e) {
+    e.preventDefault();
+    var btn = $(this);
+    var url = btn.data('url');
+    var icon = btn.find('i');
+    
+    // Disable button to prevent multiple clicks
+    btn.prop('disabled', true);
+    
+    $.ajax({
+        url: url,
+        type: 'post',
+        dataType: 'json',
+        success: function(response) {
+            if (response.success) {
+                // Update icon and title based on new state
+                if (response.nuevo_estado == 1) {
+                    icon.removeClass('bx-check-shield').addClass('bx-shield-quarter'); 
+                    btn.attr('title', 'Desaprobar');
+                    // Reload pjax to update the grid if we are in index
+                    if ($('#facturas-pjax').length > 0) {
+                        $.pjax.reload({container: '#facturas-pjax', async: false});
+                    }
+                    // If inside modal, maybe show a success message or update button style
+                    if (btn.closest('.modal').length > 0) {
+                         btn.removeClass('btn-light').addClass('btn-success'); // Visual feedback
+                         setTimeout(function() { btn.removeClass('btn-success').addClass('btn-light'); }, 1000);
+                    }
+                } else {
+                    icon.removeClass('bx-shield-quarter').addClass('bx-check-shield');
+                    btn.attr('title', 'Aprobar');
+                    if ($('#facturas-pjax').length > 0) {
+                        $.pjax.reload({container: '#facturas-pjax', async: false});
+                    }
+                }
+            } else {
+                alert('Error: ' + response.message);
+            }
+        },
+        error: function() {
+            alert('Ocurrió un error al procesar la solicitud.');
+        },
+        complete: function() {
+            btn.prop('disabled', false);
+        }
+    });
+});
 JS);
 ?>
 <div class="page-content" style="margin-top: 3.4rem;">
@@ -307,6 +356,16 @@ JS);
                                     'label' => 'Estado',
                                 ],
                                 [
+                                    'attribute' => 'fac_aprobada',
+                                    'label' => 'Aprobacion',
+                                    'format' => 'raw',
+                                    'value' => function ($model) {
+                                        return $model->fac_aprobada 
+                                            ? '<span class="badge bg-success">Aprobada</span>' 
+                                            : '<span class="badge bg-warning text-dark">No Aprobada</span>';
+                                    },
+                                ],
+                                [
                                     'class' => ActionColumn::class,
                                     'header' => 'Acciones',
                                     'template' => '<div class="d-flex flex-column align-items-center gap-2">{group1}{group2}{group3}</div>',
@@ -353,6 +412,12 @@ JS);
                                                 'class' => 'btn btn-light',
                                                 'data-bs-toggle' => 'modal',
                                                 'data-bs-target' => '#action-modal',
+                                            ]);
+                                            $buttons[] = Html::button('<i class="bx bx-check-shield"></i>', [
+                                                'class' => 'btn btn-light toggle-approval-btn',
+                                                'title' => $model->fac_aprobada ? 'Desaprobar' : 'Aprobar',
+                                                'data-url' => Url::to(['toggle-aprobacion', 'fac_id' => $model->fac_id]),
+                                                'onclick' => 'toggleApproval(this)',
                                             ]);
                                             return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
                                         },

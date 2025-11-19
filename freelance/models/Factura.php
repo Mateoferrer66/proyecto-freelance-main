@@ -82,7 +82,7 @@ class Factura extends \yii\db\ActiveRecord
             [['fac_situacion'], 'default', 'value' => 'No Reclamada'],
             [['fac_eliminada'], 'default', 'value' => 0],
             [['fac_numero', 'fac_fecha', 'cli_id', 'soc_id', 'fdp_id', 'fac_estado'], 'required'],
-            [['fac_numero', 'cli_id', 'soc_id', 'fdp_id', 'fac_exportada', 'fac_eliminada'], 'integer'],
+            [['fac_numero', 'cli_id', 'soc_id', 'fdp_id', 'fac_exportada', 'fac_eliminada', 'fac_aprobada'], 'integer'],
             [['fac_logo', 'fac_language', 'fac_money', 'fac_estado', 'fac_situacion', 'fac_observaciones'], 'string'],
             [['fac_fecha', 'fac_fecha_situacion'], 'safe'],
             [['fac_subtotal', 'fac_iva', 'fac_gastos_suplidos', 'fac_total'], 'number'],
@@ -122,6 +122,7 @@ class Factura extends \yii\db\ActiveRecord
             'fac_observaciones' => 'Factura Observaciones',
             'fac_exportada' => 'Factura Exportada',
             'fac_eliminada' => 'Factura Eliminada',
+            'fac_aprobada' => 'Aprobacion',
         ];
     }
 
@@ -153,16 +154,6 @@ class Factura extends \yii\db\ActiveRecord
     public function getCuentasFacturas()
     {
         return $this->hasMany(CuentasFactura::class, ['fac_id' => 'fac_id']);
-    }
-
-    /**
-     * Gets query for [[DatosFacturas]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getDatosFacturas()
-    {
-        return $this->hasMany(DatosFactura::class, ['fac_id' => 'fac_id']);
     }
 
     /**

@@ -89,7 +89,7 @@ class Presupuesto extends \yii\db\ActiveRecord
             [['pre_logo', 'pre_language', 'pre_observaciones', 'pre_estado', 'pre_situacion'], 'string'],
             [['pre_fecha', 'pre_fecha_situacion'], 'safe'],
             [['pre_fecha_situacion'], 'date', 'format' => 'php:Y-m-d'],
-            [['cli_id', 'soc_id', 'fdp_id', 'pre_eliminado'], 'integer'],
+            [['cli_id', 'soc_id', 'fdp_id', 'pre_eliminado', 'pre_aprobado'], 'integer'],
             [['pre_subtotal', 'pre_iva', 'pre_gastos_suplidos', 'pre_total'], 'number'],
             [['pre_numero'], 'string', 'max' => 45],
             ['pre_logo', 'in', 'range' => array_keys(self::optsPreLogo())],
@@ -126,6 +126,7 @@ class Presupuesto extends \yii\db\ActiveRecord
             'pre_estado' => 'Estado',
             'pre_situacion' => 'Situación',
             'pre_fecha_situacion' => 'Fecha de Situación',
+            'pre_aprobado' => 'Aprobado',
         ];
     }
 

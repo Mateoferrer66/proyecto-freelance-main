@@ -513,9 +513,14 @@ $this->registerJs($js);
 
                     <hr>
 
-                    <div class="col-md-12">
-                        <?= Html::submitButton('Actualizar', ['class' => 'btn btn-success px-5 radius-30'])
-                        ?>
+                    <div class="col-md-12 d-flex gap-2">
+                        <?= Html::submitButton('Actualizar', ['class' => 'btn btn-success px-5 radius-30']) ?>
+                        
+                        <?= Html::button($model->pre_aprobado ? '<i class="bx bx-shield-quarter"></i> Desaprobar' : '<i class="bx bx-check-shield"></i> Aprobar', [
+                            'class' => 'btn btn-light px-5 radius-30 toggle-approval-btn',
+                            'title' => $model->pre_aprobado ? 'Desaprobar' : 'Aprobar',
+                            'data-url' => Url::to(['toggle-aprobacion', 'pre_id' => $model->pre_id]),
+                        ]) ?>
                     </div>
 
                     <?php ActiveForm::end(); ?>

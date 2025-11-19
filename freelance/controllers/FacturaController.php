@@ -718,4 +718,16 @@ class FacturaController extends BaseController
             'fac_id' => $fac_id,
         ]);
     }
+
+    public function actionToggleAprobacion($fac_id)
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $model = $this->findModel($fac_id);
+        $model->fac_aprobada = $model->fac_aprobada ? 0 : 1;
+        if ($model->save(false, ['fac_aprobada'])) {
+            return ['success' => true, 'message' => 'Estado de aprobación actualizado.', 'nuevo_estado' => $model->fac_aprobada];
+        } else {
+            return ['success' => false, 'message' => 'Error al actualizar el estado.'];
+        }
+    }
 }

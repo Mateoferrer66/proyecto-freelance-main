@@ -72,7 +72,7 @@ $(function(){
                     }
                 });
             },
-            minLength: 2,
+            minLength: 0,
             select: function(event, ui) {
                 // Cuando se selecciona un item
                 $("#presupuesto-cli_id").val(ui.item.value).trigger('change'); // Asigna el ID y dispara el change
@@ -88,6 +88,8 @@ $(function(){
 
                 return false; // Prevenir que el valor del ID se ponga en el input
             }
+        }).focus(function(){ 
+            $(this).autocomplete("search");
         });
     }
 

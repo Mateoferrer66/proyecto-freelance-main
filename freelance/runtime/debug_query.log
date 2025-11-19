@@ -39159,3 +39159,806 @@ array (
     'tag' => '6915314e5f079',
   ),
 )
+---- 2025-11-19T20:49:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-19T20:49:48+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=691e1f5cbc4272.49223204
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '691e1f5cbc4272.49223204',
+  ),
+)
+---- 2025-11-19T20:49:49+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e1f5c9ecda
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e1f5c9ecda',
+  ),
+)
+---- 2025-11-19T20:50:06+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-19T20:50:07+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=691e1f6ee16bf1.59881072
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '691e1f6ee16bf1.59881072',
+  ),
+)
+---- 2025-11-19T20:50:07+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e1f6ed04ad
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e1f6ed04ad',
+  ),
+)
+---- 2025-11-19T20:50:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-19T20:50:31+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=691e1f870fe074.84571165
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '691e1f870fe074.84571165',
+  ),
+)
+---- 2025-11-19T20:50:31+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e1f86eb3dd
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e1f86eb3dd',
+  ),
+)
+---- 2025-11-19T20:50:48+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-19T20:50:48+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=691e1f98606cd1.09734657
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '691e1f98606cd1.09734657',
+  ),
+)
+---- 2025-11-19T20:50:48+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e1f9850dbb
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e1f9850dbb',
+  ),
+)
+---- 2025-11-19T20:51:03+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-19T20:51:03+01:00 ----
+QUERY_STRING: r=usuario%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario/index',
+  ),
+)
+---- 2025-11-19T20:51:04+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e1fa7ee990
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e1fa7ee990',
+  ),
+)
+---- 2025-11-19T20:51:08+01:00 ----
+QUERY_STRING: r=usuario%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario/create',
+  ),
+)
+---- 2025-11-19T20:51:08+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e1fac87e36
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e1fac87e36',
+  ),
+)
+---- 2025-11-19T20:51:31+01:00 ----
+QUERY_STRING: r=usuario%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario/create',
+  ),
+)
+---- 2025-11-19T20:51:32+01:00 ----
+QUERY_STRING: r=usuario%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario/index',
+  ),
+)
+---- 2025-11-19T20:51:32+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e1fc49c36f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e1fc49c36f',
+  ),
+)
+---- 2025-11-19T20:51:51+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-11-19T20:51:51+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e1fd769548
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e1fd769548',
+  ),
+)
+---- 2025-11-19T20:51:55+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-19T20:51:55+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e1fdb418ca
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e1fdb418ca',
+  ),
+)
+---- 2025-11-19T20:51:59+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-11-19T20:51:59+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e1fdf591a1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e1fdf591a1',
+  ),
+)
+---- 2025-11-19T20:52:03+01:00 ----
+QUERY_STRING: r=factura%2Flistado-clientes&term=&type=doc
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/listado-clientes',
+    'term' => '',
+    'type' => 'doc',
+  ),
+)
+---- 2025-11-19T20:52:04+01:00 ----
+QUERY_STRING: r=factura%2Flistado-clientes&term=&type=name
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/listado-clientes',
+    'term' => '',
+    'type' => 'name',
+  ),
+)
+---- 2025-11-19T20:52:20+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-11-19T20:52:20+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e1ff44f2c2
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e1ff44f2c2',
+  ),
+)
+---- 2025-11-19T20:52:23+01:00 ----
+QUERY_STRING: r=cliente%2Fupdate&cli_id=2&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/update',
+    'cli_id' => '2',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T20:55:20+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-19T20:55:21+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e20a8c0508
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e20a8c0508',
+  ),
+)
+---- 2025-11-19T20:55:26+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-11-19T20:55:26+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e20ae2a1bb
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e20ae2a1bb',
+  ),
+)
+---- 2025-11-19T20:55:34+01:00 ----
+QUERY_STRING: r=factura%2Flistado-clientes&term=&type=doc
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/listado-clientes',
+    'term' => '',
+    'type' => 'doc',
+  ),
+)
+---- 2025-11-19T20:55:37+01:00 ----
+QUERY_STRING: r=factura%2Flistado-clientes&term=&type=name
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/listado-clientes',
+    'term' => '',
+    'type' => 'name',
+  ),
+)
+---- 2025-11-19T20:55:38+01:00 ----
+QUERY_STRING: r=factura%2Fdatos-cliente&id=2
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/datos-cliente',
+    'id' => '2',
+  ),
+)
+---- 2025-11-19T20:55:43+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-11-19T20:55:44+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e20c0172d7
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e20c0172d7',
+  ),
+)
+---- 2025-11-19T20:55:46+01:00 ----
+QUERY_STRING: r=cliente%2Fview&cli_id=2&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/view',
+    'cli_id' => '2',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T20:55:50+01:00 ----
+QUERY_STRING: r=cliente%2Fupdate&cli_id=2&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/update',
+    'cli_id' => '2',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T22:03:46+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-11-19T22:03:47+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e30b319474
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e30b319474',
+  ),
+)
+---- 2025-11-19T22:06:06+01:00 ----
+QUERY_STRING: r=cliente%2Fview&cli_id=2&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/view',
+    'cli_id' => '2',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T22:06:10+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-19T22:06:10+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e31421770b
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e31421770b',
+  ),
+)
+---- 2025-11-19T22:06:12+01:00 ----
+QUERY_STRING: r=factura%2Fview&fac_id=1&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/view',
+    'fac_id' => '1',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T22:06:17+01:00 ----
+QUERY_STRING: r=factura%2Fview&fac_id=1&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/view',
+    'fac_id' => '1',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T22:07:45+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-11-19T22:07:45+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e31a158eca
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e31a158eca',
+  ),
+)
+---- 2025-11-19T22:07:50+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-19T22:07:50+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e31a67abe4
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e31a67abe4',
+  ),
+)
+---- 2025-11-19T22:14:14+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-19T22:14:15+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e3326d4de2
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e3326d4de2',
+  ),
+)
+---- 2025-11-19T22:14:22+01:00 ----
+QUERY_STRING: r=factura%2Fupdate&fac_id=1&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/update',
+    'fac_id' => '1',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T22:14:22+01:00 ----
+QUERY_STRING: r=factura%2Fdatos-cliente&id=2
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/datos-cliente',
+    'id' => '2',
+  ),
+)
+---- 2025-11-19T22:14:52+01:00 ----
+QUERY_STRING: r=factura%2Fview&fac_id=1&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/view',
+    'fac_id' => '1',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T22:16:21+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-11-19T22:16:21+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e33a5245b2
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e33a5245b2',
+  ),
+)
+---- 2025-11-19T22:16:23+01:00 ----
+QUERY_STRING: r=socios
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'socios',
+  ),
+)
+---- 2025-11-19T22:16:24+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e33a7e023d
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e33a7e023d',
+  ),
+)
+---- 2025-11-19T22:16:25+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-11-19T22:16:25+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e33a9b1a8f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e33a9b1a8f',
+  ),
+)
+---- 2025-11-19T22:17:53+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-11-19T22:17:54+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e3401ebe97
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e3401ebe97',
+  ),
+)
+---- 2025-11-19T22:18:02+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-19T22:18:02+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e340a252c0
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e340a252c0',
+  ),
+)
+---- 2025-11-19T22:18:10+01:00 ----
+QUERY_STRING: r=factura%2Fview&fac_id=1&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/view',
+    'fac_id' => '1',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T22:18:12+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-11-19T22:18:13+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e3414f321b
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e3414f321b',
+  ),
+)
+---- 2025-11-19T22:18:15+01:00 ----
+QUERY_STRING: r=cliente%2Fupdate&cli_id=2&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/update',
+    'cli_id' => '2',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T22:44:47+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-19T22:44:47+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e3a4f715d3
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e3a4f715d3',
+  ),
+)
+---- 2025-11-19T22:46:05+01:00 ----
+QUERY_STRING: r=factura%2Fview&fac_id=1&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/view',
+    'fac_id' => '1',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T22:46:16+01:00 ----
+QUERY_STRING: r=factura%2Fview&fac_id=1&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/view',
+    'fac_id' => '1',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T22:46:19+01:00 ----
+QUERY_STRING: r=factura%2Fview&fac_id=1&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/view',
+    'fac_id' => '1',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T22:46:22+01:00 ----
+QUERY_STRING: r=factura%2Fupdate&fac_id=1&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/update',
+    'fac_id' => '1',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-19T23:03:02+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-19T23:03:03+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e3e96ce457
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e3e96ce457',
+  ),
+)
+---- 2025-11-19T23:03:04+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-11-19T23:03:05+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e3e98b933b
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e3e98b933b',
+  ),
+)

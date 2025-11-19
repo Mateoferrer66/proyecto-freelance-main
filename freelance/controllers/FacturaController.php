@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Mpdf\Mpdf;
+use app\models\Consecutivo;
 use app\models\Factura;
 use app\models\DetalleFactura;
 use app\models\CuentasFactura;
@@ -219,6 +220,17 @@ class FacturaController extends BaseController
             $model->loadDefaultValues();
             // Asegurar valor por defecto cuando se muestra el formulario
             $model->fac_estado = Factura::FAC_ESTADO_SIN_PAGAR;
+            
+            // Cargar consecutivo
+            $consecutivo = Consecutivo::findOne(['con_serie' => 'F']);
+            if ($consecutivo) {
+                $consecutivo->con_consecutivo++;
+                $model->fac_numero = $consecutivo->con_consecutivo;
+                $consecutivo->save();
+            }
+
+            // Cargar fecha actual
+            $model->fac_fecha = date('d/m/Y');
         }
 
         $socios = \app\models\Socio::find()->all();

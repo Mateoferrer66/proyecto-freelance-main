@@ -19796,3 +19796,1205 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1763592735.8786
     'REQUEST_TIME' => 1763592735
 ]
+2025-11-20 01:56:54 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:56:46 [::1][2][-][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'pao52Ex1jHvDOc49bxD786BZNjv4qPgjd-P0gGt80XLs3HiuJhf1MJBumHUaPbGS2CEFCI6FulAOq47WHDmwBg=='
+    'LoginForm' => [
+        'usu_login' => 'mateoferrer66@gmail.com'
+        'usu_password' => 'Pruebas1234$'
+        'verifyCode' => 'fdoaga'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    '_csrf' => '39c54867f5ab8381d37addaf00da0bdc7fce1e0629fc23431860ea6954882ab9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"IvAvjbyKSWVHu-Jaxx33v-BsyHzVwEat\";}'
+    'PHPSESSID' => 'lm4mhtgplntl93pdbqjpifsmjp'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57449'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '295'
+    'HTTP_CONTENT_LENGTH' => '295'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; _csrf=39c54867f5ab8381d37addaf00da0bdc7fce1e0629fc23431860ea6954882ab9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22IvAvjbyKSWVHu-Jaxx33v-BsyHzVwEat%22%3B%7D; PHPSESSID=lm4mhtgplntl93pdbqjpifsmjp'
+    'REQUEST_TIME_FLOAT' => 1763600206.268
+    'REQUEST_TIME' => 1763600206
+]
+2025-11-20 01:56:58 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:56:54 [::1][2][-][info][application] $_GET = [
+    'r' => 'usuario/index'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57462'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=usuario%2Findex'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=usuario%2Findex'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600214.4104
+    'REQUEST_TIME' => 1763600214
+]
+2025-11-20 01:57:05 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:05 [::1][2][-][info][application] $_GET = [
+    'r' => 'cliente'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57515'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=cliente'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=cliente'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=usuario%2Findex'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600225.2515
+    'REQUEST_TIME' => 1763600225
+]
+2025-11-20 01:57:08 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:08 [::1][2][-][info][application] $_GET = [
+    'r' => 'cliente/update'
+    'cli_id' => '2'
+    'view' => 'modal'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57554'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=cliente%2Fupdate&cli_id=2&view=modal'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=cliente%2Fupdate&cli_id=2&view=modal'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_X_CSRF_TOKEN' => 'K8wHv4b5ZNr5bW6UqvP2faEBetbzQ5WcJyCnpKzTG9FpumngtMwnr5oJC_LoxawnzGgvpJoOpe9IUs7zmeJosw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=cliente'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600228.3098
+    'REQUEST_TIME' => 1763600228
+]
+2025-11-20 01:57:15 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:14 [::1][2][-][info][application] $_GET = [
+    'r' => 'factura'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57560'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=cliente'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600234.9804
+    'REQUEST_TIME' => 1763600234
+]
+2025-11-20 01:57:19 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:19 [::1][2][-][info][application] $_GET = [
+    'r' => 'presupuesto'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57600'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600239.5072
+    'REQUEST_TIME' => 1763600239
+]
+2025-11-20 01:57:24 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:24 [::1][2][-][info][application] $_GET = [
+    'r' => 'presupuesto/toggle-aprobacion'
+    'pre_id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57640'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto%2Ftoggle-aprobacion&pre_id=1'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto%2Ftoggle-aprobacion&pre_id=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_CONTENT_LENGTH' => '0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_X_CSRF_TOKEN' => '6hPgzCAos3YIonITJXdcMLVBmL93SPDz9XwYwzaI2feoZY6TEh3wA2vGF3VnQQZq2CjNzR4FwICaDnGUA7mqlQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=presupuesto'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600244.5685
+    'REQUEST_TIME' => 1763600244
+]
+2025-11-20 01:57:25 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:24 [::1][2][-][info][application] $_GET = [
+    'r' => 'presupuesto'
+    '_pjax' => '#presupuestos-pjax'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57642'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=presupuesto&_pjax=%23presupuestos-pjax'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=presupuesto&_pjax=%23presupuestos-pjax'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_PJAX_CONTAINER' => '#presupuestos-pjax'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_CSRF_TOKEN' => '6hPgzCAos3YIonITJXdcMLVBmL93SPDz9XwYwzaI2feoZY6TEh3wA2vGF3VnQQZq2CjNzR4FwICaDnGUA7mqlQ=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=presupuesto'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600244.8691
+    'REQUEST_TIME' => 1763600244
+]
+2025-11-20 01:57:27 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:27 [::1][2][-][info][application] $_GET = [
+    'r' => 'factura'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57646'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=presupuesto'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600247.2143
+    'REQUEST_TIME' => 1763600247
+]
+2025-11-20 01:57:30 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:30 [::1][2][-][info][application] $_GET = [
+    'r' => 'factura/toggle-aprobacion'
+    'fac_id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57690'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura%2Ftoggle-aprobacion&fac_id=1'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura%2Ftoggle-aprobacion&fac_id=1'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_CONTENT_LENGTH' => '0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_X_CSRF_TOKEN' => 'kny58a7ew9jz2UDsHlQo1U0kCqAy_7OarjtmVE8IDrfQCteunOuArZC9JYpcYnKPIE1f0luyg-nBSQ8Dejl91Q=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600250.7581
+    'REQUEST_TIME' => 1763600250
+]
+2025-11-20 01:57:31 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:31 [::1][2][-][info][application] $_GET = [
+    'r' => 'factura'
+    '_pjax' => '#facturas-pjax'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57692'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura&_pjax=%23facturas-pjax'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura&_pjax=%23facturas-pjax'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_PJAX_CONTAINER' => '#facturas-pjax'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_CSRF_TOKEN' => 'kny58a7ew9jz2UDsHlQo1U0kCqAy_7OarjtmVE8IDrfQCteunOuArZC9JYpcYnKPIE1f0luyg-nBSQ8Dejl91Q=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600251.0084
+    'REQUEST_TIME' => 1763600251
+]
+2025-11-20 01:57:33 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:33 [::1][2][-][info][application] $_GET = [
+    'r' => 'factura/toggle-aprobacion'
+    'fac_id' => '2'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57696'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura%2Ftoggle-aprobacion&fac_id=2'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura%2Ftoggle-aprobacion&fac_id=2'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '0'
+    'HTTP_CONTENT_LENGTH' => '0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_X_CSRF_TOKEN' => 'kny58a7ew9jz2UDsHlQo1U0kCqAy_7OarjtmVE8IDrfQCteunOuArZC9JYpcYnKPIE1f0luyg-nBSQ8Dejl91Q=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600253.3989
+    'REQUEST_TIME' => 1763600253
+]
+2025-11-20 01:57:33 [::1][2][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:33 [::1][2][-][info][application] $_GET = [
+    'r' => 'factura'
+    '_pjax' => '#facturas-pjax'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'puhnzan'
+    '__captcha/site/captchacount' => 1
+    '__id' => 2
+    '__authKey' => null
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57698'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=factura&_pjax=%23facturas-pjax'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=factura&_pjax=%23facturas-pjax'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_X_PJAX_CONTAINER' => '#facturas-pjax'
+    'HTTP_X_PJAX' => 'true'
+    'HTTP_X_CSRF_TOKEN' => 'kny58a7ew9jz2UDsHlQo1U0kCqAy_7OarjtmVE8IDrfQCteunOuArZC9JYpcYnKPIE1f0luyg-nBSQ8Dejl91Q=='
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600253.5826
+    'REQUEST_TIME' => 1763600253
+]
+2025-11-20 01:57:39 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:38 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/logout'
+]
+
+$_POST = [
+    '_csrf' => 'kny58a7ew9jz2UDsHlQo1U0kCqAy_7OarjtmVE8IDrfQCteunOuArZC9JYpcYnKPIE1f0luyg-nBSQ8Dejl91Q=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    'PHPSESSID' => 'lfg1lda6khlj74f8va40ik883o'
+    '_identity' => '6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+]
+
+$_SESSION = []
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57722'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Flogout'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Flogout'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '98'
+    'HTTP_CONTENT_LENGTH' => '98'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; PHPSESSID=lfg1lda6khlj74f8va40ik883o; _identity=6f43674caa2c38609a7d3b52cfea32e658837bf14edd2493401ad84d178f946da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1763600258.9181
+    'REQUEST_TIME' => 1763600258
+]
+2025-11-20 01:57:39 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:39 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+    'PHPSESSID' => '549h9ht7pfdokkpdosprparg4c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'qegihu'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57724'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php?r=factura'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D; PHPSESSID=549h9ht7pfdokkpdosprparg4c'
+    'REQUEST_TIME_FLOAT' => 1763600259.0895
+    'REQUEST_TIME' => 1763600259
+]
+2025-11-20 01:57:40 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 22265 bytes' 
+
+in C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php:152
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\Users\\mateo\\...', 152)
+#1 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(152): unserialize('\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...')
+#2 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\Users\\mateo\\...', Array)
+#3 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2-debug\src\LogTarget.php(183): yii\debug\LogTarget->export()
+#4 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Dispatcher.php(194): yii\debug\LogTarget->collect(Array, true)
+#5 C:\Users\mateo\Downloads\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\log\Logger.php(225): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2025-11-20 01:57:39 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/captcha'
+    'v' => '691e67836df230.17723231'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'pma_lang' => 'es'
+    'phpMyAdmin' => '9dd842b42f235c320581847bf9653336'
+    'pmaUser-1' => 'Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr+yZgMcgKMI+Niw6eQpHoI51ZOeuCE='
+    'pmaAuth-1' => 'GbG3nq+ehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM/Ok0Gf7iAC9V4xXc/MSRzDFR+ZZyTvrIaU='
+    '_csrf' => '071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Bvn_25CucdefB6ZZmiUriM0soriW51sb\";}'
+    'PHPSESSID' => '549h9ht7pfdokkpdosprparg4c'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'qegihu'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57739'
+    'SERVER_SOFTWARE' => 'PHP 8.2.12 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/index.php?r=site%2Fcaptcha&v=691e67836df230.17723231'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\mateo\\Downloads\\proyecto-freelance-main\\proyecto-freelance-main\\freelance\\web\\index.php'
+    'PHP_SELF' => '/index.php'
+    'QUERY_STRING' => 'r=site%2Fcaptcha&v=691e67836df230.17723231'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost:8080/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_COOKIE' => 'pma_lang=es; phpMyAdmin=9dd842b42f235c320581847bf9653336; pmaUser-1=Y5ZWGVMQVgVR5V6JpiJrszhf43WxHr%2ByZgMcgKMI%2BNiw6eQpHoI51ZOeuCE%3D; pmaAuth-1=GbG3nq%2BehRk2Ws1fqLfZvGUkimwiXwpFY9Afdkk7uTbUM%2FOk0Gf7iAC9V4xXc%2FMSRzDFR%2BZZyTvrIaU%3D; _csrf=071f235397f5b635c6d97967fae078cafc1ba3fbcd3d76762dff92c403d954c0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Bvn_25CucdefB6ZZmiUriM0soriW51sb%22%3B%7D; PHPSESSID=549h9ht7pfdokkpdosprparg4c'
+    'REQUEST_TIME_FLOAT' => 1763600259.7266
+    'REQUEST_TIME' => 1763600259
+]

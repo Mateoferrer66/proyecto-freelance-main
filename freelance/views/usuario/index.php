@@ -178,13 +178,33 @@ JS);
                                 <?= Html::a('PDF', ['usuario/export-pdf'], [
                                     'target' => '_blank',
                                     'class' => 'btn btn-light buttons-excel buttons-html5',
+                                    'data-pjax' => '0',
+                                ]) ?>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                            <div class="dataTables_filter">
+                                <?php $form = ActiveForm::begin([
+                                    'action' => ['index'],
+                                    'method' => 'get',
+                                    'options' => [
+                                        'class' => 'search-bar mb-3',
+                                        'data-pjax' => 1,
+                                        'id' => 'auto-search-form'
+                                    ],
+                                ]); ?>
+
+                                <?= $form->field($searchModel, 'usu_nombre', ['template' => '{input}'])
+                                    ->textInput([
+                                        'placeholder' => 'Buscar por nombre de usuario...',
+                                        'class' => 'form-control form-control-sm',
+                                        'id' => 'usuario-search-input',
                                         'autocomplete' => 'off'
                                     ]) ?>
                                 <?php ActiveForm::end(); ?>
                             </div>
                         </div>
-
-
 
                         <div class="table-responsive">
                         <?= GridView::widget([

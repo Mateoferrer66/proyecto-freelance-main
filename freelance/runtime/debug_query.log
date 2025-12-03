@@ -44555,3 +44555,153 @@ array (
     'tag' => '69305e8696605',
   ),
 )
+---- 2025-12-03T22:20:25+01:00 ----
+QUERY_STRING: r=consecutivo
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'consecutivo',
+  ),
+)
+---- 2025-12-03T22:20:35+01:00 ----
+QUERY_STRING: r=consecutivo
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'consecutivo',
+  ),
+)
+---- 2025-12-03T22:23:03+01:00 ----
+QUERY_STRING: r=consecutivo
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'consecutivo',
+  ),
+)
+---- 2025-12-03T22:25:09+01:00 ----
+QUERY_STRING: r=consecutivo
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'consecutivo',
+  ),
+)
+---- 2025-12-03T22:25:11+01:00 ----
+QUERY_STRING: r=site%2Flogin
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/login',
+  ),
+)
+---- 2025-12-03T22:25:17+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=6930aab94833f1.11113433
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '6930aab94833f1.11113433',
+  ),
+)
+---- 2025-12-03T22:25:17+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930aab730f0c
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930aab730f0c',
+  ),
+)
+---- 2025-12-03T22:25:38+01:00 ----
+QUERY_STRING: r=site%2Flogin
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/login',
+  ),
+)
+---- 2025-12-03T22:25:39+01:00 ----
+QUERY_STRING: r=usuario%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario/index',
+  ),
+)
+---- 2025-12-03T22:25:40+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930aad371f6a
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930aad371f6a',
+  ),
+)
+---- 2025-12-03T22:26:14+01:00 ----
+QUERY_STRING: r=usuario%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario/index',
+  ),
+)
+---- 2025-12-03T22:26:14+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930aaf6925ae
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930aaf6925ae',
+  ),
+)
+---- 2025-12-03T22:32:10+01:00 ----
+QUERY_STRING: r=usuario%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario/index',
+  ),
+)
+---- 2025-12-03T22:32:12+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930ac5a39b04
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930ac5a39b04',
+  ),
+)
+---- 2025-12-03T22:32:15+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T22:32:16+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930ac5f828b5
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930ac5f828b5',
+  ),
+)

@@ -140,7 +140,7 @@ $(document).on('beforeSubmit', '#modal-content form', function(e) {
 });
 JS);
 ?>
-<div class="page-content" style="margin-top: 3.4rem;">
+<div class="page-content">
 
     <div class="col d-flex justify-content-between align-items-start">
         <h6 class="mb-0 text-uppercase">Clientes <dl><?= $dataProvider->getTotalCount() ?></dl>
@@ -218,6 +218,7 @@ JS);
 
 
 
+                        <div class="table-responsive">
                         <?= GridView::widget([
                             'id' => 'clientes-grid-view',
                             'dataProvider' => $dataProvider,
@@ -307,6 +308,7 @@ JS);
                                 ],
                             ],
                         ]); ?>
+                        </div>
                     </div>
                 </div>
             </div>

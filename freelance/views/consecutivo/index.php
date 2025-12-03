@@ -76,11 +76,11 @@ JS
                         <div id="respuestaForm">
                             <?php $url = Url::to(['consecutivo/set-consecutivo']); ?>
                             <div class="row mb-3">
-                                <div class="col-md-5">
+                                <div class="col-12 col-md-5">
                                     <label for="facturas">Consecutivo de Facturas</label>
                                     <input type="text" id="facturas" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-12 col-md-4">
                                     <label></label>
                                     <button data-url="<?= $url ?>" class="btn btn-light">
                                         <i class="bx bx-plus"></i> Guardar
@@ -89,11 +89,11 @@ JS
                                 <hr>
                             </div>
                             <div class="row mb-3">
-                                <div class="col-md-5">
+                                <div class="col-12 col-md-5">
                                     <label for="liquidacion">Consecutivo de Liquidación</label>
                                     <input type="text" id="liquidacion" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-12 col-md-4">
                                     <label></label>
                                     <button data-url="<?= $url ?>" class="btn btn-light">
                                         <i class="bx bx-plus"></i> Guardar
@@ -102,11 +102,11 @@ JS
                                 <hr>
                             </div>
                             <div class="row mb-3">
-                                <div class="col-md-5">
+                                <div class="col-12 col-md-5">
                                     <label for="clientes">Consecutivo de Clientes</label>
                                     <input type="text" id="clientes" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-12 col-md-4">
                                     <label></label>
                                     <button data-url="<?= $url ?>" class="btn btn-light">
                                         <i class="bx bx-plus"></i> Guardar
@@ -116,11 +116,11 @@ JS
                             </div>
 
                             <div class="row mb-3">
-                                <div class="col-md-5">
+                                <div class="col-12 col-md-5">
                                     <label for="socios">Consecutivo de Socios</label>
                                     <input type="text" id="socios" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-12 col-md-4">
                                     <label></label>
                                     <button data-url="<?= $url ?>" class="btn btn-light">
                                         <i class="bx bx-plus"></i> Guardar
@@ -129,11 +129,11 @@ JS
                                 <hr>
                             </div>
                             <div class="row mb-3">
-                                <div class="col-md-5">
+                                <div class="col-12 col-md-5">
                                     <label for="presupuestos">Consecutivo de Presupuestos</label>
                                     <input type="text" id="presupuestos" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-12 col-md-4">
                                     <label></label>
                                     <button data-url="<?= $url ?>" class="btn btn-light">
                                         <i class="bx bx-plus"></i> Guardar
@@ -142,11 +142,11 @@ JS
                                 <hr>
                             </div>
                             <div class="row mb-3">
-                                <div class="col-md-5">
+                                <div class="col-12 col-md-5">
                                     <label for="liquidaciones">Consecutivo de Liquidaciones Provisionales</label>
                                     <input type="text" id="liquidaciones" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-12 col-md-4">
                                     <label></label>
                                     <button data-url="<?= $url ?>" class="btn btn-light">
                                         <i class="bx bx-plus"></i> Guardar

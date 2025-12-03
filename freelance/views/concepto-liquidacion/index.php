@@ -173,6 +173,7 @@ JS);
 
 
 
+                    <div class="table-responsive">
                     <?= GridView::widget([
                         'dataProvider' => $dataProvider,
                         'summary' => false,
@@ -212,6 +213,7 @@ JS);
                             ],
                         ],
                     ]); ?>
+                    </div>
                 </div>
             </div>
         </div>

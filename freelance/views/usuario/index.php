@@ -140,7 +140,7 @@ $(document).on('beforeSubmit', '#modal-content form', function(e) {
 });
 JS);
 ?>
-<div class="page-content" style="margin-top: 3.4rem;">
+<div class="page-content">
 
     <div class="col d-flex justify-content-between align-items-start">
         <h6 class="mb-0 text-uppercase">Usuarios <dl><?= $dataProvider->getTotalCount() ?></dl>
@@ -178,33 +178,6 @@ JS);
                                 <?= Html::a('PDF', ['usuario/export-pdf'], [
                                     'target' => '_blank',
                                     'class' => 'btn btn-light buttons-excel buttons-html5',
-                                    'data-pjax' => '0',
-                                ]) ?>
-                                <?= Html::a('Print', ['usuario/print'], [
-                                    'target' => '_blank',
-                                    'class' => 'btn btn-light buttons-excel buttons-html5',
-                                    'data-pjax' => '0',
-                                ]) ?>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12 col-md-6">
-                            <div class="dataTables_filter">
-                                <?php $form = ActiveForm::begin([
-                                    'action' => ['index'],
-                                    'method' => 'get',
-                                    'options' => [
-                                        'class' => 'search-bar mb-3',
-                                        'data-pjax' => 1,
-                                        'id' => 'auto-search-form'
-                                    ],
-                                ]); ?>
-
-                                <?= $form->field($searchModel, 'usu_nombre', ['template' => '{input}'])
-                                    ->textInput([
-                                        'placeholder' => 'Buscar por nombre de usuario...',
-                                        'class' => 'form-control form-control-sm',
-                                        'id' => 'usuario-search-input',
                                         'autocomplete' => 'off'
                                     ]) ?>
                                 <?php ActiveForm::end(); ?>
@@ -213,6 +186,7 @@ JS);
 
 
 
+                        <div class="table-responsive">
                         <?= GridView::widget([
                             'id' => 'usuarios-grid-view',
                             'dataProvider' => $dataProvider,
@@ -303,6 +277,7 @@ JS);
                                 ],
                             ],
                         ]); ?>
+                        </div>
                     </div>
                 </div>
             </div>

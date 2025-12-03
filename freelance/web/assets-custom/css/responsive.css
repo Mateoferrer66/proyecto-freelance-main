@@ -1,4 +1,59 @@
 /* Responsive adjustments for tables */
+.page-content {
+    margin-top: 3.4rem;
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        display: block !important;
+    }
+
+    .page-content {
+        margin-top: 0 !important;
+        padding: 15px !important;
+    }
+
+    .page-wrapper {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        padding: 0 !important;
+        min-height: auto !important;
+        margin-top: 0 !important;
+    }
+
+    .sidebar-wrapper {
+        left: -250px;
+        box-shadow: none !important;
+        z-index: 12;
+    }
+
+    .wrapper.toggled .sidebar-wrapper {
+        left: 0;
+        box-shadow: 0 .3rem .8rem rgba(0, 0, 0, .12) !important;
+    }
+
+    .topbar {
+        left: 0 !important;
+        width: 100% !important;
+        position: relative !important;
+        margin-top: 0 !important;
+        top: 0 !important;
+    }
+
+    .footer {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .minimenu {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        height: auto !important;
+    }
+}
+
 .table-responsive {
     display: block;
     width: 100%;
@@ -13,22 +68,44 @@ img {
 }
 
 /* General container adjustments for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .page-content {
         padding: 15px;
     }
+}
 
-    .col, .col-md-6, .col-xl-12 {
+@media (max-width: 768px) {
+    .page-content {
+        padding: 10px;
+    }
+
+    .col,
+    .col-md-6,
+    .col-xl-12 {
         padding-left: 10px;
         padding-right: 10px;
     }
 
     .dt-buttons.btn-group {
         margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .dt-buttons.btn-group .btn {
+        flex: 1;
+        margin-bottom: 5px;
     }
 
     .dataTables_filter {
         margin-bottom: 10px;
+        display: none;
+        /* Often takes too much space on mobile */
+    }
+
+    /* Stack form fields on mobile */
+    .form-group {
+        margin-bottom: 1rem;
     }
 }
 
@@ -39,16 +116,23 @@ img {
         align-items: stretch !important;
     }
 
-    .col.d-flex.justify-content-between.align-items-start > div {
+    .col.d-flex.justify-content-between.align-items-start>div {
         margin-top: 10px;
         width: 100%;
     }
 
-    .col.d-flex.justify-content-between.align-items-start > div .btn {
+    .col.d-flex.justify-content-between.align-items-start>div .btn {
         width: 100%;
+        display: block;
+        margin-bottom: 5px;
     }
 
     .search-bar {
         width: 100%;
+    }
+
+    /* Modal adjustments */
+    .modal-dialog {
+        margin: 10px;
     }
 }

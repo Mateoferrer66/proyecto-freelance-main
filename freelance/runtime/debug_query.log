@@ -41950,3 +41950,2608 @@ array (
     'tag' => '691e678329e87',
   ),
 )
+---- 2025-11-20T02:42:36+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-20T02:42:42+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=691e721180f982.27179437
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '691e721180f982.27179437',
+  ),
+)
+---- 2025-11-20T02:42:44+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e720da0956
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e720da0956',
+  ),
+)
+---- 2025-11-20T02:42:56+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-11-20T02:42:59+01:00 ----
+QUERY_STRING: r=usuario%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario/index',
+  ),
+)
+---- 2025-11-20T02:43:02+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e722405ac2
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e722405ac2',
+  ),
+)
+---- 2025-11-20T02:43:07+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-11-20T02:43:08+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=691e722bb8189
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '691e722bb8189',
+  ),
+)
+---- 2025-11-20T02:43:21+01:00 ----
+QUERY_STRING: r=factura%2Ftoggle-aprobacion&fac_id=1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/toggle-aprobacion',
+    'fac_id' => '1',
+  ),
+)
+---- 2025-11-20T02:43:21+01:00 ----
+QUERY_STRING: r=factura&_pjax=%23facturas-pjax
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+    '_pjax' => '#facturas-pjax',
+  ),
+)
+---- 2025-11-20T02:43:26+01:00 ----
+QUERY_STRING: r=factura%2Fupdate&fac_id=1&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/update',
+    'fac_id' => '1',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-20T02:43:29+01:00 ----
+QUERY_STRING: r=factura%2Ftoggle-aprobacion&fac_id=1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/toggle-aprobacion',
+    'fac_id' => '1',
+  ),
+)
+---- 2025-11-20T02:43:29+01:00 ----
+QUERY_STRING: r=factura&_pjax=%23facturas-pjax
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+    '_pjax' => '#facturas-pjax',
+  ),
+)
+---- 2025-11-20T02:43:29+01:00 ----
+QUERY_STRING: r=factura%2Ftoggle-aprobacion&fac_id=1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/toggle-aprobacion',
+    'fac_id' => '1',
+  ),
+)
+---- 2025-11-20T02:43:29+01:00 ----
+QUERY_STRING: r=factura&_pjax=%23facturas-pjax
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+    '_pjax' => '#facturas-pjax',
+  ),
+)
+---- 2025-11-20T02:43:35+01:00 ----
+QUERY_STRING: r=factura%2Fprint&fac_id=1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/print',
+    'fac_id' => '1',
+  ),
+)
+---- 2025-11-20T02:43:40+01:00 ----
+QUERY_STRING: r=factura%2Ftoggle-aprobacion&fac_id=1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/toggle-aprobacion',
+    'fac_id' => '1',
+  ),
+)
+---- 2025-11-20T02:43:40+01:00 ----
+QUERY_STRING: r=factura&_pjax=%23facturas-pjax
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+    '_pjax' => '#facturas-pjax',
+  ),
+)
+---- 2025-11-20T02:43:42+01:00 ----
+QUERY_STRING: r=factura%2Ftoggle-aprobacion&fac_id=1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/toggle-aprobacion',
+    'fac_id' => '1',
+  ),
+)
+---- 2025-11-20T02:43:42+01:00 ----
+QUERY_STRING: r=factura&_pjax=%23facturas-pjax
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+    '_pjax' => '#facturas-pjax',
+  ),
+)
+---- 2025-11-20T02:43:45+01:00 ----
+QUERY_STRING: r=factura%2Fupdate&fac_id=1&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/update',
+    'fac_id' => '1',
+    'view' => 'modal',
+  ),
+)
+---- 2025-11-20T02:43:45+01:00 ----
+QUERY_STRING: r=factura%2Fdatos-cliente&id=3
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/datos-cliente',
+    'id' => '3',
+  ),
+)
+---- 2025-11-20T02:43:47+01:00 ----
+QUERY_STRING: r=factura%2Ftoggle-aprobacion&fac_id=1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/toggle-aprobacion',
+    'fac_id' => '1',
+  ),
+)
+---- 2025-11-20T02:43:47+01:00 ----
+QUERY_STRING: r=factura&_pjax=%23facturas-pjax
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+    '_pjax' => '#facturas-pjax',
+  ),
+)
+---- 2025-11-20T02:43:53+01:00 ----
+QUERY_STRING: r=factura%2Ftoggle-aprobacion&fac_id=1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/toggle-aprobacion',
+    'fac_id' => '1',
+  ),
+)
+---- 2025-11-20T02:43:53+01:00 ----
+QUERY_STRING: r=factura&_pjax=%23facturas-pjax
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+    '_pjax' => '#facturas-pjax',
+  ),
+)
+---- 2025-11-20T02:43:55+01:00 ----
+QUERY_STRING: r=factura%2Ftoggle-aprobacion&fac_id=2
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/toggle-aprobacion',
+    'fac_id' => '2',
+  ),
+)
+---- 2025-11-20T02:43:56+01:00 ----
+QUERY_STRING: r=factura&_pjax=%23facturas-pjax
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+    '_pjax' => '#facturas-pjax',
+  ),
+)
+---- 2025-12-03T13:06:41+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:06:45+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=693027d43100a9.70742384
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '693027d43100a9.70742384',
+  ),
+)
+---- 2025-12-03T13:06:45+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693027d21ebdd
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693027d21ebdd',
+  ),
+)
+---- 2025-12-03T13:07:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:07:23+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693027f619636
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693027f619636',
+  ),
+)
+---- 2025-12-03T13:07:59+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:08:04+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930281fbdc26
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930281fbdc26',
+  ),
+)
+---- 2025-12-03T13:08:10+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:08:14+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930282a5d4a5
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930282a5d4a5',
+  ),
+)
+---- 2025-12-03T13:08:21+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:08:25+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930283538d96
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930283538d96',
+  ),
+)
+---- 2025-12-03T13:09:05+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:09:05+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=693028618625a7.47608135
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '693028618625a7.47608135',
+  ),
+)
+---- 2025-12-03T13:09:05+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302861799b9
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302861799b9',
+  ),
+)
+---- 2025-12-03T13:09:27+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:09:31+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930287723a25
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930287723a25',
+  ),
+)
+---- 2025-12-03T13:09:45+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:09:45+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=693028892e7bf4.97970551
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '693028892e7bf4.97970551',
+  ),
+)
+---- 2025-12-03T13:09:45+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302889260bc
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302889260bc',
+  ),
+)
+---- 2025-12-03T13:10:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:10:44+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=693028c4712db7.10007044
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '693028c4712db7.10007044',
+  ),
+)
+---- 2025-12-03T13:10:44+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693028c469c70
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693028c469c70',
+  ),
+)
+---- 2025-12-03T13:11:08+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:11:13+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693028dcc8f6e
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693028dcc8f6e',
+  ),
+)
+---- 2025-12-03T13:14:49+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:14:53+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693029b93ea55
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693029b93ea55',
+  ),
+)
+---- 2025-12-03T13:17:02+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:17:03+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=69302a3fa2ea11.26147603
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '69302a3fa2ea11.26147603',
+  ),
+)
+---- 2025-12-03T13:17:03+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302a3e4f815
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302a3e4f815',
+  ),
+)
+---- 2025-12-03T13:17:18+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:17:18+01:00 ----
+QUERY_STRING: r=site%2Fcaptcha&v=69302a4ed72635.77148204
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'site/captcha',
+    'v' => '69302a4ed72635.77148204',
+  ),
+)
+---- 2025-12-03T13:17:19+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302a4ec519d
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302a4ec519d',
+  ),
+)
+---- 2025-12-03T13:17:44+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:17:45+01:00 ----
+QUERY_STRING: r=usuario%2Findex
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario/index',
+  ),
+)
+---- 2025-12-03T13:17:47+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:17:48+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302a6ba10d3
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302a6ba10d3',
+  ),
+)
+---- 2025-12-03T13:17:48+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302a6ba10d3
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302a6ba10d3',
+  ),
+)
+---- 2025-12-03T13:17:53+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T13:17:54+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302a7135934
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302a7135934',
+  ),
+)
+---- 2025-12-03T13:17:59+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-12-03T13:18:00+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302a775491f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302a775491f',
+  ),
+)
+---- 2025-12-03T13:18:30+01:00 ----
+QUERY_STRING: r=
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => '',
+  ),
+)
+---- 2025-12-03T13:18:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:30+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:31+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:31+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:31+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:31+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:31+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:31+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:31+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:31+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:32+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:18:32+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-12-03T13:18:32+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302a9881058
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302a9881058',
+  ),
+)
+---- 2025-12-03T13:20:05+01:00 ----
+QUERY_STRING: r=cliente%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente/create',
+  ),
+)
+---- 2025-12-03T13:20:06+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302af5a76f5
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302af5a76f5',
+  ),
+)
+---- 2025-12-03T13:20:14+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-12-03T13:20:14+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302afe3d226
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302afe3d226',
+  ),
+)
+---- 2025-12-03T13:20:16+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T13:20:17+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302b00d59d2
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302b00d59d2',
+  ),
+)
+---- 2025-12-03T13:20:23+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-12-03T13:20:24+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302b07bc28e
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302b07bc28e',
+  ),
+)
+---- 2025-12-03T13:20:33+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T13:20:33+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302b11489a0
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302b11489a0',
+  ),
+)
+---- 2025-12-03T13:20:38+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-12-03T13:20:38+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302b162df9d
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302b162df9d',
+  ),
+)
+---- 2025-12-03T13:20:44+01:00 ----
+QUERY_STRING: r=presupuesto%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto/create',
+  ),
+)
+---- 2025-12-03T13:20:45+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302b1cbef70
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302b1cbef70',
+  ),
+)
+---- 2025-12-03T13:20:57+01:00 ----
+QUERY_STRING: r=usuario
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'usuario',
+  ),
+)
+---- 2025-12-03T13:20:57+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302b2922405
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302b2922405',
+  ),
+)
+---- 2025-12-03T13:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:33+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:34+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:24:35+01:00 ----
+QUERY_STRING: 
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+  ),
+)
+---- 2025-12-03T13:25:04+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T13:25:05+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302c20d9ca0
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302c20d9ca0',
+  ),
+)
+---- 2025-12-03T13:25:09+01:00 ----
+QUERY_STRING: r=consecutivo
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'consecutivo',
+  ),
+)
+---- 2025-12-03T13:25:09+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302c258d154
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302c258d154',
+  ),
+)
+---- 2025-12-03T13:25:16+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T13:25:16+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302c2c4897b
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302c2c4897b',
+  ),
+)
+---- 2025-12-03T13:25:21+01:00 ----
+QUERY_STRING: r=iva%2Fcreate&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva/create',
+    'view' => 'modal',
+  ),
+)
+---- 2025-12-03T13:25:31+01:00 ----
+QUERY_STRING: r=concepto-facturacion
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-facturacion',
+  ),
+)
+---- 2025-12-03T13:25:32+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302c3bb975f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302c3bb975f',
+  ),
+)
+---- 2025-12-03T13:25:36+01:00 ----
+QUERY_STRING: r=concepto-facturacion%2Fcreate&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-facturacion/create',
+    'view' => 'modal',
+  ),
+)
+---- 2025-12-03T13:25:38+01:00 ----
+QUERY_STRING: r=concepto-liquidacion
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-liquidacion',
+  ),
+)
+---- 2025-12-03T13:25:38+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302c42aa2e0
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302c42aa2e0',
+  ),
+)
+---- 2025-12-03T13:25:44+01:00 ----
+QUERY_STRING: r=concepto-liquidacion%2Fcreate&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-liquidacion/create',
+    'view' => 'modal',
+  ),
+)
+---- 2025-12-03T13:25:46+01:00 ----
+QUERY_STRING: r=banco
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'banco',
+  ),
+)
+---- 2025-12-03T13:25:47+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302c4ac1a33
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302c4ac1a33',
+  ),
+)
+---- 2025-12-03T13:25:54+01:00 ----
+QUERY_STRING: r=forma-de-pago
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'forma-de-pago',
+  ),
+)
+---- 2025-12-03T13:25:54+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302c52ac344
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302c52ac344',
+  ),
+)
+---- 2025-12-03T13:26:00+01:00 ----
+QUERY_STRING: r=forma-de-pago%2Fcreate&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'forma-de-pago/create',
+    'view' => 'modal',
+  ),
+)
+---- 2025-12-03T13:26:02+01:00 ----
+QUERY_STRING: r=tipo-doc-identidad
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'tipo-doc-identidad',
+  ),
+)
+---- 2025-12-03T13:26:02+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302c5a76d8c
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302c5a76d8c',
+  ),
+)
+---- 2025-12-03T13:26:08+01:00 ----
+QUERY_STRING: r=tipo-doc-identidad%2Fcreate&view=modal
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'tipo-doc-identidad/create',
+    'view' => 'modal',
+  ),
+)
+---- 2025-12-03T13:26:10+01:00 ----
+QUERY_STRING: r=categoria
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'categoria',
+  ),
+)
+---- 2025-12-03T13:26:10+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302c62ac4bd
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302c62ac4bd',
+  ),
+)
+---- 2025-12-03T13:26:17+01:00 ----
+QUERY_STRING: r=provincia
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'provincia',
+  ),
+)
+---- 2025-12-03T13:26:17+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69302c692990a
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69302c692990a',
+  ),
+)
+---- 2025-12-03T13:52:47+01:00 ----
+QUERY_STRING: r=provincia
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'provincia',
+  ),
+)
+---- 2025-12-03T13:52:48+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930329fe0e06
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930329fe0e06',
+  ),
+)
+---- 2025-12-03T13:53:33+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T13:53:34+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693032cd9f0b5
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693032cd9f0b5',
+  ),
+)
+---- 2025-12-03T13:53:51+01:00 ----
+QUERY_STRING: r=provincia
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'provincia',
+  ),
+)
+---- 2025-12-03T13:53:52+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693032df1a25d
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693032df1a25d',
+  ),
+)
+---- 2025-12-03T13:53:56+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-12-03T13:53:57+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693032e4ae9ef
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693032e4ae9ef',
+  ),
+)
+---- 2025-12-03T13:54:11+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T13:54:12+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693032f365d52
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693032f365d52',
+  ),
+)
+---- 2025-12-03T13:54:16+01:00 ----
+QUERY_STRING: r=presupuesto
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'presupuesto',
+  ),
+)
+---- 2025-12-03T13:54:16+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693032f84deb7
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693032f84deb7',
+  ),
+)
+---- 2025-12-03T13:54:27+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T13:54:28+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69303303b935d
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69303303b935d',
+  ),
+)
+---- 2025-12-03T13:54:30+01:00 ----
+QUERY_STRING: r=consecutivo
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'consecutivo',
+  ),
+)
+---- 2025-12-03T13:54:30+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930330614288
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930330614288',
+  ),
+)
+---- 2025-12-03T13:54:32+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T13:54:36+01:00 ----
+QUERY_STRING: r=consecutivo
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'consecutivo',
+  ),
+)
+---- 2025-12-03T13:54:36+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930330c159eb
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930330c159eb',
+  ),
+)
+---- 2025-12-03T13:54:38+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T13:54:45+01:00 ----
+QUERY_STRING: r=consecutivo
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'consecutivo',
+  ),
+)
+---- 2025-12-03T13:54:46+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930331600201
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930331600201',
+  ),
+)
+---- 2025-12-03T13:54:49+01:00 ----
+QUERY_STRING: r=concepto-facturacion
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-facturacion',
+  ),
+)
+---- 2025-12-03T13:54:49+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930331928e67
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930331928e67',
+  ),
+)
+---- 2025-12-03T13:54:51+01:00 ----
+QUERY_STRING: r=concepto-liquidacion
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-liquidacion',
+  ),
+)
+---- 2025-12-03T13:54:51+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930331b614e7
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930331b614e7',
+  ),
+)
+---- 2025-12-03T13:54:53+01:00 ----
+QUERY_STRING: r=concepto-facturacion
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-facturacion',
+  ),
+)
+---- 2025-12-03T13:54:53+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930331da4b40
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930331da4b40',
+  ),
+)
+---- 2025-12-03T13:54:57+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T13:55:07+01:00 ----
+QUERY_STRING: r=concepto-facturacion
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-facturacion',
+  ),
+)
+---- 2025-12-03T13:55:07+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930332b3cd0c
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930332b3cd0c',
+  ),
+)
+---- 2025-12-03T13:55:10+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-12-03T13:55:11+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930332ec0c8a
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930332ec0c8a',
+  ),
+)
+---- 2025-12-03T13:55:23+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T13:55:23+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930333b3d705
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930333b3d705',
+  ),
+)
+---- 2025-12-03T13:55:24+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T13:55:30+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T13:55:30+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930334270474
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930334270474',
+  ),
+)
+---- 2025-12-03T13:55:33+01:00 ----
+QUERY_STRING: r=concepto-facturacion
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-facturacion',
+  ),
+)
+---- 2025-12-03T13:55:34+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69303345d0567
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69303345d0567',
+  ),
+)
+---- 2025-12-03T13:55:35+01:00 ----
+QUERY_STRING: r=concepto-liquidacion
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-liquidacion',
+  ),
+)
+---- 2025-12-03T13:55:36+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930334801aea
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930334801aea',
+  ),
+)
+---- 2025-12-03T13:55:45+01:00 ----
+QUERY_STRING: r=concepto-facturacion
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-facturacion',
+  ),
+)
+---- 2025-12-03T13:55:46+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69303351e7445
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69303351e7445',
+  ),
+)
+---- 2025-12-03T13:55:48+01:00 ----
+QUERY_STRING: r=banco
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'banco',
+  ),
+)
+---- 2025-12-03T13:55:48+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693033547df43
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693033547df43',
+  ),
+)
+---- 2025-12-03T13:55:51+01:00 ----
+QUERY_STRING: r=forma-de-pago
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'forma-de-pago',
+  ),
+)
+---- 2025-12-03T13:55:52+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69303357ed4c6
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69303357ed4c6',
+  ),
+)
+---- 2025-12-03T13:55:55+01:00 ----
+QUERY_STRING: r=tipo-doc-identidad
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'tipo-doc-identidad',
+  ),
+)
+---- 2025-12-03T13:55:55+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930335b6308f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930335b6308f',
+  ),
+)
+---- 2025-12-03T13:55:57+01:00 ----
+QUERY_STRING: r=categoria
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'categoria',
+  ),
+)
+---- 2025-12-03T13:55:58+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930335db8532
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930335db8532',
+  ),
+)
+---- 2025-12-03T13:55:59+01:00 ----
+QUERY_STRING: r=provincia
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'provincia',
+  ),
+)
+---- 2025-12-03T13:56:00+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930335ff3978
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930335ff3978',
+  ),
+)
+---- 2025-12-03T14:01:28+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-12-03T14:01:28+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693034a83863a
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693034a83863a',
+  ),
+)
+---- 2025-12-03T14:01:33+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T14:01:33+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693034ad43162
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693034ad43162',
+  ),
+)
+---- 2025-12-03T14:01:35+01:00 ----
+QUERY_STRING: r=concepto-liquidacion
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-liquidacion',
+  ),
+)
+---- 2025-12-03T14:01:37+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693034afc9266
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693034afc9266',
+  ),
+)
+---- 2025-12-03T14:05:39+01:00 ----
+QUERY_STRING: r=concepto-liquidacion
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'concepto-liquidacion',
+  ),
+)
+---- 2025-12-03T14:05:40+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693035a40fc3e
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693035a40fc3e',
+  ),
+)
+---- 2025-12-03T14:05:47+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T14:05:48+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693035ab921e0
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693035ab921e0',
+  ),
+)
+---- 2025-12-03T14:06:15+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-12-03T14:06:16+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693035c7d759a
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693035c7d759a',
+  ),
+)
+---- 2025-12-03T14:09:53+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-12-03T14:09:53+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693036a1667c4
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693036a1667c4',
+  ),
+)
+---- 2025-12-03T14:10:17+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T14:10:18+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693036b9e6fa5
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693036b9e6fa5',
+  ),
+)
+---- 2025-12-03T14:10:20+01:00 ----
+QUERY_STRING: r=factura%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura/create',
+  ),
+)
+---- 2025-12-03T14:10:21+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693036bc8724e
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693036bc8724e',
+  ),
+)
+---- 2025-12-03T14:10:28+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T14:10:28+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693036c429fa0
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693036c429fa0',
+  ),
+)
+---- 2025-12-03T14:12:15+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T14:12:16+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930372fd1aa8
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930372fd1aa8',
+  ),
+)
+---- 2025-12-03T14:12:28+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T14:12:29+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930373d0268f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930373d0268f',
+  ),
+)
+---- 2025-12-03T14:14:36+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T14:14:36+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693037bc3255f
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693037bc3255f',
+  ),
+)
+---- 2025-12-03T16:33:36+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T16:33:44+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693058548556a
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693058548556a',
+  ),
+)
+---- 2025-12-03T16:33:52+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T16:33:53+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305860cdd92
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305860cdd92',
+  ),
+)
+---- 2025-12-03T16:35:35+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T16:35:36+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=693058c7a9573
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '693058c7a9573',
+  ),
+)
+---- 2025-12-03T16:37:57+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T16:37:57+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=6930595583a27
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '6930595583a27',
+  ),
+)
+---- 2025-12-03T16:41:06+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T16:41:06+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305a128e9c1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305a128e9c1',
+  ),
+)
+---- 2025-12-03T16:41:18+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T16:41:18+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305a1e379b1
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305a1e379b1',
+  ),
+)
+---- 2025-12-03T16:45:37+01:00 ----
+QUERY_STRING: r=iva
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'iva',
+  ),
+)
+---- 2025-12-03T16:45:37+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305b212c44b
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305b212c44b',
+  ),
+)
+---- 2025-12-03T16:45:42+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T16:45:43+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305b265f276
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305b265f276',
+  ),
+)
+---- 2025-12-03T16:45:49+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T16:45:50+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305b2d703c3
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305b2d703c3',
+  ),
+)
+---- 2025-12-03T16:46:16+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T16:46:17+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305b490cae3
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305b490cae3',
+  ),
+)
+---- 2025-12-03T16:46:57+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T16:46:58+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305b720864d
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305b720864d',
+  ),
+)
+---- 2025-12-03T16:47:06+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T16:47:06+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305b7a43344
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305b7a43344',
+  ),
+)
+---- 2025-12-03T16:47:16+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T16:47:16+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305b84416cd
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305b84416cd',
+  ),
+)
+---- 2025-12-03T16:47:27+01:00 ----
+QUERY_STRING: r=factura
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'factura',
+  ),
+)
+---- 2025-12-03T16:47:28+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305b8fd7b77
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305b8fd7b77',
+  ),
+)
+---- 2025-12-03T16:47:34+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-12-03T16:47:35+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305b96a76a5
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305b96a76a5',
+  ),
+)
+---- 2025-12-03T16:48:10+01:00 ----
+QUERY_STRING: r=socios
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'socios',
+  ),
+)
+---- 2025-12-03T16:48:10+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305bba3d9ef
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305bba3d9ef',
+  ),
+)
+---- 2025-12-03T16:48:12+01:00 ----
+QUERY_STRING: r=cliente
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'cliente',
+  ),
+)
+---- 2025-12-03T16:48:13+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305bbcd2114
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305bbcd2114',
+  ),
+)
+---- 2025-12-03T16:48:23+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T16:48:23+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305bc713796
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305bc713796',
+  ),
+)
+---- 2025-12-03T16:49:41+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T16:49:41+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305c15307a4
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305c15307a4',
+  ),
+)
+---- 2025-12-03T16:52:00+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T16:52:00+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305ca083379
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305ca083379',
+  ),
+)
+---- 2025-12-03T16:53:19+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T16:53:19+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305cef9c951
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305cef9c951',
+  ),
+)
+---- 2025-12-03T16:53:25+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T16:53:25+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305cf5429d0
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305cf5429d0',
+  ),
+)
+---- 2025-12-03T16:55:00+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T16:55:01+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305d549d052
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305d549d052',
+  ),
+)
+---- 2025-12-03T16:56:57+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T16:56:58+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305dc9b9f75
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305dc9b9f75',
+  ),
+)
+---- 2025-12-03T16:59:44+01:00 ----
+QUERY_STRING: r=empresa%2Fcreate
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'empresa/create',
+  ),
+)
+---- 2025-12-03T16:59:44+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305e7088e34
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305e7088e34',
+  ),
+)
+---- 2025-12-03T17:00:06+01:00 ----
+QUERY_STRING: r=consecutivo
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'consecutivo',
+  ),
+)
+---- 2025-12-03T17:00:07+01:00 ----
+QUERY_STRING: r=debug%2Fdefault%2Ftoolbar&tag=69305e8696605
+array (
+  '_SERVER_raw' => false,
+  '_GET' => 
+  array (
+    'r' => 'debug/default/toolbar',
+    'tag' => '69305e8696605',
+  ),
+)

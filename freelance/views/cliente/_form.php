@@ -19,7 +19,7 @@ $this->registerJs(
 );
 ?>
 
-<div class="page-content" style="margin-top: 3.4rem;">
+<div class="page-content">
     <h6 class="mb-0 text-uppercase">DATOS DEL CLIENTE <dl>* Datos obligatorios</dl></h6>
     <hr/>
     <div class="row">

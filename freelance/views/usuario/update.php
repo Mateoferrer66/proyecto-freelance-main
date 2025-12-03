@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = ['label' => $model->usu_nombre, 'url' => ['view
 $this->params['breadcrumbs'][] = 'Editar';
 ?>
 
-<div class="page-content" style="margin-top: 3.4rem;">
+<div class="page-content">
     <h6 class="mb-0 text-uppercase">EDITAR USUARIO <dl>* Datos obligatorios</dl></h6>
     <hr/>
     <div class="row">

@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Empresas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="page-content" style="margin-top: 3.4rem;">
+<div class="page-content">
 
     <h6 class="mb-0 text-uppercase">Detalles de la Empresa</h6>
     <hr />

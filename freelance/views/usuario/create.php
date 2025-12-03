@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Usuarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="page-content" style="margin-top: 3.4rem;">
+<div class="page-content">
     <h6 class="mb-0 text-uppercase">CREAR USUARIO <dl>* Datos obligatorios</dl></h6>
     <hr/>
     <div class="row">
@@ -33,19 +33,19 @@ $this->params['breadcrumbs'][] = $this->title;
                     <hr>
 
                     <div class="row mb-3">
-                        <div class="col-md-4">
+                        <div class="col-12 col-md-4">
                             <?= $form->field($model, 'usu_nombre', [
                                 'template' => "<label>Nombre *</label>\n{input}\n{hint}\n{error}",
                                 'inputOptions' => ['class' => 'form-control mb-3', 'required' => true]
                             ])->textInput(['maxlength' => true]) ?>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-12 col-md-4">
                             <?= $form->field($model, 'usu_apellido', [
                                 'template' => "<label>Apellido *</label>\n{input}\n{hint}\n{error}",
                                 'inputOptions' => ['class' => 'form-control mb-3', 'required' => true]
                             ])->textInput(['maxlength' => true]) ?>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-12 col-md-4">
                             <?= $form->field($model, 'usu_email', [
                                 'template' => "<label>Email *</label>\n{input}\n{hint}\n{error}",
                                 'inputOptions' => ['class' => 'form-control mb-3', 'type' => 'email', 'required' => true]
@@ -54,13 +54,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
 
                     <div class="row mb-3">
-                        <div class="col-md-8">
+                        <div class="col-12 col-md-8">
                             <?= $form->field($model, 'usu_password', [
                                 'template' => "<label>Contraseña *</label>\n{input}\n{hint}\n{error}",
                                 'inputOptions' => ['class' => 'form-control mb-3', 'required' => true]
                             ])->passwordInput(['maxlength' => true]) ?>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-12 col-md-4">
                             <?= $form->field($model, 'usu_estado', [
                                 'template' => "<label>Estado *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
@@ -72,7 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <hr>
 
-                    <div class="col-md-12">
+                    <div class="col-12">
                         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success px-5 radius-30'])
  ?>
                     </div>

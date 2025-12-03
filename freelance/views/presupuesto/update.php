@@ -275,7 +275,7 @@ $this->registerJs($js);
 
 ?>
 
-<div class="page-content" style="margin-top: 3.4rem;">
+<div class="page-content">
     <h6 class="mb-0 text-uppercase">ACTUALIZAR PRESUPUESTO <dl>* Datos obligatorios</dl></h6>
     <hr/>
     <div class="row">

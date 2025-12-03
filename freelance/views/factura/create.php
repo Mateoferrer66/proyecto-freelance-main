@@ -277,7 +277,7 @@ $this->registerJs($js);
 
 ?>
 
-<div class="page-content" style="margin-top: 3.4rem;">
+<div class="page-content">
     <h6 class="mb-0 text-uppercase">CREAR FACTURA <dl>* Datos obligatorios</dl></h6>
     <hr/>
     <div class="row">
@@ -297,13 +297,13 @@ $this->registerJs($js);
                     <?= $form->field($model, 'cli_id')->hiddenInput()->label(false) ?>
 
                     <div class="row mb-3">
-                        <div class="col-md-6">
+                        <div class="col-12 col-md-6">
                             <?= $form->field($model, 'fac_numero', [
                                 'template' => "<label>Número Factura*</label>\n{input}\n{hint}\n{error}",
                                 'inputOptions' => ['class' => 'form-control mb-3', 'required' => true]
                             ])->textInput() ?>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-12 col-md-6">
                             <?= $form->field($model, 'fac_fecha', [
                                 'template' => "<label>Fecha*</label>\n{input}\n{hint}\n{error}",
                                 'inputOptions' => ['class' => 'form-control mb-3', 'required' => true]
@@ -317,11 +317,11 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="row mb-3">
-                         <div class="col-md-6">
+                         <div class="col-12 col-md-6">
                             <label for="search-by-doc" class="form-label">NIF</label>
                             <input type="text" id="search-by-doc" class="form-control mb-3">
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-12 col-md-6">
                             <label for="search-by-name" class="form-label">Nombre / Razón social</label>
                             <input type="text" id="search-by-name" class="form-control mb-3">
                         </div>
@@ -329,39 +329,39 @@ $this->registerJs($js);
 
                     <div id="datos-cliente" class="row mb-3">
                        
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <label>Nombre*</label>
                             <input type="text" id="cliente-nombre" class="form-control" disabled>
                         </div>
-                         <div class="col-md-4 mb-3">
+                         <div class="col-12 col-md-4 mb-3">
                             <label>Tipo Documento*</label>
                             <input type="text" id="cliente-tipo_doc" class="form-control" disabled>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <label>Número identificación Fiscal</label>
                             <input type="text" id="cliente-num_identificacion" class="form-control" disabled>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <label>Dirección</label>
                             <input type="text" id="cliente-direccion" class="form-control" disabled>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <label>Código postal</label>
                             <input type="text" id="cliente-cp" class="form-control" disabled>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <label>Provincia*</label>
                             <input type="text" id="cliente-provincia" class="form-control" disabled>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <label>Población</label>
                             <input type="text" id="cliente-poblacion" class="form-control" disabled>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <label>País</label>
                             <input type="text" id="cliente-pais" class="form-control" disabled>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <?= $form->field($model, 'fdp_id', [
                                 'template' => "<label>Forma de Pago *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
@@ -369,7 +369,7 @@ $this->registerJs($js);
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
                             ) ?>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <?= $form->field($model, 'soc_id', [
                                 'template' => "<label>Socio *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
@@ -377,7 +377,7 @@ $this->registerJs($js);
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
                             ) ?>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <?= $form->field($model, 'fac_logo', [
                                 'template' => "<label>Logo a utilizar*</label>\n<div class='d-flex gap-4'>{input}</div>\n{hint}\n{error}",
                             ])->radioList(
@@ -399,13 +399,13 @@ $this->registerJs($js);
                                 ]
                             ) ?>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <?php $bancos = isset($bancos) ? $bancos : []; $selectedBanco = isset($selectedBanco) ? $selectedBanco : null; ?>
                             <label>Cuentas para transferencia</label>
                             <?= Html::dropDownList('CuentasFactura[ban_id]', $selectedBanco, $bancos, ['prompt' => 'Seleccione cuenta', 'class' => 'form-control mb-3'])
                             ?>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <?= $form->field($model, 'fac_language', [
                                 'template' => "<label>Idioma *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
@@ -416,7 +416,7 @@ $this->registerJs($js);
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
                             ) ?>
                         </div>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-12 col-md-4 mb-3">
                             <?= $form->field($model, 'fac_money', [
                                 'template' => "<label>Moneda *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
@@ -439,7 +439,7 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="row mb-3">
-                        <div class="col-md-12">
+                        <div class="col-12">
                             <label>Añadir Conceptos</label>
                             <div class="table-responsive">
                                 <table class="table" id="concepts-table">
@@ -469,19 +469,19 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="row mb-3">
-                        <div class="col-md-3">
+                        <div class="col-12 col-md-3">
                             <?= $form->field($model, 'fac_subtotal')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])
                             ?>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-12 col-md-3">
                             <?= $form->field($model, 'fac_iva')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])
                             ?>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-12 col-md-3">
                             <?= $form->field($model, 'fac_gastos_suplidos')->textInput(['type' => 'number', 'step' => '0.01'])
                             ?>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-12 col-md-3">
                             <?= $form->field($model, 'fac_total')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])
                             ?>
                         </div>
@@ -493,7 +493,7 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="row mb-3">
-                        <div class="col-md-12">
+                        <div class="col-12">
                             <?= $form->field($model, 'fac_observaciones', [
                                 'template' => "<label>Observaciones</label>\n{input}\n{hint}\n{error}",
                             ])->textarea(['rows' => 6, 'class' => 'form-control'])
@@ -503,7 +503,7 @@ $this->registerJs($js);
 
                     <hr>
 
-                    <div class="col-md-12">
+                    <div class="col-12">
 
                                             <?= Html::submitButton('Guardar', ['class' => 'btn btn-success px-5 radius-30'])
                                             ?>

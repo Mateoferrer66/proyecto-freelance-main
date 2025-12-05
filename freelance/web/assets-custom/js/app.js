@@ -90,6 +90,28 @@ $(function() {
     function theme3() {
       $('body').attr('class', 'bg-theme bg-theme3');
     }
+    
+    // Cerrar sidebar en móvil después de clic en enlace Pjax
+    $(document).on('pjax:send', function() {
+        $('#pjax-container').addClass('pjax-loading');
+        if ($(window).width() <= 1024) {
+            $('.wrapper').removeClass('toggled');
+        }
+    });
+    
+    // Reinicializar scripts después de carga Pjax
+    $(document).on('pjax:end pjax:error', function() {
+        $('#pjax-container').removeClass('pjax-loading');
+        
+        // Reinicializar DataTables si existen
+        if (typeof $.fn.DataTable !== 'undefined') {
+            $('.dataTable').each(function() {
+                if ($.fn.DataTable.isDataTable(this)) {
+                    $(this).DataTable().destroy();
+                }
+            });
+        }
+    });
 
 
 });

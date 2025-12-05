@@ -145,7 +145,7 @@ foreach ($iconMap as $path => $iconClass) {
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#"><i class="bx bx-user"></i><span>Perfil</span></a></li>
+                        <li><a class="dropdown-item" href="#" data-pjax="0"><i class="bx bx-user"></i><span>Perfil</span></a></li>
                         <li>
                             <?= Html::a('<i class="bx bx-log-out-circle"></i><span>Cerrar sesión</span>', ['/site/logout'], [
                                 'class' => 'dropdown-item',

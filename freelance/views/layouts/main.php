@@ -12,6 +12,7 @@ use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
 use yii\bootstrap5\Modal;
 use yii\helpers\Url;
+use yii\widgets\Pjax;
 
 PanelAsset::register($this);
 
@@ -46,7 +47,13 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         </header>
         <div class="page-wrapper">
 
-
+            <?php Pjax::begin([
+                'id' => 'pjax-container',
+                'enablePushState' => true,
+                'timeout' => 5000,
+                'scrollTo' => 0,
+                'linkSelector' => '#menu a:not([data-method]):not([data-pjax="0"]), a[data-pjax]',
+            ]); ?>
 
             <main id="main" class="flex-shrink-0" role="main">
 
@@ -58,6 +65,8 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 <?= $content ?>
 
             </main>
+            
+            <?php Pjax::end(); ?>
         </div>
         <?php
 

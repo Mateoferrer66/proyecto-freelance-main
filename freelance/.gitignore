@@ -1,1 +1,45 @@
+# IDE
 .vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Composer
+/vendor/
+composer.phar
+composer.lock
+
+# Runtime data (archivos temporales generados por Yii2)
+/runtime/
+/web/assets/*
+!/web/assets/.gitkeep
+
+# Assets compilados (se regeneran automáticamente)
+/assets/*/
+!/assets/*.php
+
+# Config files (datos sensibles de conexión)
+/config/db.php
+
+# Tests
+/tests/codeception/_output/*
+!/tests/codeception/_output/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+._*
+
+# Logs
+*.log
+debug_query.log
+
+# Backups y temporales
+*.bak
+*.tmp
+*.old
+
+# Archivos de desarrollo
+output.txt

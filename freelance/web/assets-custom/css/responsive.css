@@ -11,6 +11,7 @@
     .page-content {
         margin-top: 0 !important;
         padding: 15px !important;
+        padding-top: 75px !important;
     }
 
     .page-wrapper {
@@ -36,9 +37,15 @@
     .topbar {
         left: 0 !important;
         width: 100% !important;
-        position: relative !important;
+        position: fixed !important;
         margin-top: 0 !important;
         top: 0 !important;
+        z-index: 1000 !important;
+    }
+    
+    /* Asegurar que el main no tenga padding extra */
+    main#main {
+        padding-top: 0 !important;
     }
 
     .footer {
@@ -52,7 +59,60 @@
         margin-bottom: 0 !important;
         height: auto !important;
     }
+    
+    /* Botón hamburguesa para móvil */
+    .mobile-toggle-menu {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+    
+    .mobile-toggle-menu i {
+        font-size: 24px;
+        color: #fff;
+    }
+    
+    /* Sidebar en móvil */
+    .sidebar-wrapper {
+        position: fixed !important;
+        height: 100vh !important;
+        z-index: 1001 !important;
+        transition: left 0.3s ease;
+        overflow-y: auto !important;
+    }
+    
+    /* Cuando el sidebar está abierto */
+    .wrapper.toggled .sidebar-wrapper {
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    /* Overlay cuando el sidebar está abierto */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        transition: opacity 0.3s ease;
+    }
+    
+    .wrapper.toggled .overlay {
+        display: block !important;
+    }
 }
+
+/* Ocultar botón hamburguesa en desktop */
+@media (min-width: 1025px) {
+    .mobile-toggle-menu {
+        display: none !important;
+    }
 
 .table-responsive {
     display: block;

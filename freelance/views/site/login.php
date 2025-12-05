@@ -33,13 +33,13 @@ $(document).ready(function () {
 
 <div class="section-authentication-signin loginFlex">
     <div class="logoLogin">
-        <img src="<?= Url::to('@web/assets-custom/images/logotipo.svg') ?>" alt="smartsy" />
+        <img src="<?= Url::to('@web/assets-custom/images/logotipo.svg') ?>" alt="freelance" />
         <div id="animate-area" style="background-image: url(<?= Url::to('@web/assets-custom/images/bg-themes/bcloud.jpg') ?>);"></div>
     </div>
     <div class="card card-login">
-        <div class="text-center">
-            <h3 class=""><?= Html::encode($this->title) ?></h3>
-            <p>Panel de administración</p>
+        <div class="text-center mb-4">
+            <h3 class="mb-2"><?= Html::encode($this->title) ?></h3>
+            <p class="text-muted">Panel de administración</p>
         </div>
         <div class="form-body">
             <?php $form = ActiveForm::begin([
@@ -85,15 +85,15 @@ $(document).ready(function () {
                 </div>
             <?php endif; ?>
 
-            <div class="col-md-6">
+            <div class="col-12 col-sm-6">
                 <?= $form->field($model, 'rememberMe')->checkbox([
                     'template' => '<div class="form-check form-switch">{input}{label}</div>',
                     'class' => 'form-check-input'
                 ]) ?>
             </div>
 
-            <div class="col-md-6 text-end">
-                 <?= Html::a('Olvidó su contraseña ?', ['site/request-password-reset']) ?>
+            <div class="col-12 col-sm-6 text-sm-end text-center mt-2 mt-sm-0">
+                 <?= Html::a('Olvidó su contraseña ?', ['site/request-password-reset'], ['class' => 'small']) ?>
             </div>
 
             <div class="col-12">

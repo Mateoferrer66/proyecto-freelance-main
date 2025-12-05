@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+	<!--plugins-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+	<link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="assets/plugins/datetimepicker/css/classic.css" rel="stylesheet" />
+	<link href="assets/plugins/datetimepicker/css/classic.time.css" rel="stylesheet" />
+	<link href="assets/plugins/datetimepicker/css/classic.date.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<link href="assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+	<!-- loader-->
+	<link href="assets/css/pace.min.css" rel="stylesheet" />
+	<script src="assets/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<link href="assets/css/app.css" rel="stylesheet">
+	<link href="assets/css/icons.css" rel="stylesheet">
+	
+	<title>Freelance</title>
+</head>
+
+<body class="bg-theme bg-theme3">
+	<!--wrapper-->
+	<div class="wrapper">
+		<!--sidebar wrapper -->
+		<div class="sidebar-wrapper" data-simplebar="true">
+			<div class="sidebar-header">
+				<div>
+					<img src="assets/images/ico.svg" class="logo-icon" alt="logo icon">
+				</div>
+				<div>
+					<h4 class="logo-text"><img src="assets/images/logo.svg"></h4>
+				</div>
+				<div class="toggle-icon ms-auto"><i class='bx bx-menu'></i>
+				</div>
+			</div>
+			<!--navigation-->
+			<ul class="metismenu" id="menu">
+				<li>
+					<a href="index.html">
+						<div class="parent-icon"><i class="bx bx-home"></i>
+						</div>
+						<div class="menu-title">Inicio</div>
+					</a>
+				</li>
+				<li class="menu-label">Módulos de administración</li>
+				
+				<li>
+					<a href="socios.html">
+						<div class="parent-icon"><i class='bx bx-street-view'></i>
+						</div>
+						<div class="menu-title">Socios</div>
+					</a>
+				</li>
+				<li>
+					<a href="clientes.html">
+						<div class="parent-icon"><i class='bx bx-user-voice'></i>
+						</div>
+						<div class="menu-title">Clientes</div>
+					</a>
+				</li>
+				<li>
+					<a class="has-arrow" href="javascript:;" aria-expanded="false">
+						<div class="parent-icon"><i class="bx bx-dollar-circle"></i>
+						</div>
+						<div class="menu-title">Facturación</div>
+					</a>
+					<ul class="mm-collapse">
+						<li> <a href="facturacion.html"><i class="bx bx-right-arrow-alt"></i>Facturas</a>
+						</li>
+						<li> <a href="presupuestos.html"><i class="bx bx-right-arrow-alt"></i>Presupuestos</a>
+						</li>
+						
+					</ul>
+				</li>
+				<li>
+					<a href="seguridad.html">
+						<div class="parent-icon"><i class='bx bx-error-alt'></i>
+						</div>
+						<div class="menu-title">Seguridad social</div>
+					</a>
+				</li>
+				<li>
+					<a href="liquidaciones.html">
+						<div class="parent-icon"><i class='bx bx-calculator'></i>
+						</div>
+						<div class="menu-title">Liquidaciones</div>
+					</a>
+				</li>
+				<li>
+					<a class="has-arrow" href="javascript:;" aria-expanded="false">
+						<div class="parent-icon"><i class="bx bx-export"></i>
+						</div>
+						<div class="menu-title">Exportaciones</div>
+					</a>
+					<ul class="mm-collapse">
+						<li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Socios</a>
+						</li>
+						<li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Clientes</a>
+						</li>
+                        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Facturas</a>
+						</li>
+                        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Liquidaciones Socios</a>
+						</li>
+                        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Liquidaciones Clientes</a>
+						</li>
+                        <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Transferencias</a>
+						</li>
+						
+					</ul>
+				</li>
+				
+				<li>
+					<a href="usuarios.html">
+						<div class="parent-icon"><i class='bx bx-group'></i>
+						</div>
+						<div class="menu-title">Usuarios</div>
+					</a>
+				</li>
+				
+				<li>
+					<a class="has-arrow" href="javascript:;" aria-expanded="false">
+						<div class="parent-icon"><i class='bx bx-diamond'></i>
+						</div>
+						<div class="menu-title">Utilidades</div>
+					</a>
+					<ul class="mm-collapse">
+						<li> <a href="utilidades.html"><i class="bx bx-right-arrow-alt"></i>Empresa</a>
+						</li>
+						<li> <a href="utilidades-consecutivos.html"><i class="bx bx-right-arrow-alt"></i>Consecutivos</a>
+						</li>
+                        <li> <a href="utilidades-iva.html"><i class="bx bx-right-arrow-alt"></i>IVA</a>
+						</li>
+                        <li> <a href="utilidades-facturacion.html"><i class="bx bx-right-arrow-alt"></i>Conceptos facturación</a>
+						</li>
+                        <li> <a href="utilidades-liquidacion.html"><i class="bx bx-right-arrow-alt"></i>Conceptos liquidación</a>
+						</li>
+                        <li> <a href="utilidades-banco.html"><i class="bx bx-right-arrow-alt"></i>Banco</a></li>
+                        <li> <a href="utilidades-pagos.html"><i class="bx bx-right-arrow-alt"></i>Formas de pago</a></li>
+                        <li> <a href="utilidades-id.html"><i class="bx bx-right-arrow-alt"></i>Tipos ID</a></li>
+                        <li> <a href="utilidades-categorias.html"><i class="bx bx-right-arrow-alt"></i>Categorías profesionales</a></li>
+                        <li> <a href="utilidades-locacion.html"><i class="bx bx-right-arrow-alt"></i>País y provincia</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" target="_blank">
+						<div class="parent-icon"><i class="bx bx-log-out-circle"></i>
+						</div>
+						<div class="menu-title">Cerrar Sesión</div>
+					</a>
+				</li>
+			</ul>
+			<!--end navigation-->
+			<footer class="page-footer">
+				<p class="mb-0">Copyright © 2025. Derechos reservados.</p>
+			</footer>
+		</div>
+		<!--end sidebar wrapper -->
+		<!--start header -->
+		<header>
+			<div class="topbar d-flex align-items-center">
+				<nav class="navbar navbar-expand">
+					<div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+					</div>
+					<!--breadcrumb-->
+					<div class="page-breadcrumb d-none d-sm-flex align-items-center">
+						<div class="breadcrumb-title pe-3">Clientes</div>
+						<div class="ps-3">
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb mb-0 p-0">
+									<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-user-voice"></i></a>
+									</li>
+								</ol>
+							</nav>
+						</div>
+					</div>
+					<!--end breadcrumb-->
+					<div class="top-menu ms-auto">
+						<ul class="navbar-nav align-items-center">
+							<li class="nav-item dropdown dropdown-large">
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span class="alert-count">12</span>
+									<i class='bx bx-task'></i>
+								</a>
+								<div class="header-message-list dropdown-menu dropdown-menu-end">
+									<a href="javascript:;">
+										<div class="msg-header">
+											<p class="msg-header-title">Agenda</p>
+										</div>
+									</a>
+									<div class="header-notifications-list ">
+										<div class="dropdown-item">
+											<div class="d-flex align-items-center">
+												<div class="notify"><i class="bx bx-right-arrow"></i>
+												</div>
+												<div class="flex-grow-1">
+													<p class="msg-info">Texto de la tarea para tenerla presente en todo momento de la navegación</p>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-item">
+											<div class="d-flex align-items-center">
+												<div class="notify"><i class="bx bx-right-arrow"></i>
+												</div>
+												<div class="flex-grow-1">
+													<p class="msg-info">Texto de la tarea para tenerla presente en todo momento de la navegación</p>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-item">
+											<div class="d-flex align-items-center">
+												<div class="notify"><i class="bx bx-right-arrow"></i>
+												</div>
+												<div class="flex-grow-1">
+													<p class="msg-info">Texto de la tarea para tenerla presente en todo momento de la navegación</p>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-item">
+											<div class="d-flex align-items-center">
+												<div class="notify"><i class="bx bx-right-arrow"></i>
+												</div>
+												<div class="flex-grow-1">
+													<p class="msg-info">Texto de la tarea para tenerla presente en todo momento de la navegación</p>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-item">
+											<div class="d-flex align-items-center">
+												<div class="notify"><i class="bx bx-right-arrow"></i>
+												</div>
+												<div class="flex-grow-1">
+													<p class="msg-info">Texto de la tarea para tenerla presente en todo momento de la navegación</p>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-item">
+											<div class="d-flex align-items-center">
+												<div class="notify"><i class="bx bx-right-arrow"></i>
+												</div>
+												<div class="flex-grow-1">
+													<p class="msg-info">Texto de la tarea para tenerla presente en todo momento de la navegación</p>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-item">
+											<div class="d-flex align-items-center">
+												<div class="notify"><i class="bx bx-right-arrow"></i>
+												</div>
+												<div class="flex-grow-1">
+													<p class="msg-info">Texto de la tarea para tenerla presente en todo momento de la navegación</p>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-item">
+											<div class="d-flex align-items-center">
+												<div class="notify"><i class="bx bx-right-arrow"></i>
+												</div>
+												<div class="flex-grow-1">
+													<p class="msg-info">Texto de la tarea para tenerla presente en todo momento de la navegación</p>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-item">
+											<div class="d-flex align-items-center">
+												<div class="notify"><i class="bx bx-right-arrow"></i>
+												</div>
+												<div class="flex-grow-1">
+													<p class="msg-info">Texto de la tarea para tenerla presente en todo momento de la navegación</p>
+												</div>
+											</div>
+										</div>
+										<div class="dropdown-item">
+											<div class="d-flex align-items-center">
+												<div class="notify"><i class="bx bx-right-arrow"></i>
+												</div>
+												<div class="flex-grow-1">
+													<p class="msg-info">Texto de la tarea para tenerla presente en todo momento de la navegación</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<a href="#">
+										<div class="text-center msg-footer">Ir a agenda</div>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="user-box dropdown">
+						<a class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<i class="bx bx-cog bx-spin"></i>
+							<div class="user-info ps-3">
+								<p class="user-name mb-0">Nombre del usuario</p>
+								<p class="designattion mb-0">Super administrador</p>
+							</div>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end">
+							<li><a class="dropdown-item" href="javascript:;"><i class="bx bx-user"></i><span>Perfil</span></a>
+							</li>
+							<li>
+								<div class="dropdown-divider mb-0"></div>
+							</li>
+							<li><a class="dropdown-item" href="javascript:;"><i class='bx bx-log-out-circle'></i><span>Cerrar sesión</span></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!--end header -->
+		<!--start page wrapper -->
+		<div class="page-wrapper">
+			<div class="page-content">
+
+				<div class="col d-flex justify-content-between align-items-start">
+					<h6 class="mb-0 text-uppercase">Clientes en lista <dl>1199</dl></h6>
+					<div>
+						<a href="clientes-crear.html" class="btn btn-success radius-30"><i class="bx bx-plus mr-1"></i>Crear Cliente</a>
+					</div>
+				</div>
+				<hr/>
+				<div class="card">
+					<div class="card-body">
+						<form name="noticias" method="get" class="mb-4">
+	                        <div class="row">
+						        <div class="col-md-12 d-flex justify-content-end">
+						        	<a href="#" class="btn text-orange radius-30"><i class="bx bx-plus mr-1"></i>Eliminar</a>
+									<a href="#" class="btn text-orange radius-30"><i class="bx bx-list-ol mr-1"></i>Listado Clientes</a>
+						        </div>
+	                        </div>
+	                   </form>
+						<div class="table-responsive">
+							<table id="nombretabla" class="tableData table mb-0">
+							    <thead>
+							        <tr>
+							        	<th>
+							        		<div class="d-flex">
+						                    <input class="form-check-input" type="checkbox" value="" aria-label="..." title="Seleccionar todo">
+							                </div>
+							            </th>
+							            <th>NIF</th>
+							            <th>Nombre/Razón social</th>
+							            <th>Estado</th>
+							            <th>Acciones</th>
+							        </tr>
+							    </thead>
+							    <tbody>
+							        <tr>
+							        	<td>
+							        		<input class="form-check-input me-3" type="checkbox" value="" aria-label="...">
+							        	</td>
+							        	<td>26516</td>
+							            <td class="greenGdt">
+							                <font class="text-white"> Alessandro andrea</font>
+							            </td>
+							            <td>
+							                <div class="d-flex align-items-center text-white">
+							                    <i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i>
+							                    <span>Activo</span>
+							                </div>
+							            </td>
+							            <td>
+							                <div class="acciones">
+							                    <button type="button" class="btn btn-light" onclick="" title="Desactivar" data-bs-toggle="modal" data-bs-target="#clienteModal">
+										        	<i class="bx bx-block"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Ver socio" data-bs-toggle="modal" data-bs-target="#clienteVerModal">
+										        	<i class="bx bx-id-card"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Editar socio" data-bs-toggle="modal" data-bs-target="#clienteEditarModal">
+										        	<i class="bx bx-pencil"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Imprimir">
+										        	<i class="bx bx-printer"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Enviar correo" data-bs-toggle="modal" data-bs-target="#clienteMailModal">
+										        	<i class="bx bx-envelope"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Eliminar" data-bs-toggle="modal" data-bs-target="#confirma">
+												        	<i class="bx bx-trash"></i>
+												        </button>
+							                </div>
+							            </td>
+							        </tr>
+							        <tr>
+							        	<td>
+							        		<input class="form-check-input me-3" type="checkbox" value="" aria-label="...">
+							        	</td>
+							        	<td>26517</td>
+							            <td class="greenGdt">
+							                <font class="text-white"> Daniel</font>
+							            </td>
+							            <td>
+							                <div class="d-flex align-items-center text-white">
+							                    <i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i>
+							                    <span>Activo</span>
+							                </div>
+							            </td>
+							            <td>
+							                <div class="acciones">
+							                    <button type="button" class="btn btn-light" onclick="" title="Desactivar" data-bs-toggle="modal" data-bs-target="#clienteModal">
+										        	<i class="bx bx-block"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Ver socio" data-bs-toggle="modal" data-bs-target="#clienteVerModal">
+										        	<i class="bx bx-id-card"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Editar socio" data-bs-toggle="modal" data-bs-target="#clienteEditarModal">
+										        	<i class="bx bx-pencil"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Imprimir">
+										        	<i class="bx bx-printer"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Enviar correo" data-bs-toggle="modal" data-bs-target="#clienteMailModal">
+										        	<i class="bx bx-envelope"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Eliminar" data-bs-toggle="modal" data-bs-target="#confirma">
+												        	<i class="bx bx-trash"></i>
+												        </button>
+							                </div>
+							            </td>
+							        </tr>
+							        <tr>
+							        	<td>
+							        		<input class="form-check-input me-3" type="checkbox" value="" aria-label="...">
+							        	</td>
+							        	<td>26518</td>
+							            <td class="redGdt">
+							                <font class="text-white"> Belén</font>
+							            </td>
+							            <td>
+							                <div class="d-flex align-items-center text-white">
+							                    <i class="bx bx-radio-circle-marked align-middle font-18 me-1 text-danger"></i>
+							                    <span>Inactivo</span>
+							                </div>
+							            </td>
+							            <td>
+							                <div class="acciones">
+							                    <button type="button" class="btn btn-light" onclick="" title="Desactivar" data-bs-toggle="modal" data-bs-target="#clienteModal">
+										        	<i class="bx bx-block"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Ver socio" data-bs-toggle="modal" data-bs-target="#clienteVerModal">
+										        	<i class="bx bx-id-card"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Editar socio" data-bs-toggle="modal" data-bs-target="#clienteEditarModal">
+										        	<i class="bx bx-pencil"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Imprimir">
+										        	<i class="bx bx-printer"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Enviar correo" data-bs-toggle="modal" data-bs-target="#clienteMailModal">
+										        	<i class="bx bx-envelope"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Eliminar" data-bs-toggle="modal" data-bs-target="#confirma">
+												        	<i class="bx bx-trash"></i>
+												        </button>
+							                </div>
+							            </td>
+							        </tr>
+							        <tr>
+							        	<td>
+							        		<input class="form-check-input me-3" type="checkbox" value="" aria-label="...">
+							        	</td>
+							        	<td>26519</td>
+							            <td class="greenGdt">
+							                <font class="text-white"> Andrés</font>
+							            </td>
+							            <td>
+							                <div class="d-flex align-items-center text-white">
+							                    <i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i>
+							                    <span>Activo</span>
+							                </div>
+							            </td>
+							            <td>
+							                <div class="acciones">
+							                    <button type="button" class="btn btn-light" onclick="" title="Desactivar" data-bs-toggle="modal" data-bs-target="#clienteModal">
+										        	<i class="bx bx-block"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Ver socio" data-bs-toggle="modal" data-bs-target="#clienteVerModal">
+										        	<i class="bx bx-id-card"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Editar socio" data-bs-toggle="modal" data-bs-target="#clienteEditarModal">
+										        	<i class="bx bx-pencil"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Imprimir">
+										        	<i class="bx bx-printer"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Enviar correo" data-bs-toggle="modal" data-bs-target="#clienteMailModal">
+										        	<i class="bx bx-envelope"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Eliminar" data-bs-toggle="modal" data-bs-target="#confirma">
+												        	<i class="bx bx-trash"></i>
+												        </button>
+							                </div>
+							            </td>
+							        </tr>
+							        <tr>
+							        	<td>
+							        		<input class="form-check-input me-3" type="checkbox" value="" aria-label="...">
+							        	</td>
+							        	<td>26520</td>
+							            <td class="greenGdt">
+							                <font class="text-white"> Rubén</font>
+							            </td>
+							            <td>
+							                <div class="d-flex align-items-center text-white">
+							                    <i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i>
+							                    <span>Activo</span>
+							                </div>
+							            </td>
+							            <td>
+							                <div class="acciones">
+							                    <button type="button" class="btn btn-light" onclick="" title="Desactivar" data-bs-toggle="modal" data-bs-target="#clienteModal">
+										        	<i class="bx bx-block"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Ver socio" data-bs-toggle="modal" data-bs-target="#clienteVerModal">
+										        	<i class="bx bx-id-card"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Editar socio" data-bs-toggle="modal" data-bs-target="#clienteEditarModal">
+										        	<i class="bx bx-pencil"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Imprimir">
+										        	<i class="bx bx-printer"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Enviar correo" data-bs-toggle="modal" data-bs-target="#clienteMailModal">
+										        	<i class="bx bx-envelope"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Eliminar" data-bs-toggle="modal" data-bs-target="#confirma">
+												        	<i class="bx bx-trash"></i>
+												        </button>
+							                </div>
+							            </td>
+							        </tr>
+							        <tr>
+							        	<td>
+							        		<input class="form-check-input me-3" type="checkbox" value="" aria-label="...">
+							        	</td>
+							        	<td>26521</td>
+							            <td class="greenGdt">
+							                <font class="text-white"> Daniel</font>
+							            </td>
+							            <td>
+							                <div class="d-flex align-items-center text-white">
+							                    <i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i>
+							                    <span>Activo</span>
+							                </div>
+							            </td>
+							            <td>
+							                <div class="acciones">
+							                    <button type="button" class="btn btn-light" onclick="" title="Desactivar" data-bs-toggle="modal" data-bs-target="#clienteModal">
+										        	<i class="bx bx-block"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Ver socio" data-bs-toggle="modal" data-bs-target="#clienteVerModal">
+										        	<i class="bx bx-id-card"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Editar socio" data-bs-toggle="modal" data-bs-target="#clienteEditarModal">
+										        	<i class="bx bx-pencil"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Imprimir">
+										        	<i class="bx bx-printer"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Enviar correo" data-bs-toggle="modal" data-bs-target="#clienteMailModal">
+										        	<i class="bx bx-envelope"></i>
+										        </button>
+										        <button type="button" class="btn btn-light" onclick="" title="Eliminar" data-bs-toggle="modal" data-bs-target="#confirma">
+												        	<i class="bx bx-trash"></i>
+												        </button>
+							                </div>
+							            </td>
+							        </tr>
+							    </tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end page wrapper -->
+		<!--start overlay-->
+		<div class="overlay toggle-icon"></div>
+		<!--end overlay-->
+		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		<!--End Back To Top Button-->
+	</div>
+	<!--end wrapper-->
+
+	<!-- Modal desactivar socio -->
+	<div class="modal fade" id="clienteModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Desactivar Cliente</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6">
+				            <input class="result form-control" type="text" id="date-time3" placeholder="Fecha">
+				        </div>
+				        <div class="col-md-6">
+				            <h6 class="mb-0 text-uppercase">Nuevo estado <dl>Inactivo</dl></h6>
+				        </div>
+				        <div class="col-md-12 mt-3">
+			   				<label>Observaciones</label>
+			   				<textarea class="form-control" id="editor"></textarea>
+				   	  	</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input class="btn btn-success px-5 radius-30" type="submit" value="Guardar">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal editar socio -->
+	<div class="modal fade" id="clienteEditarModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Editar Cliente</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="" accept-charset="UTF-8" class="form" id="clientesFormEdit" name="clientesFormEdit" enctype="multipart/form-data">
+								   <div id="respuestaForm">
+								      <div class="row mb-3">
+								      	<div class="col-md-4">
+								            <label>Número Cliente*</label>
+								            <input required="" id="numero" class="form-control mb-3" placeholder="xxxxxx" name="numero" type="text">
+								        </div>
+								        <div class="card-title d-flex align-items-center">
+											<h5 class="mb-0 text-white">DATOS PERSONALES</h5>
+										</div>
+										<hr>
+										<div class="col-md-4">
+								            <label>Tipo Documento *</label>
+								            <select class="form-control mb-3" name="tipoId" id="tipoId" required="">
+								               <option value="">Seleccione</option>
+								               <option value="1">CIF</option>
+								               <option value="2">OTRO</option>
+								               <option value="3">Otro</option>
+								            </select>
+								         </div>
+								         <div class="col-md-4">
+								            <label>Iniciales país</label>
+								            <select class="form-control mb-3" name="inipais" id="inipais">
+								               <option value="">Seleccione</option>
+								               <option value="1">ES</option>
+								               <option value="2">CO</option>
+								               <option value="3">CL</option>
+								            </select>
+								         </div>
+								         <div class="col-md-4">
+								            <label>Número identificación fiscal *</label>
+								            <input required="" id="numId" class="form-control mb-3"  name="numIdfiscal" type="text">
+								         </div>
+								         <div class="col-md-6">
+								            <label>Nombre Razón Social*</label>
+								            <input required="" id="nombre" class="form-control mb-3"  name="nombre" type="text">
+								         </div>
+								         <div class="col-md-6">
+								            <label>Persona de contacto *</label>
+								            <input required="" id="contacto" class="form-control mb-3"  name="contacto" type="text">
+								         </div>
+								      </div>
+								      <div class="row mb-3">
+								        <div class="card-title d-flex align-items-center mt-3">
+											<h5 class="mb-0 text-white">DATOS DE CONTACTO</h5>
+										</div>
+										<hr>
+								         <div class="col-md-4">
+								            <label>Teléfono 1</label>
+								            <input id="telefono" class="form-control mb-3"  name="telefono" type="text">
+								         </div>
+								         <div class="col-md-4">
+								            <label>Teléfono 2</label>
+								            <input id="telefono2" class="form-control mb-3"  name="telefono2" type="text">
+								         </div>
+								         <div class="col-md-4">
+								            <label>Dirección</label>
+								            <input id="domicilio" class="form-control mb-3"  name="domicilio" type="text">
+								         </div>
+								         
+								         <div class="col-md-4">
+								            <label>Población</label>
+								            <input id="poblacion" class="form-control mb-3"  name="poblacion" type="text">
+								         </div>
+								         <div class="col-md-4">
+								            <label>Provincia *</label>
+								            <select class="form-control mb-3" name="provincia" id="provincia" required="">
+								               <option value="">Seleccione</option>
+								               <option value="1">1</option>
+								               <option value="2">2</option>
+								               <option value="3">3</option>
+								            </select>
+								         </div>
+								         <div class="col-md-4">
+								            <label>País *</label>
+								            <select class="form-control mb-3" name="pais" id="pais" required="">
+								               <option value="">Seleccione</option>
+								               <option value="1">1</option>
+								               <option value="2">2</option>
+								               <option value="3">3</option>
+								            </select>
+								         </div>
+								         <div class="col-md-4">
+								            <label>Código postal</label>
+								            <input id="zipcode" class="form-control mb-3"  name="zipcode" type="text">
+								         </div>
+								         <div class="col-md-4">
+								            <label>E-mail *</label>
+								            <input id="email" class="form-control mb-3"  name="email" type="mail">
+								         </div>
+								         
+								      </div>
+								      <hr>
+								      <div class="col-md-12">
+								         <input class="btn btn-success px-5 radius-30" type="submit" value="Guardar">
+								      </div>
+								      <!--{ !! Form::close() !!} -->
+								   </div>
+								</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal ver socio -->
+	<div class="modal fade" id="clienteVerModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Ver Cliente</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+				    <div class="row">
+				        <div class="col-md-6 mb-2">
+						    <h6>Número Cliente</h6>
+						    543216
+						</div>
+						<div class="col-md-12">
+						    <h4>DATOS PERSONALES</h4>
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>Tipo Documento *</h6>
+						    CIF
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>Iniciales país</h6>
+						    OTRO
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>Número identificación fiscal *</h6>
+						    123456789
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>Nombre Razón Social*</h6>
+						    Openpixel
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>Persona de contacto *</h6>
+						    andres diaz
+						</div>
+						<div class="col-md-12 mb-2">
+						    <h6>DATOS DE CONTACTO</h6>
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>Teléfono 1</h6>
+						    7412153
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>Teléfono 2</h6>
+						    3217815123
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>Dirección</h6>
+						    villa ximena bloque 4 apt 204
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>Población</h6>armenia
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>Provincia *</h6>
+						    1
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>País *</h6>
+						    2
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>Código postal</h6>
+						    630003
+						</div>
+						<div class="col-md-6 mb-2">
+						    <h6>E-mail *</h6>
+						    andres@gmail.com
+						</div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal mail socio -->
+	<div class="modal fade" id="clienteMailModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Enviar Correo a Cliente</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="" accept-charset="UTF-8" class="form" id="clientesFormMail" name="clientesFormMail" enctype="multipart/form-data">
+					   <div id="">
+					      <div class="row mb-3">
+					      	
+					         <div class="col-md-12">
+					            <label>Destinatario</label>
+					            <input id="destinatario" class="form-control mb-3"  name="destinatario" type="text">
+					         </div>
+					         <div class="col-md-12">
+					            <label>CC</label>
+					            <input id="contact2" class="form-control mb-3"  name="contact2" type="text">
+					         </div>
+					         <div class="col-md-12">
+					            <label>Asunto</label>
+					            <input id="asunto" class="form-control mb-3"  name="asunto" type="text">
+					         </div>
+					         <div class="col-md-12">
+					            <label for="adjunto" class="form-label">Adjuntar</label>
+					            <input class="form-control mb-3" id="adjunto" type="file">
+							  </div>
+							   <div class="card-title d-flex align-items-center mt-3">
+								<h5 class="mb-0 text-white">MENSAJE</h5>
+								</div>
+								<hr>
+						      	<div class="col-md-12">
+							   		<textarea class="form-control" id="editor3" rows="4"></textarea>
+							     </div>
+					      </div>
+					      <hr>
+					      <div class="col-md-12">
+					         <input class="btn btn-success px-5 radius-30" type="submit" value="Enviar">
+					      </div>
+					      <!--{ !! Form::close() !!} -->
+					   </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal Eliminar -->
+	<div class="modal fade" id="confirma" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Eliminar</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<h6>¿Realmente desea eliminar item?
+					</h6>
+				</div>
+				<div class="modal-footer">
+					<input class="btn btn-success px-5 radius-30" type="submit" value="Aceptar">
+					<input class="btn btn-danger px-5 radius-30" type="submit" value="Cancelar">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Bootstrap JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<!--plugins-->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+	<script src="assets/plugins/ckeditor.js" referrerpolicy="origin"></script>
+	<script src="assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+	<script src="assets/plugins/bootstrap-material-datetimepicker/js/moment.min.js"></script>
+	<script src="assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.min.js"></script>
+	<!--app JS-->
+	<script src="assets/js/app.js"></script>
+	<script>
+		$(function () {
+			$('#date-time, #date-time2, #date-time3').bootstrapMaterialDatePicker({
+				format: 'YYYY-MM-DD HH:mm'
+			});
+		});
+
+		$(document).ready(function() {
+			var table = $('#nombretabla').DataTable( {
+				lengthChange: false,
+				buttons: [ 'excel', 'pdf', 'print'],
+				"paging": false,
+
+				language: {
+					"decimal": "",
+					"emptyTable": "No hay información",
+					"info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+					"infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+					"infoFiltered": "(Filtrado de _MAX_ total entradas)",
+					"infoPostFix": "",
+					"thousands": ",",
+					"lengthMenu": "Mostrar _MENU_ Entradas",
+					"loadingRecords": "Cargando...",
+					"processing": "Procesando...",
+					"search": "Buscar:",
+					"zeroRecords": "Sin resultados encontrados",
+					"paginate": {
+						"first": "Primero",
+						"last": "Ultimo",
+						"next": "Siguiente",
+						"previous": "Anterior"
+					}
+				},
+			} );
+		 
+			table.buttons().container()
+				.appendTo( '#nombretabla_wrapper .col-md-6:eq(0)' );
+		} );
+		
+	</script>
+	<script>
+	  ClassicEditor.create(document.querySelector("#editor"));
+	  ClassicEditor.create(document.querySelector("#editor2"));
+	  ClassicEditor.create(document.querySelector("#editor3"));
+	</script>
+</body>
+
+</html>

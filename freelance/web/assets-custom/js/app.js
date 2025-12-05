@@ -21,7 +21,16 @@ $(function() {
 	
 	$(".mobile-toggle-menu").on("click", function() {
 		$(".wrapper").addClass("toggled")
-	}), $(".toggle-icon").click(function() {
+	}), 
+	
+	// Cerrar sidebar al hacer clic en el overlay (solo móvil)
+	$(".overlay").on("click", function() {
+		if ($(window).width() <= 1024) {
+			$(".wrapper").removeClass("toggled")
+		}
+	}),
+	
+	$(".toggle-icon").click(function() {
 		$(".wrapper").hasClass("toggled") ? ($(".wrapper").removeClass("toggled"), $(".sidebar-wrapper").unbind("hover")) : ($(".wrapper").addClass("toggled"), $(".sidebar-wrapper").hover(function() {
 			$(".wrapper").addClass("sidebar-hovered")
 		}, function() {

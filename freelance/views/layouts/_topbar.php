@@ -34,6 +34,10 @@ foreach ($iconMap as $path => $iconClass) {
 
 <div class="topbar d-flex align-items-center">
     <nav class="navbar navbar-expand">
+        <!-- Botón hamburguesa para móvil -->
+        <div class="mobile-toggle-menu d-lg-none">
+            <i class='bx bx-menu'></i>
+        </div>
 
         <!-- Título dinámico del módulo -->
         <div class="page-breadcrumb d-flex align-items-center px-3 py-2">

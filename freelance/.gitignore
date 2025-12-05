@@ -10,7 +10,7 @@ composer.phar
 composer.lock
 
 # Runtime data (archivos temporales generados por Yii2)
-/runtime/
+/runtime/ 
 /web/assets/*
 !/web/assets/.gitkeep
 

@@ -40,7 +40,22 @@ html, body {
 	overflow-x: hidden;
 	height: 100%;
     margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
+/* Mejoras para dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+    /* Hacer los elementos táctiles más grandes */
+    .btn, .form-control, .input-group-text, a {
+        min-height: 44px;
+    }
+    
+    /* Mejorar el área de clic de los enlaces */
+    a {
+        padding: 0.25rem;
+        margin: -0.25rem;
+    }
 }
 
 .wrapper {
@@ -3958,6 +3973,7 @@ body.bg-theme15 {
     flex-wrap: nowrap;
     align-items: stretch;
     align-content: center;
+    min-height: 100vh;
 }
 
 .logoLogin {
@@ -3979,10 +3995,107 @@ body.bg-theme15 {
     width: 35%;
     height: 100vh;
     border-radius: 0;
+    overflow-y: auto;
 }
+
 .logoLogin img {
     width: 60%;
     z-index: 1;
+    max-width: 400px;
+}
+
+/* Responsive styles para tablets y móviles */
+@media (max-width: 992px) {
+    .loginFlex {
+        flex-direction: column;
+    }
+    
+    .logoLogin {
+        width: 100%;
+        min-height: 30vh;
+        padding: 2rem;
+    }
+    
+    .logoLogin img {
+        width: 50%;
+        max-width: 250px;
+    }
+    
+    .card-login {
+        width: 100%;
+        height: auto;
+        min-height: 70vh;
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logoLogin {
+        min-height: 25vh;
+        padding: 1.5rem;
+    }
+    
+    .logoLogin img {
+        width: 60%;
+        max-width: 200px;
+    }
+    
+    .card-login {
+        padding: 2rem 1.5rem;
+    }
+    
+    .card-login h3 {
+        font-size: 1.5rem;
+    }
+    
+    .card-login p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .loginFlex {
+        min-height: 100vh;
+    }
+    
+    .logoLogin {
+        min-height: 20vh;
+        padding: 1rem;
+    }
+    
+    .logoLogin img {
+        width: 70%;
+        max-width: 180px;
+    }
+    
+    .card-login {
+        padding: 1.5rem 1rem;
+        min-height: 80vh;
+    }
+    
+    .card-login h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-login p {
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-body {
+        width: 100%;
+    }
+    
+    .form-control {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+    
+    .btn {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
 }
 
 @keyframes animatedBackground {

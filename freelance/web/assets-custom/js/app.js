@@ -1,3 +1,10 @@
+// Función global para vincular eventos del mobile menu
+function bindMobileMenuEvents() {
+	$(".mobile-toggle-menu").off("click").on("click", function() {
+		$(".wrapper").addClass("toggled")
+	});
+}
+
 $(function() {
 	"use strict";
 	
@@ -19,9 +26,8 @@ $(function() {
       }), 
 	
 	
-	$(".mobile-toggle-menu").on("click", function() {
-		$(".wrapper").addClass("toggled")
-	}), 
+	// Vincular eventos inicialmente
+	bindMobileMenuEvents();
 	
 	// Cerrar sidebar al hacer clic en el overlay (solo móvil)
 	$(".overlay").on("click", function() {
@@ -102,6 +108,9 @@ $(function() {
     // Reinicializar scripts después de carga Pjax
     $(document).on('pjax:end pjax:error', function() {
         $('#pjax-container').removeClass('pjax-loading');
+        
+        // Re-vincular eventos del mobile menu
+        bindMobileMenuEvents();
         
         // Reinicializar DataTables si existen
         if (typeof $.fn.DataTable !== 'undefined') {

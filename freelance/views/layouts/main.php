@@ -42,9 +42,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
         <?php $this->beginBody() ?>
         <?= $this->render('_sidebar') ?>
-        <header id="topbar">
-            <?= $this->render('_topbar') ?>
-        </header>
+        
         <div class="page-wrapper">
 
             <?php Pjax::begin([
@@ -54,6 +52,10 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 'scrollTo' => 0,
                 'linkSelector' => '#menu a:not([data-method]):not([data-pjax="0"]), a[data-pjax]',
             ]); ?>
+
+            <header id="topbar">
+                <?= $this->render('_topbar') ?>
+            </header>
 
             <main id="main" class="flex-shrink-0" role="main">
 

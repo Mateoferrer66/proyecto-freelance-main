@@ -42,10 +42,9 @@ foreach ($iconMap as $path => $iconClass) {
         <!-- Título dinámico del módulo -->
         <div class="page-breadcrumb d-flex align-items-center px-3 py-2">
             <div class="breadcrumb-title pe-3">
-                <?= Html::encode($this->title ?? 'Utilidades') ?>
+                <?= Html::encode($this->context->view->title ?? 'Utilidades') ?>
             </div>
         </div>
-        <i class="bx <?= Html::encode($currentIcon) ?> bx-sm"></i>
         <!-- Menú superior derecho -->
         <div class="top-menu ms-auto">
             <ul class="navbar-nav align-items-center">

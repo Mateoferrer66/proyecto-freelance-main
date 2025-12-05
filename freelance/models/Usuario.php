@@ -14,6 +14,7 @@ use yii\web\IdentityInterface;
  * @property string $usu_email Correo electrónico del usuario
  * @property string $usu_login Login del usuario
  * @property string $usu_password Password del usuario
+ * @property string $usu_rol Rol del usuario
  * @property string $usu_estado Estado del usuario: Activo, Inactivo
  * @property string|null $usu_fecbloqueo Fecha de bloqueo del usuario
  * @property int $usu_eliminado Campo que indica si el usuario se encuentra eliminado: 1 - Si, 0 - No
@@ -30,6 +31,9 @@ class Usuario extends \yii\db\ActiveRecord implements IdentityInterface
      */
     const USU_ESTADO_ACTIVO = 'Activo';
     const USU_ESTADO_INACTIVO = 'Inactivo';
+
+    const ROL_SOCIO = 'Socio';
+    const ROL_COOPERATIVA = 'Cooperativa';
 
     /**
      * {@inheritdoc}
@@ -52,12 +56,13 @@ class Usuario extends \yii\db\ActiveRecord implements IdentityInterface
             [['usu_nombre', 'usu_email'], 'required'],
             // En creación se requiere contraseña; en edición sólo si se provee
             [['usu_password'], 'required', 'on' => ['create']],
-            [['usu_estado', 'usu_login'], 'string'],
+            [['usu_estado', 'usu_login', 'usu_rol'], 'string'],
             [['usu_fecbloqueo'], 'safe'],
             [['usu_eliminado'], 'default', 'value' => 0],
             [['usu_eliminado'], 'integer'],
-            [['usu_nombre', 'usu_apellido', 'usu_email', 'usu_login', 'usu_password'], 'string', 'max' => 255],
+            [['usu_nombre', 'usu_apellido', 'usu_email', 'usu_login', 'usu_password', 'usu_rol'], 'string', 'max' => 255],
             ['usu_estado', 'in', 'range' => array_keys(self::optsUsuEstado())],
+            ['usu_rol', 'in', 'range' => array_keys(self::optsUsuRol())],
             // Validación de formato de contraseña sólo si se provee (skipOnEmpty true)
             ['usu_password', 'string', 'min' => 8, 'skipOnEmpty' => true],
             ['usu_password', 'match', 'pattern' => '/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/',
@@ -79,6 +84,7 @@ class Usuario extends \yii\db\ActiveRecord implements IdentityInterface
             'usu_email' => 'Email *',
             'usu_login' => 'Login *',
             'usu_password' => 'Password *',
+            'usu_rol' => 'Rol',
             'usu_estado' => 'Estado',
             'usu_fecbloqueo' => 'Fecbloqueo',
             'usu_eliminado' => 'Eliminado',
@@ -125,6 +131,18 @@ class Usuario extends \yii\db\ActiveRecord implements IdentityInterface
         return [
             self::USU_ESTADO_ACTIVO => 'Activo',
             self::USU_ESTADO_INACTIVO => 'Inactivo',
+        ];
+    }
+
+    /**
+     * column usu_rol ENUM value labels
+     * @return string[]
+     */
+    public static function optsUsuRol()
+    {
+        return [
+            self::ROL_SOCIO => 'Socio',
+            self::ROL_COOPERATIVA => 'Cooperativa',
         ];
     }
 

@@ -25665,3 +25665,154 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1764797174.5106
     'REQUEST_TIME' => 1764797174
 ]
+2025-12-04 22:11:12 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct('mysql:host=loca...', 'root', Object(SensitiveParameterValue), NULL)
+#1 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo(true)
+#5 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare(true)
+#6 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#8 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#15 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#16 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#17 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#18 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction('', Array)
+#19 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\yii(20): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo(true)
+#3 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare(true)
+#4 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#6 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#13 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#14 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#15 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('', Array)
+#16 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction('', Array)
+#17 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\Users\mateo\Desktop\2025\PruebastecnicasYTRABAJOS\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\yii(20): yii\base\Application->run()
+#21 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 2002
+    [2] => No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+)
+
+2025-12-04 22:11:05 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\mateo\\AppData\\Roaming'
+    'ChocolateyInstall' => 'C:\\ProgramData\\chocolatey'
+    'ChocolateyLastPathUpdate' => '133599450597136832'
+    'CHROME_CRASHPAD_PIPE_NAME' => '\\\\.\\pipe\\crashpad_19728_YQSMJSEGXAMAGRCR'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'FAMILIA'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FNM_ARCH' => 'x64'
+    'FNM_COREPACK_ENABLED' => 'false'
+    'FNM_DIR' => 'C:\\Users\\mateo\\AppData\\Roaming\\fnm'
+    'FNM_LOGLEVEL' => 'info'
+    'FNM_MULTISHELL_PATH' => 'C:\\Users\\mateo\\AppData\\Local\\fnm_multishells\\32464_1764878218384'
+    'FNM_NODE_DIST_MIRROR' => 'https://nodejs.org/dist'
+    'FNM_RESOLVE_ENGINES' => 'true'
+    'FNM_VERSION_FILE_STRATEGY' => 'local'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\mateo'
+    'INTEL_DEV_REDIST' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\'
+    'LOCALAPPDATA' => 'C:\\Users\\mateo\\AppData\\Local'
+    'LOGONSERVER' => '\\\\FAMILIA'
+    'MIC_LD_LIBRARY_PATH' => 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\compiler\\lib\\mic'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\mateo\\OneDrive'
+    'ORIGINAL_XDG_CURRENT_DESKTOP' => 'undefined'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Users\\mateo\\AppData\\Local\\fnm_multishells\\32464_1764878218384;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Python312\\Scripts\\;C:\\Python312\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\Program Files (x86)\\Microsoft SQL Server\\160\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\160\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\160\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\160\\DTS\\Binn\\;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Users\\mateo\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\mateo\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\mateo\\AppData\\Roaming\\npm;C:\\Users\\mateo\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\mateo\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\mateo\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\\Users\\mateo\\.dotnet\\tools'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW;.CPL'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Users\\mateo\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules;C:\\Program Files (x86)\\Microsoft SQL Server\\160\\Tools\\PowerShell\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\mateo\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\mateo\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'FAMILIA'
+    'USERDOMAIN_ROAMINGPROFILE' => 'FAMILIA'
+    'USERNAME' => 'mateo'
+    'USERPROFILE' => 'C:\\Users\\mateo'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VSCODE_PYTHON_AUTOACTIVATE_GUARD' => '1'
+    'windir' => 'C:\\WINDOWS'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'PAGER' => 'cat'
+    'ANTIGRAVITY_AGENT' => '1'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.104.0'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'ANTIGRAVITY_CLI_ALIAS' => 'agy'
+    'GIT_ASKPASS' => 'c:\\Users\\mateo\\AppData\\Local\\Programs\\Antigravity\\resources\\app\\extensions\\git\\dist\\askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => 'C:\\Users\\mateo\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => ''
+    'VSCODE_GIT_ASKPASS_MAIN' => 'c:\\Users\\mateo\\AppData\\Local\\Programs\\Antigravity\\resources\\app\\extensions\\git\\dist\\askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '\\\\.\\pipe\\vscode-git-5b47dae4d6-sock'
+    'VSCODE_INJECTION' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1764882664.8595
+    'REQUEST_TIME' => 1764882664
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+        2 => '--interactive=0'
+    ]
+    'argc' => 3
+]

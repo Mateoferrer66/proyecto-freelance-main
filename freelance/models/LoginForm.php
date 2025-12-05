@@ -70,6 +70,26 @@ class LoginForm extends Model
                 // Increment failed login attempts
                 Yii::$app->session->set(self::FAILED_LOGIN_ATTEMPTS, Yii::$app->session->get(self::FAILED_LOGIN_ATTEMPTS, 0) + 1);
                 $this->addError($attribute, 'Usuario o contraseña incorrectos.');
+            } else {
+                // Check role access
+                $appType = Yii::$app->params['appType'] ?? 'cooperativa';
+                $userRole = $user->usu_rol;
+
+                // Define allowed roles for each app type
+                $allowed = false;
+                if ($appType === 'cooperativa') {
+                    if ($userRole === Usuario::ROL_COOPERATIVA) {
+                        $allowed = true;
+                    }
+                } elseif ($appType === 'socio') {
+                    if ($userRole === Usuario::ROL_SOCIO) {
+                        $allowed = true;
+                    }
+                }
+
+                if (!$allowed) {
+                    $this->addError($attribute, 'No tiene permisos para acceder a esta aplicación.');
+                }
             }
         }
     }

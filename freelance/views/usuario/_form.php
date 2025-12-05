@@ -25,6 +25,12 @@ use yii\widgets\ActiveForm;
     </div>
 
     <div class="row">
+        <div class="col-md-4">
+            <?= $form->field($model, 'usu_rol')->dropDownList(\app\models\Usuario::optsUsuRol(), ['prompt' => 'Seleccione Rol']) ?>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-md-8">
             <?= $form->field($model, 'usu_password')->passwordInput(['maxlength' => true]) ?>
         </div>

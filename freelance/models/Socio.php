@@ -4,6 +4,8 @@ namespace app\models;
 
 use Yii;
 
+use yii\web\IdentityInterface;
+
 /**
  * This is the model class for table "socio".
  *
@@ -62,7 +64,7 @@ use Yii;
  * @property SocCuotaMensual[] $socCuotaMensuals
  * @property TipoDocIdentidad $tdo
  */
-class Socio extends \yii\db\ActiveRecord
+class Socio extends \yii\db\ActiveRecord implements IdentityInterface
 {
 
     /**
@@ -375,5 +377,69 @@ class Socio extends \yii\db\ActiveRecord
     public function setSocEstadoToInactivo()
     {
         $this->soc_estado = self::SOC_ESTADO_INACTIVO;
+    }
+
+    /* Implementación de IdentityInterface */
+
+    public static function findIdentity($id)
+    {
+        return static::findOne(['soc_id' => $id, 'soc_estado' => self::SOC_ESTADO_ACTIVO, 'soc_eliminado' => 0]);
+    }
+
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        return null; // Token auth not implemented
+    }
+
+    public function getId()
+    {
+        return $this->getPrimaryKey();
+    }
+
+    public function getAuthKey()
+    {
+        return null; // Auth key not implemented
+    }
+
+    public function validateAuthKey($authKey)
+    {
+        return false;
+    }
+
+    /**
+     * Finds socio by email
+     *
+     * @param string $email
+     * @return static|null
+     */
+    public static function findByUsername($email)
+    {
+        return static::findOne(['soc_email' => $email, 'soc_estado' => self::SOC_ESTADO_ACTIVO, 'soc_eliminado' => 0]);
+    }
+
+    /**
+     * Validates password
+     *
+     * @param string $password password to validate
+     * @return bool if password provided is valid for current user
+     */
+    public function validatePassword($password)
+    {
+        // If password is not hashed yet (legacy or direct insert), might need fallback?
+        // But we assume all passwords for auth are hashed.
+        return Yii::$app->getSecurity()->validatePassword($password, $this->soc_password);
+    }
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if ($this->isNewRecord || $this->isAttributeChanged('soc_password')) {
+                if (!empty($this->soc_password)) {
+                    $this->soc_password = Yii::$app->getSecurity()->generatePasswordHash($this->soc_password);
+                }
+            }
+            return true;
+        }
+        return false;
     }
 }

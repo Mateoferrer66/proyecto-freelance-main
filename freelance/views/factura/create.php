@@ -303,6 +303,11 @@ $this->registerJs($js);
                                 'inputOptions' => ['class' => 'form-control mb-3', 'required' => true]
                             ])->textInput() ?>
                         </div>
+                         <div class="col-12 col-md-6">
+                            <?= $form->field($model, 'fac_numero_pedido', [
+                                'template' => "<label>Número Pedido</label>\n{input}\n{hint}\n{error}"
+                            ])->textInput(['maxlength' => true, 'class' => 'form-control mb-3', 'readonly' => true]) ?>
+                        </div>
                         <div class="col-12 col-md-6">
                             <?= $form->field($model, 'fac_fecha', [
                                 'template' => "<label>Fecha*</label>\n{input}\n{hint}\n{error}",
@@ -376,6 +381,9 @@ $this->registerJs($js);
                                 $socios,
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
                             ) ?>
+                            <button type="button" class="btn btn-sm btn-outline-primary mt-1" data-bs-toggle="modal" data-bs-target="#modalCreateSocio">
+                                <i class="bx bx-plus"></i> Nuevo Socio
+                            </button>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
                             <?= $form->field($model, 'fac_logo', [
@@ -493,6 +501,10 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="row mb-3">
+                         <div class="col-12 mb-3">
+                            <?= $form->field($model, 'fac_archivo')->fileInput(['class' => 'form-control']) ?>
+                            <small class="text-muted">Si sube un archivo, no es necesario escribir observaciones.</small>
+                        </div>
                         <div class="col-12">
                             <?= $form->field($model, 'fac_observaciones', [
                                 'template' => "<label>Observaciones</label>\n{input}\n{hint}\n{error}",
@@ -516,3 +528,120 @@ $this->registerJs($js);
         </div>
     </div>
 </div>
+
+
+<!-- Modal Create Socio -->
+<div class="modal fade" id="modalCreateSocio" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Nuevo Socio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-create-socio">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Número *</label>
+                            <input type="number" name="Socio[soc_numero]" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Fecha *</label>
+                            <input type="date" name="Socio[soc_fecha]" class="form-control" value="<?= date('Y-m-d') ?>" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Nombre *</label>
+                            <input type="text" name="Socio[soc_nombre]" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Apellido *</label>
+                            <input type="text" name="Socio[soc_apellido]" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Tipo Doc *</label>
+                            <?= Html::dropDownList('Socio[tdo_id]', null, \yii\helpers\ArrayHelper::map(\app\models\TipoDocIdentidad::find()->all(), 'tdo_id', 'tdo_nombre'), ['class' => 'form-select', 'required' => true]) ?>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Num Doc *</label>
+                            <input type="text" name="Socio[soc_numdocide]" class="form-control" required>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label class="form-label">Fecha Nacimiento *</label>
+                            <input type="date" name="Socio[soc_fecnacimiento]" class="form-control" required>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label class="form-label">Sexo *</label>
+                            <select name="Socio[soc_sexo]" class="form-select" required>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                            </select>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label class="form-label">Num Seg Social *</label>
+                            <input type="text" name="Socio[soc_numsegsocial]" class="form-control" required>
+                        </div>
+                         <div class="col-md-6 mb-3">
+                            <label class="form-label">Cuenta Bancaria *</label>
+                            <input type="text" name="Socio[soc_ctabancaria]" class="form-control" required>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-primary">Guardar Socio</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+$urlCreateSocio = Url::to(['socio/create-ajax']);
+$jsSocio = <<<JS
+$(function(){
+    $('#form-create-socio').on('submit', function(e){
+        e.preventDefault();
+        var form = $(this);
+        $.ajax({
+            url: '$urlCreateSocio',
+            type: 'POST',
+            data: form.serialize(),
+            success: function(resp){
+                if(resp.success){
+                    // Add to dropdown and select
+                    var newOption = new Option(resp.nombre, resp.id, true, true);
+                    $('#factura-soc_id').append(newOption).trigger('change');
+                    
+                    // Close modal and reset form
+                    var modal = bootstrap.Modal.getInstance(document.getElementById('modalCreateSocio'));
+                    modal.hide();
+                    form[0].reset();
+                    alert('Socio creado correctamente');
+                } else {
+                    var msg = '';
+                    $.each(resp.errors, function(k, v){
+                        msg += v.join(', ') + '\\n';
+                    });
+                    alert('Error:\\n' + msg);
+                }
+            },
+            error: function(){
+                alert('Error en el servidor');
+            }
+        });
+    });
+
+    // Validacion de Observaciones vs Archivo
+    $('form#facturaForm').on('submit', function(e){
+        var file = $('#factura-fac_archivo').val();
+        var obs = $('#factura-fac_observaciones').val().trim();
+        
+        if(!file && !obs){
+            e.preventDefault();
+            alert('Debe escribir observaciones o subir un archivo.');
+            $('#factura-fac_observaciones').focus();
+        }
+    });
+});
+JS;
+$this->registerJs($jsSocio);
+?>

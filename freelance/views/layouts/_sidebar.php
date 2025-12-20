@@ -24,10 +24,10 @@ $currentUrl = Yii::$app->request->url;
                 <div class="parent-icon"><i class='bx bx-street-view'></i></div>
                 <div class="menu-title">Socios</div>
             </a></li>
-        <li><a href="<?= \Yii::$app->urlManager->createUrl(['/cliente']) ?>">
+        <!-- <li><a href="<?= \Yii::$app->urlManager->createUrl(['/cliente']) ?>">
                 <div class="parent-icon"><i class='bx bx-user-voice'></i></div>
                 <div class="menu-title">Clientes</div>
-            </a></li>
+            </a></li> -->
 
         <li class="<?= strpos($currentUrl, '/facturacion') !== false || strpos($currentUrl, '/presupuestos') !== false ? 'mm-active' : '' ?>">
             <a class="has-arrow" href="javascript:;" aria-expanded="<?= strpos($currentUrl, '/facturacion') !== false || strpos($currentUrl, '/presupuestos') !== false ? 'true' : 'false' ?>">
@@ -44,7 +44,7 @@ $currentUrl = Yii::$app->request->url;
                 <div class="parent-icon"><i class='bx bx-error-alt'></i></div>
                 <div class="menu-title">Seguridad social</div>
             </a></li>
-        <li><a href="<?= \Yii::$app->urlManager->createUrl(['/liquidaciones']) ?>">
+        <!-- <li><a href="<?= \Yii::$app->urlManager->createUrl(['/liquidaciones']) ?>">
                 <div class="parent-icon"><i class='bx bx-calculator'></i></div>
                 <div class="menu-title">Liquidaciones</div>
             </a></li>
@@ -86,7 +86,7 @@ $currentUrl = Yii::$app->request->url;
                 <li><a href="<?= \Yii::$app->urlManager->createUrl(['/categoria']) ?>"><i class="bx bx-right-arrow-alt"></i>Categorías profesionales</a></li>
                 <li><a href="<?= \Yii::$app->urlManager->createUrl(['/provincia']) ?>"><i class="bx bx-right-arrow-alt"></i>País y provincia</a></li>
             </ul>
-        </li>
+        </li> -->
         <li>
             <?= \yii\helpers\Html::a(
                 '<div class="parent-icon"><i class="bx bx-log-out-circle"></i></div><div class="menu-title">Cerrar Sesión</div>',

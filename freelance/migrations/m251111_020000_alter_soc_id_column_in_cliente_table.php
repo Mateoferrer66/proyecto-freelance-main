@@ -19,7 +19,7 @@ class m251111_020000_alter_soc_id_column_in_cliente_table extends Migration
             // Ignore if FK doesn't exist or name is different
         }
 
-        $this->alterColumn('{{%cliente}}', 'soc_id', $this->integer()->null());
+        $this->alterColumn('{{%cliente}}', 'soc_id', $this->bigInteger()->null());
 
         // Add FK back
         $this->addForeignKey(
@@ -38,7 +38,7 @@ class m251111_020000_alter_soc_id_column_in_cliente_table extends Migration
     public function safeDown()
     {
         $this->dropForeignKey('fk-cliente-soc_id', '{{%cliente}}');
-        $this->alterColumn('{{%cliente}}', 'soc_id', $this->integer()->notNull());
+        $this->alterColumn('{{%cliente}}', 'soc_id', $this->bigInteger()->notNull());
         $this->addForeignKey(
             'fk-cliente-soc_id',
             '{{%cliente}}',

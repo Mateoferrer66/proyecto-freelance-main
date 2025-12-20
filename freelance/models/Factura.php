@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $fac_id Código identificador del registro
  * @property int $fac_numero Número de la factura
+ * @property string|null $fac_numero_pedido Número de pedido
  * @property string $fac_logo Logo a colocar en el formato de la factura
  * @property string $fac_fecha Fecha de la factura
  * @property string $fac_language
@@ -24,6 +25,7 @@ use Yii;
  * @property float $fac_gastos_suplidos Valor total de gastos suplidos
  * @property float $fac_total Valor total de la factura
  * @property string|null $fac_observaciones Observaciones
+ * @property string|null $fac_archivo Archivo adjunto
  * @property int $fac_exportada Campo para indicar si la factura fué exportada: 0 - No, 1 - Si
  * @property int $fac_eliminada Campo que indica si la factura se encuentra eliminada
  *

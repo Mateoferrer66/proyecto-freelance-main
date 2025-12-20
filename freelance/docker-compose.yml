@@ -24,7 +24,7 @@ services:
       - mysql-data:/var/lib/mysql
       - ./freelance.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - '3306:3306'
+      - '3307:3306'
 
 volumes:
   mysql-data:

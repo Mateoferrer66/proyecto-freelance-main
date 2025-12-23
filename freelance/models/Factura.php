@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $fac_id Código identificador del registro
  * @property int $fac_numero Número de la factura
+ * @property string|null $fac_numero_pedido Número de pedido
  * @property string $fac_logo Logo a colocar en el formato de la factura
  * @property string $fac_fecha Fecha de la factura
  * @property string $fac_language
@@ -24,6 +25,7 @@ use Yii;
  * @property float $fac_gastos_suplidos Valor total de gastos suplidos
  * @property float $fac_total Valor total de la factura
  * @property string|null $fac_observaciones Observaciones
+ * @property string|null $fac_archivo Archivo adjunto
  * @property int $fac_exportada Campo para indicar si la factura fué exportada: 0 - No, 1 - Si
  * @property int $fac_eliminada Campo que indica si la factura se encuentra eliminada
  *
@@ -83,7 +85,7 @@ class Factura extends \yii\db\ActiveRecord
             [['fac_eliminada'], 'default', 'value' => 0],
             [['fac_numero', 'fac_fecha', 'cli_id', 'soc_id', 'fdp_id', 'fac_estado'], 'required'],
             [['fac_numero', 'cli_id', 'soc_id', 'fdp_id', 'fac_exportada', 'fac_eliminada', 'fac_aprobada'], 'integer'],
-            [['fac_logo', 'fac_language', 'fac_money', 'fac_estado', 'fac_situacion', 'fac_observaciones'], 'string'],
+            [['fac_logo', 'fac_language', 'fac_money', 'fac_estado', 'fac_situacion', 'fac_observaciones', 'fac_numero_pedido', 'fac_archivo'], 'string'],
             [['fac_fecha', 'fac_fecha_situacion'], 'safe'],
             [['fac_subtotal', 'fac_iva', 'fac_gastos_suplidos', 'fac_total'], 'number'],
             ['fac_logo', 'in', 'range' => array_keys(self::optsFacLogo())],
@@ -94,6 +96,7 @@ class Factura extends \yii\db\ActiveRecord
             [['cli_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cliente::class, 'targetAttribute' => ['cli_id' => 'cli_id']],
             [['fdp_id'], 'exist', 'skipOnError' => true, 'targetClass' => FormaDePago::class, 'targetAttribute' => ['fdp_id' => 'fdp_id']],
             [['soc_id'], 'exist', 'skipOnError' => true, 'targetClass' => Socio::class, 'targetAttribute' => ['soc_id' => 'soc_id']],
+            ['fac_observaciones', 'validateObservaciones', 'skipOnEmpty' => false],
         ];
     }
 
@@ -105,6 +108,7 @@ class Factura extends \yii\db\ActiveRecord
         return [
             'fac_id' => 'Factura ID',
             'fac_numero' => 'Factura Numero',
+            'fac_numero_pedido' => 'Número Pedido',
             'fac_logo' => 'Factura Logo',
             'fac_fecha' => 'Factura Fecha',
             'fac_language' => 'Factura Language',
@@ -120,10 +124,18 @@ class Factura extends \yii\db\ActiveRecord
             'fac_gastos_suplidos' => 'Factura Gastos Suplidos',
             'fac_total' => 'Factura Total',
             'fac_observaciones' => 'Factura Observaciones',
+            'fac_archivo' => 'Archivo Adjunto',
             'fac_exportada' => 'Factura Exportada',
             'fac_eliminada' => 'Factura Eliminada',
             'fac_aprobada' => 'Aprobacion',
         ];
+    }
+    
+    public function validateObservaciones($attribute, $params)
+    {
+        if (empty($this->fac_archivo) && empty($this->fac_observaciones)) {
+            $this->addError('fac_observaciones', 'Debe escribir observaciones o subir un archivo.');
+        }
     }
 
     /**

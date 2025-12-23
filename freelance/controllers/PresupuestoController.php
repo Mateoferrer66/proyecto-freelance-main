@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Presupuesto;
+use yii\web\UploadedFile;
 use app\models\DetallePresupuesto;
 use app\models\CuentasPresupuesto;
 use app\models\PresupuestoSearch;
@@ -13,6 +14,8 @@ use yii\web\Response;
 use Yii;
 use app\components\ExcelExportHelper;
 use app\components\PdfExportHelper;
+
+use app\models\Consecutivo;
 
 /**
  * PresupuestoController implements the CRUD actions for Presupuesto model.
@@ -82,6 +85,20 @@ class PresupuestoController extends BaseController
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->validate()) {
+
+                // Handle File Upload
+                $archivo = UploadedFile::getInstance($model, 'pre_archivo');
+                if ($archivo) {
+                    $uploadPath = 'uploads/presupuestos/';
+                    if (!is_dir($uploadPath)) {
+                        mkdir($uploadPath, 0777, true);
+                    }
+                    $fileName = uniqid('pre_') . '.' . $archivo->extension;
+                    $filePath = $uploadPath . $fileName;
+                    if ($archivo->saveAs($filePath)) {
+                        $model->pre_archivo = $filePath;
+                    }
+                }
 
                 // Primero construimos los modelos de detalle y los validamos sin persistir
                 $detallesData = Yii::$app->request->post('DetallePresupuesto', []);
@@ -223,6 +240,18 @@ class PresupuestoController extends BaseController
             $model->pre_numero = 'PRE-' . date('Ymd-His');
             $model->pre_fecha = date('Y-m-d');
             $model->pre_logo = Presupuesto::PRE_LOGO_EMPRESA;
+
+            // Cargar numero pedido (Serie PL for Presupuesto to separate from Factura)
+            $consecutivoPL = Consecutivo::findOne(['con_serie' => Consecutivo::CON_SERIE_PL]);
+            if (!$consecutivoPL) {
+                $consecutivoPL = new Consecutivo();
+                $consecutivoPL->con_serie = Consecutivo::CON_SERIE_PL;
+                $consecutivoPL->con_consecutivo = 0;
+                $consecutivoPL->save();
+            }
+            $consecutivoPL->con_consecutivo++;
+            $model->pre_numero_pedido = $consecutivoPL->con_consecutivo;
+            $consecutivoPL->save();
         }
 
         $socios = \app\models\Socio::find()->all();
@@ -311,6 +340,24 @@ class PresupuestoController extends BaseController
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->validate()) {
+                
+                // Handle File Upload
+                $archivo = UploadedFile::getInstance($model, 'pre_archivo');
+                if ($archivo) {
+                    $uploadPath = 'uploads/presupuestos/';
+                    if (!is_dir($uploadPath)) {
+                        mkdir($uploadPath, 0777, true);
+                    }
+                    $fileName = uniqid('pre_') . '.' . $archivo->extension;
+                    $filePath = $uploadPath . $fileName;
+                    if ($archivo->saveAs($filePath)) {
+                        $model->pre_archivo = $filePath;
+                    }
+                } else {
+                    // Keep old file if no new file is uploaded
+                    $model->pre_archivo = $model->getOldAttribute('pre_archivo');
+                }
+
                 // Primero construimos los modelos de detalle y los validamos sin persistir
                 $detallesData = Yii::$app->request->post('DetallePresupuesto', []);
                 $detalleModels = [];

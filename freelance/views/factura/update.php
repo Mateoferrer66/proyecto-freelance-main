@@ -302,6 +302,17 @@ $this->registerJs($js);
                             ])->textInput() ?>
                         </div>
                         <div class="col-md-6">
+                            <?php 
+                            $isCooperativa = !Yii::$app->user->isGuest && Yii::$app->user->identity->usu_rol === 'Cooperativa';
+                            ?>
+                            <?= $form->field($model, 'fac_numero_pedido', [
+                                'template' => "<label>Número Pedido</label>\n{input}\n{hint}\n{error}"
+                            ])->textInput(['maxlength' => true, 'class' => 'form-control mb-3', 'readonly' => $isCooperativa]) ?>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
                             <?= $form->field($model, 'fac_fecha', [
                                 'template' => "<label>Fecha*</label>\n{input}\n{hint}\n{error}",
                                 'inputOptions' => ['class' => 'form-control mb-3', 'required' => true]

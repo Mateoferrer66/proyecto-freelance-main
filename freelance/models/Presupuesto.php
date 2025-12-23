@@ -86,7 +86,7 @@ class Presupuesto extends \yii\db\ActiveRecord
             [['pre_estado'], 'default', 'value' => 'Pendiente'],
             [['pre_situacion'], 'default', 'value' => 'No Reclamada'],
             [['pre_numero', 'pre_logo', 'pre_fecha', 'cli_id', 'soc_id', 'fdp_id'], 'required'],
-            [['pre_logo', 'pre_language', 'pre_observaciones', 'pre_estado', 'pre_situacion'], 'string'],
+            [['pre_logo', 'pre_language', 'pre_observaciones', 'pre_estado', 'pre_situacion', 'pre_numero_pedido', 'pre_archivo'], 'string'],
             [['pre_fecha', 'pre_fecha_situacion'], 'safe'],
             [['pre_fecha_situacion'], 'date', 'format' => 'php:Y-m-d'],
             [['cli_id', 'soc_id', 'fdp_id', 'pre_eliminado', 'pre_aprobado'], 'integer'],
@@ -100,6 +100,7 @@ class Presupuesto extends \yii\db\ActiveRecord
             [['cli_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cliente::class, 'targetAttribute' => ['cli_id' => 'cli_id']],
             [['fdp_id'], 'exist', 'skipOnError' => true, 'targetClass' => FormaDePago::class, 'targetAttribute' => ['fdp_id' => 'fdp_id']],
             [['soc_id'], 'exist', 'skipOnError' => true, 'targetClass' => Socio::class, 'targetAttribute' => ['soc_id' => 'soc_id']],
+            ['pre_observaciones', 'validateObservaciones', 'skipOnEmpty' => false],
         ];
     }
 
@@ -111,6 +112,7 @@ class Presupuesto extends \yii\db\ActiveRecord
         return [
             'pre_id' => 'ID',
             'pre_numero' => 'Número Presupuesto',
+            'pre_numero_pedido' => 'Número Pedido',
             'pre_logo' => 'Logo',
             'pre_fecha' => 'Fecha',
             'pre_language' => 'Idioma',
@@ -122,12 +124,20 @@ class Presupuesto extends \yii\db\ActiveRecord
             'pre_gastos_suplidos' => 'Gastos Suplidos',
             'pre_total' => 'Total',
             'pre_observaciones' => 'Observaciones',
+            'pre_archivo' => 'Archivo Adjunto',
             'pre_eliminado' => 'Eliminado',
             'pre_estado' => 'Estado',
             'pre_situacion' => 'Situación',
             'pre_fecha_situacion' => 'Fecha de Situación',
             'pre_aprobado' => 'Aprobado',
         ];
+    }
+
+    public function validateObservaciones($attribute, $params)
+    {
+        if (empty($this->pre_archivo) && empty($this->pre_observaciones)) {
+            $this->addError('pre_observaciones', 'Debe escribir observaciones o subir un archivo.');
+        }
     }
 
     /**

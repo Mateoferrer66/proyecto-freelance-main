@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Mpdf\Mpdf;
+use yii\web\UploadedFile;
 use app\models\Consecutivo;
 use app\models\Factura;
 use app\models\DetalleFactura;
@@ -105,6 +106,20 @@ class FacturaController extends BaseController
             if ($model->load($this->request->post())) {
                 // Forzar estado a 'Sin Pagar' incluso si el formulario intentara cambiarlo
                 $model->fac_estado = Factura::FAC_ESTADO_SIN_PAGAR;
+
+                // Handle File Upload
+                $archivo = UploadedFile::getInstance($model, 'fac_archivo');
+                if ($archivo) {
+                    $uploadPath = 'uploads/facturas/';
+                    if (!is_dir($uploadPath)) {
+                        mkdir($uploadPath, 0777, true);
+                    }
+                    $fileName = uniqid('fac_') . '.' . $archivo->extension;
+                    $filePath = $uploadPath . $fileName;
+                    if ($archivo->saveAs($filePath)) {
+                        $model->fac_archivo = $filePath;
+                    }
+                }
 
                 // Primero construimos los modelos de detalle y los validamos sin persistir
                 $detallesData = Yii::$app->request->post('DetalleFactura', []);
@@ -229,6 +244,18 @@ class FacturaController extends BaseController
                 $consecutivo->save();
             }
 
+            // Cargar numero pedido (Serie P)
+            $consecutivoP = Consecutivo::findOne(['con_serie' => Consecutivo::CON_SERIE_P]);
+            if (!$consecutivoP) {
+                $consecutivoP = new Consecutivo();
+                $consecutivoP->con_serie = Consecutivo::CON_SERIE_P;
+                $consecutivoP->con_consecutivo = 0; // Initialize
+                $consecutivoP->save();
+            }
+            $consecutivoP->con_consecutivo++;
+            $model->fac_numero_pedido = $consecutivoP->con_consecutivo;
+            $consecutivoP->save();
+
             // Cargar fecha actual
             $model->fac_fecha = date('d/m/Y');
         }
@@ -317,6 +344,24 @@ class FacturaController extends BaseController
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->validate()) {
+                
+                // Handle File Upload
+                $archivo = UploadedFile::getInstance($model, 'fac_archivo');
+                if ($archivo) {
+                    $uploadPath = 'uploads/facturas/';
+                    if (!is_dir($uploadPath)) {
+                        mkdir($uploadPath, 0777, true);
+                    }
+                    $fileName = uniqid('fac_') . '.' . $archivo->extension;
+                    $filePath = $uploadPath . $fileName;
+                    if ($archivo->saveAs($filePath)) {
+                        $model->fac_archivo = $filePath;
+                    }
+                } else {
+                    // Keep old file if no new file is uploaded
+                    $model->fac_archivo = $model->getOldAttribute('fac_archivo');
+                }
+
                 // Primero construimos los modelos de detalle y los validamos sin persistir
                 $detallesData = Yii::$app->request->post('DetalleFactura', []);
                 $detalleModels = [];

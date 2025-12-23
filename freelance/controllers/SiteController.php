@@ -85,7 +85,7 @@ class SiteController extends BaseController
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect(['usuario/index']);
+            return $this->redirect(['factura/index']);
         }
 
         $model->usu_password = '';

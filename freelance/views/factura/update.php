@@ -302,8 +302,10 @@ $this->registerJs($js);
                             ])->textInput() ?>
                         </div>
                         <div class="col-md-6">
-                            <?php 
-                            $isCooperativa = !Yii::$app->user->isGuest && Yii::$app->user->identity->usu_rol === 'Cooperativa';
+                            <?php
+                            $isCooperativa = !Yii::$app->user->isGuest && 
+                                             (Yii::$app->user->identity instanceof \app\models\Usuario) && 
+                                             Yii::$app->user->identity->usu_rol === \app\models\Usuario::ROL_COOPERATIVA;
                             ?>
                             <?= $form->field($model, 'fac_numero_pedido', [
                                 'template' => "<label>Número Pedido</label>\n{input}\n{hint}\n{error}"

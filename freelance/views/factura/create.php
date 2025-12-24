@@ -305,7 +305,13 @@ $this->registerJs($js);
                         </div>
                          <div class="col-12 col-md-6">
                             <?php 
+<<<<<<< HEAD
                             $isCooperativa = !Yii::$app->user->isGuest && Yii::$app->user->identity->usu_rol === 'Cooperativa';
+=======
+                            $isCooperativa = !Yii::$app->user->isGuest && 
+                                             (Yii::$app->user->identity instanceof \app\models\Usuario) && 
+                                             Yii::$app->user->identity->usu_rol === \app\models\Usuario::ROL_COOPERATIVA;
+>>>>>>> 45a57b118af05207fbc9105cf542da6bc9aa4bb3
                             ?>
                             <?= $form->field($model, 'fac_numero_pedido', [
                                 'template' => "<label>Número Pedido</label>\n{input}\n{hint}\n{error}"

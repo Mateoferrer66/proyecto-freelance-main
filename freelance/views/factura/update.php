@@ -302,7 +302,7 @@ $this->registerJs($js);
                             ])->textInput() ?>
                         </div>
                         <div class="col-md-6">
-                            <?php
+                            <?php 
                             $isCooperativa = !Yii::$app->user->isGuest && 
                                              (Yii::$app->user->identity instanceof \app\models\Usuario) && 
                                              Yii::$app->user->identity->usu_rol === \app\models\Usuario::ROL_COOPERATIVA;

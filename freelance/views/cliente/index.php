@@ -14,7 +14,7 @@ use yii\grid\CheckboxColumn;
 /** @var app\models\ClienteSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Gestión de Clientes';
+$this->title = 'Clientes';
 $this->params['breadcrumbs'] = [];
 $this->registerCss(".table thead a { text-decoration: none !important; }");
 
@@ -143,7 +143,7 @@ JS);
 <div class="page-content">
 
     <div class="col d-flex justify-content-between align-items-start">
-        <h6 class="mb-0 text-uppercase">Clientes <dl><?= $dataProvider->getTotalCount() ?></dl>
+        <h6 class="mb-0 text-uppercase">CLIENTES EN LISTA <dl><?= $dataProvider->getTotalCount() ?></dl>
         </h6>
         <div>
             <?= Html::a('<i class="bx bx-plus mr-1"></i> Crear Cliente', ['create'], [
@@ -158,16 +158,16 @@ JS);
 
     <div class="card">
         <div class="card-body">
-            <?php Pjax::begin(['id' => 'clientes-pjax']); ?>
+            <?php Pjax::begin(['id' => 'clientes-pjax', 'timeout' => 5000, 'enablePushState' => false, 'linkSelector' => '#clientes-pjax .grid-view a']); ?>
             <div class="col-xl-12 mx-auto">
                 <div class="dataTables_wrapper dt-bootstrap5 no-footer">
                     <div class="row">
                         <div class="d-flex justify-content-end align-items-center mb-3">
-                            <?= Html::button('<i class="bx bx-trash"></i> ELIMINAR', [
+                            <?= Html::button('<i class="bx bx-trash"></i> Eliminar', [
                                 'class' => 'btn text-orange radius-30',
                                 'id' => 'batch-delete-button'
                             ]) ?>
-                            <?= Html::a('<i class="bx bxs-file-pdf"></i> LISTADO DE CLIENTES', ['export-pdf'], [
+                            <?= Html::a('<i class="bx bx-list-ul"></i> Listado de Clientes', ['export-pdf'], [
                                 'class' => 'btn text-orange radius-30',
                                 'target' => '_blank',
                                 'data-pjax' => '0',
@@ -194,23 +194,26 @@ JS);
                         </div>
 
                         <div class="col-sm-12 col-md-6">
-                            <div class="dataTables_filter">
+                            <div class="dataTables_filter d-flex align-items-center justify-content-end">
+                                <label for="cliente-search-input" class="me-2 text-white">Buscar:</label>
                                 <?php $form = ActiveForm::begin([
                                     'action' => ['index'],
                                     'method' => 'get',
                                     'options' => [
-                                        'class' => 'search-bar mb-3',
+                                        'class' => 'd-inline-block',
                                         'data-pjax' => 1,
-                                        'id' => 'auto-search-form'
+                                        'id' => 'auto-search-form',
+                                        'style' => 'margin-bottom: 0;' 
                                     ],
                                 ]); ?>
 
                                 <?= $form->field($searchModel, 'cli_nombre', ['template' => '{input}'])
                                     ->textInput([
-                                        'placeholder' => 'Buscar por nombre de cliente...',
+                                        'placeholder' => '',
                                         'class' => 'form-control form-control-sm',
                                         'id' => 'cliente-search-input',
-                                        'autocomplete' => 'off'
+                                        'autocomplete' => 'off',
+                                        'style' => 'background-color: transparent; border: 1px solid #484848; color: white;'
                                     ]) ?>
                                 <?php ActiveForm::end(); ?>
                             </div>
@@ -233,11 +236,17 @@ JS);
                                 ],
                                 [
                                     'attribute' => 'cli_numdocide',
-                                    'label' => 'NIF',
+                                    'label' => '<span class="sort-icon">↑↓</span> NIF',
+                                    'encodeLabel' => false, // Allow HTML
+                                    'format' => 'raw',
+                                    'value' => function ($model) {
+                                        return '<span class="text-white">' . $model->cli_numdocide . '</span>';
+                                    }
                                 ],
                                 [
                                     'attribute' => 'cli_nombre',
-                                    'label' => 'Nombre/Razón Social',
+                                    'label' => '<span class="sort-icon">↑↓</span> Nombre/Razón social',
+                                    'encodeLabel' => false,
                                     'format' => 'raw',
                                     'contentOptions' => function ($model, $key, $index, $column) {
                                         $class = $model->cli_estado === Cliente::CLI_ESTADO_ACTIVO ? 'greenGdt' : 'redGdt';
@@ -249,20 +258,23 @@ JS);
                                 ],
                                 [
                                     'attribute' => 'cli_estado',
-                                    'label' => 'Estado',
+                                    'label' => '<span class="sort-icon">↑↓</span> Estado',
+                                    'encodeLabel' => false,
                                     'format' => 'raw',
                                     'value' => function ($model) {
                                         if ($model->cli_estado === Cliente::CLI_ESTADO_ACTIVO) {
-                                            return '<i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i>' . $model->cli_estado;
+                                            return '<i class="bx bx-radio-circle-marked bx-burst align-middle font-18 me-1 text-success"></i><span class="text-white">' . $model->cli_estado . '</span>';
                                         } else {
-                                            return '<i class="bx bx-radio-circle-marked align-middle font-18 me-1 text-danger"></i>' . $model->cli_estado;
+                                            return '<i class="bx bx-radio-circle-marked align-middle font-18 me-1 text-danger"></i><span class="text-white">' . $model->cli_estado . '</span>';
                                         }
                                     },
                                 ],
                                 [
                                     'class' => ActionColumn::class,
-                                    'header' => 'Acciones',
-                                    'template' => '{view} {update} {delete} {toggle}',
+                                    'header' => Html::a('<span class="sort-icon">↑↓</span> Acciones', ['index', 'sort' => 'cli_nombre'], ['data-pjax' => 1]),
+                                    'template' => '<div class="action-grid-2x2">{toggle} {view} {update} {delete}</div>',
+                                    'headerOptions' => ['class' => 'text-start', 'style' => 'width: 1%; white-space: nowrap;'], // Shrink-wrap & Left align
+                                    'contentOptions' => ['class' => 'text-end', 'style' => 'width: 1%; white-space: nowrap;'], // Shrink-wrap & Right align content
                                     'buttons' => [
                                         'view' => fn($url, $model) => Html::a('<i class="bx bx-id-card"></i>', $url, [
                                             'title' => 'Ver Cliente: ' . $model->cli_nombre,
@@ -285,7 +297,7 @@ JS);
                                         ]),
                                         'toggle' => function ($url, $model, $key) {
                                             if ($model->cli_estado === Cliente::CLI_ESTADO_ACTIVO) {
-                                                return Html::a('<i class="bx bx-power-off"></i>', ['toggle-status', 'cli_id' => $model->cli_id], [
+                                                return Html::a('<i class="bx bx-block"></i>', ['toggle-status', 'cli_id' => $model->cli_id], [
                                                     'title' => 'Desactivar Cliente',
                                                     'class' => 'btn btn-light',
                                                     'data-confirm' => '¿Está seguro de que desea desactivar a ' . $model->cli_nombre . '?',

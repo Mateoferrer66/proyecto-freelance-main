@@ -1,5 +1,32 @@
-main > .container {
+main>.container {
     padding: 70px 15px 20px;
+}
+
+/* Custom Action Button Style */
+.btn-freelance-action {
+    background-color: transparent;
+    border: 1px solid #6c757d;
+    color: #fff;
+    margin: 2px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-freelance-action:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-color: #fff;
+}
+
+.action-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 Columns */
+    gap: 5px;
+    width: fit-content;
+    margin-left: auto;
+    /* Push to right */
 }
 
 .footer {
@@ -8,7 +35,7 @@ main > .container {
     height: 60px;
 }
 
-.footer > .container {
+.footer>.container {
     padding-right: 15px;
     padding-left: 15px;
 }
@@ -19,25 +46,60 @@ main > .container {
 }
 
 /* add sorting icons to gridview sort links */
-a.asc:after, a.desc:after {
-    content: '';
-    left: 3px;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border: solid 5px transparent;
-    margin: 4px 4px 2px 4px;
-    background: transparent;
+/* sorting icons */
+/* sorting icons */
+/* sorting icons */
+/* sorting icons */
+/* sorting icons */
+table th a {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 5px;
+    color: inherit;
+    text-decoration: none;
+    padding-left: 0;
+    position: static;
+    width: auto;
+    /* Allow natural width */
 }
 
-a.asc:after {
-    border-bottom: solid 7px #212529;
-    border-top-width: 0;
+/* sorting icons */
+table th a {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 5px;
+    color: inherit;
+    text-decoration: none;
+    padding-left: 0;
+    position: static;
+    width: auto;
 }
 
-a.desc:after {
-    border-top: solid 7px #212529;
-    border-bottom-width: 0;
+/* Explicit class for the injected icon */
+.sort-icon {
+    font-size: 1.1em;
+    font-family: sans-serif;
+    color: #fff !important;
+    font-weight: normal;
+    margin-right: 5px;
+    opacity: 0.9;
+}
+
+.grid-view th a.asc:before {
+    content: '\2193';
+    /* Down arrow */
+    opacity: 1;
+}
+
+.grid-view th a.desc:before {
+    content: '\2191';
+    /* Up arrow */
+    opacity: 1;
+}
+
+/* Remove :after content to avoid duplicates if mixed */
+.grid-view th a:after {
+    content: none;
 }
 
 .grid-view th {
@@ -59,30 +121,34 @@ a.desc:after {
 }
 
 /* align the logout "link" (button in form) of the navbar */
-.nav li > form > button.logout {
+.nav li>form>button.logout {
     padding-top: 7px;
     color: rgba(255, 255, 255, 0.5);
 }
 
 @media(max-width:767px) {
-    .nav li > form > button.logout {
-        display:block;
+    .nav li>form>button.logout {
+        display: block;
         text-align: left;
         width: 100%;
         padding: 10px 0;
     }
 }
 
-.nav > li > form > button.logout:focus,
-.nav > li > form > button.logout:hover {
+.nav>li>form>button.logout:focus,
+.nav>li>form>button.logout:hover {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.75);
 }
 
-.nav > li > form > button.logout:focus {
+.nav>li>form>button.logout:focus {
     outline: none;
 }
 
-.form-group {
-    margin-bottom: 1rem;
+
+.action-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 5px;
+    justify-content: center;
 }

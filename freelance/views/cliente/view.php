@@ -23,7 +23,7 @@ PanelAsset::register($this); // Añadido
     <div class="row">
         <div class="col-xl-12 mx-auto">
             <div class="card border-top border-0 border-4 border-white">
-                <div class="card-body p-5">
+                <div class="card-body p-5 text-white">
                     <div class="card-title d-flex align-items-center">
                         <h5 class="mb-0 text-white">INFORMACIÓN GENERAL</h5>
                     </div>

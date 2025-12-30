@@ -20,6 +20,7 @@ $iconMap = [
     'r=provincia' => 'bx-flag',
     'r=utilidades' => 'bx-diamond',
     'r=usuario' => 'bx bx-user-voice',
+    'r=cliente' => 'bx bx-user-voice', // Nuevo mapeo para clientes
     'r=cliente%2Fcreate' => 'bx-user-plus', // Este es el principal de utilidades
 ];
 
@@ -42,7 +43,7 @@ foreach ($iconMap as $path => $iconClass) {
         <!-- Título dinámico del módulo -->
         <div class="page-breadcrumb d-flex align-items-center px-3 py-2">
             <div class="breadcrumb-title pe-3">
-                <?= Html::encode($this->context->view->title ?? 'Utilidades') ?>
+                <?= Html::encode($this->context->view->title ?? 'Utilidades') ?> <i class='<?= $currentIcon ?>'></i>
             </div>
         </div>
         <!-- Menú superior derecho -->

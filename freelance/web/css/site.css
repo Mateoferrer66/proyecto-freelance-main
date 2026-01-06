@@ -155,8 +155,53 @@ table th a {
 
 /* Dashboard Styles */
 .dashboard-container {
-    padding-top: 20px;
+    padding-top: 160px !important;
+    /* Increased to 160px as requested */
     padding-bottom: 20px;
+}
+
+/* GLOBAL TEXT COLOR OVERRIDES FOR DARK THEME */
+body,
+.page-content,
+.card-body {
+    color: #ffffff !important;
+}
+
+/* Force white text on Tables (Headers and Body) */
+.table,
+.table th,
+.table td,
+.table thead th,
+.table tbody td {
+    color: #ffffff !important;
+}
+
+/* Links in tables */
+.table a {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    color: #ffffff !important;
+}
+
+/* DataTables info and pagination if visible */
+.dataTables_info,
+.dataTables_paginate {
+    color: #ffffff !important;
 }
 
 .dashboard-card {

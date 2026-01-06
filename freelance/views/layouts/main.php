@@ -15,6 +15,7 @@ use yii\helpers\Url;
 use yii\widgets\Pjax;
 
 PanelAsset::register($this);
+AppAsset::register($this);
 
 $this->registerJs("$('#menu').metisMenu(); // Inicializa el menú desplegable");
 $this->registerJs("var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle')); var dropdownList = dropdownElementList.map(function (dropdownToggleEl) { return new bootstrap.Dropdown(dropdownToggleEl) });");

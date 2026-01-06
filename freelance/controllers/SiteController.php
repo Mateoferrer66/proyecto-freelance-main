@@ -68,7 +68,99 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        // 1. Facturas pendientes por aprobar
+        $facturasPendientes = \app\models\Factura::find()
+            ->where(['fac_aprobada' => 0])
+            ->orWhere(['fac_aprobada' => null])
+            ->all();
+        $countFacturasPendientes = count($facturasPendientes);
+
+        // 2. Presupuestos pendientes por aprobar
+        $presupuestosPendientes = \app\models\Presupuesto::find()
+            ->where(['pre_estado' => \app\models\Presupuesto::PRE_ESTADO_PENDIENTE])
+            ->all();
+        $countPresupuestosPendientes = count($presupuestosPendientes);
+
+        // 3. Importes facturados por socio (Graph 2)
+        $facturadoPorSocio = \app\models\Factura::find()
+            ->alias('f')
+            ->select(['s.soc_nombre', 's.soc_apellido', 'SUM(f.fac_total) as total_facturado'])
+            ->joinWith('soc s')
+            ->groupBy('f.soc_id')
+            ->asArray()
+            ->all();
+        
+        $chartLabels = [];
+        $chartData = [];
+        $backgroundColors = [];
+        foreach ($facturadoPorSocio as $item) {
+            $nombreCompleto = $item['soc_nombre'];
+            if(isset($item['soc_apellido'])) $nombreCompleto .= ' ' . $item['soc_apellido'];
+            $chartLabels[] = $nombreCompleto;
+            $chartData[] = (float)$item['total_facturado'];
+            $backgroundColors[] = "rgba(" . rand(50, 200) . ", " . rand(50, 200) . ", " . rand(50, 255) . ", 0.7)";
+        }
+
+        // 4. Total Usuarios
+        $countUsuarios = \app\models\Usuario::find()->count();
+
+        // 5. Total Clientes
+        $countClientes = \app\models\Cliente::find()->count();
+
+        // 6. Importes facturados por Cliente (Graph 1 - Fixed Query)
+        // Fetch raw sums grouped by client ID first to avoid JOIN/AS issues
+        $facturadoPorClienteRaw = \app\models\Factura::find()
+            ->select(['cli_id', 'SUM(fac_total) as total_facturado'])
+            ->groupBy('cli_id')
+            ->asArray()
+            ->all();
+
+        $clientChartLabels = [];
+        $clientChartData = [];
+        $clientChartColors = [];
+        
+        // Get all client names to map
+        $clientIds = array_column($facturadoPorClienteRaw, 'cli_id');
+        $clientesNames = [];
+        if (!empty($clientIds)) {
+            $clientes = \app\models\Cliente::find()
+                ->select(['cli_id', 'cli_nombre'])
+                ->where(['cli_id' => $clientIds])
+                ->asArray()
+                ->all();
+            foreach ($clientes as $c) {
+                $clientesNames[$c['cli_id']] = $c['cli_nombre'];
+            }
+        }
+
+        foreach ($facturadoPorClienteRaw as $item) {
+             $cliId = $item['cli_id'];
+             $name = isset($clientesNames[$cliId]) ? $clientesNames[$cliId] : 'Cliente ' . $cliId;
+             $total = (float)$item['total_facturado'];
+             
+             if ($total > 0) { // Only show positive amounts
+                $clientChartLabels[] = $name;
+                $clientChartData[] = $total;
+                $clientChartColors[] = "rgba(" . rand(0, 255) . ", " . rand(100, 255) . ", " . rand(100, 200) . ", 0.8)";
+             }
+        }
+
+        return $this->render('index', [
+            'facturasPendientes' => $facturasPendientes,
+            'countFacturasPendientes' => $countFacturasPendientes,
+            'presupuestosPendientes' => $presupuestosPendientes,
+            'countPresupuestosPendientes' => $countPresupuestosPendientes,
+            
+            'chartLabels' => $chartLabels,
+            'chartData' => $chartData,
+            'chartColors' => $backgroundColors,
+            
+            'countUsuarios' => $countUsuarios,
+            'countClientes' => $countClientes,
+            'clientChartLabels' => $clientChartLabels,
+            'clientChartData' => $clientChartData,
+            'clientChartColors' => $clientChartColors
+        ]);
     }
 
     /**

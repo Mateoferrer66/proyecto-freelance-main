@@ -14,7 +14,7 @@ $currentUrl = Yii::$app->request->url;
     </div>
 
     <ul class="metismenu" id="menu">
-        <li><a href="<?= \Yii::$app->urlManager->createUrl(['/']) ?>">
+        <li><a href="<?= \Yii::$app->urlManager->createUrl(['/site/index']) ?>">
                 <div class="parent-icon"><i class="bx bx-home"></i></div>
                 <div class="menu-title">Inicio</div>
             </a></li>

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 version: '2'
 services:
   php:
@@ -26,38 +25,3 @@ services:
       - ./freelance.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - '3307:3306'
-
-volumes:
-  mysql-data:
-=======
-version: '2'
-services:
-  php:
-    image: yiisoftware/yii2-php:8.1-apache
-    depends_on:
-      - mysql
-    volumes:
-      - ~/.composer-docker/cache:/root/.composer/cache:delegated
-      - ./:/app:delegated
-    ports:
-      - '8000:80'
-    environment:
-      - DB_HOST=mysql
-      - DB_NAME=freelance
-      - DB_USER=root
-      - DB_PASSWORD=root
-
-  mysql:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: freelance
-    volumes:
-      - mysql-data:/var/lib/mysql
-      - ./freelance.sql/freelance.sql:/docker-entrypoint-initdb.d/init.sql
-    ports:
-      - '3306:3306'
-
-volumes:
-  mysql-data:
->>>>>>> 5d1c107c23f9350042b1a35ed86e4620601ebf49

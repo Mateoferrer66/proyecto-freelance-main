@@ -152,3 +152,259 @@ table th a {
     gap: 5px;
     justify-content: center;
 }
+
+/* Dashboard Styles */
+.dashboard-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.dashboard-card {
+    background-color: rgba(30, 30, 45, 0.95);
+    /* Dark background for cards */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    height: 100%;
+}
+
+.text-secondary {
+    color: #aab4be !important;
+}
+
+.x-small {
+    font-size: 0.75rem;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box.warning {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.icon-box.success {
+    background-color: rgba(25, 135, 84, 0.1);
+}
+
+.icon-box.danger {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.icon-box.info {
+    background-color: rgba(13, 202, 240, 0.1);
+}
+
+/* Table overrides for dark theme */
+.table-dark {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.05);
+}
+
+.table-dark td,
+.table-dark th {
+    border-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem 0.5rem;
+}
+
+/* Gauge Chart in pure CSS */
+.gauge-container {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.gauge-bg {
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 150px 150px 0 0;
+    top: 0;
+    left: 0;
+}
+
+.gauge-value {
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    background-color: #4bc0c0;
+    /* Teal color */
+    border-radius: 150px 150px 0 0;
+    top: 0px;
+    left: 0;
+    transform-origin: center bottom;
+    transform: rotate(144deg);
+    /* 80% */
+}
+
+/* FIX for Gauge: The previous CSS for gauge-value was trying to use transform differently. 
+   A half-circle gauge is usually done by rotating a semi-circle inside a mask.
+   Let's simplify: A semi-circle BG, and a semi-circle Value that is rotated.
+*/
+
+/* Reset Gauge CSS for better implementation */
+.gauge-container {
+    width: 200px;
+    /* Reduced size to fit card better */
+    height: 100px;
+    position: relative;
+    margin: 20px auto 0;
+    overflow: hidden;
+}
+
+.gauge-bg,
+.gauge-value {
+    width: 200px;
+    height: 100px;
+    border-radius: 100px 100px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.gauge-bg {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.gauge-value {
+    background: #4bc0c0;
+    transform-origin: center bottom;
+    transform: rotate(-36deg);
+    /* 180 - (180 * 0.8) = 36 degrees from right, but we start from left? 
+                                  Standard CSS gauge logic: start at -180 or similar.
+                                  Let's use a simpler trick: masking. 
+                               */
+    /* Actually, cleaner way for semi-circle: */
+    transform: rotate(0deg);
+    display: none;
+    /* Let's rely on SVG for gauge if CSS is too tricky without more divs.
+                      But wait, I put HTML for CSS gauge.
+                      Let's stick to the CSS in previous step but fix the transform logic. */
+}
+
+/* Re-doing Gauge CSS to be safe and simple */
+.gauge-container {
+    width: 150px;
+    height: 75px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px 100px 0 0;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.gauge-value {
+    width: 100%;
+    height: 100%;
+    background: #4bc0c0;
+    border-radius: 100px 100px 0 0;
+    transform-origin: center bottom;
+    transform: rotate(0deg);
+    /* 0% */
+}
+
+/* 
+   To show 80%: 
+   We need a bar that rotates. 
+   Actually, let's look at the HTML structure I added:
+   <div class="gauge-container">
+        <div class="gauge-bg"></div>
+        <div class="gauge-value" style="transform: rotate(144deg);"></div>
+        <div class="gauge-cover">...</div>
+   </div>
+   
+   If I want a filled arc:
+   gauge-value should be the filler.
+*/
+
+.gauge-container {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    /* Half circle */
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.gauge-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100px;
+    border-radius: 100px 100px 0 0;
+    background: gray;
+    /* Fallback */
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.gauge-value {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* Position pivot at bottom center */
+    width: 200px;
+    height: 100px;
+    border-radius: 100px 100px 0 0;
+    background: #4bc0c0;
+    transform-origin: center top;
+    /* Rotate around the top of this element which is at the bottom of the container? No. */
+    /* Let's try a different approach: Conic gradient is easiest but support? Yes standard now. */
+}
+
+/* Conic gradient gauge approach (much simpler) */
+.gauge-container {
+    width: 180px;
+    height: 90px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.gauge-bg {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: conic-gradient(from 270deg, #4bc0c0 0%, #4bc0c0 80%, rgba(255, 255, 255, 0.1) 80%, rgba(255, 255, 255, 0.1) 100%);
+    transform: rotate(-90deg);
+    /* Rotate to start from left */
+}
+
+.gauge-cover {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 70px;
+    /* Inner cutout */
+    background-color: #232333;
+    /* Dark color matching card */
+    border-radius: 70px 70px 0 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+/* Ensure card background matches cover if possible or use transparent */
+/* The card is rgba(30, 30, 45, 0.95). Hex approx #1e1e2d */
+.gauge-cover {
+    background-color: #1e1e2d;
+}
+
+
+/* Adjust header on chart */
+.header-on-chart {
+    display: flex;
+    flex-direction: column;
+}

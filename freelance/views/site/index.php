@@ -8,21 +8,20 @@ $this->title = 'Dashboard Freelance';
 $this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \yii\web\View::POS_HEAD]);
 ?>
 <div class="site-index dashboard-container">
-
-    <div class="row g-4">
+    <div class="row g-3">
         <!-- LEFT COLUMN -->
-        <div class="col-lg-8">
+        <div class="col-12">
             
             <!-- VENTAS SECTION -->
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h5 class="text-white">RESUMEN</h5>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="text-white mb-0">RESUMEN</h5>
                 <span class="text-secondary small">Vista general</span>
             </div>
             
-            <div class="row g-3 mb-4">
+            <div class="row g-2 mb-3">
                 <!-- Card 1: Facturas Pendientes (was Total Ventas) -->
-                <div class="col-md-3">
-                    <div class="dashboard-card p-3">
+                <div class="col-6 col-md-3">
+                    <div class="dashboard-card p-2 p-md-3">
                         <div class="icon-box warning mb-2">
                              <span class="material-icons text-warning">receipt_long</span>
                         </div>
@@ -32,8 +31,8 @@ $this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \y
                     </div>
                 </div>
                 <!-- Card 2: Total Usuarios (was Total Ordenes) -->
-                <div class="col-md-3">
-                    <div class="dashboard-card p-3">
+                <div class="col-6 col-md-3">
+                    <div class="dashboard-card p-2 p-md-3">
                         <div class="icon-box success mb-2">
                              <span class="material-icons text-success">perm_identity</span>
                         </div>
@@ -43,8 +42,8 @@ $this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \y
                     </div>
                 </div>
                 <!-- Card 3: Presupuestos Pendientes -->
-                <div class="col-md-3">
-                    <div class="dashboard-card p-3">
+                <div class="col-6 col-md-3">
+                    <div class="dashboard-card p-2 p-md-3">
                         <div class="icon-box danger mb-2">
                              <span class="material-icons text-danger">request_quote</span>
                         </div>
@@ -54,8 +53,8 @@ $this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \y
                     </div>
                 </div>
                 <!-- Card 4: Clientes (was Nuevos Clientes) -->
-                 <div class="col-md-3">
-                    <div class="dashboard-card p-3">
+                 <div class="col-6 col-md-3">
+                    <div class="dashboard-card p-2 p-md-3">
                         <div class="icon-box info mb-2">
                              <span class="material-icons text-info">person_add</span>
                         </div>
@@ -67,10 +66,10 @@ $this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \y
             </div>
 
             <!-- TABLAS DE PENDIENTES -->
-            <div class="row">
+            <div class="row g-2">
                 <!-- Facturas Pendientes -->
-                <div class="col-12 mb-4">
-                    <div class="dashboard-card p-4">
+                <div class="col-12 col-xl-6 mb-3">
+                    <div class="dashboard-card p-3">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h5 class="text-white mb-0">Facturas Pendientes por Aprobar</h5>
                             <a href="<?= \yii\helpers\Url::to(['factura/index']) ?>" class="btn btn-sm btn-outline-warning">Ver Todo</a>
@@ -105,8 +104,8 @@ $this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \y
                 </div>
 
                 <!-- Presupuestos Pendientes -->
-                <div class="col-12 mb-4">
-                    <div class="dashboard-card p-4">
+                <div class="col-12 col-xl-6 mb-3">
+                    <div class="dashboard-card p-3">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h5 class="text-white mb-0">Presupuestos Pendientes</h5>
                             <a href="<?= \yii\helpers\Url::to(['presupuesto/index']) ?>" class="btn btn-sm btn-outline-danger">Ver Todo</a>
@@ -142,10 +141,10 @@ $this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \y
             </div>
 
             <!-- PROGRESO / CLIENTES SECTION -->
-             <div class="row g-4">
+             <div class="row g-2 mt-2">
                 <!-- Importes Facturados por Cliente (Replaces Gauge) -->
-                <div class="col-md-5">
-                     <div class="dashboard-card p-4 h-100">
+                <div class="col-12 col-md-5">
+                     <div class="dashboard-card p-3 h-100">
                         <div class="mb-4">
                             <h5 class="text-white mb-0">FACTURADO POR CLIENTE</h5>
                             <div class="text-secondary small">Distribución de Ingresos</div>
@@ -157,8 +156,8 @@ $this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \y
                 </div>
                 
                  <!-- Customers per Year Chart - MANTENIDO -->
-                <div class="col-md-7">
-                     <div class="dashboard-card p-4 h-100 position-relative header-on-chart">
+                <div class="col-12 col-md-7">
+                     <div class="dashboard-card p-3 h-100 position-relative header-on-chart">
                         <div class="d-flex justify-content-between">
                             <h5 class="text-white mb-0">CLIENTES AL AÑO</h5>
                             <span class="badge bg-dark border border-warning text-warning">Nuevos Clientes</span>

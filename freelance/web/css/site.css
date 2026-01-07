@@ -155,9 +155,9 @@ table th a {
 
 /* Dashboard Styles */
 .dashboard-container {
-    padding-top: 160px !important;
-    /* Increased to 160px as requested */
+    padding-top: 20px !important;
     padding-bottom: 20px;
+    max-width: 100%;
 }
 
 /* GLOBAL TEXT COLOR OVERRIDES FOR DARK THEME */

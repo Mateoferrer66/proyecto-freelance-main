@@ -3,10 +3,10 @@
 /** @var yii\web\View $this */
 
 $this->title = 'Dashboard Freelance';
-
-// Register Chart.js from CDN
-$this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \yii\web\View::POS_HEAD]);
 ?>
+<!-- Load Chart.js directly (UMD version for global access) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+
 <div class="site-index dashboard-container">
     <div class="row g-3">
         <!-- LEFT COLUMN -->
@@ -30,15 +30,15 @@ $this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \y
                         <div class="text-warning x-small">+10% desde ayer</div>
                     </div>
                 </div>
-                <!-- Card 2: Total Usuarios (was Total Ordenes) -->
+                <!-- Card 2: Total Socios (was Total Usuarios) -->
                 <div class="col-6 col-md-3">
                     <div class="dashboard-card p-2 p-md-3">
                         <div class="icon-box success mb-2">
                              <span class="material-icons text-success">perm_identity</span>
                         </div>
-                        <h4 class="text-white mb-0"><?= $countUsuarios ?></h4>
-                        <div class="text-secondary small">Total Usuarios</div>
-                        <div class="text-success x-small">+8% desde ayer</div>
+                        <h4 class="text-white mb-0"><?= $countSocios ?></h4>
+                        <div class="text-secondary small">Total Socios</div>
+                        <div class="text-success x-small">+8% desde ayer por total de socios</div>
                     </div>
                 </div>
                 <!-- Card 3: Presupuestos Pendientes -->
@@ -142,44 +142,44 @@ $this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \y
 
             <!-- PROGRESO / CLIENTES SECTION -->
              <div class="row g-2 mt-2">
-                <!-- Importes Facturados por Cliente (Replaces Gauge) -->
+                <!-- Facturado Por Socio (Was Facturado por Cliente) -->
                 <div class="col-12 col-md-5">
                      <div class="dashboard-card p-3 h-100">
                         <div class="mb-4">
-                            <h5 class="text-white mb-0">FACTURADO POR CLIENTE</h5>
-                            <div class="text-secondary small">Distribución de Ingresos</div>
+                            <h5 class="text-white mb-0">FACTURADO POR SOCIO</h5>
+                            <div class="text-secondary small">Top 5 Socios</div>
                         </div>
-                        <div class="chart-container" style="position: relative; height: 200px; width:100%">
-                            <canvas id="clientChart"></canvas>
+                        <div class="chart-container mb-3" style="position: relative; height: 180px; width:100%">
+                            <canvas id="socioChart"></canvas>
+                        </div>
+                        <!-- Top List -->
+                        <div class="mt-3">
+                            <h6 class="text-white-50 small mb-2 text-uppercase">Mejores Socios</h6>
+                            <ul class="list-group list-group-flush bg-transparent" style="max-height: 200px; overflow-y: auto;">
+                                <?php foreach($socioList as $idx => $socio): ?>
+                                <li class="list-group-item bg-transparent text-secondary d-flex justify-content-between px-0 py-1 border-0">
+                                    <span><?= $idx + 1 ?>. <?= $socio['name'] ?></span>
+                                    <span class="text-white"><?= number_format($socio['amount'], 2) ?> €</span>
+                                </li>
+                                <?php endforeach; ?>
+                                <?php if(empty($socioList)): ?>
+                                    <li class="list-group-item bg-transparent text-secondary small px-0">Sin datos de facturación.</li>
+                                <?php endif; ?>
+                            </ul>
                         </div>
                      </div>
                 </div>
                 
-                 <!-- Customers per Year Chart - MANTENIDO -->
+                 <!-- Active Clients per Year Chart (Dynamic) -->
                 <div class="col-12 col-md-7">
                      <div class="dashboard-card p-3 h-100 position-relative header-on-chart">
                         <div class="d-flex justify-content-between">
-                            <h5 class="text-white mb-0">CLIENTES AL AÑO</h5>
-                            <span class="badge bg-dark border border-warning text-warning">Nuevos Clientes</span>
+                            <h5 class="text-white mb-0">CLIENTES AL AÑO (NUEVOS <?= $clientsChartYear ?>)</h5>
+                            <span class="badge bg-dark border border-warning text-warning">Tiempo Real</span>
                         </div>
                         
-                        <div class="chart-area mt-4 d-flex align-items-end justify-content-between" style="height: 150px;">
-                             <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="width: 100%; height: 100%;">
-                                <defs>
-                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" style="stop-color:rgb(75, 192, 192);stop-opacity:0.5" />
-                                    <stop offset="100%" style="stop-color:rgb(75, 192, 192);stop-opacity:0" />
-                                    </linearGradient>
-                                </defs>
-                                <path d="M0,150 L0,120 L50,130 L100,100 L120,50 L150,110 L200,80 L250,50 L300,90 L350,60 L400,100 L450,80 L500,60 L500,150 Z" 
-                                      fill="url(#grad2)" stroke="none" />
-                                <path d="M0,120 L50,130 L100,100 L120,50 L150,110 L200,80 L250,50 L300,90 L350,60 L400,100 L450,80 L500,60" 
-                                      fill="none" stroke="#4bc0c0" stroke-width="2" />
-                            </svg>
-                        </div>
-                        <div class="d-flex justify-content-between text-secondary x-small mt-2">
-                            <span>Ene</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
-                            <span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dic</span>
+                        <div class="chart-area mt-4 d-flex align-items-center justify-content-center" style="height: 250px;">
+                             <canvas id="clientActivityChart"></canvas>
                         </div>
                      </div>
                 </div>
@@ -191,43 +191,123 @@ $this->registerJsFile('https://cdn.jsdelivr.net/npm/chart.js', ['position' => \y
 </div>
 
 <?php
-// PHP Matrix to JS for Client Chart
-$jsClientLabels = json_encode($clientChartLabels);
-$jsClientData = json_encode($clientChartData);
-$jsClientColors = json_encode($clientChartColors);
+// JS Data injection
+$jsSocioLabels = json_encode($socioChartLabels);
+$jsSocioData = json_encode($socioChartData);
+$jsSocioColors = json_encode($socioChartColors);
+
+$jsClientActivityData = json_encode($clientActivityData);
 
 $script = <<< JS
-document.addEventListener("DOMContentLoaded", function() {
-    // Client Chart (Pie or Bar)
-    var ctxClient = document.getElementById('clientChart').getContext('2d');
-    var clientChart = new Chart(ctxClient, {
-        type: 'pie', 
-        data: {
-            labels: $jsClientLabels,
-            datasets: [{
-                label: 'Total Facturado',
-                data: $jsClientData,
-                backgroundColor: $jsClientColors,
-                borderColor: 'rgba(0,0,0,0.1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'right', // Legend on right for smaller box
-                    labels: { 
-                        color: '#adb5bd',
-                        boxWidth: 10,
-                        font: { size: 10 }
-                    }
-                }
-            }
+(function() {
+    function initDashboardCharts() {
+        console.log("Dashboard JS initializing...");
+        
+        if (typeof Chart === 'undefined') {
+            console.error("Chart.js is not loaded!");
+            return;
         }
-    });
-});
+
+        try {
+            // 1. Socio Chart (Pie)
+            var ctxSocio = document.getElementById('socioChart');
+            if (ctxSocio) {
+                // Destroy existing chart if any (prevents duplicate canvas issues)
+                var existingSocio = Chart.getChart(ctxSocio);
+                if (existingSocio) existingSocio.destroy();
+
+                new Chart(ctxSocio.getContext('2d'), {
+                    type: 'doughnut', 
+                    data: {
+                        labels: $jsSocioLabels,
+                        datasets: [{
+                            data: $jsSocioData,
+                            backgroundColor: $jsSocioColors,
+                            borderColor: '#2b2b2b',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'right',
+                                labels: { color: '#adb5bd', boxWidth: 10, font: { size: 10 } }
+                            }
+                        },
+                        cutout: '70%'
+                    }
+                });
+            } else {
+                console.error("Canvas socioChart not found");
+            }
+
+            // 2. Client Activity Chart (Line/Area)
+            var ctxActivity = document.getElementById('clientActivityChart');
+            if (ctxActivity) {
+                var ctx2d = ctxActivity.getContext('2d');
+                
+                // Destroy existing chart if any
+                var existingActivity = Chart.getChart(ctxActivity);
+                if (existingActivity) existingActivity.destroy();
+                
+                // Create gradient
+                var gradient = ctx2d.createLinearGradient(0, 0, 0, 400);
+                gradient.addColorStop(0, 'rgba(75, 192, 192, 0.5)'); // Top color
+                gradient.addColorStop(1, 'rgba(75, 192, 192, 0.0)'); // Bottom color
+
+                new Chart(ctx2d, {
+                    type: 'line',
+                    data: {
+                        labels: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+                        datasets: [{
+                            label: 'Nuevos Clientes',
+                            data: $jsClientActivityData,
+                            borderColor: '#4bc0c0',
+                            backgroundColor: gradient,
+                            borderWidth: 2,
+                            pointBackgroundColor: '#fff',
+                            pointBorderColor: '#4bc0c0',
+                            pointHoverBackgroundColor: '#4bc0c0',
+                            pointHoverBorderColor: '#fff',
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            x: {
+                                grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                                ticks: { color: '#adb5bd' }
+                            },
+                            y: {
+                                grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                                ticks: { color: '#adb5bd', stepSize: 1 },
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            } else {
+                 console.error("Canvas clientActivityChart not found");
+            }
+        } catch (e) {
+            console.error("Error creating charts:", e);
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDashboardCharts);
+    } else {
+        initDashboardCharts();
+    }
+})();
 JS;
 $this->registerJs($script);
 ?>

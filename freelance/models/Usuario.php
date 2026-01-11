@@ -229,7 +229,10 @@ class Usuario extends \yii\db\ActiveRecord implements IdentityInterface
      */
     public static function findByUsername($username)
     {
-        return static::findOne(['usu_login' => $username, 'usu_estado' => self::USU_ESTADO_ACTIVO, 'usu_eliminado' => 0]);
+        return static::find()
+            ->where(['usu_estado' => self::USU_ESTADO_ACTIVO, 'usu_eliminado' => 0])
+            ->andWhere(['or', ['usu_login' => $username], ['usu_email' => $username]])
+            ->one();
     }
 
     /**

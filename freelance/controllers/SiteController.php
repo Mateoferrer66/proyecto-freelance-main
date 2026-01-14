@@ -68,18 +68,53 @@ class SiteController extends BaseController
      */
     public function actionIndex()
     {
+        $yesterday = date('Y-m-d H:i:s', strtotime('-1 day'));
+
         // 1. Facturas pendientes por aprobar
-        $facturasPendientes = \app\models\Factura::find()
+        $queryFacturasP = \app\models\Factura::find()
+            ->where(['fac_aprobada' => 0])
+            ->orWhere(['fac_aprobada' => null]);
+        
+        $countFacturasPendientes = $queryFacturasP->count();
+        $facturasPendientes = $queryFacturasP->limit(10)->all(); // Limit to 10 for table
+
+        // Dynamic Stat Facturas (New pending in last 24h)
+        $countFacturasNew = \app\models\Factura::find()
             ->where(['fac_aprobada' => 0])
             ->orWhere(['fac_aprobada' => null])
-            ->all();
-        $countFacturasPendientes = count($facturasPendientes);
+            ->andWhere(['>=', 'fac_fecha', $yesterday])
+            ->count();
+        $pctFactura = 0;
+        $prevFacturas = $countFacturasPendientes - $countFacturasNew;
+        if ($prevFacturas > 0) {
+            $pctFactura = ($countFacturasNew / $prevFacturas) * 100;
+        } elseif ($countFacturasNew > 0) {
+            $pctFactura = 100;
+        }
+        $statFactura = "+" . round($pctFactura) . "% desde ayer";
+
 
         // 2. Presupuestos pendientes por aprobar
-        $presupuestosPendientes = \app\models\Presupuesto::find()
+        $queryPresupuestosP = \app\models\Presupuesto::find()
+            ->where(['pre_estado' => \app\models\Presupuesto::PRE_ESTADO_PENDIENTE]);
+
+        $countPresupuestosPendientes = $queryPresupuestosP->count();
+        $presupuestosPendientes = $queryPresupuestosP->limit(10)->all(); // Limit to 10 for table
+
+        // Dynamic Stat Presupuestos
+        $countPresupuestosNew = \app\models\Presupuesto::find()
             ->where(['pre_estado' => \app\models\Presupuesto::PRE_ESTADO_PENDIENTE])
-            ->all();
-        $countPresupuestosPendientes = count($presupuestosPendientes);
+            ->andWhere(['>=', 'pre_fecha', $yesterday])
+            ->count();
+        $pctPresupuesto = 0;
+        $prevPresupuestos = $countPresupuestosPendientes - $countPresupuestosNew;
+        if ($prevPresupuestos > 0) {
+            $pctPresupuesto = ($countPresupuestosNew / $prevPresupuestos) * 100;
+        } elseif ($countPresupuestosNew > 0) {
+            $pctPresupuesto = 100;
+        }
+        $statPresupuesto = "+" . round($pctPresupuesto) . "% desde ayer";
+
 
         // 3. Importes facturados por socio (TOP 5)
         $topSocios = \app\models\Factura::find()
@@ -118,9 +153,47 @@ class SiteController extends BaseController
 
         // 4. Total Socios (was Total Usuarios)
         $countSocios = \app\models\Socio::find()->count();
+        
+        // Dynamic Stat Socios
+        $countSociosNew = \app\models\Socio::find()
+            ->where(['>=', 'soc_fecha', $yesterday])
+            ->count();
+        $pctSocios = 0;
+        $prevSocios = $countSocios - $countSociosNew;
+        if ($prevSocios > 0) {
+            $pctSocios = ($countSociosNew / $prevSocios) * 100;
+        } elseif ($countSociosNew > 0) {
+            $pctSocios = 100;
+        }
+        $statSocios = "+" . round($pctSocios) . "% desde ayer";
+
 
         // 5. Total Clientes
         $countClientes = \app\models\Cliente::find()->count();
+        
+        // Dynamic Stat Clientes (Approximation via first invoice since Client table has no date)
+        // Or assume 0 if strictly strict, but let's try to query 'newly active clients'
+        // Using same logic as chart: clients whose first invoice was >= yesterday
+        $sqlNewClients = "
+            SELECT COUNT(*) FROM (
+                SELECT cli_id, MIN(fac_fecha) as first_date
+                FROM factura
+                GROUP BY cli_id
+                HAVING first_date >= :yesterday
+            ) as new_clients
+        ";
+        $countClientesNew = Yii::$app->db->createCommand($sqlNewClients)
+            ->bindValue(':yesterday', $yesterday)
+            ->queryScalar();
+            
+        $pctClientes = 0;
+        $prevClientes = $countClientes - $countClientesNew;
+        if ($prevClientes > 0) {
+            $pctClientes = ($countClientesNew / $prevClientes) * 100;
+        } elseif ($countClientesNew > 0) {
+            $pctClientes = 100;
+        }
+        $statClientes = "+" . round($pctClientes) . "% desde ayer";
 
         // 6. Real-time Clients per Year Chart (New Clients by First Invoice)
         // Find the latest year with activity or default to current
@@ -175,8 +248,11 @@ class SiteController extends BaseController
         return $this->render('index', [
             'facturasPendientes' => $facturasPendientes,
             'countFacturasPendientes' => $countFacturasPendientes,
+            'statFactura' => $statFactura,
+            
             'presupuestosPendientes' => $presupuestosPendientes,
             'countPresupuestosPendientes' => $countPresupuestosPendientes,
+            'statPresupuesto' => $statPresupuesto,
             
             'socioChartLabels' => $socioChartLabels,
             'socioChartData' => $socioChartData,
@@ -184,7 +260,11 @@ class SiteController extends BaseController
             'socioList' => $socioList,
             
             'countSocios' => $countSocios,
+            'statSocios' => $statSocios,
+            
             'countClientes' => $countClientes,
+            'statClientes' => $statClientes,
+            
             'clientActivityData' => $clientActivityData,
             'clientsChartYear' => $clientsChartYear
         ]);

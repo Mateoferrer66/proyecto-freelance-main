@@ -27,7 +27,7 @@ $this->title = 'Dashboard Freelance';
                         </div>
                         <h4 class="text-white mb-0"><?= $countFacturasPendientes ?></h4>
                         <div class="text-secondary small">Facturas Pendientes</div>
-                        <div class="text-warning x-small">+10% desde ayer</div>
+                        <div class="text-warning x-small"><?= $statFactura ?></div>
                     </div>
                 </div>
                 <!-- Card 2: Total Socios (was Total Usuarios) -->
@@ -38,7 +38,7 @@ $this->title = 'Dashboard Freelance';
                         </div>
                         <h4 class="text-white mb-0"><?= $countSocios ?></h4>
                         <div class="text-secondary small">Total Socios</div>
-                        <div class="text-success x-small">+8% desde ayer por total de socios</div>
+                        <div class="text-success x-small"><?= $statSocios ?> por total de socios</div>
                     </div>
                 </div>
                 <!-- Card 3: Presupuestos Pendientes -->
@@ -49,7 +49,7 @@ $this->title = 'Dashboard Freelance';
                         </div>
                         <h4 class="text-white mb-0"><?= $countPresupuestosPendientes ?></h4>
                         <div class="text-secondary small">Presupuestos Pendientes</div>
-                        <div class="text-secondary x-small">+2% desde ayer</div>
+                        <div class="text-secondary x-small"><?= $statPresupuesto ?></div>
                     </div>
                 </div>
                 <!-- Card 4: Clientes (was Nuevos Clientes) -->
@@ -60,7 +60,7 @@ $this->title = 'Dashboard Freelance';
                         </div>
                         <h4 class="text-white mb-0"><?= $countClientes ?></h4>
                         <div class="text-secondary small">Total Clientes</div>
-                        <div class="text-info x-small">+3% desde ayer</div>
+                        <div class="text-info x-small"><?= $statClientes ?></div>
                     </div>
                 </div>
             </div>

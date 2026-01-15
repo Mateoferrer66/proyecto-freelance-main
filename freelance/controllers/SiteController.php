@@ -96,14 +96,15 @@ class SiteController extends BaseController
 
         // 2. Presupuestos pendientes por aprobar
         $queryPresupuestosP = \app\models\Presupuesto::find()
-            ->where(['pre_estado' => \app\models\Presupuesto::PRE_ESTADO_PENDIENTE]);
+            ->where(['pre_aprobado' => 0])
+            ->orWhere(['pre_aprobado' => null]);
 
         $countPresupuestosPendientes = $queryPresupuestosP->count();
         $presupuestosPendientes = $queryPresupuestosP->limit(10)->all(); // Limit to 10 for table
 
         // Dynamic Stat Presupuestos
         $countPresupuestosNew = \app\models\Presupuesto::find()
-            ->where(['pre_estado' => \app\models\Presupuesto::PRE_ESTADO_PENDIENTE])
+            ->where(['or', ['pre_aprobado' => 0], ['pre_aprobado' => null]])
             ->andWhere(['>=', 'pre_fecha', $yesterday])
             ->count();
         $pctPresupuesto = 0;

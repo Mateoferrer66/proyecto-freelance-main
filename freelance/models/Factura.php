@@ -139,6 +139,33 @@ class Factura extends \yii\db\ActiveRecord
     }
 
     /**
+     * Convert date format before saving to database
+     * Converts from dd/MM/YYYY (form format) to YYYY-MM-DD (MySQL format)
+     */
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            // Convert fac_fecha from dd/MM/YYYY to YYYY-MM-DD
+            if (!empty($this->fac_fecha) && is_string($this->fac_fecha)) {
+                // Check if it's in dd/MM/YYYY format
+                if (preg_match('/^(\d{2})\/(\d{2})\/(\d{4})$/', $this->fac_fecha, $matches)) {
+                    $this->fac_fecha = $matches[3] . '-' . $matches[2] . '-' . $matches[1];
+                }
+            }
+            
+            // Convert fac_fecha_situacion from dd/MM/YYYY to YYYY-MM-DD if present
+            if (!empty($this->fac_fecha_situacion) && is_string($this->fac_fecha_situacion)) {
+                if (preg_match('/^(\d{2})\/(\d{2})\/(\d{4})$/', $this->fac_fecha_situacion, $matches)) {
+                    $this->fac_fecha_situacion = $matches[3] . '-' . $matches[2] . '-' . $matches[1];
+                }
+            }
+            
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * Gets query for [[Bans]].
      *
      * @return \yii\db\ActiveQuery

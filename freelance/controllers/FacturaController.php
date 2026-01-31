@@ -229,6 +229,10 @@ class FacturaController extends BaseController
                         Yii::$app->response->format = Response::FORMAT_JSON;
                         return ['success' => false, 'errors' => $e->getMessage()];
                     }
+                    
+                    // Para solicitudes no-AJAX, añadir el error al modelo para mostrarlo en el formulario
+                    $model->addError('fac_numero', 'Error al guardar la factura: ' . $e->getMessage());
+                    Yii::$app->session->setFlash('error', 'No se pudo crear la factura. Por favor, revise los errores.');
                 }
             }
         } else {

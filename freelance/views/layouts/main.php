@@ -33,9 +33,33 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <head>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <style>
+        .alert {
+            color: #ffffff !important;
+            font-weight: 500;
+        }
+
+        .alert-success {
+            background-color: #1e3a2f;
+            border-color: #2ecc71;
+            color: #d4f8e8 !important;
+        }
+
+        .alert-danger {
+            background-color: #3a1e1e;
+            border-color: #e74c3c;
+            color: #ffd6d6 !important;
+        }
+
+        .alert-warning {
+            background-color: #3a331e;
+            border-color: #f1c40f;
+            color: #fff3cd !important;
+        }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="<?= Url::to('@web/assets-custom/images/favicon-32x32.png') ?>" type="image/png" />
+    <link rel="icon" href="<?= Url::to('@web/assets-custom/images/favicon-32x32.png') ?>" type="image/png" />
 </head>
 
 <body class="bg-theme bg-theme3">
@@ -43,6 +67,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
         <?php $this->beginBody() ?>
         <?= $this->render('_sidebar') ?>
+        <header id="topbar">
+            <?= $this->render('_topbar') ?>
+        </header>
         
         <div class="page-wrapper">
 
@@ -54,9 +81,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 'linkSelector' => '#menu a:not([data-method]):not([data-pjax="0"]), a[data-pjax]',
             ]); ?>
 
-            <header id="topbar">
-                <?= $this->render('_topbar') ?>
-            </header>
+            
 
             <main id="main" class="flex-shrink-0" role="main">
 

@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
+use app\models\Pais; 
 
 /**
  * This is the model class for table "provincia".
@@ -107,4 +109,18 @@ class Provincia extends \yii\db\ActiveRecord
         return $this->hasMany(Socio::class, ['prv_id' => 'prv_id']);
     }
 
+    /**
+     * Obtiene provincias del pais España
+     */
+    public static function getSpainProvincesList()
+    {
+        return ArrayHelper::map(
+            self::find()
+                ->where(['pai_id' => Pais::SPAIN_ID, 'prv_eliminada' => 0])
+                ->orderBy('prv_nombre')
+                ->all(),
+            'prv_id',
+            'prv_nombre'
+        );
+    }
 }

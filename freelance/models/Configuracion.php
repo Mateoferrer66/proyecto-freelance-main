@@ -13,8 +13,8 @@ use Yii;
  */
 class Configuracion extends \yii\db\ActiveRecord
 {
-
-
+    const DEFAULT_ID = 1;
+    
     /**
      * {@inheritdoc}
      */

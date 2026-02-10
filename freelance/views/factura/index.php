@@ -14,7 +14,7 @@ use yii\grid\CheckboxColumn;
 /** @var app\models\FacturaSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Gestión de Facturas';
+$this->title = 'Facturación';
 $this->params['breadcrumbs'] = [];
 $this->registerCss(".table thead a { text-decoration: none !important; }");
 

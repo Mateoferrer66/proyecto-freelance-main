@@ -40,12 +40,67 @@ class ConsecutivoController extends BaseController
      */
     public function actionIndex()
     {
-        $searchModel = new ConsecutivoSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        //Consecutivo de Facturas
+        $modelBillConsecutive = Consecutivo::find()->where(['con_serie' => Consecutivo::CON_SERIE_F])->one();
+        if(!is_object($modelBillConsecutive))
+        {
+            $modelBillConsecutive = new Consecutivo;
+            $modelBillConsecutive->con_serie = Consecutivo::CON_SERIE_F;
+            $modelBillConsecutive->con_consecutivo = 1;
+        }
+
+        //Consecutivo de Liquidaciones
+        $modelLiqConsecutive = Consecutivo::find()->where(['con_serie' => Consecutivo::CON_SERIE_L])->one();
+        if(!is_object($modelLiqConsecutive))
+        {
+            $modelLiqConsecutive = new Consecutivo;
+            $modelLiqConsecutive->con_serie = Consecutivo::CON_SERIE_L;
+            $modelLiqConsecutive->con_consecutivo = 1;
+        }
+
+        //Consecutivo de Clientes
+        $modelCliConsecutive = Consecutivo::find()->where(['con_serie' => Consecutivo::CON_SERIE_C])->one();
+        if(!is_object($modelCliConsecutive))
+        {
+            $modelCliConsecutive = new Consecutivo;
+            $modelCliConsecutive->con_serie = Consecutivo::CON_SERIE_C;
+            $modelCliConsecutive->con_consecutivo = 1;
+        }
+
+        //Consecutivo de Socios
+        $modelMemberConsecutive = Consecutivo::find()->where(['con_serie' => Consecutivo::CON_SERIE_S])->one();
+        if(!is_object($modelMemberConsecutive))
+        {
+            $modelMemberConsecutive = new Consecutivo;
+            $modelMemberConsecutive->con_serie = Consecutivo::CON_SERIE_S;
+            $modelMemberConsecutive->con_consecutivo = 1;
+        }
+
+        //Consecutivo de Presupuestos
+        $modelBudgetConsecutive = Consecutivo::find()->where(['con_serie' => Consecutivo::CON_SERIE_P])->one();
+        if(!is_object($modelBudgetConsecutive))
+        {
+            $modelBudgetConsecutive = new Consecutivo;
+            $modelBudgetConsecutive->con_serie = Consecutivo::CON_SERIE_P;
+            $modelBudgetConsecutive->con_consecutivo = 1;
+        }
+
+        //Consecutivo de Liquidaciones Provisionales
+        $modelLiqBudgetConsecutive = Consecutivo::find()->where(['con_serie' => Consecutivo::CON_SERIE_PL])->one();
+        if(!is_object($modelLiqBudgetConsecutive))
+        {
+            $modelLiqBudgetConsecutive = new Consecutivo;
+            $modelLiqBudgetConsecutive->con_serie = Consecutivo::CON_SERIE_PL;
+            $modelLiqBudgetConsecutive->con_consecutivo = 1;
+        }
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'modelBillConsecutive' => $modelBillConsecutive,
+            'modelLiqConsecutive' => $modelLiqConsecutive,
+            'modelCliConsecutive' => $modelCliConsecutive,
+            'modelMemberConsecutive' => $modelMemberConsecutive, 
+            'modelBudgetConsecutive' => $modelBudgetConsecutive,
+            'modelLiqBudgetConsecutive' => $modelLiqBudgetConsecutive
         ]);
     }
 
@@ -137,11 +192,12 @@ class ConsecutivoController extends BaseController
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
     /**
      * Sets a new consecutivo.
      * @return array
      */
-  public function actionSetConsecutivo()
+    public function actionSetConsecutivo()
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
 

@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "categoria".
@@ -15,7 +16,6 @@ use Yii;
  */
 class Categoria extends \yii\db\ActiveRecord
 {
-
 
     /**
      * {@inheritdoc}
@@ -60,4 +60,14 @@ class Categoria extends \yii\db\ActiveRecord
         return $this->hasMany(Socio::class, ['cat_id' => 'cat_id']);
     }
 
+    public static function getList()
+    {
+        return ArrayHelper::map(
+            self::find()
+                ->orderBy('cat_nombre')
+                ->all(),
+            'cat_id',
+            'cat_nombre'
+        );
+    }
 }

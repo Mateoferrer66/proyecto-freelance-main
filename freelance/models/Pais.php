@@ -19,6 +19,7 @@ use Yii;
 class Pais extends \yii\db\ActiveRecord
 {
 
+    const SPAIN_ID = 73;
 
     /**
      * {@inheritdoc}

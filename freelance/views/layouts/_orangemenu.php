@@ -1,6 +1,6 @@
 <div class="minimenu">
     <div class="card">
-        <a href="index.php?r=empresa%2Fcreate" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'empresa/create') ? 'active' : '' ?>">
+        <a href="index.php?r=empresa%2Fupdate" class="card-body <?= (isset($_GET['r']) && $_GET['r'] === 'empresa/update') ? 'active' : '' ?>">
             <p class="mb-0">Empresa <i class="font-24 bx bx-store-alt"></i></p>
         </a>
     </div>

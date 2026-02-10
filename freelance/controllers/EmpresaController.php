@@ -103,13 +103,19 @@ class EmpresaController extends BaseController
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($emp_id)
+    public function actionUpdate()
     {
-        $empresa = $this->findModel($emp_id);
-        $configuracion = Configuracion::find()->one();
+        $empresa = $this->findModel(Empresa::DEFAULT_ID);
+        $configuracion = Configuracion::find()->where(['con_id' => Configuracion::DEFAULT_ID])->one();
         
-        if(!$configuracion){
+        if(!is_object($configuracion)){
             $configuracion = new Configuracion();
+            $configuracion->con_id = Configuracion::DEFAULT_ID;
+        }
+
+        if(!is_object($empresa)){
+            $empresa = new Empresa();
+            $empresa->emp_id = Empresa::DEFAULT_ID;
         }
 
         if ($this->request->isPost && $empresa->load($this->request->post()) && $configuracion->load($this->request->post())) {
@@ -121,7 +127,6 @@ class EmpresaController extends BaseController
                 $empresa->save(false);
                 $configuracion->save(false);
                 Yii::$app->session->setFlash('success', 'Datos guardados correctamente.');
-                return $this->redirect(['view', 'emp_id' => $empresa->emp_id]);
             }
         }
 

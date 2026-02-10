@@ -171,7 +171,7 @@ class Socio extends \yii\db\ActiveRecord implements IdentityInterface
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getCat()
+    public function getCategory()
     {
         return $this->hasOne(Categoria::class, ['cat_id' => 'cat_id']);
     }

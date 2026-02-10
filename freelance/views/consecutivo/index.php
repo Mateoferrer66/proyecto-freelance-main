@@ -61,12 +61,10 @@ $(function() {
 JS
 );
 ?>
-<div class="consecutivo-index">
 
+<div class="consecutivo-index">
     <?= $this->render('@app/views/layouts/_orangemenu') ?>
     <div class="page-content">
-
-
         <h6 class="mb-0 text-uppercase">CONSECUTIVOS</h6>
         <hr />
         <div class="row">
@@ -78,7 +76,7 @@ JS
                             <div class="row mb-3">
                                 <div class="col-12 col-md-5">
                                     <label for="facturas">Consecutivo de Facturas</label>
-                                    <input type="text" id="facturas" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                                    <input type="text" id="facturas" value="<?= $modelBillConsecutive->con_consecutivo?>" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <label></label>
@@ -91,7 +89,7 @@ JS
                             <div class="row mb-3">
                                 <div class="col-12 col-md-5">
                                     <label for="liquidacion">Consecutivo de Liquidación</label>
-                                    <input type="text" id="liquidacion" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                                    <input type="text" id="liquidacion" value="<?= $modelLiqConsecutive->con_consecutivo?>" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <label></label>
@@ -104,7 +102,7 @@ JS
                             <div class="row mb-3">
                                 <div class="col-12 col-md-5">
                                     <label for="clientes">Consecutivo de Clientes</label>
-                                    <input type="text" id="clientes" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                                    <input type="text" id="clientes" value="<?= $modelCliConsecutive->con_consecutivo?>" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <label></label>
@@ -118,7 +116,7 @@ JS
                             <div class="row mb-3">
                                 <div class="col-12 col-md-5">
                                     <label for="socios">Consecutivo de Socios</label>
-                                    <input type="text" id="socios" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                                    <input type="text" id="socios" value="<?= $modelMemberConsecutive->con_consecutivo?>" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <label></label>
@@ -131,7 +129,7 @@ JS
                             <div class="row mb-3">
                                 <div class="col-12 col-md-5">
                                     <label for="presupuestos">Consecutivo de Presupuestos</label>
-                                    <input type="text" id="presupuestos" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                                    <input type="text" id="presupuestos" value="<?= $modelBudgetConsecutive->con_consecutivo?>" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <label></label>
@@ -144,7 +142,7 @@ JS
                             <div class="row mb-3">
                                 <div class="col-12 col-md-5">
                                     <label for="liquidaciones">Consecutivo de Liquidaciones Provisionales</label>
-                                    <input type="text" id="liquidaciones" placeholder="Ingrese consecutivo" class="form-control mb-3">
+                                    <input type="text" id="liquidaciones" value="<?= $modelLiqBudgetConsecutive->con_consecutivo?>" placeholder="Ingrese consecutivo" class="form-control mb-3">
                                 </div>
                                 <div class="col-12 col-md-4">
                                     <label></label>
@@ -160,3 +158,4 @@ JS
             </div>
         </div>
     </div>
+</div>

@@ -110,6 +110,7 @@ JS);
 <?= $this->render('@app/views/layouts/_orangemenu') ?>
 <div class="page-content">
 
+    <?php Pjax::begin(['id' => 'provincias-pjax']); ?>
     <div class="col d-flex justify-content-between align-items-start">
         <h6 class="mb-0 text-uppercase">Provincias <dl><?= $dataProvider->getTotalCount() ?></dl>
         </h6>
@@ -124,7 +125,6 @@ JS);
     </div>
     <hr />
     <div class="row">
-        <?php Pjax::begin(['id' => 'provincias-pjax']); ?>
         <div class="col-xl-12 mx-auto">
             <div class="dataTables_wrapper dt-bootstrap5 no-footer">
                 <div class="row">

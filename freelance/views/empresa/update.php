@@ -36,13 +36,14 @@ $this->params['breadcrumbs'] = [];
                         <div class="col-12 col-md-4">
                             <?= $form->field($empresa, 'emp_razon_social')->textInput(['maxlength' => true])->label('Nombre/Razón Social') ?>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <?= $form->field($empresa, 'tdo_id')->dropDownList(
                                 ArrayHelper::map(TipoDocIdentidad::find()->all(), 'tdo_id', 'tdo_nombre'),
                                 ['prompt' => 'Seleccione']
                             )->label('Tipo Documento *') ?>
                         </div>
-                        <div class="col-12 col-md-4">
+
+                        <div class="col-12 col-md-3">
                             <?= $form->field($empresa, 'emp_numdocide')->textInput(['maxlength' => true])->label('Número identificación Fiscal') ?>
                         </div>
                     </div>
@@ -51,7 +52,7 @@ $this->params['breadcrumbs'] = [];
                             <h5 class="mb-0 text-white">DATOS DE CONTACTO</h5>
                         </div>
                         <hr>
-                        <div class="row mb-3">
+                        <div class="col-12 col-md-4">
                             <?= $form->field($empresa, 'emp_telefono')->textInput(['maxlength' => true])->label('Teléfono*') ?>
                         </div>
                         <div class="col-12 col-md-4">

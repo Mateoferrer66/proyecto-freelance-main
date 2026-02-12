@@ -72,6 +72,7 @@ class PresupuestoSearch extends Model
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['defaultOrder' => ['pre_fecha' => SORT_DESC, 'pre_id' => SORT_DESC]],
         ]);
 
         $this->load($params, $formName);

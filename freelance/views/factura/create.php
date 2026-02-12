@@ -16,6 +16,7 @@ use yii\helpers\Url;
 /** @var array $detalleRowErrors */
 /** @var array $estados */
 /** @var array $situaciones */
+/** @var array $provincias */
 
 $this->title = 'CREAR FACTURA';
 $this->params['breadcrumbs'][] = ['label' => 'Facturas', 'url' => ['index']];
@@ -33,11 +34,47 @@ $this->registerJsFile("https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/s
 $this->registerCss(
     ".select2-container .select2-selection--single .select2-selection__rendered, .select2-results__option {
         color: #444;
+    }
+    .select2-container--default .select2-selection--single {
+        background-color: transparent;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        height: 38px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered {
+        line-height: 36px;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 36px;
+    }
+    /* Dark mode adjustments if detected by class on body or generic dark inputs */
+    body.dark-theme .select2-container--default .select2-selection--single {
+        background-color: #151922; /* Example dark bg */
+        border-color: #2b303b;
+    }
+    body.dark-theme .select2-container .select2-selection--single .select2-selection__rendered {
+        color: #fff;
+    }
+    body.dark-theme .select2-search--dropdown {
+        background-color: #151922;
+    }
+    body.dark-theme .select2-search__field {
+        background-color: #151922;
+        color: #fff;
+        border-color: #2b303b;
+    }
+    body.dark-theme .select2-results {
+        background-color: #151922;
+        color: #fff;
+    }
+    body.dark-theme .select2-container--default .select2-results__option--selected {
+        background-color: #2b303b;
     }"
 );
 
 // URLs para AJAX
 $urlListado = Url::to(['factura/listado-clientes']);
+$urlListadoSocios = Url::to(['factura/listado-socios']);
 $urlDatos = Url::to(['factura/datos-cliente']);
 
 // Cargamos los conceptos disponibles para autocompletar/llenar filas
@@ -102,6 +139,30 @@ $(function(){
     setupAutocomplete('search-by-name', 'name');
     setupAutocomplete('search-by-doc', 'doc');
 
+    // Setup Socio Autocomplete
+    $("#search-socio").autocomplete({
+        source: function(request, response) {
+            $.ajax({
+                url: '$urlListadoSocios',
+                dataType: "json",
+                data: {
+                    term: request.term
+                },
+                success: function(data) {
+                    response(data);
+                }
+            });
+        },
+        minLength: 0,
+        select: function(event, ui) {
+            $("#factura-soc_id").val(ui.item.value);
+            $(this).val(ui.item.label);
+            return false;
+        }
+    }).focus(function(){ 
+        $(this).autocomplete("search");
+    });
+
 
     // --- Cargar datos del cliente ---
     $('#factura-cli_id').on('change', function(){
@@ -121,7 +182,8 @@ $(function(){
                         $('#cliente-num_identificacion').val(data.num_identificacion);
                         $('#cliente-direccion').val(data.direccion);
                         $('#cliente-cp').val(data.cp);
-                        $('#cliente-provincia').val(data.provincia);
+                        // $('#cliente-provincia').val(data.provincia); // Old text input
+                        $('#cliente-provincia').val(data.prv_id).trigger('change'); // New select input
                         $('#cliente-poblacion').val(data.poblacion);
                         $('#cliente-pais').val(data.pais);
                         $('#cliente-forma_pago').val(data.forma_pago);
@@ -151,18 +213,53 @@ $(function(){
         return parseFloat(parseFloat(n || 0).toFixed(2));
     }
 
+    function getCurrencySymbol() {
+        var moneyCtx = $('#factura-fac_money').val();
+        if (moneyCtx == '<?= Factura::FAC_MONEY_US ?>') {
+            return '$';
+        }
+        return '€';
+    }
+
+    // Update symbols on change
+    $('#factura-fac_money').on('change', function(){
+        var sym = getCurrencySymbol();
+        $('.currency-symbol-display').text(sym);
+        recalculateTotals(); // Re-render table rows to update text? Or just loop table
+        $('#concepts-table tbody tr').each(function(){
+            var $row = $(this);
+            recalcRow($row);
+        });
+    });
+
     function recalculateTotals(){
         var subtotal = 0;
         var ivaTotal = 0;
+        var suplidosTotal = 0;
+
         $('#concepts-table tbody tr').each(function(){
-            var importe = parseFloat($(this).find('.row-importe').text() || 0);
-            var iva = parseFloat($(this).find('.row-iva').val() || 0);
-            subtotal += importe;
-            ivaTotal += importe * (iva/100);
+            var $row = $(this);
+            var importe = parseFloat($row.find('.row-importe').data('val') || 0); // Use stored numeric value
+            var iva = parseFloat($row.find('.row-iva').val() || 0);
+            var desc = $row.find('.row-descripcion').val().toLowerCase();
+
+            // Detectar Suplidos
+            if (desc.includes('suplido')) {
+                suplidosTotal += importe;
+            } else {
+                subtotal += importe;
+                ivaTotal += importe * (iva/100);
+            }
         });
+
         subtotal = formatNumber(subtotal);
         ivaTotal = formatNumber(ivaTotal);
-        var total = formatNumber(subtotal + ivaTotal + parseFloat($('#factura-fac_gastos_suplidos').val() || 0));
+        suplidosTotal = formatNumber(suplidosTotal); // Calculated sum of suplidos lines
+        
+        // El campo Gasto Suplidos ahora es de solo lectura y se calcula automáticamente
+        $('#factura-fac_gastos_suplidos').val(suplidosTotal);
+
+        var total = formatNumber(subtotal + ivaTotal + suplidosTotal);
 
         // Actualizar campos del formulario
         $('#factura-fac_subtotal').val(subtotal);
@@ -170,47 +267,96 @@ $(function(){
         $('#factura-fac_total').val(total);
     }
 
+    // --- Añadir Conceptos Logic (Updated) ---
+    
+    // Init Select2 for new concept select
+    $('#new-concept-select').select2({
+        width: '100%',
+        dropdownParent: $('.page-content') // Ensure it renders correctly
+    });
+
+    // Populate new concept select
+    conceptos.forEach(function(c){
+        $('#new-concept-select').append(new Option(c.nombre, c.id, false, false)).trigger('change');
+    });
+    $('#new-concept-select').val('').trigger('change');
+
+    // On concept change, fill fields
+    $('#new-concept-select').on('change', function(){
+        var id = $(this).val();
+        if(!id) return;
+        var c = conceptos.find(x => x.id == id);
+        if(c){
+            $('#new-desc').val(c.nombre);
+            $('#new-iva').val(c.iva);
+            recalcNewRow();
+        }
+    });
+
+    // Recalculate new row values
+    $('#new-cant, #new-precio, #new-iva').on('input', recalcNewRow);
+
+    function recalcNewRow(){
+        var cant = parseFloat($('#new-cant').val()||0);
+        var prec = parseFloat($('#new-precio').val()||0);
+        var sub = cant * prec;
+        $('#new-importe').val(sub.toFixed(2));
+    }
+
+    // Add Row Button
+    $('#btn-add-concept-row').on('click', function(){
+        var desc = $('#new-desc').val();
+        var iva = $('#new-iva').val();
+        var cant = $('#new-cant').val();
+        var prec = $('#new-precio').val();
+        var cofId = $('#new-concept-select').val();
+
+        if(!desc && !prec && !cant) {
+            alert('Ingrese datos del concepto');
+            return;
+        }
+
+        addConceptRow({
+            cof_id: cofId,
+            dtf_descripcion: desc,
+            dtf_iva: iva,
+            dtf_cantidad: cant,
+            dtf_precio: prec
+        });
+        
+        // Reset fields
+        $('#new-concept-select').val('').trigger('change');
+        $('#new-desc').val('');
+        $('#new-iva').val(0);
+        $('#new-cant').val(1);
+        $('#new-precio').val(0);
+        $('#new-importe').val('0.00');
+    });
+
+
     function addConceptRow(data){
         data = data || {};
         var idx = rowIndex++;
+        var subtotal = parseFloat(data.dtf_cantidad||0) * parseFloat(data.dtf_precio||0);
+        
         var $tr = $(
             '<tr data-idx="'+idx+'">'+ 
             '<td>'+ 
-                '<select name="DetalleFactura['+idx+'][cof_id]" class="form-control row-concepto">'+ 
-                    '<option value="">-</option>'+ 
-                '</select>'+ 
+                '<input type="hidden" name="DetalleFactura['+idx+'][cof_id]" value="'+(data.cof_id||'')+'">' +
+                '<input type="text" name="DetalleFactura['+idx+'][dtf_descripcion]" class="form-control row-descripcion" value="'+(data.dtf_descripcion||'')+'">'+
             '</td>'+ 
-            '<td><input type="text" name="DetalleFactura['+idx+'][dtf_descripcion]" class="form-control row-descripcion" value="'+(data.dtf_descripcion||'')+'"></td>'+ 
             '<td><input type="number" step="0.01" name="DetalleFactura['+idx+'][dtf_iva]" class="form-control row-iva" value="'+(data.dtf_iva||0)+'"></td>'+ 
             '<td><input type="number" step="0.01" name="DetalleFactura['+idx+'][dtf_cantidad]" class="form-control row-cantidad" value="'+(data.dtf_cantidad||1)+'"></td>'+ 
             '<td><input type="number" step="0.01" name="DetalleFactura['+idx+'][dtf_precio]" class="form-control row-precio" value="'+(data.dtf_precio||0)+'"></td>'+ 
-            '<td class="row-importe text-end">0.00</td>'+ 
+            '<td class="row-importe text-end">'+subtotal.toFixed(2)+' '+getCurrencySymbol()+'</td>'+ 
             '<td><button type="button" class="btn text-orange radius-30 btn-remove">Eliminar</button></td>'+ 
             '</tr>'
         );
 
-        // Poblar select de conceptos
-        conceptos.forEach(function(c){
-            var selected = data.cof_id && data.cof_id == c.id ? 'selected' : '';
-            $tr.find('.row-concepto').append('<option value="'+c.id+'" '+selected+' data-iva="'+c.iva+'">'+c.nombre+'</option>');
-        });
+        $tr.find('.row-importe').data('val', subtotal); // Store numeric value
 
-        // Si el row fue creado con cof_id, disparar el cambio para autocompletar
-        $tr.find('.row-concepto').on('change', function(){
-            var $sel = $(this).find('option:selected');
-            var iva = $sel.data('iva') || 0;
-            var nombre = $sel.text() || '';
-            var $row = $(this).closest('tr');
-            // Si la descripción está vacía, usar nombre del concepto
-            if($row.find('.row-descripcion').val().trim() === ''){
-                $row.find('.row-descripcion').val(nombre);
-            }
-            $row.find('.row-iva').val(iva);
-            recalcRow($row);
-        });
-
-        // Eventos para cantidad/precio/iva
-        $tr.on('input', '.row-cantidad, .row-precio, .row-iva, .row-descripcion', function(){
+        // Eventos para recalculo en tabla
+        $tr.on('input', '.row-cantidad, .row-precio, .row-iva', function(){
             var $row = $(this).closest('tr');
             recalcRow($row);
         });
@@ -222,30 +368,8 @@ $(function(){
         });
 
         $('#concepts-table tbody').append($tr);
-        // Inicializar Select2 en el select del concepto
-        if(typeof $.fn.select2 !== 'undefined'){
-            $tr.find('.row-concepto').select2({ width: '100%', dropdownParent: $tr.closest('table') });
-        }
-        // Disparar cambio inicial si vino con concepto
-        if(data.cof_id){
-            $tr.find('.row-concepto').trigger('change');
-        } else {
-            recalcRow($tr);
-        }
-    }
-
-    function recalcRow($row){
-        var cantidad = parseFloat($row.find('.row-cantidad').val() || 0);
-        var precio = parseFloat($row.find('.row-precio').val() || 0);
-        var subtotal = formatNumber(cantidad * precio);
-        $row.find('.row-importe').text(subtotal.toFixed(2));
         recalculateTotals();
     }
-
-    // Botón Añadir
-    $('#btn-add-concept').on('click', function(){
-        addConceptRow();
-    });
 
     // Pre-fill client data if model has cli_id
     if ($('#factura-cli_id').val()) {
@@ -259,13 +383,19 @@ $(function(){
         $.each(detallesData, function(index, detail) {
             addConceptRow(detail);
         });
-    } else {
-        // Initialize with one empty row if no details
-        addConceptRow();
     }
 
-    // Recalcular totales cuando cambian los gastos suplidos
-    $('#factura-fac_gastos_suplidos').on('input', recalculateTotals);
+    // Si no hay datos, no añadimos fila vacía por defecto
+    // addConceptRow(); // REMOVED
+
+
+    // Recalcular totales cuando cambian los gastos suplidos (YA NO ES NECESARIO SI ES AUTOMATICO)
+    // $('#factura-fac_gastos_suplidos').on('input', recalculateTotals);
+    // Pero si el usuario cambia manual, podríamos querer recalcular? No, el usuario pidió "Debería trasladar el valor", implicando automatico.
+    // Lo haremos readonly en el HTML.
+
+    // Inicializar Select2 para Socio
+    // Removed duplicate select2 initialization for socio here as it's now an autocomplete input
 });
 JS;
 
@@ -361,7 +491,12 @@ $this->registerJs($js);
                         </div>
                         <div class="col-12 col-md-4 mb-3">
                             <label>Provincia*</label>
-                            <input type="text" id="cliente-provincia" class="form-control" disabled>
+                            <?= Html::dropDownList('provincia_visual', null, $provincias, [
+                                'id' => 'cliente-provincia', 
+                                'class' => 'form-select', 
+                                'prompt' => 'Seleccione Provincia',
+                                'disabled' => false
+                            ]) ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
                             <label>Población</label>
@@ -380,15 +515,19 @@ $this->registerJs($js);
                             ) ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
-                            <?= $form->field($model, 'soc_id', [
-                                'template' => "<label>Socio *</label>\n{input}\n{hint}\n{error}"
-                            ])->dropDownList(
-                                $socios,
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
-                            ) ?>
-                            <button type="button" class="btn btn-sm btn-outline-primary mt-1" data-bs-toggle="modal" data-bs-target="#modalCreateSocio">
-                                <i class="bx bx-plus"></i> Nuevo Socio
-                            </button>
+                            <label>Socio *</label>
+                            <?php 
+                            // Socio Autocomplete
+                            // Hidden input for ID
+                            echo $form->field($model, 'soc_id')->hiddenInput()->label(false);
+                            
+                            // Visual input for search
+                            $socioName = '';
+                            if ($model->soc_id && isset($socios[$model->soc_id])) {
+                                $socioName = $socios[$model->soc_id];
+                            }
+                            ?>
+                            <input type="text" id="search-socio" class="form-control mb-3" placeholder="Buscar socio..." value="<?= $socioName ?>">
                         </div>
                         <div class="col-12 col-md-4 mb-3">
                             <?= $form->field($model, 'fac_logo', [
@@ -413,10 +552,18 @@ $this->registerJs($js);
                             ) ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
-                            <?php $bancos = isset($bancos) ? $bancos : []; $selectedBanco = isset($selectedBanco) ? $selectedBanco : null; ?>
+                            <?php $bancos = isset($bancos) ? $bancos : []; $selectedBanco = isset($selectedBanco) ? $selectedBanco : []; ?>
                             <label>Cuentas para transferencia</label>
-                            <?= Html::dropDownList('CuentasFactura[ban_id]', $selectedBanco, $bancos, ['prompt' => 'Seleccione cuenta', 'class' => 'form-control mb-3'])
-                            ?>
+                            <?= Html::checkboxList('CuentasFactura[ban_id]', $selectedBanco, $bancos, [
+                                'class' => 'form-check',
+                                'item' => function ($index, $label, $name, $checked, $value) {
+                                    $checkedStr = $checked ? 'checked' : '';
+                                    return '<div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="'.$name.'" value="'.$value.'" '.$checkedStr.' id="banco_'.$index.'">
+                                                <label class="form-check-label" for="banco_'.$index.'">'.$label.'</label>
+                                            </div>';
+                                }
+                            ]) ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
                             <?= $form->field($model, 'fac_language', [
@@ -429,15 +576,6 @@ $this->registerJs($js);
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
                             ) ?>
                         </div>
-                        <div class="col-12 col-md-4 mb-3">
-                            <?= $form->field($model, 'fac_money', [
-                                'template' => "<label>Moneda *</label>\n{input}\n{hint}\n{error}"
-                            ])->dropDownList(
-                                [
-                                    Factura::FAC_MONEY_EUROS => 'Euro (€)',
-                                    Factura::FAC_MONEY_US => 'Dólar (US$)'
-                                ],
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
                             ) ?>
                         </div>
                     </div>
@@ -447,18 +585,54 @@ $this->registerJs($js);
                     <?= $form->field($model, 'fac_situacion')->hiddenInput(['value' => Factura::FAC_SITUACION_NO_RECLAMADA])->label(false) ?>
 
                     <div class="card-title d-flex align-items-center mt-3">
-                        <h5 class="mb-0 text-white">AÑADIR CONCEPTOS</h5>
+                        <h5 class="mb-0 text-white">DETALLE FACTURA</h5>
                     </div>
                     <hr>
 
                     <div class="row mb-3">
                         <div class="col-12">
-                            <label>Añadir Conceptos</label>
+                            <!-- New Concept Section -->
+                            <div class="p-3 border rounded mb-3">
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6"> <!-- Reduced width -->
+                                        <label class="form-label text-white">Concepto</label>
+                                        <select id="new-concept-select" class="form-select">
+                                            <option value="">Seleccione</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row g-3 mt-2">
+                                    <div class="col-md-6">
+                                        <label class="form-label text-white">Descripción</label>
+                                        <input type="text" id="new-desc" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label text-white">IVA (%)</label>
+                                        <input type="number" id="new-iva" class="form-control" step="0.01" value="0">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label class="form-label text-white">Cant</label>
+                                        <input type="number" id="new-cant" class="form-control" step="0.01" value="1">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label class="form-label text-white">Precio</label>
+                                        <input type="number" id="new-precio" class="form-control" step="0.01" value="0">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label text-white">Importe</label>
+                                        <input type="text" id="new-importe" class="form-control" readonly value="0.00">
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-end mt-3">
+                                        <button type="button" id="btn-add-concept-row" class="btn btn-primary"><i class="bx bx-check"></i> Añadir Concepto</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End New Concept Section -->
+
                             <div class="table-responsive">
                                 <table class="table" id="concepts-table">
                                     <thead>
                                         <tr>
-                                            <th>Concepto</th>
                                             <th>Descripción</th>
                                             <th>IVA (%)</th>
                                             <th>Cantidad</th>
@@ -472,7 +646,7 @@ $this->registerJs($js);
                                     </tbody>
                                 </table>
                             </div>
-                            <button type="button" id="btn-add-concept" class="btn text-orange radius-30">Añadir concepto</button>
+                            <!-- Removed old Add button -->
                         </div>
                     </div>
 
@@ -482,21 +656,47 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="row mb-3">
+                        <div class="col-12 col-md-4 mb-3">
+                             <?= $form->field($model, 'fac_money', [
+                                'template' => "<label class='text-white'>Moneda *</label>\n{input}\n{hint}\n{error}"
+                            ])->dropDownList(
+                                [
+                                    Factura::FAC_MONEY_EUROS => 'Euro (€)',
+                                    Factura::FAC_MONEY_US => 'Dólar (US$)'
+                                ],
+                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
+                            ) ?>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
                         <div class="col-12 col-md-3">
-                            <?= $form->field($model, 'fac_subtotal')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])
-                            ?>
+                            <label class="text-white">Subtotal</label>
+                            <div class="input-group">
+                                <?= $form->field($model, 'fac_subtotal')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])->label(false) ?>
+                                <span class="input-group-text currency-symbol-display">€</span>
+                            </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <?= $form->field($model, 'fac_iva')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])
-                            ?>
+                            <label class="text-white">IVA</label>
+                           <div class="input-group">
+                                <?= $form->field($model, 'fac_iva')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])->label(false) ?>
+                                <span class="input-group-text currency-symbol-display">€</span>
+                            </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <?= $form->field($model, 'fac_gastos_suplidos')->textInput(['type' => 'number', 'step' => '0.01'])
-                            ?>
+                            <label class="text-white">Gastos Suplidos</label>
+                            <div class="input-group">
+                                <?= $form->field($model, 'fac_gastos_suplidos')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])->label(false) ?>
+                                <span class="input-group-text currency-symbol-display">€</span>
+                            </div>
                         </div>
                         <div class="col-12 col-md-3">
-                            <?= $form->field($model, 'fac_total')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])
-                            ?>
+                             <label class="text-white">Total</label>
+                            <div class="input-group">
+                                <?= $form->field($model, 'fac_total')->textInput(['type' => 'number', 'step' => '0.01', 'readonly' => true])->label(false) ?>
+                                <span class="input-group-text currency-symbol-display">€</span>
+                            </div>
                         </div>
                     </div>
 
@@ -506,13 +706,15 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="row mb-3">
-                         <div class="col-12 mb-3">
-                            <?= $form->field($model, 'fac_archivo')->fileInput(['class' => 'form-control']) ?>
-                            <small class="text-muted">Si sube un archivo, no es necesario escribir observaciones.</small>
+                        <div class="col-12 mb-3">
+                            <?= $form->field($model, 'fac_archivo', [
+                                'template' => "<label class='text-white'>Archivo Adjunto</label>\n{input}\n{hint}\n{error}"
+                            ])->fileInput(['class' => 'form-control']) ?>
+                            <small class="text-white">Si sube un archivo, no es necesario escribir observaciones.</small>
                         </div>
                         <div class="col-12">
                             <?= $form->field($model, 'fac_observaciones', [
-                                'template' => "<label>Observaciones</label>\n{input}\n{hint}\n{error}",
+                                'template' => "<label class='text-white'>Observaciones</label>\n{input}\n{hint}\n{error}",
                             ])->textarea(['rows' => 6, 'class' => 'form-control'])
                             ?>
                         </div>

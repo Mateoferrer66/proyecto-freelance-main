@@ -173,6 +173,7 @@ class FacturaController extends BaseController
                         'detalleRowErrors' => $detalleRowErrors,
                         'bancos' => $bancosMap,
                         'selectedBanco' => $selectedBanco,
+                        'provincias' => \app\models\Provincia::getSpainProvincesList(),
                     ]);
                 }
 
@@ -194,15 +195,25 @@ class FacturaController extends BaseController
                         $ivaTotal += $det->dtf_subtotal * ($det->dtf_iva / 100.0);
                     }
 
-                    // Guardar cuenta seleccionada para la transferencia (si se envió)
-                    $postedCuenta = Yii::$app->request->post('CuentasFactura', []);
-                    $banId = isset($postedCuenta['ban_id']) && $postedCuenta['ban_id'] !== '' ? $postedCuenta['ban_id'] : null;
-                    if ($banId) {
-                        $cf = new CuentasFactura();
-                        $cf->ban_id = $banId;
-                        $cf->fac_id = $model->fac_id;
-                        if (!$cf->save()) {
-                            throw new \Exception('No se pudo guardar la cuenta de factura: ' . json_encode($cf->getErrors()));
+                    // Guardar cuentas seleccionadas para la transferencia (checkbox list)
+                    $postedCuentas = Yii::$app->request->post('CuentasFactura', []);
+                    $banIds = isset($postedCuentas['ban_id']) ? $postedCuentas['ban_id'] : [];
+                    
+                    // Si se envía un solo valor (no array), convertirlo a array
+                    if (!is_array($banIds) && $banIds !== '') {
+                        $banIds = [$banIds];
+                    }
+
+                    if (is_array($banIds)) {
+                        foreach ($banIds as $banId) {
+                            if (!empty($banId)) {
+                                $cf = new CuentasFactura();
+                                $cf->ban_id = $banId;
+                                $cf->fac_id = $model->fac_id;
+                                if (!$cf->save()) {
+                                    throw new \Exception('No se pudo guardar la cuenta de factura: ' . json_encode($cf->getErrors()));
+                                }
+                            }
                         }
                     }
 
@@ -248,7 +259,8 @@ class FacturaController extends BaseController
                 $consecutivo->save();
             }
 
-            // Cargar numero pedido (Serie P)
+            // Cargar numero pedido (Serie P) - COMENTADO PARA QUE SALGA VACIO
+            /*
             $consecutivoP = Consecutivo::findOne(['con_serie' => Consecutivo::CON_SERIE_P]);
             if (!$consecutivoP) {
                 $consecutivoP = new Consecutivo();
@@ -259,6 +271,7 @@ class FacturaController extends BaseController
             $consecutivoP->con_consecutivo++;
             $model->fac_numero_pedido = $consecutivoP->con_consecutivo;
             $consecutivoP->save();
+            */
 
             // Cargar fecha actual
             $model->fac_fecha = date('d/m/Y');
@@ -266,6 +279,8 @@ class FacturaController extends BaseController
 
         $socios = \app\models\Socio::find()->all();
         $formasDePago = \app\models\FormaDePago::find()->all();
+        // Obtener lista de provincias de España
+        $provincias = \app\models\Provincia::getSpainProvincesList();
 
     // Bancos disponibles para seleccionar cuenta de transferencia
     $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
@@ -279,6 +294,7 @@ class FacturaController extends BaseController
             'formasDePago' => ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
             'bancos' => $bancosMap,
             'selectedBanco' => null,
+            'provincias' => $provincias,
         ]);
     }
 
@@ -306,6 +322,27 @@ class FacturaController extends BaseController
         return $out;
     }
 
+    public function actionListadoSocios($term = null) {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $out = [];
+        if (!is_null($term)) {
+            $query = new \yii\db\Query();
+            $query->from('socio')
+                ->where(['like', 'soc_nombre', $term])
+                ->limit(20);
+            
+            $command = $query->createCommand();
+            $data = $command->queryAll();
+            foreach ($data as $soc) {
+                $out[] = [
+                    'value' => $soc['soc_id'],
+                    'label' => $soc['soc_nombre'],
+                ];
+            }
+        }
+        return $out;
+    }
+
     public function actionDatosCliente($id)
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
@@ -320,6 +357,7 @@ class FacturaController extends BaseController
                 'direccion' => $cliente->cli_direccion,
                 'cp' => $cliente->cli_codpostal,
                 'provincia' => $cliente->prv ? $cliente->prv->prv_nombre : '',
+                'prv_id' => $cliente->prv_id, // Añadido para seleccionar en dropdown
                 'poblacion' => $cliente->cli_poblacion,
                 'pais' => $cliente->pai ? $cliente->pai->pai_nombre : '',
                 'forma_pago' => $cliente->fdp ? $cliente->fdp->fdp_nombre : '',
@@ -341,9 +379,12 @@ class FacturaController extends BaseController
         $model = $this->findModel($fac_id);
         $detalleModels = $model->detalleFacturas;
         $cuentasFactura = $model->cuentasFacturas;
-        $selectedBanco = null;
+        $cuentasFactura = $model->cuentasFacturas;
+        $selectedBanco = []; // Array for multiple selection
         if (!empty($cuentasFactura)) {
-            $selectedBanco = $cuentasFactura[0]->ban_id;
+            foreach ($cuentasFactura as $cf) {
+                $selectedBanco[] = $cf->ban_id;
+            }
         }
 
         if ($this->request->isPost) {
@@ -410,6 +451,7 @@ class FacturaController extends BaseController
                     // Renderizar formulario con errores (no guardar) y devolver los datos de detalle y errores por fila
                     $socios = \app\models\Socio::find()->all();
                     $formasDePago = \app\models\FormaDePago::find()->all();
+                    $provincias = \app\models\Provincia::getSpainProvincesList();
                     // Lista de bancos para seleccionar cuenta de pago
                     $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
                     $bancosMap = ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
@@ -424,6 +466,7 @@ class FacturaController extends BaseController
                         'detalleRowErrors' => $detalleRowErrors,
                         'bancos' => $bancosMap,
                         'selectedBanco' => $selectedBanco,
+                        'provincias' => $provincias,
                     ]);
                 }
 
@@ -455,16 +498,25 @@ class FacturaController extends BaseController
                         }
                     }
 
-                    // Eliminar cuenta existente y guardar la nueva (si se envió)
+                    // Eliminar cuentas existentes y guardar las nuevas (seleccion multiple)
                     CuentasFactura::deleteAll(['fac_id' => $model->fac_id]);
-                    $postedCuenta = Yii::$app->request->post('CuentasFactura', []);
-                    $banId = isset($postedCuenta['ban_id']) && $postedCuenta['ban_id'] !== '' ? $postedCuenta['ban_id'] : null;
-                    if ($banId) {
-                        $cf = new CuentasFactura();
-                        $cf->ban_id = $banId;
-                        $cf->fac_id = $model->fac_id;
-                        if (!$cf->save()) {
-                            throw new \Exception('No se pudo guardar la cuenta de factura: ' . json_encode($cf->getErrors()));
+                    $postedCuentas = Yii::$app->request->post('CuentasFactura', []);
+                    $banIds = isset($postedCuentas['ban_id']) ? $postedCuentas['ban_id'] : [];
+                    
+                    if (!is_array($banIds) && $banIds !== '') {
+                        $banIds = [$banIds];
+                    }
+
+                    if (is_array($banIds)) {
+                        foreach ($banIds as $banId) {
+                            if (!empty($banId)) {
+                                $cf = new CuentasFactura();
+                                $cf->ban_id = $banId;
+                                $cf->fac_id = $model->fac_id;
+                                if (!$cf->save()) {
+                                    throw new \Exception('No se pudo guardar la cuenta de factura: ' . json_encode($cf->getErrors()));
+                                }
+                            }
                         }
                     }
 
@@ -494,6 +546,7 @@ class FacturaController extends BaseController
         $socios = \app\models\Socio::find()->all();
         $formasDePago = \app\models\FormaDePago::find()->all();
         $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
+        $provincias = \app\models\Provincia::getSpainProvincesList();
         $bancosMap = ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
 
         $detallesData = [];
@@ -518,6 +571,7 @@ class FacturaController extends BaseController
             'selectedBanco' => $selectedBanco,
             'detallesData' => $detallesData,
             'detalleRowErrors' => [],
+            'provincias' => $provincias,
         ]);
     }
 

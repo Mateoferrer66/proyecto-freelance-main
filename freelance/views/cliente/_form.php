@@ -49,8 +49,24 @@ $this->registerJs(
                         <div class="col-md-6">
                             <?= $form->field($model, 'cli_persona_contacto')->textInput(['maxlength' => true]) ?>
                         </div>
-                        <div class="col-md-6">
-                            <?= $form->field($model, 'cli_numdocide')->textInput(['maxlength' => true]) ?>
+                         <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4">
+                                     <?= $form->field($model, 'tdo_id')->dropDownList(ArrayHelper::map(TipoDocIdentidad::find()->all(), 'tdo_id', 'tdo_nombre'), ['prompt' => 'Seleccione'])
+                                    ?>
+                                </div>
+                                <div class="col-md-4">
+                                    <?= $form->field($model, 'cli_docinipais')->dropDownList([
+                                        'ES' => 'ES', 
+                                        'CO' => 'CO', 
+                                        'CL' => 'CL'
+                                    ], ['prompt' => 'Select'])
+                                    ->label('Iniciales país') ?>
+                                </div>
+                                <div class="col-md-4">
+                                    <?= $form->field($model, 'cli_numdocide')->textInput(['maxlength' => true]) ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

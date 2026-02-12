@@ -53,6 +53,7 @@ class FacturaSearch extends Factura
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => ['defaultOrder' => ['fac_fecha' => SORT_DESC, 'fac_id' => SORT_DESC]],
         ]);
 
         $dataProvider->sort->attributes['cli_nombre'] = [

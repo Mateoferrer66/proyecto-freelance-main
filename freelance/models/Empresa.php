@@ -21,6 +21,7 @@ use Yii;
  * @property string $emp_ccc_segs Código de Cuenta de Cotización (CCC)
  * @property string $emp_tipo_segs Tipo: código de 1 carácter que identifica el tipo de empresa
  * @property string $emp_razons_segs Nombre de la empresa o entidad
+ * @property string $emp_razons_segs Nombre de la empresa o entidad
  * @property int $emp_participaciones Cantidad de participaciones que se asigna a cada socio
  *
  * @property TipoDocIdentidad $tdo
@@ -28,6 +29,8 @@ use Yii;
 class Empresa extends \yii\db\ActiveRecord
 {
     const DEFAULT_ID = 1;
+
+    public $emp_docinipais; // Propiedad temporal para el campo "Iniciales país"
 
     /**
      * {@inheritdoc}
@@ -54,6 +57,7 @@ class Empresa extends \yii\db\ActiveRecord
             [['emp_regimen_segs'], 'string', 'max' => 4],
             [['emp_ccc_segs'], 'string', 'max' => 12],
             [['emp_tipo_segs'], 'string', 'max' => 1],
+            [['emp_docinipais'], 'safe'],
             [['tdo_id'], 'exist', 'skipOnError' => true, 'targetClass' => TipoDocIdentidad::class, 'targetAttribute' => ['tdo_id' => 'tdo_id']],
         ];
     }
@@ -79,6 +83,7 @@ class Empresa extends \yii\db\ActiveRecord
             'emp_tipo_segs' => 'Tipo de Empresa Seguridad Social',
             'emp_razons_segs' => 'Razon Social Seguridad Social',
             'emp_participaciones' => 'Participaciones',
+            'emp_docinipais' => 'Iniciales país',
         ];
     }
 

@@ -309,7 +309,7 @@ $this->registerJs($js);
                             ?>
                             <?= $form->field($model, 'fac_numero_pedido', [
                                 'template' => "<label>Número Pedido</label>\n{input}\n{hint}\n{error}"
-                            ])->textInput(['maxlength' => true, 'class' => 'form-control mb-3', 'readonly' => $isCooperativa]) ?>
+                            ])->textInput(['maxlength' => true, 'class' => 'form-control mb-3', 'readonly' => $isCooperativa, 'value' => '']) ?>
                         </div>
                     </div>
                     
@@ -372,14 +372,7 @@ $this->registerJs($js);
                             <label>País</label>
                             <input type="text" id="cliente-pais" class="form-control" disabled value="<?= Html::encode($model->cli->pai->pai_nombre ?? '') ?>">
                         </div>
-                        <div class="col-md-4 mb-3">
-                            <?= $form->field($model, 'fdp_id', [
-                                'template' => "<label>Forma de Pago *</label>\n{input}\n{hint}\n{error}"
-                            ])->dropDownList(
-                                ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
-                            ) ?>
-                        </div>
+
                         <div class="col-md-4 mb-3">
                             <?= $form->field($model, 'soc_id', [
                                 'template' => "<label>Socio *</label>\n{input}\n{hint}\n{error}"
@@ -411,10 +404,18 @@ $this->registerJs($js);
                             ) ?>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <?php $bancos = isset($bancos) ? $bancos : []; $selectedBanco = isset($selectedBanco) ? $selectedBanco : null; ?>
-                            <label>Cuenta destino</label>
-                            <?= Html::dropDownList('CuentasFactura[ban_id]', $selectedBanco, $bancos, ['prompt' => 'Seleccione cuenta', 'class' => 'form-control mb-3'])
-                            ?>
+                            <?php $bancos = isset($bancos) ? $bancos : []; $selectedBanco = isset($selectedBanco) ? $selectedBanco : []; ?>
+                            <label>Cuentas para transferencia</label>
+                            <?= Html::checkboxList('CuentasFactura[ban_id]', $selectedBanco, $bancos, [
+                                'class' => 'form-check',
+                                'item' => function ($index, $label, $name, $checked, $value) {
+                                    $checkedStr = $checked ? 'checked' : '';
+                                    return '<div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="'.$name.'" value="'.$value.'" '.$checkedStr.' id="banco_'.$index.'">
+                                                <label class="form-check-label" for="banco_'.$index.'">'.$label.'</label>
+                                            </div>';
+                                }
+                            ]) ?>
                         </div>
                         <div class="col-md-4 mb-3">
                             <?= $form->field($model, 'fac_language', [

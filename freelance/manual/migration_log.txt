@@ -1,0 +1,32 @@
+Yii Migration Tool (based on Yii v2.0.53)
+
+Total 2 new migrations to be applied:
+	m251119_173500_add_approval_columns
+	m251204_000000_add_usu_rol_column_to_usuario_table
+
+*** applying m251119_173500_add_approval_columns
+    > add column fac_aprobada integer DEFAULT 0 COMMENT '0: No aprobada, 1: Aprobada' to table factura ...Exception: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'fac_aprobada'
+The SQL being executed was: ALTER TABLE `factura` ADD `fac_aprobada` int(11) DEFAULT 0 COMMENT '0: No aprobada, 1: Aprobada' (C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Schema.php:676)
+#0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(1325): yii\db\Schema->convertException(Object(PDOException), 'ALTER TABLE `fa...')
+#1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Command.php(1120): yii\db\Command->internalExecute('ALTER TABLE `fa...')
+#2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Migration.php(388): yii\db\Command->execute()
+#3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\migrations\m251119_173500_add_approval_columns.php(15): yii\db\Migration->addColumn('factura', 'fac_aprobada', Object(yii\db\mysql\ColumnSchemaBuilder))
+#4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\db\Migration.php(114): m251119_173500_add_approval_columns->safeUp()
+#5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(758): yii\db\Migration->up()
+#6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(216): yii\console\controllers\BaseMigrateController->migrateUp('m251119_173500_...')
+#7 [internal function]: yii\console\controllers\BaseMigrateController->actionUp(0)
+#8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#10 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction('up', Array)
+#11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction('up', Array)
+#12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate/up', Array)
+#13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate/up', Array)
+#14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest(Object(yii\console\Request))
+#15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\yii(20): yii\base\Application->run()
+#16 {main}
+*** failed to apply m251119_173500_add_approval_columns (time: 0.009s)
+
+
+0 from 2 migrations were applied.
+
+Migration failed. The rest of the migrations are canceled.

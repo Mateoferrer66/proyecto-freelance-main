@@ -55,8 +55,8 @@ $(function(){
     });
 
     // --- Lógica para cargar provincias dinámicamente ---
-    $('#cliente-pai_id').on('change', function() {
-        var paiId = $(this).val();
+    function loadProvincias() {
+        var paiId = $('#cliente-pai_id').val();
         var provinciaDropdown = $('#cliente-prv_id');
         provinciaDropdown.empty().append('<option value="">Cargando...</option>'); // Limpiar y mostrar "Cargando..."
 
@@ -82,6 +82,24 @@ $(function(){
         } else {
             provinciaDropdown.empty().append('<option value="">Seleccione</option>');
         }
+    }
+
+    // --- Lógica para cargar provincias dinámicamente ---
+    $('#cliente-pai_id').on('change', loadProvincias);
+    
+    // Logic for refresh button (Province)
+    $(document).on('click', '.refresh-provincias', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Refresh provincias clicked');
+        loadProvincias();
+    });
+
+    // Logic for refresh button (Country) - crude reload
+    $(document).on('click', '.refresh-paises', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        location.reload(); 
     });
 
     // Disparar el evento change al cargar la página si ya hay un país seleccionado
@@ -127,7 +145,7 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="row mb-3">
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-3">
                             <?= $form->field($model, 'tdo_id', [
                                 'template' => "<label>Tipo Documento *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
@@ -135,10 +153,20 @@ $this->registerJs($js);
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
                             ) ?>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-2">
                              <?= $form->field($model, 'cli_docinipais', [
                                 'template' => "<label>Iniciales país</label>\n{input}\n{hint}\n{error}",
-                            ])->textInput(['maxlength' => true, 'class' => 'form-control mb-3']) ?>
+                            ])->dropDownList([
+                                'ES' => 'ES', 
+                                'CO' => 'CO', 
+                                'CL' => 'CL'
+                            ], ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']) ?>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <?= $form->field($model, 'cli_numdocide', [
+                                'template' => "<label>Número identificación fiscal *</label>\n{input}\n{hint}\n{error}",
+                                'inputOptions' => ['class' => 'form-control mb-3', 'required' => true]
+                            ])->textInput() ?>
                         </div>
                         <div class="col-12 col-md-4">
                             <?= $form->field($model, 'cli_feccaddoc', [
@@ -146,12 +174,9 @@ $this->registerJs($js);
                             ])->textInput(['class' => 'form-control mb-3', 'placeholder' => 'YYYY-MM-DD']) // Quitado type=date 
                             ?>
                         </div>
-                        <div class="col-12 col-md-4">
-                            <?= $form->field($model, 'cli_numdocide', [
-                                'template' => "<label>Número identificación fiscal *</label>\n{input}\n{hint}\n{error}",
-                                'inputOptions' => ['class' => 'form-control mb-3', 'required' => true]
-                            ])->textInput() ?>
-                        </div>
+                    </div>
+
+                    <div class="row mb-3">
                         <div class="col-12 col-md-6">
                             <?= $form->field($model, 'cli_nombre', [
                                 'template' => "<label>Nombre Razón Social*</label>\n{input}\n{hint}\n{error}",
@@ -172,13 +197,13 @@ $this->registerJs($js);
                     <hr>
 
                     <div class="row mb-3">
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-2">
                             <?= $form->field($model, 'cli_tel1', [
                                 'template' => "<label>Teléfono 1</label>\n{input}\n{hint}\n{error}",
                                 'inputOptions' => ['class' => 'form-control mb-3']
                             ])->textInput() ?>
                         </div>
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-2">
                             <?= $form->field($model, 'cli_tel2', [
                                 'template' => "<label>Teléfono 2</label>\n{input}\n{hint}\n{error}",
                                 'inputOptions' => ['class' => 'form-control mb-3']
@@ -197,16 +222,18 @@ $this->registerJs($js);
                             ])->textInput() ?>
                         </div>
                         <div class="col-12 col-md-4">
+                            <label>País * <a href="javascript:void(0);" class="refresh-paises text-primary" title="Recargar países"><i class="bx bx-refresh"></i></a></label>
                             <?= $form->field($model, 'pai_id', [
-                                'template' => "<label>País *</label>\n{input}\n{hint}\n{error}"
+                                'template' => "{input}\n{hint}\n{error}"
                             ])->dropDownList(
                                 ArrayHelper::map(Pais::find()->all(), 'pai_id', 'pai_nombre'),
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true, 'id' => 'cliente-pai_id']
                             ) ?>
                         </div>
                         <div class="col-12 col-md-4">
+                            <label>Provincia * <a href="javascript:void(0);" class="refresh-provincias text-primary" title="Recargar provincias"><i class="bx bx-refresh"></i></a></label>
                             <?= $form->field($model, 'prv_id', [
-                                'template' => "<label>Provincia *</label>\n{input}\n{hint}\n{error}"
+                                'template' => "{input}\n{hint}\n{error}"
                             ])->dropDownList(
                                 [], // Se inicializa vacío, se llenará con AJAX
                                 ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true, 'id' => 'cliente-prv_id']

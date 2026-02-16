@@ -18,11 +18,13 @@ $titleMap = [
     'provincia' => 'Países y Provincias',
     'utilidades' => 'Utilidades',
     // Mapeo para otros modulos
+    'site' => 'Inicio',
     'usuario' => 'Usuarios',
     'cliente' => 'Clientes',
     'socio' => 'Socios',
     'factura' => 'Facturación',
     'presupuesto' => 'Presupuestos',
+    'portafolio' => 'Portafolio',
 ];
 
 // Mapeo de rutas a clases de íconos de Boxicons
@@ -40,11 +42,13 @@ $iconMap = [
     'provincia' => 'bx bx-flag',
     'utilidades' => 'bx bx-diamond',
     // Mapeo para otros modulos
+    'site' => 'bx bx-home',
     'usuario' => 'bx bx-group',
     'cliente' => 'bx bx-user-voice',
     'socio' => 'bx bx-street-view',
     'factura' => 'bx bx-dollar-circle',
     'presupuesto' => 'bx bx-dollar-circle',
+    'portafolio' => 'bx bx-briefcase',
 ];
 ?>
 
@@ -53,11 +57,11 @@ $iconMap = [
         <div class="mobile-toggle-menu"><i class='bx bx-menu'></i></div>
          <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center">
-            <div class="breadcrumb-title pe-3"><?= Html::encode($titleMap[$controller]) ?></div>
+            <div class="breadcrumb-title pe-3"><?= Html::encode($titleMap[$controller] ?? ucfirst($controller)) ?></div>
             <div class="ps-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
-                        <li class="breadcrumb-item"><a href="javascript:;"><i class="<?= $iconMap[$controller] ?>"></i></a>
+                        <li class="breadcrumb-item"><a href="javascript:;"><i class="<?= $iconMap[$controller] ?? 'bx bx-circle' ?>"></i></a>
                         </li>
                     </ol>
                 </nav>

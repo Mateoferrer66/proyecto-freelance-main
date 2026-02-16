@@ -20,10 +20,18 @@ $currentUrl = Yii::$app->request->url;
             </a></li>
         <li class="menu-label">Módulos de administración</li>
 
-        <li><a href="<?= \Yii::$app->urlManager->createUrl(['/socio']) ?>" data-pjax="0">
+        <li>
+            <a class="has-arrow" href="<?= \Yii::$app->urlManager->createUrl(['/portafolio/index']) ?>" data-pjax="0">
                 <div class="parent-icon"><i class='bx bx-street-view'></i></div>
                 <div class="menu-title">Socios</div>
-            </a></li>
+            </a>
+            <ul>
+                <li><a href="<?= \Yii::$app->urlManager->createUrl(['/portafolio/index']) ?>" <?= (strpos(Yii::$app->request->url, '/portafolio') !== false) ? 'class="mm-active"' : '' ?> data-pjax="0">
+                    <i class='bx bx-briefcase'></i>Portafolio
+                </a></li>
+            </ul>
+        </li>
+
         <li><a href="<?= \Yii::$app->urlManager->createUrl(['/cliente']) ?>" data-pjax="0">
                 <div class="parent-icon"><i class='bx bx-user-voice'></i></div>
                 <div class="menu-title">Clientes</div>

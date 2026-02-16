@@ -1,0 +1,870 @@
+L19558:     'REQUEST_TIME' => 1770849759
+L19559: ]
+L19560: 2026-02-11 23:43:27 [::1][2][geacjnmgnj9aproo3kmtv3bbbg][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "site" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L19561: Stack trace:
+L19562: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L19563: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L19564: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L19565: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L19566: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L19567: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L19568: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L19569: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\SiteController))
+L19570: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('<!-- Load Chart...')
+L19571: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\SiteController.php(249): yii\base\Controller->render('index', Array)
+L19572: #10 [internal function]: app\controllers\SiteController->actionIndex()
+L19573: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L19574: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L19575: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L19576: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/index', Array)
+L19577: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L19578: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L19579: #17 {main}
+L19580: 2026-02-11 23:43:27 [::1][2][geacjnmgnj9aproo3kmtv3bbbg][info][application] $_GET = [
+L19581:     'r' => 'site/index'
+L19582: ]
+L19583: 
+L19584: $_POST = []
+L19585: 
+---
+L19634:     'REQUEST_TIME' => 1770849807
+L19635: ]
+L19636: 2026-02-11 23:43:40 [::1][2][geacjnmgnj9aproo3kmtv3bbbg][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "site" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L19637: Stack trace:
+L19638: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L19639: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L19640: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L19641: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L19642: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L19643: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L19644: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L19645: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\SiteController))
+L19646: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('<!-- Load Chart...')
+L19647: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\SiteController.php(249): yii\base\Controller->render('index', Array)
+L19648: #10 [internal function]: app\controllers\SiteController->actionIndex()
+L19649: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L19650: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L19651: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L19652: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/index', Array)
+L19653: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L19654: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L19655: #17 {main}
+L19656: 2026-02-11 23:43:40 [::1][2][geacjnmgnj9aproo3kmtv3bbbg][info][application] $_GET = [
+L19657:     'r' => 'site/index'
+L19658: ]
+L19659: 
+L19660: $_POST = []
+L19661: 
+---
+L21302:     'REQUEST_TIME' => 1771179067
+L21303: ]
+L21304: 2026-02-15 19:13:42 [::1][2][ovpkkh106743tnsm7399a81g70][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L21305: Stack trace:
+L21306: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L21307: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21308: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21309: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L21310: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L21311: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21312: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21313: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L21314: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L21315: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L21316: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L21317: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L21318: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L21319: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L21320: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L21321: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L21322: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L21323: #17 {main}
+L21324: 2026-02-15 19:13:42 [::1][2][ovpkkh106743tnsm7399a81g70][info][application] $_GET = [
+L21325:     'r' => 'portafolio/index'
+L21326: ]
+L21327: 
+L21328: $_POST = []
+L21329: 
+---
+L21379:     'REQUEST_TIME' => 1771179222
+L21380: ]
+L21381: 2026-02-15 19:13:48 [::1][2][ovpkkh106743tnsm7399a81g70][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L21382: Stack trace:
+L21383: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L21384: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21385: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21386: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L21387: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L21388: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21389: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21390: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L21391: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L21392: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L21393: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L21394: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L21395: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L21396: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L21397: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L21398: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L21399: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L21400: #17 {main}
+L21401: 2026-02-15 19:13:47 [::1][2][ovpkkh106743tnsm7399a81g70][info][application] $_GET = [
+L21402:     'r' => 'portafolio/index'
+L21403: ]
+L21404: 
+L21405: $_POST = []
+L21406: 
+---
+L21456:     'REQUEST_TIME' => 1771179227
+L21457: ]
+L21458: 2026-02-15 19:14:02 [::1][2][ovpkkh106743tnsm7399a81g70][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L21459: Stack trace:
+L21460: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L21461: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21462: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21463: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L21464: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L21465: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21466: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21467: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L21468: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L21469: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L21470: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L21471: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L21472: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L21473: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L21474: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L21475: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L21476: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L21477: #17 {main}
+L21478: 2026-02-15 19:14:02 [::1][2][ovpkkh106743tnsm7399a81g70][info][application] $_GET = [
+L21479:     'r' => 'portafolio/index'
+L21480: ]
+L21481: 
+L21482: $_POST = []
+L21483: 
+---
+L21534:     'REQUEST_TIME' => 1771179242
+L21535: ]
+L21536: 2026-02-15 19:15:11 [::1][2][ovpkkh106743tnsm7399a81g70][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L21537: Stack trace:
+L21538: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L21539: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21540: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21541: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L21542: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L21543: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21544: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21545: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L21546: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L21547: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L21548: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L21549: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L21550: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L21551: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L21552: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L21553: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L21554: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L21555: #17 {main}
+L21556: 2026-02-15 19:15:11 [::1][2][ovpkkh106743tnsm7399a81g70][info][application] $_GET = [
+L21557:     'r' => 'portafolio/index'
+L21558: ]
+L21559: 
+L21560: $_POST = []
+L21561: 
+---
+L21611:     'REQUEST_TIME' => 1771179311
+L21612: ]
+L21613: 2026-02-15 19:15:29 [::1][2][ovpkkh106743tnsm7399a81g70][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L21614: Stack trace:
+L21615: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L21616: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21617: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21618: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L21619: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L21620: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21621: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21622: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L21623: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L21624: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L21625: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L21626: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L21627: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L21628: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L21629: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L21630: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L21631: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L21632: #17 {main}
+L21633: 2026-02-15 19:15:29 [::1][2][ovpkkh106743tnsm7399a81g70][info][application] $_GET = [
+L21634:     'r' => 'portafolio/index'
+L21635: ]
+L21636: 
+L21637: $_POST = []
+L21638: 
+---
+L21792:     'argc' => 1
+L21793: ]
+L21794: 2026-02-15 19:16:50 [::1][2][ovpkkh106743tnsm7399a81g70][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L21795: Stack trace:
+L21796: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L21797: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21798: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21799: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L21800: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L21801: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21802: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21803: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L21804: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L21805: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L21806: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L21807: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L21808: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L21809: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L21810: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L21811: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L21812: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L21813: #17 {main}
+L21814: 2026-02-15 19:16:50 [::1][2][ovpkkh106743tnsm7399a81g70][info][application] $_GET = [
+L21815:     'r' => 'portafolio/index'
+L21816: ]
+L21817: 
+L21818: $_POST = []
+L21819: 
+---
+L21870:     'REQUEST_TIME' => 1771179410
+L21871: ]
+L21872: 2026-02-15 19:16:53 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L21873: Stack trace:
+L21874: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L21875: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21876: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21877: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L21878: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L21879: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21880: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21881: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L21882: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L21883: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L21884: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L21885: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L21886: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L21887: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L21888: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L21889: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L21890: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L21891: #17 {main}
+L21892: 2026-02-15 19:16:53 [::1][2][-][info][application] $_GET = [
+L21893:     'r' => 'portafolio/index'
+L21894: ]
+L21895: 
+L21896: $_POST = []
+L21897: 
+---
+L21947:     'REQUEST_TIME' => 1771179413
+L21948: ]
+L21949: 2026-02-15 19:16:53 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L21950: Stack trace:
+L21951: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L21952: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21953: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21954: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L21955: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L21956: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L21957: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L21958: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L21959: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L21960: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L21961: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L21962: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L21963: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L21964: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L21965: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L21966: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L21967: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L21968: #17 {main}
+L21969: 2026-02-15 19:16:53 [::1][2][-][info][application] $_GET = [
+L21970:     'r' => 'portafolio/index'
+L21971: ]
+L21972: 
+L21973: $_POST = []
+L21974: 
+---
+L22024:     'REQUEST_TIME' => 1771179413
+L22025: ]
+L22026: 2026-02-15 19:16:53 [::1][2][ovpkkh106743tnsm7399a81g70][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22027: Stack trace:
+L22028: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22029: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22030: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22031: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22032: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22033: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22034: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22035: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22036: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22037: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22038: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22039: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22040: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22041: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22042: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22043: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22044: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22045: #17 {main}
+L22046: 2026-02-15 19:16:53 [::1][2][ovpkkh106743tnsm7399a81g70][info][application] $_GET = [
+L22047:     'r' => 'portafolio/index'
+L22048: ]
+L22049: 
+L22050: $_POST = []
+L22051: 
+---
+L22101:     'REQUEST_TIME' => 1771179413
+L22102: ]
+L22103: 2026-02-15 19:16:59 [::1][2][ovpkkh106743tnsm7399a81g70][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22104: Stack trace:
+L22105: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22106: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22107: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22108: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22109: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22110: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22111: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22112: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22113: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22114: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22115: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22116: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22117: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22118: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22119: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22120: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22121: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22122: #17 {main}
+L22123: 2026-02-15 19:16:58 [::1][2][ovpkkh106743tnsm7399a81g70][info][application] $_GET = [
+L22124:     'r' => 'portafolio/index'
+L22125: ]
+L22126: 
+L22127: $_POST = []
+L22128: 
+---
+L22179:     'REQUEST_TIME' => 1771179418
+L22180: ]
+L22181: 2026-02-15 19:17:01 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22182: Stack trace:
+L22183: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22184: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22185: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22186: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22187: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22188: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22189: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22190: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22191: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22192: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22193: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22194: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22195: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22196: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22197: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22198: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22199: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22200: #17 {main}
+L22201: 2026-02-15 19:17:01 [::1][2][-][info][application] $_GET = [
+L22202:     'r' => 'portafolio/index'
+L22203: ]
+L22204: 
+L22205: $_POST = []
+L22206: 
+---
+L22256:     'REQUEST_TIME' => 1771179421
+L22257: ]
+L22258: 2026-02-15 19:17:02 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22259: Stack trace:
+L22260: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22261: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22262: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22263: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22264: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22265: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22266: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22267: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22268: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22269: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22270: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22271: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22272: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22273: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22274: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22275: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22276: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22277: #17 {main}
+L22278: 2026-02-15 19:17:01 [::1][2][-][info][application] $_GET = [
+L22279:     'r' => 'portafolio/index'
+L22280: ]
+L22281: 
+L22282: $_POST = []
+L22283: 
+---
+L22333:     'REQUEST_TIME' => 1771179421
+L22334: ]
+L22335: 2026-02-15 19:17:02 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22336: Stack trace:
+L22337: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22338: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22339: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22340: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22341: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22342: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22343: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22344: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22345: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22346: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22347: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22348: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22349: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22350: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22351: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22352: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22353: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22354: #17 {main}
+L22355: 2026-02-15 19:17:02 [::1][2][-][info][application] $_GET = [
+L22356:     'r' => 'portafolio/index'
+L22357: ]
+L22358: 
+L22359: $_POST = []
+L22360: 
+---
+L22410:     'REQUEST_TIME' => 1771179422
+L22411: ]
+L22412: 2026-02-15 19:17:03 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22413: Stack trace:
+L22414: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22415: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22416: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22417: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22418: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22419: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22420: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22421: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22422: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22423: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22424: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22425: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22426: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22427: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22428: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22429: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22430: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22431: #17 {main}
+L22432: 2026-02-15 19:17:02 [::1][2][-][info][application] $_GET = [
+L22433:     'r' => 'portafolio/index'
+L22434: ]
+L22435: 
+L22436: $_POST = []
+L22437: 
+---
+L22487:     'REQUEST_TIME' => 1771179422
+L22488: ]
+L22489: 2026-02-15 19:17:03 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22490: Stack trace:
+L22491: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22492: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22493: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22494: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22495: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22496: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22497: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22498: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22499: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22500: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22501: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22502: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22503: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22504: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22505: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22506: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22507: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22508: #17 {main}
+L22509: 2026-02-15 19:17:03 [::1][2][-][info][application] $_GET = [
+L22510:     'r' => 'portafolio/index'
+L22511: ]
+L22512: 
+L22513: $_POST = []
+L22514: 
+---
+L22564:     'REQUEST_TIME' => 1771179423
+L22565: ]
+L22566: 2026-02-15 19:17:04 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22567: Stack trace:
+L22568: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22569: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22570: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22571: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22572: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22573: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22574: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22575: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22576: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22577: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22578: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22579: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22580: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22581: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22582: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22583: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22584: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22585: #17 {main}
+L22586: 2026-02-15 19:17:03 [::1][2][-][info][application] $_GET = [
+L22587:     'r' => 'portafolio/index'
+L22588: ]
+L22589: 
+L22590: $_POST = []
+L22591: 
+---
+L22641:     'REQUEST_TIME' => 1771179423
+L22642: ]
+L22643: 2026-02-15 19:17:04 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22644: Stack trace:
+L22645: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22646: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22647: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22648: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22649: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22650: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22651: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22652: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22653: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22654: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22655: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22656: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22657: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22658: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22659: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22660: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22661: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22662: #17 {main}
+L22663: 2026-02-15 19:17:04 [::1][2][-][info][application] $_GET = [
+L22664:     'r' => 'portafolio/index'
+L22665: ]
+L22666: 
+L22667: $_POST = []
+L22668: 
+---
+L22718:     'REQUEST_TIME' => 1771179424
+L22719: ]
+L22720: 2026-02-15 19:17:05 [::1][2][ovpkkh106743tnsm7399a81g70][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22721: Stack trace:
+L22722: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22723: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22724: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22725: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22726: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22727: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22728: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22729: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22730: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22731: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22732: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22733: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22734: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22735: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22736: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22737: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22738: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22739: #17 {main}
+L22740: 2026-02-15 19:17:04 [::1][2][ovpkkh106743tnsm7399a81g70][info][application] $_GET = [
+L22741:     'r' => 'portafolio/index'
+L22742: ]
+L22743: 
+L22744: $_POST = []
+L22745: 
+---
+L22795:     'REQUEST_TIME' => 1771179424
+L22796: ]
+L22797: 2026-02-15 19:18:33 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22798: Stack trace:
+L22799: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22800: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22801: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22802: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22803: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22804: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22805: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22806: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22807: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22808: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22809: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22810: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22811: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22812: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22813: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22814: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22815: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22816: #17 {main}
+L22817: 2026-02-15 19:18:33 [::1][2][-][info][application] $_GET = [
+L22818:     'r' => 'portafolio/index'
+L22819: ]
+L22820: 
+L22821: $_POST = []
+L22822: 
+---
+L22873:     'REQUEST_TIME' => 1771179513
+L22874: ]
+L22875: 2026-02-15 19:18:33 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22876: Stack trace:
+L22877: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22878: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22879: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22880: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22881: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22882: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22883: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22884: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22885: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22886: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22887: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22888: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22889: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22890: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22891: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22892: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22893: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22894: #17 {main}
+L22895: 2026-02-15 19:18:33 [::1][2][-][info][application] $_GET = [
+L22896:     'r' => 'portafolio/index'
+L22897: ]
+L22898: 
+L22899: $_POST = []
+L22900: 
+---
+L22951:     'REQUEST_TIME' => 1771179513
+L22952: ]
+L22953: 2026-02-15 19:18:34 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L22954: Stack trace:
+L22955: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L22956: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22957: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22958: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L22959: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L22960: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L22961: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L22962: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L22963: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L22964: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L22965: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L22966: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L22967: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L22968: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L22969: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L22970: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L22971: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L22972: #17 {main}
+L22973: 2026-02-15 19:18:33 [::1][2][-][info][application] $_GET = [
+L22974:     'r' => 'portafolio/index'
+L22975: ]
+L22976: 
+L22977: $_POST = []
+L22978: 
+---
+L23029:     'REQUEST_TIME' => 1771179513
+L23030: ]
+L23031: 2026-02-15 19:18:34 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L23032: Stack trace:
+L23033: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L23034: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23035: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23036: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L23037: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L23038: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23039: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23040: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L23041: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L23042: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L23043: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L23044: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L23045: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L23046: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L23047: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L23048: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L23049: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L23050: #17 {main}
+L23051: 2026-02-15 19:18:34 [::1][2][-][info][application] $_GET = [
+L23052:     'r' => 'portafolio/index'
+L23053: ]
+L23054: 
+L23055: $_POST = []
+L23056: 
+---
+L23107:     'REQUEST_TIME' => 1771179514
+L23108: ]
+L23109: 2026-02-15 19:18:35 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L23110: Stack trace:
+L23111: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L23112: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23113: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23114: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L23115: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L23116: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23117: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23118: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L23119: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L23120: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L23121: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L23122: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L23123: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L23124: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L23125: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L23126: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L23127: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L23128: #17 {main}
+L23129: 2026-02-15 19:18:35 [::1][2][-][info][application] $_GET = [
+L23130:     'r' => 'portafolio/index'
+L23131: ]
+L23132: 
+L23133: $_POST = []
+L23134: 
+---
+L23185:     'REQUEST_TIME' => 1771179515
+L23186: ]
+L23187: 2026-02-15 19:18:35 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L23188: Stack trace:
+L23189: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L23190: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23191: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23192: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L23193: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L23194: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23195: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23196: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L23197: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L23198: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L23199: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L23200: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L23201: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L23202: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L23203: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L23204: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L23205: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L23206: #17 {main}
+L23207: 2026-02-15 19:18:35 [::1][2][-][info][application] $_GET = [
+L23208:     'r' => 'portafolio/index'
+L23209: ]
+L23210: 
+L23211: $_POST = []
+L23212: 
+---
+L23263:     'REQUEST_TIME' => 1771179515
+L23264: ]
+L23265: 2026-02-15 19:18:36 [::1][2][-][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L23266: Stack trace:
+L23267: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L23268: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23269: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23270: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L23271: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L23272: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23273: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23274: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L23275: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L23276: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L23277: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L23278: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L23279: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L23280: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L23281: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L23282: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L23283: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L23284: #17 {main}
+L23285: 2026-02-15 19:18:35 [::1][2][-][info][application] $_GET = [
+L23286:     'r' => 'portafolio/index'
+L23287: ]
+L23288: 
+L23289: $_POST = []
+L23290: 
+---
+L23341:     'REQUEST_TIME' => 1771179515
+L23342: ]
+L23343: 2026-02-15 19:18:36 [::1][2][ovpkkh106743tnsm7399a81g70][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L23344: Stack trace:
+L23345: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L23346: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23347: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23348: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L23349: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L23350: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23351: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23352: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L23353: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L23354: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L23355: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L23356: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L23357: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L23358: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L23359: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L23360: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L23361: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L23362: #17 {main}
+L23363: 2026-02-15 19:18:36 [::1][2][ovpkkh106743tnsm7399a81g70][info][application] $_GET = [
+L23364:     'r' => 'portafolio/index'
+L23365: ]
+L23366: 
+L23367: $_POST = []
+L23368: 
+---
+L23419:     'REQUEST_TIME' => 1771179516
+L23420: ]
+L23421: 2026-02-15 19:23:15 [::1][2][ovpkkh106743tnsm7399a81g70][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L23422: Stack trace:
+L23423: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L23424: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23425: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23426: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L23427: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L23428: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23429: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23430: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L23431: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L23432: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L23433: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L23434: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L23435: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L23436: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L23437: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L23438: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L23439: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L23440: #17 {main}
+L23441: 2026-02-15 19:23:14 [::1][2][ovpkkh106743tnsm7399a81g70][info][application] $_GET = [
+L23442:     'r' => 'portafolio/index'
+L23443: ]
+L23444: 
+L23445: $_POST = []
+L23446: 
+---
+L23497:     'REQUEST_TIME' => 1771179794
+L23498: ]
+L23499: 2026-02-15 19:23:50 [::1][2][8dcen5j06qo8m2flu8gsjm90h0][error][yii\base\ErrorException:2] yii\base\ErrorException: Undefined array key "portafolio" in C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php:56
+L23500: Stack trace:
+L23501: #0 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\_topbar.php(56): yii\base\ErrorHandler->handleError(2, 'Undefined array...', 'C:\\Users\\mateo\\...', 56)
+L23502: #1 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23503: #2 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23504: #3 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, NULL)
+L23505: #4 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\views\layouts\main.php(71): yii\base\View->render('_topbar')
+L23506: #5 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\mateo\\...')
+L23507: #6 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\Users\\mateo\\...', Array)
+L23508: #7 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(428): yii\base\View->renderFile('C:\\Users\\mateo\\...', Array, Object(app\controllers\PortafolioController))
+L23509: #8 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(414): yii\base\Controller->renderContent('\r\n<div class="p...')
+L23510: #9 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\controllers\PortafolioController.php(49): yii\base\Controller->render('index', Array)
+L23511: #10 [internal function]: app\controllers\PortafolioController->actionIndex()
+L23512: #11 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+L23513: #12 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+L23514: #13 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+L23515: #14 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('portafolio/inde...', Array)
+L23516: #15 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+L23517: #16 C:\Users\mateo\Desktop\2025\FREELANCE\FREELANCE\proyecto-freelance-main\proyecto-freelance-main\freelance\web\index.php(155): yii\base\Application->run()
+L23518: #17 {main}
+L23519: 2026-02-15 19:23:50 [::1][2][8dcen5j06qo8m2flu8gsjm90h0][info][application] $_GET = [
+L23520:     'r' => 'portafolio/index'
+L23521: ]
+L23522: 
+L23523: $_POST = []
+L23524: 
+---

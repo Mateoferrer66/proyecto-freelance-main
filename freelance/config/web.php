@@ -25,6 +25,15 @@ $config = [
             'identityClass' => 'app\models\Usuario',
             'enableAutoLogin' => true,
         ],
+        'session' => [
+            'class' => 'yii\web\Session',
+            'timeout' => 86400, // 24 hours
+            'cookieParams' => [
+                'lifetime' => 86400, // 24 hours
+                'httpOnly' => true,
+                'secure' => false, // set to true if using HTTPS
+            ],
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

@@ -279,8 +279,8 @@ class FacturaController extends BaseController
 
         $socios = \app\models\Socio::find()->all();
         $formasDePago = \app\models\FormaDePago::find()->all();
-        // Obtener lista de provincias de España
-        $provincias = \app\models\Provincia::getSpainProvincesList();
+        $paises = \app\models\Pais::find()->where(['pai_eliminado' => 0])->all();
+        $provincias = \app\models\Provincia::find()->where(['prv_eliminada' => 0])->all();
 
     // Bancos disponibles para seleccionar cuenta de transferencia
     $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
@@ -294,7 +294,8 @@ class FacturaController extends BaseController
             'formasDePago' => ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
             'bancos' => $bancosMap,
             'selectedBanco' => null,
-            'provincias' => $provincias,
+            'paises' => ArrayHelper::map($paises, 'pai_id', 'pai_nombre'),
+            'provincias' => ArrayHelper::map($provincias, 'prv_id', 'prv_nombre'),
         ]);
     }
 
@@ -324,11 +325,16 @@ class FacturaController extends BaseController
 
     public function actionListadoSocios($term = null) {
         Yii::$app->response->format = Response::FORMAT_JSON;
+        $term = $term ?? Yii::$app->request->get('term');
         $out = [];
-        if (!is_null($term)) {
+        if ($term !== null && $term !== '') {
             $query = new \yii\db\Query();
             $query->from('socio')
-                ->where(['like', 'soc_nombre', $term])
+                ->where(['or', 
+                    ['like', 'soc_nombre', $term],
+                    ['like', 'soc_apellido', $term],
+                    ['like', 'soc_numero', $term]
+                ])
                 ->limit(20);
             
             $command = $query->createCommand();
@@ -336,11 +342,22 @@ class FacturaController extends BaseController
             foreach ($data as $soc) {
                 $out[] = [
                     'value' => $soc['soc_id'],
-                    'label' => $soc['soc_nombre'],
+                    'label' => $soc['soc_numero'] . ' - ' . $soc['soc_nombre'] . ' ' . ($soc['soc_apellido'] ?? ''),
                 ];
             }
         }
         return $out;
+    }
+
+    public function actionListadoProvincias($pais_id)
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $provincias = \app\models\Provincia::find()
+            ->where(['pai_id' => $pais_id, 'prv_eliminada' => 0])
+            ->orderBy('prv_nombre')
+            ->all();
+
+        return ArrayHelper::map($provincias, 'prv_id', 'prv_nombre');
     }
 
     public function actionDatosCliente($id)
@@ -545,8 +562,9 @@ class FacturaController extends BaseController
 
         $socios = \app\models\Socio::find()->all();
         $formasDePago = \app\models\FormaDePago::find()->all();
+        $paises = \app\models\Pais::find()->where(['pai_eliminado' => 0])->all();
+        $provincias = \app\models\Provincia::find()->where(['prv_eliminada' => 0])->all();
         $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
-        $provincias = \app\models\Provincia::getSpainProvincesList();
         $bancosMap = ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
 
         $detallesData = [];
@@ -567,11 +585,12 @@ class FacturaController extends BaseController
             'clientes' => [], // Se cargan por AJAX
             'socios' => ArrayHelper::map($socios, 'soc_id', 'soc_nombre'),
             'formasDePago' => ArrayHelper::map($formasDePago, 'fdp_id', 'fdp_nombre'),
+            'paises' => ArrayHelper::map($paises, 'pai_id', 'pai_nombre'),
+            'provincias' => ArrayHelper::map($provincias, 'prv_id', 'prv_nombre'),
             'bancos' => $bancosMap,
             'selectedBanco' => $selectedBanco,
             'detallesData' => $detallesData,
             'detalleRowErrors' => [],
-            'provincias' => $provincias,
         ]);
     }
 

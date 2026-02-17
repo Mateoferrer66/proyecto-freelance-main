@@ -46,11 +46,10 @@ $this->registerCss("
             <?= DetailView::widget([
                 'model' => $model,
                 'attributes' => [
-                    'por_id',
                     [
                         'attribute' => 'soc_id',
                         'label' => 'Socio',
-                        'value' => $model->soc ? $model->soc->soc_codigo . ' - ' . $model->soc->soc_nombre : '',
+                        'value' => $model->soc ? $model->soc->soc_numero . ' - ' . $model->soc->soc_nombre : '',
                     ],
                     'por_titulo',
                     'por_descripcion:ntext',

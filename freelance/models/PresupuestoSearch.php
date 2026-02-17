@@ -30,7 +30,7 @@ class PresupuestoSearch extends Model
     public $pre_fecha_situacion;
     public $cli_nif;
     public $cli_nombre;
-    public $soc_codigo;
+    public $soc_numero;
     public $soc_nombre;
     public $fecha_inicio;
     public $fecha_fin;
@@ -42,7 +42,7 @@ class PresupuestoSearch extends Model
     {
         return [
             [['pre_id', 'cli_id', 'soc_id', 'fdp_id', 'pre_eliminado'], 'integer'],
-            [['pre_numero', 'pre_logo', 'pre_fecha', 'pre_language', 'pre_observaciones', 'cli_nif', 'cli_nombre', 'soc_codigo', 'soc_nombre', 'fecha_inicio', 'fecha_fin'], 'safe'],
+            [['pre_numero', 'pre_logo', 'pre_fecha', 'pre_language', 'pre_observaciones', 'cli_nif', 'cli_nombre', 'soc_numero', 'soc_nombre', 'fecha_inicio', 'fecha_fin'], 'safe'],
             [['pre_subtotal', 'pre_iva', 'pre_gastos_suplidos', 'pre_total'], 'number'],
         ];
     }
@@ -103,7 +103,7 @@ class PresupuestoSearch extends Model
             ->andFilterWhere(['like', 'pre_observaciones', $this->pre_observaciones])
             ->andFilterWhere(['like', 'cliente.cli_numdocide', $this->cli_nif])
             ->andFilterWhere(['like', 'cliente.cli_nombre', $this->cli_nombre])
-            ->andFilterWhere(['like', 'socio.soc_numero', $this->soc_codigo])
+            ->andFilterWhere(['like', 'socio.soc_numero', $this->soc_numero])
             ->andFilterWhere(['like', 'socio.soc_nombre', $this->soc_nombre])
             ->andFilterWhere(['>=', 'pre_fecha', $this->fecha_inicio])
             ->andFilterWhere(['<=', 'pre_fecha', $this->fecha_fin]);

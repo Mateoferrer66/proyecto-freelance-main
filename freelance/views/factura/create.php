@@ -31,50 +31,11 @@ $this->registerCssFile("https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css
 $this->registerJsFile("https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js", ['depends' => [\yii\web\JqueryAsset::class]]);
 
 // CSS para corregir el color del texto en Select2
-$this->registerCss(
-    ".select2-container .select2-selection--single .select2-selection__rendered, .select2-results__option {
-        color: #444;
-    }
-    .select2-container--default .select2-selection--single {
-        background-color: transparent;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        height: 38px;
-    }
-    .select2-container--default .select2-selection--single .select2-selection__rendered {
-        line-height: 36px;
-    }
-    .select2-container--default .select2-selection--single .select2-selection__arrow {
-        height: 36px;
-    }
-    /* Dark mode adjustments if detected by class on body or generic dark inputs */
-    body.dark-theme .select2-container--default .select2-selection--single {
-        background-color: #151922; /* Example dark bg */
-        border-color: #2b303b;
-    }
-    body.dark-theme .select2-container .select2-selection--single .select2-selection__rendered {
-        color: #fff;
-    }
-    body.dark-theme .select2-search--dropdown {
-        background-color: #151922;
-    }
-    body.dark-theme .select2-search__field {
-        background-color: #151922;
-        color: #fff;
-        border-color: #2b303b;
-    }
-    body.dark-theme .select2-results {
-        background-color: #151922;
-        color: #fff;
-    }
-    body.dark-theme .select2-container--default .select2-results__option--selected {
-        background-color: #2b303b;
-    }"
-);
 
 // URLs para AJAX
 $urlListado = Url::to(['factura/listado-clientes']);
 $urlListadoSocios = Url::to(['factura/listado-socios']);
+$urlListadoProvincias = Url::to(['factura/listado-provincias']);
 $urlDatos = Url::to(['factura/datos-cliente']);
 
 // Cargamos los conceptos disponibles para autocompletar/llenar filas
@@ -139,11 +100,37 @@ $(function(){
     setupAutocomplete('search-by-name', 'name');
     setupAutocomplete('search-by-doc', 'doc');
 
+    // --- Cargar Provincias por País ---
+    function loadProvincias(paisId, selectedProvId = null) {
+        if (!paisId) {
+            $('#cliente-provincia').empty().append('<option value="">Seleccione Provincia</option>');
+            return;
+        }
+        $.ajax({
+            url: '__URL_LISTADO_PROVINCIAS__',
+            data: {pais_id: paisId},
+            success: function(data) {
+                var $select = $('#cliente-provincia');
+                $select.empty().append('<option value="">Seleccione Provincia</option>');
+                $.each(data, function(id, name) {
+                    $select.append(new Option(name, id));
+                });
+                if (selectedProvId) {
+                    $select.val(selectedProvId).trigger('change');
+                }
+            }
+        });
+    }
+
+    $('#cliente-pais').on('change', function() {
+        loadProvincias($(this).val());
+    });
+
     // Setup Socio Autocomplete
     $("#search-socio").autocomplete({
         source: function(request, response) {
             $.ajax({
-                url: '$urlListadoSocios',
+                url: '__URL_LISTADO_SOCIOS__',
                 dataType: "json",
                 data: {
                     term: request.term
@@ -185,7 +172,12 @@ $(function(){
                         // $('#cliente-provincia').val(data.provincia); // Old text input
                         $('#cliente-provincia').val(data.prv_id).trigger('change'); // New select input
                         $('#cliente-poblacion').val(data.poblacion);
-                        $('#cliente-pais').val(data.pais);
+                        // $('#cliente-pais').val(data.pais); // Old text input
+                        $('#cliente-pais').val(data.pai_id).trigger('change');
+                        
+                        // Cargar provincias y seleccionar la correcta
+                        loadProvincias(data.pai_id, data.prv_id);
+                        
                         $('#cliente-forma_pago').val(data.forma_pago);
                         $('#cliente-socio').val(data.socio);
                         
@@ -400,6 +392,8 @@ $(function(){
 JS;
 
 $js = str_replace('__URL_LISTADO__', $urlListado, $js);
+$js = str_replace('__URL_LISTADO_SOCIOS__', $urlListadoSocios, $js);
+$js = str_replace('__URL_LISTADO_PROVINCIAS__', $urlListadoProvincias, $js);
 $js = str_replace('__URL_DATOS__', $urlDatos, $js);
 $js = str_replace('__CONCEPTOS_JS__', $conceptosJs, $js);
 $js = str_replace('__DETALLES_DATA_JS__', $detallesDataJs, $js);
@@ -490,12 +484,11 @@ $this->registerJs($js);
                             <input type="text" id="cliente-cp" class="form-control" disabled>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
-                            <label>Provincia*</label>
-                            <?= Html::dropDownList('provincia_visual', null, $provincias, [
+                            <label>Provincia (Para la factura)</label>
+                            <?= Html::dropDownList('provincia_factura', null, $provincias, [
                                 'id' => 'cliente-provincia', 
-                                'class' => 'form-select', 
+                                'class' => 'form-select mb-3', 
                                 'prompt' => 'Seleccione Provincia',
-                                'disabled' => false
                             ]) ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
@@ -503,15 +496,19 @@ $this->registerJs($js);
                             <input type="text" id="cliente-poblacion" class="form-control" disabled>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
-                            <label>País</label>
-                            <input type="text" id="cliente-pais" class="form-control" disabled>
+                            <label>País (Para la factura)</label>
+                            <?= Html::dropDownList('pais_factura', null, $paises, [
+                                'id' => 'cliente-pais',
+                                'class' => 'form-select mb-3',
+                                'prompt' => 'Seleccione País',
+                            ]) ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
                             <?= $form->field($model, 'fdp_id', [
                                 'template' => "<label>Forma de Pago *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
                                 $formasDePago,
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
+                                ['prompt' => 'Seleccione', 'class' => 'form-select mb-3', 'required' => true]
                             ) ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
@@ -573,9 +570,18 @@ $this->registerJs($js);
                                     Factura::FAC_LANGUAGE_ES => 'Español',
                                     Factura::FAC_LANGUAGE_EN => 'English'
                                 ],
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
+                                ['prompt' => 'Seleccione', 'class' => 'form-select mb-3']
                             ) ?>
                         </div>
+                        <div class="col-12 col-md-2 mb-3">
+                            <?= $form->field($model, 'fac_money', [
+                                'template' => "<label>Moneda *</label>\n{input}\n{hint}\n{error}"
+                            ])->dropDownList(
+                                [
+                                    Factura::FAC_MONEY_EUROS => 'Euro (€)',
+                                    Factura::FAC_MONEY_US => 'Dolares ($)'
+                                ],
+                                ['prompt' => 'Seleccione', 'class' => 'form-select mb-3', 'value' => Factura::FAC_MONEY_EUROS]
                             ) ?>
                         </div>
                     </div>
@@ -594,7 +600,7 @@ $this->registerJs($js);
                             <!-- New Concept Section -->
                             <div class="p-3 border rounded mb-3">
                                 <div class="row g-3">
-                                    <div class="col-12 col-md-6"> <!-- Reduced width -->
+                                    <div class="col-12 col-md-3"> <!-- Shorter as requested -->
                                         <label class="form-label text-white">Concepto</label>
                                         <select id="new-concept-select" class="form-select">
                                             <option value="">Seleccione</option>
@@ -655,19 +661,7 @@ $this->registerJs($js);
                     </div>
                     <hr>
 
-                    <div class="row mb-3">
-                        <div class="col-12 col-md-4 mb-3">
-                             <?= $form->field($model, 'fac_money', [
-                                'template' => "<label class='text-white'>Moneda *</label>\n{input}\n{hint}\n{error}"
-                            ])->dropDownList(
-                                [
-                                    Factura::FAC_MONEY_EUROS => 'Euro (€)',
-                                    Factura::FAC_MONEY_US => 'Dólar (US$)'
-                                ],
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
-                            ) ?>
-                        </div>
-                    </div>
+   
 
                     <div class="row mb-3">
                         <div class="col-12 col-md-3">

@@ -241,7 +241,7 @@ JS);
                                         <?= $form->field($searchModel, 'cli_nombre', ['template' => '{input}'])->textInput(['placeholder' => 'Nombre Cliente', 'class' => 'form-control']) ?>
                                     </div>
                                     <div class="col-md-3">
-                                        <?= $form->field($searchModel, 'soc_codigo', ['template' => '{input}'])->textInput(['placeholder' => 'Código Socio', 'class' => 'form-control']) ?>
+                                        <?= $form->field($searchModel, 'soc_numero', ['template' => '{input}'])->textInput(['placeholder' => 'Código Socio', 'class' => 'form-control']) ?>
                                     </div>
                                     <div class="col-md-3">
                                         <?= $form->field($searchModel, 'soc_nombre', ['template' => '{input}'])->textInput(['placeholder' => 'Nombre Socio', 'class' => 'form-control']) ?>
@@ -355,6 +355,11 @@ JS);
                                 [
                                     'attribute' => 'fac_estado',
                                     'label' => 'Estado',
+                                ],
+                                [
+                                    'attribute' => 'soc_numero',
+                                    'label' => 'Cód. Socio',
+                                    'value' => 'soc.soc_numero',
                                 ],
                                 [
                                     'attribute' => 'fac_aprobada',

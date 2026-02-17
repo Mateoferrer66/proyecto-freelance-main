@@ -11,6 +11,8 @@ use yii\helpers\Url;
 /** @var yii\widgets\ActiveForm $form */
 /** @var array $socios */
 /** @var array $formasDePago */
+/** @var array $paises */
+/** @var array $provincias */
 
 $this->title = 'CREAR PRESUPUESTO';
 $this->params['breadcrumbs'][] = ['label' => 'Presupuestos', 'url' => ['index']];
@@ -24,16 +26,12 @@ $this->registerJsFile("https://code.jquery.com/ui/1.13.2/jquery-ui.js", ['depend
 $this->registerCssFile("https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css", ['depends' => [\yii\web\JqueryAsset::class]]);
  $this->registerJsFile("https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js", ['depends' => [\yii\web\JqueryAsset::class]]);
 
-// CSS para corregir el color del texto en Select2
-$this->registerCss(
-    ".select2-container .select2-selection--single .select2-selection__rendered, .select2-results__option {
-        color: #444;
-    }"
-);
 
 // URLs para AJAX
 $urlListado = Url::to(['presupuesto/listado-clientes']);
 $urlDatos = Url::to(['presupuesto/datos-cliente']);
+$urlListadoSocios = Url::to(['presupuesto/listado-socios']);
+$urlListadoProvincias = Url::to(['presupuesto/listado-provincias']);
 
 // Cargamos los conceptos disponibles para autocompletar/llenar filas
 // TODO: Change ConceptoFacturacion to ConceptoPresupuesto if it exists
@@ -96,6 +94,43 @@ $(function(){
     setupAutocomplete('search-by-name', 'name');
     setupAutocomplete('search-by-doc', 'doc');
 
+    // --- Autocomplete para Socio ---
+    $("#search-socio").autocomplete({
+        source: '__URL_LISTADO_SOCIOS__',
+        minLength: 0,
+        select: function(event, ui) {
+            $("#presupuesto-soc_id").val(ui.item.value);
+            $(this).val(ui.item.label);
+            return false;
+        }
+    }).focus(function(){ 
+        $(this).autocomplete("search", "");
+    });
+
+    // --- Dynamic Provinces ---
+    function loadProvincias(paisId, selectedProvId = null) {
+        if (!paisId) {
+            $('#cliente-provincia').html('<option value="">Seleccione Provincia</option>');
+            return;
+        }
+        $.ajax({
+            url: '__URL_LISTADO_PROVINCIAS__',
+            data: {pais_id: paisId},
+            success: function(data) {
+                var $select = $('#cliente-provincia');
+                $select.html('<option value="">Seleccione Provincia</option>');
+                $.each(data, function(id, name) {
+                    var selected = (selectedProvId && selectedProvId == id) ? 'selected' : '';
+                    $select.append('<option value="' + id + '" ' + selected + '>' + name + '</option>');
+                });
+            }
+        });
+    }
+
+    $('#cliente-pais').on('change', function() {
+        loadProvincias($(this).val());
+    });
+
 
     // --- Cargar datos del cliente ---
     $('#presupuesto-cli_id').on('change', function(){
@@ -115,11 +150,18 @@ $(function(){
                         $('#cliente-num_identificacion').val(data.num_identificacion);
                         $('#cliente-direccion').val(data.direccion);
                         $('#cliente-cp').val(data.cp);
-                        $('#cliente-provincia').val(data.provincia);
                         $('#cliente-poblacion').val(data.poblacion);
-                        $('#cliente-pais').val(data.pais);
                         $('#cliente-forma_pago').val(data.forma_pago);
-                        $('#cliente-socio').val(data.socio);
+                        
+                        // Dropdowns dinámicos
+                        $('#cliente-pais').val(data.pai_id).trigger('change');
+                        loadProvincias(data.pai_id, data.prv_id);
+
+                        // Socio autocomplete
+                        if(data.socio) {
+                            $('#search-socio').val(data.socio);
+                            // Si el controller devolviera el soc_id, podríamos asignarlo aquí también
+                        }
                         
                         // Actualizar ambos campos de búsqueda para mantener consistencia
                         $('#search-by-name').val(data.nombre);
@@ -141,6 +183,69 @@ $(function(){
     var conceptos = __CONCEPTOS_JS__;
     var rowIndex = 0;
 
+    // Populate the concept selector in the "New Concept Section"
+    var $newConceptSelect = $('#new-concept-select');
+    conceptos.forEach(function(c){
+        $newConceptSelect.append('<option value="'+c.id+'" data-iva="'+c.iva+'">'+c.nombre+'</option>');
+    });
+
+    // Handle initial row removal functionality for existing rows if any
+    $(document).on('click', '.btn-remove', function(){
+        $(this).closest('tr').remove();
+        recalculateTotals();
+    });
+
+    // Handle "Añadir Concepto" button from the modular section
+    $('#btn-add-concept-row').on('click', function(){
+        var conceptId = $('#new-concept-select').val();
+        var desc = $('#new-desc').val();
+        var iva = $('#new-iva').val();
+        var cant = $('#new-cant').val();
+        var precio = $('#new-precio').val();
+
+        if(!desc || cant <= 0){
+            alert('Por favor complete la descripción y cantidad.');
+            return;
+        }
+
+        addConceptRow({
+            cof_id: conceptId,
+            descripcion: desc,
+            iva: iva,
+            cantidad: cant,
+            precio: precio
+        });
+
+        // Reset new concept fields
+        $('#new-concept-select').val('').trigger('change');
+        $('#new-desc').val('');
+        $('#new-iva').val(0);
+        $('#new-cant').val(1);
+        $('#new-precio').val(0);
+        $('#new-importe').val('0.00');
+    });
+
+    // Auto-fill description and IVA when concept is selected in the modular section
+    $('#new-concept-select').on('change', function(){
+        var $sel = $(this).find('option:selected');
+        var iva = $sel.data('iva') || 0;
+        var nombre = $sel.text() || '';
+        var conceptId = $(this).val(); // Get the selected concept ID
+        if($('#new-desc').val().trim() === '' && conceptId !== ''){
+            $('#new-desc').val(nombre);
+        }
+        $('#new-iva').val(iva);
+        updateNewImporte();
+    });
+
+    $('#new-cant, #new-precio').on('input', updateNewImporte);
+
+    function updateNewImporte(){
+        var cant = parseFloat($('#new-cant').val() || 0);
+        var precio = parseFloat($('#new-precio').val() || 0);
+        $('#new-importe').val((cant * precio).toFixed(2));
+    }
+
     function formatNumber(n){
         return parseFloat(parseFloat(n || 0).toFixed(2));
     }
@@ -150,7 +255,7 @@ $(function(){
         var ivaTotal = 0;
         $('#concepts-table tbody tr').each(function(){
             var importe = parseFloat($(this).find('.row-importe').text() || 0);
-            var iva = parseFloat($(this).find('.row-iva').val() || 0);
+            var iva = parseFloat($(this).find('.row-iva-val').val() || 0);
             subtotal += importe;
             ivaTotal += importe * (iva/100);
         });
@@ -158,91 +263,39 @@ $(function(){
         ivaTotal = formatNumber(ivaTotal);
         var total = formatNumber(subtotal + ivaTotal + parseFloat($('#presupuesto-pre_gastos_suplidos').val() || 0));
 
-        // Actualizar campos del formulario
-        $('#presupuesto-pre_subtotal').val(subtotal);
-        $('#presupuesto-pre_iva').val(ivaTotal);
-        $('#presupuesto-pre_total').val(total);
+        $('#presupuesto-pre_subtotal').val(subtotal.toFixed(2));
+        $('#presupuesto-pre_iva').val(ivaTotal.toFixed(2));
+        $('#presupuesto-pre_total').val(total.toFixed(2));
     }
 
     function addConceptRow(data){
-        data = data || {};
         var idx = rowIndex++;
+        var subtotal = (parseFloat(data.cantidad) * parseFloat(data.precio)).toFixed(2);
         var $tr = $(
             '<tr data-idx="'+idx+'">'+ 
             '<td>'+ 
-                '<select name="DetallePresupuesto['+idx+'][cof_id]" class="form-control row-concepto">'+ 
-                    '<option value="">-</option>'+ 
-                '</select>'+ 
+                '<input type="hidden" name="DetallePresupuesto['+idx+'][cof_id]" value="'+(data.cof_id||'')+'">'+
+                '<input type="text" name="DetallePresupuesto['+idx+'][dtp_descripcion]" class="form-control" value="'+(data.descripcion||'')+'">'+ 
             '</td>'+ 
-            '<td><input type="text" name="DetallePresupuesto['+idx+'][dtp_descripcion]" class="form-control row-descripcion" value="'+(data.descripcion||'')+'"></td>'+ 
-            '<td><input type="number" step="0.01" name="DetallePresupuesto['+idx+'][dtp_iva]" class="form-control row-iva" value="'+(data.iva||0)+'"></td>'+ 
+            '<td><input type="number" step="0.01" name="DetallePresupuesto['+idx+'][dtp_iva]" class="form-control row-iva-val" value="'+(data.iva||0)+'"></td>'+ 
             '<td><input type="number" step="0.01" name="DetallePresupuesto['+idx+'][dtp_cantidad]" class="form-control row-cantidad" value="'+(data.cantidad||1)+'"></td>'+ 
             '<td><input type="number" step="0.01" name="DetallePresupuesto['+idx+'][dtp_precio]" class="form-control row-precio" value="'+(data.precio||0)+'"></td>'+ 
-            '<td class="row-importe text-end">0.00</td>'+ 
-            '<td><button type="button" class="btn text-orange radius-30 btn-remove">Eliminar</button></td>'+ 
+            '<td class="row-importe text-end">'+subtotal+'</td>'+ 
+            '<td><button type="button" class="btn btn-sm btn-danger btn-remove"><i class="bx bx-trash"></i></button></td>'+ 
             '</tr>'
         );
 
-        // Poblar select de conceptos
-        conceptos.forEach(function(c){
-            var selected = data.cof_id && data.cof_id == c.id ? 'selected' : '';
-            $tr.find('.row-concepto').append('<option value="'+c.id+'" '+selected+' data-iva="'+c.iva+'">'+c.nombre+'</option>');
-        });
-
-        // Si el row fue creado con cof_id, disparar el cambio para autocompletar
-        $tr.find('.row-concepto').on('change', function(){
-            var $sel = $(this).find('option:selected');
-            var iva = $sel.data('iva') || 0;
-            var nombre = $sel.text() || '';
+        $tr.on('input', '.row-cantidad, .row-precio, .row-iva-val', function(){
             var $row = $(this).closest('tr');
-            // Si la descripción está vacía, usar nombre del concepto
-            if($row.find('.row-descripcion').val().trim() === ''){
-                $row.find('.row-descripcion').val(nombre);
-            }
-            $row.find('.row-iva').val(iva);
-            recalcRow($row);
-        });
-
-        // Eventos para cantidad/precio/iva
-        $tr.on('input', '.row-cantidad, .row-precio, .row-iva, .row-descripcion', function(){
-            var $row = $(this).closest('tr');
-            recalcRow($row);
-        });
-
-        // Eliminación
-        $tr.on('click', '.btn-remove', function(){
-            $(this).closest('tr').remove();
+            var c = parseFloat($row.find('.row-cantidad').val() || 0);
+            var p = parseFloat($row.find('.row-precio').val() || 0);
+            $row.find('.row-importe').text((c * p).toFixed(2));
             recalculateTotals();
         });
 
         $('#concepts-table tbody').append($tr);
-        // Inicializar Select2 en el select del concepto
-        if(typeof $.fn.select2 !== 'undefined'){
-            $tr.find('.row-concepto').select2({ width: '100%', dropdownParent: $tr.closest('table') });
-        }
-        // Disparar cambio inicial si vino con concepto
-        if(data.cof_id){
-            $tr.find('.row-concepto').trigger('change');
-        } else {
-            recalcRow($tr);
-        }
-    }
-
-    function recalcRow($row){
-        var cantidad = parseFloat($row.find('.row-cantidad').val() || 0);
-        var precio = parseFloat($row.find('.row-precio').val() || 0);
-        var subtotal = formatNumber(cantidad * precio);
-        $row.find('.row-importe').text(subtotal.toFixed(2));
         recalculateTotals();
     }
-
-    // Botón Añadir
-    $('#btn-add-concept').on('click', function(){
-        addConceptRow();
-    });
-
-    // Inicializar con una fila vacía
-    addConceptRow();
 
     // Recalcular totales cuando cambian los gastos suplidos
     $('#presupuesto-pre_gastos_suplidos').on('input', recalculateTotals);
@@ -250,6 +303,8 @@ $(function(){
 JS;
 
 $js = str_replace('__URL_LISTADO__', $urlListado, $js);
+$js = str_replace('__URL_LISTADO_SOCIOS__', $urlListadoSocios, $js);
+$js = str_replace('__URL_LISTADO_PROVINCIAS__', $urlListadoProvincias, $js);
 $js = str_replace('__URL_DATOS__', $urlDatos, $js);
 $js = str_replace('__CONCEPTOS_JS__', $conceptosJs, $js);
 $this->registerJs($js);
@@ -288,7 +343,7 @@ $this->registerJs($js);
                             ?>
                             <?= $form->field($model, 'pre_numero_pedido', [
                                 'template' => "<label>Número Pedido</label>\n{input}\n{hint}\n{error}"
-                            ])->textInput(['maxlength' => true, 'class' => 'form-control mb-3', 'readonly' => $isCooperativa]) ?>
+                            ])->textInput(['maxlength' => true, 'class' => 'form-control mb-3', 'readonly' => $isCooperativa, 'autocomplete' => 'off']) ?>
                         </div>
                         <div class="col-12 col-md-6">
                             <?= $form->field($model, 'pre_fecha', [
@@ -337,32 +392,37 @@ $this->registerJs($js);
                             <input type="text" id="cliente-cp" class="form-control" disabled>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
-                            <label>Provincia*</label>
-                            <input type="text" id="cliente-provincia" class="form-control" disabled>
-                        </div>
-                        <div class="col-12 col-md-4 mb-3">
                             <label>Población</label>
                             <input type="text" id="cliente-poblacion" class="form-control" disabled>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
-                            <label>País</label>
-                            <input type="text" id="cliente-pais" class="form-control" disabled>
+                            <label>País (Para el presupuesto)</label>
+                            <?= Html::dropDownList('pais_presupuesto', null, $paises, [
+                                'id' => 'cliente-pais',
+                                'class' => 'form-select mb-3',
+                                'prompt' => 'Seleccione País',
+                            ]) ?>
+                        </div>
+                        <div class="col-12 col-md-4 mb-3">
+                            <label>Provincia (Para el presupuesto)</label>
+                            <?= Html::dropDownList('provincia_presupuesto', null, $provincias, [
+                                'id' => 'cliente-provincia', 
+                                'class' => 'form-select mb-3', 
+                                'prompt' => 'Seleccione Provincia',
+                            ]) ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
                             <?= $form->field($model, 'fdp_id', [
                                 'template' => "<label>Forma de Pago *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
                                 $formasDePago,
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
+                                ['prompt' => 'Seleccione', 'class' => 'form-select mb-3', 'required' => true]
                             ) ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
-                            <?= $form->field($model, 'soc_id', [
-                                'template' => "<label>Socio *</label>\n{input}\n{hint}\n{error}"
-                            ])->dropDownList(
-                                $socios,
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'required' => true]
-                            ) ?>
+                            <?= $form->field($model, 'soc_id')->hiddenInput()->label(false) ?>
+                            <label class="form-label">Socio *</label>
+                            <input type="text" id="search-socio" class="form-control mb-3" placeholder="Buscar socio por número o nombre..." required>
                             <button type="button" class="btn btn-sm btn-outline-primary mt-1" data-bs-toggle="modal" data-bs-target="#modalCreateSocio">
                                 <i class="bx bx-plus"></i> Nuevo Socio
                             </button>
@@ -392,7 +452,7 @@ $this->registerJs($js);
                         <div class="col-12 col-md-4 mb-3">
                             <?php $bancos = isset($bancos) ? $bancos : []; $selectedBanco = isset($selectedBanco) ? $selectedBanco : null; ?>
                             <label>Cuenta destino</label>
-                            <?= Html::dropDownList('CuentasPresupuesto[ban_id]', $selectedBanco, $bancos, ['prompt' => 'Seleccione cuenta', 'class' => 'form-control mb-3'])
+                            <?= Html::dropDownList('CuentasPresupuesto[ban_id]', $selectedBanco, $bancos, ['prompt' => 'Seleccione cuenta', 'class' => 'form-select mb-3'])
                             ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
@@ -403,10 +463,10 @@ $this->registerJs($js);
                                     Presupuesto::PRE_LANGUAGE_ES => 'Español',
                                     Presupuesto::PRE_LANGUAGE_EN => 'English'
                                 ],
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'value' => Presupuesto::PRE_LANGUAGE_ES]
+                                ['prompt' => 'Seleccione', 'class' => 'form-select mb-3', 'value' => Presupuesto::PRE_LANGUAGE_ES]
                             ) ?>
                         </div>
-                        <div class="col-12 col-md-4 mb-3">
+                        <div class="col-12 col-md-2 mb-3">
                             <?= $form->field($model, 'pre_money', [
                                 'template' => "<label>Moneda *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
@@ -414,7 +474,7 @@ $this->registerJs($js);
                                     Presupuesto::PRE_MONEY_EUROS => 'Euro (€)',
                                     Presupuesto::PRE_MONEY_BS => 'Dolares ($)'
                                 ],
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3', 'value' => Presupuesto::PRE_MONEY_EUROS]
+                                ['prompt' => 'Seleccione', 'class' => 'form-select mb-3', 'value' => Presupuesto::PRE_MONEY_EUROS]
                             ) ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
@@ -422,7 +482,7 @@ $this->registerJs($js);
                                 'template' => "<label>Estado *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
                                 $estados,
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
+                                ['prompt' => 'Seleccione', 'class' => 'form-select mb-3']
                             ) ?>
                         </div>
                         <div class="col-12 col-md-4 mb-3">
@@ -430,24 +490,60 @@ $this->registerJs($js);
                                 'template' => "<label>Situación *</label>\n{input}\n{hint}\n{error}"
                             ])->dropDownList(
                                 $situaciones,
-                                ['prompt' => 'Seleccione', 'class' => 'form-control mb-3']
+                                ['prompt' => 'Seleccione', 'class' => 'form-select mb-3']
                             ) ?>
                         </div>
                     </div>
 
                     <div class="card-title d-flex align-items-center mt-3">
-                        <h5 class="mb-0 text-white">AÑADIR CONCEPTOS</h5>
+                        <h5 class="mb-0 text-white">DETALLE PRESUPUESTO</h5>
                     </div>
                     <hr>
 
                     <div class="row mb-3">
                         <div class="col-12">
-                            <label>Añadir Conceptos</label>
+                            <!-- New Concept Section -->
+                            <div class="p-3 border rounded mb-3">
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-3">
+                                        <label class="form-label text-white">Concepto</label>
+                                        <select id="new-concept-select" class="form-select">
+                                            <option value="">Seleccione</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row g-3 mt-2">
+                                    <div class="col-md-6">
+                                        <label class="form-label text-white">Descripción</label>
+                                        <input type="text" id="new-desc" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label text-white">IVA (%)</label>
+                                        <input type="number" id="new-iva" class="form-control" step="0.01" value="0">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label class="form-label text-white">Cant</label>
+                                        <input type="number" id="new-cant" class="form-control" step="0.01" value="1">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label class="form-label text-white">Precio</label>
+                                        <input type="number" id="new-precio" class="form-control" step="0.01" value="0">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label text-white">Importe</label>
+                                        <input type="text" id="new-importe" class="form-control" readonly value="0.00">
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-end mt-3">
+                                        <button type="button" id="btn-add-concept-row" class="btn btn-primary"><i class="bx bx-check"></i> Añadir Concepto</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End New Concept Section -->
+
                             <div class="table-responsive">
                                 <table class="table" id="concepts-table">
                                     <thead>
                                         <tr>
-                                            <th>Concepto</th>
                                             <th>Descripción</th>
                                             <th>IVA (%)</th>
                                             <th>Cantidad</th>
@@ -461,7 +557,6 @@ $this->registerJs($js);
                                     </tbody>
                                 </table>
                             </div>
-                            <button type="button" id="btn-add-concept" class="btn text-orange radius-30">Añadir concepto</button>
                         </div>
                     </div>
 

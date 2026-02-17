@@ -11,7 +11,7 @@ use app\models\Portafolio;
  */
 class PortafolioSearch extends Portafolio
 {
-    public $soc_codigo;
+    public $soc_numero;
     public $soc_nombre;
 
     /**
@@ -21,7 +21,7 @@ class PortafolioSearch extends Portafolio
     {
         return [
             [['por_id', 'soc_id', 'por_eliminado'], 'integer'],
-            [['por_titulo', 'por_descripcion', 'por_imagenes', 'soc_codigo', 'soc_nombre'], 'safe'],
+            [['por_titulo', 'por_descripcion', 'por_imagenes', 'soc_numero', 'soc_nombre'], 'safe'],
         ];
     }
 
@@ -61,9 +61,9 @@ class PortafolioSearch extends Portafolio
         ]);
 
         // Enable sorting for related columns
-        $dataProvider->sort->attributes['soc_codigo'] = [
-            'asc' => ['socio.soc_codigo' => SORT_ASC],
-            'desc' => ['socio.soc_codigo' => SORT_DESC],
+        $dataProvider->sort->attributes['soc_numero'] = [
+            'asc' => ['socio.soc_numero' => SORT_ASC],
+            'desc' => ['socio.soc_numero' => SORT_DESC],
         ];
 
         $dataProvider->sort->attributes['soc_nombre'] = [
@@ -90,7 +90,7 @@ class PortafolioSearch extends Portafolio
 
         $query->andFilterWhere(['like', 'portafolio.por_titulo', $this->por_titulo])
             ->andFilterWhere(['like', 'portafolio.por_descripcion', $this->por_descripcion])
-            ->andFilterWhere(['like', 'socio.soc_codigo', $this->soc_codigo])
+            ->andFilterWhere(['like', 'socio.soc_numero', $this->soc_numero])
             ->andFilterWhere(['like', 'socio.soc_nombre', $this->soc_nombre]);
 
         return $dataProvider;

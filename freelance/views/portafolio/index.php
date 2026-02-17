@@ -51,7 +51,7 @@ $this->registerCss(".table thead a { text-decoration: none !important; }");
                                 ]); ?>
                                 <div class="row mb-1">
                                     <div class="col-md-3">
-                                        <?= $form->field($searchModel, 'soc_codigo', ['template' => '{input}'])->textInput(['placeholder' => 'Código Socio', 'class' => 'form-control']) ?>
+                                        <?= $form->field($searchModel, 'soc_numero', ['template' => '{input}'])->textInput(['placeholder' => 'Código Socio', 'class' => 'form-control']) ?>
                                     </div>
                                     <div class="col-md-3">
                                         <?= $form->field($searchModel, 'soc_nombre', ['template' => '{input}'])->textInput(['placeholder' => 'Nombre Socio', 'class' => 'form-control']) ?>
@@ -76,9 +76,9 @@ $this->registerCss(".table thead a { text-decoration: none !important; }");
                             'tableOptions' => ['class' => 'tableData table mb-0 dataTable no-footer'],
                             'columns' => [
                                 [
-                                    'attribute' => 'soc_codigo',
-                                    'label' => 'Código Socio',
-                                    'value' => 'soc.soc_codigo',
+                                    'attribute' => 'soc_numero',
+                                    'label' => 'Socio Código',
+                                    'value' => 'soc.soc_numero',
                                 ],
                                 [
                                     'attribute' => 'soc_nombre',

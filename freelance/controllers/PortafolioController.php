@@ -236,7 +236,7 @@ class PortafolioController extends BaseController
             $query = new \yii\db\Query();
             $query->from('socio')
                 ->where(['like', 'soc_nombre', $term])
-                ->orWhere(['like', 'soc_codigo', $term])
+                ->orWhere(['like', 'soc_numero', $term])
                 ->limit(20);
             
             $command = $query->createCommand();
@@ -245,7 +245,7 @@ class PortafolioController extends BaseController
             foreach ($data as $soc) {
                 $out[] = [
                     'value' => $soc['soc_id'],
-                    'label' => $soc['soc_codigo'] . ' - ' . $soc['soc_nombre'],
+                    'label' => $soc['soc_numero'] . ' - ' . $soc['soc_nombre'],
                 ];
             }
         }

@@ -13,7 +13,7 @@ class FacturaSearch extends Factura
 {
     public $cli_nombre;
     public $cli_nif;
-    public $soc_codigo;
+    public $soc_numero;
     public $soc_nombre;
     public $fecha_inicio;
     public $fecha_fin;
@@ -25,7 +25,7 @@ class FacturaSearch extends Factura
     {
         return [
             [['fac_id', 'fac_numero', 'cli_id', 'soc_id', 'fdp_id', 'fac_exportada', 'fac_eliminada'], 'integer'],
-            [['fac_logo', 'fac_fecha', 'fac_language', 'fac_money', 'fac_estado', 'fac_situacion', 'fac_fecha_situacion', 'fac_observaciones', 'cli_nombre', 'cli_nif', 'soc_codigo', 'soc_nombre', 'fecha_inicio', 'fecha_fin'], 'safe'],
+            [['fac_logo', 'fac_fecha', 'fac_language', 'fac_money', 'fac_estado', 'fac_situacion', 'fac_fecha_situacion', 'fac_observaciones', 'cli_nombre', 'cli_nif', 'soc_numero', 'soc_nombre', 'fecha_inicio', 'fecha_fin'], 'safe'],
             [['fac_subtotal', 'fac_iva', 'fac_gastos_suplidos', 'fac_total'], 'number'],
         ];
     }
@@ -99,7 +99,7 @@ class FacturaSearch extends Factura
             ->andFilterWhere(['like', 'factura.fac_observaciones', $this->fac_observaciones])
             ->andFilterWhere(['like', 'cliente.cli_nombre', $this->cli_nombre])
             ->andFilterWhere(['like', 'cliente.cli_nif', $this->cli_nif])
-            ->andFilterWhere(['like', 'socio.soc_codigo', $this->soc_codigo])
+            ->andFilterWhere(['like', 'socio.soc_numero', $this->soc_numero])
             ->andFilterWhere(['like', 'socio.soc_nombre', $this->soc_nombre]);
 
         if (!empty($this->fecha_inicio)) {

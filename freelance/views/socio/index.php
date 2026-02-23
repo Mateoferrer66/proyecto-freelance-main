@@ -202,6 +202,32 @@ JS);
                             ],
                         ],
                         [
+                            'attribute' => 'soc_foto',
+                            'label' => 'Foto',
+                            'format' => 'raw',
+                            'value' => function ($model) {
+                                if ($model->soc_foto) {
+                                    return Html::img(
+                                        Yii::getAlias('@web/uploads/members/photo/' . $model->soc_foto),
+                                        [
+                                            'width' => '55px',
+                                            'height' => '55px',
+                                            'class' => 'rounded-circle'
+                                        ]
+                                    );
+                                }
+
+                                return Html::img(
+                                    Yii::getAlias('@web/assets-custom/images/no-image.jpg'),
+                                        [
+                                            'width' => '55px',
+                                            'height' => '55px',
+                                            'class' => 'rounded-circle'
+                                        ]
+                                );
+                            },
+                        ],
+                        [
                             'attribute' => 'soc_numero',
                             'headerOptions' => [
                                 'class' => 'sorting',
@@ -277,7 +303,7 @@ JS);
                             ],
                             'label' => 'Categoría',
                             'value' => function($model) {
-                                return $model->category->cat_nombre ?? '-';
+                                return $model->categoria->cat_nombre ?? '-';
                             }
                         ],
                         [
@@ -332,8 +358,7 @@ JS);
                                 'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
                                     'title' => 'Editar Socio: ' . $model->soc_nombre,
                                     'class' => 'btn btn-light',
-                                    'data-bs-toggle' => 'modal',
-                                    'data-bs-target' => '#action-modal'
+                                    'data-pjax' => '0',
                                 ]),
                                 'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
                                     'title' => 'Eliminar Socio',

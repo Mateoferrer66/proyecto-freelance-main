@@ -75,6 +75,8 @@ class Socio extends \yii\db\ActiveRecord implements IdentityInterface
     const SOC_ESTADO_ACTIVO = 'Activo';
     const SOC_ESTADO_INACTIVO = 'Inactivo';
 
+    public $soc_numero_original;
+
     /**
      * {@inheritdoc}
      */
@@ -95,19 +97,20 @@ class Socio extends \yii\db\ActiveRecord implements IdentityInterface
             [['soc_basecotizacion'], 'default', 'value' => 30],
             [['soc_porcretirpf'], 'default', 'value' => 2],
             [['soc_eliminado'], 'default', 'value' => 0],
-            [['soc_estado'], 'default', 'value' => 'Activo'],
             [['cat_id', 'soc_numero', 'tdo_id', 'prv_id', 'soc_coefcotizacion', 'soc_participacion_desde', 'soc_participacion_hasta', 'soc_pago_participacion', 'soc_exportado', 'soc_eliminado'], 'integer'],
             [['soc_numero', 'soc_fecha', 'soc_nombre', 'soc_apellido', 'soc_apellido1', 'tdo_id', 'soc_numdocide', 'soc_fecnacimiento', 'soc_sexo', 'soc_numsegsocial', 'soc_ctabancaria'], 'required'],
             [['soc_fecha', 'soc_feccaddoc', 'soc_fecnacimiento'], 'safe'],
-            [['soc_sexo', 'soc_observaciones', 'soc_estado'], 'string'],
+            [['soc_sexo', 'soc_observaciones', 'soc_perfil', 'soc_estado'], 'string'],
             [['soc_basecotizacion', 'soc_porcretirpf', 'soc_deuda'], 'number'],
             [['soc_nombre', 'soc_apellido', 'soc_ocupacion', 'soc_direccion', 'soc_poblacion', 'soc_email', 'soc_web', 'soc_ficlogo', 'soc_ficcontrato', 'soc_ficdocide', 'soc_ficotros', 'soc_fiprl'], 'string', 'max' => 255],
             [['soc_apellido1', 'soc_apellido2'], 'string', 'max' => 127],
             [['soc_numdocide'], 'string', 'max' => 20],
             [['soc_telfijo', 'soc_telmovil', 'soc_numsegsocial'], 'string', 'max' => 45],
             [['soc_codpostal'], 'string', 'max' => 10],
+            ['soc_email', 'email'],
             [['soc_grcotsegsocial'], 'string', 'max' => 3],
             [['soc_ctabancaria'], 'string', 'max' => 24],
+            [['soc_foto'], 'string', 'max' => 255],
             ['soc_sexo', 'in', 'range' => array_keys(self::optsSocSexo())],
             ['soc_estado', 'in', 'range' => array_keys(self::optsSocEstado())],
             [['cat_id'], 'exist', 'skipOnError' => true, 'targetClass' => Categoria::class, 'targetAttribute' => ['cat_id' => 'cat_id']],
@@ -124,12 +127,12 @@ class Socio extends \yii\db\ActiveRecord implements IdentityInterface
         return [
             'soc_id' => 'Soc ID',
             'cat_id' => 'Cat ID',
-            'soc_numero' => 'Soc Numero',
-            'soc_fecha' => 'Soc Fecha',
-            'soc_nombre' => 'Soc Nombre',
-            'soc_apellido' => 'Soc Apellido',
-            'soc_apellido1' => 'Soc Apellido1',
-            'soc_apellido2' => 'Soc Apellido2',
+            'soc_numero' => 'Número de socio',
+            'soc_fecha' => 'Fecha de alta',
+            'soc_nombre' => 'Nombre',
+            'soc_apellido' => 'Apellidos',
+            'soc_apellido1' => 'Primer apellido',
+            'soc_apellido2' => 'Segundo apellido',
             'tdo_id' => 'Tdo ID',
             'soc_numdocide' => 'Soc Numdocide',
             'soc_feccaddoc' => 'Soc Feccaddoc',
@@ -160,7 +163,7 @@ class Socio extends \yii\db\ActiveRecord implements IdentityInterface
             'soc_participacion_hasta' => 'Soc Participacion Hasta',
             'soc_pago_participacion' => 'Soc Pago Participacion',
             'soc_deuda' => 'Soc Deuda',
-            'soc_estado' => 'Soc Estado',
+            'soc_estado' => 'Estado',
             'soc_exportado' => 'Soc Exportado',
             'soc_eliminado' => 'Soc Eliminado',
         ];
@@ -171,7 +174,7 @@ class Socio extends \yii\db\ActiveRecord implements IdentityInterface
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getCategory()
+    public function getCategoria()
     {
         return $this->hasOne(Categoria::class, ['cat_id' => 'cat_id']);
     }
@@ -306,8 +309,8 @@ class Socio extends \yii\db\ActiveRecord implements IdentityInterface
     public static function optsSocEstado()
     {
         return [
-            self::SOC_ESTADO_ACTIVO => 'Activo',
-            self::SOC_ESTADO_INACTIVO => 'Inactivo',
+            self::SOC_ESTADO_ACTIVO => 1,
+            self::SOC_ESTADO_INACTIVO => 0,
         ];
     }
 

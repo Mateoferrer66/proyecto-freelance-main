@@ -20,15 +20,14 @@ $currentUrl = Yii::$app->request->url;
             </a></li>
         <li class="menu-label">Módulos de administración</li>
 
-        <li>
-            <a class="has-arrow" href="<?= \Yii::$app->urlManager->createUrl(['/portafolio/index']) ?>" data-pjax="0">
-                <div class="parent-icon"><i class='bx bx-street-view'></i></div>
+        <li class="<?= strpos($currentUrl, '/socio') !== false || strpos($currentUrl, '/portafolio') !== false ? 'mm-active' : '' ?>">
+            <a class="has-arrow" href="javascript:;" aria-expanded="<?= strpos($currentUrl, '/socio') !== false || strpos($currentUrl, '/portafolio') !== false ? 'true' : 'false' ?>">
+                <div class="parent-icon"><i class="bx bx-street-view"></i></div>
                 <div class="menu-title">Socios</div>
             </a>
-            <ul>
-                <li><a href="<?= \Yii::$app->urlManager->createUrl(['/portafolio/index']) ?>" <?= (strpos(Yii::$app->request->url, '/portafolio') !== false) ? 'class="mm-active"' : '' ?> data-pjax="0">
-                    <i class='bx bx-briefcase'></i>Portafolio
-                </a></li>
+            <ul class="mm-collapse" style="<?= strpos($currentUrl, '/socio') !== false || strpos($currentUrl, '/portafolio') !== false ? 'display: block;' : '' ?>">
+                <li><a href="<?= \Yii::$app->urlManager->createUrl(['/socio']) ?>" data-pjax="0"><i class="bx bx-right-arrow-alt"></i>Socios</a></li>
+                <li><a href="<?= \Yii::$app->urlManager->createUrl(['/portafolio']) ?>" data-pjax="0"><i class="bx bx-right-arrow-alt"></i>Portafolio</a></li>
             </ul>
         </li>
 

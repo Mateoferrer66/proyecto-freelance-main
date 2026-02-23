@@ -10,6 +10,8 @@ use app\models\Provincia;
 use app\models\Consecutivo;
 use app\models\Participacion;
 use app\models\Empresa;
+use app\models\SubcuentaSocio;
+use app\models\SocCuenta;
 use app\components\UtilitiesHelper;
 use yii\filters\VerbFilter;
 use yii\helpers\Html;
@@ -210,7 +212,25 @@ class SocioController extends BaseController
                         throw new \Exception('Error al guardar en el historial el alta de socio.');
                     }
 
-                    /* Crear cuentas de socio */
+                    //Crear cuentas de socio///////////////////////////////////////////////////////
+                    $modelsSubacc = SubcuentaSocio::find()
+                                        ->select(['scs_numero', 'scs_descripcion'])
+                                        ->orderBy(['scs_id' => SORT_ASC])
+                                        ->all();
+                    if (!empty($modelsSubacc)) {
+                        foreach ($modelsSubacc as $modelSubacc) {
+                            $formatSocId = substr(
+                                UtilitiesHelper::formatCode($model->soc_numero, 4),
+                                -4
+                            );
+                            $modelSocCuenta = new SocCuenta();
+                            $modelSocCuenta->soc_id = $model->soc_id;
+                            $modelSocCuenta->scu_cuenta = $modelSubacc->scs_numero . $formatSocId;
+                            $modelSocCuenta->scu_descripcion = $modelSubacc->scs_descripcion . ' ' . $model->soc_nombre . ' ' . $model->soc_apellido;
+                            $modelSocCuenta->save(false); // equivalente a insert()
+                        }
+                    }
+                    ///////////////////////////////////////////////////////////////////////////////
 
                     //Guardar archivo de foto//////////////////////////////////////////////////
                     if ($upFilePhoto) {

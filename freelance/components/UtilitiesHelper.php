@@ -27,4 +27,28 @@ class UtilitiesHelper
         $str = strtolower($str);
         return $str;
     }
+
+    /**
+      * formatCode() - Antepone la cantidad de ceros definida a un numero.
+      *
+      * @param $number --> numero al cual se le concatenaran los ceros.
+      * @param $zeros --> cantidad de numeros de los que se compone el codigo y el le pone los ceros que necesite rellenar 
+      *                   ejemplo tenemos como numero el 568 y los $zeros = 5 entonces el numero que retorna es 00568.
+      * @return Numero con el nuevo formato.
+      */
+    public static function formatCode($number,$zeros)
+    {    
+        $size = strlen($number);
+        $concat = '';
+        if($size < $zeros)
+        {
+            for($i=0;$i<($zeros-$size);$i++)
+            {
+                $concat .= '0';
+            }
+            $number = $concat.$number; 
+        }
+                        
+        return $number; 
+    }
 }

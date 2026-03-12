@@ -85,28 +85,34 @@ class PresupuestoSearch extends Model
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'pre_id' => $this->pre_id,
-            'pre_fecha' => $this->pre_fecha,
-            'cli_id' => $this->cli_id,
-            'soc_id' => $this->soc_id,
-            'fdp_id' => $this->fdp_id,
-            'pre_subtotal' => $this->pre_subtotal,
-            'pre_iva' => $this->pre_iva,
-            'pre_gastos_suplidos' => $this->pre_gastos_suplidos,
-            'pre_total' => $this->pre_total,
-            'pre_eliminado' => $this->pre_eliminado,
+            'presupuesto.pre_id' => $this->pre_id,
+            'presupuesto.pre_fecha' => $this->pre_fecha,
+            'presupuesto.cli_id' => $this->cli_id,
+            'presupuesto.soc_id' => $this->soc_id,
+            'presupuesto.fdp_id' => $this->fdp_id,
+            'presupuesto.pre_subtotal' => $this->pre_subtotal,
+            'presupuesto.pre_iva' => $this->pre_iva,
+            'presupuesto.pre_gastos_suplidos' => $this->pre_gastos_suplidos,
+            'presupuesto.pre_total' => $this->pre_total,
+            'presupuesto.pre_eliminado' => $this->pre_eliminado,
         ]);
 
-        $query->andFilterWhere(['like', 'pre_numero', $this->pre_numero])
-            ->andFilterWhere(['like', 'pre_logo', $this->pre_logo])
-            ->andFilterWhere(['like', 'pre_language', $this->pre_language])
-            ->andFilterWhere(['like', 'pre_observaciones', $this->pre_observaciones])
+        $query->andFilterWhere(['like', 'presupuesto.pre_numero', $this->pre_numero])
+            ->andFilterWhere(['like', 'presupuesto.pre_logo', $this->pre_logo])
+            ->andFilterWhere(['like', 'presupuesto.pre_language', $this->pre_language])
+            ->andFilterWhere(['like', 'presupuesto.pre_observaciones', $this->pre_observaciones])
             ->andFilterWhere(['like', 'cliente.cli_numdocide', $this->cli_nif])
             ->andFilterWhere(['like', 'cliente.cli_nombre', $this->cli_nombre])
             ->andFilterWhere(['like', 'socio.soc_numero', $this->soc_numero])
-            ->andFilterWhere(['like', 'socio.soc_nombre', $this->soc_nombre])
-            ->andFilterWhere(['>=', 'pre_fecha', $this->fecha_inicio])
-            ->andFilterWhere(['<=', 'pre_fecha', $this->fecha_fin]);
+            ->andFilterWhere(['like', 'socio.soc_nombre', $this->soc_nombre]);
+
+        if (!empty($this->fecha_inicio)) {
+            $query->andFilterWhere(['>=', 'presupuesto.pre_fecha', $this->fecha_inicio]);
+        }
+
+        if (!empty($this->fecha_fin)) {
+            $query->andFilterWhere(['<=', 'presupuesto.pre_fecha', $this->fecha_fin]);
+        }
 
         return $dataProvider;
     }

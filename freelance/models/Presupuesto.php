@@ -100,7 +100,6 @@ class Presupuesto extends \yii\db\ActiveRecord
             [['cli_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cliente::class, 'targetAttribute' => ['cli_id' => 'cli_id']],
             [['fdp_id'], 'exist', 'skipOnError' => true, 'targetClass' => FormaDePago::class, 'targetAttribute' => ['fdp_id' => 'fdp_id']],
             [['soc_id'], 'exist', 'skipOnError' => true, 'targetClass' => Socio::class, 'targetAttribute' => ['soc_id' => 'soc_id']],
-            ['pre_observaciones', 'validateObservaciones', 'skipOnEmpty' => false],
         ];
     }
 
@@ -133,12 +132,6 @@ class Presupuesto extends \yii\db\ActiveRecord
         ];
     }
 
-    public function validateObservaciones($attribute, $params)
-    {
-        if (empty($this->pre_archivo) && empty($this->pre_observaciones)) {
-            $this->addError('pre_observaciones', 'Debe escribir observaciones o subir un archivo.');
-        }
-    }
 
     /**
      * Gets query for [[Bans]].

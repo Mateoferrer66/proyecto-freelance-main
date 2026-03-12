@@ -338,12 +338,9 @@ $this->registerJs($js);
                             ])->textInput() ?>
                         </div>
                          <div class="col-12 col-md-6">
-                            <?php 
-                            $isCooperativa = !Yii::$app->user->isGuest && Yii::$app->user->identity->usu_rol === 'Cooperativa';
-                            ?>
                             <?= $form->field($model, 'pre_numero_pedido', [
                                 'template' => "<label>Número Pedido</label>\n{input}\n{hint}\n{error}"
-                            ])->textInput(['maxlength' => true, 'class' => 'form-control mb-3', 'readonly' => $isCooperativa, 'autocomplete' => 'off']) ?>
+                            ])->textInput(['maxlength' => true, 'class' => 'form-control mb-3', 'placeholder' => '', 'autocomplete' => 'off']) ?>
                         </div>
                         <div class="col-12 col-md-6">
                             <?= $form->field($model, 'pre_fecha', [
@@ -718,17 +715,7 @@ $(function(){
         });
     });
 
-     // Validacion de Observaciones vs Archivo
-    $('form#presupuestoForm').on('submit', function(e){
-        var file = $('#presupuesto-pre_archivo').val();
-        var obs = $('#presupuesto-pre_observaciones').val().trim();
-        
-        if(!file && !obs){
-            e.preventDefault();
-            alert('Debe escribir observaciones o subir un archivo.');
-            $('#presupuesto-pre_observaciones').focus();
-        }
-    });
+
 });
 JS;
 $this->registerJs($jsSocio);

@@ -742,11 +742,29 @@ class FacturaController extends BaseController
         return PdfExportHelper::export('Listado_Facturas', $html);
     }
 
+    /**
+    * Muestra el PDF de una factura guardado en el servidor.
+    */
     public function actionPrint($fac_id = null)
     {
         if ($fac_id !== null) {
             $model = $this->findModel($fac_id);
-            return $this->renderPartial('print', ['model' => $model]);
+
+            $pdfPath = Yii::getAlias('@webroot') . '/uploads/facturas/F' . $model->fac_numero . '.pdf';
+
+            // Si el PDF no existe (facturas antiguas), generarlo al vuelo
+            if (!file_exists($pdfPath)) {
+                $pdfPath = $this->generateInvoicePdf($model);
+            }
+
+            if (empty($pdfPath) || !file_exists($pdfPath)) {
+                throw new \yii\web\NotFoundHttpException('No se pudo generar el PDF de la factura.');
+            }
+
+            return Yii::$app->response->sendFile($pdfPath, 'F' . $model->fac_numero . '.pdf', [
+                'mimeType' => 'application/pdf',
+                'inline'   => true, // se abre en el navegador en lugar de descargarse
+            ]);
         }
 
         $headers = ['Número', 'Fecha', 'Cliente', 'Total', 'Estado'];

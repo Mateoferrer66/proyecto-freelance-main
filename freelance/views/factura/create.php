@@ -184,6 +184,16 @@ $(function(){
                         // Actualizar ambos campos de búsqueda para mantener consistencia
                         $('#search-by-name').val(data.nombre);
                         $('#search-by-doc').val(data.nif);
+
+                        // ← Sincronizar hidden fields para DatosFactura
+                        $('#hidden-nombre').val(data.nombre);
+                        $('#hidden-tipo_doc').val(data.tipo_doc_id); // ID numérico del tipo doc
+                        $('#hidden-num_doc').val(data.num_identificacion);
+                        $('#hidden-direccion').val(data.direccion);
+                        $('#hidden-cp').val(data.cp);
+                        $('#hidden-poblacion').val(data.poblacion);
+                        $('#hidden-provincia').val(data.prv_id);
+                        $('#hidden-pais').val(data.pai_id);
                     }
                 },
                 error: function(){
@@ -195,6 +205,13 @@ $(function(){
             // Limpiar campos si no se selecciona cliente
             $('#datos-cliente input, #search-by-name, #search-by-doc').val('');
         }
+    });
+
+    $('#cliente-provincia').on('change', function(){
+        $('#hidden-provincia').val($(this).val());
+    });
+    $('#cliente-pais').on('change', function(){
+        $('#hidden-pais').val($(this).val());
     });
 
     // --- Añadir Conceptos dinámicos ---
@@ -415,10 +432,19 @@ $this->registerJs($js);
                         ]
                     ]); ?>
 
-                    <?= $form->errorSummary($model, ['class' => 'alert alert-danger'])
-                    ?>
+                    <?= $form->errorSummary($model, ['class' => 'alert alert-danger']) ?>
 
                     <?= $form->field($model, 'cli_id')->hiddenInput()->label(false) ?>
+
+                    <!-- Campos hidden para DatosFactura del receptor -->
+                    <input type="hidden" id="hidden-nombre" name="DatosReceptor[daf_nombre]">
+                    <input type="hidden" id="hidden-tipo_doc" name="DatosReceptor[tdo_id]">
+                    <input type="hidden" id="hidden-num_doc" name="DatosReceptor[daf_numdocide]">
+                    <input type="hidden" id="hidden-direccion" name="DatosReceptor[daf_direccion]">
+                    <input type="hidden" id="hidden-cp" name="DatosReceptor[daf_cod_postal]">
+                    <input type="hidden" id="hidden-poblacion" name="DatosReceptor[daf_poblacion]">
+                    <input type="hidden" id="hidden-provincia" name="DatosReceptor[prv_id]">
+                    <input type="hidden" id="hidden-pais" name="DatosReceptor[pai_id]">
 
                     <div class="row mb-3">
                         <div class="col-12 col-md-6">

@@ -9,7 +9,10 @@ use app\models\Consecutivo;
 use app\models\Factura;
 use app\models\DetalleFactura;
 use app\models\CuentasFactura;
+use app\models\DatosFactura;
+use app\models\Banco;
 use app\models\FacturaSearch;
+use app\models\Empresa;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -218,6 +221,41 @@ class FacturaController extends BaseController
                         }
                     }
 
+                    // Guardar datos del emisor (empresa)
+                    $empresa = Empresa::find()->one();
+                    if ($empresa) {
+                        $dataEmisor = new DatosFactura();
+                        $dataEmisor->fac_id       = $model->fac_id;
+                        $dataEmisor->daf_tipo     = DatosFactura::DAF_TIPO_EMISOR;
+                        $dataEmisor->daf_nombre   = $empresa->emp_razon_social;
+                        $dataEmisor->daf_direccion= $empresa->emp_direccion;
+                        $dataEmisor->daf_cod_postal = $empresa->emp_codpostal;
+                        $dataEmisor->daf_poblacion  = $empresa->emp_poblacion;
+                        $dataEmisor->tdo_id         = $empresa->tdo_id;
+                        $dataEmisor->daf_numdocide  = $empresa->emp_numdocide;
+                        $dataEmisor->prv_id         = 29; // Madrid, igual que en Yii1
+                        if (!$dataEmisor->save()) {
+                            throw new \Exception('Error al guardar datos emisor: ' . json_encode($dataEmisor->getErrors()));
+                        }
+                    }
+
+                    $postedReceptor = Yii::$app->request->post('DatosReceptor', []);
+                    $dataReceptor = new DatosFactura();
+                    $dataReceptor->fac_id         = $model->fac_id;
+                    $dataReceptor->daf_tipo       = DatosFactura::DAF_TIPO_RECEPTOR;
+                    $dataReceptor->daf_nombre     = $postedReceptor['daf_nombre']    ?? '';
+                    $dataReceptor->daf_direccion  = $postedReceptor['daf_direccion'] ?? '-';
+                    $dataReceptor->daf_cod_postal = $postedReceptor['daf_cod_postal'] ?? '';
+                    $dataReceptor->daf_poblacion  = $postedReceptor['daf_poblacion'] ?? null;
+                    $dataReceptor->tdo_id         = $postedReceptor['tdo_id']        ?? 1;
+                    $dataReceptor->daf_numdocide  = $postedReceptor['daf_numdocide'] ?? '';
+                    $dataReceptor->pai_id         = $postedReceptor['pai_id']        ?? null;
+                    $dataReceptor->prv_id         = $postedReceptor['prv_id']        ?? null;
+
+                    if (!$dataReceptor->save()) {
+                        throw new \Exception('Error al guardar datos receptor: ' . json_encode($dataReceptor->getErrors()));
+                    }
+
                     // Recalcular totales y guardar en la factura
                     $gastos = isset($model->fac_gastos_suplidos) ? floatval($model->fac_gastos_suplidos) : 0.0;
                     $model->fac_subtotal = $subtotal;
@@ -226,6 +264,11 @@ class FacturaController extends BaseController
                     $model->save(false, ['fac_subtotal', 'fac_iva', 'fac_total']);
 
                     $transaction->commit();
+
+                    // Debug temporal
+                    $pdfResult = $this->generateInvoicePdf($model);
+                    Yii::error('Resultado generateInvoicePdf: ' . var_export($pdfResult, true), 'pdf');
+                    Yii::error('fac_id: ' . $model->fac_id . ' | fac_numero: ' . $model->fac_numero, 'pdf');
 
                     if (Yii::$app->request->isAjax) {
                         Yii::$app->response->format = Response::FORMAT_JSON;
@@ -371,6 +414,7 @@ class FacturaController extends BaseController
                 'razon_social' => $cliente->cli_nombre,
                 'nombre' => $cliente->cli_nombre,
                 'tipo_doc' => $cliente->tdo ? $cliente->tdo->tdo_nombre : '',
+                'tipo_doc_id' => $cliente->tdo_id,
                 'num_identificacion' => $cliente->cli_numdocide,
                 'direccion' => $cliente->cli_direccion,
                 'cp' => $cliente->cli_codpostal,
@@ -378,6 +422,7 @@ class FacturaController extends BaseController
                 'prv_id' => $cliente->prv_id, // Añadido para seleccionar en dropdown
                 'poblacion' => $cliente->cli_poblacion,
                 'pais' => $cliente->pai ? $cliente->pai->pai_nombre : '',
+                'pai_id' => $cliente->pai_id,
                 'forma_pago' => $cliente->fdp ? $cliente->fdp->fdp_nombre : '',
                 'socio' => $cliente->soc ? $cliente->soc->soc_nombre : '',
             ];
@@ -909,5 +954,90 @@ class FacturaController extends BaseController
         }
 
         return ExcelExportHelper::export('Facturas', $headers, $data);
+    }
+
+    /**
+     * Genera y guarda el PDF de una factura en el servidor.
+     * @param Factura $model
+     * @return string|null Ruta del archivo generado, o null si falló
+     */
+    private function generateInvoicePdf(Factura $model): ?string
+    {
+        try {
+            // Datos del emisor (empresa)
+            $modelBillDataE = DatosFactura::find()
+                ->where(['fac_id' => $model->fac_id, 'daf_tipo' => DatosFactura::DAF_TIPO_EMISOR])
+                ->one();
+
+            // Datos del receptor (cliente)
+            $modelBillDataR = DatosFactura::find()
+                ->where(['fac_id' => $model->fac_id, 'daf_tipo' => DatosFactura::DAF_TIPO_RECEPTOR])
+                ->one();
+
+            // Líneas de detalle con su concepto
+            $modelsBillDetail = DetalleFactura::find()
+                ->with('cof')
+                ->where(['fac_id' => $model->fac_id])
+                ->all();
+
+            // Cuentas bancarias con datos del banco
+            $modelsAccountBill = CuentasFactura::find()
+                ->with('ban')
+                ->where(['fac_id' => $model->fac_id])
+                ->all();
+
+            // Cálculos de IVA
+            $baseIva = 0.0;
+            $porcIva = [];
+            $cuota   = 0.0;
+            foreach ($modelsBillDetail as $det) {
+                if ($det->dtf_iva > 0) {
+                    $baseIva += ($det->dtf_cantidad * $det->dtf_precio);
+                    if (!in_array($det->dtf_iva, $porcIva)) {
+                        $porcIva[] = $det->dtf_iva;
+                    }
+                    $cuota += (($det->dtf_cantidad * $det->dtf_precio) * $det->dtf_iva) / 100;
+                }
+            }
+
+            // Logo
+            $logoPath = null;
+            if ($model->fac_logo === 'socio' && !empty($model->soc->soc_ficlogo)) {
+                $candidate = Yii::getAlias('@webroot') . '/uploads/members/logos/' . $model->soc->soc_ficlogo;
+                if (file_exists($candidate)) {
+                    $logoPath = $candidate;
+                }
+            }
+
+            // Renderizar la vista como HTML puro (sin layout)
+            $html = $this->renderPartial('format-bill', [
+                'model'            => $model,
+                'modelBillDataE'   => $modelBillDataE,
+                'modelBillDataR'   => $modelBillDataR,
+                'modelsBillDetail' => $modelsBillDetail,
+                'modelsAccountBill'=> $modelsAccountBill,
+                'baseIva'          => $baseIva,
+                'porcIva'          => $porcIva,
+                'cuota'            => $cuota,
+                'logoPath'         => $logoPath,
+            ]);
+
+            // Ruta donde se guarda el PDF
+            $savePath = Yii::getAlias('@webroot') . '/uploads/bills/F' . $model->fac_numero . '.pdf';
+
+            return \app\components\PdfExportHelper::save(
+                'F' . $model->fac_numero,
+                $html,
+                [
+                    'savePath' => $savePath,
+                    'title'    => 'Factura ' . $model->fac_numero,
+                    'margins'  => ['top' => 15, 'bottom' => 15, 'left' => 10, 'right' => 10],
+                ]
+            );
+
+        } catch (\Throwable $e) {
+            Yii::error('Error generando PDF factura ' . $model->fac_numero . ': ' . $e->getMessage(), 'pdf');
+            return null;
+        }
     }
 }

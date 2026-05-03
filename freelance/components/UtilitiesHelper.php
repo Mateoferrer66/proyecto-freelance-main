@@ -99,4 +99,16 @@ class UtilitiesHelper
 
         return '';
     }
+
+    /**
+     * Le da formato a un numero que representa una cantidad en euros
+     * @param $valor es el numero al cual queremos darle formato
+     * @return String
+     * @author j.r.r.
+     */
+    public static function formatEuroPDF($valor)
+    {
+        $euros = number_format($valor,2,",",".");
+        return $euros;
+    }
 }

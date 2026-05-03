@@ -296,13 +296,21 @@ JS);
                                 'class' => 'btn text-orange radius-30',
                                 'id' => 'batch-delete-button'
                             ]) ?>
-                            <?= Html::a('<i class="bx bx-list-ol mr-1"></i>Listado Facturas', ['index'], ['class' => 'btn text-orange radius-30']) ?>
+                            <?= Html::a(
+                                '<i class="bx bx-list-ol mr-1"></i> Listado Facturas',
+                                Url::to(array_merge(
+                                    ['factura/bills-report'],
+                                    Yii::$app->request->queryParams
+                                )),
+                                [
+                                    'class' => 'btn text-orange radius-30',
+                                    'data-pjax' => '0',
+                                ]
+                            ) ?>
                         </div>
                     </div>
 
-
-
-                        <div class="table-responsive">
+                    <div class="table-responsive">
                         <?= GridView::widget([
                             'id' => 'facturas-grid-view',
                             'dataProvider' => $dataProvider,
@@ -333,7 +341,7 @@ JS);
                                    [
                                     'attribute' => 'fac_fecha',
                                     'label' => 'Fecha',
-                                    'format' => ['date', 'php:d-m-Y'],
+                                    'format' => ['date', 'php:d/m/Y'],
                                 ],
                                
                                 [
@@ -357,11 +365,6 @@ JS);
                                     'label' => 'Estado',
                                 ],
                                 [
-                                    'attribute' => 'soc_numero',
-                                    'label' => 'Cód. Socio',
-                                    'value' => 'soc.soc_numero',
-                                ],
-                                [
                                     'attribute' => 'fac_aprobada',
                                     'label' => 'Aprobacion',
                                     'format' => 'raw',
@@ -374,7 +377,7 @@ JS);
                                 [
                                     'class' => ActionColumn::class,
                                     'header' => 'Acciones',
-                                    'template' => '<div class="d-flex flex-column align-items-center gap-2">{group1}{group2}{group3}</div>',
+                                    'template' => '<div class="d-flex flex-column align-items-center gap-2">{group1}{group2}{group3}{group4}</div>',
                                     'buttons' => [
                                         'group1' => function ($url, $model, $key) {
                                             $buttons = [];
@@ -390,22 +393,28 @@ JS);
                                                 'data-bs-toggle' => 'modal',
                                                 'data-bs-target' => '#action-modal'
                                             ]);
+                                            
+                                            return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
+                                        },
+                                        'group2' => function ($url, $model, $key) {
+                                            $buttons = [];
                                             $buttons[] = Html::a('<i class="bx bx-printer"></i>', Url::toRoute(['print', 'fac_id' => $model->fac_id]), [
                                                 'title' => 'Imprimir Factura',
                                                 'class' => 'btn btn-light',
                                                 'target' => '_blank',
                                                 'data-pjax' => '0',
                                             ]);
-                                            return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
-                                        },
-                                        'group2' => function ($url, $model, $key) {
-                                            $buttons = [];
                                             $buttons[] = Html::a('<i class="bx bx-envelope"></i>', Url::toRoute(['send-email', 'fac_id' => $model->fac_id]), [
                                                 'title' => 'Enviar por Correo',
                                                 'class' => 'btn btn-light',
                                                 'data-bs-toggle' => 'modal',
                                                 'data-bs-target' => '#action-modal',
                                             ]);
+                                            
+                                            return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
+                                        },
+                                        'group3' => function ($url, $model, $key) {
+                                            $buttons = [];
                                             $buttons[] = Html::a('<i class="bx bx-check-square"></i>', Url::toRoute(['mark-as-paid', 'fac_id' => $model->fac_id]), [
                                                 'title' => 'Marcar como Liquidada',
                                                 'class' => 'btn btn-light',
@@ -419,22 +428,16 @@ JS);
                                                 'data-bs-toggle' => 'modal',
                                                 'data-bs-target' => '#action-modal',
                                             ]);
+                                            
+                                            return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
+                                        },
+                                        'group4' => function ($url, $model, $key) {
+                                            $buttons = [];
                                             $buttons[] = Html::button('<i class="bx bx-check-shield"></i>', [
                                                 'class' => 'btn btn-light toggle-approval-btn',
                                                 'title' => $model->fac_aprobada ? 'Desaprobar' : 'Aprobar',
                                                 'data-url' => Url::to(['toggle-aprobacion', 'fac_id' => $model->fac_id]),
                                                 'onclick' => 'toggleApproval(this)',
-                                            ]);
-                                            return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
-                                        },
-                                        'group3' => function ($url, $model, $key) {
-                                            $buttons = [];
-                                            $buttons[] = Html::a('<i class="bx bx-power-off"></i>', Url::toRoute(['deactivate', 'fac_id' => $model->fac_id]), [
-                                                'title' => 'Desactivar Factura',
-                                                'class' => 'btn btn-light',
-                                                'data-confirm' => '¿Está seguro de que desea desactivar la factura: "' . $model->fac_numero . '"?',
-                                                'data-method' => 'post',
-                                                'data-pjax' => '1',
                                             ]);
                                             $buttons[] = Html::a('<i class="bx bx-trash"></i>', Url::toRoute(['delete', 'fac_id' => $model->fac_id]), [
                                                 'title' => 'Eliminar Factura',
@@ -442,7 +445,8 @@ JS);
                                                 'data-confirm' => '¿Está seguro de que desea eliminar la factura: "' . $model->fac_numero . '"?',
                                                 'data-method' => 'post',
                                                 'data-pjax' => '1',
-                                            ]);
+                                            ]);                                  
+
                                             return Html::tag('div', implode('', $buttons), ['class' => 'd-inline-flex gap-1']);
                                         },
                                     ],

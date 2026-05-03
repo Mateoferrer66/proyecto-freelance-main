@@ -9,6 +9,7 @@ use yii\widgets\Pjax;
 use yii\bootstrap5\Modal;
 use yii\widgets\ActiveForm;
 use yii\grid\CheckboxColumn;
+use yii\web\View;
 
 /** @var yii\web\View $this */
 /** @var app\models\ClienteSearch $searchModel */
@@ -27,13 +28,25 @@ foreach (Yii::$app->session->getAllFlashes() as $type => $message) {
 
 // JS for search
 $this->registerJs(<<<JS
-let timeout;
-$('#cliente-search-input').on('input', function() {
-    clearTimeout(timeout);
-    timeout = setTimeout(function() {
-        $.pjax.submit($('#auto-search-form'), '#socios-pjax');
-    }, 500);
-});
+    // --- Inicialización del Datepicker ---
+    $('#sociosearch-fecha_inicial').bootstrapMaterialDatePicker({
+        format: 'DD/MM/YYYY',
+        time: false, // No mostrar selector de hora
+        lang: 'es',
+        weekStart: 1
+    });
+    $('#sociosearch-fecha_final').bootstrapMaterialDatePicker({
+        format: 'DD/MM/YYYY',
+        time: false, // No mostrar selector de hora
+        lang: 'es',
+        weekStart: 1
+    });
+    $('#estado-fecha').bootstrapMaterialDatePicker({
+        format: 'DD/MM/YYYY',
+        time: false, // No mostrar selector de hora
+        lang: 'es',
+        weekStart: 1
+    });
 JS);
 
 // JS for batch delete
@@ -46,105 +59,28 @@ $('#batch-delete-button').on('click', function() {
         return;
     }
 
-    if (confirm('¿Está seguro de que desea eliminar los ' + keys.length + ' socios seleccionados?')) {
-        $.ajax({
-            url: '$batchDeleteUrl',
-            type: 'post',
-            data: { ids: keys },
-            dataType: 'json',
-            success: function(response) {
-                if (response.success) {
-                    alert(response.message);
-                    $.pjax.reload({container: '#socios-pjax'});
-                } else {
-                    alert('Error: ' + response.message);
+    showConfirm(
+        '¿Está seguro de que desea eliminar los ' + keys.length + ' socios seleccionados?',
+        function() {
+            \$.ajax({
+                url: '$batchDeleteUrl',
+                type: 'post',
+                data: { ids: keys },
+                dataType: 'json',
+                success: function(response) {
+                    if (response.success) {
+                        showToast(response.message);
+                        \$.pjax.reload({container: '#socios-pjax'});
+                    } else {
+                        showToast('Error: ' + response.message, 'error');
+                    }
+                },
+                error: function() {
+                    showToast('Ocurrió un error al procesar la solicitud.', 'error');
                 }
-            },
-            error: function() {
-                alert('Ocurrió un error al procesar la solicitud.');
-            }
-        });
-    }
-});
-JS);
-
-?>
-
-<?php
-Modal::begin([
-    'id' => 'action-modal',
-    'title' => '',
-    'size' => 'modal-lg',
-    'footer' => '',
-]);
-echo "<div id='modal-content'><div class='text-center'><div class='spinner-border' role='status'></div></div></div>";
-Modal::end();
-
-// JS for modal
-$this->registerJs(<<<'JS'
-let actionModalInstance = new bootstrap.Modal(document.getElementById('action-modal'));
-
-// Handler para abrir el modal
-$(document).on('click', '[data-bs-toggle="modal"]', function(e) {
-    e.preventDefault();
-    const modalTitle = $('#action-modal .modal-title');
-    const modalContent = $('#modal-content');
-    const url = $(this).attr('href') || $(this).data('url'); // Soporte para data-url en el botón de crear
-    const title = $(this).attr('title');
-
-    modalTitle.text(title);
-    modalContent.html('<div class="text-center"><div class="spinner-border" role="status"></div></div>');
-    actionModalInstance.show();
-
-    $.get(url)
-        .done(function(data) {
-            modalContent.html(data);
-        })
-        .fail(function() {
-            modalContent.html('<div class="alert alert-danger">Error al cargar el contenido.</div>');
-        });
-});
-
-// Limpiar modal al cerrar
-document.getElementById('action-modal').addEventListener('hidden.bs.modal', function () {
-    const modalContent = $('#modal-content');
-    if (modalContent.find('form').length > 0) {
-        modalContent.find('form').yiiActiveForm('destroy');
-    }
-    modalContent.html('');
-    $('#action-modal .modal-title').text('');
-});
-
-// Handler para submit de formularios en el modal con beforeSubmit de Yii2
-$(document).on('beforeSubmit', '#modal-content form', function(e) {
-    e.preventDefault();
-    var form = $(this);
-    var submitButton = form.find('button[type="submit"]');
-    submitButton.prop('disabled', true).html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Guardando...');
-
-    $.ajax({
-        url: form.attr('action'),
-        type: 'post',
-        data: form.serialize(),
-        dataType: 'json',
-        success: function(response) {
-            if (response.success) {
-                actionModalInstance.hide();
-                $.pjax.reload({container: '#socios-pjax', async: false}); // async: false para esperar a que pjax termine
-            } else {
-                // Muestra los errores de validación en el formulario
-                form.yiiActiveForm('updateMessages', response.errors, true);
-            }
-        },
-        error: function() {
-            alert('Ocurrió un error al procesar la solicitud. Por favor, inténtelo de nuevo.');
-        },
-        complete: function() {
-            submitButton.prop('disabled', false).html(form.find('button[type="submit"]').text().includes('Crear') ? 'Crear' : 'Actualizar');
+            });
         }
-    });
-
-    return false; // Previene el envío tradicional
+    );
 });
 JS);
 ?>
@@ -164,27 +100,61 @@ JS);
     <div class="card">
         <div class="card-body">
             <?php Pjax::begin(['id' => 'socios-pjax', 'timeout' => 5000, 'enablePushState' => false, 'linkSelector' => '#socios-pjax .grid-view a']); ?>
-            <form name="noticias" method="get" class="mb-4">
+            <?php $form = \yii\widgets\ActiveForm::begin([
+                                'id' => 'search-form',
+                                'method' => 'get',
+                                'action' => ['socio/index'],
+                                'options' => [
+                                    'class' => 'mb-4',
+                                    'data-pjax' => true,
+                                ],
+            ]); ?>
                 <div class="row">
                     <div class="col-md-2">
-                        <input class="result form-control" type="text" id="date-time" placeholder="Fecha inicial">
+                        <?= $form->field($searchModel, 'fecha_inicial', [
+                                    'options' => ['class' => 'mb-0']
+                            ])->textInput([
+                                    'class' => 'result form-control',
+                                    'placeholder' => 'Fecha inicial',
+                            ])->label(false) ?>
                     </div>
                     <div class="col-md-2">
-                        <input class="result form-control" type="text" id="date-time2" placeholder="Fecha final">
+                        <?= $form->field($searchModel, 'fecha_final', [
+                                    'options' => ['class' => 'mb-0']
+                            ])->textInput([
+                                    'class' => 'result form-control',
+                                    'placeholder' => 'Fecha inicial',
+                            ])->label(false) ?>
                     </div>
                     <div class="col-md-1">
-                        <a href="#" class="btn btn-success radius-30"><i class="bx bx-search-alt mr-1"></i></a>
-                    </div>
-                    <div class="col-md-7 d-flex justify-content-end">
-                        <?= Html::button('<i class="bx bx-trash"></i> Eliminar', [
-                                'class' => 'btn text-orange radius-30',
-                                'id' => 'batch-delete-button'
+                        <?= Html::submitButton('<i class="bx bx-search-alt"></i>', [
+                                'class' => 'btn btn-success radius-30',
+                                'form' => 'search-form',  // hace referencia al id del ActiveForm
                         ]) ?>
-                        <a href="#" class="btn text-orange radius-30"><i class="bx bx-list-ol mr-1"></i>Altas/Bajas</a>
-                        <a href="#" class="btn text-orange radius-30"><i class="bx bx-list-ol mr-1"></i>Listado Socios</a>
+                    </div>
+                    <div class="col-md-7 d-flex flex-column align-items-end gap-2">
+                        <div class="d-flex gap-2">
+                            <?= Html::button('<i class="bx bx-trash"></i> Eliminar', [
+                                'class' => 'btn text-orange radius-30',
+                                'id' => 'batch-delete-button',
+                            ]) ?>
+                            <a href="<?= Url::to(['socio/members-status-report']) ?>" class="btn text-orange radius-30"><i class="bx bx-list-ol mr-1"></i> Altas/Bajas</a>
+                            <a href="<?= Url::to(['socio/members-report']) ?>" class="btn text-orange radius-30"><i class="bx bx-list-ol mr-1"></i> Listado Socios</a>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="mb-0 text-white">Buscar:</label>
+                            <?= $form->field($searchModel, 'buscar', ['template' => '{input}'])
+                                    ->textInput([
+                                        'placeholder' => '',
+                                        'class' => 'form-control form-control-sm',
+                                        'id' => 'socio-search-input',
+                                        'autocomplete' => 'off',
+                                        'style' => 'background-color: transparent; border: 1px solid #484848; color: white;'
+                                    ]) ?>
+                        </div>
                     </div>
                 </div>
-            </form>
+            <?php \yii\widgets\ActiveForm::end(); ?>
             <div class="table-responsive">
                 <?= GridView::widget([
                     'id' => 'socios-grid-view',
@@ -326,40 +296,47 @@ JS);
                         [
                             'class' => ActionColumn::class,
                             'header' => Html::a('Acciones', ['index', 'sort' => 'soc_nombre'], ['data-pjax' => 1]),
-                            'template' => '<div class="action-grid-2x2">{toggle} {view} {update} {delete}</div>',
+                            'template' => '<div class="action-grid-2x2">{toggle} {view} {update} {contract} {mail} {delete}</div>',
                             'headerOptions' => ['class' => 'text-start', 'style' => 'width: 1%; white-space: nowrap;'], // Shrink-wrap & Left align
                             'contentOptions' => ['class' => 'text-end', 'style' => 'width: 1%; white-space: nowrap;'], // Shrink-wrap & Right align content
                             'buttons' => [
-                                'toggle' => function ($url, $model, $key) {
-                                    if ($model->soc_estado === Socio::SOC_ESTADO_ACTIVO) {
-                                        return Html::a('<i class="bx bx-block"></i>', ['toggle-status', 'soc_id' => $model->soc_id], [
-                                                    'title' => 'Desactivar Socio',
-                                                    'class' => 'btn btn-light',
-                                                    'data-confirm' => '¿Está seguro de que desea desactivar a ' . $model->soc_nombre . '?',
-                                                    'data-method' => 'post',
-                                                    'data-pjax' => '0',
-                                        ]);
-                                    } else {
-                                        return Html::a('<i class="bx bx-check"></i>', ['toggle-status', 'soc_id' => $model->soc_id], [
-                                                    'title' => 'Activar Socio',
-                                                    'class' => 'btn btn-light',
-                                                    'data-confirm' => '¿Está seguro de que desea activar a ' . $model->soc_nombre . '?',
-                                                    'data-method' => 'post',
-                                                    'data-pjax' => '0',
-                                        ]);
-                                    }
-                                },
-                                'view' => fn($url, $model) => Html::a('<i class="bx bx-id-card"></i>', $url, [
-                                    'title' => 'Ver Socio: ' . $model->soc_nombre,
-                                    'class' => 'btn btn-light',
-                                    'data-bs-toggle' => 'modal',
-                                    'data-bs-target' => '#action-modal'
+                                'toggle' => fn($url, $model) => Html::button(
+                                    $model->soc_estado === 'Activo'
+                                        ? '<i class="bx bx-power-off"></i>'
+                                        : '<i class="bx bx-play-circle"></i>',
+                                    [
+                                        'class'        => 'btn btn-light btnCambiarEstado',
+                                        'data-id'      => $model->soc_id,
+                                        'data-estado'  => $model->soc_estado,
+                                        'title'        => $model->soc_estado === 'Activo' ? 'Desactivar Socio' : 'Activar Socio',
+                                    ]
+                                ),
+                                'view' => fn($url, $model) => Html::button('<i class="bx bx-show"></i>', [
+                                    'class'    => 'btn btn-light btnVerSocio',
+                                    'data-id'  => $model->soc_id,   
+                                    'title'    => 'Ver Socio',
                                 ]),
                                 'update' => fn($url, $model) => Html::a('<i class="bx bx-edit"></i>', $url, [
                                     'title' => 'Editar Socio: ' . $model->soc_nombre,
                                     'class' => 'btn btn-light',
                                     'data-pjax' => '0',
                                 ]),
+                                'contract' => fn($url, $model) => Html::a('<i class="bx bx-file"></i>', ['socio/contract', 'id' => $model->id], [
+                                    'title' => 'Ver contrato: ' . $model->soc_nombre,
+                                    'class' => 'btn btn-light',
+                                    'target' => '_blank',
+                                    'data-pjax'  => '0',
+                                ]),
+                                'mail' => function ($url, $model) {
+                                    return Html::button('<i class="bx bx-envelope"></i>', [
+                                        'title' => 'Enviar correo a ' . $model->soc_nombre,
+                                        'class' => 'btn btn-light btnMail',
+                                        'data-id' => $model->soc_id,
+                                        'data-email' => $model->soc_email,
+                                        'data-name' => $model->soc_nombre,
+                                        'data-number' => $model->soc_numero,
+                                    ]);
+                                },
                                 'delete' => fn($url, $model) => Html::a('<i class="bx bx-trash"></i>', $url, [
                                     'title' => 'Eliminar Socio',
                                     'class' => 'btn btn-light',
@@ -367,7 +344,6 @@ JS);
                                     'data-method' => 'post',
                                     'data-pjax' => '0',
                                 ]),
-                                
                             ],
                             'urlCreator' => fn($action, Socio $model, $key, $index, $column) =>
                             Url::toRoute([$action, 'soc_id' => $model->soc_id, 'view' => ($action === 'delete' || $action === 'toggle' ? null : 'modal')]),
@@ -379,3 +355,345 @@ JS);
         <?php Pjax::end(); ?>
     </div>
 </div>
+<!-- Modal mail socio -->
+<div class="modal fade" id="socioMailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Enviar Correo a Socio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" accept-charset="UTF-8" class="form" id="sociosFormMail" name="sociosFormMail" enctype="multipart/form-data">
+                    <input type="hidden" name="member" id="member">
+                    <input type="hidden" name="memberNumber" id="memberNumber">
+                    <div id="">
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label>Destinatario</label>
+                                <input id="recipient" class="form-control mb-3" name="recipient" type="text">
+                            </div>
+                            <div class="col-md-12">
+                                <label>CC</label>
+                                <input id="cc" class="form-control mb-3" name="cc" type="text">
+                            </div>
+                            <div class="col-md-12">
+                                <label>Asunto</label>
+                                <input id="subject" class="form-control mb-3" name="subject" type="text" value="Bienvenido a Freelance SCM">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="attachment" class="form-label">Adjuntar</label>
+                                <input class="form-control mb-3" id="attachment" type="file">
+                            </div>
+                            <div class="card-title d-flex align-items-center mt-3">
+                                <h5 class="mb-0 text-white">MENSAJE</h5>
+                            </div>
+                            <hr>
+                            <div class="col-md-12">
+                                <textarea class="form-control" id="editor3" rows="4"></textarea>
+                                <input type="hidden" name="message" id="message">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-md-12">
+                            <input class="btn btn-success px-5 radius-30" type="submit" id="btnEnviarEmail" value="Enviar">
+                        </div>
+                        <!--{ !! Form::close() !!} -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal ver socio -->
+<div class="modal fade" id="socioVerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ver Socio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <!-- El contenido se inyecta aquí desde el servidor -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal activar/desactivar socio -->
+<div class="modal fade" id="socioModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="socioModalTitulo">Cambiar Estado Socio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="socioEstadoForm">
+                    <input type="hidden" id="estado-soc-id">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" id="estado-fecha" placeholder="Fecha">
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="mb-0 text-uppercase">
+                                Nuevo estado<br>
+                                <span id="estado-nuevo-label" class="badge"></span>
+                            </h6>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <label>Observaciones</label>
+                            <textarea class="form-control" id="editor-estado"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnGuardarEstado" class="btn btn-success px-5 radius-30">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+$urlGetSocio    = \yii\helpers\Url::toRoute(['socio/get-member']);
+$urlEnviarEmail = \yii\helpers\Url::toRoute(['socio/send-email']);
+$urlGetTemplate = \yii\helpers\Url::toRoute(['socio/get-email-template']);
+$urlToggleStatus = \yii\helpers\Url::toRoute(['socio/toggle-status']);
+
+/* Registrar el archivo JS de CKEditor si no está cargado */
+$this->registerJsFile(
+    '@web/assets-custom/plugins/ckeditor.js', // ruta donde tengas CKEditor
+    ['position' => View::POS_HEAD]
+);
+
+$this->registerCss("
+    .ck-editor__editable {
+        background-color: #1a1a1a !important;
+        color: #ffffff !important;
+        min-height: 200px;
+    }
+    .ck-editor__editable p,
+    .ck-editor__editable a,
+    .ck-editor__editable li {
+        color: #ffffff !important;
+    }
+    .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+        background-color: #1a1a1a !important;
+    }
+");
+
+$this->registerJs(<<<JS
+    let editor = null;
+    let editorStatus = null;
+    let pendingContent = null;
+
+    \$('#socioMailModal').on('shown.bs.modal', function () {
+        if (!editor) {
+            ClassicEditor.create(document.querySelector('#editor3'))
+                .then(e => {
+                    editor = e;
+                    // Si ya llegó el contenido del AJAX antes de que el editor cargara
+                    if (pendingContent !== null) {
+                        editor.setData(pendingContent);
+                        pendingContent = null;
+                    }
+                })
+                .catch(error => console.error(error));
+        } else {
+            // Editor ya existe, aplicar contenido pendiente si hay
+            if (pendingContent !== null) {
+                editor.setData(pendingContent);
+                pendingContent = null;
+            }
+        }
+    });
+
+    \$(document).on('click', '.btnMail', function() {
+        let email  = \$(this).data('email');
+        let nombre = \$(this).data('name');
+        let id = \$(this).data('id');
+        let socnumero = \$(this).data('number');
+
+        \$('#recipient').val(email);
+        \$('#member').val(id);
+        \$('#memberNumber').val(socnumero);
+        pendingContent = null; // limpiar contenido anterior
+
+        // Deshabilitar botón enviar mientras carga
+        \$('#btnEnviarEmail').prop('disabled', true).text('Cargando...');
+
+        \$('#socioMailModal').modal('show');
+
+        \$.post('$urlGetTemplate', { socnumero: socnumero }, function(response) {
+            if (response.success) {
+                if (editor) {
+                    editor.setData(response.html);
+                } else {
+                    // El editor aún no terminó de cargar, guardar para después
+                    pendingContent = response.html;
+                }
+            }
+        }).always(function() {
+            // Rehabilitar botón siempre, haya éxito o error
+            \$('#btnEnviarEmail').prop('disabled', false).text('Enviar');
+        });
+    });
+
+    function validateAttachment(file) {
+        if (!file) return true;
+        const maxSize = 5 * 1024 * 1024;
+        const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png'];
+        if (file.size > maxSize) { showToast('El archivo supera 5MB', 'error'); return false; }
+        if (!allowedTypes.includes(file.type)) { showToast('Tipo de archivo no permitido', 'error'); return false; }
+        return true;
+    }
+
+    \$(document).on('submit', '#sociosFormMail', function(e) {
+        e.preventDefault();
+        if (!editor) { 
+            showToast('El editor no está cargado', 'error'); 
+            return; 
+        }
+
+        const recipient = \$('#recipient').val().trim();
+        const subject = \$('#subject').val().trim();
+        const body = editor.getData().trim();
+
+        if (!recipient) { 
+            showToast('El destinatario es requerido', 'error'); 
+            return; 
+        }
+
+        if (!subject) { 
+            showToast('El asunto es requerido', 'error'); 
+            return; 
+        }
+
+        if (!body) { 
+            showToast('El mensaje no puede estar vacío', 'error'); 
+            return; 
+        }
+
+        \$('#message').val(body);
+        let file = \$('#attachment')[0].files[0];
+        if (!validateAttachment(file)) {
+            return;
+        }
+        let formData = new FormData(this);
+        \$.ajax({
+            url: '$urlEnviarEmail',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                if (response.success) {
+                    showToast('Email enviado correctamente');
+                    \$('#socioMailModal').modal('hide');
+                    \$('#sociosFormMail')[0].reset();
+                    editor.setData('');
+                } else {
+                    showToast('Error: ' + (response.error || 'No se pudo enviar el email'), 'error');
+                }
+            },
+            error: function(xhr) {
+                console.log(xhr.status, xhr.responseText);
+                showToast('Error del servidor', 'error');
+            }
+        });
+    });
+
+    \$('#socioMailModal').on('hidden.bs.modal', function () {
+        \$('#sociosFormMail')[0].reset();
+        if (editor) {
+            editor.destroy()
+                .then(() => { editor = null; })
+                .catch(error => console.error(error));
+        }
+    });
+
+    \$(document).on('click', '.btnVerSocio', function() {
+        let id = \$(this).data('id');
+        \$.get('$urlGetSocio', { id: id }, function(response) {
+            if (response.success) {
+                \$('#socioVerModal .modal-body').html(response.html);
+                \$('#socioVerModal').modal('show');
+            } else {
+                showToast(response.error, 'error');
+            }
+        });
+    });
+
+    // Abrir modal
+    \$(document).on('click', '.btnCambiarEstado', function() {
+        let id     = \$(this).data('id');
+        let estado = \$(this).data('estado');
+        let esActivo = estado === 'Activo';
+
+        \$('#estado-soc-id').val(id);
+        \$('#socioModalTitulo').text(esActivo ? 'Desactivar Socio' : 'Activar Socio');
+        \$('#estado-nuevo-label')
+            .text(esActivo ? 'Inactivo' : 'Activo')
+            .removeClass('bg-success bg-danger')
+            .addClass(esActivo ? 'bg-danger' : 'bg-success');
+        \$('#socioEstadoForm')[0].reset();
+        \$('#socioModal').modal('show');
+    });
+
+    // Inicializar CKEditor al abrir
+    \$('#socioModal').on('shown.bs.modal', function() {
+        if (!editorStatus) {
+            ClassicEditor.create(document.querySelector('#editor-estado'))
+                .then(e => { editorStatus = e; })
+                .catch(error => console.error(error));
+        } else {
+            editorStatus.setData('');
+        }
+    });
+
+    // Destruir editor al cerrar
+    \$('#socioModal').on('hidden.bs.modal', function() {
+        \$('#socioEstadoForm')[0].reset();
+        if (editorStatus) {
+            editorStatus.destroy()
+                .then(() => { editorStatus = null; })
+                .catch(error => console.error(error));
+        }
+    });
+
+    // Guardar
+    \$('#btnGuardarEstado').on('click', function() {
+        if (!editorStatus) { showToast('El editor no está cargado', 'error'); return; }
+
+        const socId        = \$('#estado-soc-id').val();
+        const fecha        = \$('#estado-fecha').val();
+        const observaciones = editorStatus.getData();
+
+        if (!fecha)         { showToast('La fecha es requerida', 'error'); return; }
+        if (!observaciones) { showToast('Las observaciones son requeridas', 'error'); return; }
+
+        \$.ajax({
+            url: '$urlToggleStatus',
+            type: 'POST',
+            data: {
+                soc_id: socId,
+                sab_fecha: fecha,
+                sab_observaciones: observaciones,
+                _csrf: yii.getCsrfToken()
+            },
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    showToast('Estado cambiado a ' + response.nuevo_estado + ' correctamente');
+                    \$('#socioModal').modal('hide');
+                    \$.pjax.reload({ container: '#socios-pjax' });
+                } else {
+                    showToast('Error: ' + response.error, 'error');
+                }
+            },
+            error: function() {
+                showToast('Error del servidor', 'error');
+            }
+        });
+    });
+JS, \yii\web\View::POS_READY);
+?>

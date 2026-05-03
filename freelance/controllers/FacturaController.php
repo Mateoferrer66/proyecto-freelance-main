@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Yii;
 use Mpdf\Mpdf;
 use yii\web\UploadedFile;
 use app\models\Consecutivo;
@@ -13,9 +14,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
-use Yii;
 use app\components\ExcelExportHelper;
 use app\components\PdfExportHelper;
+use app\components\UtilitiesHelper;
 use app\controllers\BaseController;
 use Mpdf\Output\Destination;
 use yii\db\Exception;
@@ -282,9 +283,9 @@ class FacturaController extends BaseController
         $paises = \app\models\Pais::find()->where(['pai_eliminado' => 0])->all();
         $provincias = \app\models\Provincia::find()->where(['prv_eliminada' => 0])->all();
 
-    // Bancos disponibles para seleccionar cuenta de transferencia
-    $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
-    $bancosMap = ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
+        // Bancos disponibles para seleccionar cuenta de transferencia
+        $bancos = \app\models\Banco::find()->where(['ban_eliminado' => 0])->all();
+        $bancosMap = ArrayHelper::map($bancos, 'ban_id', function($b){ return $b->ban_nombre . ' - ' . $b->ban_numcuenta; });
 
         $renderMethod = $this->request->isAjax ? 'renderAjax' : 'render';
         return $this->$renderMethod('create', [
@@ -851,5 +852,62 @@ class FacturaController extends BaseController
         } else {
             return ['success' => false, 'message' => 'Error al actualizar el estado.'];
         }
+    }
+
+    public function actionBillsReport()
+    {
+        $searchModel  = new FacturaSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->pagination = false;
+
+        $models = $dataProvider->getModels();
+
+        if (empty($models)) {
+            Yii::$app->session->setFlash('information', 'No hay datos de facturas para generar el listado.');
+            return $this->redirect(['index']);
+        }
+
+        $headers = [
+            'No Factura', 'Fecha', 'LETRAS CIF', 'CIF/DNI', 'Cuenta Contable',
+            'Cliente', 'Concepto', 'Importe Factura', 'Base Imponible', 'Suplidos',
+            '% IVA', 'Cuota IVA', 'Socio Cod', 'Socio Nombre', 'Estado',
+            'Situación', 'Fecha Situación',
+        ];
+
+        $data = [];
+        foreach ($models as $model) {
+
+            if ($model->fac_gastos_suplidos != 0 && $model->fac_iva != 0) {
+                $facSubtotal = $model->fac_subtotal - $model->fac_gastos_suplidos;
+            } else {
+                $facSubtotal = $model->fac_subtotal;
+            }
+
+            $ivaPercentage = ($model->fac_iva != 0 && $facSubtotal != 0)
+                ? round(($model->fac_iva * 100) / $facSubtotal)
+                : 0;
+
+            $data[] = [
+                $model->fac_numero,
+                UtilitiesHelper::db2dateHour($model->fac_fecha, false),
+                $model->cli->cli_docinipais      ?? '',
+                $model->cli->cli_numdocide       ?? '',
+                $model->cli->cli_cuenta_contable ?? '',
+                $model->cli->cli_nombre          ?? '',
+                $model->cli->cli_nombre          ?? '',
+                $model->fac_total,
+                $facSubtotal,
+                $model->fac_gastos_suplidos,
+                $ivaPercentage,
+                $model->fac_iva,
+                $model->soc->soc_numero          ?? '',
+                trim(($model->soc->soc_nombre    ?? '') . ' ' . ($model->soc->soc_apellido ?? '')),
+                $model->fac_estado,
+                $model->fac_situacion,
+                UtilitiesHelper::db2date($model->fac_fecha_situacion),
+            ];
+        }
+
+        return ExcelExportHelper::export('Facturas', $headers, $data);
     }
 }

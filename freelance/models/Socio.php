@@ -234,7 +234,7 @@ class Socio extends \yii\db\ActiveRecord implements IdentityInterface
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getPrv()
+    public function getProvincia()
     {
         return $this->hasOne(Provincia::class, ['prv_id' => 'prv_id']);
     }

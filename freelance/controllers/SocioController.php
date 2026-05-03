@@ -13,12 +13,16 @@ use app\models\Empresa;
 use app\models\SubcuentaSocio;
 use app\models\SocCuenta;
 use app\components\UtilitiesHelper;
+use app\components\ExcelExportHelper;
+use app\services\SocioService;
 use yii\filters\VerbFilter;
 use yii\helpers\Html;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\web\UploadedFile;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Yii;
 
 class SocioController extends BaseController
@@ -49,6 +53,19 @@ class SocioController extends BaseController
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+
+    public function actionGetMember($id)
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $model = Socio::findOne($id);
+        if (!$model) {
+            return ['success' => false, 'error' => 'Socio no encontrado'];
+        }
+        return [
+            'success' => true,
+            'html' => $this->renderPartial('_view', ['model' => $model])
+        ];
     }
 
     /**
@@ -328,12 +345,17 @@ class SocioController extends BaseController
                     }
                     ///////////////////////////////////////////////////////////////////////////
                     $transaction->commit();
+
+                    //Generar contrato/////////////////////////////////////////////////////////
+                    $pdfPath = SocioService::generateContract($model);
+                    ///////////////////////////////////////////////////////////////////////////
+
                     //Redirecciona al listado de socios
                     Yii::$app->session->setFlash('success', 'El socio se creó correctamente.');
                     return $this->redirect(['index']);
                 } catch (\Throwable $e) {
                     $transaction->rollBack();
-                    $model->addError('', 'No fué posible crear el socio. Intente Nuevamente.');
+                    $model->addError('', 'No fué posible crear el socio. Intente Nuevamente.' . $e->getMessage());
                 }
             }
         } else {
@@ -612,7 +634,60 @@ class SocioController extends BaseController
         );
     }
 
-    public function actionToggleStatus($soc_id)
+    public function actionToggleStatus()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $request = Yii::$app->request;
+
+        $socId = $request->post('soc_id');
+        $dateRequest = $request->post('sab_fecha');
+        $comments = $request->post('sab_observaciones');
+
+        $transaction = Yii::$app->db->beginTransaction();
+        try {
+            $socio = Socio::findOne($socId);
+            if (!$socio) {
+                throw new \Exception('Socio no encontrado');
+            }
+
+            // Determinar acción según estado actual
+            $newStatus = $socio->soc_estado === SocAltaBaja::SAB_ACCION_ACTIVO 
+                ? SocAltaBaja::SAB_ACCION_INACTIVO 
+                : SocAltaBaja::SAB_ACCION_ACTIVO;
+
+            $action = $socio->soc_estado === SocAltaBaja::SAB_ACCION_ACTIVO 
+                ? SocAltaBaja::SAB_ACCION_BAJA 
+                : SocAltaBaja::SAB_ACCION_ALTA;
+
+            // Crear registro en soc_alta_baja
+            $altaBaja = new SocAltaBaja();
+            $altaBaja->soc_id = $socId;
+            $altaBaja->usu_id = Yii::$app->user->id;
+            $altaBaja->sab_accion = $action;
+            $altaBaja->sab_fecha = \DateTime::createFromFormat('d/m/Y', $dateRequest)->format('Y-m-d');
+            $altaBaja->sab_observaciones = $comments;
+
+            if (!$altaBaja->save()) {
+                throw new \Exception(json_encode($altaBaja->errors));
+            }
+
+            // Cambiar estado del socio
+            $socio->soc_estado = $newStatus;
+            if (!$socio->save(false)) {
+                throw new \Exception(json_encode($socio->errors));
+            }
+
+            $transaction->commit();
+            return ['success' => true, 'nuevo_estado' => $newStatus];
+
+        } catch (\Exception $e) {
+            $transaction->rollBack();
+            Yii::error('Error cambiar estado socio: ' . $e->getMessage(), __METHOD__);
+            return ['success' => false, 'error' => $e->getMessage()];
+        }
+    }
+
+    /*public function actionToggleStatus($soc_id)
     {
         $model = $this->findModel($soc_id);
 
@@ -639,8 +714,11 @@ class SocioController extends BaseController
         }
 
         return $this->redirect(['index']);
-    }
+    }*/
 
+    /**
+     * Delete a Socio model
+     */
     public function actionDelete($soc_id)
     {
         $model = $this->findModel($soc_id);
@@ -749,5 +827,216 @@ class SocioController extends BaseController
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionContract($id)
+    {
+        $model = $this->findModel($id);
+
+        $pdfPath = Yii::getAlias("@app/web/uploads/members/contract/ContratoFreelanceSocio{$model->id}.pdf");
+
+        // Si no existe lo genera
+        if (!file_exists($pdfPath)) {
+            $pdfPath = SocioService::generateContract($model);
+        }
+
+        return Yii::$app->response->sendFile($pdfPath, "contrato_{$model->id}.pdf", [
+            'mimeType' => 'application/pdf',
+            'inline'   => true,  // true = mostrar en el navegador, false = descargar
+        ]);
+    }
+
+    public function actionSendEmail()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $request = Yii::$app->request;
+
+        $memberNumber = $request->post('memberNumber');
+        $recipient = $request->post('recipient');
+        $subject = $request->post('subject');
+        $message = $request->post('message');
+        $cc = $request->post('cc');
+        $attachment = UploadedFile::getInstanceByName('attachment');
+
+        try {
+            $mail = Yii::$app->mailer->compose()
+                ->setFrom('freelancedevelop25@gmail.com')
+                ->setTo($recipient)
+                ->setSubject($subject)
+                ->setHtmlBody($message);
+
+            if (!empty($cc)) {
+                $ccList = array_map('trim', explode(',', $cc));
+                $mail->setCc($ccList);
+            }
+
+            if ($attachment) {
+                $path = Yii::getAlias('@runtime') . '/' . uniqid() . '.' . $attachment->extension;
+                $attachment->saveAs($path);
+                $mail->attach($path, ['fileName' => $attachment->name]);
+            }
+
+            // Adjunto por defecto siempre incluido
+            $defaultAttachment = Yii::getAlias('@app/web/uploads/members/contract/ContratoFreelanceSocio'.$memberNumber.'.pdf');
+            if (file_exists($defaultAttachment)) {
+                $mail->attach($defaultAttachment, ['fileName' => 'ContratoFreelanceSocio'.$memberNumber.'.pdf']);
+            }
+
+            if ($mail->send()) {
+                // Limpiar archivo temporal si hubo adjunto
+                if ($attachment && isset($path)) {
+                    @unlink($path);
+                }
+                return ['success' => true];
+            } else {
+                return ['success' => false, 'error' => 'No se pudo enviar el email'];
+            }
+
+        } catch (\Symfony\Component\Mailer\Exception\TransportExceptionInterface $e) {
+            Yii::error('SMTP Error: ' . $e->getMessage(), __METHOD__);
+            return ['success' => false, 'error' => $e->getMessage()];
+        } catch (\Exception $e) {
+            Yii::error('General Error: ' . $e->getMessage(), __METHOD__);
+            return ['success' => false, 'error' => $e->getMessage()];
+        }
+    }
+
+    public function actionGetEmailTemplate()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $socnumero = Yii::$app->request->post('socnumero');
+    
+        $html = $this->renderPartial('@app/mail/templates/socio-bienvenida', [
+            'socnumero' => $socnumero,
+        ]);
+    
+        return ['success' => true, 'html' => $html];
+    }
+
+    /**
+    * Genera Excel de informe de socios
+    *
+    * @author j.r.r.
+    */
+    public function actionMembersReport()
+    {
+        $modelsMember = Socio::find()
+            ->select([
+                'soc_id', 'cat_id', 'soc_numero', 'soc_fecha', 'soc_nombre',
+                'soc_apellido', 'soc_apellido1', 'soc_apellido2', 'tdo_id',
+                'soc_numdocide', 'soc_feccaddoc', 'soc_ocupacion', 'soc_fecnacimiento',
+                'soc_sexo', 'soc_telfijo', 'soc_telmovil', 'soc_direccion', 'prv_id',
+                'soc_poblacion', 'soc_codpostal', 'soc_email', 'soc_web',
+                'soc_numsegsocial', 'soc_grcotsegsocial', 'soc_coefcotizacion',
+                'soc_basecotizacion', 'soc_ctabancaria', 'soc_porcretirpf',
+                'soc_observaciones', 'soc_participacion_desde', 'soc_participacion_hasta',
+                'soc_pago_participacion', 'soc_estado', 'soc_deuda',
+            ])
+            ->where(['soc_eliminado' => 0])
+            ->orderBy(['soc_id' => SORT_ASC])
+            ->all();
+
+        if (empty($modelsMember)) {
+            Yii::$app->session->setFlash('information', 'No hay datos de socios para generar el informe.');
+            return $this->redirect(['index']);
+        }
+
+        $headers = [
+            'Código', 'Fecha de alta', 'Nombre', 'Apellidos',
+            'Primer Apellido', 'Segundo Apellido', 'Sexo',
+            'Tipo documento', 'Número documento', 'Fecha caducidad',
+            'Categoría', 'Ocupación', 'Fecha nacimiento',
+            'Teléfono fijo', 'Móvil', 'Domicilio', 'Provincia',
+            'Población', 'Código postal', 'Email', 'Web',
+            'Número seguridad social', 'Grupo cotización seguridad social',
+            'Coeficiente de cotización', 'Base de cotización',
+            'Cuenta bancaria', 'Porcentaje IRPF',
+            'Participaciones (desde)', 'Participaciones (hasta)',
+            'Estado', 'Observaciones', 'Deuda', 'Cotejo pago participación',
+        ];
+
+        $data = [];
+        foreach ($modelsMember as $model) {
+            $data[] = [
+                $model->soc_numero,
+                UtilitiesHelper::db2date($model->soc_fecha),
+                $model->soc_nombre,
+                $model->soc_apellido,
+                $model->soc_apellido1,
+                $model->soc_apellido2,
+                $model->soc_sexo,
+                $model->relSocTdo->tdo_nombre ?? '',
+                $model->soc_numdocide,
+                $model->soc_feccaddoc !== '' ? UtilitiesHelper::db2date($model->soc_feccaddoc) : '',
+                $model->relSocCat->cat_nombre ?? '',
+                $model->soc_ocupacion,
+                UtilitiesHelper::db2date($model->soc_fecnacimiento),
+                $model->soc_telfijo,
+                $model->soc_telmovil,
+                $model->soc_direccion,
+                $model->relSocPrv->prv_nombre ?? '',
+                $model->soc_poblacion,
+                $model->soc_codpostal,
+                $model->soc_email,
+                $model->soc_web,
+                $model->soc_numsegsocial,
+                $model->soc_grcotsegsocial,
+                $model->soc_coefcotizacion,
+                $model->soc_basecotizacion,
+                $model->soc_ctabancaria,
+                $model->soc_porcretirpf,
+                $model->soc_participacion_desde,
+                $model->soc_participacion_hasta,
+                $model->soc_estado,
+                $model->soc_observaciones,
+                $model->soc_deuda,
+                $model->soc_pago_participacion,
+            ];
+        }
+
+        return ExcelExportHelper::export('InformeSocios', $headers, $data);
+    }
+
+    /**
+     * Genera Excel de informe de altas y bajas de socios
+     *
+     * @author j.r.r.
+     */
+    public function actionMembersStatusReport()
+    {
+        $modelsMember = Socio::find()
+            ->select([
+                's.soc_id', 's.soc_numero', 's.soc_nombre', 's.soc_apellido',
+                'sab.sab_fecha', 'sab.sab_accion', 'sab.sab_observaciones',
+            ])
+            ->from('socio s')
+            ->innerJoin('soc_alta_baja sab', 's.soc_id = sab.soc_id')
+            ->where(['s.soc_eliminado' => 0])
+            ->orderBy(['s.soc_id' => SORT_ASC])
+            ->asArray()
+            ->all();
+
+        if (empty($modelsMember)) {
+            Yii::$app->session->setFlash('information', 'No hay datos de socios para generar el informe.');
+            return $this->redirect(['index']);
+        }
+
+        $headers = [
+            'Código', 'Nombre', 'Apellidos', 'Fecha', 'Estado', 'Observaciones',
+        ];
+
+        $data = [];
+        foreach ($modelsMember as $model) {
+            $data[] = [
+                $model['soc_numero'],
+                $model['soc_nombre'],
+                $model['soc_apellido'],
+                UtilitiesHelper::db2dateHour($model['sab_fecha']),
+                $model['sab_accion'],
+                $model['sab_observaciones'],
+            ];
+        }
+
+        return ExcelExportHelper::export('InformeSociosAltasBajas', $headers, $data);
     }
 }

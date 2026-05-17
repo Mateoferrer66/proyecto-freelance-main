@@ -211,14 +211,13 @@ class Usuario extends \yii\db\ActiveRecord implements IdentityInterface
 
     public function getAuthKey()
     {
-        // No se usa authKey en este ejemplo
-        return null;
+        // Generar un authKey persistente basado en el ID y password para evitar cierres de sesión inesperados
+        return md5($this->usu_id . $this->usu_password . 'secret_key_app');
     }
 
     public function validateAuthKey($authKey)
     {
-        // No se usa authKey en este ejemplo
-        return false;
+        return $this->getAuthKey() === $authKey;
     }
 
     /**

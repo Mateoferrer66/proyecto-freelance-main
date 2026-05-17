@@ -67,7 +67,7 @@ $currentUrl = Yii::$app->request->url;
                 <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Facturas</a></li>
                 <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Liquidaciones Socios</a></li>
                 <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Liquidaciones Clientes</a></li>
-                <li><a href="#"><i class="bx bx-right-arrow-alt"></i>Transferencias</a></li>
+                <li><a href="<?= \Yii::$app->urlManager->createUrl(['/transferencias']) ?>"><i class="bx bx-right-arrow-alt"></i>Transferencias</a></li>
             </ul>
         </li>
 

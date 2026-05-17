@@ -51,4 +51,64 @@ class UtilitiesHelper
                         
         return $number; 
     }
+
+    /**
+     * Cambia la fecha del formato Español(2009-11-24) al formato de BD(24/11/2009)
+     * @param $date Fecha en formato "2009-11-24"
+     * @return String
+     */
+    public static function db2date( $date )
+    {       
+        if ($date === null || $date === '') {
+            return '';
+        }
+
+        if (strpos($date, '-')) {
+            $fec = explode('-', $date);
+            return $fec[2] . '/' . $fec[1] . '/' . $fec[0];
+        }
+
+        return '';
+    }
+
+    /**
+     * Cambia la fecha+hora del formato de BD (2009-11-24 10:30:00) 
+     * al formato español (24/11/2009 10:30)
+     * 
+     * @param string|null $date Fecha en formato "2009-11-24 10:30:00"
+     * @param bool $addHour Si true incluye la hora en el resultado
+     * @return string
+     */
+    public static function db2dateHour($date, $addHour = true)
+    {
+        if ($date === null || $date === '') {
+            return '';
+        }
+
+        if (strpos($date, '-') && strpos($date, ' ')) {
+            $fecHour = explode(' ', $date);
+            $fec     = explode('-', $fecHour[0]);
+
+            if ($addHour) {
+                $hour = explode(':', $fecHour[1]);
+                return $fec[2] . '/' . $fec[1] . '/' . $fec[0] . ' ' . $hour[0] . ':' . $hour[1];
+            }
+
+            return $fec[2] . '/' . $fec[1] . '/' . $fec[0];
+        }
+
+        return '';
+    }
+
+    /**
+     * Le da formato a un numero que representa una cantidad en euros
+     * @param $valor es el numero al cual queremos darle formato
+     * @return String
+     * @author j.r.r.
+     */
+    public static function formatEuroPDF($valor)
+    {
+        $euros = number_format($valor,2,",",".");
+        return $euros;
+    }
 }

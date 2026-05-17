@@ -257,6 +257,210 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
     </div>
 
+    <?php
+        //Funciones para mostrar alert/confirm con diseño
+        $this->registerJs(<<<JS
+            yii.confirm = function(message, ok, cancel) {
+                showConfirm(message, ok, cancel);
+            };
+        JS, \yii\web\View::POS_END);
+
+        $this->registerJs(<<<JS
+            window.showToast = function showToast(message, type = 'success') {
+                const config = {
+                    success: { bg: '#28a745', icon: '✓' },
+                    error:   { bg: '#dc3545', icon: '✕' },
+                    warning: { bg: '#fd7e14', icon: '⚠' },
+                    info:    { bg: '#17a2b8', icon: 'ℹ' }
+                };
+                const { bg, icon } = config[type] || config.success;
+
+                const toast = \$(`<div style="
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #1e1e1e;
+                    color: #fff;
+                    padding: 14px 18px;
+                    border-radius: 10px;
+                    z-index: 9999;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    min-width: 260px;
+                    max-width: 380px;
+                    border-left: 4px solid \${bg};
+                    opacity: 0;
+                    transform: translateX(40px);
+                    transition: all 0.3s ease;
+                ">
+                    <span style="
+                        background: \${bg};
+                        color: white;
+                        width: 26px;
+                        height: 26px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 13px;
+                        flex-shrink: 0;
+                    ">\${icon}</span>
+                    <span style="flex: 1; line-height: 1.4;">\${message}</span>
+                    <span class="toast-close" style="
+                        cursor: pointer;
+                        color: #aaa;
+                        font-size: 16px;
+                        line-height: 1;
+                        padding: 0 2px;
+                    ">×</span>
+                </div>`);
+
+                \$('body').append(toast);
+
+                // Animación de entrada
+                setTimeout(() => {
+                    toast.css({ opacity: 1, transform: 'translateX(0)' });
+                }, 10);
+
+                // Barra de progreso
+                const bar = \$(`<div style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 3px;
+                    width: 100%;
+                    background: \${bg};
+                    border-radius: 0 0 10px 10px;
+                    opacity: 0.5;
+                    transition: width 3s linear;
+                "></div>`);
+                toast.css('position', 'fixed').append(bar);
+                setTimeout(() => bar.css('width', '0%'), 50);
+
+                // Cerrar al hacer click en la X
+                toast.find('.toast-close').on('click', () => {
+                    toast.css({ opacity: 0, transform: 'translateX(40px)' });
+                    setTimeout(() => toast.remove(), 300);
+                });
+
+                // Auto cerrar
+                setTimeout(() => {
+                    toast.css({ opacity: 0, transform: 'translateX(40px)' });
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+
+                // Apilar toasts si hay varios
+                const offset = (\$('.toast-notification').length * 70);
+                toast.addClass('toast-notification').css('top', (20 + offset) + 'px');
+            }
+
+            // Reemplaza el alert nativo
+            window.alert = function(message) {
+                showToast(message, 'info');
+            };
+
+            // Confirmación visual
+            window.showConfirm = function showConfirm(message, onConfirm, onCancel = null) {
+                const overlay = \$(`<div style="
+                    position: fixed;
+                    inset: 0;
+                    background: rgba(0,0,0,0.6);
+                    z-index: 9998;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0;
+                    transition: opacity 0.25s ease;
+                ">
+                    <div style="
+                        background: #1e1e1e;
+                        color: #fff;
+                        border-radius: 12px;
+                        padding: 32px;
+                        max-width: 420px;
+                        width: 90%;
+                        box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+                        text-align: center;
+                        transform: scale(0.9);
+                        transition: transform 0.25s ease;
+                    ">
+                        <div style="
+                            width: 52px;
+                            height: 52px;
+                            background: #fd7e14;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 24px;
+                            margin: 0 auto 16px;
+                        ">⚠</div>
+                        <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #ddd;">
+                            \${message}
+                        </p>
+                        <div style="display: flex; gap: 12px; justify-content: center;">
+                            <button id="confirmYes" style="
+                                background: #28a745;
+                                color: white;
+                                border: none;
+                                padding: 10px 28px;
+                                border-radius: 8px;
+                                cursor: pointer;
+                                font-size: 14px;
+                                transition: opacity 0.2s;
+                            ">Confirmar</button>
+                            <button id="confirmNo" style="
+                                background: #444;
+                                color: white;
+                                border: none;
+                                padding: 10px 28px;
+                                border-radius: 8px;
+                                cursor: pointer;
+                                font-size: 14px;
+                                transition: opacity 0.2s;
+                            ">Cancelar</button>
+                        </div>
+                    </div>
+                </div>`);
+
+                \$('body').append(overlay);
+
+                // Animación entrada
+                setTimeout(() => {
+                    overlay.css('opacity', 1);
+                    overlay.find('div').first().css('transform', 'scale(1)');
+                }, 10);
+
+                const close = () => {
+                    overlay.css('opacity', 0);
+                    setTimeout(() => overlay.remove(), 250);
+                };
+
+                overlay.find('#confirmYes').on('click', function() {
+                    close();
+                    if (typeof onConfirm === 'function') onConfirm();
+                });
+
+                overlay.find('#confirmNo').on('click', function() {
+                    close();
+                    if (typeof onCancel === 'function') onCancel();
+                });
+
+                // Cerrar al hacer click fuera
+                overlay.on('click', function(e) {
+                    if (\$(e.target).is(overlay)) {
+                        close();
+                        if (typeof onCancel === 'function') onCancel();
+                    }
+                });
+            }
+            JS, \yii\web\View::POS_READY
+        );
+    ?>
+
 </body>
 
 </html>

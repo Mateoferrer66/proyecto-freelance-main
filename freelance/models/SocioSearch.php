@@ -11,6 +11,10 @@ use app\models\Socio;
  */
 class SocioSearch extends Socio
 {
+    public $fecha_inicial;
+    public $fecha_final;
+    public $buscar;
+
     /**
      * {@inheritdoc}
      */
@@ -19,6 +23,8 @@ class SocioSearch extends Socio
         return [
             [['soc_numero','soc_eliminado'], 'integer'],
             [['soc_nombre', 'soc_apellido', 'soc_apellido1', 'soc_apellido2'], 'safe'],
+            [['fecha_inicial', 'fecha_final'], 'date', 'format' => 'php:d/m/Y'],
+            [['buscar'], 'safe'],
         ];
     }
 
@@ -43,7 +49,8 @@ class SocioSearch extends Socio
     {
         $query = Socio::find()
             ->where(['soc_eliminado' => 0])
-            ->leftJoin('categoria c', 'c.cat_id = socio.cat_id');
+            ->leftJoin('categoria c', 'c.cat_id = socio.cat_id')
+            ->leftJoin('soc_alta_baja sab', 'sab.soc_id = socio.soc_id AND sab.sab_accion = "Alta"');
 
         // add conditions that should always apply here
 
@@ -64,21 +71,31 @@ class SocioSearch extends Socio
             return $dataProvider;
         }
 
-        // grid filtering conditions
-        $query->andFilterWhere([
-            'soc_numero' => $this->soc_numero,
-            'soc_nombre' => $this->soc_nombre,
-            'soc_apellido' => $this->soc_apellido,
-            'soc_apellido1' => $this->soc_apellido1,
-            'soc_apellido2' => $this->soc_apellido2,
-            'soc_eliminado' => $this->soc_eliminado,
-        ]);
-
         $query->andFilterWhere(['like', 'soc_numero', $this->soc_numero])
             ->andFilterWhere(['like', 'soc_nombre', $this->soc_nombre])
             ->andFilterWhere(['like', 'soc_apellido', $this->soc_apellido])
             ->andFilterWhere(['like', 'soc_apellido1', $this->soc_apellido1])
             ->andFilterWhere(['like', 'soc_apellido2', $this->soc_apellido2]);
+
+        // Filtro por fecha de alta
+        if (!empty($this->fecha_inicial)) {
+            $query->andFilterWhere(['>=', 'sab.sab_fecha',
+                \DateTime::createFromFormat('d/m/Y', $this->fecha_inicial)->format('Y-m-d')
+            ]);
+        }
+
+        if (!empty($this->fecha_final)) {
+            $query->andFilterWhere(['<=', 'sab.sab_fecha',
+                \DateTime::createFromFormat('d/m/Y', $this->fecha_final)->format('Y-m-d')
+            ]);
+        }
+
+        if (!empty($this->buscar)) {
+            $query->andFilterWhere(['or',
+                ['like', 'soc_nombre', $this->buscar],
+                ['like', 'soc_numero', $this->buscar],
+            ]);
+        }
 
         return $dataProvider;
     }

@@ -75,7 +75,21 @@ $config = [
             ],
         ],
         */
-
+    ],
+    'container' => [
+        'definitions' => [
+            \yii\widgets\LinkPager::class => [
+                'class' => \yii\bootstrap5\LinkPager::class,
+                'options' => ['class' => 'pagination justify-content-center mt-3'],
+                'linkContainerOptions' => ['class' => 'page-item'],
+                'linkOptions' => ['class' => 'page-link'],
+                'firstPageLabel' => '«',
+                'lastPageLabel' => '»',
+                'prevPageLabel' => '‹',
+                'nextPageLabel' => '›',
+                'maxButtonCount' => 5,
+            ],
+        ],
     ],
     'params' => $params,
 ];

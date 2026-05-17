@@ -49,7 +49,9 @@ class FacturaSearch extends Factura
      */
     public function search($params, $formName = null)
     {
-        $query = Factura::find()->joinWith(['cli', 'soc']);
+        $query = Factura::find()
+            ->joinWith(['cli', 'soc'])
+            ->where(['factura.fac_eliminada' => 0]); // ← siempre excluir eliminadas
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
